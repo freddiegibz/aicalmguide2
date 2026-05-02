@@ -417,6 +417,7 @@
         width: min(100%, 1140px);
         margin: 0 auto;
         padding: 76px 32px 92px;
+        text-align: center;
       }
 
       .now-heading {
@@ -425,6 +426,8 @@
         font-size: clamp(2rem, 3.4vw, 3rem);
         line-height: 1.08;
         max-width: 17ch;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .now-subhead {
@@ -433,11 +436,13 @@
         color: var(--text);
         font-size: 1.15rem;
         line-height: 1.7;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .now-grid {
         display: grid;
-        grid-template-columns: minmax(0, 0.95fr) minmax(320px, 1.05fr);
+        grid-template-columns: minmax(0, 1fr);
         gap: 28px;
         align-items: start;
         margin-top: 42px;
@@ -447,6 +452,8 @@
         color: var(--text);
         font-size: 1.06rem;
         line-height: 1.78;
+        max-width: 44rem;
+        margin: 0 auto;
       }
 
       .now-copy p {
