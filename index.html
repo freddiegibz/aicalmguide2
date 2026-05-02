@@ -279,6 +279,39 @@
         line-height: 1.58;
       }
 
+      .price-row {
+        margin-top: 18px;
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .price-before {
+        color: var(--muted);
+        font-size: 1.05rem;
+        text-decoration: line-through;
+      }
+
+      .price-after {
+        color: var(--blue);
+        font-size: 1.9rem;
+        font-weight: 900;
+        line-height: 1;
+      }
+
+      .price-off {
+        padding: 4px 10px;
+        border-radius: 999px;
+        background: #eaf3ff;
+        color: var(--blue);
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
       .discount-code {
         display: inline-flex;
         align-items: center;
@@ -1382,6 +1415,11 @@
         <p class="checkout-eyebrow">Launch sale</p>
         <h2 id="checkout-title">Get 50% off today</h2>
         <p>Use this code at checkout to get the guide for half price during the launch sale.</p>
+        <div class="price-row" aria-label="Discounted price">
+          <span class="price-before">$19</span>
+          <span class="price-after">$9.50</span>
+          <span class="price-off">50% off</span>
+        </div>
         <div class="discount-row">
           <div class="discount-code">EARLY50</div>
           <button class="copy-code" type="button" data-copy-code="EARLY50">Copy code</button>
