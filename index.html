@@ -294,6 +294,37 @@
         letter-spacing: 0.08em;
       }
 
+      .discount-row {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .copy-code {
+        min-height: 40px;
+        padding: 0 14px;
+        border: 1px solid rgba(20, 104, 196, 0.24);
+        border-radius: 8px;
+        background: #ffffff;
+        color: var(--blue);
+        font-size: 0.9rem;
+        font-weight: 800;
+        cursor: pointer;
+      }
+
+      .copy-code:hover {
+        background: #eef6fb;
+      }
+
+      .copy-code.is-copied {
+        background: var(--blue);
+        color: #ffffff;
+        border-color: var(--blue);
+      }
+
       .checkout-button {
         width: 100%;
         margin-top: 22px;
@@ -1005,6 +1036,7 @@
         var modal = document.querySelector("[data-checkout-modal]");
         var opener = event.target.closest("[data-open-checkout]");
         var closer = event.target.closest("[data-close-checkout]");
+        var copier = event.target.closest("[data-copy-code]");
         var checkout = event.target.closest("[data-stripe-checkout]");
 
         if (opener) {
@@ -1018,6 +1050,27 @@
 
         if (checkout && typeof fbq === "function") {
           fbq("track", "InitiateCheckout");
+        }
+
+        if (copier) {
+          var code = copier.getAttribute("data-copy-code") || "EARLY50";
+          var copied = function () {
+            copier.textContent = "Copied";
+            copier.classList.add("is-copied");
+            window.clearTimeout(copier._copyReset);
+            copier._copyReset = window.setTimeout(function () {
+              copier.textContent = "Copy code";
+              copier.classList.remove("is-copied");
+            }, 1800);
+          };
+
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(code).then(copied).catch(function () {
+              copied();
+            });
+          } else {
+            copied();
+          }
         }
 
         if (closer && modal) {
@@ -1329,7 +1382,10 @@
         <p class="checkout-eyebrow">Launch sale</p>
         <h2 id="checkout-title">Get 50% off today</h2>
         <p>Use this code at checkout to get the guide for half price during the launch sale.</p>
-        <div class="discount-code">EARLY50</div>
+        <div class="discount-row">
+          <div class="discount-code">EARLY50</div>
+          <button class="copy-code" type="button" data-copy-code="EARLY50">Copy code</button>
+        </div>
         <a class="button checkout-button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-stripe-checkout>Continue to secure checkout</a>
         <p class="checkout-note">Instant download. 60-day money-back guarantee.</p>
       </div>
