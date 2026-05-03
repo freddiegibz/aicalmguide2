@@ -385,6 +385,31 @@
         font-size: 0.9rem;
       }
 
+      .sale-note {
+        margin: 10px 0 0;
+        display: inline-flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+        color: var(--muted);
+        font-size: 0.93rem;
+      }
+
+      .sale-note strong {
+        color: var(--blue);
+        font-weight: 700;
+      }
+
+      .sale-note .old-price {
+        text-decoration: line-through;
+        color: var(--muted);
+      }
+
+      .sale-note .new-price {
+        color: var(--blue);
+        font-weight: 700;
+      }
+
       .story {
         background: #ffffff;
       }
@@ -1177,6 +1202,7 @@
               <div class="actions">
                 <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-open-checkout>Get the guide for £9.50</a>
               </div>
+              <p class="sale-note"><strong>50% launch sale:</strong> <span class="old-price">£19</span> <span class="new-price">£9.50</span></p>
               <p class="note">Instant download. 60-day guarantee.</p>
             </div>
           </div>
@@ -1417,6 +1443,7 @@
           <h2>Ready to finally make sense of AI?</h2>
           <p>Get the guide and start understanding what matters, what to ignore, and how to use AI more confidently for writing emails, summarising long letters or webpages, comparing options, and everyday tasks without the tech nonsense.</p>
           <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-open-checkout>Get the guide for £9.50</a>
+          <p class="sale-note"><strong>50% launch sale:</strong> <span class="old-price">£19</span> <span class="new-price">£9.50</span></p>
         </div>
       </section>
 
