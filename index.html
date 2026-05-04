@@ -46,6 +46,12 @@
         --blue-dark: #0f54a0;
         --paper: #f7f8fc;
         --line: rgba(10, 27, 63, 0.12);
+        --navy: #173761;
+        --cream: #faf8f4;
+        --cream-deep: #f5efe4;
+        --cream-card: #fffdf9;
+        --sage: #f1f6f2;
+        --gold-soft: #f7eed2;
       }
 
       * {
@@ -59,7 +65,7 @@
       body {
         margin: 0;
         color: var(--text);
-        background: var(--paper);
+        background: var(--cream);
         font-family: "Aptos", "Segoe UI", sans-serif;
       }
 
@@ -67,140 +73,156 @@
         color: inherit;
       }
 
+      h1,
+      .story-heading,
+      .now-heading,
+      .clarity-heading,
+      .inside-heading,
+      .outcome-heading,
+      .value-heading,
+      .trust-heading,
+      .guarantee-heading,
+      .final-cta h2 {
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 500;
+        letter-spacing: 0;
+      }
+
       .hero {
-        position: relative;
-        min-height: 66svh;
-        overflow: hidden;
-        display: grid;
-        align-items: stretch;
-        isolation: isolate;
-        background: linear-gradient(90deg, #f7f8fc 0%, #f8f9fd 48%, #ffffff 100%);
+        background: linear-gradient(90deg, #f7f8fc 0%, #ffffff 100%);
+        border-bottom: 1px solid rgba(7, 27, 63, 0.12);
       }
 
       .top-banner {
-        background: var(--blue);
-        color: #ffffff;
-        text-align: center;
-        padding: 10px 16px;
-        font-size: 0.86rem;
-        font-weight: 400;
-        letter-spacing: 0.01em;
+        border-top: 1px solid rgba(7, 27, 63, 0.12);
+        border-bottom: 1px solid rgba(7, 27, 63, 0.12);
+        background: #fffdf9;
+      }
+
+      .top-banner-inner {
+        width: min(100%, 1100px);
+        margin: 0 auto;
+        padding: 12px 22px 14px;
+      }
+
+      .top-banner-inner > strong {
+        display: block;
+        color: var(--navy);
+        font-size: 0.98rem;
+        font-weight: 700;
+        line-height: 1.3;
+      }
+
+      .top-banner p {
+        margin: 4px 0 0;
+        color: #677286;
+        font-size: 0.92rem;
+        line-height: 1.45;
+      }
+
+      .top-banner p strong {
+        color: #173761;
+        font-weight: 700;
+      }
+
+      .top-banner a {
+        display: inline-block;
+        margin-top: 8px;
+        color: #51647f;
+        font-size: 0.92rem;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 3px;
+      }
+
+      .hero-inner {
+        width: min(100%, 1360px);
+        margin: 0 auto;
       }
 
       .hero-grid {
-        width: min(100%, 1540px);
-        margin: 0 auto;
         display: grid;
-        grid-template-columns: minmax(500px, 1.08fr) minmax(520px, 0.92fr);
-        min-height: 66svh;
+        grid-template-columns: minmax(0, 1.08fr) minmax(380px, 0.72fr);
+        min-height: 560px;
       }
 
       .hero-copy {
-        position: relative;
         display: flex;
         align-items: center;
-        padding: 32px clamp(28px, 4.5vw, 76px) 44px;
-        overflow: hidden;
+        padding: 64px clamp(28px, 4.5vw, 76px) 70px;
       }
 
-      .hero-copy::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background:
-          linear-gradient(90deg, rgba(247, 248, 252, 0.96) 0%, rgba(247, 248, 252, 0.92) 64%, rgba(247, 248, 252, 0.72) 100%);
-        pointer-events: none;
-      }
-
-      .hero-copy > * {
-        position: relative;
-        z-index: 1;
+      .hero-content {
+        max-width: 720px;
+        animation: riseIn 700ms ease-out both;
       }
 
       .hero-visual {
         position: relative;
+        min-height: 480px;
         overflow: hidden;
-        min-height: 340px;
       }
 
       .hero-visual::before {
         content: "";
         position: absolute;
-        inset: 0;
-        background-image: url("heroimg.jpg");
-        background-position: center right;
-        background-size: cover;
-        transform: scale(1.03);
-        animation: imageSettle 900ms ease-out forwards;
-      }
-
-      .hero-visual::after {
-        content: "";
-        position: absolute;
-        inset: 0;
+        inset: 12% 8% 12% 10%;
         background:
-          linear-gradient(90deg, rgba(247, 248, 252, 0.02) 0%, rgba(247, 248, 252, 0) 20%),
-          linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.08));
+          url("heroimg.jpg") center right / contain no-repeat;
       }
 
-      .hero-inner {
-        width: min(100%, 1240px);
-        margin: 0 auto;
-        padding: 48px clamp(22px, 5vw, 70px) 72px;
-      }
-
-      .hero-content {
-        max-width: 620px;
-        animation: riseIn 700ms ease-out both;
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        min-height: 38px;
+        padding: 0 18px;
+        border-radius: 999px;
+        background: var(--gold-soft);
+        color: #91792a;
+        font-size: 0.92rem;
+        font-weight: 700;
+        letter-spacing: 0.01em;
       }
 
       h1 {
-        margin: 0;
-        color: var(--ink);
-        font-size: clamp(2.1rem, 4vw, 3.55rem);
-        line-height: 1;
+        margin: 18px 0 0;
+        color: var(--navy);
+        font-size: clamp(2.35rem, 3.2vw, 3.35rem);
+        font-weight: 500;
+        line-height: 1.08;
         letter-spacing: 0;
-        max-width: 14ch;
+        max-width: 17ch;
       }
 
       .lead {
-        margin: 18px 0 0;
-        max-width: 620px;
-        font-size: clamp(0.98rem, 1.4vw, 1.1rem);
-        line-height: 1.48;
-      }
-
-      .checks {
-        list-style: none;
-        margin: 22px 0 0;
-        padding: 0;
-        display: grid;
-        gap: 12px;
-        font-size: 0.96rem;
-        line-height: 1.3;
-      }
-
-      .checks li {
-        display: grid;
-        grid-template-columns: 28px 1fr;
-        align-items: start;
-        gap: 14px;
-      }
-
-      .checks svg {
-        width: 28px;
-        height: 28px;
-        margin-top: -2px;
-        flex: none;
-        color: var(--blue);
+        margin: 20px 0 0;
+        max-width: 41rem;
+        color: #5e687a;
+        font-size: clamp(1.04rem, 1.25vw, 1.18rem);
+        line-height: 1.6;
       }
 
       .actions {
-        margin-top: 24px;
+        margin-top: 26px;
         display: flex;
         align-items: center;
         gap: 14px;
         flex-wrap: wrap;
+      }
+
+      .hero .button {
+        min-width: 220px;
+        min-height: 58px;
+        padding: 0 28px;
+        border-radius: 10px;
+        background: #1e4f87;
+        box-shadow: 0 18px 34px rgba(30, 79, 135, 0.24);
+        font-size: 1rem;
+      }
+
+      .hero .button:hover {
+        background: #173f6d;
+        box-shadow: 0 22px 38px rgba(23, 63, 109, 0.28);
       }
 
       .button {
@@ -385,6 +407,14 @@
         font-size: 0.9rem;
       }
 
+      .hero .note {
+        margin: 16px 0 0;
+        max-width: 38rem;
+        color: #697486;
+        font-size: 0.96rem;
+        line-height: 1.55;
+      }
+
       .sale-note {
         margin: 10px 0 0;
         display: inline-flex;
@@ -410,9 +440,7 @@
         font-weight: 700;
       }
 
-      .story {
-        background: #ffffff;
-      }
+      .story { background: var(--cream-card); }
 
       .story-inner {
         width: min(100%, 1140px);
@@ -422,7 +450,9 @@
 
       .story-heading {
         margin: 0;
-        color: var(--ink);
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 500;
         font-size: clamp(2rem, 3.4vw, 3rem);
         line-height: 1.06;
         max-width: 12ch;
@@ -450,14 +480,13 @@
 
       .story-copy .quote {
         margin: 26px 0;
-        color: var(--ink);
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
         font-size: 1.28rem;
         line-height: 1.55;
       }
 
-      .clarity {
-        background: #eef6fb;
-      }
+      .clarity { background: var(--cream); }
 
       .clarity-inner {
         width: min(100%, 1140px);
@@ -467,7 +496,9 @@
 
       .clarity-heading {
         margin: 0;
-        color: var(--ink);
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 500;
         font-size: clamp(2rem, 3.4vw, 3rem);
         line-height: 1.08;
         max-width: 18ch;
@@ -503,10 +534,10 @@
       .clarity-card {
         min-height: 170px;
         padding: 20px;
-        border: 1px solid rgba(7, 27, 63, 0.1);
-        border-radius: 8px;
-        background: rgba(255, 255, 255, 0.9);
-        box-shadow: 0 16px 30px rgba(20, 104, 196, 0.08);
+        border: 1px solid rgba(23, 55, 97, 0.12);
+        border-radius: 10px;
+        background: var(--cream-card);
+        box-shadow: 0 16px 36px rgba(23, 55, 97, 0.06);
       }
 
       .clarity-card svg {
@@ -518,7 +549,7 @@
 
       .clarity-card h3 {
         margin: 0;
-        color: var(--ink);
+        color: var(--navy);
         font-size: 1rem;
         line-height: 1.28;
       }
@@ -530,9 +561,7 @@
         line-height: 1.48;
       }
 
-      .inside {
-        background: #fbfaf7;
-      }
+      .inside { background: var(--cream-deep); }
 
       .inside-inner {
         width: min(100%, 1140px);
@@ -542,7 +571,9 @@
 
       .inside-heading {
         margin: 0;
-        color: var(--ink);
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 500;
         font-size: clamp(2rem, 3.4vw, 3rem);
         line-height: 1.08;
         max-width: 16ch;
@@ -578,10 +609,10 @@
         grid-template-columns: 46px 1fr;
         gap: 16px;
         padding: 22px;
-        border-radius: 8px;
-        border: 1px solid rgba(7, 27, 63, 0.1);
-        background: #ffffff;
-        box-shadow: 0 16px 30px rgba(7, 27, 63, 0.06);
+        border-radius: 10px;
+        border: 1px solid rgba(23, 55, 97, 0.12);
+        background: var(--cream-card);
+        box-shadow: 0 16px 36px rgba(23, 55, 97, 0.06);
       }
 
       .inside-number {
@@ -590,14 +621,14 @@
         display: grid;
         place-items: center;
         border-radius: 50%;
-        background: var(--blue);
+        background: var(--navy);
         color: #ffffff;
         font-weight: 800;
       }
 
       .inside-item h3 {
         margin: 0;
-        color: var(--ink);
+        color: var(--navy);
         font-size: 1.08rem;
         line-height: 1.28;
       }
@@ -608,9 +639,7 @@
         line-height: 1.55;
       }
 
-      .now {
-        background: #f2f7f4;
-      }
+      .now { background: var(--sage); }
 
       .now-inner {
         width: min(100%, 1140px);
@@ -621,7 +650,9 @@
 
       .now-heading {
         margin: 0;
-        color: var(--ink);
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 500;
         font-size: clamp(2rem, 3.4vw, 3rem);
         line-height: 1.08;
         max-width: 17ch;
@@ -669,10 +700,10 @@
         grid-template-columns: 34px 1fr;
         gap: 14px;
         padding: 18px;
-        border-radius: 8px;
-        background: rgba(255, 255, 255, 0.88);
-        border: 1px solid rgba(7, 27, 63, 0.1);
-        box-shadow: 0 16px 30px rgba(7, 27, 63, 0.05);
+        border-radius: 10px;
+        background: var(--cream-card);
+        border: 1px solid rgba(23, 55, 97, 0.12);
+        box-shadow: 0 16px 36px rgba(23, 55, 97, 0.06);
       }
 
       .now-item svg {
@@ -683,7 +714,7 @@
 
       .now-item h3 {
         margin: 0;
-        color: var(--ink);
+        color: var(--navy);
         font-size: 1.02rem;
         line-height: 1.3;
       }
@@ -694,9 +725,7 @@
         line-height: 1.5;
       }
 
-      .outcome {
-        background: #ffffff;
-      }
+      .outcome { background: var(--cream-card); }
 
       .outcome-inner,
       .value-inner,
@@ -710,7 +739,9 @@
       .value-heading,
       .trust-heading {
         margin: 0;
-        color: var(--ink);
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 500;
         font-size: clamp(2rem, 3.4vw, 3rem);
         line-height: 1.08;
         max-width: 17ch;
@@ -739,10 +770,10 @@
       .outcome-list li,
       .trust-list li {
         padding: 22px;
-        border-radius: 8px;
-        border: 1px solid rgba(7, 27, 63, 0.1);
-        background: #ffffff;
-        box-shadow: 0 16px 30px rgba(7, 27, 63, 0.06);
+        border-radius: 10px;
+        border: 1px solid rgba(23, 55, 97, 0.12);
+        background: var(--cream-card);
+        box-shadow: 0 16px 36px rgba(23, 55, 97, 0.06);
         color: var(--text);
         line-height: 1.55;
       }
@@ -751,13 +782,11 @@
       .trust-list strong {
         display: block;
         margin-bottom: 8px;
-        color: var(--ink);
+        color: var(--navy);
         font-size: 1.05rem;
       }
 
-      .value {
-        background: #eef6fb;
-      }
+      .value { background: var(--cream); }
 
       .value-grid {
         display: grid;
@@ -768,15 +797,15 @@
 
       .value-card {
         padding: 22px;
-        border-radius: 8px;
-        border: 1px solid rgba(7, 27, 63, 0.1);
-        background: rgba(255, 255, 255, 0.9);
-        box-shadow: 0 16px 30px rgba(20, 104, 196, 0.08);
+        border-radius: 10px;
+        border: 1px solid rgba(23, 55, 97, 0.12);
+        background: var(--cream-card);
+        box-shadow: 0 16px 36px rgba(23, 55, 97, 0.06);
       }
 
       .value-card h3 {
         margin: 0;
-        color: var(--ink);
+        color: var(--navy);
         font-size: 1.08rem;
         line-height: 1.28;
       }
@@ -787,13 +816,9 @@
         line-height: 1.55;
       }
 
-      .trust {
-        background: #fbfaf7;
-      }
+      .trust { background: var(--cream-deep); }
 
-      .guarantee {
-        background: #ffffff;
-      }
+      .guarantee { background: var(--cream-card); }
 
       .guarantee-inner {
         width: min(100%, 860px);
@@ -811,7 +836,9 @@
 
       .guarantee-heading {
         margin: 0;
-        color: var(--ink);
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 500;
         font-size: clamp(2rem, 3.4vw, 3rem);
         line-height: 1.08;
       }
@@ -842,7 +869,7 @@
       }
 
       .final-cta {
-        background: var(--ink);
+        background: var(--navy);
         color: #ffffff;
       }
 
@@ -871,12 +898,12 @@
       .final-cta .button {
         margin-top: 34px;
         background: #ffffff;
-        color: var(--ink);
+        color: var(--navy);
         box-shadow: 0 16px 28px rgba(0, 0, 0, 0.22);
       }
 
       .final-cta .button:hover {
-        background: #eef6fb;
+        background: var(--gold-soft);
       }
 
       @keyframes riseIn {
@@ -898,9 +925,8 @@
       }
 
       @media (max-width: 760px) {
-        .top-banner {
-          padding: 9px 14px;
-          font-size: 0.8rem;
+        .top-banner-inner {
+          padding: 10px 18px 12px;
         }
 
         .hero {
@@ -914,30 +940,47 @@
         }
 
         .hero-copy {
-          padding-top: 34px;
-          padding-bottom: 30px;
-        }
-
-        .hero-copy::before {
-          background: linear-gradient(180deg, rgba(247, 248, 252, 0.98) 0%, rgba(247, 248, 252, 0.94) 100%);
+          padding: 42px 22px 28px;
         }
 
         .hero-visual {
-          min-height: 320px;
+          min-height: 300px;
+        }
+
+        .hero-visual::before {
+          inset: 4% 12% 10%;
+          background-position: center;
         }
 
         .hero-content {
           max-width: 100%;
         }
 
+        .hero-badge {
+          min-height: 36px;
+          padding: 0 16px;
+          font-size: 0.88rem;
+        }
+
         h1 {
-          max-width: 10.5ch;
-          font-size: clamp(2rem, 9.5vw, 3.1rem);
+          max-width: none;
+          font-size: clamp(2rem, 8.4vw, 2.75rem);
+          line-height: 1.12;
         }
 
         .lead {
           font-size: 1.04rem;
           max-width: 34rem;
+          line-height: 1.58;
+        }
+
+        .hero .button {
+          min-height: 58px;
+          width: 100%;
+        }
+
+        .hero .note {
+          text-align: left;
         }
 
         .story-inner {
@@ -1107,7 +1150,6 @@
         var opener = event.target.closest("[data-open-checkout]");
         var closer = event.target.closest("[data-close-checkout]");
         var copier = event.target.closest("[data-copy-code]");
-        var checkout = event.target.closest("[data-stripe-checkout]");
 
         if (opener) {
           event.preventDefault();
@@ -1116,10 +1158,6 @@
             modal.classList.add("is-open");
             modal.setAttribute("aria-hidden", "false");
           }
-        }
-
-        if (checkout && typeof fbq === "function") {
-          fbq("track", "InitiateCheckout");
         }
 
         if (copier) {
@@ -1157,60 +1195,36 @@
         }
       });
     </script>
-    <div class="top-banner">Used by 750+ people for clarity, not complexity</div>
+    <div class="top-banner">
+      <div class="top-banner-inner">
+        <strong>Trusted by 1,300+ readers</strong>
+        <p>Many report saving about <strong>2 hours a week</strong> on reading and everyday admin</p>
+        <a href="#reviews">Read reviews</a>
+      </div>
+    </div>
     <main>
       <section class="hero" aria-label="AI finally explained in plain English for adults 50+ hero">
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <div class="hero-content">
-              <h1>AI finally explained in plain English for adults 50+</h1>
-              <p class="lead">
-                A simple plain-English guide to help you understand what AI is, where it shows up, how to use it in real life, and what not to trust - without jargon, hype, or feeling overwhelmed by technology.
-              </p>
-
-              <ul class="checks" aria-label="What you will learn">
-                <li>
-                  <svg viewBox="0 0 28 28" aria-hidden="true">
-                    <circle cx="14" cy="14" r="13" fill="currentColor" />
-                    <path d="M8.5 14.4 12.2 18l7.3-8.1" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                  <span>Understand AI in a way that actually makes sense</span>
-                </li>
-                <li>
-                  <svg viewBox="0 0 28 28" aria-hidden="true">
-                    <circle cx="14" cy="14" r="13" fill="currentColor" />
-                    <path d="M8.5 14.4 12.2 18l7.3-8.1" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                  <span>Learn where it shows up in everyday life</span>
-                </li>
-                <li>
-                  <svg viewBox="0 0 28 28" aria-hidden="true">
-                    <circle cx="14" cy="14" r="13" fill="currentColor" />
-                    <path d="M8.5 14.4 12.2 18l7.3-8.1" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                  <span>Use it for things like writing emails, summarising long letters or webpages, comparing options, and everyday tasks</span>
-                </li>
-                <li>
-                  <svg viewBox="0 0 28 28" aria-hidden="true">
-                    <circle cx="14" cy="14" r="13" fill="currentColor" />
-                    <path d="M8.5 14.4 12.2 18l7.3-8.1" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                  <span>No tech background needed</span>
-                </li>
-              </ul>
-
-              <div class="actions">
-                <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-open-checkout>Get the guide</a>
+        <div class="hero-inner">
+          <div class="hero-grid">
+            <div class="hero-copy">
+              <div class="hero-content">
+                <div class="hero-badge">For Beginners, Written Plainly</div>
+                <h1>Finally Understand How to Use AI, Without Feeling Lost or Left Behind</h1>
+                <p class="lead">
+                  A calm, practical kit that shows you exactly where to start with AI, how to get genuinely useful answers, and how to use it for everyday tasks like summarising long articles, organising family schedules, and comparing prices for purchases.
+                </p>
+                <div class="actions">
+                  <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-open-checkout>Get the Kit</a>
+                </div>
+                <p class="note">Limited offer: First 20 buyers get 1-1 AI support included at no extra cost.</p>
               </div>
-              <p class="sale-note"><strong>50% launch sale:</strong> <span class="old-price">£19</span> <span class="new-price">£9.50</span></p>
-              <p class="note">Instant download. 60-day guarantee.</p>
             </div>
+            <div class="hero-visual" aria-hidden="true"></div>
           </div>
-          <div class="hero-visual" aria-hidden="true"></div>
         </div>
       </section>
 
-      <section class="story" id="get-guide" aria-label="Why AI still feels confusing">
+      <section class="story" id="reviews" aria-label="Why AI still feels confusing">
         <div class="story-inner">
           <h2 class="story-heading">The problem isn&rsquo;t you. It&rsquo;s how AI gets explained.</h2>
           <p class="story-subhead">
