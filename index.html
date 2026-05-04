@@ -81,6 +81,7 @@
       .outcome-heading,
       .value-heading,
       .trust-heading,
+      .testimonials-heading,
       .guarantee-heading,
       .final-cta h2 {
         color: var(--navy);
@@ -891,6 +892,8 @@
 
       .outcome { background: var(--cream-card); }
 
+      .testimonials { background: var(--cream); }
+
       .outcome-inner,
       .value-inner,
       .trust-inner {
@@ -899,9 +902,16 @@
         padding: 76px 32px 92px;
       }
 
+      .testimonials-inner {
+        width: min(100%, 920px);
+        margin: 0 auto;
+        padding: 78px 32px 92px;
+      }
+
       .outcome-heading,
       .value-heading,
-      .trust-heading {
+      .trust-heading,
+      .testimonials-heading {
         margin: 0;
         color: var(--navy);
         font-family: Georgia, "Times New Roman", serif;
@@ -913,12 +923,55 @@
 
       .outcome-subhead,
       .value-subhead,
-      .trust-subhead {
+      .trust-subhead,
+      .testimonials-subhead {
         margin: 22px 0 0;
         max-width: 58rem;
         color: var(--text);
         font-size: 1.15rem;
         line-height: 1.7;
+      }
+
+      .testimonial-list {
+        display: grid;
+        gap: 18px;
+        margin: 44px 0 0;
+      }
+
+      .testimonial-card {
+        padding: 28px;
+        border: 1px solid rgba(23, 55, 97, 0.12);
+        border-radius: 10px;
+        background: var(--cream-card);
+        box-shadow: 0 16px 34px rgba(23, 55, 97, 0.06);
+      }
+
+      .testimonial-quote {
+        margin: 0;
+        color: var(--text);
+        font-size: 1.12rem;
+        line-height: 1.65;
+      }
+
+      .testimonial-person {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-top: 24px;
+        color: var(--muted);
+        font-size: 1rem;
+      }
+
+      .testimonial-avatar {
+        display: grid;
+        width: 48px;
+        height: 48px;
+        place-items: center;
+        border-radius: 50%;
+        background: #1f578f;
+        color: #ffffff;
+        font-weight: 800;
+        letter-spacing: 0.02em;
       }
 
       .outcome-list,
@@ -1319,9 +1372,14 @@
           padding: 56px 22px 68px;
         }
 
+        .testimonials-inner {
+          padding: 58px 22px 68px;
+        }
+
         .outcome-subhead,
         .value-subhead,
-        .trust-subhead {
+        .trust-subhead,
+        .testimonials-subhead {
           font-size: 1.04rem;
           line-height: 1.65;
         }
@@ -1332,6 +1390,23 @@
           grid-template-columns: 1fr;
           gap: 14px;
           margin-top: 30px;
+        }
+
+        .testimonial-list {
+          margin-top: 36px;
+        }
+
+        .testimonial-card {
+          padding: 24px;
+        }
+
+        .testimonial-quote {
+          font-size: 1.04rem;
+        }
+
+        .testimonial-avatar {
+          width: 42px;
+          height: 42px;
         }
 
         .guarantee-inner {
@@ -1473,11 +1548,11 @@
         <div class="story-inner">
           <h2 class="story-heading">The World Is Moving Fast. You Don&rsquo;t Have to Feel Left Behind.</h2>
           <p class="story-subhead">
-            AI is changing how people work, think, and make decisions. And if it still feels confusing, that does not mean AI is too difficult for you. It means it has been explained badly: too much jargon, too many assumptions, and not enough real-life context.
+            AI is becoming part of how people work, think, make decisions, and handle everyday tasks. If it still feels confusing, that does not mean it is too difficult for you. It means most explanations have made it harder than it needs to be.
           </p>
           <div class="problem-prose">
-            <p>You can sense AI could help. You see people using it to write, plan, research, compare options, and get through everyday admin faster. But when you sit down to try it, the starting point is not clear.</p>
-            <p>You are left trying to work out what to ask, what to trust, and how to tell whether the answer is actually useful. That is the part most explanations skip. They show you features, prompts, or headlines, but they do not give you the calm foundation that makes AI feel usable in your own life.</p>
+            <p>You can sense AI could help. You see people using it to write, plan, research, compare options, and get through everyday admin faster. But when you sit down to try it yourself, the advice quickly turns into jargon, assumptions, prompts, and tool names.</p>
+            <p>So you are left trying to work out where to start, what to ask, what to trust, and how to tell whether the answer is actually useful. What is missing is not more hype. It is a calm foundation that makes AI feel usable in your own life.</p>
           </div>
           <div class="advantage-callout">
             This isn&rsquo;t about being technical. It&rsquo;s about having someone show you, clearly, how to use AI as a genuine advantage in your life.
@@ -1522,6 +1597,36 @@
           </ul>
           <div class="not-for-card">
             <strong>This isn&rsquo;t for:</strong> tech professionals or anyone looking for advanced techniques. This is for intelligent beginners who want AI explained clearly enough to use it in real life.
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials punch-section" aria-label="What readers say">
+        <div class="testimonials-inner">
+          <h2 class="testimonials-heading">What Readers Say</h2>
+          <p class="testimonials-subhead">Honest feedback from people who wanted clarity, not complexity.</p>
+          <div class="testimonial-list">
+            <article class="testimonial-card">
+              <p class="testimonial-quote">&ldquo;I finally feel like I understand what&rsquo;s happening. I went from anxious to genuinely excited about what I can do now.&rdquo;</p>
+              <div class="testimonial-person">
+                <span class="testimonial-avatar" aria-hidden="true">M</span>
+                <span>Margaret, 62</span>
+              </div>
+            </article>
+            <article class="testimonial-card">
+              <p class="testimonial-quote">&ldquo;I use it to think through decisions now. It&rsquo;s like having a smart colleague available whenever I need one.&rdquo;</p>
+              <div class="testimonial-person">
+                <span class="testimonial-avatar" aria-hidden="true">S</span>
+                <span>Susan, 48</span>
+              </div>
+            </article>
+            <article class="testimonial-card">
+              <p class="testimonial-quote">&ldquo;The calm, clear tone made all the difference. I actually feel in control of AI now instead of intimidated by it.&rdquo;</p>
+              <div class="testimonial-person">
+                <span class="testimonial-avatar" aria-hidden="true">D</span>
+                <span>David, 55</span>
+              </div>
+            </article>
           </div>
         </div>
       </section>
