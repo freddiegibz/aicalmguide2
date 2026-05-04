@@ -440,6 +440,158 @@
         font-weight: 700;
       }
 
+      .punch-section h2 {
+        max-width: 18ch;
+      }
+
+      .punch-copy {
+        margin-top: 30px;
+        max-width: 46rem;
+      }
+
+      .punch-copy p {
+        font-size: 1.22rem;
+        line-height: 1.62;
+      }
+
+      .punch-cards {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .punch-cards .clarity-card,
+      .punch-cards .value-card {
+        min-height: 190px;
+      }
+
+      .punch-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gold-bullets {
+        margin: 52px 0 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 28px;
+        max-width: 50rem;
+      }
+
+      .gold-bullets li {
+        position: relative;
+        padding-left: 48px;
+        color: var(--text);
+        font-size: 1.18rem;
+        line-height: 1.65;
+      }
+
+      .gold-bullets li::before {
+        content: "";
+        position: absolute;
+        top: 0.72em;
+        left: 0;
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        background: #d6ad22;
+      }
+
+      .advantage-callout {
+        margin: 58px 0 0;
+        max-width: 58rem;
+        padding: 34px 42px;
+        border-left: 6px solid var(--navy);
+        border-radius: 10px;
+        background: var(--cream-card);
+        box-shadow: 0 18px 42px rgba(23, 55, 97, 0.08);
+        color: var(--navy);
+        font-size: clamp(1.35rem, 2.1vw, 1.9rem);
+        line-height: 1.55;
+      }
+
+      .shift-heading {
+        margin: 58px 0 0;
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(1.85rem, 3vw, 2.6rem);
+        font-weight: 500;
+        line-height: 1.12;
+      }
+
+      .shift-grid {
+        margin-top: 24px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+        max-width: 58rem;
+      }
+
+      .shift-card {
+        padding: 26px;
+        border-radius: 10px;
+        border: 1px solid rgba(23, 55, 97, 0.12);
+        background: var(--cream-card);
+        box-shadow: 0 16px 36px rgba(23, 55, 97, 0.06);
+      }
+
+      .shift-card strong {
+        display: block;
+        margin-bottom: 14px;
+        color: var(--navy);
+        font-size: 1.08rem;
+      }
+
+      .shift-card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 1.06rem;
+        line-height: 1.65;
+      }
+
+      .fit-list {
+        margin: 46px 0 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 28px;
+        max-width: 58rem;
+      }
+
+      .fit-list li {
+        position: relative;
+        padding-left: 48px;
+        color: var(--text);
+        font-size: 1.2rem;
+        line-height: 1.62;
+      }
+
+      .fit-list li::before {
+        content: "→";
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: var(--navy);
+        font-size: 1.35rem;
+        font-weight: 800;
+        line-height: 1.45;
+      }
+
+      .not-for-card {
+        margin-top: 58px;
+        max-width: 58rem;
+        padding: 28px 34px;
+        border-radius: 10px;
+        border: 1px solid rgba(23, 55, 97, 0.12);
+        background: var(--cream-card);
+        box-shadow: 0 16px 36px rgba(23, 55, 97, 0.06);
+        color: var(--muted);
+        font-size: 1.08rem;
+        line-height: 1.68;
+      }
+
+      .not-for-card strong {
+        color: var(--navy);
+      }
+
       .story { background: var(--cream-card); }
 
       .story-inner {
@@ -778,6 +930,27 @@
         line-height: 1.55;
       }
 
+      .outcome-list li {
+        position: relative;
+        padding-left: 70px;
+      }
+
+      .outcome-list li::before {
+        content: "✓";
+        position: absolute;
+        top: 24px;
+        left: 24px;
+        width: 28px;
+        height: 28px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: #329766;
+        color: #ffffff;
+        font-weight: 800;
+        line-height: 1;
+      }
+
       .outcome-list strong,
       .trust-list strong {
         display: block;
@@ -1023,6 +1196,60 @@
           margin: 28px 0 32px;
         }
 
+        .punch-cards,
+        .punch-list {
+          grid-template-columns: 1fr;
+        }
+
+        .punch-copy p {
+          font-size: 1.08rem;
+          line-height: 1.58;
+        }
+
+        .gold-bullets {
+          margin-top: 42px;
+          gap: 24px;
+        }
+
+        .gold-bullets li {
+          padding-left: 42px;
+          font-size: 1.04rem;
+          line-height: 1.7;
+        }
+
+        .advantage-callout {
+          margin-top: 44px;
+          padding: 28px 26px;
+          font-size: 1.32rem;
+          line-height: 1.55;
+        }
+
+        .shift-heading {
+          margin-top: 46px;
+        }
+
+        .shift-grid {
+          grid-template-columns: 1fr;
+          gap: 14px;
+        }
+
+        .fit-list {
+          margin-top: 38px;
+          gap: 24px;
+        }
+
+        .fit-list li {
+          padding-left: 42px;
+          font-size: 1.04rem;
+          line-height: 1.7;
+        }
+
+        .not-for-card {
+          margin-top: 42px;
+          padding: 22px;
+          font-size: 1rem;
+        }
+
         .clarity-card {
           min-height: auto;
         }
@@ -1211,7 +1438,7 @@
                 <div class="hero-badge">For Beginners, Written Plainly</div>
                 <h1>Finally Understand How to Use AI, Without Feeling Lost or Left Behind</h1>
                 <p class="lead">
-                  A calm, practical kit that shows you exactly where to start with AI, how to get genuinely useful answers, and how to use it for everyday tasks like summarising long articles, organising family schedules, and comparing prices for purchases.
+                  A calm, practical kit that shows you exactly where to start with AI, how to get genuinely useful answers, and how to judge when something online is useful, misleading, real, or fake.
                 </p>
                 <div class="actions">
                   <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-open-checkout>Get the Kit</a>
@@ -1224,240 +1451,103 @@
         </div>
       </section>
 
-      <section class="story" id="reviews" aria-label="Why AI still feels confusing">
+      <section class="story punch-section" id="reviews" aria-label="The world is moving fast">
         <div class="story-inner">
-          <h2 class="story-heading">The problem isn&rsquo;t you. It&rsquo;s how AI gets explained.</h2>
+          <h2 class="story-heading">The World Is Moving Fast. You Don&rsquo;t Have to Feel Left Behind.</h2>
           <p class="story-subhead">
-            If AI keeps coming up and you still feel like you&rsquo;re missing something, that does not mean you&rsquo;re bad with tech. It means AI has been explained badly.
+            AI is changing how people work, think, and make decisions. But most explanations assume you already know things you don&rsquo;t:
           </p>
-
-          <div class="story-copy">
-            <p>AI seems to be everywhere now: in articles, emails, search results, videos, apps, and everyday conversations. People talk about it like it is obvious, while new tools keep appearing faster than most people can make sense of them.</p>
-            <p class="quote">&ldquo;I know this matters... so why does it still feel so confusing?&rdquo;</p>
-            <p>You try to look into it, but the explanations are full of technical language. Some make AI sound magical. Others make it sound dangerous. Most assume you already know more than you do, so you end up feeling further behind instead of clearer.</p>
-            <p>But that is not the real problem. Most people are not confused because AI is too advanced for them. They are confused because the explanations are full of jargon, hype, and noise, with not enough plain English or real-life context.</p>
-            <p>That is what AI Without The Tech Nonsense is here to fix. It gives you a simple, practical understanding of what AI is, where it shows up, how to use it for real everyday situations, what not to trust, and what you actually need to know.</p>
-            <p>Not everything. Just what matters.</p>
+          <ul class="gold-bullets">
+            <li>You sense AI could help, but you&rsquo;re not sure how to make it actually useful</li>
+            <li>You&rsquo;ve tried it, but the answers felt shallow or unreliable</li>
+            <li>You watch others use it confidently while you&rsquo;re still figuring out where to start</li>
+          </ul>
+          <div class="advantage-callout">
+            This isn&rsquo;t about being technical. It&rsquo;s about having someone show you, clearly, how to use AI as a genuine advantage in your life.
+          </div>
+          <h3 class="shift-heading">The shift readers describe</h3>
+          <div class="shift-grid">
+            <article class="shift-card">
+              <strong>Before</strong>
+              <p>I felt like AI was something other people understood. I didn&rsquo;t know where I fit in.</p>
+            </article>
+            <article class="shift-card">
+              <strong>After</strong>
+              <p>I use AI to think through problems, make better decisions, and get things done I couldn&rsquo;t before.</p>
+            </article>
           </div>
         </div>
       </section>
 
-      <section class="now" aria-label="Why understanding AI matters now">
-        <div class="now-inner">
-          <h2 class="now-heading">Why this matters more now</h2>
-          <p class="now-subhead">
-            AI is no longer something you can ignore and deal with later.
-          </p>
-
-          <div class="now-grid">
-            <div class="now-copy">
-              <p>It is already part of everyday life - in search, email, social media, customer service chats, online forms, and the tools people use every day.</p>
-              <p>That means not understanding it now does not just feel inconvenient.</p>
-              <p>It feels like falling behind.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="clarity" aria-label="What makes this guide easier to understand">
-        <div class="clarity-inner">
-          <h2 class="clarity-heading">What makes this easier to understand than everything else you&rsquo;ve seen</h2>
-          <p class="clarity-subhead">
-            Most AI advice throws too much at you: tools, terms, warnings, predictions, and opinions. This guide keeps the focus on what you actually need to understand.
-          </p>
-
-          <div class="clarity-copy">
-            <p>Instead of sending you through random videos, scattered articles, and tools you are not sure how to use, it gives you a simple path through the basics.</p>
-            <p>No technical detail for the sake of it. No pressure to keep up with every new app. Just plain-English clarity on the parts that matter:</p>
-          </div>
-
-          <div class="clarity-cards">
-            <article class="clarity-card">
-              <svg viewBox="0 0 30 30" aria-hidden="true">
-                <circle cx="15" cy="15" r="14" fill="currentColor" />
-                <path d="M9 15.3 13.1 19.4 21.3 10.7" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-              <h3>what AI actually is</h3>
-              <p>so it stops feeling vague and overcomplicated</p>
-            </article>
-            <article class="clarity-card">
-              <svg viewBox="0 0 30 30" aria-hidden="true">
-                <circle cx="15" cy="15" r="14" fill="currentColor" />
-                <path d="M9 15.3 13.1 19.4 21.3 10.7" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-              <h3>where it shows up in everyday life</h3>
-              <p>so you can recognise it when you see it</p>
-            </article>
-            <article class="clarity-card">
-              <svg viewBox="0 0 30 30" aria-hidden="true">
-                <circle cx="15" cy="15" r="14" fill="currentColor" />
-                <path d="M9 15.3 13.1 19.4 21.3 10.7" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-              <h3>what it can genuinely help with</h3>
-              <p>so you know where it can actually save time on small, annoying tasks you deal with regularly</p>
-            </article>
-            <article class="clarity-card">
-              <svg viewBox="0 0 30 30" aria-hidden="true">
-                <circle cx="15" cy="15" r="14" fill="currentColor" />
-                <path d="M9 15.3 13.1 19.4 21.3 10.7" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-              <h3>what not to trust</h3>
-              <p>so you can be more confident and careful at the same time</p>
-            </article>
-            <article class="clarity-card">
-              <svg viewBox="0 0 30 30" aria-hidden="true">
-                <circle cx="15" cy="15" r="14" fill="currentColor" />
-                <path d="M9 15.3 13.1 19.4 21.3 10.7" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-              <h3>what matters enough to pay attention to</h3>
-              <p>so you do not waste time trying to keep up with everything</p>
-            </article>
-          </div>
-
-          <div class="clarity-copy">
-            <p>That is the value of this guide.</p>
-            <p>Not more information. Better understanding.</p>
-            <p>Not more tools. More clarity.</p>
-            <p>Not trying to turn you into an expert. Helping you feel like you finally know what is going on.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="inside" aria-label="What's inside the guide">
-        <div class="inside-inner">
-          <h2 class="inside-heading">What&rsquo;s inside the guide</h2>
-          <p class="inside-subhead">
-            A simple, plain-English walkthrough of the parts of AI that actually matter in everyday life - without trying to teach you everything at once.
-          </p>
-          <p class="inside-intro">
-            This guide is designed to help you stop feeling lost and start understanding AI in a way that feels practical, calm, and manageable.
-          </p>
-          <p class="inside-intro">Inside, you&rsquo;ll learn:</p>
-
-          <ol class="inside-list">
-            <li class="inside-item">
-              <span class="inside-number">1</span>
-              <div>
-                <h3>What AI actually is</h3>
-                <p>A clear explanation of what people mean when they say &ldquo;AI,&rdquo; so it stops feeling like a vague buzzword.</p>
-              </div>
-            </li>
-            <li class="inside-item">
-              <span class="inside-number">2</span>
-              <div>
-                <h3>Where AI shows up in everyday life</h3>
-                <p>From search and email to social media, customer service chats, photos, online forms, and everyday content - so you can recognise it when you see it.</p>
-              </div>
-            </li>
-            <li class="inside-item">
-              <span class="inside-number">3</span>
-              <div>
-                <h3>What AI is useful for</h3>
-                <p>The everyday situations where it can actually help - like writing emails, summarising long letters or webpages, comparing options, making confusing things easier to understand, and getting quicker help with everyday tasks.</p>
-              </div>
-            </li>
-            <li class="inside-item">
-              <span class="inside-number">4</span>
-              <div>
-                <h3>What not to trust it for</h3>
-                <p>The situations where AI can mislead, get things wrong, or sound more confident than it should.</p>
-              </div>
-            </li>
-            <li class="inside-item">
-              <span class="inside-number">5</span>
-              <div>
-                <h3>What to pay attention to - and what to ignore</h3>
-                <p>So you do not feel like you have to keep up with every new tool, app, or headline.</p>
-              </div>
-            </li>
-            <li class="inside-item">
-              <span class="inside-number">6</span>
-              <div>
-                <h3>How to use it more confidently in real life</h3>
-                <p>Without needing technical knowledge, complicated setups, or a huge time investment - whether you are replying to an email, comparing choices, filling in an online form, or trying to understand something faster.</p>
-              </div>
-            </li>
-          </ol>
-        </div>
-      </section>
-
-      <section class="outcome" aria-label="What changes after reading the guide">
+      <section class="outcome punch-section" aria-label="What you'll gain">
         <div class="outcome-inner">
-          <h2 class="outcome-heading">What changes after you read it</h2>
+          <h2 class="outcome-heading">What You&rsquo;ll Gain</h2>
           <p class="outcome-subhead">
-            The goal is not to turn you into an AI expert. The goal is to help you stop guessing and start recognising when AI is useful, when to question it, and how to use it more confidently in normal life.
+            This short kit gives you real clarity and control. No jargon. No assumptions. Just practical understanding you can use immediately.
           </p>
-
-          <ul class="outcome-list">
-            <li><strong>You can explain AI simply</strong>You understand the basics without needing technical language or memorised definitions.</li>
-            <li><strong>You know what deserves a second look</strong>You can spot when an answer, image, email, or claim needs checking before you trust it.</li>
-            <li><strong>You know how to use it in everyday situations</strong>You can use tools like ChatGPT for writing emails, summarising long letters or webpages, comparing options, and making confusing things easier to understand without feeling lost or reckless.</li>
+          <ul class="outcome-list punch-list">
+            <li><strong>A thinking partner for decisions</strong>Use AI to work through options, weigh up choices, and see angles you might miss on your own.</li>
+            <li><strong>A way through information overload</strong>Cut long articles, emails, pages, and explanations down to what actually matters.</li>
+            <li><strong>More confidence with everyday admin</strong>Get help drafting replies, organising details, comparing prices, and making confusing tasks easier to start.</li>
+            <li><strong>Clearer judgement about trust</strong>Know when an answer needs checking, when a claim feels suspect, and when AI is the wrong tool.</li>
           </ul>
         </div>
       </section>
 
-      <section class="value" aria-label="Why the guide is worth paying for">
-        <div class="value-inner">
-          <h2 class="value-heading">Why this is worth paying for</h2>
-          <p class="value-subhead">
-            Free content is everywhere. That is part of the problem. Most of it gives you fragments, opinions, and tool demos instead of a clear mental model.
-          </p>
-
-          <div class="value-grid">
-            <article class="value-card">
-              <h3>It saves you from piecing it together</h3>
-              <p>No jumping between videos, articles, and random tutorials hoping the next one finally makes it click.</p>
-            </article>
-            <article class="value-card">
-              <h3>It filters out what does not matter</h3>
-              <p>You do not need every tool, trend, or headline. You need the parts that help you understand, judge, and use AI for the everyday tasks that actually come up.</p>
-            </article>
-            <article class="value-card">
-              <h3>It gives structure, not more noise</h3>
-              <p>The value is not more information. It is having the right information in the right order, explained plainly.</p>
-            </article>
+      <section class="clarity punch-section" aria-label="Who this is for">
+        <div class="clarity-inner">
+          <h2 class="clarity-heading">Who This Is For</h2>
+          <ul class="fit-list">
+            <li>You want more leverage over your time, work, and decisions</li>
+            <li>You&rsquo;d rather understand something deeply than just follow steps blindly</li>
+            <li>You&rsquo;re ready to stop watching from the sidelines and start using AI with intention</li>
+            <li>You want to feel confident about where the world is heading, not anxious about being left behind</li>
+          </ul>
+          <div class="not-for-card">
+            <strong>This isn&rsquo;t for:</strong> tech professionals or anyone looking for advanced techniques. This is for intelligent beginners who want AI explained clearly enough to use it in real life.
           </div>
         </div>
       </section>
 
-      <section class="trust" aria-label="Beginner-friendly reassurance">
+      <section class="inside punch-section" aria-label="Why free AI advice does not fix it">
+        <div class="inside-inner">
+          <h2 class="inside-heading">Why Free Advice Does Not Fix It</h2>
+          <p class="inside-subhead">
+            There is no shortage of free AI advice. That is part of the problem.
+          </p>
+          <div class="value-grid punch-cards">
+            <article class="value-card"><h3>YouTube tutorials assume too much</h3><p>They move quickly, use terms you have not been taught, and make you feel like you arrived halfway through.</p></article>
+            <article class="value-card"><h3>Tech articles bury you in jargon</h3><p>You set out to understand AI and end up reading definitions that make it feel even further away.</p></article>
+            <article class="value-card"><h3>Random ChatGPT tips skip the foundation</h3><p>They tell you what to type, but not what is happening, when to trust it, or why it goes wrong.</p></article>
+            <article class="value-card"><h3>Trying it yourself still leaves doubt</h3><p>The tool was supposed to save time, but you end up checking everything afterwards anyway.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="trust punch-section" aria-label="What you will finally understand">
         <div class="trust-inner">
-          <h2 class="trust-heading">Built for beginners, without treating you like one</h2>
+          <h2 class="trust-heading">What You Will Finally Understand</h2>
           <p class="trust-subhead">
-            This is for capable adults who want clear explanations, practical examples, and sensible boundaries. No jargon. No hype. No patronising tech talk. Just help using AI more confidently for real everyday needs that keep coming up.
+            The goal is not to turn you into an AI expert. It is to give you enough understanding to stop feeling exposed every time AI comes up.
           </p>
-
-          <ul class="trust-list">
-            <li><strong>No tech background needed</strong>The guide starts from plain English and real-life examples, not assumptions about what you already know.</li>
-            <li><strong>No pressure to use AI blindly</strong>You learn where it helps, where it fails, and what to double-check before relying on it.</li>
-            <li><strong>No personal-data guesswork</strong>You get a clearer sense of what not to paste into tools, from addresses and bank details to private family information.</li>
+          <ul class="trust-list punch-list">
+            <li><strong>What AI actually is</strong>In plain English, without technical detours or clever-sounding waffle.</li>
+            <li><strong>When AI is useful</strong>So you know where it can genuinely save time in normal life.</li>
+            <li><strong>When AI cannot be trusted</strong>So a confident answer does not make the decision for you.</li>
+            <li><strong>What never to type into it</strong>So addresses, bank details, and private family information stay protected.</li>
+            <li><strong>How to spot misleading AI content</strong>So you are not left assuming everything is real or everything is fake.</li>
+            <li><strong>How to use tools like ChatGPT</strong>Without blindly believing them or feeling silly when the answer is weak.</li>
           </ul>
         </div>
       </section>
 
-      <section class="guarantee" aria-label="60-day money-back guarantee">
-        <div class="guarantee-inner">
-          <svg class="guarantee-icon" viewBox="0 0 74 74" aria-hidden="true">
-            <path d="M37 5 61 15v17.4c0 16.5-9.9 28.9-24 36.1-14.1-7.2-24-19.6-24-36.1V15L37 5Z" fill="currentColor" opacity="0.14" />
-            <path d="M37 5 61 15v17.4c0 16.5-9.9 28.9-24 36.1-14.1-7.2-24-19.6-24-36.1V15L37 5Z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" />
-            <path d="M25.5 36.8 33.5 44.7 49 28.2" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-
-          <h2 class="guarantee-heading">Try it for 60 days, risk-free</h2>
-          <div class="guarantee-copy">
-            <p>If you go through the guide and feel it did not help you understand AI more clearly, just let us know within 60 days and we&rsquo;ll refund you in full.</p>
-            <p>That way, you can get the guide, read it at your own pace, and see if it gives you the clarity and confidence you were looking for - without the risk of wasting your money.</p>
-          </div>
-          <p class="guarantee-line">60-day money-back guarantee. No hassle.</p>
-        </div>
-      </section>
-
-      <section class="final-cta" aria-label="Get the guide">
+      <section class="final-cta" aria-label="Get instant access">
         <div class="final-cta-inner">
-          <h2>Ready to finally make sense of AI?</h2>
-          <p>Get the guide and start understanding what matters, what to ignore, and how to use AI more confidently for writing emails, summarising long letters or webpages, comparing options, and everyday tasks without the tech nonsense.</p>
+          <h2>Get Instant Access</h2>
+          <p>AI is already here, and it is not getting easier to judge by guessing. For less than the cost of another wasted subscription, you can finally understand what it is, what to trust, what to avoid, and how to use it safely in everyday life.</p>
           <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-open-checkout>Get the guide for £9.50</a>
           <p class="sale-note"><strong>50% launch sale:</strong> <span class="old-price">£19</span> <span class="new-price">£9.50</span></p>
+          <p class="checkout-note">Instant download. 60-day money-back guarantee.</p>
         </div>
       </section>
 
