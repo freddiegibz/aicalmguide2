@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Without The Tech Nonsense</title>
+    <style>
+      :root {
+        --ink: #1f2c3a;
+        --muted: #5d6876;
+        --line: #d7dedc;
+        --soft: #f4f7f5;
+        --paper: #ffffff;
+        --accent: #2d6754;
+        --accent-soft: #e0eee7;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #eef2ef;
+        color: var(--ink);
+        font-family: "Aptos", "Segoe UI", sans-serif;
+        line-height: 1.7;
+      }
+
+      main {
+        width: min(100%, 980px);
+        margin: 0 auto;
+        padding: 36px 18px 72px;
+      }
+
+      article {
+        background: var(--paper);
+        border: 1px solid var(--line);
+        box-shadow: 0 18px 48px rgba(31, 44, 58, 0.08);
+      }
+
+      .cover {
+        padding: 72px 72px 58px;
+        background: linear-gradient(180deg, rgba(224, 238, 231, 0.7) 0%, rgba(255, 255, 255, 0) 38%), var(--paper);
+      }
+
+      .eyebrow {
+        margin: 0 0 18px;
+        color: var(--accent);
+        font-size: 0.92rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 500;
+        color: #173247;
+      }
+
+      h1 {
+        max-width: 12ch;
+        font-size: 4.4rem;
+        line-height: 0.98;
+      }
+
+      .subtitle {
+        max-width: 36rem;
+        margin: 24px 0 0;
+        font-size: 1.24rem;
+        color: var(--muted);
+      }
+
+      .lead-note {
+        max-width: 42rem;
+        margin: 26px 0 0;
+        font-size: 1.02rem;
+        color: var(--ink);
+      }
+
+      .section {
+        padding: 58px 72px;
+        border-top: 1px solid var(--line);
+      }
+
+      .section h2 {
+        font-size: 2.05rem;
+        line-height: 1.08;
+      }
+
+      .intro {
+        max-width: 44rem;
+        margin: 18px 0 0;
+        color: var(--muted);
+        font-size: 1.08rem;
+      }
+
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 28px;
+      }
+
+      .card {
+        padding: 22px;
+        border: 1px solid var(--line);
+        background: #fbfcfb;
+      }
+
+      .card h3 {
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+      }
+
+      .card p {
+        margin: 0;
+      }
+
+      .toc {
+        margin: 28px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .toc li {
+        margin: 0 0 12px;
+        padding: 14px 16px;
+        border: 1px solid var(--line);
+        background: var(--soft);
+      }
+
+      .toc strong {
+        display: block;
+        color: #173247;
+        margin-bottom: 4px;
+      }
+
+      .toc span {
+        color: var(--muted);
+      }
+
+      .soft-block {
+        margin-top: 28px;
+        padding: 22px 24px;
+        border-left: 5px solid var(--accent);
+        background: var(--accent-soft);
+      }
+
+      p {
+        margin: 0 0 16px;
+      }
+
+      @media (max-width: 760px) {
+        main {
+          padding: 0;
+        }
+
+        .cover,
+        .section {
+          padding: 42px 22px;
+        }
+
+        h1 {
+          font-size: 2.95rem;
+          max-width: none;
+        }
+
+        .subtitle {
+          font-size: 1.08rem;
+        }
+
+        .section h2 {
+          font-size: 1.8rem;
+        }
+
+        .card-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <article>
+        <section class="cover">
+          <p class="eyebrow">Plain English AI Guide</p>
+          <h1>AI Without The Tech Nonsense</h1>
+          <p class="subtitle">A calm, practical guide for adults who want to understand AI, use it sensibly, and stop feeling behind.</p>
+          <p class="lead-note">
+            This is for people who want a real starting point. Not jargon. Not hype. Just clear explanations, useful examples, and simple ways to get value from AI without handing over their judgement.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Introduction</h2>
+          <p class="intro">
+            AI is everywhere now, but that does not mean it has been explained well.
+          </p>
+          <p>
+            If you have felt unsure where to start, worried about trusting the wrong thing, or tired of being talked over by jargon, this guide is for you. You do not need to be technical. You do not need to understand everything. You only need a clear place to begin.
+          </p>
+          <p>
+            The aim is simple: help you choose the right tool, get one quick win, use AI for ordinary tasks, and know when to trust it and when to slow down.
+          </p>
+
+          <div class="card-grid">
+            <div class="card">
+              <h3>What this guide will help you do</h3>
+              <p>
+                You will learn how to start with AI, how to get useful answers, how to use it for everyday tasks, and how to spot the moments when it should not be trusted.
+              </p>
+            </div>
+            <div class="card">
+              <h3>What you will not need</h3>
+              <p>
+                You will not need tech knowledge, special software skills, or confidence with jargon. You will not need to understand how AI is built in order to use it well.
+              </p>
+            </div>
+          </div>
+
+          <div class="soft-block">
+            <p>
+              By the end of this guide, the goal is not to turn you into an expert. The goal is to help you feel calmer, clearer, and capable enough to use AI without feeling lost or silly.
+            </p>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>Table of Contents</h2>
+          <p class="intro">
+            Use this to jump to the part you want first. You do not have to read it in order.
+          </p>
+
+          <ul class="toc">
+            <li><strong>1. What Should I Use First?</strong><span>Which AI tool to start with, and why ChatGPT is the easiest place to begin.</span></li>
+            <li><strong>2. Your First Quick Win</strong><span>A simple first task that makes the value obvious straight away.</span></li>
+            <li><strong>3. What AI Actually Is</strong><span>Plain-English explanation without the technical nonsense.</span></li>
+            <li><strong>4. Where You’re Already Seeing AI</strong><span>How AI is already showing up in everyday life.</span></li>
+            <li><strong>5. Why AI Feels So Confusing</strong><span>Why this feels harder than it should, and why that is not your fault.</span></li>
+            <li><strong>6. How To Get Useful Answers</strong><span>How to ask for better results without needing prompt tricks.</span></li>
+            <li><strong>7. Everyday Ways To Use AI</strong><span>Simple uses that save time and reduce friction.</span></li>
+            <li><strong>8. When AI Is Useful vs When It’s Not</strong><span>Clear boundaries so you know what AI is good for.</span></li>
+            <li><strong>9. When NOT To Trust AI</strong><span>The moments when a confident answer still needs checking.</span></li>
+            <li><strong>10. What You Should Never Type Into AI</strong><span>What to keep private and out of the tool completely.</span></li>
+            <li><strong>11. How To Check AI Answers</strong><span>A simple way to check what AI gives you before you act on it.</span></li>
+            <li><strong>12. How To Spot AI-Made or Fake Content</strong><span>Simple signs that help you pause before believing or sharing.</span></li>
+            <li><strong>13. Quick Reference</strong><span>A short reminder section for trust, safety, and starter prompts.</span></li>
+            <li><strong>14. Closing Note</strong><span>A calm finish that helps the reader feel settled, not overwhelmed.</span></li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>1. What Should I Use First?</h2>
+          <p class="intro">
+            The first question is usually not, “How does AI work?” It is, “Which one should I use, and how do I begin without wasting time or feeling stupid?”
+          </p>
+
+          <p>
+            If you are new, start with ChatGPT. That is the simplest place to learn the rhythm of using AI because it is built for asking questions, getting plain answers, and trying ordinary tasks like rewriting a message, summarising text, or helping you think through a small decision.
+          </p>
+
+          <p>
+            Once you understand one tool, the others make more sense. They are not separate worlds. They are different versions of the same basic idea, each with a slightly different strength. You do not need all of them on day one.
+          </p>
+
+          <div class="card-grid">
+            <div class="card">
+              <h3>Why ChatGPT is the easiest place to begin</h3>
+              <p>
+                It feels the least intimidating for most beginners. You can type in a question, paste in a rough message, ask for a shorter version, or ask for help thinking something through. It is a good place to learn without pressure.
+              </p>
+            </div>
+            <div class="card">
+              <h3>What ChatGPT is best for</h3>
+              <p>
+                Writing, rewriting, summarising, planning, comparing simple options, and turning messy thoughts into something clearer.
+              </p>
+            </div>
+            <div class="card">
+              <h3>What ChatGPT is not best for</h3>
+              <p>
+                Private details, high-stakes decisions, anything that needs checking with a real source, or anything you would normally ask a professional about.
+              </p>
+            </div>
+            <div class="card">
+              <h3>What the other tools are good at</h3>
+              <p>
+                Claude is often liked for long documents and careful reading. Gemini fits neatly into Google tools. Grok feels quicker and more conversational. Perplexity is useful when you want answers with links you can check.
+              </p>
+            </div>
+          </div>
+
+          <div class="soft-block">
+            <h3>How to download them</h3>
+            <p>
+              Start with the official app or website for each tool. Search carefully and choose the official result.
+            </p>
+            <p>
+              Here are the official places to begin:
+            </p>
+            <ul class="toc">
+              <li><strong>ChatGPT</strong><span><a href="https://chatgpt.com" target="_blank" rel="noopener">https://chatgpt.com</a></span></li>
+              <li><strong>Claude</strong><span><a href="https://claude.ai" target="_blank" rel="noopener">https://claude.ai</a></span></li>
+              <li><strong>Gemini</strong><span><a href="https://gemini.google.com" target="_blank" rel="noopener">https://gemini.google.com</a></span></li>
+              <li><strong>Grok</strong><span><a href="https://grok.com" target="_blank" rel="noopener">https://grok.com</a></span></li>
+              <li><strong>Perplexity</strong><span><a href="https://www.perplexity.ai" target="_blank" rel="noopener">https://www.perplexity.ai</a></span></li>
+            </ul>
+            <p>
+              If you only want one place to begin, start with ChatGPT. Learn the basics there first. Once that feels normal, the other tools will make much more sense.
+            </p>
+          </div>
+
+          <div class="card-grid">
+            <div class="card">
+              <h3>If you want the gentlest start</h3>
+              <p>
+                Use ChatGPT first. It is the cleanest way to practise asking and improving answers.
+              </p>
+            </div>
+            <div class="card">
+              <h3>If you want sources and links</h3>
+              <p>
+                Try Perplexity later, once you are comfortable checking what AI gives you.
+              </p>
+            </div>
+            <div class="card">
+              <h3>If you already live in Google tools</h3>
+              <p>
+                Gemini may feel convenient because it sits closer to the tools you already use.
+              </p>
+            </div>
+            <div class="card">
+              <h3>If you work with long text</h3>
+              <p>
+                Claude can be a good later choice for reading, long writing, and careful editing.
+              </p>
+            </div>
+          </div>
+
+          <div class="soft-block">
+            <p>
+              The main point is not to choose the “best” AI. The point is to choose one that lets you start without friction, then build confidence from there.
+            </p>
+          </div>
+        </section>
+
+                <section class="section">
+          <h2>2. Your First Quick Win</h2>
+          <p class="intro">
+            The fastest way to feel the value of AI is to use it on something small, ordinary, and useful. The goal is not to impress you. The goal is to make you think, "Right, I can actually use this."
+          </p>
+
+          <p>
+            A very good first win is turning a messy message into something clear, polite, and easy to send. It is simple, it gives an obvious result, and it teaches you how to use AI without putting anything serious at risk.
+          </p>
+
+          <div class="card-grid">
+            <div class="card">
+              <h3>How to use this section</h3>
+              <p>
+                Open ChatGPT. Click into the text box where you would normally type. Paste one of the prompts below. If there is space for your own message, paste that in too. Then press send or enter.
+              </p>
+            </div>
+            <div class="card">
+              <h3>What to expect</h3>
+              <p>
+                You are looking for a better draft, not a perfect final answer. Read it once, then ask again if you want it shorter, warmer, simpler, or more like your own voice.
+              </p>
+            </div>
+          </div>
+
+          <div class="soft-block">
+            <h3>Before you begin</h3>
+            <p>
+              Do not paste private details yet. Keep this practice simple. You are learning the shape of the tool first.
+            </p>
+          </div>
+
+          <div class="card-grid">
+            <div class="card">
+              <h3>Prompt 1: make a message clearer</h3>
+              <div class="soft-block">
+                <p><strong>Copy this prompt:</strong></p>
+                <p>
+                  Text to rewrite: [paste your message here]<br />
+                  Instruction: Rewrite this so it sounds clear and polite.
+                </p>
+              </div>
+              <div class="soft-block">
+                <p><strong>Worked example:</strong></p>
+                <p>
+                  Text to rewrite: "I need the report tomorrow morning. If it is late again, this will be a problem."<br />
+                  Instruction: Rewrite this so it sounds clear and polite.
+                </p>
+              </div>
+              <div class="soft-block">
+                <p><strong>What a good reply might look like:</strong></p>
+                <p>
+                  "Could you please send the report by tomorrow morning? It is important that it arrives on time, as we need it for the next step."
+                </p>
+              </div>
+              <p>
+                This is the easiest first task because the result is obvious. You will immediately see whether the answer is better than your first draft.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>Prompt 2: shorten something long</h3>
+              <div class="soft-block">
+                <p><strong>Copy this prompt:</strong></p>
+                <p>
+                  Text to summarise: [paste the message, article, or email here]<br />
+                  Instruction: Summarise this into three bullet points and tell me if there is anything I need to do next.
+                </p>
+              </div>
+              <div class="soft-block">
+                <p><strong>Worked example:</strong></p>
+                <p>
+                  Text to summarise: "Your appointment has moved from Tuesday to Thursday. Please bring your ID and arrive ten minutes early."<br />
+                  Instruction: Summarise this into three bullet points and tell me if there is anything I need to do next.
+                </p>
+              </div>
+              <div class="soft-block">
+                <p><strong>What a good reply might look like:</strong></p>
+                <p>
+                  "- Your appointment is now on Thursday.<br />
+                  - Bring your ID.<br />
+                  - Arrive ten minutes early."
+                </p>
+              </div>
+              <p>
+                This is useful when something feels too long, too wordy, or too tiring to read properly.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>Prompt 3: compare two choices</h3>
+              <div class="soft-block">
+                <p><strong>Copy this prompt:</strong></p>
+                <p>
+                  Option 1: [paste option one here]<br />
+                  Option 2: [paste option two here]<br />
+                  Instruction: Compare these two options in plain English and tell me which one is better value for ordinary use.
+                </p>
+              </div>
+              <div class="soft-block">
+                <p><strong>Worked example:</strong></p>
+                <p>
+                  Option 1: "�9.99 a month, includes basic support"<br />
+                  Option 2: "�12.99 a month, includes faster support and more features"<br />
+                  Instruction: Compare these two options in plain English and tell me which one is better value for ordinary use.
+                </p>
+              </div>
+              <div class="soft-block">
+                <p><strong>What a good reply might look like:</strong></p>
+                <p>
+                  "Option 1 is cheaper and fine for ordinary use. Option 2 costs more, but you get quicker support and more features. If you only want the basics, Option 1 is better value."
+                </p>
+              </div>
+              <p>
+                This is useful for shopping, comparing services, or deciding between two practical choices.
+              </p>
+            </div>
+          </div>
+
+          <div class="card-grid">
+            <div class="card">
+              <h3>How to improve the answer</h3>
+              <p>
+                If the answer is too long, ask for it shorter. If it sounds too formal, ask for warmer language. If it is not clear enough, ask it to try again in simpler words.
+              </p>
+            </div>
+            <div class="card">
+              <h3>What you are learning here</h3>
+              <p>
+                You are learning the basic rhythm of using AI well: paste something in, ask clearly, read the answer, and improve it if needed.
+              </p>
+            </div>
+          </div>
+
+          <div class="soft-block">
+            <p>
+              If this one section helps you produce a better message, a shorter summary, or a clearer comparison, then the guide has already done real work for you.
+            </p>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>3. What AI Actually Is</h2>
+          <p class="intro">
+            AI can sound big and mysterious, but in everyday life it is best understood as a tool that has seen a huge amount of information and can respond very quickly when you ask it to help.
+          </p>
+
+          <p>
+            It is not magic.
+            It is not a person.
+            It is not a mind with feelings or common sense.
+            It is a system that has been trained to recognise patterns and produce useful responses when you ask it something.
+          </p>
+
+          <p>
+            A helpful way to picture it is this: AI is a very fast assistant. It can help you write, shorten, explain, organise, compare, and summarise. But it does not automatically know what is true, what matters most to you, or what you should do next. That part still belongs to you.
+          </p>
+
+          <div class="card-grid">
+            <div class="card">
+              <h3>What AI is good at</h3>
+              <p>
+                It can help you make a rough idea clearer, turn long text into something shorter, suggest wording, and give you a quick starting point when you feel stuck.
+              </p>
+            </div>
+            <div class="card">
+              <h3>What AI is not good at</h3>
+              <p>
+                It does not automatically know the truth, understand your life perfectly, or make important decisions for you. It can sound certain and still be wrong.
+              </p>
+            </div>
+            <div class="card">
+              <h3>The simplest rule</h3>
+              <p>
+                Use AI for help, not as the final authority. Let it draft, sort, summarise, or compare, then use your own judgement for the final call.
+              </p>
+            </div>
+          </div>
+
+          <div class="soft-block">
+            <h3>The key lesson</h3>
+            <p>
+              AI is best understood as a fast-thinking, pattern-spotting tool that can make ordinary things easier. It can save time, reduce effort, and help you get started, but it should not replace your judgement.
+            </p>
+            <p>
+              Once you understand that, AI becomes much less mysterious. You stop expecting too much from it, and you also stop underusing it.
+            </p>
+          </div>
+
+          <div class="card-grid">
+            <div class="card">
+              <h3>Use it when you want</h3>
+              <p>
+                A clearer version of something, a shorter version, help getting started, help thinking through a choice, or help making something easier to read.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Check it when the stakes are high</h3>
+              <p>
+                If something matters a lot, confirm it somewhere reliable before you act on it. AI can help you think, but it should not be the final authority.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>4. Where You&apos;re Already Seeing AI, and Why It Feels So Confusing</h2>
+          <p class="intro">
+            AI is already showing up in the places you use every day, which is one reason it can feel confusing before you have even chosen to learn about it.
+          </p>
+
+          <p>
+            It may be in your phone, your search results, your email, your photo tools, your maps, the messages you receive, or the content people send you online. So this is not some distant subject for technical people. It is already part of ordinary life.
+          </p>
+
+          <p>
+            That is also why many people feel behind. AI did not arrive with a neat lesson first. It slipped into familiar tools, and only afterwards did people start acting as though everyone should already understand it. If that has made you uneasy, that is normal.
+          </p>
+
+          <div class="card-grid">
+            <div class="card">
+              <h3>Where you may already notice it</h3>
+              <p>
+                A phone that suggests words, a search page that gives a summary, an app that helps write a reply, or an image online that looks a bit too polished or strange.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Why it can feel disorienting</h3>
+              <p>
+                Because AI is not waiting in one obvious place. It is spread across tools, websites, and messages, so you often run into it before anyone has explained it properly.
+              </p>
+            </div>
+            <div class="card">
+              <h3>What not to assume</h3>
+              <p>
+                Do not assume everyone else understands it. Do not assume you are late. Do not assume the confusion means you are not capable of learning it.
+              </p>
+            </div>
+            <div class="card">
+              <h3>The better way to think about it</h3>
+              <p>
+                AI is not a special club. It is a tool that is becoming part of normal life. Your job is not to know everything. Your job is to understand enough to use it wisely.
+              </p>
+            </div>
+          </div>
+
+          <div class="soft-block">
+            <h3>The mental model that helps most</h3>
+            <p>
+              Think of AI as a helper that can make things easier, but does not automatically know what is true or what matters most. It can save time, but it cannot replace your judgement.
+            </p>
+            <p>
+              That model is useful because it keeps both sides in view: the practical benefit and the need to stay thoughtful.
+            </p>
+          </div>
+
+          <div class="card-grid">
+            <div class="card">
+              <h3>Example 1</h3>
+              <p>
+                A search result gives you a summary. Helpful, but still something to check if the answer matters.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Example 2</h3>
+              <p>
+                Your phone rewrites a message or suggests a reply. Useful for speed, but still your message to approve.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Example 3</h3>
+              <p>
+                An image or post looks real but feels slightly off. That is your cue to slow down instead of sharing it quickly.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Example 4</h3>
+              <p>
+                A tool offers to help you compare choices. Good for sorting. Not enough on its own for big decisions.
+              </p>
+            </div>
+          </div>
+
+          <div class="soft-block">
+            <h3>Why this matters</h3>
+            <p>
+              Once you see AI as something already woven into everyday life, the question changes. It is no longer, "What is all this?" It becomes, "How do I use it sensibly, and how do I know what to trust?"
+            </p>
+          </div>
+        </section>
+
+                <section class="section">
+          <h2>5. How To Get Useful Answers</h2>
+          <p class="intro">
+            AI is usually most helpful when you tell it the job clearly. If the request is vague, the answer usually is too.
+          </p>
+
+          <p>
+            This is not about clever tricks. It is about giving the tool enough direction to do something useful. A lot of beginner frustration disappears once you know what to include in the request.
+          </p>
+
+          <div class="soft-block">
+            <h3>The simple formula</h3>
+            <p>
+              A good prompt usually has four parts:
+            </p>
+            <ul class="simple-list">
+              <li>What you want help with.</li>
+              <li>Why you need it.</li>
+              <li>What kind of answer you want.</li>
+              <li>How short, simple, or detailed you want it to be.</li>
+            </ul>
+          </div>
+
+          <p>
+            Think of it like giving directions to a helper. If you only say "help me with this," the tool has to guess. If you say what the task is, what it is for, and what shape you want the answer in, the reply is usually much better.
+          </p>
+
+          <div class="card-grid">
+            <div class="card">
+              <h3>1. Start with the task</h3>
+              <p>
+                Say whether you want an explanation, a summary, a comparison, a rewrite, a plan, or ideas. The clearer the task, the better the answer.
+              </p>
+            </div>
+            <div class="card">
+              <h3>2. Add a little context</h3>
+              <p>
+                Tell it who the answer is for or what it will be used for. That helps AI choose the right level of detail and tone.
+              </p>
+            </div>
+            <div class="card">
+              <h3>3. Choose the format</h3>
+              <p>
+                Ask for bullet points, a short paragraph, step-by-step instructions, a table, or a simple explanation. Format keeps the answer from wandering.
+              </p>
+            </div>
+            <div class="card">
+              <h3>4. Set the tone and length</h3>
+              <p>
+                If you want it warm, polite, simple, firm, or short, say so. Small instructions like this make a big difference.
+              </p>
+            </div>
+          </div>
+
+          <div class="soft-block">
+            <h3>What to do when the answer misses the mark</h3>
+            <p>
+              You do not need to start over. You can ask it to be shorter, simpler, warmer, or more direct. The first answer is often just a draft.
+            </p>
+          </div>
+
+          <div class="card-grid">
+            <div class="card">
+              <h3>Helpful follow-up requests</h3>
+              <p>
+                Try asking for less detail, simpler language, or a more practical version. If the answer is too broad, say what part matters most.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Why this works</h3>
+              <p>
+                The tool is not guessing your thoughts. It is responding to the instructions you give it. Clear instructions usually mean better answers.
+              </p>
+            </div>
+          </div>
+
+          <div class="soft-block">
+            <h3>A good prompt shape</h3>
+            <p>
+              Task: [what you want help with]<br />
+              Context: [who it is for / what it is for]<br />
+              Format: [bullet points / short paragraph / table / steps]<br />
+              Tone: [warm / polite / simple / firm]<br />
+              Length: [short / medium / detailed]
+            </p>
+          </div>
+
+          <div class="soft-block">
+            <h3>The main lesson</h3>
+            <p>
+              The quality of the answer often depends on the quality of the request. Once you learn to be a little clearer, AI becomes much easier to use.
+            </p>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>6. Everyday Ways To Use AI</h2>
+          <p class="intro">
+            This is where AI starts to feel properly useful. Not because it does something dramatic, but because it quietly takes some of the friction out of ordinary jobs you already do.
+          </p>
+
+          <p>
+            For many people, the real value of AI is not in the big impressive uses. It is in the small things that usually take too much effort, too much rereading, or too much mental energy. It helps when something feels dull, fiddly, confusing, or just a bit too much.
+          </p>
+
+          <p>
+            The best way to think about this section is simple: AI is a helper for everyday life. It can help you write more clearly, read more quickly, organise scattered thoughts, compare options, start something you have been putting off, and make a task feel lighter.
+          </p>
+
+          <div class="card-grid">
+            <div class="card">
+              <h3>What it is for</h3>
+              <p>
+                Turning rough ideas into something useful, saving time on small jobs, and making ordinary tasks feel less tiring.
+              </p>
+            </div>
+            <div class="card">
+              <h3>What it is not for</h3>
+              <p>
+                Replacing your judgement, making every decision for you, or handling private or high-stakes matters without checking.
+              </p>
+            </div>
+          </div>
+
+          <div class="soft-block">
+            <h3>The mental model</h3>
+            <p>
+              AI is most useful when the job is about starting, sorting, shortening, comparing, or making something easier to understand.
+            </p>
+          </div>
+
+          <div class="card-grid">
+            <div class="card">
+              <h3>1. Writing emails</h3>
+              <p>
+                A lot of people spend far too long on emails that should have taken a minute. You know what you want to say, but the wording feels clumsy. AI can turn a rough draft into a clear, polite message without you having to wrestle with every sentence.
+              </p>
+            </div>
+            <div class="card">
+              <h3>2. Summarising long messages, letters, and articles</h3>
+              <p>
+                Long messages are tiring. Long articles are tiring. Sometimes the hardest part is not understanding the topic. It is having enough energy to get to the end of it. AI can give you the main points first, so you know what matters.
+              </p>
+            </div>
+            <div class="card">
+              <h3>3. Comparing options before you spend money</h3>
+              <p>
+                Buying something often becomes stressful when the choice is unclear. AI can help lay the options out in plain English so you can see what matters for ordinary use instead of getting lost in marketing language.
+              </p>
+            </div>
+            <div class="card">
+              <h3>4. Planning something without the mental clutter</h3>
+              <p>
+                A day trip, a meal plan, a visit, a shopping list, a rough timetable. AI can turn a half-formed idea into something more organised and easier to act on.
+              </p>
+            </div>
+            <div class="card">
+              <h3>5. Thinking through a decision</h3>
+              <p>
+                Sometimes you do not want AI to choose for you. You want it to help you think. It can help you look at pros and cons, spot what you may be missing, and organise a half-formed thought.
+              </p>
+            </div>
+            <div class="card">
+              <h3>6. Making notes and rough thoughts easier to use</h3>
+              <p>
+                If you have scattered notes, half-written plans, or a list that is hard to follow, AI can tidy the shape of it so you have something usable to work from.
+              </p>
+            </div>
+            <div class="card">
+              <h3>7. Helping with forms, admin, and paperwork</h3>
+              <p>
+                A lot of everyday admin is not difficult. It is just irritating. AI can make wording clearer, explain what a form is asking, or help draft a reply without making the task feel so heavy.
+              </p>
+            </div>
+            <div class="card">
+              <h3>8. Reading unfamiliar things in plain English</h3>
+              <p>
+                If something feels technical or full of jargon, AI can translate it into normal language so you can understand the point without wrestling with the wording.
+              </p>
+            </div>
+            <div class="card">
+              <h3>9. Writing in the right tone</h3>
+              <p>
+                Sometimes the words are right, but the tone is off. AI can make something warmer, more polite, shorter, more direct, or easier to understand without changing the meaning.
+              </p>
+            </div>
+            <div class="card">
+              <h3>10. Getting started when you feel stuck</h3>
+              <p>
+                Sometimes the problem is not the task itself. It is starting. AI can help you turn a blank page into a rough first draft, which is often enough to get you moving again.
+              </p>
+            </div>
+          </div>
+
+          <div class="soft-block">
+            <h3>What to remember</h3>
+            <p>
+              AI is often most useful in ordinary life, not extraordinary life. It is there for the little jobs, the fiddly jobs, the annoying jobs, and the jobs that become easier when you do not have to do all the thinking from scratch.
+            </p>
+            <p>
+              That is where the value is. Not in making you faster in a flashy way, but in making normal life feel a little lighter, a little clearer, and a little easier to handle.
+            </p>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>7. A Small Step Into More Advanced Tools</h2>
+          <p class="intro">
+            Once the basics feel normal, there are three more things worth knowing about: image generation, web search, and deep research.
+          </p>
+
+          <p>
+            You do not need these first. But it helps to understand what they are for, because they solve different problems. Image generation is for making something visual. Web search is for checking current information. Deep research is for going further and pulling together a fuller answer from more than one source.
+          </p>
+
+          <div class="card-grid">
+            <div class="card">
+              <h3>Image generation</h3>
+              <p>
+                This is the playful one. You describe a picture, and ChatGPT makes the image for you. It is useful when you want something visual, something funny, or something that helps you picture an idea.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Web search</h3>
+              <p>
+                This is for checking what is current. If you want live information, recent updates, current prices, or something you can verify, search is better than guessing.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Deep research</h3>
+              <p>
+                This is for bigger questions. It reads more, compares more, and gives you a fuller answer when a quick reply is not enough.
+              </p>
+            </div>
+            <div class="card">
+              <h3>The simple rule</h3>
+              <p>
+                Use image generation when you want to make something visual, web search when you want something current, and deep research when you want something more complete.
+              </p>
+            </div>
+          </div>
+
+          <div class="soft-block">
+            <h3>How to use image generation in ChatGPT</h3>
+            <p>
+              Open ChatGPT, choose <strong>Create image</strong> from the tools menu, and type what you want to see. The best prompts for this audience should feel familiar, gently funny, or emotionally easy to recognise.
+            </p>
+          </div>
+
+          <div class="card-grid">
+            <div class="card">
+              <h3>Try this image prompt</h3>
+              <p>
+                <strong>Create a cosy living room scene where an older person is calmly teaching a confused robot how to make a proper cup of tea. Warm, funny, gentle, and welcoming.</strong>
+              </p>
+            </div>
+            <div class="card">
+              <h3>Try this image prompt</h3>
+              <p>
+                <strong>Make a friendly illustration of a woman in her 60s looking pleased because AI finally explained something in plain English.</strong>
+              </p>
+            </div>
+          </div>
+
+          <div class="soft-block">
+            <h3>How to use web search in ChatGPT</h3>
+            <p>
+              Open ChatGPT, choose <strong>Search</strong> from the tools menu, and ask for something current that you can check. This is useful when you want live information instead of a guess.
+            </p>
+            <p>
+              Web search is helpful for products, current updates, official pages, prices, opening hours, or anything that changes over time.
+            </p>
+          </div>
+
+          <div class="card-grid">
+            <div class="card">
+              <h3>Try this web search prompt</h3>
+              <p>
+                <strong>Search the web for the best current beginner-friendly AI tool for writing and give me a simple summary.</strong>
+              </p>
+            </div>
+            <div class="card">
+              <h3>Try this web search prompt</h3>
+              <p>
+                <strong>Find the official pages for ChatGPT, Claude, Gemini, Grok, and Perplexity and tell me what each one is best for.</strong>
+              </p>
+            </div>
+          </div>
+
+          <div class="soft-block">
+            <h3>How to use deep research in ChatGPT</h3>
+            <p>
+              Open ChatGPT, choose <strong>Deep research</strong> from the tools menu, or type <strong>/Deepresearch</strong>. Then write what you want to learn. Deep research is for bigger questions that need more reading, more comparison, and a fuller answer.
+            </p>
+            <p>
+              It is useful when you want a proper summary of a fast-moving topic, when several sources matter, or when you want a structured report rather than a quick reply.
+            </p>
+          </div>
+
+          <div class="card-grid">
+            <div class="card">
+              <h3>Try this deep research prompt</h3>
+              <p>
+                <strong>Use deep research to summarise the most important AI updates from May 2026 in plain English.</strong>
+              </p>
+            </div>
+            <div class="card">
+              <h3>Try this deep research prompt</h3>
+              <p>
+                <strong>Research the recent changes in AI and tell me what a beginner should pay attention to, without technical language.</strong>
+              </p>
+            </div>
+          </div>
+
+          <div class="soft-block">
+            <h3>The big picture</h3>
+            <p>
+              Image generation helps you make something.
+              Web search helps you check something.
+              Deep research helps you understand something properly.
+            </p>
+            <p>
+              You do not need all three at once. You only need to know what each one is for and when it becomes useful.
+            </p>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>8. When AI Is Useful vs When It&apos;s Not</h2>
+          <p class="intro">
+            AI is not equally useful for everything. That is an important thing to understand early, because a lot of disappointment comes from asking it to do jobs it was never really meant to do.
+          </p>
+
+          <p>
+            AI is best when the task is about helping you think, shape, sort, simplify, or start. It is very good at turning rough notes into something clearer, shortening long text, rewriting messages, comparing simple choices, explaining things in plain English, and helping you get started when you feel stuck.
+          </p>
+
+          <p>
+            That is where it shines. It can take a messy thing and make it more usable. It can take a long thing and make it shorter. It can take a blank page and give you a starting point. That is useful because many ordinary tasks are not hard in a deep sense. They are just annoying, tiring, or hard to begin.
+          </p>
+
+          <div class="card-grid">
+            <div class="card">
+              <h3>Useful for</h3>
+              <p>
+                Writing emails, summarising text, comparing simple options, organising notes, planning small tasks, and helping you think something through.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Less useful for</h3>
+              <p>
+                Jobs where truth, judgement, risk, or responsibility matter more than speed or convenience.
+              </p>
+            </div>
+          </div>
+
+          <div class="soft-block">
+            <h3>When AI is not the right tool</h3>
+            <p>
+              AI is less useful when the job depends on truth, judgement, risk, or responsibility. That is where people need to slow down.
+            </p>
+            <p>
+              If you want help writing an email, AI can be brilliant. If you want help deciding between two options, AI can help. If you want to turn a rough thought into something clear, AI can help. But if the answer really matters, you should not let AI be the final authority.
+            </p>
+          </div>
+
+          <div class="card-grid">
+            <div class="card">
+              <h3>Be careful with</h3>
+              <p>
+                Money, health, legal issues, safety, private information, and anything where a wrong answer would cause real trouble.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Why caution matters</h3>
+              <p>
+                AI can sound very sure of itself. It writes in full sentences and gives neat explanations. That does not mean it is correct.
+              </p>
+            </div>
+          </div>
+
+          <div class="soft-block">
+            <h3>When NOT to trust AI</h3>
+            <p>
+              If the answer is about something important, check it. If the answer sounds smooth but you are not sure, check it. If the answer could affect health, money, safety, or a major decision, do not rely on AI alone.
+            </p>
+            <p>
+              A polished answer is not the same as a correct answer. A nice-looking summary can still miss the point. A confident reply can still be wrong.
+            </p>
+          </div>
+
+          <div class="card-grid">
+            <div class="card">
+              <h3>Low-risk tasks</h3>
+              <p>
+                Writing, rewriting, summarising, organising, and comparing simple options are good places to treat the answer as a draft.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Higher-risk tasks</h3>
+              <p>
+                Health, money, legal matters, and anything that could cause harm if wrong should be checked somewhere reliable before you act.
+              </p>
+            </div>
+          </div>
+
+          <div class="soft-block">
+            <h3>The simple rule</h3>
+            <p>
+              Use AI for help, not as the final authority. Let it draft, sort, simplify, or compare, then use your own judgement for the final call.
+            </p>
+            <p>
+              The real skill is not learning to trust everything it says. It is learning when it is giving you something useful, and when it is only giving you something that sounds useful.
+            </p>
+          </div>
+        </section>
+
+                <section class="section">
+          <h2>9. How To Check AI Answers</h2>
+          <p class="intro">
+            AI can be useful, but it should not be treated like a final authority.
+          </p>
+
+          <p>
+            That is why this part matters.
+          </p>
+
+          <p>
+            A good answer from AI can still be incomplete, outdated, or just plain wrong. Sometimes it sounds smooth enough that you stop questioning it. That is exactly when a simple checking habit helps most.
+          </p>
+
+          <p>
+            You do not need a complicated system.
+            You need a calm, repeatable way to decide whether the answer is good enough to use.
+          </p>
+
+          <div class="soft-block">
+            <h3>The easiest framework is this:</h3>
+          </div>
+
+          <div class="card-grid">
+            <div class="card">
+              <h3>1. Read the answer once without acting on it</h3>
+              <p>
+                Do not rush.
+                Just read it through and ask yourself one simple question:
+              </p>
+              <p>
+                Does this actually answer what I asked?
+              </p>
+              <p>
+                If it does not, do not assume that is your fault. It may simply mean the prompt was too vague, or the answer was too broad.
+              </p>
+            </div>
+            <div class="card">
+              <h3>2. Separate useful from uncertain</h3>
+              <p>
+                A lot of AI answers contain a mix of both.
+              </p>
+              <p>
+                Some parts may be helpful.
+                Some parts may be obvious.
+                Some parts may be guesswork.
+              </p>
+              <p>
+                So look for the parts that feel concrete and the parts that feel shaky.
+              </p>
+            </div>
+          </div>
+
+          <div class="card-grid">
+            <div class="card">
+              <h3>Useful signs</h3>
+              <p>
+                - it gives a clear summary
+                - it uses plain language
+                - it follows your request
+                - it stays on topic
+                - it gives you something you can use
+              </p>
+            </div>
+            <div class="card">
+              <h3>Uncertain signs</h3>
+              <p>
+                - it sounds confident but says very little
+                - it adds details you did not ask for
+                - it makes claims without explaining them
+                - it feels vague, generic, or overly polished
+                - it seems to be filling in gaps with guesses
+              </p>
+            </div>
+          </div>
+
+          <p>
+            If a response feels a bit too neat, that is a reason to slow down, not speed up.
+          </p>
+
+          <div class="soft-block">
+            <h3>3. Check anything that matters</h3>
+            <p>
+              If the answer is about something low-risk, like wording, a summary, or a rough plan, you can often use it as a draft and move on.
+            </p>
+            <p>
+              If the answer is about something more important, check it.
+            </p>
+            <p>
+              That includes:
+            </p>
+            <p>
+              - prices
+              - dates
+              - names
+              - locations
+              - advice that could affect money, health, safety, or important decisions
+              - anything you would feel foolish or upset about if it turned out to be wrong
+            </p>
+            <p>
+              A simple rule:
+              If it would matter to you or someone else, verify it.
+            </p>
+          </div>
+
+          <div class="soft-block">
+            <h3>4. Ask AI to check itself</h3>
+            <p>
+              This is one of the most useful habits you can learn.
+            </p>
+            <p>
+              You do not have to start over.
+              You can ask the AI to slow down and review its own answer.
+            </p>
+            <p>
+              Try prompts like:
+            </p>
+            <p>
+              - Check your last answer for anything uncertain or possibly wrong.
+              - Show me which parts of this answer are solid and which parts should be checked.
+              - List any claims in your answer that might need verification.
+              - What would you double-check before using this?
+              - Is there anything here that sounds confident but may not be fully reliable?
+            </p>
+            <p>
+              This is helpful because it forces the tool to separate its best guess from its firmer points.
+            </p>
+          </div>
+
+          <div class="soft-block">
+            <h3>5. Compare it with a reliable source if it matters</h3>
+            <p>
+              If the answer is important, do not rely on AI alone.
+            </p>
+            <p>
+              Use a trustworthy source:
+            </p>
+            <p>
+              - an official website
+              - a direct document
+              - a proper news source
+              - a company help page
+              - a professional source you already trust
+            </p>
+            <p>
+              You are not trying to become suspicious of everything.
+              You are just making sure the answer stands up when it matters.
+            </p>
+          </div>
+
+          <div class="soft-block">
+            <h3>6. Decide what kind of answer you have</h3>
+            <p>
+              This is the part most people skip.
+            </p>
+            <p>
+              Not every AI answer should be treated the same way.
+            </p>
+            <p>
+              Some answers are:
+            </p>
+            <p>
+              - a draft
+              - a summary
+              - a starting point
+              - a suggestion
+              - a rough comparison
+            </p>
+            <p>
+              Some answers are:
+            </p>
+            <p>
+              - factual claims
+              - advice
+              - instructions
+              - details that need checking
+            </p>
+            <p>
+              If it is a draft, you can usually improve it.
+              If it is a fact, you should verify it.
+              If it is advice, you should think before acting on it.
+            </p>
+            <p>
+              That one distinction will save you a lot of confusion.
+            </p>
+          </div>
+
+          <div class="soft-block">
+            <h3>7. Use a simple final test</h3>
+            <p>
+              Before you trust the answer, ask yourself:
+            </p>
+            <p>
+              - Does this make sense?
+              - Did it actually answer my question?
+              - Is anything here too vague?
+              - Is there anything important missing?
+              - Would I be comfortable acting on this without checking?
+            </p>
+            <p>
+              If the answer feels clear, useful, and low-risk, it may be good enough.
+              If it feels uncertain, it probably needs another look.
+            </p>
+          </div>
+
+          <div class="soft-block">
+            <h3>A very simple version of the framework</h3>
+            <p>
+              If you want the short version, use this:
+            </p>
+            <p>
+              - Read it
+              - Notice what feels certain and uncertain
+              - Check anything important
+              - Ask AI to review its own answer
+              - Compare it with a reliable source if needed
+              - Treat drafts as drafts, not facts
+            </p>
+            <p>
+              That is enough for most everyday use.
+            </p>
+          </div>
+
+          <p>
+            The goal is not to doubt everything.
+            The goal is to build a habit where AI helps you move faster without making you careless.
+          </p>
+
+          <p>
+            Once you learn that balance, AI becomes much more useful.
+          </p>
+        </section>
+        <section class="section">
+          <h2>10. How To Spot AI-Made or Fake Content</h2>
+          <p class="intro">
+            The safest way to think about suspicious content is not, "Can I spot every fake?" It is, "What is the fastest sensible way to check whether this is real before I believe it or share it?"
+          </p>
+
+          <p>
+            That matters because fake content is often designed to look ordinary. It may arrive as an email, a private message, a photo, or a news-style post. The trick is not to become paranoid. The trick is to learn a few simple checks that work in everyday life.
+          </p>
+
+          <div class="soft-block">
+            <h3>A helpful extra check</h3>
+            <p>
+              If you are not sure about an image, you can also use an online detection tool to get a second opinion. One example is Sightengine&apos;s AI image detector: <a href="https://sightengine.com/detect-ai-generated-images" target="_blank" rel="noopener">https://sightengine.com/detect-ai-generated-images</a>.
+            </p>
+            <p>
+              It is not perfect, but it can be a useful extra check when something looks suspicious and you want another clue before you trust it.
+            </p>
+            <p>
+              Use it as one piece of evidence, not the final answer.
+            </p>
+          </div>
+
+          <div class="soft-block">
+            <h3>For emails</h3>
+            <p>
+              Start with the sender. If an email says it is from a bank, delivery company, government office, or service you use, check the actual email address. If the sender does not match the real organisation, treat it as suspicious.
+            </p>
+            <p>
+              That is often the clearest sign of a scam.
+            </p>
+            <p>
+              Also be careful if the email creates panic, says you must act immediately, asks you to click a link or send money, or asks for passwords, bank details, or private information.
+            </p>
+          </div>
+
+          <div class="card-grid">
+            <div class="card">
+              <h3>For Facebook messages and other social messages</h3>
+              <p>
+                Be especially cautious with random messages from people you do not know. If a stranger sends an urgent message, asks for money, claims something has happened, or tries to pull you into action quickly, assume it is a scam until proven otherwise.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Check the account</h3>
+              <p>
+                If it is pretending to be someone you know, check whether the account is real. Look at the profile carefully. If the account looks new, empty, odd, or slightly off, do not rush to respond.
+              </p>
+            </div>
+          </div>
+
+          <div class="soft-block">
+            <h3>For photos</h3>
+            <p>
+              Use an online image checker as your first extra step. If a photo looks suspicious, upload or check it there first.
+            </p>
+            <p>
+              Good places to start are:
+              <a href="https://sightengine.com/detect-ai-generated-images" target="_blank" rel="noopener">Sightengine AI image detector</a>
+              and
+              <a href="https://verify.contentauthenticity.org/" target="_blank" rel="noopener">Content Credentials Verify</a>.
+            </p>
+            <p>
+              Then look at the image itself. Do hands or faces look strange? Does the text in the image look odd? Do shadows, reflections, or edges seem off? Does it look too smooth or too polished?
+            </p>
+            <p>
+              If the photo is being used to make a dramatic point, check the story around it too. Sometimes the image is only there to make the claim feel more believable.
+            </p>
+          </div>
+
+          <div class="card-grid">
+            <div class="card">
+              <h3>For news</h3>
+              <p>
+                Do not trust the first headline you see. If something feels surprising, upsetting, or too convenient, use web search to check whether other reliable sources are reporting the same thing.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Use this prompt</h3>
+              <p>
+                News story to check: [paste the story or headline here]
+              </p>
+              <p>
+                Prompt: Search the web for this news story and tell me whether it is likely true or false. Give me the main facts from reliable sources in plain English.
+              </p>
+            </div>
+          </div>
+
+          <div class="card-grid">
+            <div class="card">
+              <h3>More news prompts</h3>
+              <p>
+                Claim to check: [paste the claim here]
+              </p>
+              <p>
+                Prompt: Check whether this claim is being reported by other trustworthy sources.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Another useful prompt</h3>
+              <p>
+                Story to follow up: [paste the story or topic here]
+              </p>
+              <p>
+                Prompt: Search for the latest updates on this story and tell me what is confirmed, what is uncertain, and what has been exaggerated.
+              </p>
+            </div>
+          </div>
+
+          <div class="soft-block">
+            <h3>The simple beginner rule</h3>
+            <p>
+              For emails: check the sender.
+            </p>
+            <p>
+              For social messages: check whether the account is really who it claims to be.
+            </p>
+            <p>
+              For photos: use Sightengine first, then look for strange details.
+            </p>
+            <p>
+              For news: use web search to confirm the story with reliable sources.
+            </p>
+          </div>
+
+          <div class="soft-block">
+            <h3>One final reminder</h3>
+            <p>
+              If it creates urgency, pressure, or confusion, slow down. You do not need to catch every fake by eye. You just need a few reliable habits that help you pause before you believe, click, or share.
+            </p>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>11. Closing Note</h2>
+          <p class="intro">
+            AI is not coming. It is already here.
+          </p>
+
+          <p>
+            You see it in your phone. You see it in your search results. You see it in messages, photos, articles, and the tools people use every day. That is why this guide was never meant to turn you into an expert. It was meant to give you a clear starting point, so AI feels less mysterious and more usable.
+          </p>
+
+          <p>
+            If this guide has done its job, then you should now have a better sense of what AI is good for, what it is not good for, how to ask it for help, when to trust it, when to slow down, and how to stay safer online.
+          </p>
+
+          <p>
+            That is enough.
+          </p>
+
+          <p>
+            You do not need to know everything. You do not need to use every tool. You do not need to sound technical or keep up with every headline.
+          </p>
+
+          <p>
+            You only need enough understanding to make sensible choices, use AI in ordinary life, and avoid the obvious mistakes that catch people out.
+          </p>
+
+          <p>
+            That is what this guide was built for.
+          </p>
+
+          <p>
+            I wrote it because I have helped people in my own family make sense of AI, and I know how frustrating it can feel when something is everywhere but never properly explained. A lot of people do not need more noise. They need something calm, plain, and practical that respects where they are starting from.
+          </p>
+
+          <p>
+            If you have felt behind, confused, or unsure whether this whole thing is really for you, I hope this guide has taken some of that pressure off.
+          </p>
+
+          <p>
+            You do not have to master AI.
+            You just have to understand it well enough to use it with confidence.
+          </p>
+
+          <p>
+            And now you do.
+          </p>
+        </section>
+      </article>
+    </main>
+  </body>
+</html>
+
+
+
