@@ -41,7 +41,7 @@
 
       .cover {
         padding: 72px 72px 58px;
-        background: linear-gradient(180deg, rgba(224, 238, 231, 0.7) 0%, rgba(255, 255, 255, 0) 38%), var(--paper);
+        background: linear-gradient(180deg, rgba(220, 232, 246, 0.88) 0%, rgba(255, 255, 255, 0) 38%), var(--paper);
       }
 
       .eyebrow {
@@ -154,7 +154,53 @@
       p {
         margin: 0 0 16px;
       }
+      @media print {
+        @page {
+          size: A4;
+          margin: 18mm 16mm;
+        }
 
+        body {
+          background: #ffffff;
+        }
+
+        main {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+
+        article {
+          border: 0;
+          box-shadow: none;
+        }
+
+        .cover {
+          min-height: 100vh;
+          break-after: page;
+          page-break-after: always;
+        }
+
+        .section {
+          break-before: page;
+          page-break-before: always;
+          border-top: 0;
+          padding: 28px 0 0;
+        }
+
+        .card,
+        .soft-block,
+        .toc li {
+          break-inside: avoid;
+          page-break-inside: avoid;
+        }
+
+        h2,
+        h3 {
+          break-after: avoid;
+          page-break-after: avoid;
+        }
+      }
       @media (max-width: 760px) {
         main {
           padding: 0;
