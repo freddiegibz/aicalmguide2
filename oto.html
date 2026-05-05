@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Confidence Kit Upgrade</title>
+    <meta
+      name="description"
+      content="A one-time upgrade for AI Confidence Kit customers."
+    />
+    <!-- Meta Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1988137388462157');
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1988137388462157&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    <style>
+      :root {
+        --ink: #071b3f;
+        --navy: #173761;
+        --text: #172033;
+        --muted: #5d6678;
+        --blue: #1e4f87;
+        --blue-deep: #123a68;
+        --paper: #faf8f4;
+        --line: rgba(10, 27, 63, 0.13);
+        --gold-soft: #f7eed2;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--text);
+        font-family: "Aptos", "Segoe UI", sans-serif;
+      }
+
+      .confirmation {
+        border-bottom: 1px solid var(--line);
+        background: #fff;
+      }
+
+      .confirmation-inner {
+        width: min(100%, 820px);
+        margin: 0 auto;
+        padding: 14px 22px;
+        color: var(--navy);
+        font-size: 0.96rem;
+        font-weight: 800;
+        line-height: 1.45;
+      }
+
+      main {
+        width: min(100%, 820px);
+        margin: 0 auto;
+        padding: 54px 22px 64px;
+      }
+
+      article {
+        padding: clamp(34px, 6vw, 68px);
+        border: 1px solid var(--line);
+        background: #fffdf9;
+        box-shadow: 0 18px 42px rgba(7, 27, 63, 0.07);
+      }
+
+      h2 {
+        margin: 0 0 18px;
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(1.7rem, 2.4vw, 2.3rem);
+        font-weight: 500;
+        line-height: 1.12;
+        letter-spacing: 0;
+      }
+
+      p {
+        margin: 0 0 20px;
+        color: var(--text);
+        font-size: clamp(1.06rem, 1.35vw, 1.18rem);
+        line-height: 1.75;
+      }
+
+      .short-lines {
+        margin: 8px 0 34px;
+      }
+
+      .short-lines p {
+        margin-bottom: 6px;
+        color: var(--navy);
+        font-weight: 800;
+      }
+
+      .divider {
+        height: 1px;
+        margin: 36px 0;
+        background: var(--line);
+      }
+
+      .statement {
+        margin: 26px 0;
+        padding: 24px 26px;
+        border-left: 5px solid var(--blue);
+        background: #eef6fb;
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(1.35rem, 2vw, 1.72rem);
+        line-height: 1.42;
+      }
+
+      .price-note {
+        margin-top: 30px;
+        padding: 24px 26px;
+        background: var(--gold-soft);
+        color: #775f17;
+        font-weight: 800;
+      }
+
+      .cta-wrap {
+        margin-top: 30px;
+        padding-top: 4px;
+        text-align: center;
+      }
+
+      .benefits-section {
+        margin-top: 8px;
+      }
+
+      .benefits-section h2 {
+        margin-bottom: 22px;
+      }
+
+      .benefits-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .benefit-item {
+        position: relative;
+        padding: 18px 18px 18px 46px;
+        border: 1px solid rgba(30, 79, 135, 0.12);
+        border-radius: 14px;
+        background: linear-gradient(180deg, #ffffff 0%, #f6faff 100%);
+        box-shadow: 0 10px 24px rgba(7, 27, 63, 0.05);
+        color: var(--text);
+        font-size: 1.02rem;
+        line-height: 1.6;
+      }
+
+      .benefit-item::before {
+        content: "";
+        position: absolute;
+        left: 18px;
+        top: 22px;
+        width: 14px;
+        height: 14px;
+        border-radius: 999px;
+        background: linear-gradient(180deg, var(--blue) 0%, var(--blue-deep) 100%);
+        box-shadow: 0 0 0 4px rgba(30, 79, 135, 0.1);
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: min(100%, 360px);
+        min-height: 62px;
+        padding: 0 28px;
+        border-radius: 8px;
+        background: var(--blue);
+        color: #fff;
+        font-size: 1.08rem;
+        font-weight: 800;
+        text-decoration: none;
+        box-shadow: 0 18px 34px rgba(30, 79, 135, 0.24);
+      }
+
+      .button:hover,
+      .button:focus-visible {
+        background: var(--blue-deep);
+      }
+
+      .guarantee {
+        margin-top: 16px;
+        color: var(--muted);
+        font-size: 0.98rem;
+        font-weight: 800;
+      }
+
+      .decline {
+        display: inline-block;
+        margin-top: 14px;
+        color: #6f7786;
+        font-size: 0.94rem;
+        text-underline-offset: 3px;
+      }
+
+      @media (max-width: 640px) {
+        main {
+          padding: 0;
+        }
+
+        article {
+          border: 0;
+          box-shadow: none;
+          padding: 38px 22px 48px;
+        }
+
+        .benefits-list {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="confirmation">
+      <div class="confirmation-inner">
+        Purchase confirmed. Your AI Confidence Kit order is complete.
+      </div>
+    </div>
+    <main>
+      <article>
+        <h2>You’ve Got The Foundation</h2>
+        <p>
+          Now that you own the AI Confidence Kit, you’ve got the simple starting point most people are missing.
+        </p>
+
+        <p>
+          You’ll understand what AI is, where it shows up, what it can help with, and when to be careful.
+        </p>
+
+        <p>
+          That gets you caught up.
+        </p>
+
+        <div class="divider"></div>
+
+        <h2>Now you know the basics, let’s use AI to make your life easier</h2>
+        <p>
+          The real value is knowing where to use it.
+        </p>
+
+        <p>
+          AI can help you learn faster, solve problems, write better, make clearer decisions, create useful images, handle documents, check what’s real online, and plan parts of your life or business with less friction.
+        </p>
+
+        <p>
+          Most people never get that far.
+        </p>
+
+        <p>
+          They try a few prompts, get average answers, and assume that’s all AI can do.
+        </p>
+
+        <p>
+          The gap is not intelligence.<br />
+          It’s exposure.
+        </p>
+
+        <div class="divider"></div>
+
+        <h2>Built From Real Use</h2>
+        <p>
+          I’ve sent tens of thousands of prompts over the last few years.
+        </p>
+
+        <p>
+          I’ve used AI to learn, write, create images, think through problems, improve my fitness, run parts of my business, make decisions, travel, and live abroad with less friction.
+        </p>
+
+        <p>
+          After that much use, you learn what actually helps — and what wastes time.
+        </p>
+
+        <p>
+          That’s what this upgrade gives you:
+        </p>
+
+        <p>
+          the real use cases, prompts, and workflows I actually use, simplified so you can copy them and start getting the benefit today.
+        </p>
+
+        <div class="divider"></div>
+
+        <h2>What You Get</h2>
+        <p>
+          The Real-Life AI Use Case Bundle:
+        </p>
+
+        <p>
+          14 areas where AI can genuinely make your life easier — across business, family, travel, online safety, documents, decisions, planning, and the annoying little tasks you usually avoid until they become a problem.
+        </p>
+
+        <div class="short-lines">
+          <p>The exact prompts to send</p>
+          <p>Exactly when and how to use them</p>
+          <p>What a good answer should look like</p>
+          <p>What to avoid so you don’t get misled, waste time, or trust the wrong thing</p>
+        </div>
+
+        <p>
+          All worked out from thousands of hours of real use — so you can skip the trial and error and start using AI properly from day one.
+        </p>
+
+        <p>
+          So you can go from:
+        </p>
+
+        <div class="statement">“I understand AI now”</div>
+
+        <p>
+          to:
+        </p>
+
+        <div class="statement">“I know how to use this in real life.”</div>
+
+        <div class="divider"></div>
+
+        <h2>Add It Today For 50% Off</h2>
+        <p>
+          This is only available here because you just bought the AI Confidence Kit.
+        </p>
+
+        <p>
+          Even if we only counted 1,000 hours, at £37 you’re paying 3.7p per hour for the trial and error I already did for you.
+        </p>
+
+        <p>
+          Which is either a very good deal… or proof I need to rethink my pricing.
+        </p>
+
+        <div class="cta-wrap">
+          <a class="button" href="#" data-upgrade-checkout>Add This To My Order</a>
+          <div class="guarantee">Refund Guarantee · Instant Access</div>
+          <a class="decline" href="thank-you.html">No thanks, I’ll stick with the AI Confidence Kit</a>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>
