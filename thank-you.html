@@ -92,6 +92,34 @@
         color: var(--ink);
         font-weight: 700;
       }
+
+      .download {
+        display: inline-block;
+        margin-top: 26px;
+        padding: 16px 28px;
+        border-radius: 8px;
+        background: var(--blue);
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 1.02rem;
+        text-decoration: none;
+        box-shadow: 0 12px 24px rgba(20, 104, 196, 0.18);
+      }
+
+      .download:hover,
+      .download:focus-visible {
+        background: #0f58a6;
+      }
+
+      .backup-link {
+        margin-top: 14px;
+        font-size: 0.96rem;
+        color: var(--muted);
+      }
+
+      .backup-link a {
+        color: var(--blue);
+      }
     </style>
   </head>
   <body>
@@ -103,6 +131,24 @@
       <h1>Thank you. Your guide is on the way.</h1>
       <p>
         Your purchase is complete. You should receive access details straight away, so you can start reading at your own pace.
+      </p>
+      <a
+        class="download"
+        href="https://drive.google.com/uc?export=download&id=1vArbPv3loGt3DnF6-uzwk2U7z8CXHjfO"
+        target="_blank"
+        rel="noopener"
+      >
+        Download Your Guide
+      </a>
+      <p class="backup-link">
+        If the button does not open straight away, use this link:
+        <a
+          href="https://drive.google.com/file/d/1vArbPv3loGt3DnF6-uzwk2U7z8CXHjfO/view?usp=sharing"
+          target="_blank"
+          rel="noopener"
+        >
+          Open the guide in Google Drive
+        </a>
       </p>
       <p class="next">
         Next step: open your email and look for your download message.
