@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Confidence Circle</title>
+    <meta
+      name="description"
+      content="Try the AI Confidence Circle free for your first month."
+    />
+    <!-- Meta Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1988137388462157');
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1988137388462157&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    <style>
+      :root {
+        --ink: #071b3f;
+        --navy: #173761;
+        --text: #172033;
+        --muted: #5d6678;
+        --blue: #1e4f87;
+        --blue-deep: #123a68;
+        --paper: #fbfaf6;
+        --surface: #fffdf9;
+        --line: rgba(10, 27, 63, 0.13);
+        --green: #1d9b53;
+        --green-soft: #eefaf2;
+        --gold: #f3e6bd;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background:
+          linear-gradient(180deg, #eef6fb 0%, var(--paper) 42%, #fffdf9 100%);
+        color: var(--text);
+        font-family: "Aptos", "Segoe UI", sans-serif;
+      }
+
+      .confirmation {
+        border-bottom: 1px solid rgba(27, 108, 63, 0.16);
+        background: linear-gradient(180deg, #f6fff8 0%, #eefaf2 100%);
+      }
+
+      .confirmation-inner {
+        width: min(100%, 920px);
+        margin: 0 auto;
+        padding: 22px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        color: #12492e;
+        font-weight: 800;
+      }
+
+      .confirmation-icon {
+        flex: 0 0 auto;
+        width: 46px;
+        height: 46px;
+        border-radius: 999px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--green);
+        color: #fff;
+        font-size: 1.55rem;
+        font-weight: 900;
+        box-shadow: 0 10px 24px rgba(29, 155, 83, 0.2);
+      }
+
+      .confirmation-title {
+        font-size: 1.12rem;
+        line-height: 1.3;
+      }
+
+      main {
+        width: min(100%, 920px);
+        margin: 0 auto;
+        padding: 52px 22px 72px;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.62fr);
+        gap: clamp(28px, 5vw, 64px);
+        align-items: center;
+        min-height: 560px;
+      }
+
+      .eyebrow {
+        margin: 0 0 18px;
+        color: var(--blue);
+        font-size: 0.82rem;
+        font-weight: 900;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2 {
+        margin: 0;
+        color: var(--ink);
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 500;
+        letter-spacing: 0;
+      }
+
+      h1 {
+        max-width: 760px;
+        font-size: clamp(2.8rem, 7vw, 5.8rem);
+        line-height: 0.98;
+      }
+
+      h2 {
+        font-size: clamp(2rem, 4vw, 3.45rem);
+        line-height: 1.04;
+      }
+
+      p {
+        margin: 0;
+        color: var(--text);
+        font-size: clamp(1.06rem, 1.5vw, 1.2rem);
+        line-height: 1.72;
+      }
+
+      .lead {
+        max-width: 650px;
+        margin-top: 26px;
+        font-size: clamp(1.17rem, 1.8vw, 1.36rem);
+        color: #25304a;
+      }
+
+      .hero-note {
+        margin-top: 30px;
+        padding: 22px 24px;
+        border-left: 5px solid var(--green);
+        background: #ffffff;
+        color: var(--navy);
+        font-size: clamp(1.2rem, 2vw, 1.55rem);
+        line-height: 1.45;
+        box-shadow: 0 18px 42px rgba(7, 27, 63, 0.07);
+      }
+
+      .section {
+        padding: clamp(54px, 9vw, 92px) 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .split {
+        display: grid;
+        grid-template-columns: minmax(0, 0.74fr) minmax(0, 1fr);
+        gap: clamp(28px, 6vw, 70px);
+        align-items: start;
+      }
+
+      .copy-stack {
+        display: grid;
+        gap: 20px;
+      }
+
+      .quote-line {
+        margin-top: 10px;
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(1.4rem, 2.6vw, 2rem);
+        line-height: 1.28;
+      }
+
+      .offer-panel {
+        margin-top: 34px;
+        border: 1px solid rgba(30, 79, 135, 0.13);
+        background: var(--surface);
+        box-shadow: 0 20px 48px rgba(7, 27, 63, 0.08);
+      }
+
+      .offer-panel-header {
+        padding: 28px 30px;
+        background: var(--navy);
+        color: #fff;
+      }
+
+      .offer-panel-header h2 {
+        color: #fff;
+      }
+
+      .offer-panel-body {
+        padding: 30px;
+      }
+
+      .benefit-list {
+        display: grid;
+        gap: 12px;
+        margin: 24px 0 0;
+      }
+
+      .benefit {
+        position: relative;
+        padding: 15px 16px 15px 42px;
+        border: 1px solid rgba(30, 79, 135, 0.11);
+        background: #fff;
+        color: var(--text);
+        font-size: 1.02rem;
+        line-height: 1.48;
+      }
+
+      .benefit::before {
+        content: "";
+        position: absolute;
+        left: 17px;
+        top: 22px;
+        width: 10px;
+        height: 10px;
+        border-radius: 999px;
+        background: var(--green);
+        box-shadow: 0 0 0 4px rgba(29, 155, 83, 0.1);
+      }
+
+      .goal {
+        margin-top: 34px;
+        padding: 28px 30px;
+        background: var(--gold);
+        color: #604b12;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(1.3rem, 2.4vw, 1.85rem);
+        line-height: 1.34;
+      }
+
+      .cta-section {
+        padding: clamp(54px, 9vw, 88px) 0 0;
+        border-top: 1px solid var(--line);
+        text-align: center;
+      }
+
+      .cta-section h2 {
+        max-width: 720px;
+        margin: 0 auto;
+      }
+
+      .cta-copy {
+        max-width: 650px;
+        margin: 24px auto 0;
+      }
+
+      .price-note {
+        width: min(100%, 560px);
+        margin: 28px auto 0;
+        padding: 18px 20px;
+        border: 1px solid rgba(29, 155, 83, 0.18);
+        background: var(--green-soft);
+        color: #12492e;
+        font-weight: 900;
+        line-height: 1.5;
+      }
+
+      .quick-list {
+        width: min(100%, 520px);
+        margin: 24px auto 28px;
+        text-align: left;
+      }
+
+      .quick-list div {
+        padding: 4px 0;
+        color: var(--navy);
+        font-weight: 800;
+        line-height: 1.55;
+      }
+
+      .quick-list div::before {
+        content: "• ";
+        color: var(--blue);
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: min(100%, 360px);
+        min-height: 62px;
+        padding: 0 28px;
+        border-radius: 8px;
+        background: var(--green);
+        color: #fff;
+        font-size: 1.08rem;
+        font-weight: 900;
+        text-decoration: none;
+        box-shadow: 0 18px 34px rgba(29, 155, 83, 0.24);
+      }
+
+      .button:hover,
+      .button:focus-visible {
+        background: #167b42;
+      }
+
+      .guarantee {
+        margin-top: 16px;
+        color: var(--muted);
+        font-size: 0.98rem;
+        font-weight: 800;
+      }
+
+      .decline {
+        display: inline-block;
+        margin-top: 16px;
+        color: #6f7786;
+        font-size: 0.95rem;
+        text-underline-offset: 3px;
+      }
+
+      @keyframes rise {
+        from {
+          opacity: 0;
+          transform: translateY(18px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero > *,
+      .section,
+      .cta-section {
+        animation: rise 650ms ease both;
+      }
+
+      @media (max-width: 780px) {
+        main {
+          padding: 36px 20px 56px;
+        }
+
+        .hero,
+        .split {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          min-height: auto;
+        }
+
+        .offer-panel-header,
+        .offer-panel-body {
+          padding: 24px 20px;
+        }
+
+        .confirmation-inner {
+          align-items: flex-start;
+          padding: 20px 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="confirmation">
+      <div class="confirmation-inner">
+        <div class="confirmation-icon" aria-hidden="true">✓</div>
+        <div class="confirmation-title">
+          Purchase confirmed. Your AI Confidence Kit order is complete.
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">AI Confidence Circle</p>
+          <h1>Stay current without having to keep up with AI yourself.</h1>
+          <p class="lead">
+            Now that you’ve got the AI Confidence Kit, you’ve got the foundation.
+          </p>
+          <div class="hero-note">
+            You’ll understand AI, know where to start, and have a clearer sense of what to trust.
+          </div>
+        </div>
+      </section>
+
+      <section class="section split">
+        <div>
+          <h2>Now the question is simple:</h2>
+          <div class="quote-line">how do you stay caught up as AI keeps changing?</div>
+        </div>
+        <div class="copy-stack">
+          <p>AI is moving incredibly fast.</p>
+          <p>New tools appear constantly. Features change. Things that sounded impossible six months ago suddenly become normal.</p>
+          <p>That’s exciting — but it also means the feeling of being “behind” can come back very quickly if you’re trying to keep up alone.</p>
+          <p>Most people do one of two things:</p>
+          <p>They either ignore AI completely and fall behind again… or they drown in endless videos, news, updates, and conflicting advice trying to follow everything themselves.</p>
+          <p>Neither feels good.</p>
+          <p>That’s why I created this.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="offer-panel">
+          <div class="offer-panel-header">
+            <h2>Stay Current Without Having To Keep Up With AI Yourself</h2>
+          </div>
+          <div class="offer-panel-body">
+            <p>
+              Inside the AI Confidence Circle, you get ongoing help, updates, prompts, and real-world use cases — so you can keep benefiting from AI without drowning in videos, news, tools, or conflicting advice.
+            </p>
+
+            <div class="benefit-list">
+              <div class="benefit">Plain-English AI updates as soon as something important changes</div>
+              <div class="benefit">10 custom prompts every month built around what you actually need</div>
+              <div class="benefit">1:1 help with anything you ever buy from me</div>
+              <div class="benefit">New useful AI use cases every month — only the stuff genuinely worth knowing</div>
+              <div class="benefit">Safety warnings for new scams, fake content, misleading AI tools, and things not to trust</div>
+            </div>
+
+            <div class="goal">
+              You do not have to spend hours trying to keep up with AI yourself anymore.
+            </div>
+
+            <p style="margin-top: 24px;">
+              You have one place that filters what matters, explains it simply, and helps you actually use it in real life.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section">
+        <p class="eyebrow">Free for your first month</p>
+        <h2>Try The AI Confidence Circle Free For Your First Month</h2>
+        <p class="cta-copy">
+          Because you picked up the AI Confidence Kit today, you can try the AI Confidence Circle completely free for your first month.
+        </p>
+
+        <div class="price-note">
+          Standard price: £19.99/month. Today: free for your first month.
+        </div>
+
+        <div class="quick-list">
+          <div>get your custom prompts</div>
+          <div>receive important AI updates</div>
+          <div>ask for help</div>
+          <div>see the monthly use cases</div>
+          <div>and decide if it genuinely helps you</div>
+        </div>
+
+        <p class="cta-copy">No pressure.</p>
+        <p class="cta-copy">If it helps you stay clearer, more confident, and less behind with AI, stay in.</p>
+        <p class="cta-copy">If not, cancel anytime.</p>
+
+        <p style="margin-top: 34px;">
+          <a class="button" href="https://buy.stripe.com/14A5kCaf1akA8mAgSubZe0M">Start My Free Month</a>
+        </p>
+        <div class="guarantee">Free for 30 days · Cancel anytime · Instant access</div>
+        <a class="decline" href="thank-you.html">No thanks, take me to my product</a>
+      </section>
+    </main>
+  </body>
+</html>
