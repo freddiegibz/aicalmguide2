@@ -65,46 +65,46 @@
       .confirmation-inner {
         width: min(100%, 920px);
         margin: 0 auto;
-        padding: 22px;
+        padding: 16px 22px;
         display: flex;
         align-items: center;
-        gap: 16px;
+        gap: 12px;
         color: #12492e;
         font-weight: 800;
       }
 
       .confirmation-icon {
         flex: 0 0 auto;
-        width: 46px;
-        height: 46px;
+        width: 36px;
+        height: 36px;
         border-radius: 999px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
         background: var(--green);
         color: #fff;
-        font-size: 1.55rem;
+        font-size: 1.2rem;
         font-weight: 900;
         box-shadow: 0 10px 24px rgba(29, 155, 83, 0.2);
       }
 
       .confirmation-title {
-        font-size: 1.12rem;
+        font-size: 1rem;
         line-height: 1.3;
       }
 
       main {
         width: min(100%, 920px);
         margin: 0 auto;
-        padding: 52px 22px 72px;
+        padding: 36px 22px 56px;
       }
 
       .hero {
         display: grid;
-        grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.62fr);
+        grid-template-columns: 1fr;
         gap: clamp(28px, 5vw, 64px);
         align-items: center;
-        min-height: 560px;
+        min-height: 300px;
       }
 
       .eyebrow {
@@ -126,14 +126,14 @@
       }
 
       h1 {
-        max-width: 760px;
-        font-size: clamp(2.8rem, 7vw, 5.8rem);
-        line-height: 0.98;
+        max-width: 980px;
+        font-size: clamp(1.85rem, 2.4vw, 2.55rem);
+        line-height: 1.12;
       }
 
       h2 {
-        font-size: clamp(2rem, 4vw, 3.45rem);
-        line-height: 1.04;
+        font-size: clamp(1.55rem, 2.2vw, 2.15rem);
+        line-height: 1.12;
       }
 
       p {
@@ -145,56 +145,55 @@
 
       .lead {
         max-width: 650px;
-        margin-top: 26px;
-        font-size: clamp(1.17rem, 1.8vw, 1.36rem);
+        margin-top: 18px;
+        font-size: clamp(1.08rem, 1.35vw, 1.18rem);
         color: #25304a;
       }
 
       .hero-note {
-        margin-top: 30px;
-        padding: 22px 24px;
-        border-left: 5px solid var(--green);
+        margin-top: 22px;
+        padding: 16px 18px;
+        border-left: 4px solid var(--green);
         background: #ffffff;
         color: var(--navy);
-        font-size: clamp(1.2rem, 2vw, 1.55rem);
+        font-size: clamp(1.06rem, 1.35vw, 1.18rem);
         line-height: 1.45;
-        box-shadow: 0 18px 42px rgba(7, 27, 63, 0.07);
+        box-shadow: 0 10px 24px rgba(7, 27, 63, 0.06);
       }
 
       .section {
-        padding: clamp(54px, 9vw, 92px) 0;
+        padding: clamp(38px, 5vw, 58px) 0;
         border-top: 1px solid var(--line);
       }
 
       .split {
-        display: grid;
-        grid-template-columns: minmax(0, 0.74fr) minmax(0, 1fr);
-        gap: clamp(28px, 6vw, 70px);
-        align-items: start;
+        display: block;
+        max-width: 760px;
       }
 
       .copy-stack {
         display: grid;
-        gap: 20px;
+        gap: 14px;
+        margin-top: 24px;
       }
 
       .quote-line {
         margin-top: 10px;
         color: var(--navy);
         font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(1.4rem, 2.6vw, 2rem);
+        font-size: clamp(1.15rem, 1.7vw, 1.45rem);
         line-height: 1.28;
       }
 
       .offer-panel {
-        margin-top: 34px;
+        margin-top: 24px;
         border: 1px solid rgba(30, 79, 135, 0.13);
         background: var(--surface);
-        box-shadow: 0 20px 48px rgba(7, 27, 63, 0.08);
+        box-shadow: 0 12px 30px rgba(7, 27, 63, 0.07);
       }
 
       .offer-panel-header {
-        padding: 28px 30px;
+        padding: 20px 24px;
         background: var(--navy);
         color: #fff;
       }
@@ -204,49 +203,49 @@
       }
 
       .offer-panel-body {
-        padding: 30px;
+        padding: 24px;
       }
 
       .benefit-list {
         display: grid;
-        gap: 12px;
-        margin: 24px 0 0;
+        gap: 9px;
+        margin: 20px 0 0;
       }
 
       .benefit {
         position: relative;
-        padding: 15px 16px 15px 42px;
+        padding: 12px 14px 12px 36px;
         border: 1px solid rgba(30, 79, 135, 0.11);
         background: #fff;
         color: var(--text);
-        font-size: 1.02rem;
+        font-size: 0.98rem;
         line-height: 1.48;
       }
 
       .benefit::before {
         content: "";
         position: absolute;
-        left: 17px;
-        top: 22px;
-        width: 10px;
-        height: 10px;
+        left: 15px;
+        top: 18px;
+        width: 8px;
+        height: 8px;
         border-radius: 999px;
         background: var(--green);
         box-shadow: 0 0 0 4px rgba(29, 155, 83, 0.1);
       }
 
       .goal {
-        margin-top: 34px;
-        padding: 28px 30px;
+        margin-top: 24px;
+        padding: 20px 22px;
         background: var(--gold);
         color: #604b12;
         font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(1.3rem, 2.4vw, 1.85rem);
+        font-size: clamp(1.12rem, 1.55vw, 1.34rem);
         line-height: 1.34;
       }
 
       .cta-section {
-        padding: clamp(54px, 9vw, 88px) 0 0;
+        padding: clamp(38px, 5vw, 58px) 0 0;
         border-top: 1px solid var(--line);
         text-align: center;
       }
@@ -258,13 +257,13 @@
 
       .cta-copy {
         max-width: 650px;
-        margin: 24px auto 0;
+        margin: 18px auto 0;
       }
 
       .price-note {
         width: min(100%, 560px);
-        margin: 28px auto 0;
-        padding: 18px 20px;
+        margin: 22px auto 0;
+        padding: 14px 16px;
         border: 1px solid rgba(29, 155, 83, 0.18);
         background: var(--green-soft);
         color: #12492e;
@@ -274,7 +273,7 @@
 
       .quick-list {
         width: min(100%, 520px);
-        margin: 24px auto 28px;
+        margin: 18px auto 22px;
         text-align: left;
       }
 
@@ -348,8 +347,7 @@
           padding: 36px 20px 56px;
         }
 
-        .hero,
-        .split {
+        .hero {
           grid-template-columns: 1fr;
         }
 
