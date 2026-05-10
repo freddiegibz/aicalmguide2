@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Thank You | AI Without The Tech Nonsense</title>
+    <title>Thank You | AI Confidence Kit</title>
     <meta
       name="description"
-      content="Thank you for purchasing AI Without The Tech Nonsense."
+      content="Thank you for purchasing the AI Confidence Kit."
     />
     <!-- Meta Pixel Code -->
     <script>
@@ -28,12 +28,17 @@
     <style>
       :root {
         --ink: #071b3f;
+        --navy: #173761;
         --text: #172033;
         --muted: #5d6678;
         --blue: #1468c4;
+        --blue-dark: #0f58a6;
         --paper: #f7f8fc;
         --card: #ffffff;
+        --cream: #fffdf9;
+        --line: rgba(7, 27, 63, 0.11);
         --green: #1f9d62;
+        --gold: #f7eed2;
       }
 
       * {
@@ -43,63 +48,75 @@
       body {
         margin: 0;
         min-height: 100vh;
-        display: grid;
-        place-items: center;
-        padding: 24px;
+        padding: 28px;
         background:
-          linear-gradient(180deg, #f7f8fc 0%, #edf4fb 100%);
+          linear-gradient(180deg, #f7f8fc 0%, #edf4fb 44%, #fffdf9 100%);
         color: var(--text);
         font-family: "Aptos", "Segoe UI", sans-serif;
       }
 
-      .wrap {
-        width: min(100%, 760px);
-        padding: 44px 30px 40px;
-        border: 1px solid rgba(7, 27, 63, 0.08);
-        border-radius: 10px;
+      main {
+        width: min(100%, 920px);
+        margin: 0 auto;
+        display: grid;
+        gap: 24px;
+      }
+
+      .panel {
+        border: 1px solid var(--line);
         background: var(--card);
-        box-shadow: 0 20px 40px rgba(7, 27, 63, 0.08);
+        box-shadow: 0 20px 44px rgba(7, 27, 63, 0.08);
+      }
+
+      .download-panel {
+        padding: clamp(34px, 5vw, 54px);
         text-align: center;
       }
 
       .icon {
-        width: 70px;
-        height: 70px;
-        margin: 0 auto 22px;
+        width: 68px;
+        height: 68px;
+        margin: 0 auto 20px;
         color: var(--green);
       }
 
-      h1 {
+      h1,
+      h2 {
         margin: 0;
         color: var(--ink);
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 500;
+        letter-spacing: 0;
+      }
+
+      h1 {
         font-size: clamp(2rem, 4vw, 3rem);
         line-height: 1.06;
       }
 
+      h2 {
+        font-size: clamp(1.85rem, 3vw, 2.65rem);
+        line-height: 1.08;
+      }
+
       p {
         margin: 18px auto 0;
-        max-width: 38rem;
+        max-width: 42rem;
         line-height: 1.68;
         font-size: 1.05rem;
       }
 
-      .next {
-        margin-top: 30px;
-        padding: 18px 20px;
-        border-radius: 8px;
-        background: #eef6fb;
-        color: var(--ink);
-        font-weight: 700;
-      }
-
       .download {
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         margin-top: 26px;
-        padding: 16px 28px;
+        min-height: 56px;
+        padding: 0 28px;
         border-radius: 8px;
         background: var(--blue);
         color: #ffffff;
-        font-weight: 700;
+        font-weight: 800;
         font-size: 1.02rem;
         text-decoration: none;
         box-shadow: 0 12px 24px rgba(20, 104, 196, 0.18);
@@ -107,7 +124,7 @@
 
       .download:hover,
       .download:focus-visible {
-        background: #0f58a6;
+        background: var(--blue-dark);
       }
 
       .backup-link {
@@ -118,40 +135,198 @@
 
       .backup-link a {
         color: var(--blue);
+        text-underline-offset: 3px;
+      }
+
+      .upsell {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.62fr);
+        overflow: hidden;
+      }
+
+      .upsell-copy {
+        padding: clamp(34px, 5vw, 54px);
+        background: var(--cream);
+      }
+
+      .eyebrow {
+        margin: 0 0 14px;
+        color: var(--blue);
+        font-size: 0.82rem;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .price-strip {
+        margin: 24px 0 0;
+        padding: 18px 20px;
+        border-left: 5px solid var(--green);
+        background: #eefaf2;
+        color: #12492e;
+        font-size: 1.14rem;
+        font-weight: 900;
+        line-height: 1.45;
+      }
+
+      .session-list {
+        margin: 24px 0 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 10px;
+      }
+
+      .session-list li {
+        position: relative;
+        padding-left: 28px;
+        color: var(--text);
+        font-size: 1.02rem;
+        line-height: 1.5;
+      }
+
+      .session-list li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.65em;
+        width: 10px;
+        height: 10px;
+        border-radius: 999px;
+        background: var(--green);
+        box-shadow: 0 0 0 4px rgba(31, 157, 98, 0.1);
+      }
+
+      .upsell-side {
+        padding: clamp(30px, 4vw, 44px);
+        background: var(--navy);
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .side-price {
+        color: var(--gold);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(2.6rem, 5vw, 4rem);
+        line-height: 1;
+      }
+
+      .side-copy {
+        margin: 16px 0 0;
+        color: rgba(255,255,255,0.84);
+      }
+
+      .book {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 28px;
+        min-height: 58px;
+        padding: 0 24px;
+        border-radius: 8px;
+        background: var(--gold);
+        color: var(--ink);
+        font-weight: 900;
+        text-decoration: none;
+      }
+
+      .book:hover,
+      .book:focus-visible {
+        background: #fff2c9;
+      }
+
+      .session-note {
+        margin-top: 14px;
+        color: rgba(255,255,255,0.72);
+        font-size: 0.94rem;
+      }
+
+      @media (max-width: 760px) {
+        body {
+          padding: 0;
+        }
+
+        main {
+          gap: 0;
+        }
+
+        .panel {
+          border-left: 0;
+          border-right: 0;
+          box-shadow: none;
+        }
+
+        .upsell {
+          grid-template-columns: 1fr;
+        }
       }
     </style>
   </head>
   <body>
-    <main class="wrap">
-      <svg class="icon" viewBox="0 0 74 74" aria-hidden="true">
-        <circle cx="37" cy="37" r="33" fill="currentColor" opacity="0.14" />
-        <path d="M24 37.8 32.5 46.3 50.3 28.4" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
-      </svg>
-      <h1>Thank you. Your guide is on the way.</h1>
-      <p>
-        Your purchase is complete. You should receive access details straight away, so you can start reading at your own pace.
-      </p>
-      <a
-        class="download"
-        href="https://drive.google.com/uc?export=download&id=1vArbPv3loGt3DnF6-uzwk2U7z8CXHjfO"
-        target="_blank"
-        rel="noopener"
-      >
-        Download Your Guide
-      </a>
-      <p class="backup-link">
-        If the button does not open straight away, use this link:
+    <main>
+      <section class="panel download-panel">
+        <svg class="icon" viewBox="0 0 74 74" aria-hidden="true">
+          <circle cx="37" cy="37" r="33" fill="currentColor" opacity="0.14" />
+          <path d="M24 37.8 32.5 46.3 50.3 28.4" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <h1>Thank you. Your guide is ready.</h1>
+        <p>
+          Your purchase is complete. You can download your AI Confidence Kit below and start reading at your own pace.
+        </p>
         <a
-          href="https://drive.google.com/file/d/1vArbPv3loGt3DnF6-uzwk2U7z8CXHjfO/view?usp=sharing"
+          class="download"
+          href="https://drive.google.com/uc?export=download&id=1vArbPv3loGt3DnF6-uzwk2U7z8CXHjfO"
           target="_blank"
           rel="noopener"
         >
-          Open the guide in Google Drive
+          Download Your Guide
         </a>
-      </p>
-      <p class="next">
-        Next step: open your email and look for your download message.
-      </p>
+        <p class="backup-link">
+          If the button does not open straight away, use this link:
+          <a
+            href="https://drive.google.com/file/d/1vArbPv3loGt3DnF6-uzwk2U7z8CXHjfO/view?usp=sharing"
+            target="_blank"
+            rel="noopener"
+          >
+            Open the guide in Google Drive
+          </a>
+        </p>
+      </section>
+
+      <section class="panel upsell">
+        <div class="upsell-copy">
+          <p class="eyebrow">Special One-Time Offer for Guide Buyers</p>
+          <h2>Book your personal AI Clarity Session.</h2>
+          <div class="price-strip">
+            Normally £119, but because you purchased today, you can book your personal AI Clarity Session for £50.
+          </div>
+          <p>
+            This is a private 1:1 session where I help you:
+          </p>
+          <ul class="session-list">
+            <li>set up the right AI tools</li>
+            <li>learn what to use them for</li>
+            <li>practise using them properly</li>
+            <li>avoid common mistakes</li>
+            <li>find ways AI can actually help in your life or work</li>
+          </ul>
+          <p>
+            Perfect if you want personal guidance instead of figuring it all out alone.
+          </p>
+        </div>
+
+        <aside class="upsell-side">
+          <div class="eyebrow" style="color: var(--gold);">Today Only</div>
+          <div class="side-price">£50</div>
+          <p class="side-copy">
+            A practical 1:1 setup session to help you start using AI with confidence.
+          </p>
+          <a class="book" href="#">Book Your Session</a>
+          <div class="session-note">Session booking link coming next.</div>
+        </aside>
+      </section>
     </main>
   </body>
 </html>
