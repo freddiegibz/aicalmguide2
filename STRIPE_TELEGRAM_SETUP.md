@@ -3,10 +3,9 @@
 ## Folder structure
 
 ```text
-app/
-  api/
-    stripe-webhook/
-      route.js
+api/
+  stripe-webhook.js
+package.json
 ```
 
 ## Environment variables
@@ -47,9 +46,9 @@ TELEGRAM_CHAT_ID=123456789
 
 ## Testing
 
-1. Redeploy the site with this route in the real project root.
+1. Redeploy the site with the `api/stripe-webhook.js` function in the project root.
 2. Open `https://www.aiconfidencekit.com/api/stripe-webhook`.
-3. A browser `GET` request should no longer return Vercel's plain `404`.
+3. A browser `GET` request should no longer return Vercel's plain `404`. A `405 Method not allowed` response is fine.
 4. Run a real or test checkout.
 5. Check Stripe webhook delivery status.
 6. Check Telegram for the message.
