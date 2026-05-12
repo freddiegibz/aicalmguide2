@@ -127,6 +127,28 @@
         background: var(--blue-dark);
       }
 
+      .resource-actions {
+        margin-top: 26px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px;
+      }
+
+      .resource-actions .download {
+        margin-top: 0;
+      }
+
+      .walkthrough {
+        background: var(--green);
+        box-shadow: 0 12px 24px rgba(31, 157, 98, 0.18);
+      }
+
+      .walkthrough:hover,
+      .walkthrough:focus-visible {
+        background: #167c4d;
+      }
+
       .backup-link {
         margin-top: 14px;
         font-size: 0.96rem;
@@ -273,16 +295,26 @@
         </svg>
         <h1>Thank you. Your guide is ready.</h1>
         <p>
-          Your purchase is complete. You can download your AI Confidence Kit below and start reading at your own pace.
+          Your purchase is complete. You can download your AI Confidence Kit below and use the checklist walkthrough to get your first practical win.
         </p>
-        <a
-          class="download"
-          href="https://drive.google.com/uc?export=download&id=1vArbPv3loGt3DnF6-uzwk2U7z8CXHjfO"
-          target="_blank"
-          rel="noopener"
-        >
-          Download Your Guide
-        </a>
+        <div class="resource-actions">
+          <a
+            class="download"
+            href="https://drive.google.com/uc?export=download&id=1vArbPv3loGt3DnF6-uzwk2U7z8CXHjfO"
+            target="_blank"
+            rel="noopener"
+          >
+            Download Your Guide
+          </a>
+          <a
+            class="download walkthrough"
+            href="https://aichecklist.vercel.app/"
+            target="_blank"
+            rel="noopener"
+          >
+            Open Checklist Walkthrough
+          </a>
+        </div>
         <p class="backup-link">
           If the button does not open straight away, use this link:
           <a
