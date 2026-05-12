@@ -251,153 +251,6 @@
         box-shadow: 0 20px 34px rgba(20, 104, 196, 0.28);
       }
 
-      .checkout-modal {
-        position: fixed;
-        inset: 0;
-        z-index: 50;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        padding: 22px;
-        background: rgba(7, 27, 63, 0.58);
-      }
-
-      .checkout-modal.is-open {
-        display: flex;
-      }
-
-      .checkout-dialog {
-        position: relative;
-        width: min(100%, 460px);
-        padding: 30px;
-        border-radius: 10px;
-        background: #ffffff;
-        box-shadow: 0 28px 60px rgba(7, 27, 63, 0.28);
-        text-align: center;
-      }
-
-      .checkout-close {
-        position: absolute;
-        top: 12px;
-        right: 12px;
-        width: 36px;
-        height: 36px;
-        border: 0;
-        border-radius: 50%;
-        background: #eef6fb;
-        color: var(--ink);
-        cursor: pointer;
-        font-size: 1.35rem;
-        line-height: 1;
-      }
-
-      .checkout-eyebrow {
-        margin: 0 0 12px;
-        color: var(--blue);
-        font-size: 0.8rem;
-        font-weight: 800;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-
-      .checkout-dialog h2 {
-        margin: 0;
-        color: var(--ink);
-        font-size: clamp(1.8rem, 5vw, 2.45rem);
-        line-height: 1.08;
-      }
-
-      .checkout-dialog p {
-        margin: 16px auto 0;
-        color: var(--text);
-        font-size: 1.02rem;
-        line-height: 1.58;
-      }
-
-      .price-row {
-        margin-top: 18px;
-        display: flex;
-        align-items: baseline;
-        justify-content: center;
-        gap: 12px;
-        flex-wrap: wrap;
-      }
-
-      .price-before {
-        color: var(--muted);
-        font-size: 1.05rem;
-        text-decoration: line-through;
-      }
-
-      .price-after {
-        color: var(--blue);
-        font-size: 1.9rem;
-        font-weight: 900;
-        line-height: 1;
-      }
-
-      .price-off {
-        padding: 4px 10px;
-        border-radius: 999px;
-        background: #eaf3ff;
-        color: var(--blue);
-        font-size: 0.78rem;
-        font-weight: 800;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-
-      .discount-code {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 20px;
-        padding: 12px 18px;
-        border: 1px dashed var(--blue);
-        border-radius: 8px;
-        background: #eef6fb;
-        color: var(--ink);
-        font-size: 1.18rem;
-        font-weight: 900;
-        letter-spacing: 0.08em;
-      }
-
-      .discount-row {
-        margin-top: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        flex-wrap: wrap;
-      }
-
-      .copy-code {
-        min-height: 40px;
-        padding: 0 14px;
-        border: 1px solid rgba(20, 104, 196, 0.24);
-        border-radius: 8px;
-        background: #ffffff;
-        color: var(--blue);
-        font-size: 0.9rem;
-        font-weight: 800;
-        cursor: pointer;
-      }
-
-      .copy-code:hover {
-        background: #eef6fb;
-      }
-
-      .copy-code.is-copied {
-        background: var(--blue);
-        color: #ffffff;
-        border-color: var(--blue);
-      }
-
-      .checkout-button {
-        width: 100%;
-        margin-top: 22px;
-      }
-
       .checkout-note {
         color: var(--muted) !important;
         font-size: 0.92rem !important;
@@ -1443,10 +1296,6 @@
           min-height: 58px;
         }
 
-        .checkout-dialog {
-          padding: 28px 20px 24px;
-        }
-
         .note {
           width: 100%;
           text-align: center;
@@ -1468,53 +1317,8 @@
   <body>
     <script>
       document.addEventListener("click", function (event) {
-        var modal = document.querySelector("[data-checkout-modal]");
-        var opener = event.target.closest("[data-open-checkout]");
-        var closer = event.target.closest("[data-close-checkout]");
-        var copier = event.target.closest("[data-copy-code]");
-
-        if (opener) {
-          event.preventDefault();
-          if (typeof fbq === "function") fbq("track", "InitiateCheckout");
-          if (modal) {
-            modal.classList.add("is-open");
-            modal.setAttribute("aria-hidden", "false");
-          }
-        }
-
-        if (copier) {
-          var code = copier.getAttribute("data-copy-code") || "EARLY50";
-          var copied = function () {
-            copier.textContent = "Copied";
-            copier.classList.add("is-copied");
-            window.clearTimeout(copier._copyReset);
-            copier._copyReset = window.setTimeout(function () {
-              copier.textContent = "Copy code";
-              copier.classList.remove("is-copied");
-            }, 1800);
-          };
-
-          if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(code).then(copied).catch(function () {
-              copied();
-            });
-          } else {
-            copied();
-          }
-        }
-
-        if (closer && modal) {
-          modal.classList.remove("is-open");
-          modal.setAttribute("aria-hidden", "true");
-        }
-      });
-
-      document.addEventListener("keydown", function (event) {
-        var modal = document.querySelector("[data-checkout-modal]");
-        if (event.key === "Escape" && modal) {
-          modal.classList.remove("is-open");
-          modal.setAttribute("aria-hidden", "true");
-        }
+        var checkout = event.target.closest("[data-stripe-checkout]");
+        if (checkout && typeof fbq === "function") fbq("track", "InitiateCheckout");
       });
     </script>
     <div class="top-banner">
@@ -1536,7 +1340,7 @@
                   A calm, practical kit that shows you exactly where to start with AI, how to get genuinely useful answers, make everyday tasks easier, and spot when images or content online may be AI-made or fake.
                 </p>
                 <div class="actions">
-                  <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-open-checkout>Get Instant Access</a>
+                  <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-stripe-checkout>Get Instant Access - &pound;19</a>
                 </div>
                 <p class="note">Instant download. 60-day money-back guarantee.</p>
               </div>
@@ -1670,32 +1474,11 @@
         <div class="final-cta-inner">
           <h2>Get Instant Access</h2>
           <p>Get the calm starting point most AI explanations skip. In one short kit, you can understand what AI is, how to make it useful in everyday life, and how to feel clearer about what to trust.</p>
-          <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-open-checkout>Get Instant Access</a>
-          <p class="sale-note"><strong>50% launch sale:</strong> <span class="old-price">£19</span> <span class="new-price">£9.50</span></p>
+          <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-stripe-checkout>Get Instant Access - &pound;19</a>
           <p class="checkout-note">Instant download. 60-day money-back guarantee.</p>
         </div>
       </section>
 
     </main>
-    <div class="checkout-modal" data-checkout-modal aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="checkout-title">
-      <div class="checkout-dialog">
-        <button class="checkout-close" type="button" aria-label="Close checkout offer" data-close-checkout>&times;</button>
-        <p class="checkout-eyebrow">Launch sale</p>
-        <h2 id="checkout-title">Get 50% off today</h2>
-        <p>Use this code at checkout to get the guide for half price during the launch sale.</p>
-        <div class="price-row" aria-label="Discounted price">
-          <span class="price-before">£19</span>
-          <span class="price-after">£9.50</span>
-          <span class="price-off">50% off</span>
-        </div>
-        <div class="discount-row">
-          <div class="discount-code">EARLY50</div>
-          <button class="copy-code" type="button" data-copy-code="EARLY50">Copy code</button>
-        </div>
-        <a class="button checkout-button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-stripe-checkout>Continue to secure checkout</a>
-        <p class="checkout-note">Instant download. 60-day money-back guarantee.</p>
-      </div>
-    </div>
   </body>
 </html>
-
