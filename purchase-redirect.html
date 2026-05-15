@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Completing Purchase</title>
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1988137388462157');
+fbq('track', 'Purchase', {value: 19.00, currency: 'GBP'});
+setTimeout(function(){
+  window.location.replace('thank-you.html');
+}, 800);
+</script>
+<noscript>
+  <meta http-equiv="refresh" content="0;url=thank-you.html">
+  <img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1988137388462157&ev=Purchase&cd[value]=19.00&cd[currency]=GBP&noscript=1"
+  />
+</noscript>
+<style>
+body{margin:0;min-height:100vh;display:grid;place-items:center;background:#00875A;color:#fff;font-family:Arial,sans-serif}
+p{font-size:18px}
+</style>
+</head>
+<body>
+<p>Confirming your purchase…</p>
+</body>
+</html>
