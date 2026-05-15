@@ -1,0 +1,496 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Product Name â€” Pink Tennis Brand</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@300;400;500;600;700;800&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--white:#FFFFFF;--off:#F5F5F0;--warm:#F5F5F0;--blush:#E0F5EC;--dark:#0A0A0A;--body:#3A3A3A;--muted:#777777;--faint:#B0BDB5;--rose:#00875A;--rose-dark:#00A86B;--line:rgba(0,0,0,.08)}
+body{font-family:'Anton',sans-serif;color:var(--dark);background:var(--white);-webkit-font-smoothing:antialiased}
+.narrow{max-width:700px;margin:0 auto;padding:0 40px}.wide{max-width:960px;margin:0 auto;padding:0 40px}
+.divider{height:0;background:transparent}
+.top-bar{background:#0A0A0A;padding:14px 20px;text-align:center;border-bottom:none}
+.top-bar-text{font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;color:rgba(255,255,255,.7)}
+.top-bar-text span{color:#C5F522;font-weight:700}
+.ticker-bar{background:#00875A;overflow:hidden;padding:10px 0;border-top:3px solid #5BB8A8;border-bottom:3px solid #5BB8A8;position:relative}
+.ticker-track{display:flex;width:max-content;animation:tickerScroll 30s linear infinite}
+.ticker-item{display:flex;align-items:center;gap:10px;padding:0 28px;white-space:nowrap;flex-shrink:0}
+.ticker-dot{width:6px;height:6px;border-radius:50%;background:#C5F522;opacity:1;flex-shrink:0}
+.ticker-text{font-family:'Anton',sans-serif;font-size:13px;font-weight:400;letter-spacing:1px;text-transform:uppercase;color:#fff}
+@keyframes tickerScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.ticker-bar::before,.ticker-bar::after{content:'';position:absolute;top:0;bottom:0;width:60px;z-index:2;pointer-events:none}
+.ticker-bar::before{left:0;background:linear-gradient(to right,#00875A,transparent)}
+.ticker-bar::after{right:0;background:linear-gradient(to left,#00875A,transparent)}
+.hero{background:repeating-linear-gradient(90deg,transparent,transparent 48px,rgba(255,255,255,.03) 48px,rgba(255,255,255,.03) 50px),#00875A;text-align:center;padding:80px 40px 100px;max-width:none;margin:0 auto}
+.hero-script{font-family:'Anton',sans-serif;font-size:clamp(36px,6vw,56px);font-weight:400;color:var(--dark);line-height:1.05;margin-bottom:4px;text-transform:uppercase;letter-spacing:-0.5px}
+.hero-script span{color:#E91E8C}
+.hero-label{font-family:'Outfit',sans-serif;font-size:8px;font-weight:600;letter-spacing:3.5px;text-transform:uppercase;color:var(--muted);margin-bottom:28px;display:block}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;color:#00875A;border:2px solid #C5F522;background:#C5F522;padding:8px 20px;border-radius:30px;margin-bottom:36px}
+.hero-badge::before{content:'';width:6px;height:6px;background:#00875A;border-radius:50%;flex-shrink:0}
+.hero h1{font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(30px,5vw,52px);line-height:1.1;text-transform:uppercase;letter-spacing:-0.5px;color:var(--dark);margin-bottom:28px;max-width:860px;margin-left:auto;margin-right:auto}
+.hero h1 em{color:#E91E8C;font-style:normal}
+.hero-summary{font-family:'Anton',sans-serif;font-size:17px;font-weight:400;color:var(--body);line-height:1.8;max-width:600px;margin:0 auto 44px}
+.btn-dark{display:inline-block;font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#0A0A0A;background:#C5F522;padding:18px 44px;border-radius:60px;border:none;text-decoration:none;transition:all 0.3s ease;cursor:pointer;box-shadow:0 4px 16px rgba(197,245,34,.3)}
+.btn-dark:hover{background:#E8FF80;color:#0A0A0A;transform:translateY(-2px)}
+.btn-white{display:inline-block;font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#0A0A0A;background:#C5F522;padding:18px 44px;border-radius:60px;border:none;text-decoration:none;transition:all 0.3s ease;cursor:pointer;box-shadow:0 4px 16px rgba(197,245,34,.3)}
+.btn-white:hover{background:#E8FF80;color:#0A0A0A;transform:translateY(-2px)}
+.cta-sub{font-family:'Outfit',sans-serif;font-size:11px;color:var(--muted);margin-top:16px;font-weight:400}
+.cta-wrapper{text-align:center}
+.section-label{font-family:'Outfit',sans-serif;font-size:8px;font-weight:600;letter-spacing:3.5px;text-transform:uppercase;color:var(--muted);margin-bottom:16px;display:block}
+.section-title{font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(28px,4vw,42px);color:var(--dark);line-height:1.1;text-transform:uppercase;letter-spacing:-0.5px;margin-bottom:48px}
+.pain-section{background:#E91E8C;padding:100px 40px}
+.pain-list{border-top:1px solid var(--line)}
+.pain-item{padding:24px 0;border-bottom:1px solid var(--line);display:flex;gap:18px;align-items:baseline;transition:padding-left 0.3s ease;cursor:default}
+.pain-item:hover{padding-left:8px}
+.pain-num{font-family:'Caveat',cursive;font-size:26px;color:var(--rose);flex-shrink:0;line-height:1;min-width:28px}
+.pain-text{font-family:'Anton',sans-serif;font-size:17px;color:var(--body);line-height:1.75}
+.benefits-section{background:repeating-linear-gradient(90deg,transparent,transparent 48px,rgba(0,135,90,.08) 48px,rgba(0,135,90,.08) 50px),#F5F5F0;padding:0px 40px 100px}
+.benefits-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.benefit-card{padding:30px;background:#fff;border:3px solid #E0F5EC;border-radius:14px;transition:all 0.3s ease}
+.benefit-card:hover{transform:translateY(-3px);border-color:#00875A;box-shadow:0 12px 40px rgba(0,135,90,.08)}
+.benefit-before{font-family:'Outfit',sans-serif;font-size:12px;color:var(--faint);margin-bottom:14px;display:flex;align-items:center;gap:6px}
+.benefit-before .x-icon{color:var(--rose);opacity:0.4;font-size:10px}
+.benefit-after{font-family:'Anton',sans-serif;font-size:17px;color:var(--dark);line-height:1.7}
+.intro-section{background:repeating-linear-gradient(90deg,transparent,transparent 48px,rgba(255,255,255,.03) 48px,rgba(255,255,255,.03) 50px),#00875A;padding:100px 40px 80px;text-align:center}
+.intro-script{font-family:'Caveat',cursive;font-size:clamp(28px,4vw,44px);color:#C5F522;margin-bottom:8px;font-weight:400}
+.intro-section h3{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(28px,4vw,44px);color:var(--dark);margin-bottom:28px;line-height:1.2}
+.intro-section p{font-family:'Anton',sans-serif;font-size:17px;color:var(--body);line-height:1.85;max-width:580px;margin:0 auto}
+.story-section{background:var(--white);padding:100px 40px}
+.story-header{display:flex;gap:40px;align-items:flex-start;margin-bottom:48px}
+.story-photo{width:200px;height:240px;flex-shrink:0;background:var(--warm);border:1px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;position:relative;overflow:hidden}
+.story-photo-icon{width:60px;height:60px;border-radius:50%;background:var(--blush);display:flex;align-items:center;justify-content:center}
+.story-photo-icon svg{width:28px;height:28px;color:var(--rose)}
+.story-photo-label{font-family:'Outfit',sans-serif;font-size:8px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--faint)}
+.story-intro{flex:1}.story-intro .section-label{margin-bottom:12px}.story-intro .section-title{margin-bottom:16px}
+.story-intro-text{font-family:'Anton',sans-serif;font-size:17px;color:var(--body);line-height:1.85}
+.story-proof{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:48px}
+.proof-item{background:var(--white);padding:28px 20px;text-align:center}
+.proof-number{font-family:'Caveat',cursive;font-size:36px;color:var(--rose);line-height:1;margin-bottom:4px}
+.proof-label{font-family:'Outfit',sans-serif;font-size:8px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.typewriter-container{position:relative;min-height:200px}
+.typewriter-text,.typewriter-text p{font-family:'Anton',sans-serif;font-size:16.5px;color:var(--body);line-height:1.85}
+.typewriter-text p{margin-bottom:28px}.typewriter-text p:last-of-type{margin-bottom:0}
+.typewriter-cursor{display:inline-block;width:2px;height:1.1em;background:var(--rose);margin-left:2px;vertical-align:text-bottom;animation:cursorBlink 0.6s ease infinite}
+@keyframes cursorBlink{0%,100%{opacity:1}50%{opacity:0}}
+.stack-section{background:repeating-linear-gradient(90deg,transparent,transparent 48px,rgba(255,255,255,.03) 48px,rgba(255,255,255,.03) 50px),#00875A;padding:100px 40px}
+.stack-list{border-top:1px solid var(--line)}
+.stack-item{padding:32px 0;border-bottom:1px solid var(--line);display:flex;gap:20px;align-items:baseline;transition:padding-left 0.3s ease;cursor:default}
+.stack-item:hover{padding-left:8px}
+.stack-num{font-family:'Caveat',cursive;font-size:28px;color:var(--rose);flex-shrink:0;line-height:1;min-width:48px}
+.stack-content h4{font-family:'Anton',sans-serif;font-size:18px;font-weight:400;text-transform:uppercase;letter-spacing:0.5px;color:#fff;margin-bottom:8px;line-height:1.3}
+.stack-content p{font-family:'Anton',sans-serif;font-size:15.5px;color:var(--body);line-height:1.75}
+.stack-tag{font-family:'Outfit',sans-serif;font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--rose);margin-top:10px;display:inline-block}
+.offer-table-section{background:repeating-linear-gradient(90deg,transparent,transparent 48px,rgba(255,255,255,.02) 48px,rgba(255,255,255,.02) 50px),#0A0A0A;padding:80px 40px}
+.offer-table-wrap{max-width:600px;margin:0 auto}
+.offer-table-header{text-align:center;margin-bottom:40px}
+.offer-table-label{font-family:'Outfit',sans-serif;font-size:8px;font-weight:600;letter-spacing:3.5px;text-transform:uppercase;color:rgba(0,135,90,.6);margin-bottom:16px;display:block}
+.offer-table-title{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(26px,3.5vw,38px);color:var(--white);line-height:1.25;margin-bottom:8px}
+.offer-table-sub{font-family:'Anton',sans-serif;font-size:16px;color:rgba(255,255,255,.35);line-height:1.7}
+.offer-table{border-top:1px solid rgba(255,255,255,.08);margin-bottom:40px}
+.offer-row{display:flex;align-items:center;gap:16px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.offer-check{width:24px;height:24px;border-radius:50%;background:rgba(0,135,90,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.offer-check svg{width:12px;height:12px}
+.offer-item-text{font-family:'Anton',sans-serif;font-size:17px;color:rgba(255,255,255,.8);line-height:1.4;flex:1}
+.offer-item-tag{font-family:'Outfit',sans-serif;font-size:8px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--rose);flex-shrink:0}
+.offer-price-box{text-align:center;margin-bottom:32px}
+.offer-price{font-family:'Caveat',cursive;font-size:64px;color:var(--white);line-height:1;margin-bottom:4px}
+.offer-price-note{font-family:'Outfit',sans-serif;font-size:10px;color:rgba(255,255,255,.3);letter-spacing:1px}
+.faq-section{background:repeating-linear-gradient(90deg,transparent,transparent 48px,rgba(0,135,90,.08) 48px,rgba(0,135,90,.08) 50px),#F5F5F0;padding:100px 40px}
+.faq-list{border-top:1px solid var(--line)}.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{font-family:'Outfit',sans-serif;font-size:17px;font-weight:600;color:var(--dark);padding:22px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:color 0.3s ease;user-select:none}
+.faq-q:hover{color:var(--rose)}.faq-q span{flex:1}
+.faq-icon{font-family:'Outfit',sans-serif;font-size:18px;color:var(--faint);flex-shrink:0;transition:all 0.3s ease;line-height:1}
+.faq-item.open .faq-icon{transform:rotate(45deg);color:var(--rose)}
+.faq-a{font-family:'Anton',sans-serif;font-size:16px;color:var(--body);line-height:1.8;max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.4s ease;padding-bottom:0}
+.faq-item.open .faq-a{max-height:500px;padding-bottom:24px}
+.final-cta{background:repeating-linear-gradient(90deg,transparent,transparent 48px,rgba(255,255,255,.02) 48px,rgba(255,255,255,.02) 50px),#0A0A0A;padding:100px 40px;text-align:center}
+.final-cta .section-label{color:rgba(0,135,90,.6)}
+.final-cta h3{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(28px,4vw,44px);color:var(--white);line-height:1.25;margin-bottom:16px}
+.final-cta p{font-family:'Anton',sans-serif;font-size:17px;color:rgba(255,255,255,.4);margin-bottom:32px;line-height:1.7}
+.final-cta .cta-sub{color:rgba(255,255,255,.4)}
+.footer{background:#0A0A0A;border-top:3px solid #00875A;padding:28px 40px;text-align:center}
+.footer p{font-family:'Outfit',sans-serif;font-size:10px;font-weight:400;letter-spacing:1.5px;color:rgba(255,255,255,.25);text-transform:uppercase}
+.price-badge{position:absolute;width:120px;height:120px;border-radius:50%;background:#E91E8C;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(0,0,0,.15);z-index:30}
+.price-badge-only{font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.price-badge-amount{font-family:'Anton',sans-serif;font-size:48px;font-weight:300;color:#fff;line-height:1}
+.mockup-container .price-badge{right:5%;top:30%;transform:translateY(-50%)}
+.mockup-container-sm .price-badge{right:5%;top:30%;transform:translateY(-50%)}
+.editorial-container .price-badge{left:50%;top:50%;transform:translate(-50%,-50%)}
+@media(max-width:700px){.price-badge{width:90px;height:90px}.price-badge-only{font-size:9px;letter-spacing:2px}.price-badge-amount{font-size:36px}.mockup-container .price-badge,.mockup-container-sm .price-badge{right:2%}.editorial-container .price-badge{left:50%}}
+
+/* â•â•â• WIZZY MOCKUP #1: MEGA MOCKUP (1400Ã—780) â•â•â• */
+.mockup-container{width:100%;max-width:1060px;margin:40px auto -110px;position:relative;aspect-ratio:1400/780;overflow:visible}
+.mockup-container .mega-center{width:100%;height:100%;position:relative;overflow:hidden}
+.mockup-container .mega-mockup{width:1400px;height:780px;position:absolute;top:50%;left:50%;transform-origin:0 0}
+.mockup-container .fan-item{position:absolute;transform-origin:center center}
+.mockup-container .pos-paper-s1{width:260px;height:340px;left:155px;top:40px;transform:rotate(-26deg);z-index:1}
+.mockup-container .pos-paper-s2{width:260px;height:340px;left:155px;top:40px;transform:rotate(-23deg);z-index:1}
+.mockup-container .pos-paper-s3{width:260px;height:340px;left:155px;top:40px;transform:rotate(-20deg);z-index:1}
+.mockup-container .pos-paper-s4{width:260px;height:340px;left:155px;top:40px;transform:rotate(-17deg);z-index:2}
+.mockup-container .pos-paper{width:260px;height:340px;left:155px;top:40px;transform:rotate(-15deg);z-index:3;box-shadow:0 3px 16px rgba(0,0,0,.1)}
+.mockup-container .pos-tablet{left:985px;top:40px;width:260px;transform:rotate(15deg);z-index:3}
+.mockup-container .pos-laptop{left:370px;top:5px;width:660px;z-index:10}
+.mockup-container .pos-phone-l{left:155px;top:320px;width:100px;transform:rotate(-15deg);z-index:20}
+.mockup-container .pos-phone-r{left:1145px;top:320px;width:100px;transform:rotate(15deg);z-index:20}
+.mockup-container .laptop{position:relative;border-radius:10px 10px 0 0;overflow:hidden;background:#2C2C2C;border:3px solid #404040}
+.mockup-container .laptop-topbar{height:20px;background:#363636;display:flex;align-items:center;padding:0 10px;gap:4px;border-bottom:1px solid #4a4a4a}
+.mockup-container .dot{width:6px;height:6px;border-radius:50%}.mockup-container .dot.r{background:#ff5f57}.mockup-container .dot.y{background:#febc2e}.mockup-container .dot.g{background:#28c840}
+.mockup-container .laptop-screen{aspect-ratio:16/10;overflow:hidden;position:relative}
+.mockup-container .laptop-kb{height:12px;background:linear-gradient(180deg,#3a3a3a,#2C2C2C);border-radius:0 0 4px 4px;margin:0 -1px;border:2px solid #404040;border-top:1px solid #4a4a4a;position:relative}
+.mockup-container .laptop-kb::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:50px;height:3px;border-radius:2px;background:rgba(255,255,255,.08)}
+.mockup-container .laptop-kbd{width:108%;height:13px;margin:-1px auto 0;margin-left:-4%;background:linear-gradient(180deg,#353535,#2C2C2C);border-radius:0 0 5px 5px;border:2px solid #404040;border-top:none}
+.mockup-container .tablet{position:relative;border-radius:16px;overflow:hidden;background:#2C2C2C;border:3px solid #404040;padding:7px}
+.mockup-container .tablet-screen{aspect-ratio:3/4;overflow:hidden;border-radius:8px;position:relative}
+.mockup-container .tablet-home{width:16px;height:16px;border-radius:50%;border:1.5px solid #505050;margin:7px auto 4px;background:#383838}
+.mockup-container .phone{position:relative;border-radius:16px;overflow:hidden;background:#2C2C2C;border:3px solid #404040;padding:4px}
+.mockup-container .phone-notch{width:28%;height:4px;background:#404040;border-radius:3px;margin:4px auto}
+.mockup-container .phone-screen{aspect-ratio:9/19.5;overflow:hidden;border-radius:10px;position:relative}
+.mockup-container .phone-bar{width:26%;height:2.5px;background:#404040;border-radius:2px;margin:5px auto 3px}
+.mockup-container .paper{background:#fff;border-radius:3px;overflow:hidden}
+.mockup-container .paper-shadow{border-radius:3px}
+.mockup-container .screen-inner{position:absolute;inset:0;overflow:hidden}
+.mockup-container .artifact-wrap{transform-origin:top left;position:absolute;top:0;left:0;overflow:hidden}
+@keyframes mockupScrollUp{0%,8%{transform:translateY(0)}92%,100%{transform:translateY(var(--scroll-dist))}}
+.mockup-container .scroll-content{animation:mockupScrollUp var(--scroll-dur) ease-in-out infinite alternate}
+.mockup-container .hero-cover{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}
+.mockup-container .paper-cover{width:100%;height:100%;padding:17px 13px;display:flex;flex-direction:column}
+.mockup-container .pc-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;margin-bottom:6px}
+.mockup-container .pc-title{font-size:18px;font-weight:800;line-height:1.2;margin-bottom:2px}
+.mockup-container .pc-sub{font-size:10px;font-style:italic;margin-bottom:10px}
+.mockup-container .pc-divider{width:100%;height:1px;background:rgba(0,0,0,.06);margin-bottom:10px}
+.mockup-container .pc-item{display:flex;align-items:center;gap:8px;margin-bottom:6px;font-size:9px}
+.mockup-container .pc-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.mockup-container .pc-footer{margin-top:auto;font-size:8px;letter-spacing:1px;text-transform:uppercase}
+.mockup-container .video-screen{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative}
+.mockup-container .video-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;margin-bottom:24px}
+.mockup-container .play-btn{width:90px;height:90px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.mockup-container .play-btn svg{width:36px;height:36px}
+.mockup-container .video-title{margin-top:28px;text-align:center;font-size:22px;font-weight:800;line-height:1.2}
+.mockup-container .video-dur{margin-top:14px;font-size:11px;opacity:.3}
+
+/* â•â•â• WIZZY MOCKUP #2: SMALL MEGA (1400Ã—780, 742px container) â•â•â• */
+.mockup-container-sm{width:100%;max-width:742px;margin:44px auto 0;position:relative;aspect-ratio:1400/780;overflow:visible}
+.mockup-container-sm .mega-center{width:100%;height:100%;position:relative;overflow:hidden}
+.mockup-container-sm .mega-mockup{width:1400px;height:780px;position:absolute;top:50%;left:50%;transform-origin:0 0}
+.mockup-container-sm .fan-item{position:absolute;transform-origin:center center}
+.mockup-container-sm .pos-paper-s1{width:260px;height:340px;left:155px;top:40px;transform:rotate(-26deg);z-index:1}
+.mockup-container-sm .pos-paper-s2{width:260px;height:340px;left:155px;top:40px;transform:rotate(-23deg);z-index:1}
+.mockup-container-sm .pos-paper-s3{width:260px;height:340px;left:155px;top:40px;transform:rotate(-20deg);z-index:1}
+.mockup-container-sm .pos-paper-s4{width:260px;height:340px;left:155px;top:40px;transform:rotate(-17deg);z-index:2}
+.mockup-container-sm .pos-paper{width:260px;height:340px;left:155px;top:40px;transform:rotate(-15deg);z-index:3;box-shadow:0 3px 16px rgba(0,0,0,.1)}
+.mockup-container-sm .pos-tablet{left:985px;top:40px;width:260px;transform:rotate(15deg);z-index:3}
+.mockup-container-sm .pos-laptop{left:370px;top:5px;width:660px;z-index:10}
+.mockup-container-sm .pos-phone-l{left:155px;top:320px;width:100px;transform:rotate(-15deg);z-index:20}
+.mockup-container-sm .pos-phone-r{left:1145px;top:320px;width:100px;transform:rotate(15deg);z-index:20}
+.mockup-container-sm .laptop{position:relative;border-radius:10px 10px 0 0;overflow:hidden;background:#2C2C2C;border:3px solid #404040}
+.mockup-container-sm .laptop-topbar{height:20px;background:#363636;display:flex;align-items:center;padding:0 10px;gap:4px;border-bottom:1px solid #4a4a4a}
+.mockup-container-sm .dot{width:6px;height:6px;border-radius:50%}.mockup-container-sm .dot.r{background:#ff5f57}.mockup-container-sm .dot.y{background:#febc2e}.mockup-container-sm .dot.g{background:#28c840}
+.mockup-container-sm .laptop-screen{aspect-ratio:16/10;overflow:hidden;position:relative}
+.mockup-container-sm .laptop-kb{height:12px;background:linear-gradient(180deg,#3a3a3a,#2C2C2C);border-radius:0 0 4px 4px;margin:0 -1px;border:2px solid #404040;border-top:1px solid #4a4a4a;position:relative}
+.mockup-container-sm .laptop-kb::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:50px;height:3px;border-radius:2px;background:rgba(255,255,255,.08)}
+.mockup-container-sm .laptop-kbd{width:108%;height:13px;margin:-1px auto 0;margin-left:-4%;background:linear-gradient(180deg,#353535,#2C2C2C);border-radius:0 0 5px 5px;border:2px solid #404040;border-top:none}
+.mockup-container-sm .tablet{position:relative;border-radius:16px;overflow:hidden;background:#2C2C2C;border:3px solid #404040;padding:7px}
+.mockup-container-sm .tablet-screen{aspect-ratio:3/4;overflow:hidden;border-radius:8px;position:relative}
+.mockup-container-sm .tablet-home{width:16px;height:16px;border-radius:50%;border:1.5px solid #505050;margin:7px auto 4px;background:#383838}
+.mockup-container-sm .phone{position:relative;border-radius:16px;overflow:hidden;background:#2C2C2C;border:3px solid #404040;padding:4px}
+.mockup-container-sm .phone-notch{width:28%;height:4px;background:#404040;border-radius:3px;margin:4px auto}
+.mockup-container-sm .phone-screen{aspect-ratio:9/19.5;overflow:hidden;border-radius:10px;position:relative}
+.mockup-container-sm .phone-bar{width:26%;height:2.5px;background:#404040;border-radius:2px;margin:5px auto 3px}
+.mockup-container-sm .paper{background:#fff;border-radius:3px;overflow:hidden}
+.mockup-container-sm .paper-shadow{border-radius:3px}
+.mockup-container-sm .screen-inner{position:absolute;inset:0;overflow:hidden}
+.mockup-container-sm .artifact-wrap{transform-origin:top left;position:absolute;top:0;left:0;overflow:hidden}
+.mockup-container-sm .scroll-content{animation:mockupScrollUp var(--scroll-dur) ease-in-out infinite alternate}
+.mockup-container-sm .hero-cover{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}
+.mockup-container-sm .paper-cover{width:100%;height:100%;padding:17px 13px;display:flex;flex-direction:column}
+.mockup-container-sm .pc-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;margin-bottom:6px}
+.mockup-container-sm .pc-title{font-size:18px;font-weight:800;line-height:1.2;margin-bottom:2px}
+.mockup-container-sm .pc-sub{font-size:10px;font-style:italic;margin-bottom:10px}
+.mockup-container-sm .pc-divider{width:100%;height:1px;background:rgba(0,0,0,.06);margin-bottom:10px}
+.mockup-container-sm .pc-item{display:flex;align-items:center;gap:8px;margin-bottom:6px;font-size:9px}
+.mockup-container-sm .pc-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.mockup-container-sm .pc-footer{margin-top:auto;font-size:8px;letter-spacing:1px;text-transform:uppercase}
+.mockup-container-sm .video-screen{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative}
+.mockup-container-sm .video-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;margin-bottom:24px}
+.mockup-container-sm .play-btn{width:90px;height:90px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.mockup-container-sm .play-btn svg{width:36px;height:36px}
+.mockup-container-sm .video-title{margin-top:28px;text-align:center;font-size:22px;font-weight:800;line-height:1.2}
+.mockup-container-sm .video-dur{margin-top:14px;font-size:11px;opacity:.3}
+
+/* â•â•â• WIZZY MOCKUP #3: EDITORIAL (1400Ã—680) â•â•â• */
+.editorial-container{width:100%;max-width:768px;margin:0 auto -80px;position:relative;aspect-ratio:1400/680;overflow:visible}
+.editorial-container .editorial-center{width:100%;height:100%;position:relative;overflow:visible;margin:0;padding:0;line-height:0}
+.editorial-container .editorial-mockup{width:1400px;height:680px;position:absolute;top:50%;left:50%;transform-origin:0 0}
+.editorial-container .fan-item{position:absolute;transform-origin:center center}
+.editorial-container .pos-paper-s1{width:380px;height:492px;left:340px;top:80px;transform:rotate(-17deg);z-index:1}
+.editorial-container .pos-paper-s2{width:380px;height:492px;left:340px;top:80px;transform:rotate(-14deg);z-index:1}
+.editorial-container .pos-paper-s3{width:380px;height:492px;left:340px;top:80px;transform:rotate(-11deg);z-index:2}
+.editorial-container .pos-paper-s4{width:380px;height:492px;left:340px;top:80px;transform:rotate(-9deg);z-index:2}
+.editorial-container .pos-paper{width:380px;height:492px;left:340px;top:80px;transform:rotate(-7deg);z-index:5;box-shadow:0 4px 24px rgba(0,0,0,.08)}
+.editorial-container .pos-tablet{left:680px;top:10px;width:380px;transform:rotate(6deg);z-index:8}
+.editorial-container .tablet{position:relative;border-radius:18px;overflow:hidden;background:#2C2C2C;border:3px solid #404040;padding:8px}
+.editorial-container .tablet-screen{aspect-ratio:3/4;overflow:hidden;border-radius:10px;position:relative}
+.editorial-container .tablet-home{width:18px;height:18px;border-radius:50%;border:1.5px solid #505050;margin:8px auto 5px;background:#383838}
+.editorial-container .paper{background:#fff;border-radius:4px;overflow:hidden}
+.editorial-container .paper-shadow{border-radius:4px}
+.editorial-container .screen-inner{position:absolute;inset:0;overflow:hidden}
+.editorial-container .artifact-wrap{transform-origin:top left;position:absolute;top:0;left:0;overflow:hidden}
+@keyframes editorialScrollUp{0%,8%{transform:translateY(0)}92%,100%{transform:translateY(var(--scroll-dist))}}
+.editorial-container .scroll-content{animation:editorialScrollUp var(--scroll-dur) ease-in-out infinite alternate}
+.editorial-container .window-shadow{position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(to right,transparent 20%,rgba(0,0,0,.03) 20.5%,rgba(0,0,0,.03) 21%,transparent 21.5%,transparent 48%,rgba(0,0,0,.03) 48.5%,rgba(0,0,0,.03) 49%,transparent 49.5%,transparent 76%,rgba(0,0,0,.03) 76.5%,rgba(0,0,0,.03) 77%,transparent 77.5%),linear-gradient(to bottom,transparent 30%,rgba(0,0,0,.025) 30.5%,rgba(0,0,0,.025) 31%,transparent 31.5%,transparent 65%,rgba(0,0,0,.025) 65.5%,rgba(0,0,0,.025) 66%,transparent 66.5%);filter:blur(12px);opacity:.6}
+.editorial-container .ed-paper-cover{width:100%;height:100%;padding:5%;display:flex;flex-direction:column;font-family:'Anton',sans-serif;color:#0A0A0A;background:#fff}
+.editorial-container .ed-paper-top{flex-shrink:0;margin-bottom:12px}
+.editorial-container .ed-paper-label{font-family:'Outfit',sans-serif;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:#777;margin-bottom:10px}
+.editorial-container .ed-paper-title{font-family:'Anton',sans-serif;font-size:26px;font-weight:300;line-height:1.15;color:#0A0A0A;margin-bottom:4px}
+.editorial-container .ed-paper-title em{font-style:italic;color:#00875A}
+.editorial-container .ed-paper-subtitle{font-family:'Anton',sans-serif;font-size:10px;color:#777;line-height:1.5}
+.editorial-container .ed-paper-band{width:100%;height:45px;background:#0A0A0A;margin-bottom:16px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.editorial-container .ed-paper-band span{font-family:'Outfit',sans-serif;font-size:7px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(0,135,90,.6)}
+.editorial-container .ed-paper-bottom{flex:1;display:flex;flex-direction:column}
+.editorial-container .ed-paper-section-label{font-family:'Outfit',sans-serif;font-size:7px;letter-spacing:3px;text-transform:uppercase;color:#777;margin-bottom:12px}
+.editorial-container .ed-paper-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:9px;font-family:'Anton',sans-serif;font-size:9px;line-height:1.4;color:#3A3A3A}
+.editorial-container .ed-paper-dot{width:5px;height:5px;border-radius:50%;background:#00875A;flex-shrink:0;margin-top:3px}
+.editorial-container .ed-paper-footer{margin-top:auto;font-family:'Outfit',sans-serif;font-size:7px;letter-spacing:2px;text-transform:uppercase;color:#B0BDB5;padding-top:10px}
+
+/* â•â•â• ANIMATIONS â•â•â• */
+.steps-section{background:#fff;padding:40px 40px 80px}
+.steps-wrap{display:flex;flex-direction:column;align-items:center;gap:28px;max-width:600px;margin:0 auto}
+.steps-boxes{display:flex;align-items:flex-start;gap:12px}
+.step-group{display:flex;align-items:center;gap:12px}
+.step-box{width:140px;padding:22px 14px;background:#fff;border:2px solid rgba(0,0,0,.08);border-radius:14px;display:flex;flex-direction:column;align-items:center;gap:8px;transition:all 0.5s cubic-bezier(0.34,1.56,0.64,1);transform:scale(0.88) translateY(4px);opacity:0.3}
+.step-box.active{background:var(--white);transform:scale(1) translateY(0);opacity:1}
+.step-box.highlight{border-color:#00875A;box-shadow:0 8px 20px rgba(0,135,90,.1)}
+.step-num{font-family:'Caveat',cursive;font-size:32px;color:var(--rose);line-height:1}
+.step-icon{font-size:26px;opacity:0.3;transition:opacity 0.4s}.step-box.active .step-icon{opacity:1}
+.step-label{font-family:'Outfit',sans-serif;font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--dark);text-align:center}
+.step-sub{font-family:'Anton',sans-serif;font-size:13px;color:var(--muted);text-align:center;font-style:italic;opacity:0;transition:opacity 0.4s}
+.step-box.active .step-sub{opacity:1}
+.step-arrow{opacity:0.12;transition:opacity 0.5s}.step-arrow.visible{opacity:1}
+.steps-progress{width:100%;max-width:480px}
+.steps-bar-track{height:4px;background:var(--line);overflow:hidden}
+.steps-bar-fill{height:100%;background:var(--rose);width:0%;transition:width 0.8s cubic-bezier(0.23,1,0.32,1)}
+.steps-bar-labels{display:flex;justify-content:space-between;margin-top:6px}
+.steps-bar-label{font-family:'Outfit',sans-serif;font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--faint);transition:color 0.4s}
+.steps-bar-label.done{color:var(--rose)}
+.wvw-section{background:repeating-linear-gradient(90deg,transparent,transparent 48px,rgba(0,135,90,.08) 48px,rgba(0,135,90,.08) 50px),#F5F5F0;padding:80px 40px}
+.wvw-wrap{max-width:560px;margin:0 auto;display:flex;align-items:stretch;justify-content:center;gap:16px;min-height:320px}
+.wvw-card{flex:1;max-width:220px;background:var(--white);border:1px solid var(--line);padding:20px 22px;display:flex;flex-direction:column;gap:10px;transition:all 0.5s ease}
+.wvw-card.wvw-highlight{border-color:var(--rose);box-shadow:0 8px 30px rgba(196,149,110,.08)}
+.wvw-card-label{font-family:'Outfit',sans-serif;font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--faint);margin-bottom:8px;transition:color 0.5s ease}
+.wvw-card-label.wvw-label-active{color:var(--rose)}
+.wvw-problems{display:flex;flex-direction:column;gap:10px;flex:1}
+.wvw-problem{display:flex;align-items:center;gap:8px;opacity:0;transform:translateX(-6px);transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1)}
+.wvw-problem.active{opacity:1;transform:translateX(0)}.wvw-problem.dimmed{opacity:0.25;transform:translateX(0)}
+.wvw-problem svg{flex-shrink:0;stroke:var(--faint)}
+.wvw-problem span{font-family:'Anton',sans-serif;font-size:15px;color:var(--body);line-height:1.3}
+.wvw-tagline{font-family:'Anton',sans-serif;font-size:14px;margin-top:auto;padding-top:12px;font-style:italic;opacity:0;transition:opacity 0.5s ease}
+.wvw-tagline-left{color:var(--faint)}.wvw-tagline-left.visible{opacity:1}
+.wvw-tagline-right{font-style:normal;font-weight:600;color:var(--rose)}.wvw-tagline-right.visible{opacity:1}
+.wvw-center{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;width:50px}
+.wvw-center-line{width:1px;flex:1;max-height:60px;background:var(--line);transition:background 0.5s ease}
+.wvw-center-line.line-active{background:var(--rose)}
+.wvw-vs-circle{width:32px;height:32px;border-radius:50%;border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;transition:all 0.5s cubic-bezier(0.34,1.56,0.64,1);transform:scale(0.7);background:transparent}
+.wvw-vs-circle.circle-active{border-color:var(--rose);transform:scale(1);background:rgba(0,135,90,0.08)}
+.wvw-vs-circle span{font-family:'Caveat',cursive;font-size:14px;color:var(--rose);opacity:0;transition:opacity 0.3s ease}
+.wvw-vs-circle.circle-active span{opacity:1}
+.wvw-results{display:flex;flex-direction:column;gap:12px;flex:1}
+.wvw-result{transition:all 0.5s cubic-bezier(0.34,1.56,0.64,1)}
+.wvw-result-header{display:flex;justify-content:space-between;margin-bottom:4px}
+.wvw-result-header span{font-family:'Outfit',sans-serif;font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--faint);transition:color 0.4s ease}
+.wvw-result.active .wvw-result-header span{color:var(--dark)}
+.wvw-bar-track{height:4px;background:#F0F0F0;overflow:hidden}
+.wvw-bar-fill{height:100%;background:transparent;width:0%;transition:all 0.6s cubic-bezier(0.23,1,0.32,1)}
+.wvw-result.active .wvw-bar-fill{background:var(--rose)}
+
+@media(max-width:700px){
+.hero{padding:60px 20px 72px}.top-bar{padding:10px 16px}.top-bar-text{font-size:14px}
+.pain-section,.benefits-section,.intro-section,.story-section,.stack-section,.faq-section{padding:70px 20px}
+.story-header{flex-direction:column;align-items:center;text-align:center;gap:24px}.story-photo{width:160px;height:200px}
+.story-proof{grid-template-columns:repeat(2,1fr)}.final-cta{padding:70px 20px}.narrow,.wide{padding:0}
+.benefits-grid{grid-template-columns:1fr}.stack-num{min-width:36px;font-size:24px}
+.wvw-section{padding:56px 20px}.mockup-container{margin:28px auto -40px}.mockup-container-sm{margin:28px auto -20px}
+.editorial-container{margin:0 auto -40px;margin-top:-20px}.steps-section{padding:56px 20px}
+.editorial-container .pos-tablet{transform:rotate(4deg) !important;top:40px !important}
+.benefits-section{padding-top:40px !important}
+.benefits-section .wide > div:first-child{padding-top:40px !important}
+.editorial-section-wrap{margin-top:-40px !important;padding-bottom:0 !important}
+.intro-section .mockup-container-sm{margin-bottom:-30px}
+.intro-section .cta-wrapper{margin-top:0 !important}
+.step-box{width:100px;padding:16px 10px}.step-num{font-size:26px}.step-icon{font-size:20px}
+.step-label{font-size:8px}.step-sub{font-size:11px}.steps-boxes{gap:6px}.step-group{gap:6px}
+.offer-item-tag{display:none}.offer-row{gap:12px;padding:14px 0}.offer-item-text{font-size:15px}
+.wvw-wrap{gap:8px}.wvw-card{padding:16px 14px}.wvw-problem span{font-size:13px}
+.wvw-result-header span{font-size:9px}.wvw-center{width:36px}.wvw-vs-circle{width:26px;height:26px}.wvw-vs-circle span{font-size:12px}
+}
+
+.hero h1{color:#fff !important}
+.hero-script{color:#fff !important}
+.hero-label{color:rgba(255,255,255,.5) !important}
+.hero-summary{color:rgba(255,255,255,.7) !important}
+.hero .cta-sub{color:rgba(255,255,255,.4) !important}
+.hero h1 em{color:#C5F522 !important}
+
+.pain-section .section-label{color:rgba(255,255,255,.7)}
+.pain-section .section-title{color:#fff}
+.pain-text{color:rgba(255,255,255,.8) !important}
+.pain-num{color:#C5F522 !important}
+.pain-list{border-color:rgba(255,255,255,.1)}
+.pain-item{border-color:rgba(255,255,255,.1) !important}
+.pain-section h2[style]{color:#C5F522 !important}
+
+.intro-section h3{color:#fff !important}
+.intro-section p{color:rgba(255,255,255,.8) !important}
+.intro-section .section-label{color:rgba(255,255,255,.55)}
+
+.stack-section .section-label{color:#C5F522}
+.stack-section .section-title{color:#fff}
+.stack-content p{color:rgba(255,255,255,.7) !important}
+.stack-tag{color:#C5F522 !important}
+.stack-num{color:#C5F522 !important}
+.stack-item{border-color:rgba(255,255,255,.1) !important}
+.stack-list{border-color:rgba(255,255,255,.1)}
+
+.offer-check svg path{stroke:#C5F522 !important}
+.offer-item-tag{color:#C5F522 !important}
+.offer-table{border-color:rgba(255,255,255,.1)}
+.offer-row{border-color:rgba(255,255,255,.1) !important}
+
+.story-section{background:repeating-linear-gradient(90deg,transparent,transparent 48px,rgba(0,135,90,.08) 48px,rgba(0,135,90,.08) 50px),#F5F5F0 !important}
+
+.faq-list{border-top:none !important}
+.faq-item{border-bottom:none !important;border-radius:14px;border:3px solid #E0F5EC;background:#fff;margin-bottom:8px;padding:0 20px}
+.faq-item:hover{border-color:#00875A}
+.faq-q:hover{color:#00875A}
+.faq-item.open .faq-icon{color:#E91E8C}
+.proof-number{color:#C5F522 !important}
+
+.hero-summary,.pain-text,.benefit-after,.benefit-before,.story-intro-text,.typewriter-text,.typewriter-text p,.stack-content p,.faq-a,.offer-table-sub,.offer-item-text,.intro-section p,.final-cta p{font-family:'Outfit',sans-serif !important}
+.step-sub{font-family:'Outfit',sans-serif}
+</style>
+</head>
+<body>
+<div class="top-bar"><div class="top-bar-text">For <span>Curious Beginners</span> Who Want To Know What To Ask AI</div></div>
+<div class="ticker-bar"><div class="ticker-track">
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">100 Copy-Paste Prompts</span></div>
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">10 Everyday Life Areas</span></div>
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">Made For Complete Beginners</span></div>
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">Know Exactly What To Ask</span></div>
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">Emails, Admin, Planning, Decisions</span></div>
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">Safety Notes Included</span></div>
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">No Prompt Engineering Needed</span></div>
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">Use AI In Real Daily Life</span></div>
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">What To Change In Every Prompt</span></div>
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">Follow-Up Questions Included</span></div>
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">100 Copy-Paste Prompts</span></div>
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">10 Everyday Life Areas</span></div>
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">Made For Complete Beginners</span></div>
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">Know Exactly What To Ask</span></div>
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">Emails, Admin, Planning, Decisions</span></div>
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">Safety Notes Included</span></div>
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">No Prompt Engineering Needed</span></div>
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">Use AI In Real Daily Life</span></div>
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">What To Change In Every Prompt</span></div>
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">Follow-Up Questions Included</span></div>
+</div></div>
+
+<section class="hero">
+<div class="hero-script">What To Ask <span>AI</span></div>
+<span class="hero-label">AI Starter Prompt Pack + Guide</span>
+<div class="hero-badge">100 simple copy-paste AI prompts for complete beginners</div>
+<h1>For people who know AI could help them, <em>but still do not know what to type.</em></h1>
+<div style="max-width:720px;margin:36px auto 32px"><img src="heroimg.jpg" alt="AI Starter Prompt Pack + Guide" style="display:block;width:100%;height:auto;border-radius:18px;box-shadow:0 18px 50px rgba(0,0,0,.18)"></div>
+<p class="hero-summary">Get 100 simple copy-paste prompts for everyday life, each with built-in guidance on when to use it, what to change, what to ask next, and what to be careful with - plus a short beginner guide to help you get started.</p>
+<div class="cta-wrapper"><a href="#" class="btn-dark">Get The What To Ask Pack</a><p class="cta-sub">No jargon. No prompt engineering. Just a clear place to start. 30-day money-back guarantee.</p></div>
+</section>
+<div class="divider"></div>
+
+<section class="wvw-section"><div style="text-align:center;margin-bottom:52px"><span class="section-label">The Difference</span><h2 class="section-title" style="text-align:center">Without the pack vs with the pack</h2></div><div class="wvw-wrap"><div class="wvw-card"><div class="wvw-card-label">Without the Pack</div><div class="wvw-problems"><div class="wvw-problem" data-index="0"><svg width="10" height="10" viewBox="0 0 10 10"><line x1="2" y1="2" x2="8" y2="8" stroke-width="1.2" stroke-linecap="round"/><line x1="8" y1="2" x2="2" y2="8" stroke-width="1.2" stroke-linecap="round"/></svg><span>You open AI and freeze at the blank box</span></div><div class="wvw-problem" data-index="1"><svg width="10" height="10" viewBox="0 0 10 10"><line x1="2" y1="2" x2="8" y2="8" stroke-width="1.2" stroke-linecap="round"/><line x1="8" y1="2" x2="2" y2="8" stroke-width="1.2" stroke-linecap="round"/></svg><span>You are not sure what AI can help with in real life</span></div><div class="wvw-problem" data-index="2"><svg width="10" height="10" viewBox="0 0 10 10"><line x1="2" y1="2" x2="8" y2="8" stroke-width="1.2" stroke-linecap="round"/><line x1="8" y1="2" x2="2" y2="8" stroke-width="1.2" stroke-linecap="round"/></svg><span>You search free prompts and get overwhelmed</span></div><div class="wvw-problem" data-index="3"><svg width="10" height="10" viewBox="0 0 10 10"><line x1="2" y1="2" x2="8" y2="8" stroke-width="1.2" stroke-linecap="round"/><line x1="8" y1="2" x2="2" y2="8" stroke-width="1.2" stroke-linecap="round"/></svg><span>You ask vague questions and get vague answers back</span></div><div class="wvw-problem" data-index="4"><svg width="10" height="10" viewBox="0 0 10 10"><line x1="2" y1="2" x2="8" y2="8" stroke-width="1.2" stroke-linecap="round"/><line x1="8" y1="2" x2="2" y2="8" stroke-width="1.2" stroke-linecap="round"/></svg><span>You still feel like AI is for other people</span></div></div><div class="wvw-tagline wvw-tagline-left">Still guessing what to ask.</div></div><div class="wvw-center"><div class="wvw-center-line wvw-center-line-top"></div><div class="wvw-vs-circle"><span>vs</span></div><div class="wvw-center-line wvw-center-line-bottom"></div></div><div class="wvw-card wvw-card-right"><div class="wvw-card-label wvw-card-label-right">With the Pack</div><div class="wvw-results"><div class="wvw-result" data-index="0"><div class="wvw-result-header"><span>You know where to start</span></div><div class="wvw-bar-track"><div class="wvw-bar-fill" data-width="94%"></div></div></div><div class="wvw-result" data-index="1"><div class="wvw-result-header"><span>You find the right prompt fast</span></div><div class="wvw-bar-track"><div class="wvw-bar-fill" data-width="90%"></div></div></div><div class="wvw-result" data-index="2"><div class="wvw-result-header"><span>You use AI for emails, admin, planning, and more</span></div><div class="wvw-bar-track"><div class="wvw-bar-fill" data-width="88%"></div></div></div><div class="wvw-result" data-index="3"><div class="wvw-result-header"><span>You adapt prompts safely and confidently</span></div><div class="wvw-bar-track"><div class="wvw-bar-fill" data-width="84%"></div></div></div><div class="wvw-result" data-index="4"><div class="wvw-result-header"><span>You feel less behind and more in control</span></div><div class="wvw-bar-track"><div class="wvw-bar-fill" data-width="96%"></div></div></div></div><div class="wvw-tagline wvw-tagline-right">Open AI and start.</div></div></div></section>
+<div class="divider"></div>
+
+<section class="pain-section"><div class="narrow"><span class="section-label">Sound Familiar?</span><h2 class="section-title">If any of this sounds familiar...</h2><div class="pain-list">
+<div class="pain-item"><span class="pain-num">01</span><span class="pain-text">You open AI because you know it could probably help, then stop at the blank box because you have no idea what to type.</span></div>
+<div class="pain-item"><span class="pain-num">02</span><span class="pain-text">You have tried it once or twice, but the answers were so vague that you came away thinking, "I still do not really see the point."</span></div>
+<div class="pain-item"><span class="pain-num">03</span><span class="pain-text">You search for free prompts online, find huge random lists, and somehow feel more overwhelmed than when you started.</span></div>
+<div class="pain-item"><span class="pain-num">04</span><span class="pain-text">You are not sure what AI can actually help with in normal life, so it stays in the category of "interesting" instead of becoming useful.</span></div>
+<div class="pain-item"><span class="pain-num">05</span><span class="pain-text">Other people seem to know how to use it already, while you are still wondering if you are missing something obvious.</span></div>
+<div class="pain-item"><span class="pain-num">06</span><span class="pain-text">And even when you do ask something, you are not always sure what to trust, what to double-check, or what you should never share with AI in the first place.</span></div>
+</div><h2 class="section-title" style="text-align:center;margin-top:48px;margin-bottom:0;font-family:'Caveat',cursive;font-weight:400;font-size:clamp(32px,5vw,52px);color:var(--rose)">...then this is for you!</h2></div></section>
+
+<!-- â•â•â• WIZZY MOCKUP #3: EDITORIAL MOCKUP â•â•â• -->
+<section class="editorial-section-wrap" style="background:transparent;padding:0 40px;margin-top:-80px;position:relative;z-index:2">
+  <div style="max-width:720px;margin:0 auto;">
+    <img src="heroimg.jpg" alt="What To Ask AI product preview" style="display:block;width:100%;height:auto;border-radius:18px;box-shadow:0 18px 50px rgba(0,0,0,.18)">
+  </div>
+</section>
+
+<section class="benefits-section"><div class="wide"><div style="text-align:center;margin-bottom:52px;padding-top:100px"><span class="section-label">The Shift</span><h2 class="section-title" style="text-align:center">Here is what changes when you have<br>the right starting prompts in place:</h2></div><div class="benefits-grid">
+<div class="benefit-card"><div class="benefit-before"><span class="x-icon">&#10005;</span> You open AI and freeze</div><div class="benefit-after">You open the pack, find the situation that matches what you need, and have a prompt ready to use instead of starting from nothing.</div></div>
+<div class="benefit-card"><div class="benefit-before"><span class="x-icon">&#10005;</span> You are not sure what AI can help with</div><div class="benefit-after">The prompts are organised by everyday life areas, so you can quickly see where AI fits: emails, admin, planning, decisions, learning, shopping, safety, and more.</div></div>
+<div class="benefit-card"><div class="benefit-before"><span class="x-icon">&#10005;</span> Free prompt lists feel random and overwhelming</div><div class="benefit-after">Each prompt comes with context: when to use it, what to change, what to ask next, and what to be careful with.</div></div>
+<div class="benefit-card"><div class="benefit-before"><span class="x-icon">&#10005;</span> Your first attempts get vague answers</div><div class="benefit-after">You start with clearer prompts built for real situations, which gives AI a better chance of returning something useful from the first try.</div></div>
+<div class="benefit-card"><div class="benefit-before"><span class="x-icon">&#10005;</span> AI still feels too technical</div><div class="benefit-after">You do not need to learn prompt engineering. You copy, paste, replace the bracketed parts, and follow the simple guide.</div></div>
+<div class="benefit-card"><div class="benefit-before"><span class="x-icon">&#10005;</span> You are not sure what to trust</div><div class="benefit-after">The pack helps you use AI more safely, with notes on what not to share, when to double-check, and when to ask a real person instead.</div></div>
+</div></div></section>
+<div class="divider"></div>
+
+<section class="intro-section"><span class="section-label">The Solution</span><div class="intro-script">Introducing</div><h3>What To Ask AI: 100 Simple Prompts for Everyday Life</h3><p>A beginner-friendly prompt pack and guide that gives you 100 copy-paste prompts for real everyday situations, plus simple instructions showing when to use each one, what to change, what to ask next, and what to be careful with.</p>
+<div style="max-width:720px;margin:44px auto 0"><img src="heroimg.jpg" alt="What To Ask AI product preview" style="display:block;width:100%;height:auto;border-radius:18px;box-shadow:0 18px 50px rgba(0,0,0,.18)"></div>
+<div class="cta-wrapper" style="margin-top:-60px"><a href="#" class="btn-dark">Get The What To Ask Pack</a><p class="cta-sub">One-time payment. Instant access. 100 prompts across 10 everyday life areas.</p></div></section>
+
+<section class="steps-section"><div style="text-align:center;margin-bottom:36px"><span class="section-label">How It Works</span><h2 class="section-title" style="text-align:center">It only takes 3 steps</h2></div><div class="steps-wrap"><div class="steps-boxes"><div class="step-group"><div class="step-box" id="stepBox0" data-index="0"><div class="step-num">1</div><div class="step-icon">01</div><div class="step-label">Pick the situation</div><div class="step-sub">Choose the everyday moment you need help with</div></div><div class="step-arrow" id="stepArrow0"><svg width="24" height="12" viewBox="0 0 20 10"><path d="M0 5 H13 M10 1.5 L17 5 L10 8.5" stroke="#C5F522" stroke-width="1.2" fill="none" stroke-linecap="round"/></svg></div></div><div class="step-group"><div class="step-box" id="stepBox1" data-index="1"><div class="step-num">2</div><div class="step-icon">02</div><div class="step-label">Copy the right prompt</div><div class="step-sub">Paste it into AI and swap in your own details</div></div><div class="step-arrow" id="stepArrow1"><svg width="24" height="12" viewBox="0 0 20 10"><path d="M0 5 H13 M10 1.5 L17 5 L10 8.5" stroke="#C5F522" stroke-width="1.2" fill="none" stroke-linecap="round"/></svg></div></div><div class="step-group"><div class="step-box" id="stepBox2" data-index="2"><div class="step-num">3</div><div class="step-icon">03</div><div class="step-label">Know what to ask next</div><div class="step-sub">Use the follow-up question and safety note to keep going</div></div></div></div><div class="steps-progress"><div class="steps-bar-track"><div class="steps-bar-fill" id="stepsBarFill"></div></div><div class="steps-bar-labels"><span class="steps-bar-label">Blank box</span><span class="steps-bar-label" id="stepsBarEnd">Know what to ask</span></div></div></div></section>
+<div class="divider"></div>
+
+<section class="story-section"><div class="wide"><div class="story-header"><div class="story-photo"><div class="story-photo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><span class="story-photo-label">Your photo here</span></div><div class="story-intro"><span class="section-label">The Story</span><h2 class="section-title">How this product came to exist</h2><p class="story-intro-text">This started with me teaching people in my own family how to use AI. After selling more than 1,300 beginner guides and helping 30+ people one to one, I kept seeing the same pattern again and again.</p></div></div><div class="story-proof"><div class="proof-item"><div class="proof-number">1,300+</div><div class="proof-label">Beginner guides sold</div></div><div class="proof-item"><div class="proof-number">30+</div><div class="proof-label">People helped 1:1</div></div><div class="proof-item"><div class="proof-number">100</div><div class="proof-label">Prompts in the pack</div></div><div class="proof-item"><div class="proof-number">10</div><div class="proof-label">Everyday life areas</div></div></div><div class="story-body" style="max-width:700px;margin:0 auto"><div class="typewriter-container" id="typewriterContainer"><div class="typewriter-text" id="typewriterText"></div></div></div></div></section>
+<div class="divider"></div>
+
+<section class="stack-section"><div class="narrow"><div style="text-align:center;margin-bottom:52px"><span class="section-label">What You Get</span><h2 class="section-title" style="text-align:center">Here is everything inside the pack:</h2></div><div class="stack-list">
+<div class="stack-item"><span class="stack-num">One</span><div class="stack-content"><h4>A short beginner guide that shows you how to use AI properly</h4><p>Before the prompts, you get a simple quick-start guide covering what a prompt is, how to copy and paste one, how to replace bracketed sections, how to ask follow-up questions, and how to tell whether the answer is actually useful.</p><span class="stack-tag">Quick-Start Guide</span></div></div>
+<div class="stack-item"><span class="stack-num">Two</span><div class="stack-content"><h4>100 copy-paste prompts across 10 everyday life areas</h4><p>The prompts are organised around real situations: confusing things, emails, admin, decisions, planning, learning, safety, health appointments, shopping and money, and family or personal life.</p><span class="stack-tag">Prompt Library</span></div></div>
+<div class="stack-item"><span class="stack-num">Three</span><div class="stack-content"><h4>Plain-English guidance for when to use each prompt</h4><p>You are not left staring at a random list. Every prompt begins with a simple “Use this when” explanation, so you can quickly match the prompt to the situation you are actually in.</p><span class="stack-tag">Usage Context</span></div></div>
+<div class="stack-item"><span class="stack-num">Four</span><div class="stack-content"><h4>Built-in help for adapting the prompt and continuing the conversation</h4><p>Each entry tells you what to change, which follow-up question to ask next, and how to keep moving instead of getting one answer and stopping there.</p><span class="stack-tag">Follow-Up Support</span></div></div>
+<div class="stack-item"><span class="stack-num">Five</span><div class="stack-content"><h4>Safety notes that show you what not to share and when not to fully trust AI</h4><p>You also get practical guardrails for privacy, scams, health questions, and situations where a real person or professional is the better next step.</p><span class="stack-tag">Safety Notes</span></div></div>
+</div></div></section>
+<div class="divider"></div>
+
+<section class="offer-table-section"><div class="offer-table-wrap"><div class="offer-table-header"><span class="offer-table-label">Everything You Get</span><div class="offer-table-title">What To Ask AI: 100 Simple Prompts for Everyday Life</div><p class="offer-table-sub">Instant access to the full prompt pack and beginner guide, so you can open AI and know exactly what to ask.</p></div><div class="offer-table">
+<div class="offer-row"><div class="offer-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="#C5F522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="offer-item-text">100 copy-paste AI prompts for everyday life</span><span class="offer-item-tag">Core</span></div>
+<div class="offer-row"><div class="offer-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="#C5F522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="offer-item-text">Quick-start beginner guide</span><span class="offer-item-tag">Guide</span></div>
+<div class="offer-row"><div class="offer-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="#C5F522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="offer-item-text">10 everyday prompt categories</span><span class="offer-item-tag">Method</span></div>
+<div class="offer-row"><div class="offer-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="#C5F522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="offer-item-text">Copy-paste prompts with editable sections</span><span class="offer-item-tag">Template</span></div>
+<div class="offer-row"><div class="offer-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="#C5F522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="offer-item-text">Safety notes and trust guardrails</span><span class="offer-item-tag">Quality</span></div>
+<div class="offer-row"><div class="offer-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="#C5F522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="offer-item-text">Follow-up questions for every prompt</span><span class="offer-item-tag">Flexible</span></div>
+<div class="offer-row"><div class="offer-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="#C5F522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="offer-item-text">Prompts for emails, admin, planning, safety, learning, shopping, and more</span><span class="offer-item-tag">Universal</span></div>
+<div class="offer-row"><div class="offer-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="#C5F522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="offer-item-text">Ready to use the moment you open it</span><span class="offer-item-tag">Speed</span></div>
+</div><div class="offer-price-box"><div class="offer-price">&pound;19</div><div class="offer-price-note">One-time payment. Instant access.</div></div><div class="cta-wrapper"><a href="#" class="btn-white">Get The What To Ask Pack</a><p class="cta-sub" style="color:rgba(255,255,255,.4)">100 prompts. 10 everyday areas. A clear place to start today.</p></div></div></section>
+<div class="divider"></div>
+
+<section class="faq-section"><div class="narrow"><div style="text-align:center;margin-bottom:52px"><span class="section-label">Questions</span><h2 class="section-title" style="text-align:center">Frequently Asked Questions</h2></div><div class="faq-list">
+<div class="faq-item open"><div class="faq-q" onclick="toggleFaq(this)"><span>I am a complete beginner. Can I still use this?</span><div class="faq-icon">+</div></div><div class="faq-a">Yes. This was made for curious beginners who want AI to feel useful without learning technical jargon or prompt engineering. If you can copy, paste, and replace a few bracketed words, you can use the pack.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Can I not just find prompts for free online?</span><div class="faq-icon">+</div></div><div class="faq-a">You can find free prompts online. The problem is that most free lists are scattered, generic, and leave you to work out when to use each one. This pack gives you prompts organised by everyday situation, with usage context, editable parts, follow-up questions, and safety notes built in.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>I have tried AI before and did not really see the point. Is this different?</span><div class="faq-icon">+</div></div><div class="faq-a">Often the issue is not AI itself. It is starting with vague questions, then getting vague answers back. This pack gives you clearer starting prompts for real situations so you can see where AI becomes practically useful much faster.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Will I know which prompt to use when?</span><div class="faq-icon">+</div></div><div class="faq-a">Yes. Every prompt starts with a plain-English “Use this when” section, so you are not left guessing which prompt fits the moment you are in.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>What kinds of things does it help with?</span><div class="faq-icon">+</div></div><div class="faq-a">The pack covers 10 everyday areas, including confusing letters and jargon, emails and messages, admin, decisions, planning, learning, safety and scams, health appointments, shopping and money, and family or personal life.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>What if AI gives me something wrong?</span><div class="faq-icon">+</div></div><div class="faq-a">The pack does not pretend AI is always right. It includes guidance on what not to share, when not to fully trust the answer, when to double-check, and when a real person or professional is the better next step.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Is this just a PDF full of prompts?</span><div class="faq-icon">+</div></div><div class="faq-a">No. It is a starter system for using AI more confidently. The prompts are only one part of it. The real value is that each one also tells you when to use it, what to change, what to ask next, and what to be careful with.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>How quickly can I start using it?</span><div class="faq-icon">+</div></div><div class="faq-a">Immediately. Open the pack, choose the everyday situation you need help with, copy the matching prompt, and use it straight away.</div></div>
+</div></div></section>
+<div class="divider"></div>
+
+<section class="final-cta"><span class="section-label">Get Started</span><h3>Stop staring at the blank box.<br>Open AI and know exactly what to ask.</h3><p>Get What To Ask AI: 100 Simple Prompts for Everyday Life, including the full prompt pack, beginner guide, follow-up questions, and safety notes.</p><a href="#" class="btn-white">Get The What To Ask Pack</a><p class="cta-sub">Instant access. 100 prompts across 10 everyday life areas.</p></section>
+<footer class="footer"><p>&copy; 2026 Your Company Name. All rights reserved.</p></footer>
+
+<script>
+function toggleFaq(el){el.closest('.faq-item').classList.toggle('open')}
+(function(){var CW=1400,CH=780,root=document.getElementById('megaMockup');if(!root)return;function scaleMockup(){var c=root.parentElement,vw=c.offsetWidth,vh=c.offsetHeight,s=Math.min(vw/CW,vh/CH);root.style.transform='translate('+(-CW*s/2)+'px,'+(-CH*s/2)+'px) scale('+s+')'}function scaleScreens(){var screens=root.querySelectorAll('.screen-inner');for(var i=0;i<screens.length;i++){var el=screens[i],cw=parseInt(el.getAttribute('data-canonical-w')),ch=parseInt(el.getAttribute('data-canonical-h')),sw=el.offsetWidth,sh=el.offsetHeight;if(!sw||!sh)continue;var wrap=el.querySelector('.artifact-wrap');if(wrap)wrap.style.transform='scale('+Math.min(sw/cw,sh/ch)+')'}}function layout(){scaleMockup();requestAnimationFrame(scaleScreens)}window.addEventListener('resize',layout);window.addEventListener('load',layout);layout();setTimeout(layout,100);setTimeout(layout,500)})();
+(function(){var CW=1400,CH=780,root=document.getElementById('megaMockupSm');if(!root)return;function scaleMockup(){var c=root.parentElement,vw=c.offsetWidth,vh=c.offsetHeight,s=Math.min(vw/CW,vh/CH);root.style.transform='translate('+(-CW*s/2)+'px,'+(-CH*s/2)+'px) scale('+s+')'}function scaleScreens(){var screens=root.querySelectorAll('.screen-inner');for(var i=0;i<screens.length;i++){var el=screens[i],cw=parseInt(el.getAttribute('data-canonical-w')),ch=parseInt(el.getAttribute('data-canonical-h')),sw=el.offsetWidth,sh=el.offsetHeight;if(!sw||!sh)continue;var wrap=el.querySelector('.artifact-wrap');if(wrap)wrap.style.transform='scale('+Math.min(sw/cw,sh/ch)+')'}}function layout(){scaleMockup();requestAnimationFrame(scaleScreens)}window.addEventListener('resize',layout);window.addEventListener('load',layout);layout();setTimeout(layout,100);setTimeout(layout,500)})();
+(function(){var CW=1400,CH=680,root=document.getElementById('editorialMockup');if(!root)return;function scaleMockup(){var c=root.parentElement,vw=c.offsetWidth,vh=c.offsetHeight,s=Math.min(vw/CW,vh/CH);root.style.transform='translate('+(-CW*s/2)+'px,'+(-CH*s/2)+'px) scale('+s+')'}function scaleScreens(){var screens=root.querySelectorAll('.screen-inner');for(var i=0;i<screens.length;i++){var el=screens[i],cw=parseInt(el.getAttribute('data-canonical-w')),ch=parseInt(el.getAttribute('data-canonical-h')),sw=el.offsetWidth,sh=el.offsetHeight;if(!sw||!sh)continue;var wrap=el.querySelector('.artifact-wrap');if(wrap)wrap.style.transform='scale('+Math.min(sw/cw,sh/ch)+')'}}function layout(){scaleMockup();requestAnimationFrame(scaleScreens)}window.addEventListener('resize',layout);window.addEventListener('load',layout);layout();setTimeout(layout,100);setTimeout(layout,500)})();
+(function(){var paragraphs=["I first started teaching people in my own family how to use AI. They were curious, willing, and perfectly capable of using it once they got going. But before that, they kept getting stuck in the exact same place: the empty box at the start.","Later, after selling more than 1,300 beginner guides and helping over 30 people one to one, I realised the biggest problem was not that people could not use AI. It was that they did not know what to say to it in the first place.","Most beginner advice skips over that. It explains what AI is, or gives people giant lists of prompts, but it does not help them recognise the real-life moment they are in and choose the right thing to ask.","So I built this pack around that missing step: simple prompts organised by everyday situations, with guidance for when to use them, what to change, what to ask next, and what to be careful with. Because once you know what to ask, AI stops feeling mysterious and starts becoming useful."];var el=document.getElementById('typewriterText'),container=document.getElementById('typewriterContainer');if(!el||!container)return;var fullText=paragraphs.join('\n\n'),charIndex=0,started=false,speed=18,cursorHtml='<span class="typewriter-cursor"></span>';function type(){if(charIndex<fullText.length){var chunk=fullText.substring(0,charIndex+1),html=chunk.replace(/\n\n/g,'</p><p>');el.innerHTML='<p>'+html+cursorHtml+'</p>';charIndex++;var c=fullText[charIndex-1],delay=speed;if(c==='.')delay=280;else if(c===',')delay=120;else if(c==='\n')delay=400;setTimeout(type,delay)}else{var cur=el.querySelector('.typewriter-cursor');if(cur)cur.style.display='none'}}var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting&&!started){started=true;type();observer.disconnect()}})},{threshold:0.3});observer.observe(container)})();
+(function(){var step=0,boxes=[document.getElementById('stepBox0'),document.getElementById('stepBox1'),document.getElementById('stepBox2')],arrows=[document.getElementById('stepArrow0'),document.getElementById('stepArrow1')],barFill=document.getElementById('stepsBarFill'),barEnd=document.getElementById('stepsBarEnd');function animate(){step=(step+1)%6;boxes.forEach(function(box,i){box.classList.toggle('active',step>=i+1);box.classList.toggle('highlight',step===i+1||(i===2&&step>=4))});arrows.forEach(function(arrow,i){arrow.classList.toggle('visible',step>=i+2)});barFill.style.width=['0%','15%','45%','75%','100%','100%'][step]||'0%';var done=step>=4;barEnd.classList.toggle('done',done);barEnd.textContent=done?'Result delivered':'Where they finish'}setInterval(animate,1100)})();
+(function(){let step=0;const problems=document.querySelectorAll('.wvw-problem'),results=document.querySelectorAll('.wvw-result'),vsCircle=document.querySelector('.wvw-vs-circle'),centerLines=document.querySelectorAll('.wvw-center-line'),labelRight=document.querySelector('.wvw-card-label-right'),cardRight=document.querySelector('.wvw-card-right'),tagLeft=document.querySelector('.wvw-tagline-left'),tagRight=document.querySelector('.wvw-tagline-right');function animate(){step=(step+1)%14;problems.forEach(function(el){var i=parseInt(el.dataset.index),active=step>=i+1&&step<7,dimmed=step>=7&&step<14;el.classList.toggle('active',active&&!dimmed);el.classList.toggle('dimmed',dimmed)});tagLeft.classList.toggle('visible',step>=4&&step<7);var centerActive=step>=6;vsCircle.classList.toggle('circle-active',centerActive);centerLines.forEach(function(l){l.classList.toggle('line-active',centerActive)});labelRight.classList.toggle('wvw-label-active',step>=6);cardRight.classList.toggle('wvw-highlight',step>=11);results.forEach(function(el){var i=parseInt(el.dataset.index),active=step>=i+7;el.classList.toggle('active',active);if(active){var fill=el.querySelector('.wvw-bar-fill');fill.style.width=fill.dataset.width}else{el.querySelector('.wvw-bar-fill').style.width='0%'}});tagRight.classList.toggle('visible',step>=11)}setInterval(animate,1000)})();
+</script>
+</body>
+</html>
+
+
