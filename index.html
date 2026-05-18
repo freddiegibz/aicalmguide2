@@ -66,6 +66,27 @@ body{font-family:'Anton',sans-serif;color:var(--dark);background:var(--white);-w
 .pain-num{font-family:'Caveat',cursive;font-size:26px;color:var(--rose);flex-shrink:0;line-height:1;min-width:28px}
 .pain-text{font-family:'Anton',sans-serif;font-size:17px;color:var(--body);line-height:1.75}
 .benefits-section{background:repeating-linear-gradient(90deg,transparent,transparent 48px,rgba(0,135,90,.08) 48px,rgba(0,135,90,.08) 50px),#F5F5F0;padding:0px 40px 100px}
+.prompt-difference-section{background:#F5F5F0;padding:78px 40px 84px}
+.prompt-difference-wrap{max-width:1040px;margin:0 auto}
+.prompt-difference-head{display:flex;align-items:center;justify-content:center;gap:20px;margin-bottom:34px}
+.prompt-difference-line{width:110px;height:1px;background:rgba(10,10,10,.16)}
+.prompt-difference-title{font-family:'Outfit',sans-serif;font-size:24px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--dark);text-align:center}
+.prompt-flow{display:grid;grid-template-columns:minmax(0,1fr) 42px minmax(0,1fr) 42px minmax(0,1fr);align-items:center;gap:10px}
+.prompt-card{height:100%;padding:24px 18px 20px;border:2px solid rgba(10,10,10,.08);border-radius:16px;background:#fff;display:flex;flex-direction:column}
+.prompt-card.vague{background:#FFF8F8}
+.prompt-card.better{background:#FFFDF7}
+.prompt-card.answer{background:#F8FCFA}
+.prompt-step{font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;text-align:center;margin-bottom:18px}
+.prompt-card.vague .prompt-step{color:#A72F42}
+.prompt-card.better .prompt-step{color:#B56A08}
+.prompt-card.answer .prompt-step{color:#176746}
+.prompt-box{min-height:118px;padding:20px 18px;border:2px solid rgba(10,10,10,.08);border-radius:14px;background:#fff;display:flex;align-items:center;font-family:'Outfit',sans-serif;font-size:17px;font-weight:600;line-height:1.5;color:var(--dark)}
+.prompt-note{display:flex;align-items:center;gap:10px;margin-top:20px;font-family:'Outfit',sans-serif;font-size:14px;color:var(--body);line-height:1.5}
+.prompt-icon{width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;font-weight:700}
+.vague .prompt-icon{color:#A72F42;border:2px solid #A72F42}
+.better .prompt-icon{color:#B56A08;border:2px solid #B56A08}
+.answer .prompt-icon{color:#176746;border:2px solid #176746}
+.prompt-arrow{font-family:'Outfit',sans-serif;font-size:30px;font-weight:700;text-align:center;color:var(--dark)}
 .benefits-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .benefit-card{padding:30px;background:#fff;border:3px solid #E0F5EC;border-radius:14px;transition:all 0.3s ease}
 .benefit-card:hover{transform:translateY(-3px);border-color:#00875A;box-shadow:0 12px 40px rgba(0,135,90,.08)}
@@ -335,6 +356,14 @@ body{font-family:'Anton',sans-serif;color:var(--dark);background:var(--white);-w
 .editorial-container .pos-tablet{transform:rotate(4deg) !important;top:40px !important}
 .benefits-section{padding-top:40px !important}
 .benefits-section .wide > div:first-child{padding-top:40px !important}
+.prompt-difference-section{padding:56px 20px 62px}
+.prompt-difference-head{gap:12px;margin-bottom:24px}
+.prompt-difference-line{width:34px}
+.prompt-difference-title{font-size:18px}
+.prompt-flow{grid-template-columns:1fr;gap:14px}
+.prompt-arrow{font-size:24px;transform:rotate(90deg)}
+.prompt-card{padding:20px 16px 18px}
+.prompt-box{min-height:auto;font-size:16px}
 .editorial-section-wrap{margin-top:-40px !important;padding-bottom:0 !important}
 .intro-section .mockup-container-sm{margin-bottom:-30px}
 .intro-section .cta-wrapper{margin-top:0 !important}
@@ -396,10 +425,40 @@ body{font-family:'Anton',sans-serif;color:var(--dark);background:var(--white);-w
 <div class="hero-script">What To Ask <span>AI</span></div>
 <span class="hero-label">AI Starter Prompt Pack + Guide</span>
 <div class="hero-badge">100 simple copy-paste AI prompts for complete beginners</div>
-<h1>Know what to ask AI in day-to-day life, <em>without having to figure it out yourself.</em></h1>
+<h1>Never stare at a blank ChatGPT box again. Get 100 copy-paste prompts for everyday life.</h1>
 <div style="max-width:720px;margin:36px auto 32px"><img src="heroimg.jpg" alt="AI Starter Prompt Pack + Guide" style="display:block;width:100%;height:auto;border-radius:18px;box-shadow:0 18px 50px rgba(0,0,0,.18)"></div>
 <p class="hero-summary">Get 100 simple copy-paste prompts for everyday life, each with built-in guidance on when to use it, what to change, what to ask next, and what to be careful with - plus a short beginner guide to help you get started.</p>
 <div class="cta-wrapper"><a href="https://buy.stripe.com/7sY9ASdrd9gw1Yc1XAbZe0O" class="btn-dark checkout-cta">Get The What To Ask Pack - £19</a><a href="#" class="inline-cta whats-inside-link">What's inside</a><p class="cta-sub">No jargon. No prompt engineering. Just a clear place to start. 30-day money-back guarantee.</p></div>
+</section>
+<div class="divider"></div>
+
+<section class="prompt-difference-section">
+  <div class="prompt-difference-wrap">
+    <div class="prompt-difference-head">
+      <span class="prompt-difference-line"></span>
+      <h2 class="prompt-difference-title">See the difference in seconds</h2>
+      <span class="prompt-difference-line"></span>
+    </div>
+    <div class="prompt-flow">
+      <div class="prompt-card vague">
+        <div class="prompt-step">1. Vague ask</div>
+        <div class="prompt-box">"Help me write an email."</div>
+        <div class="prompt-note"><span class="prompt-icon">&times;</span><span>Gets generic, unhelpful answers.</span></div>
+      </div>
+      <div class="prompt-arrow">&rarr;</div>
+      <div class="prompt-card better">
+        <div class="prompt-step">2. Better prompt</div>
+        <div class="prompt-box">"Rewrite this email to a client so it sounds polite, clear, and confident. Keep it under 120 words and include a call to action."</div>
+        <div class="prompt-note"><span class="prompt-icon">&#10003;</span><span>AI understands exactly what you want.</span></div>
+      </div>
+      <div class="prompt-arrow">&rarr;</div>
+      <div class="prompt-card answer">
+        <div class="prompt-step">3. Better answer</div>
+        <div class="prompt-box">Clear, relevant email that's ready to send.</div>
+        <div class="prompt-note"><span class="prompt-icon">&#10003;</span><span>Better answers, less guessing.</span></div>
+      </div>
+    </div>
+  </div>
 </section>
 <div class="divider"></div>
 
