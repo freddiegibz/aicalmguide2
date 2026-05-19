@@ -45,6 +45,9 @@ body{font-family:'Anton',sans-serif;color:var(--dark);background:var(--white);-w
 .hero h1{font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(30px,5vw,52px);line-height:1.1;text-transform:uppercase;letter-spacing:-0.5px;color:var(--dark);margin-bottom:28px;max-width:860px;margin-left:auto;margin-right:auto}
 .hero h1 em{color:#ECA36F;font-style:normal}
 .hero-summary{font-family:'Anton',sans-serif;font-size:17px;font-weight:400;color:var(--body);line-height:1.8;max-width:600px;margin:0 auto 38px}
+.launch-badge{display:inline-flex;align-items:center;gap:10px;font-family:'Outfit',sans-serif;font-size:12px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:#fff;background:#C65A2E;border:2px solid rgba(255,255,255,.24);padding:10px 18px;border-radius:999px;margin-bottom:26px;box-shadow:0 12px 30px rgba(0,0,0,.18)}
+.launch-badge span{font-family:'Caveat',cursive;font-size:23px;font-weight:700;letter-spacing:0;text-transform:none;color:#F7F1E8}
+.price-was{text-decoration:line-through;opacity:.72;margin-right:4px}
 .btn-dark{display:inline-block;font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#fff;background:linear-gradient(180deg,#D66A37 0%,#C65A2E 100%);padding:18px 44px;border-radius:60px;border:2px solid rgba(16,36,62,.88);text-decoration:none;transition:all 0.3s ease;cursor:pointer;box-shadow:0 0 0 4px rgba(255,255,255,.1),0 7px 0 rgba(16,36,62,.95),0 14px 22px rgba(0,0,0,.18);position:relative}
 .btn-dark::before{content:'';position:absolute;inset:4px 8px auto;height:38%;border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,.58),rgba(255,255,255,0));pointer-events:none}
 .btn-dark:hover{background:linear-gradient(180deg,#E27A43 0%,#D66A37 100%);color:#fff;transform:translateY(-2px);box-shadow:0 0 0 4px rgba(255,255,255,.14),0 9px 0 rgba(16,36,62,.95),0 18px 28px rgba(0,0,0,.22)}
@@ -57,6 +60,16 @@ body{font-family:'Anton',sans-serif;color:var(--dark);background:var(--white);-w
 .cta-lock{display:inline-flex;align-items:center;gap:7px}
 .cta-lock svg{width:12px;height:12px;flex-shrink:0}
 .cta-wrapper{text-align:center}
+.discount-modal{position:fixed;inset:0;background:rgba(16,36,62,.72);display:none;align-items:center;justify-content:center;padding:24px;z-index:1000}
+.discount-modal.open{display:flex}
+.discount-card{width:100%;max-width:460px;background:#fff;border-top:8px solid #C65A2E;border-radius:22px;padding:34px 28px 28px;text-align:center;box-shadow:0 28px 80px rgba(0,0,0,.28);position:relative}
+.discount-close{position:absolute;right:16px;top:12px;border:none;background:transparent;color:var(--muted);font-family:'Outfit',sans-serif;font-size:24px;cursor:pointer;line-height:1}
+.discount-label{font-family:'Outfit',sans-serif;font-size:10px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:#C65A2E;margin-bottom:12px}
+.discount-card h3{font-family:'Outfit',sans-serif;font-size:28px;font-weight:700;line-height:1.15;color:var(--dark);margin:0 0 12px}
+.discount-card p{font-family:'Outfit',sans-serif;font-size:16px;line-height:1.65;color:var(--body);margin:0 0 18px}
+.discount-code{font-family:'Outfit',sans-serif;font-size:24px;font-weight:800;letter-spacing:3px;color:var(--dark);background:#F7F1E8;border:2px dashed #C65A2E;border-radius:14px;padding:16px 18px;margin:18px 0 20px}
+.discount-card .btn-dark{width:100%;padding-left:22px;padding-right:22px}
+.discount-note{font-family:'Outfit',sans-serif;font-size:12px;color:var(--muted);line-height:1.5;margin-top:14px}
 .section-label{font-family:'Outfit',sans-serif;font-size:8px;font-weight:600;letter-spacing:3.5px;text-transform:uppercase;color:var(--muted);margin-bottom:16px;display:block}
 .section-title{font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(28px,4vw,42px);color:var(--dark);line-height:1.1;text-transform:uppercase;letter-spacing:-0.5px;margin-bottom:48px}
 .pain-section{background:repeating-linear-gradient(90deg,transparent,transparent 48px,rgba(255,255,255,.05) 48px,rgba(255,255,255,.05) 50px),#C65A2E;padding:100px 40px}
@@ -431,10 +444,11 @@ body{font-family:'Anton',sans-serif;color:var(--dark);background:var(--white);-w
 <section class="hero">
 <div class="hero-script">What To Ask <span>AI</span></div>
 <span class="hero-label">AI Starter Prompt Library + How To Use It</span>
+<div class="launch-badge">Launch Sale <span>50% off today</span></div>
 <h1>Know exactly what to ask AI in everyday life, <em>without having to figure it out yourself.</em></h1>
 <div style="max-width:720px;margin:36px auto 32px"><img src="heroimg.jpg" alt="AI Starter Prompt Pack + Guide" style="display:block;width:100%;height:auto;border-radius:18px;box-shadow:0 18px 50px rgba(0,0,0,.18)"></div>
 <p class="hero-summary">No PDF to work through. Just 100 ready-to-use messages for daily situations. Find the prompt that matches what you need, copy it, paste it into ChatGPT, and send - simple even if you are not technical and have never used AI before.</p>
-<div class="cta-wrapper"><a href="https://buy.stripe.com/7sY9ASdrd9gw1Yc1XAbZe0O" class="btn-dark checkout-cta">Get Instant Access To The Prompt Library - £19</a><a href="#" class="inline-cta whats-inside-link">What's inside</a><p class="cta-sub"><span class="cta-lock"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><rect x="2.25" y="5" width="7.5" height="5.5" rx="1.25" stroke="currentColor" stroke-width="1.2"/><path d="M4 5V3.8C4 2.25 4.9 1.5 6 1.5C7.1 1.5 8 2.25 8 3.8V5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>Instant access</span> &nbsp; Use forever &nbsp; 30-day money-back guarantee</p></div>
+<div class="cta-wrapper"><a href="https://buy.stripe.com/7sY9ASdrd9gw1Yc1XAbZe0O" class="btn-dark checkout-cta">Get Instant Access - <span class="price-was">£19</span> £9.50</a><a href="#" class="inline-cta whats-inside-link">What's inside</a><p class="cta-sub"><span class="cta-lock"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><rect x="2.25" y="5" width="7.5" height="5.5" rx="1.25" stroke="currentColor" stroke-width="1.2"/><path d="M4 5V3.8C4 2.25 4.9 1.5 6 1.5C7.1 1.5 8 2.25 8 3.8V5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>Instant access</span> &nbsp; Use forever &nbsp; 30-day money-back guarantee</p></div>
 </section>
 <div class="divider"></div>
 
@@ -502,7 +516,7 @@ body{font-family:'Anton',sans-serif;color:var(--dark);background:var(--white);-w
 
 <section class="intro-section"><span class="section-label">The Solution</span><div class="intro-script">Introducing</div><h3>What To Ask AI: 100 Simple Prompts for Everyday Life</h3><p>A beginner-friendly prompt pack and guide that gives you 100 copy-paste prompts for real everyday situations, plus simple instructions showing when to use each one, what to change, what to ask next, and what to be careful with.</p>
 <div style="max-width:720px;margin:44px auto 0"><img src="productimg.jpg" alt="What To Ask AI product preview" style="display:block;width:100%;height:auto;border-radius:18px;box-shadow:0 18px 50px rgba(0,0,0,.18)"></div>
-<div class="cta-wrapper" style="margin-top:-60px"><a href="https://buy.stripe.com/7sY9ASdrd9gw1Yc1XAbZe0O" class="btn-dark checkout-cta">Get The What To Ask Pack - £19</a><p class="cta-sub">One-time payment. Instant access. 100 prompts across 10 everyday life areas.</p></div></section>
+<div class="cta-wrapper" style="margin-top:-60px"><a href="https://buy.stripe.com/7sY9ASdrd9gw1Yc1XAbZe0O" class="btn-dark checkout-cta">Get Instant Access - <span class="price-was">£19</span> £9.50</a><p class="cta-sub">One-time payment. Instant access. 100 prompts across 10 everyday life areas.</p></div></section>
 
 <section class="story-section"><div class="wide"><div class="story-header"><div class="story-photo"><img src="me.jpg" alt="Portrait photo"></div><div class="story-intro"><span class="section-label">The Story</span><h2 class="section-title">How this product came to exist</h2><p class="story-intro-text">This started with me teaching people in my own family how to use AI. After selling more than 1,300 beginner guides and helping 30+ people one to one, I kept seeing the same pattern again and again.</p></div></div><div class="story-proof"><div class="proof-item"><div class="proof-number">1,300+</div><div class="proof-label">Beginner guides sold</div></div><div class="proof-item"><div class="proof-number">30+</div><div class="proof-label">People helped 1:1</div></div><div class="proof-item"><div class="proof-number">100</div><div class="proof-label">Prompts in the pack</div></div><div class="proof-item"><div class="proof-number">10</div><div class="proof-label">Everyday life areas</div></div></div><div class="story-body" style="max-width:700px;margin:0 auto"><div class="typewriter-container" id="typewriterContainer"><div class="typewriter-text" id="typewriterText"></div></div></div></div></section>
 <div class="divider"></div>
@@ -527,7 +541,7 @@ body{font-family:'Anton',sans-serif;color:var(--dark);background:var(--white);-w
 <div class="offer-row"><div class="offer-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="#ECA36F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="offer-item-text">Health appointments and wellbeing - prepare questions, organise symptoms, and go in feeling clearer</span><span class="offer-item-tag">Health</span></div>
 <div class="offer-row"><div class="offer-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="#ECA36F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="offer-item-text">Shopping, money, and purchases - compare choices, think through spending, and buy with more confidence</span><span class="offer-item-tag">Money</span></div>
 <div class="offer-row"><div class="offer-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="#ECA36F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="offer-item-text">Family, hobbies, and personal life - get help with the everyday situations that rarely come with instructions</span><span class="offer-item-tag">Life</span></div>
-</div><div class="offer-price-box"><div class="offer-price">&pound;19</div><div class="offer-price-note">One-time payment. Instant access.</div></div><div class="cta-wrapper"><a href="https://buy.stripe.com/7sY9ASdrd9gw1Yc1XAbZe0O" class="btn-white checkout-cta">Get The What To Ask Pack - £19</a><p class="cta-sub" style="color:rgba(255,255,255,.4)">100 prompts. 10 everyday areas. A clear place to start today.</p></div></div></section>
+</div><div class="offer-price-box"><div class="offer-price"><span class="price-was">&pound;19</span> &pound;9.50</div><div class="offer-price-note">Launch sale. Use code EARLY50 at checkout.</div></div><div class="cta-wrapper"><a href="https://buy.stripe.com/7sY9ASdrd9gw1Yc1XAbZe0O" class="btn-white checkout-cta">Get Instant Access - <span class="price-was">£19</span> £9.50</a><p class="cta-sub" style="color:rgba(255,255,255,.4)">100 prompts. 10 everyday areas. A clear place to start today.</p></div></div></section>
 <div class="divider"></div>
 
 <section class="faq-section"><div class="narrow"><div style="text-align:center;margin-bottom:52px"><span class="section-label">Questions</span><h2 class="section-title" style="text-align:center">Frequently Asked Questions</h2></div><div class="faq-list">
@@ -542,22 +556,63 @@ body{font-family:'Anton',sans-serif;color:var(--dark);background:var(--white);-w
 </div></div></section>
 <div class="divider"></div>
 
-<section class="final-cta"><span class="section-label">Get Started</span><h3>Stop staring at the blank box.<br>Open AI and know exactly what to ask.</h3><p>Get What To Ask AI: 100 Simple Prompts for Everyday Life, including the full prompt pack, beginner guide, follow-up questions, and safety notes.</p><a href="https://buy.stripe.com/7sY9ASdrd9gw1Yc1XAbZe0O" class="btn-white checkout-cta">Get The What To Ask Pack - £19</a><p class="cta-sub">Instant access. 100 prompts across 10 everyday life areas.</p></section>
+<section class="final-cta"><span class="section-label">Get Started</span><h3>Stop staring at the blank box.<br>Open AI and know exactly what to ask.</h3><p>Get What To Ask AI: 100 Simple Prompts for Everyday Life, including the full prompt pack, beginner guide, follow-up questions, and safety notes.</p><a href="https://buy.stripe.com/7sY9ASdrd9gw1Yc1XAbZe0O" class="btn-white checkout-cta">Get Instant Access - <span class="price-was">£19</span> £9.50</a><p class="cta-sub">Instant access. 100 prompts across 10 everyday life areas.</p></section>
 <footer class="footer"><p>&copy; 2026 AIConfidenceKit. All rights reserved.</p></footer>
+<div class="discount-modal" id="discountModal" aria-hidden="true">
+  <div class="discount-card" role="dialog" aria-modal="true" aria-labelledby="discountTitle">
+    <button class="discount-close" type="button" id="discountClose" aria-label="Close discount modal">&times;</button>
+    <div class="discount-label">Launch Sale</div>
+    <h3 id="discountTitle">Use this code for 50% off</h3>
+    <p>Enter this code at checkout to bring the price down from £19 to £9.50.</p>
+    <div class="discount-code">EARLY50</div>
+    <a class="btn-dark" id="discountContinue" href="https://buy.stripe.com/7sY9ASdrd9gw1Yc1XAbZe0O">Continue To Checkout</a>
+    <div class="discount-note">Copy the code before you continue.</div>
+  </div>
+</div>
 
 <script>
+var checkoutTracked = false;
 document.querySelectorAll('.checkout-cta').forEach(function(link){
   link.addEventListener('click', function(event){
     event.preventDefault();
     var destination = link.href;
-    if(typeof fbq === 'function'){
+    if(!checkoutTracked && typeof fbq === 'function'){
       fbq('track', 'InitiateCheckout');
+      checkoutTracked = true;
     }
-    setTimeout(function(){
-      window.location.href = destination;
-    }, 300);
+    var modal = document.getElementById('discountModal');
+    var continueLink = document.getElementById('discountContinue');
+    if(modal && continueLink){
+      continueLink.href = destination;
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden','false');
+    }else{
+      setTimeout(function(){
+        window.location.href = destination;
+      }, 300);
+    }
   });
 });
+var discountModal = document.getElementById('discountModal');
+var discountClose = document.getElementById('discountClose');
+if(discountClose && discountModal){
+  discountClose.addEventListener('click', function(){
+    discountModal.classList.remove('open');
+    discountModal.setAttribute('aria-hidden','true');
+  });
+  discountModal.addEventListener('click', function(event){
+    if(event.target === discountModal){
+      discountModal.classList.remove('open');
+      discountModal.setAttribute('aria-hidden','true');
+    }
+  });
+  document.addEventListener('keydown', function(event){
+    if(event.key === 'Escape' && discountModal.classList.contains('open')){
+      discountModal.classList.remove('open');
+      discountModal.setAttribute('aria-hidden','true');
+    }
+  });
+}
 document.querySelectorAll('.whats-inside-link').forEach(function(link){
   link.addEventListener('click', function(event){
     event.preventDefault();
