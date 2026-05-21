@@ -1445,6 +1445,16 @@
   </head>
   <body>
     <script>
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+
+      window.addEventListener("pageshow", function () {
+        if (!location.hash) {
+          window.scrollTo(0, 0);
+        }
+      });
+
       document.addEventListener("click", function (event) {
         var modal = document.querySelector("[data-checkout-modal]");
         var checkout = event.target.closest("[data-open-checkout-modal]");
