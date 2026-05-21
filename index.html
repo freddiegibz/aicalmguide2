@@ -1,657 +1,1484 @@
-﻿<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>What To Ask AI</title>
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1988137388462157');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1988137388462157&ev=PageView&noscript=1"
-/></noscript>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@300;400;500;600;700;800&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{--white:#FFFFFF;--off:#F7F1E8;--warm:#F7F1E8;--blush:#F3D7C8;--dark:#10243E;--body:#384252;--muted:#7A6D63;--faint:#B9A99B;--rose:#C65A2E;--rose-dark:#A94624;--line:rgba(16,36,62,.10)}
-body{font-family:'Anton',sans-serif;color:var(--dark);background:var(--white);-webkit-font-smoothing:antialiased}
-.narrow{max-width:700px;margin:0 auto;padding:0 40px}.wide{max-width:960px;margin:0 auto;padding:0 40px}
-.divider{height:0;background:transparent}
-.top-bar{background:#10243E;padding:14px 20px;text-align:center;border-bottom:none}
-.top-bar-text{font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;color:rgba(255,255,255,.7)}
-.top-bar-text span{color:#ECA36F;font-weight:700}
-.ticker-bar{background:#10243E;overflow:hidden;padding:10px 0;border-top:3px solid #C65A2E;border-bottom:3px solid #C65A2E;position:relative}
-.ticker-track{display:flex;width:max-content;animation:tickerScroll 30s linear infinite}
-.ticker-item{display:flex;align-items:center;gap:10px;padding:0 28px;white-space:nowrap;flex-shrink:0}
-.ticker-dot{width:6px;height:6px;border-radius:50%;background:#ECA36F;opacity:1;flex-shrink:0}
-.ticker-text{font-family:'Anton',sans-serif;font-size:13px;font-weight:400;letter-spacing:1px;text-transform:uppercase;color:#fff}
-@keyframes tickerScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.ticker-bar::before,.ticker-bar::after{content:'';position:absolute;top:0;bottom:0;width:60px;z-index:2;pointer-events:none}
-.ticker-bar::before{left:0;background:linear-gradient(to right,#10243E,transparent)}
-.ticker-bar::after{right:0;background:linear-gradient(to left,#10243E,transparent)}
-.hero{background:repeating-linear-gradient(90deg,transparent,transparent 48px,rgba(255,255,255,.035) 48px,rgba(255,255,255,.035) 50px),#10243E;text-align:center;padding:80px 40px 100px;max-width:none;margin:0 auto}
-.hero-script{font-family:'Anton',sans-serif;font-size:clamp(36px,6vw,56px);font-weight:400;color:var(--dark);line-height:1.05;margin-bottom:4px;text-transform:uppercase;letter-spacing:-0.5px}
-.hero-script span{color:#ECA36F}
-.hero-label{font-family:'Outfit',sans-serif;font-size:8px;font-weight:600;letter-spacing:3.5px;text-transform:uppercase;color:var(--muted);margin-bottom:28px;display:block}
-.hero h1{font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(30px,5vw,52px);line-height:1.1;text-transform:uppercase;letter-spacing:-0.5px;color:var(--dark);margin-bottom:28px;max-width:860px;margin-left:auto;margin-right:auto}
-.hero h1 em{color:#ECA36F;font-style:normal}
-.hero-summary{font-family:'Anton',sans-serif;font-size:17px;font-weight:400;color:var(--body);line-height:1.8;max-width:600px;margin:0 auto 38px}
-.price-was{text-decoration:line-through;opacity:.72;margin-right:4px}
-.btn-dark{display:inline-block;font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#fff;background:linear-gradient(180deg,#D66A37 0%,#C65A2E 100%);padding:18px 44px;border-radius:60px;border:2px solid rgba(16,36,62,.88);text-decoration:none;transition:all 0.3s ease;cursor:pointer;box-shadow:0 0 0 4px rgba(255,255,255,.1),0 7px 0 rgba(16,36,62,.95),0 14px 22px rgba(0,0,0,.18);position:relative}
-.btn-dark::before{content:'';position:absolute;inset:4px 8px auto;height:38%;border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,.58),rgba(255,255,255,0));pointer-events:none}
-.btn-dark:hover{background:linear-gradient(180deg,#E27A43 0%,#D66A37 100%);color:#fff;transform:translateY(-2px);box-shadow:0 0 0 4px rgba(255,255,255,.14),0 9px 0 rgba(16,36,62,.95),0 18px 28px rgba(0,0,0,.22)}
-.btn-dark:active{transform:translateY(4px);box-shadow:0 0 0 4px rgba(255,255,255,.1),0 3px 0 rgba(16,36,62,.95),0 8px 16px rgba(0,0,0,.18)}
-.btn-white{display:inline-block;font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#fff;background:#C65A2E;padding:18px 44px;border-radius:60px;border:none;text-decoration:none;transition:all 0.3s ease;cursor:pointer;box-shadow:0 4px 16px rgba(198,90,46,.28)}
-.btn-white:hover{background:#D66A37;color:#fff;transform:translateY(-2px)}
-.inline-cta{display:inline-block;margin-left:24px;padding-top:10px;font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.7);padding-bottom:4px;transition:all .3s ease;vertical-align:middle;position:relative;z-index:2}
-.inline-cta:hover{color:#ECA36F;border-color:#ECA36F}
-.cta-sub{font-family:'Outfit',sans-serif;font-size:11px;color:var(--muted);margin-top:16px;font-weight:400}
-.cta-lock{display:inline-flex;align-items:center;gap:7px}
-.cta-lock svg{width:12px;height:12px;flex-shrink:0}
-.cta-wrapper{text-align:center}
-.discount-modal{position:fixed;inset:0;background:rgba(16,36,62,.72);display:none;align-items:center;justify-content:center;padding:24px;z-index:1000}
-.discount-modal.open{display:flex}
-.discount-card{width:100%;max-width:460px;background:#fff;border-top:8px solid #C65A2E;border-radius:22px;padding:34px 28px 28px;text-align:center;box-shadow:0 28px 80px rgba(0,0,0,.28);position:relative}
-.discount-close{position:absolute;right:16px;top:12px;border:none;background:transparent;color:var(--muted);font-family:'Outfit',sans-serif;font-size:24px;cursor:pointer;line-height:1}
-.discount-label{font-family:'Outfit',sans-serif;font-size:10px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:#C65A2E;margin-bottom:12px}
-.discount-card h3{font-family:'Outfit',sans-serif;font-size:28px;font-weight:700;line-height:1.15;color:var(--dark);margin:0 0 12px}
-.discount-card p{font-family:'Outfit',sans-serif;font-size:16px;line-height:1.65;color:var(--body);margin:0 0 18px}
-.discount-code{font-family:'Outfit',sans-serif;font-size:24px;font-weight:800;letter-spacing:3px;color:var(--dark);background:#F7F1E8;border:2px dashed #C65A2E;border-radius:14px;padding:16px 18px;margin:18px 0 20px}
-.discount-copy{display:inline-flex;align-items:center;justify-content:center;width:100%;font-family:'Outfit',sans-serif;font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#C65A2E;background:#fff;border:2px solid rgba(198,90,46,.28);border-radius:999px;padding:13px 18px;margin:-4px 0 18px;cursor:pointer;transition:all .25s ease}
-.discount-copy:hover{background:#F7F1E8;border-color:#C65A2E}
-.discount-copy.copied{background:#176746;color:#fff;border-color:#176746}
-.discount-card .btn-dark{width:100%;padding-left:22px;padding-right:22px}
-.discount-note{font-family:'Outfit',sans-serif;font-size:12px;color:var(--muted);line-height:1.5;margin-top:14px}
-.section-label{font-family:'Outfit',sans-serif;font-size:8px;font-weight:600;letter-spacing:3.5px;text-transform:uppercase;color:var(--muted);margin-bottom:16px;display:block}
-.section-title{font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(28px,4vw,42px);color:var(--dark);line-height:1.1;text-transform:uppercase;letter-spacing:-0.5px;margin-bottom:48px}
-.pain-section{background:repeating-linear-gradient(90deg,transparent,transparent 48px,rgba(255,255,255,.05) 48px,rgba(255,255,255,.05) 50px),#C65A2E;padding:100px 40px}
-.pain-list{border-top:1px solid var(--line)}
-.pain-item{padding:24px 0;border-bottom:1px solid var(--line);display:flex;gap:18px;align-items:baseline;transition:padding-left 0.3s ease;cursor:default}
-.pain-item:hover{padding-left:8px}
-.pain-num{font-family:'Caveat',cursive;font-size:26px;color:var(--rose);flex-shrink:0;line-height:1;min-width:28px}
-.pain-text{font-family:'Anton',sans-serif;font-size:17px;color:var(--body);line-height:1.75}
-.benefits-section{background:repeating-linear-gradient(90deg,transparent,transparent 48px,rgba(198,90,46,.07) 48px,rgba(198,90,46,.07) 50px),#F7F1E8;padding:0px 40px 100px}
-.prompt-difference-section{background:#fff;padding:78px 40px 84px}
-.prompt-difference-wrap{max-width:1040px;margin:0 auto}
-.prompt-difference-head{display:flex;align-items:center;justify-content:center;gap:20px;margin-bottom:34px}
-.prompt-difference-line{width:110px;height:1px;background:rgba(10,10,10,.16)}
-.prompt-difference-title{font-family:'Outfit',sans-serif;font-size:24px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--dark);text-align:center}
-.prompt-flow{display:grid;grid-template-columns:minmax(0,1fr) 42px minmax(0,1fr) 42px minmax(0,1fr);align-items:center;gap:10px}
-.prompt-card{height:100%;padding:24px 18px 20px;border:2px solid rgba(10,10,10,.08);border-radius:16px;background:#fff;display:flex;flex-direction:column}
-.prompt-card.vague{background:#FFF8F8}
-.prompt-card.better{background:#FFFDF7}
-.prompt-card.answer{background:#F8FCFA}
-.prompt-step{font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;text-align:center;margin-bottom:18px}
-.prompt-card.vague .prompt-step{color:#A72F42}
-.prompt-card.better .prompt-step{color:#B56A08}
-.prompt-card.answer .prompt-step{color:#176746}
-.prompt-box{min-height:118px;padding:20px 18px;border:2px solid rgba(10,10,10,.08);border-radius:14px;background:#fff;display:flex;align-items:center;font-family:'Outfit',sans-serif;font-size:17px;font-weight:600;line-height:1.5;color:var(--dark)}
-.prompt-note{display:flex;align-items:center;gap:10px;margin-top:20px;font-family:'Outfit',sans-serif;font-size:14px;color:var(--body);line-height:1.5}
-.prompt-icon{width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;font-weight:700}
-.vague .prompt-icon{color:#A72F42;border:2px solid #A72F42}
-.better .prompt-icon{color:#B56A08;border:2px solid #B56A08}
-.answer .prompt-icon{color:#176746;border:2px solid #176746}
-.prompt-arrow{font-family:'Outfit',sans-serif;font-size:30px;font-weight:700;text-align:center;color:var(--dark)}
-.benefits-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.benefit-card{padding:30px;background:#fff;border:3px solid #F3D7C8;border-radius:14px;transition:all 0.3s ease}
-.benefit-card:hover{transform:translateY(-3px);border-color:#C65A2E;box-shadow:0 12px 40px rgba(198,90,46,.10)}
-.benefit-before{font-family:'Outfit',sans-serif;font-size:12px;color:var(--faint);margin-bottom:14px;display:flex;align-items:center;gap:6px}
-.benefit-before .x-icon{color:var(--rose);opacity:0.4;font-size:10px}
-.benefit-after{font-family:'Anton',sans-serif;font-size:17px;color:var(--dark);line-height:1.7}
-.intro-section{background:#fff;padding:100px 40px 80px;text-align:center}
-.intro-script{font-family:'Caveat',cursive;font-size:clamp(28px,4vw,44px);color:#ECA36F;margin-bottom:8px;font-weight:400}
-.intro-section h3{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(28px,4vw,44px);color:var(--dark);margin-bottom:28px;line-height:1.2}
-.intro-section p{font-family:'Anton',sans-serif;font-size:17px;color:var(--body);line-height:1.85;max-width:580px;margin:0 auto}
-.story-section{background:var(--white);padding:100px 40px}
-.story-header{display:flex;gap:40px;align-items:flex-start;margin-bottom:48px}
-.story-photo{width:200px;height:240px;flex-shrink:0;background:var(--warm);border:1px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;position:relative;overflow:hidden}
-.story-photo img{width:100%;height:100%;object-fit:cover;display:block}
-.story-photo-icon{width:60px;height:60px;border-radius:50%;background:var(--blush);display:flex;align-items:center;justify-content:center}
-.story-photo-icon svg{width:28px;height:28px;color:var(--rose)}
-.story-photo-label{font-family:'Outfit',sans-serif;font-size:8px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--faint)}
-.story-intro{flex:1}.story-intro .section-label{margin-bottom:12px}.story-intro .section-title{margin-bottom:16px}
-.story-intro-text{font-family:'Anton',sans-serif;font-size:17px;color:var(--body);line-height:1.85}
-.story-proof{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:48px}
-.proof-item{background:var(--white);padding:28px 20px;text-align:center}
-.proof-number{font-family:'Caveat',cursive;font-size:36px;color:var(--rose);line-height:1;margin-bottom:4px}
-.proof-label{font-family:'Outfit',sans-serif;font-size:8px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
-.typewriter-container{position:relative;min-height:200px}
-.typewriter-text,.typewriter-text p{font-family:'Anton',sans-serif;font-size:16.5px;color:var(--body);line-height:1.85}
-.typewriter-text p{margin-bottom:28px}.typewriter-text p:last-of-type{margin-bottom:0}
-.typewriter-cursor{display:inline-block;width:2px;height:1.1em;background:var(--rose);margin-left:2px;vertical-align:text-bottom;animation:cursorBlink 0.6s ease infinite}
-@keyframes cursorBlink{0%,100%{opacity:1}50%{opacity:0}}
-.stack-section{background:#fff;padding:100px 40px}
-.stack-list{border-top:1px solid var(--line)}
-.stack-item{padding:32px 0;border-bottom:1px solid var(--line);display:flex;gap:20px;align-items:baseline;transition:padding-left 0.3s ease;cursor:default}
-.stack-item:hover{padding-left:8px}
-.stack-num{font-family:'Caveat',cursive;font-size:28px;color:var(--rose);flex-shrink:0;line-height:1;min-width:48px}
-.stack-content h4{font-family:'Anton',sans-serif;font-size:18px;font-weight:400;text-transform:uppercase;letter-spacing:0.5px;color:var(--dark);margin-bottom:8px;line-height:1.3}
-.stack-content p{font-family:'Anton',sans-serif;font-size:15.5px;color:var(--body);line-height:1.75}
-.stack-tag{font-family:'Outfit',sans-serif;font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--rose);margin-top:10px;display:inline-block}
-.offer-table-section{background:repeating-linear-gradient(90deg,transparent,transparent 48px,rgba(255,255,255,.025) 48px,rgba(255,255,255,.025) 50px),#10243E;padding:80px 40px}
-.offer-table-wrap{max-width:600px;margin:0 auto}
-.offer-table-header{text-align:center;margin-bottom:40px}
-.offer-table-label{font-family:'Outfit',sans-serif;font-size:8px;font-weight:600;letter-spacing:3.5px;text-transform:uppercase;color:rgba(236,163,111,.78);margin-bottom:16px;display:block}
-.offer-table-title{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(26px,3.5vw,38px);color:var(--white);line-height:1.25;margin-bottom:8px}
-.offer-table-sub{font-family:'Anton',sans-serif;font-size:16px;color:rgba(255,255,255,.35);line-height:1.7}
-.offer-table{border-top:1px solid rgba(255,255,255,.08);margin-bottom:40px}
-.offer-row{display:flex;align-items:center;gap:16px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.08)}
-.offer-check{width:24px;height:24px;border-radius:50%;background:rgba(198,90,46,.16);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.offer-check svg{width:12px;height:12px}
-.offer-item-text{font-family:'Anton',sans-serif;font-size:17px;color:rgba(255,255,255,.8);line-height:1.4;flex:1}
-.offer-item-tag{font-family:'Outfit',sans-serif;font-size:8px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--rose);flex-shrink:0}
-.offer-price-box{text-align:center;margin-bottom:32px}
-.offer-price{font-family:'Caveat',cursive;font-size:64px;color:var(--white);line-height:1;margin-bottom:4px}
-.offer-price-note{font-family:'Outfit',sans-serif;font-size:10px;color:rgba(255,255,255,.3);letter-spacing:1px}
-.faq-section{background:repeating-linear-gradient(90deg,transparent,transparent 48px,rgba(198,90,46,.07) 48px,rgba(198,90,46,.07) 50px),#F7F1E8;padding:100px 40px}
-.faq-list{border-top:1px solid var(--line)}.faq-item{border-bottom:1px solid var(--line)}
-.faq-q{font-family:'Outfit',sans-serif;font-size:17px;font-weight:600;color:var(--dark);padding:22px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:color 0.3s ease;user-select:none}
-.faq-q:hover{color:var(--rose)}.faq-q span{flex:1}
-.faq-icon{font-family:'Outfit',sans-serif;font-size:18px;color:var(--faint);flex-shrink:0;transition:all 0.3s ease;line-height:1}
-.faq-item.open .faq-icon{transform:rotate(45deg);color:var(--rose)}
-.faq-a{font-family:'Anton',sans-serif;font-size:16px;color:var(--body);line-height:1.8;max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.4s ease;padding-bottom:0}
-.faq-item.open .faq-a{max-height:500px;padding-bottom:24px}
-.final-cta{background:repeating-linear-gradient(90deg,transparent,transparent 48px,rgba(255,255,255,.025) 48px,rgba(255,255,255,.025) 50px),#10243E;padding:100px 40px;text-align:center}
-.final-cta .section-label{color:rgba(236,163,111,.72)}
-.final-cta h3{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(28px,4vw,44px);color:var(--white);line-height:1.25;margin-bottom:16px}
-.final-cta p{font-family:'Anton',sans-serif;font-size:17px;color:rgba(255,255,255,.4);margin-bottom:32px;line-height:1.7}
-.final-cta .cta-sub{color:rgba(255,255,255,.4)}
-.footer{background:#10243E;border-top:3px solid #C65A2E;padding:28px 40px;text-align:center}
-.footer p{font-family:'Outfit',sans-serif;font-size:10px;font-weight:400;letter-spacing:1.5px;color:rgba(255,255,255,.25);text-transform:uppercase}
-.price-badge{position:absolute;width:120px;height:120px;border-radius:50%;background:#C65A2E;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(0,0,0,.15);z-index:30}
-.price-badge-only{font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.7)}
-.price-badge-amount{font-family:'Anton',sans-serif;font-size:48px;font-weight:300;color:#fff;line-height:1}
-.mockup-container .price-badge{right:5%;top:30%;transform:translateY(-50%)}
-.mockup-container-sm .price-badge{right:5%;top:30%;transform:translateY(-50%)}
-.editorial-container .price-badge{left:50%;top:50%;transform:translate(-50%,-50%)}
-@media(max-width:700px){.price-badge{width:90px;height:90px}.price-badge-only{font-size:9px;letter-spacing:2px}.price-badge-amount{font-size:36px}.mockup-container .price-badge,.mockup-container-sm .price-badge{right:2%}.editorial-container .price-badge{left:50%}}
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI finally explained in plain English for adults 50+ in the UK</title>
+    <meta
+      name="description"
+      content="AI finally explained in plain English for adults 50+ in the UK."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="AI finally explained in plain English for adults 50+ in the UK" />
+    <meta
+      property="og:description"
+      content="A simple plain-English guide to help adults 50+ understand AI, use it in real life, and know what not to trust."
+    />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="AI finally explained in plain English for adults 50+ in the UK" />
+    <meta
+      property="twitter:description"
+      content="A simple plain-English guide to help adults 50+ understand AI, use it in real life, and know what not to trust."
+    />
+    <!-- Meta Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1988137388462157');
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1988137388462157&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    <style>
+      :root {
+        --ink: #071b3f;
+        --text: #172033;
+        --muted: #5d6678;
+        --blue: #1468c4;
+        --blue-dark: #0f54a0;
+        --paper: #f7f8fc;
+        --line: rgba(10, 27, 63, 0.12);
+        --navy: #173761;
+        --cream: #faf8f4;
+        --cream-deep: #f5efe4;
+        --cream-card: #fffdf9;
+        --sage: #f1f6f2;
+        --gold-soft: #f7eed2;
+      }
 
-/* â•â•â• WIZZY MOCKUP #1: MEGA MOCKUP (1400Ã—780) â•â•â• */
-.mockup-container{width:100%;max-width:1060px;margin:40px auto -110px;position:relative;aspect-ratio:1400/780;overflow:visible}
-.mockup-container .mega-center{width:100%;height:100%;position:relative;overflow:hidden}
-.mockup-container .mega-mockup{width:1400px;height:780px;position:absolute;top:50%;left:50%;transform-origin:0 0}
-.mockup-container .fan-item{position:absolute;transform-origin:center center}
-.mockup-container .pos-paper-s1{width:260px;height:340px;left:155px;top:40px;transform:rotate(-26deg);z-index:1}
-.mockup-container .pos-paper-s2{width:260px;height:340px;left:155px;top:40px;transform:rotate(-23deg);z-index:1}
-.mockup-container .pos-paper-s3{width:260px;height:340px;left:155px;top:40px;transform:rotate(-20deg);z-index:1}
-.mockup-container .pos-paper-s4{width:260px;height:340px;left:155px;top:40px;transform:rotate(-17deg);z-index:2}
-.mockup-container .pos-paper{width:260px;height:340px;left:155px;top:40px;transform:rotate(-15deg);z-index:3;box-shadow:0 3px 16px rgba(0,0,0,.1)}
-.mockup-container .pos-tablet{left:985px;top:40px;width:260px;transform:rotate(15deg);z-index:3}
-.mockup-container .pos-laptop{left:370px;top:5px;width:660px;z-index:10}
-.mockup-container .pos-phone-l{left:155px;top:320px;width:100px;transform:rotate(-15deg);z-index:20}
-.mockup-container .pos-phone-r{left:1145px;top:320px;width:100px;transform:rotate(15deg);z-index:20}
-.mockup-container .laptop{position:relative;border-radius:10px 10px 0 0;overflow:hidden;background:#2C2C2C;border:3px solid #404040}
-.mockup-container .laptop-topbar{height:20px;background:#363636;display:flex;align-items:center;padding:0 10px;gap:4px;border-bottom:1px solid #4a4a4a}
-.mockup-container .dot{width:6px;height:6px;border-radius:50%}.mockup-container .dot.r{background:#ff5f57}.mockup-container .dot.y{background:#febc2e}.mockup-container .dot.g{background:#28c840}
-.mockup-container .laptop-screen{aspect-ratio:16/10;overflow:hidden;position:relative}
-.mockup-container .laptop-kb{height:12px;background:linear-gradient(180deg,#3a3a3a,#2C2C2C);border-radius:0 0 4px 4px;margin:0 -1px;border:2px solid #404040;border-top:1px solid #4a4a4a;position:relative}
-.mockup-container .laptop-kb::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:50px;height:3px;border-radius:2px;background:rgba(255,255,255,.08)}
-.mockup-container .laptop-kbd{width:108%;height:13px;margin:-1px auto 0;margin-left:-4%;background:linear-gradient(180deg,#353535,#2C2C2C);border-radius:0 0 5px 5px;border:2px solid #404040;border-top:none}
-.mockup-container .tablet{position:relative;border-radius:16px;overflow:hidden;background:#2C2C2C;border:3px solid #404040;padding:7px}
-.mockup-container .tablet-screen{aspect-ratio:3/4;overflow:hidden;border-radius:8px;position:relative}
-.mockup-container .tablet-home{width:16px;height:16px;border-radius:50%;border:1.5px solid #505050;margin:7px auto 4px;background:#383838}
-.mockup-container .phone{position:relative;border-radius:16px;overflow:hidden;background:#2C2C2C;border:3px solid #404040;padding:4px}
-.mockup-container .phone-notch{width:28%;height:4px;background:#404040;border-radius:3px;margin:4px auto}
-.mockup-container .phone-screen{aspect-ratio:9/19.5;overflow:hidden;border-radius:10px;position:relative}
-.mockup-container .phone-bar{width:26%;height:2.5px;background:#404040;border-radius:2px;margin:5px auto 3px}
-.mockup-container .paper{background:#fff;border-radius:3px;overflow:hidden}
-.mockup-container .paper-shadow{border-radius:3px}
-.mockup-container .screen-inner{position:absolute;inset:0;overflow:hidden}
-.mockup-container .artifact-wrap{transform-origin:top left;position:absolute;top:0;left:0;overflow:hidden}
-@keyframes mockupScrollUp{0%,8%{transform:translateY(0)}92%,100%{transform:translateY(var(--scroll-dist))}}
-.mockup-container .scroll-content{animation:mockupScrollUp var(--scroll-dur) ease-in-out infinite alternate}
-.mockup-container .hero-cover{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}
-.mockup-container .paper-cover{width:100%;height:100%;padding:17px 13px;display:flex;flex-direction:column}
-.mockup-container .pc-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;margin-bottom:6px}
-.mockup-container .pc-title{font-size:18px;font-weight:800;line-height:1.2;margin-bottom:2px}
-.mockup-container .pc-sub{font-size:10px;font-style:italic;margin-bottom:10px}
-.mockup-container .pc-divider{width:100%;height:1px;background:rgba(0,0,0,.06);margin-bottom:10px}
-.mockup-container .pc-item{display:flex;align-items:center;gap:8px;margin-bottom:6px;font-size:9px}
-.mockup-container .pc-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
-.mockup-container .pc-footer{margin-top:auto;font-size:8px;letter-spacing:1px;text-transform:uppercase}
-.mockup-container .video-screen{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative}
-.mockup-container .video-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;margin-bottom:24px}
-.mockup-container .play-btn{width:90px;height:90px;border-radius:50%;display:flex;align-items:center;justify-content:center}
-.mockup-container .play-btn svg{width:36px;height:36px}
-.mockup-container .video-title{margin-top:28px;text-align:center;font-size:22px;font-weight:800;line-height:1.2}
-.mockup-container .video-dur{margin-top:14px;font-size:11px;opacity:.3}
+      * {
+        box-sizing: border-box;
+      }
 
-/* â•â•â• WIZZY MOCKUP #2: SMALL MEGA (1400Ã—780, 742px container) â•â•â• */
-.mockup-container-sm{width:100%;max-width:742px;margin:44px auto 0;position:relative;aspect-ratio:1400/780;overflow:visible}
-.mockup-container-sm .mega-center{width:100%;height:100%;position:relative;overflow:hidden}
-.mockup-container-sm .mega-mockup{width:1400px;height:780px;position:absolute;top:50%;left:50%;transform-origin:0 0}
-.mockup-container-sm .fan-item{position:absolute;transform-origin:center center}
-.mockup-container-sm .pos-paper-s1{width:260px;height:340px;left:155px;top:40px;transform:rotate(-26deg);z-index:1}
-.mockup-container-sm .pos-paper-s2{width:260px;height:340px;left:155px;top:40px;transform:rotate(-23deg);z-index:1}
-.mockup-container-sm .pos-paper-s3{width:260px;height:340px;left:155px;top:40px;transform:rotate(-20deg);z-index:1}
-.mockup-container-sm .pos-paper-s4{width:260px;height:340px;left:155px;top:40px;transform:rotate(-17deg);z-index:2}
-.mockup-container-sm .pos-paper{width:260px;height:340px;left:155px;top:40px;transform:rotate(-15deg);z-index:3;box-shadow:0 3px 16px rgba(0,0,0,.1)}
-.mockup-container-sm .pos-tablet{left:985px;top:40px;width:260px;transform:rotate(15deg);z-index:3}
-.mockup-container-sm .pos-laptop{left:370px;top:5px;width:660px;z-index:10}
-.mockup-container-sm .pos-phone-l{left:155px;top:320px;width:100px;transform:rotate(-15deg);z-index:20}
-.mockup-container-sm .pos-phone-r{left:1145px;top:320px;width:100px;transform:rotate(15deg);z-index:20}
-.mockup-container-sm .laptop{position:relative;border-radius:10px 10px 0 0;overflow:hidden;background:#2C2C2C;border:3px solid #404040}
-.mockup-container-sm .laptop-topbar{height:20px;background:#363636;display:flex;align-items:center;padding:0 10px;gap:4px;border-bottom:1px solid #4a4a4a}
-.mockup-container-sm .dot{width:6px;height:6px;border-radius:50%}.mockup-container-sm .dot.r{background:#ff5f57}.mockup-container-sm .dot.y{background:#febc2e}.mockup-container-sm .dot.g{background:#28c840}
-.mockup-container-sm .laptop-screen{aspect-ratio:16/10;overflow:hidden;position:relative}
-.mockup-container-sm .laptop-kb{height:12px;background:linear-gradient(180deg,#3a3a3a,#2C2C2C);border-radius:0 0 4px 4px;margin:0 -1px;border:2px solid #404040;border-top:1px solid #4a4a4a;position:relative}
-.mockup-container-sm .laptop-kb::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:50px;height:3px;border-radius:2px;background:rgba(255,255,255,.08)}
-.mockup-container-sm .laptop-kbd{width:108%;height:13px;margin:-1px auto 0;margin-left:-4%;background:linear-gradient(180deg,#353535,#2C2C2C);border-radius:0 0 5px 5px;border:2px solid #404040;border-top:none}
-.mockup-container-sm .tablet{position:relative;border-radius:16px;overflow:hidden;background:#2C2C2C;border:3px solid #404040;padding:7px}
-.mockup-container-sm .tablet-screen{aspect-ratio:3/4;overflow:hidden;border-radius:8px;position:relative}
-.mockup-container-sm .tablet-home{width:16px;height:16px;border-radius:50%;border:1.5px solid #505050;margin:7px auto 4px;background:#383838}
-.mockup-container-sm .phone{position:relative;border-radius:16px;overflow:hidden;background:#2C2C2C;border:3px solid #404040;padding:4px}
-.mockup-container-sm .phone-notch{width:28%;height:4px;background:#404040;border-radius:3px;margin:4px auto}
-.mockup-container-sm .phone-screen{aspect-ratio:9/19.5;overflow:hidden;border-radius:10px;position:relative}
-.mockup-container-sm .phone-bar{width:26%;height:2.5px;background:#404040;border-radius:2px;margin:5px auto 3px}
-.mockup-container-sm .paper{background:#fff;border-radius:3px;overflow:hidden}
-.mockup-container-sm .paper-shadow{border-radius:3px}
-.mockup-container-sm .screen-inner{position:absolute;inset:0;overflow:hidden}
-.mockup-container-sm .artifact-wrap{transform-origin:top left;position:absolute;top:0;left:0;overflow:hidden}
-.mockup-container-sm .scroll-content{animation:mockupScrollUp var(--scroll-dur) ease-in-out infinite alternate}
-.mockup-container-sm .hero-cover{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}
-.mockup-container-sm .paper-cover{width:100%;height:100%;padding:17px 13px;display:flex;flex-direction:column}
-.mockup-container-sm .pc-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;margin-bottom:6px}
-.mockup-container-sm .pc-title{font-size:18px;font-weight:800;line-height:1.2;margin-bottom:2px}
-.mockup-container-sm .pc-sub{font-size:10px;font-style:italic;margin-bottom:10px}
-.mockup-container-sm .pc-divider{width:100%;height:1px;background:rgba(0,0,0,.06);margin-bottom:10px}
-.mockup-container-sm .pc-item{display:flex;align-items:center;gap:8px;margin-bottom:6px;font-size:9px}
-.mockup-container-sm .pc-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
-.mockup-container-sm .pc-footer{margin-top:auto;font-size:8px;letter-spacing:1px;text-transform:uppercase}
-.mockup-container-sm .video-screen{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative}
-.mockup-container-sm .video-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;margin-bottom:24px}
-.mockup-container-sm .play-btn{width:90px;height:90px;border-radius:50%;display:flex;align-items:center;justify-content:center}
-.mockup-container-sm .play-btn svg{width:36px;height:36px}
-.mockup-container-sm .video-title{margin-top:28px;text-align:center;font-size:22px;font-weight:800;line-height:1.2}
-.mockup-container-sm .video-dur{margin-top:14px;font-size:11px;opacity:.3}
+      html {
+        scroll-behavior: smooth;
+      }
 
-/* â•â•â• WIZZY MOCKUP #3: EDITORIAL (1400Ã—680) â•â•â• */
-.editorial-container{width:100%;max-width:768px;margin:0 auto -80px;position:relative;aspect-ratio:1400/680;overflow:visible}
-.editorial-container .editorial-center{width:100%;height:100%;position:relative;overflow:visible;margin:0;padding:0;line-height:0}
-.editorial-container .editorial-mockup{width:1400px;height:680px;position:absolute;top:50%;left:50%;transform-origin:0 0}
-.editorial-container .fan-item{position:absolute;transform-origin:center center}
-.editorial-container .pos-paper-s1{width:380px;height:492px;left:340px;top:80px;transform:rotate(-17deg);z-index:1}
-.editorial-container .pos-paper-s2{width:380px;height:492px;left:340px;top:80px;transform:rotate(-14deg);z-index:1}
-.editorial-container .pos-paper-s3{width:380px;height:492px;left:340px;top:80px;transform:rotate(-11deg);z-index:2}
-.editorial-container .pos-paper-s4{width:380px;height:492px;left:340px;top:80px;transform:rotate(-9deg);z-index:2}
-.editorial-container .pos-paper{width:380px;height:492px;left:340px;top:80px;transform:rotate(-7deg);z-index:5;box-shadow:0 4px 24px rgba(0,0,0,.08)}
-.editorial-container .pos-tablet{left:680px;top:10px;width:380px;transform:rotate(6deg);z-index:8}
-.editorial-container .tablet{position:relative;border-radius:18px;overflow:hidden;background:#2C2C2C;border:3px solid #404040;padding:8px}
-.editorial-container .tablet-screen{aspect-ratio:3/4;overflow:hidden;border-radius:10px;position:relative}
-.editorial-container .tablet-home{width:18px;height:18px;border-radius:50%;border:1.5px solid #505050;margin:8px auto 5px;background:#383838}
-.editorial-container .paper{background:#fff;border-radius:4px;overflow:hidden}
-.editorial-container .paper-shadow{border-radius:4px}
-.editorial-container .screen-inner{position:absolute;inset:0;overflow:hidden}
-.editorial-container .artifact-wrap{transform-origin:top left;position:absolute;top:0;left:0;overflow:hidden}
-@keyframes editorialScrollUp{0%,8%{transform:translateY(0)}92%,100%{transform:translateY(var(--scroll-dist))}}
-.editorial-container .scroll-content{animation:editorialScrollUp var(--scroll-dur) ease-in-out infinite alternate}
-.editorial-container .window-shadow{position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(to right,transparent 20%,rgba(0,0,0,.03) 20.5%,rgba(0,0,0,.03) 21%,transparent 21.5%,transparent 48%,rgba(0,0,0,.03) 48.5%,rgba(0,0,0,.03) 49%,transparent 49.5%,transparent 76%,rgba(0,0,0,.03) 76.5%,rgba(0,0,0,.03) 77%,transparent 77.5%),linear-gradient(to bottom,transparent 30%,rgba(0,0,0,.025) 30.5%,rgba(0,0,0,.025) 31%,transparent 31.5%,transparent 65%,rgba(0,0,0,.025) 65.5%,rgba(0,0,0,.025) 66%,transparent 66.5%);filter:blur(12px);opacity:.6}
-.editorial-container .ed-paper-cover{width:100%;height:100%;padding:5%;display:flex;flex-direction:column;font-family:'Anton',sans-serif;color:#10243E;background:#fff}
-.editorial-container .ed-paper-top{flex-shrink:0;margin-bottom:12px}
-.editorial-container .ed-paper-label{font-family:'Outfit',sans-serif;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:#777;margin-bottom:10px}
-.editorial-container .ed-paper-title{font-family:'Anton',sans-serif;font-size:26px;font-weight:300;line-height:1.15;color:#10243E;margin-bottom:4px}
-.editorial-container .ed-paper-title em{font-style:italic;color:#C65A2E}
-.editorial-container .ed-paper-subtitle{font-family:'Anton',sans-serif;font-size:10px;color:#777;line-height:1.5}
-.editorial-container .ed-paper-band{width:100%;height:45px;background:#10243E;margin-bottom:16px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
-.editorial-container .ed-paper-band span{font-family:'Outfit',sans-serif;font-size:7px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(236,163,111,.8)}
-.editorial-container .ed-paper-bottom{flex:1;display:flex;flex-direction:column}
-.editorial-container .ed-paper-section-label{font-family:'Outfit',sans-serif;font-size:7px;letter-spacing:3px;text-transform:uppercase;color:#777;margin-bottom:12px}
-.editorial-container .ed-paper-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:9px;font-family:'Anton',sans-serif;font-size:9px;line-height:1.4;color:#3A3A3A}
-.editorial-container .ed-paper-dot{width:5px;height:5px;border-radius:50%;background:#C65A2E;flex-shrink:0;margin-top:3px}
-.editorial-container .ed-paper-footer{margin-top:auto;font-family:'Outfit',sans-serif;font-size:7px;letter-spacing:2px;text-transform:uppercase;color:#B0BDB5;padding-top:10px}
+      body {
+        margin: 0;
+        color: var(--text);
+        background: var(--cream);
+        font-family: "Aptos", "Segoe UI", sans-serif;
+      }
 
-/* â•â•â• ANIMATIONS â•â•â• */
-.steps-section{background:repeating-linear-gradient(90deg,transparent,transparent 48px,rgba(255,255,255,.035) 48px,rgba(255,255,255,.035) 50px),#10243E;padding:70px 40px 86px}
-.steps-wrap{display:flex;flex-direction:column;align-items:center;gap:28px;max-width:680px;margin:0 auto}
-.steps-boxes{display:flex;align-items:flex-start;gap:12px}
-.step-group{display:flex;align-items:center;gap:12px}
-.step-box{width:160px;padding:22px 14px;background:#fff;border:2px solid rgba(0,0,0,.08);border-radius:14px;display:flex;flex-direction:column;align-items:center;gap:8px;transition:all 0.5s cubic-bezier(0.34,1.56,0.64,1);transform:scale(0.88) translateY(4px);opacity:0.3}
-.step-box.active{background:var(--white);transform:scale(1) translateY(0);opacity:1}
-.step-box.highlight{border-color:#C65A2E;box-shadow:0 8px 20px rgba(198,90,46,.12)}
-.step-num{font-family:'Caveat',cursive;font-size:32px;color:var(--rose);line-height:1}
-.step-icon{font-size:26px;opacity:0.3;transition:opacity 0.4s}.step-box.active .step-icon{opacity:1}
-.step-label{font-family:'Outfit',sans-serif;font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--dark);text-align:center}
-.step-sub{font-family:'Anton',sans-serif;font-size:13px;color:var(--muted);text-align:center;font-style:italic;opacity:0;transition:opacity 0.4s}
-.step-box.active .step-sub{opacity:1}
-.step-arrow{opacity:0.12;transition:opacity 0.5s}.step-arrow.visible{opacity:1}
-.steps-progress{width:100%;max-width:620px}
-.steps-bar-track{height:4px;background:rgba(255,255,255,.18);overflow:hidden}
-.steps-bar-fill{height:100%;background:#ECA36F;width:0%;transition:width 0.8s cubic-bezier(0.23,1,0.32,1)}
-.steps-bar-labels{display:flex;justify-content:space-between;margin-top:6px}
-.steps-bar-label{font-family:'Outfit',sans-serif;font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--faint);transition:color 0.4s}
-.steps-bar-label.done{color:var(--rose)}
-.steps-section .section-label{color:rgba(255,255,255,.7)}
-.steps-section .section-title{color:#fff}
-.steps-section .hero-summary{color:rgba(255,255,255,.78) !important}
-.steps-section .steps-bar-label{color:rgba(255,255,255,.5)}
-.steps-section .steps-bar-label.done{color:#ECA36F}
-.wvw-section{background:repeating-linear-gradient(90deg,transparent,transparent 48px,rgba(255,255,255,.025) 48px,rgba(255,255,255,.025) 50px),#10243E;padding:80px 40px}
-.wvw-wrap{max-width:560px;margin:0 auto;display:flex;align-items:stretch;justify-content:center;gap:16px;min-height:320px}
-.wvw-card{flex:1;max-width:220px;background:var(--white);border:1px solid var(--line);padding:20px 22px;display:flex;flex-direction:column;gap:10px;transition:all 0.5s ease}
-.wvw-card.wvw-highlight{border-color:var(--rose);box-shadow:0 8px 30px rgba(196,149,110,.08)}
-.wvw-card-label{font-family:'Outfit',sans-serif;font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--faint);margin-bottom:8px;transition:color 0.5s ease}
-.wvw-card-label.wvw-label-active{color:var(--rose)}
-.wvw-problems{display:flex;flex-direction:column;gap:10px;flex:1}
-.wvw-problem{display:flex;align-items:center;gap:8px;opacity:0;transform:translateX(-6px);transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1)}
-.wvw-problem.active{opacity:1;transform:translateX(0)}.wvw-problem.dimmed{opacity:0.25;transform:translateX(0)}
-.wvw-problem svg{flex-shrink:0;stroke:var(--faint)}
-.wvw-problem span{font-family:'Anton',sans-serif;font-size:15px;color:var(--body);line-height:1.3}
-.wvw-tagline{font-family:'Anton',sans-serif;font-size:14px;margin-top:auto;padding-top:12px;font-style:italic;opacity:0;transition:opacity 0.5s ease}
-.wvw-tagline-left{color:var(--faint)}.wvw-tagline-left.visible{opacity:1}
-.wvw-tagline-right{font-style:normal;font-weight:600;color:var(--rose)}.wvw-tagline-right.visible{opacity:1}
-.wvw-center{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;width:50px}
-.wvw-center-line{width:1px;flex:1;max-height:60px;background:var(--line);transition:background 0.5s ease}
-.wvw-center-line.line-active{background:var(--rose)}
-.wvw-vs-circle{width:32px;height:32px;border-radius:50%;border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;transition:all 0.5s cubic-bezier(0.34,1.56,0.64,1);transform:scale(0.7);background:transparent}
-.wvw-vs-circle.circle-active{border-color:var(--rose);transform:scale(1);background:rgba(198,90,46,0.10)}
-.wvw-vs-circle span{font-family:'Caveat',cursive;font-size:14px;color:var(--rose);opacity:0;transition:opacity 0.3s ease}
-.wvw-vs-circle.circle-active span{opacity:1}
-.wvw-results{display:flex;flex-direction:column;gap:12px;flex:1}
-.wvw-result{transition:all 0.5s cubic-bezier(0.34,1.56,0.64,1)}
-.wvw-result-header{display:flex;justify-content:space-between;margin-bottom:4px}
-.wvw-result-header span{font-family:'Outfit',sans-serif;font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--faint);transition:color 0.4s ease}
-.wvw-result.active .wvw-result-header span{color:var(--dark)}
-.wvw-bar-track{height:4px;background:#F0F0F0;overflow:hidden}
-.wvw-bar-fill{height:100%;background:transparent;width:0%;transition:all 0.6s cubic-bezier(0.23,1,0.32,1)}
-.wvw-result.active .wvw-bar-fill{background:var(--rose)}
-.wvw-section .section-label{color:rgba(236,163,111,.75)}
-.wvw-section .section-title{color:#fff}
+      a {
+        color: inherit;
+      }
 
-@media(max-width:700px){
-.hero{padding:60px 20px 72px}.top-bar{padding:10px 16px}.top-bar-text{font-size:14px}
-.pain-section,.benefits-section,.intro-section,.story-section,.stack-section,.faq-section{padding:70px 20px}
-.story-header{flex-direction:column;align-items:center;text-align:center;gap:24px}.story-photo{width:160px;height:200px}
-.story-proof{grid-template-columns:repeat(2,1fr)}.final-cta{padding:70px 20px}.narrow,.wide{padding:0}
-.benefits-grid{grid-template-columns:1fr}.stack-num{min-width:36px;font-size:24px}
-.wvw-section{padding:56px 20px}.mockup-container{margin:28px auto -40px}.mockup-container-sm{margin:28px auto -20px}
-.editorial-container{margin:0 auto -40px;margin-top:-20px}.steps-section{padding:56px 20px}
-.editorial-container .pos-tablet{transform:rotate(4deg) !important;top:40px !important}
-.benefits-section{padding-top:40px !important}
-.benefits-section .wide > div:first-child{padding-top:40px !important}
-.prompt-difference-section{padding:56px 20px 62px}
-.prompt-difference-head{gap:12px;margin-bottom:24px}
-.prompt-difference-line{width:34px}
-.prompt-difference-title{font-size:18px}
-.prompt-flow{grid-template-columns:1fr;gap:14px}
-.prompt-arrow{font-size:24px;transform:rotate(90deg)}
-.prompt-card{padding:20px 16px 18px}
-.prompt-box{min-height:auto;font-size:16px}
-.editorial-section-wrap{margin-top:-40px !important;padding-bottom:0 !important}
-.intro-section .mockup-container-sm{margin-bottom:-30px}
-.intro-section .cta-wrapper{margin-top:0 !important}
-.steps-wrap{max-width:100%}.steps-boxes{gap:5px}.step-group{gap:5px}.step-box{width:92px;padding:14px 7px}.step-arrow svg{width:14px}.step-num{font-size:22px}.step-icon{font-size:16px}.step-label{font-size:8px;letter-spacing:.8px}.step-sub{font-size:10px;line-height:1.35}
-.step-label{font-size:8px}.steps-boxes{gap:6px}.step-group{gap:6px}
-.offer-item-tag{display:none}.offer-row{gap:12px;padding:14px 0}.offer-item-text{font-size:15px}
-.wvw-wrap{gap:8px}.wvw-card{padding:16px 14px}.wvw-problem span{font-size:13px}
-.wvw-result-header span{font-size:9px}.wvw-center{width:36px}.wvw-vs-circle{width:26px;height:26px}.wvw-vs-circle span{font-size:12px}
-}
+      h1,
+      .story-heading,
+      .now-heading,
+      .clarity-heading,
+      .inside-heading,
+      .outcome-heading,
+      .value-heading,
+      .trust-heading,
+      .testimonials-heading,
+      .guarantee-heading,
+      .final-cta h2 {
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 500;
+        letter-spacing: 0;
+      }
 
-.hero h1{color:#fff !important}
-.hero-script{color:#fff !important}
-.hero-label{color:rgba(255,255,255,.5) !important}
-.hero-summary{color:rgba(255,255,255,.7) !important}
-.hero .cta-sub{color:rgba(255,255,255,.4) !important}
-.hero h1 em{color:#ECA36F !important}
+      .hero {
+        background: linear-gradient(90deg, #f7f8fc 0%, #ffffff 100%);
+        border-bottom: 1px solid rgba(7, 27, 63, 0.12);
+      }
 
-.pain-section .section-label{color:rgba(255,255,255,.7)}
-.pain-section .section-title{color:#fff}
-.pain-text{color:rgba(255,255,255,.8) !important}
-.pain-num{color:#F7F1E8 !important}
-.pain-list{border-color:rgba(255,255,255,.1)}
-.pain-item{border-color:rgba(255,255,255,.1) !important}
-.pain-section h2[style]{color:#F7F1E8 !important}
+      .top-banner {
+        border-top: 1px solid rgba(7, 27, 63, 0.12);
+        border-bottom: 1px solid rgba(7, 27, 63, 0.12);
+        background: #fffdf9;
+      }
 
-.intro-section h3{color:var(--dark) !important}
-.intro-section p{color:var(--body) !important}
-.intro-section .section-label{color:var(--muted)}
+      .top-banner-inner {
+        width: min(100%, 1100px);
+        margin: 0 auto;
+        padding: 12px 22px 14px;
+      }
 
-.stack-section .section-label{color:var(--muted)}
-.stack-section .section-title{color:var(--dark)}
-.stack-content p{color:var(--body) !important}
-.stack-tag{color:#ECA36F !important}
-.stack-num{color:#ECA36F !important}
-.stack-item{border-color:var(--line) !important}
-.stack-list{border-color:rgba(255,255,255,.1)}
+      .top-banner-inner > strong {
+        display: block;
+        color: var(--navy);
+        font-size: 0.98rem;
+        font-weight: 700;
+        line-height: 1.3;
+      }
 
-.offer-check svg path{stroke:#ECA36F !important}
-.offer-item-tag{color:#ECA36F !important}
-.offer-table{border-color:rgba(255,255,255,.1)}
-.offer-row{border-color:rgba(255,255,255,.1) !important}
+      .top-banner p {
+        margin: 4px 0 0;
+        color: #677286;
+        font-size: 0.92rem;
+        line-height: 1.45;
+      }
 
-.story-section{background:repeating-linear-gradient(90deg,transparent,transparent 48px,rgba(198,90,46,.07) 48px,rgba(198,90,46,.07) 50px),#F7F1E8 !important}
+      .top-banner p strong {
+        color: #173761;
+        font-weight: 700;
+      }
 
-.faq-list{border-top:none !important}
-.faq-item{border-bottom:none !important;border-radius:14px;border:3px solid #F3D7C8;background:#fff;margin-bottom:8px;padding:0 20px}
-.faq-item:hover{border-color:#C65A2E}
-.faq-q:hover{color:#C65A2E}
-.faq-item.open .faq-icon{color:#C65A2E}
-.proof-number{color:#C65A2E !important}
+      .top-banner a {
+        display: inline-block;
+        margin-top: 8px;
+        color: #51647f;
+        font-size: 0.92rem;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 3px;
+      }
 
-.hero-summary,.pain-text,.benefit-after,.benefit-before,.story-intro-text,.typewriter-text,.typewriter-text p,.stack-content p,.faq-a,.offer-table-sub,.offer-item-text,.intro-section p,.final-cta p{font-family:'Outfit',sans-serif !important}
-.step-sub{font-family:'Outfit',sans-serif}
-</style>
-</head>
-<body>
-<div class="top-bar"><div class="top-bar-text">For <span>Curious Beginners</span> Who Want To Use AI Without Figuring It All Out Themselves</div></div>
-<section class="hero">
-<div class="hero-script">What To Ask <span>AI</span></div>
-<span class="hero-label">100 Ready-to-use AI messages for beginners.</span>
-<h1>Know exactly what to ask AI, <em>without having to figure it out yourself.</em></h1>
-<div style="max-width:720px;margin:36px auto 32px"><img src="heroimg.jpg" alt="AI Starter Prompt Pack + Guide" style="display:block;width:100%;height:auto;border-radius:18px;box-shadow:0 18px 50px rgba(0,0,0,.18)"></div>
-<p class="hero-summary">No PDF to study, no prompt-writing to figure out. Just choose what you need, copy the message, and use AI with more confidence in seconds.</p>
-<div class="cta-wrapper"><a href="https://buy.stripe.com/7sY9ASdrd9gw1Yc1XAbZe0O" class="btn-dark checkout-cta">Get Instant Access</a><a href="#" class="inline-cta whats-inside-link">What's inside</a><p class="cta-sub"><span class="cta-lock"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><rect x="2.25" y="5" width="7.5" height="5.5" rx="1.25" stroke="currentColor" stroke-width="1.2"/><path d="M4 5V3.8C4 2.25 4.9 1.5 6 1.5C7.1 1.5 8 2.25 8 3.8V5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>Instant access</span> &nbsp; Use forever &nbsp; 30-day money-back guarantee</p></div>
-</section>
-<div class="divider"></div>
+      .hero-inner {
+        width: min(100%, 1360px);
+        margin: 0 auto;
+      }
 
-<section class="pain-section"><div class="narrow"><span class="section-label">Sound Familiar?</span><h2 class="section-title">If any of this sounds familiar...</h2><div class="pain-list">
-<div class="pain-item"><span class="pain-num">01</span><span class="pain-text">You open AI because you know it could probably help, then stop at the blank box because you have no idea what to type.</span></div>
-<div class="pain-item"><span class="pain-num">02</span><span class="pain-text">You have tried it once or twice, but the answers were so vague that you came away thinking, "I still do not really see the point."</span></div>
-<div class="pain-item"><span class="pain-num">03</span><span class="pain-text">You search for free prompts online, find huge random lists, and somehow feel more overwhelmed than when you started.</span></div>
-<div class="pain-item"><span class="pain-num">04</span><span class="pain-text">You are not sure what AI can actually help with in normal life, so it stays in the category of "interesting" instead of becoming useful.</span></div>
-<div class="pain-item"><span class="pain-num">05</span><span class="pain-text">Other people seem to know how to use it already, while you are still wondering if you are missing something obvious.</span></div>
-<div class="pain-item"><span class="pain-num">06</span><span class="pain-text">And even when you do ask something, you are not always sure what to trust, what to double-check, or what you should never share with AI in the first place.</span></div>
-</div><h2 class="section-title" style="text-align:center;margin-top:48px;margin-bottom:0;font-family:'Caveat',cursive;font-weight:400;font-size:clamp(32px,5vw,52px);color:var(--rose)">...then this is for you!</h2></div></section>
-<!-- â•â•â• WIZZY MOCKUP #3: EDITORIAL MOCKUP â•â•â• -->
-<section class="editorial-section-wrap" style="background:transparent;padding:0 40px;margin-top:-80px;position:relative;z-index:2">
-  <div style="max-width:720px;margin:0 auto;">
-    <img src="productimg.jpg" alt="What To Ask AI product preview" style="display:block;width:100%;height:auto;border-radius:18px;box-shadow:0 18px 50px rgba(0,0,0,.18)">
-  </div>
-</section>
-<div class="divider"></div>
+      .hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.08fr) minmax(380px, 0.72fr);
+        min-height: 560px;
+      }
 
-<section class="prompt-difference-section">
-  <div class="prompt-difference-wrap">
-    <div class="prompt-difference-head">
-      <span class="prompt-difference-line"></span>
-      <h2 class="prompt-difference-title">See the difference in seconds</h2>
-      <span class="prompt-difference-line"></span>
-    </div>
-    <div class="prompt-flow">
-      <div class="prompt-card vague">
-        <div class="prompt-step">1. Vague ask</div>
-        <div class="prompt-box">"What does this letter mean?"</div>
-        <div class="prompt-note"><span class="prompt-icon">&times;</span><span>Gets generic, unhelpful answers.</span></div>
-      </div>
-      <div class="prompt-arrow">&rarr;</div>
-      <div class="prompt-card better">
-        <div class="prompt-step">2. Better prompt</div>
-        <div class="prompt-box">"Please explain this in plain English:<br><br>[PASTE LETTER / EMAIL / NOTICE HERE]<br><br>Tell me:<br>1. What it is saying<br>2. Why it matters<br>3. Whether I need to do anything<br>4. Anything I should double-check"</div>
-        <div class="prompt-note"><span class="prompt-icon">&#10003;</span><span>AI understands exactly what you want.</span></div>
-      </div>
-      <div class="prompt-arrow">&rarr;</div>
-      <div class="prompt-card answer">
-        <div class="prompt-step">3. Better answer</div>
-        <div class="prompt-box">A clear breakdown of the letter, what matters, and whether you need to act.</div>
-        <div class="prompt-note"><span class="prompt-icon">&#10003;</span><span>Better answers, less guessing.</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-<div class="divider"></div>
+      .hero-copy {
+        display: flex;
+        align-items: center;
+        padding: 64px clamp(28px, 4.5vw, 76px) 70px;
+      }
 
-<section class="steps-section"><div style="text-align:center;margin-bottom:36px"><span class="section-label">How It Works</span><h2 class="section-title" style="text-align:center">You do not need to become an AI expert</h2><p class="hero-summary" style="color:rgba(255,255,255,.78) !important;margin-bottom:0">Just choose the situation that matches your life, copy the prompt, paste it into ChatGPT, and use the follow-up message if you need a better answer.</p></div><div class="steps-wrap"><div class="steps-boxes"><div class="step-group"><div class="step-box" id="stepBox0" data-index="0"><div class="step-num">1</div><div class="step-icon">01</div><div class="step-label">Choose your situation</div><div class="step-sub">Pick the everyday moment you need help with</div></div><div class="step-arrow" id="stepArrow0"><svg width="24" height="12" viewBox="0 0 20 10"><path d="M0 5 H13 M10 1.5 L17 5 L10 8.5" stroke="#ECA36F" stroke-width="1.2" fill="none" stroke-linecap="round"/></svg></div></div><div class="step-group"><div class="step-box" id="stepBox1" data-index="1"><div class="step-num">2</div><div class="step-icon">02</div><div class="step-label">Copy the prompt</div><div class="step-sub">Use the ready-made wording instead of starting from scratch</div></div><div class="step-arrow" id="stepArrow1"><svg width="24" height="12" viewBox="0 0 20 10"><path d="M0 5 H13 M10 1.5 L17 5 L10 8.5" stroke="#ECA36F" stroke-width="1.2" fill="none" stroke-linecap="round"/></svg></div></div><div class="step-group"><div class="step-box" id="stepBox2" data-index="2"><div class="step-num">3</div><div class="step-icon">03</div><div class="step-label">Paste into ChatGPT</div><div class="step-sub">Add your details, send it, and use the follow-up if needed</div></div></div></div><div class="steps-progress"><div class="steps-bar-track"><div class="steps-bar-fill" id="stepsBarFill"></div></div><div class="steps-bar-labels"><span class="steps-bar-label">Never used AI</span><span class="steps-bar-label" id="stepsBarEnd">Better answer</span></div></div></div></section>
-<div class="divider"></div>
+      .hero-content {
+        max-width: 720px;
+        animation: riseIn 700ms ease-out both;
+      }
 
-<section class="benefits-section"><div class="wide"><div style="text-align:center;margin-bottom:52px;padding-top:100px"><span class="section-label">The Shift</span><h2 class="section-title" style="text-align:center">Here is what changes when you have<br>the right starting prompts in place:</h2></div><div class="benefits-grid">
-<div class="benefit-card"><div class="benefit-before"><span class="x-icon">&#10005;</span> You open AI and freeze</div><div class="benefit-after">You open the pack, find the situation that matches what you need, and have a prompt ready to use instead of starting from nothing.</div></div>
-<div class="benefit-card"><div class="benefit-before"><span class="x-icon">&#10005;</span> You are not sure what AI can help with</div><div class="benefit-after">The prompts are organised by everyday life areas, so you can quickly see where AI fits: emails, admin, planning, decisions, learning, shopping, safety, and more.</div></div>
-<div class="benefit-card"><div class="benefit-before"><span class="x-icon">&#10005;</span> Free prompt lists feel random and overwhelming</div><div class="benefit-after">Each prompt comes with context: when to use it, what to change, what to ask next, and what to be careful with.</div></div>
-<div class="benefit-card"><div class="benefit-before"><span class="x-icon">&#10005;</span> Your first attempts get vague answers</div><div class="benefit-after">You start with clearer prompts built for real situations, which gives AI a better chance of returning something useful from the first try.</div></div>
-<div class="benefit-card"><div class="benefit-before"><span class="x-icon">&#10005;</span> AI still feels too technical</div><div class="benefit-after">You do not need to learn prompt engineering. You copy, paste, replace the bracketed parts, and follow the simple guide.</div></div>
-<div class="benefit-card"><div class="benefit-before"><span class="x-icon">&#10005;</span> You are not sure what to trust</div><div class="benefit-after">The pack helps you use AI more safely, with notes on what not to share, when to double-check, and when to ask a real person instead.</div></div>
-</div></div></section>
-<div class="divider"></div>
+      .hero-visual {
+        position: relative;
+        min-height: 480px;
+        overflow: hidden;
+      }
 
-<section class="wvw-section"><div style="text-align:center;margin-bottom:52px"><span class="section-label">The Difference</span><h2 class="section-title" style="text-align:center">Without the pack vs with the pack</h2></div><div class="wvw-wrap"><div class="wvw-card"><div class="wvw-card-label">Without the Pack</div><div class="wvw-problems"><div class="wvw-problem" data-index="0"><svg width="10" height="10" viewBox="0 0 10 10"><line x1="2" y1="2" x2="8" y2="8" stroke-width="1.2" stroke-linecap="round"/><line x1="8" y1="2" x2="2" y2="8" stroke-width="1.2" stroke-linecap="round"/></svg><span>You open AI and freeze at the blank box</span></div><div class="wvw-problem" data-index="1"><svg width="10" height="10" viewBox="0 0 10 10"><line x1="2" y1="2" x2="8" y2="8" stroke-width="1.2" stroke-linecap="round"/><line x1="8" y1="2" x2="2" y2="8" stroke-width="1.2" stroke-linecap="round"/></svg><span>You are not sure what AI can help with in real life</span></div><div class="wvw-problem" data-index="2"><svg width="10" height="10" viewBox="0 0 10 10"><line x1="2" y1="2" x2="8" y2="8" stroke-width="1.2" stroke-linecap="round"/><line x1="8" y1="2" x2="2" y2="8" stroke-width="1.2" stroke-linecap="round"/></svg><span>You search free prompts and get overwhelmed</span></div><div class="wvw-problem" data-index="3"><svg width="10" height="10" viewBox="0 0 10 10"><line x1="2" y1="2" x2="8" y2="8" stroke-width="1.2" stroke-linecap="round"/><line x1="8" y1="2" x2="2" y2="8" stroke-width="1.2" stroke-linecap="round"/></svg><span>You ask vague questions and get vague answers back</span></div><div class="wvw-problem" data-index="4"><svg width="10" height="10" viewBox="0 0 10 10"><line x1="2" y1="2" x2="8" y2="8" stroke-width="1.2" stroke-linecap="round"/><line x1="8" y1="2" x2="2" y2="8" stroke-width="1.2" stroke-linecap="round"/></svg><span>You still feel like AI is for other people</span></div></div><div class="wvw-tagline wvw-tagline-left">Still guessing what to ask.</div></div><div class="wvw-center"><div class="wvw-center-line wvw-center-line-top"></div><div class="wvw-vs-circle"><span>vs</span></div><div class="wvw-center-line wvw-center-line-bottom"></div></div><div class="wvw-card wvw-card-right"><div class="wvw-card-label wvw-card-label-right">With the Pack</div><div class="wvw-results"><div class="wvw-result" data-index="0"><div class="wvw-result-header"><span>You know where to start</span></div><div class="wvw-bar-track"><div class="wvw-bar-fill" data-width="94%"></div></div></div><div class="wvw-result" data-index="1"><div class="wvw-result-header"><span>You find the right prompt fast</span></div><div class="wvw-bar-track"><div class="wvw-bar-fill" data-width="90%"></div></div></div><div class="wvw-result" data-index="2"><div class="wvw-result-header"><span>You use AI for emails, admin, planning, and more</span></div><div class="wvw-bar-track"><div class="wvw-bar-fill" data-width="88%"></div></div></div><div class="wvw-result" data-index="3"><div class="wvw-result-header"><span>You adapt prompts safely and confidently</span></div><div class="wvw-bar-track"><div class="wvw-bar-fill" data-width="84%"></div></div></div><div class="wvw-result" data-index="4"><div class="wvw-result-header"><span>You feel less behind and more in control</span></div><div class="wvw-bar-track"><div class="wvw-bar-fill" data-width="96%"></div></div></div></div><div class="wvw-tagline wvw-tagline-right">Open AI and start.</div></div></div></section>
-<div class="divider"></div>
+      .hero-visual::before {
+        content: "";
+        position: absolute;
+        inset: 12% 8% 12% 10%;
+        background:
+          url("heroimg.jpg") center right / contain no-repeat;
+      }
 
-<section class="intro-section"><span class="section-label">The Solution</span><div class="intro-script">Introducing</div><h3>What To Ask AI: 100 Simple Prompts for Everyday Life</h3><p>A beginner-friendly prompt pack and guide that gives you 100 copy-paste prompts for real everyday situations, plus simple instructions showing when to use each one, what to change, what to ask next, and what to be careful with.</p>
-<div style="max-width:720px;margin:44px auto 0"><img src="productimg.jpg" alt="What To Ask AI product preview" style="display:block;width:100%;height:auto;border-radius:18px;box-shadow:0 18px 50px rgba(0,0,0,.18)"></div>
-<div class="cta-wrapper" style="margin-top:-60px"><a href="https://buy.stripe.com/7sY9ASdrd9gw1Yc1XAbZe0O" class="btn-dark checkout-cta">Get Instant Access</a><p class="cta-sub">One-time payment. Instant access. 100 prompts across 10 everyday life areas.</p></div></section>
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        min-height: 38px;
+        padding: 0 18px;
+        border-radius: 999px;
+        background: var(--gold-soft);
+        color: #91792a;
+        font-size: 0.92rem;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+      }
 
-<div class="divider"></div>
+      h1 {
+        margin: 18px 0 0;
+        color: var(--navy);
+        font-size: clamp(2.35rem, 3.2vw, 3.35rem);
+        font-weight: 500;
+        line-height: 1.08;
+        letter-spacing: 0;
+        max-width: 17ch;
+      }
 
-<section class="stack-section"><div class="narrow"><div style="text-align:center;margin-bottom:52px"><span class="section-label">What You Get</span><h2 class="section-title" style="text-align:center">Here is everything inside the pack:</h2></div><div class="stack-list">
-<div class="stack-item"><span class="stack-num">One</span><div class="stack-content"><h4>A short beginner guide that shows you how to use AI properly</h4><p>Before the prompts, you get a simple quick-start guide covering what a prompt is, how to copy and paste one, how to replace bracketed sections, how to ask follow-up questions, and how to tell whether the answer is actually useful.</p><span class="stack-tag">Quick-Start Guide</span></div></div>
-<div class="stack-item"><span class="stack-num">Two</span><div class="stack-content"><h4>100 copy-paste prompts across 10 everyday life areas</h4><p>The prompts are organised around real situations: confusing things, emails, admin, decisions, planning, learning, safety, health appointments, shopping and money, and family or personal life.</p><span class="stack-tag">Prompt Library</span></div></div>
-<div class="stack-item"><span class="stack-num">Three</span><div class="stack-content"><h4>Plain-English guidance for when to use each prompt</h4><p>You are not left staring at a random list. Every prompt begins with a simple “Use this when” explanation, so you can quickly match the prompt to the situation you are actually in.</p><span class="stack-tag">Usage Context</span></div></div>
-<div class="stack-item"><span class="stack-num">Four</span><div class="stack-content"><h4>Built-in help for adapting the prompt and continuing the conversation</h4><p>Each entry tells you what to change, which follow-up question to ask next, and how to keep moving instead of getting one answer and stopping there.</p><span class="stack-tag">Follow-Up Support</span></div></div>
-<div class="stack-item"><span class="stack-num">Five</span><div class="stack-content"><h4>Safety notes that show you what not to share and when not to fully trust AI</h4><p>You also get practical guardrails for privacy, scams, health questions, and situations where a real person or professional is the better next step.</p><span class="stack-tag">Safety Notes</span></div></div>
-</div></div></section>
-<div class="divider"></div>
+      .lead {
+        margin: 20px 0 0;
+        max-width: 41rem;
+        color: #5e687a;
+        font-size: clamp(1.04rem, 1.25vw, 1.18rem);
+        line-height: 1.6;
+      }
 
-<section class="offer-table-section" id="whats-inside"><div class="offer-table-wrap"><div class="offer-table-header"><span class="offer-table-label">What You Can Use It For</span><div class="offer-table-title">100 prompts for the real-life moments where AI is actually useful</div><p class="offer-table-sub">Instead of wondering what to ask, open the section that matches the situation you are in and use a prompt built for that exact kind of problem.</p></div><div class="offer-table">
-<div class="offer-row"><div class="offer-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="#ECA36F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="offer-item-text">Explaining confusing things - turn jargon, letters, forms, and unclear information into plain English</span><span class="offer-item-tag">Clarity</span></div>
-<div class="offer-row"><div class="offer-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="#ECA36F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="offer-item-text">Emails and messages - write clearer replies faster without staring at a blank screen</span><span class="offer-item-tag">Writing</span></div>
-<div class="offer-row"><div class="offer-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="#ECA36F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="offer-item-text">Everyday admin and paperwork - make forms, chores, and life admin easier to work through</span><span class="offer-item-tag">Admin</span></div>
-<div class="offer-row"><div class="offer-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="#ECA36F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="offer-item-text">Decision-making - compare options, spot trade-offs, and think things through with less second-guessing</span><span class="offer-item-tag">Decisions</span></div>
-<div class="offer-row"><div class="offer-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="#ECA36F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="offer-item-text">Planning and organisation - turn messy ideas into plans, lists, routines, and next steps</span><span class="offer-item-tag">Planning</span></div>
-<div class="offer-row"><div class="offer-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="#ECA36F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="offer-item-text">Learning something new - get simpler explanations, examples, and practice help when you are stuck</span><span class="offer-item-tag">Learning</span></div>
-<div class="offer-row"><div class="offer-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="#ECA36F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="offer-item-text">Safety, scams, and trust - sense-check suspicious messages and know what needs extra caution</span><span class="offer-item-tag">Safety</span></div>
-<div class="offer-row"><div class="offer-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="#ECA36F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="offer-item-text">Health appointments and wellbeing - prepare questions, organise symptoms, and go in feeling clearer</span><span class="offer-item-tag">Health</span></div>
-<div class="offer-row"><div class="offer-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="#ECA36F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="offer-item-text">Shopping, money, and purchases - compare choices, think through spending, and buy with more confidence</span><span class="offer-item-tag">Money</span></div>
-<div class="offer-row"><div class="offer-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="#ECA36F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="offer-item-text">Family, hobbies, and personal life - get help with the everyday situations that rarely come with instructions</span><span class="offer-item-tag">Life</span></div>
-</div><div class="offer-price-box"><div class="offer-price"><span class="price-was">&pound;19</span> &pound;9.50</div><div class="offer-price-note">Launch sale. Use code EARLY50 at checkout.</div></div><div class="cta-wrapper"><a href="https://buy.stripe.com/7sY9ASdrd9gw1Yc1XAbZe0O" class="btn-white checkout-cta">Get Instant Access</a><p class="cta-sub" style="color:rgba(255,255,255,.4)">100 prompts. 10 everyday areas. A clear place to start today.</p></div></div></section>
-<div class="divider"></div>
+      .actions {
+        margin-top: 26px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
 
-<section class="faq-section"><div class="narrow"><div style="text-align:center;margin-bottom:52px"><span class="section-label">Questions</span><h2 class="section-title" style="text-align:center">Frequently Asked Questions</h2></div><div class="faq-list">
-<div class="faq-item open"><div class="faq-q" onclick="toggleFaq(this)"><span>I am a complete beginner. Can I still use this?</span><div class="faq-icon">+</div></div><div class="faq-a">Yes. This was made for curious beginners who want AI to feel useful without learning technical jargon or prompt engineering. If you can copy, paste, and replace a few bracketed words, you can use the pack.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Can I not just find prompts for free online?</span><div class="faq-icon">+</div></div><div class="faq-a">You can find free prompts online. The problem is that most free lists are scattered, generic, and leave you to work out when to use each one. This pack gives you prompts organised by everyday situation, with usage context, editable parts, follow-up questions, and safety notes built in.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>I have tried AI before and did not really see the point. Is this different?</span><div class="faq-icon">+</div></div><div class="faq-a">Often the issue is not AI itself. It is starting with vague questions, then getting vague answers back. This pack gives you clearer starting prompts for real situations so you can see where AI becomes practically useful much faster.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Will I know which prompt to use when?</span><div class="faq-icon">+</div></div><div class="faq-a">Yes. Every prompt starts with a plain-English “Use this when” section, so you are not left guessing which prompt fits the moment you are in.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>What kinds of things does it help with?</span><div class="faq-icon">+</div></div><div class="faq-a">The pack covers 10 everyday areas, including confusing letters and jargon, emails and messages, admin, decisions, planning, learning, safety and scams, health appointments, shopping and money, and family or personal life.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>What if AI gives me something wrong?</span><div class="faq-icon">+</div></div><div class="faq-a">The pack does not pretend AI is always right. It includes guidance on what not to share, when not to fully trust the answer, when to double-check, and when a real person or professional is the better next step.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Is this just a PDF full of prompts?</span><div class="faq-icon">+</div></div><div class="faq-a">No. It is a starter system for using AI more confidently. The prompts are only one part of it. The real value is that each one also tells you when to use it, what to change, what to ask next, and what to be careful with.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>How quickly can I start using it?</span><div class="faq-icon">+</div></div><div class="faq-a">Immediately. Open the pack, choose the everyday situation you need help with, copy the matching prompt, and use it straight away.</div></div>
-</div></div></section>
-<div class="divider"></div>
+      .hero .button {
+        min-width: 220px;
+        min-height: 58px;
+        padding: 0 28px;
+        border-radius: 10px;
+        background: #1e4f87;
+        box-shadow: 0 18px 34px rgba(30, 79, 135, 0.24);
+        font-size: 1rem;
+      }
 
-<section class="final-cta"><span class="section-label">Get Started</span><h3>Stop staring at the blank box.<br>Open AI and know exactly what to ask.</h3><p>Get What To Ask AI: 100 Simple Prompts for Everyday Life, including the full prompt pack, beginner guide, follow-up questions, and safety notes.</p><a href="https://buy.stripe.com/7sY9ASdrd9gw1Yc1XAbZe0O" class="btn-white checkout-cta">Get Instant Access</a><p class="cta-sub">Instant access. 100 prompts across 10 everyday life areas.</p></section>
-<footer class="footer"><p>&copy; 2026 AIConfidenceKit. All rights reserved.</p></footer>
-<div class="discount-modal" id="discountModal" aria-hidden="true">
-  <div class="discount-card" role="dialog" aria-modal="true" aria-labelledby="discountTitle">
-    <button class="discount-close" type="button" id="discountClose" aria-label="Close discount modal">&times;</button>
-    <div class="discount-label">Launch Sale</div>
-    <h3 id="discountTitle">Use this code for 50% off</h3>
-    <p>Enter this code at checkout to bring the price down from £19 to £9.50.</p>
-    <div class="discount-code">EARLY50</div>
-    <button class="discount-copy" type="button" id="discountCopy" data-code="EARLY50">Copy Code</button>
-    <a class="btn-dark" id="discountContinue" href="https://buy.stripe.com/7sY9ASdrd9gw1Yc1XAbZe0O">Continue To Checkout</a>
-    <div class="discount-note">Copy the code before you continue.</div>
-  </div>
-</div>
+      .hero .button:hover {
+        background: #173f6d;
+        box-shadow: 0 22px 38px rgba(23, 63, 109, 0.28);
+      }
 
-<script>
-var checkoutTracked = false;
-document.querySelectorAll('.checkout-cta').forEach(function(link){
-  link.addEventListener('click', function(event){
-    event.preventDefault();
-    var destination = link.href;
-    if(!checkoutTracked && typeof fbq === 'function'){
-      fbq('track', 'InitiateCheckout');
-      checkoutTracked = true;
-    }
-    var modal = document.getElementById('discountModal');
-    var continueLink = document.getElementById('discountContinue');
-    if(modal && continueLink){
-      continueLink.href = destination;
-      modal.classList.add('open');
-      modal.setAttribute('aria-hidden','false');
-    }else{
-      setTimeout(function(){
-        window.location.href = destination;
-      }, 300);
-    }
-  });
-});
-var discountModal = document.getElementById('discountModal');
-var discountClose = document.getElementById('discountClose');
-var discountCopy = document.getElementById('discountCopy');
-if(discountCopy){
-  discountCopy.addEventListener('click', function(){
-    var code = discountCopy.getAttribute('data-code') || 'EARLY50';
-    function showCopied(){
-      discountCopy.textContent = 'Copied';
-      discountCopy.classList.add('copied');
-      setTimeout(function(){
-        discountCopy.textContent = 'Copy Code';
-        discountCopy.classList.remove('copied');
-      }, 1800);
-    }
-    if(navigator.clipboard && navigator.clipboard.writeText){
-      navigator.clipboard.writeText(code).then(showCopied).catch(function(){
-        window.prompt('Copy this code:', code);
+      .button {
+        display: inline-flex;
+        min-height: 52px;
+        align-items: center;
+        justify-content: center;
+        padding: 0 26px;
+        border-radius: 8px;
+        background: var(--blue);
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 800;
+        text-decoration: none;
+        box-shadow: 0 16px 28px rgba(20, 104, 196, 0.22);
+        transition:
+          transform 180ms ease,
+          background-color 180ms ease,
+          box-shadow 180ms ease;
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+        background: var(--blue-dark);
+        box-shadow: 0 20px 34px rgba(20, 104, 196, 0.28);
+      }
+
+      .checkout-note {
+        color: var(--muted) !important;
+        font-size: 0.92rem !important;
+      }
+
+      .note {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .hero .note {
+        margin: 16px 0 0;
+        max-width: 38rem;
+        color: #697486;
+        font-size: 0.96rem;
+        line-height: 1.55;
+      }
+
+      .sale-note {
+        margin: 10px 0 0;
+        display: inline-flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+        color: var(--muted);
+        font-size: 0.93rem;
+      }
+
+      .sale-note strong {
+        color: var(--blue);
+        font-weight: 700;
+      }
+
+      .sale-note .old-price {
+        text-decoration: line-through;
+        color: var(--muted);
+      }
+
+      .sale-note .new-price {
+        color: var(--blue);
+        font-weight: 700;
+      }
+
+      .punch-section h2 {
+        max-width: 18ch;
+      }
+
+      .punch-copy {
+        margin-top: 30px;
+        max-width: 46rem;
+      }
+
+      .punch-copy p {
+        font-size: 1.22rem;
+        line-height: 1.62;
+      }
+
+      .punch-cards {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .punch-cards .clarity-card,
+      .punch-cards .value-card {
+        min-height: 190px;
+      }
+
+      .punch-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gold-bullets {
+        margin: 52px 0 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 28px;
+        max-width: 50rem;
+      }
+
+      .gold-bullets li {
+        position: relative;
+        padding-left: 48px;
+        color: var(--text);
+        font-size: 1.18rem;
+        line-height: 1.65;
+      }
+
+      .gold-bullets li::before {
+        content: "";
+        position: absolute;
+        top: 0.72em;
+        left: 0;
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        background: #d6ad22;
+      }
+
+      .problem-prose {
+        margin: 34px 0 0;
+        max-width: 58rem;
+        color: var(--text);
+        font-size: 1.14rem;
+        line-height: 1.78;
+      }
+
+      .problem-prose p {
+        margin: 0 0 18px;
+      }
+
+      .advantage-callout {
+        margin: 48px 0 0;
+        max-width: 50rem;
+        padding: 24px 28px;
+        border-left: 6px solid var(--navy);
+        border-radius: 10px;
+        background: var(--cream-card);
+        box-shadow: 0 18px 42px rgba(23, 55, 97, 0.08);
+        color: var(--navy);
+        font-size: clamp(1.12rem, 1.55vw, 1.45rem);
+        line-height: 1.5;
+      }
+
+      .shift-heading {
+        margin: 58px 0 0;
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(1.85rem, 3vw, 2.6rem);
+        font-weight: 500;
+        line-height: 1.12;
+      }
+
+      .shift-grid {
+        margin-top: 24px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+        max-width: 58rem;
+      }
+
+      .shift-card {
+        padding: 26px;
+        border-radius: 10px;
+        border: 1px solid rgba(23, 55, 97, 0.12);
+        background: var(--cream-card);
+        box-shadow: 0 16px 36px rgba(23, 55, 97, 0.06);
+      }
+
+      .shift-card strong {
+        display: block;
+        margin-bottom: 14px;
+        color: var(--navy);
+        font-size: 1.08rem;
+      }
+
+      .shift-card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 1.06rem;
+        line-height: 1.65;
+      }
+
+      .fit-list {
+        margin: 46px 0 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 28px;
+        max-width: 58rem;
+      }
+
+      .fit-list li {
+        position: relative;
+        padding-left: 48px;
+        color: var(--text);
+        font-size: 1.2rem;
+        line-height: 1.62;
+      }
+
+      .fit-list li::before {
+        content: "→";
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: var(--navy);
+        font-size: 1.35rem;
+        font-weight: 800;
+        line-height: 1.45;
+      }
+
+      .not-for-card {
+        margin-top: 58px;
+        max-width: 58rem;
+        padding: 28px 34px;
+        border-radius: 10px;
+        border: 1px solid rgba(23, 55, 97, 0.12);
+        background: var(--cream-card);
+        box-shadow: 0 16px 36px rgba(23, 55, 97, 0.06);
+        color: var(--muted);
+        font-size: 1.08rem;
+        line-height: 1.68;
+      }
+
+      .not-for-card strong {
+        color: var(--navy);
+      }
+
+      .story { background: var(--cream-card); }
+
+      .story-inner {
+        width: min(100%, 1140px);
+        margin: 0 auto;
+        padding: 72px 32px 88px;
+      }
+
+      .story-heading {
+        margin: 0;
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 500;
+        font-size: clamp(2rem, 3.4vw, 3rem);
+        line-height: 1.06;
+        max-width: 12ch;
+      }
+
+      .story-subhead {
+        margin: 22px 0 0;
+        color: var(--text);
+        font-size: 1.15rem;
+        line-height: 1.7;
+        max-width: 58rem;
+      }
+
+      .story-copy {
+        margin-top: 42px;
+        color: var(--text);
+        font-size: 1.06rem;
+        line-height: 1.82;
+        max-width: 60rem;
+      }
+
+      .story-copy p {
+        margin: 0 0 22px;
+      }
+
+      .story-copy .quote {
+        margin: 26px 0;
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.28rem;
+        line-height: 1.55;
+      }
+
+      .clarity { background: var(--cream); }
+
+      .clarity-inner {
+        width: min(100%, 1140px);
+        margin: 0 auto;
+        padding: 76px 32px 92px;
+      }
+
+      .clarity-heading {
+        margin: 0;
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 500;
+        font-size: clamp(2rem, 3.4vw, 3rem);
+        line-height: 1.08;
+        max-width: 18ch;
+      }
+
+      .clarity-subhead {
+        margin: 22px 0 0;
+        max-width: 58rem;
+        color: var(--text);
+        font-size: 1.15rem;
+        line-height: 1.7;
+      }
+
+      .clarity-copy {
+        margin-top: 42px;
+        max-width: 60rem;
+        color: var(--text);
+        font-size: 1.06rem;
+        line-height: 1.78;
+      }
+
+      .clarity-copy p {
+        margin: 0 0 22px;
+      }
+
+      .clarity-cards {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 14px;
+        margin: 34px 0 38px;
+      }
+
+      .clarity-card {
+        min-height: 170px;
+        padding: 20px;
+        border: 1px solid rgba(23, 55, 97, 0.12);
+        border-radius: 10px;
+        background: var(--cream-card);
+        box-shadow: 0 16px 36px rgba(23, 55, 97, 0.06);
+      }
+
+      .clarity-card svg {
+        width: 30px;
+        height: 30px;
+        margin-bottom: 14px;
+        color: #1f9d62;
+      }
+
+      .clarity-card h3 {
+        margin: 0;
+        color: var(--navy);
+        font-size: 1rem;
+        line-height: 1.28;
+      }
+
+      .clarity-card p {
+        margin: 12px 0 0;
+        color: var(--muted);
+        font-size: 0.95rem;
+        line-height: 1.48;
+      }
+
+      .inside { background: var(--cream-deep); }
+
+      .inside-inner {
+        width: min(100%, 1140px);
+        margin: 0 auto;
+        padding: 76px 32px 92px;
+      }
+
+      .inside-heading {
+        margin: 0;
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 500;
+        font-size: clamp(2rem, 3.4vw, 3rem);
+        line-height: 1.08;
+        max-width: 16ch;
+      }
+
+      .inside-subhead {
+        margin: 22px 0 0;
+        max-width: 58rem;
+        color: var(--text);
+        font-size: 1.15rem;
+        line-height: 1.7;
+      }
+
+      .inside-intro {
+        margin: 34px 0 0;
+        max-width: 60rem;
+        color: var(--text);
+        font-size: 1.06rem;
+        line-height: 1.78;
+      }
+
+      .inside-list {
+        margin: 38px 0 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+      }
+
+      .inside-item {
+        display: grid;
+        grid-template-columns: 46px 1fr;
+        gap: 16px;
+        padding: 22px;
+        border-radius: 10px;
+        border: 1px solid rgba(23, 55, 97, 0.12);
+        background: var(--cream-card);
+        box-shadow: 0 16px 36px rgba(23, 55, 97, 0.06);
+      }
+
+      .inside-number {
+        width: 46px;
+        height: 46px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: var(--navy);
+        color: #ffffff;
+        font-weight: 800;
+      }
+
+      .inside-item h3 {
+        margin: 0;
+        color: var(--navy);
+        font-size: 1.08rem;
+        line-height: 1.28;
+      }
+
+      .inside-item p {
+        margin: 10px 0 0;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .now { background: var(--sage); }
+
+      .now-inner {
+        width: min(100%, 1140px);
+        margin: 0 auto;
+        padding: 76px 32px 92px;
+        text-align: center;
+      }
+
+      .now-heading {
+        margin: 0;
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 500;
+        font-size: clamp(2rem, 3.4vw, 3rem);
+        line-height: 1.08;
+        max-width: 17ch;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .now-subhead {
+        margin: 22px 0 0;
+        max-width: 58rem;
+        color: var(--text);
+        font-size: 1.15rem;
+        line-height: 1.7;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .now-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+        align-items: start;
+        margin-top: 42px;
+      }
+
+      .now-copy {
+        color: var(--text);
+        font-size: 1.06rem;
+        line-height: 1.78;
+        max-width: 44rem;
+        margin: 0 auto;
+      }
+
+      .now-copy p {
+        margin: 0 0 22px;
+      }
+
+      .now-list {
+        display: grid;
+        gap: 14px;
+      }
+
+      .now-item {
+        display: grid;
+        grid-template-columns: 34px 1fr;
+        gap: 14px;
+        padding: 18px;
+        border-radius: 10px;
+        background: var(--cream-card);
+        border: 1px solid rgba(23, 55, 97, 0.12);
+        box-shadow: 0 16px 36px rgba(23, 55, 97, 0.06);
+      }
+
+      .now-item svg {
+        width: 34px;
+        height: 34px;
+        color: #1f9d62;
+      }
+
+      .now-item h3 {
+        margin: 0;
+        color: var(--navy);
+        font-size: 1.02rem;
+        line-height: 1.3;
+      }
+
+      .now-item p {
+        margin: 8px 0 0;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      .outcome { background: var(--cream-card); }
+
+      .testimonials { background: var(--cream); }
+
+      .outcome-inner,
+      .value-inner,
+      .trust-inner {
+        width: min(100%, 1140px);
+        margin: 0 auto;
+        padding: 76px 32px 92px;
+      }
+
+      .testimonials-inner {
+        width: min(100%, 1140px);
+        margin: 0 auto;
+        padding: 78px 32px 92px;
+      }
+
+      .outcome-heading,
+      .value-heading,
+      .trust-heading,
+      .testimonials-heading {
+        margin: 0;
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 500;
+        font-size: clamp(2rem, 3.4vw, 3rem);
+        line-height: 1.08;
+        max-width: 17ch;
+      }
+
+      .outcome-subhead,
+      .value-subhead,
+      .trust-subhead,
+      .testimonials-subhead {
+        margin: 22px 0 0;
+        max-width: 58rem;
+        color: var(--text);
+        font-size: 1.15rem;
+        line-height: 1.7;
+      }
+
+      .testimonial-list {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        margin: 44px 0 0;
+      }
+
+      .testimonial-card {
+        padding: 28px;
+        border: 1px solid rgba(23, 55, 97, 0.12);
+        border-radius: 10px;
+        background: var(--cream-card);
+        box-shadow: 0 16px 34px rgba(23, 55, 97, 0.06);
+      }
+
+      .testimonial-quote {
+        margin: 0;
+        color: var(--text);
+        font-size: 1.12rem;
+        line-height: 1.65;
+      }
+
+      .testimonial-person {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-top: 24px;
+        color: var(--muted);
+        font-size: 1rem;
+      }
+
+      .testimonial-avatar {
+        display: grid;
+        width: 48px;
+        height: 48px;
+        place-items: center;
+        border-radius: 50%;
+        background: #1f578f;
+        color: #ffffff;
+        font-weight: 800;
+        letter-spacing: 0.02em;
+      }
+
+      .outcome-list,
+      .trust-list {
+        margin: 38px 0 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+
+      .outcome-list li,
+      .trust-list li {
+        padding: 22px;
+        border-radius: 10px;
+        border: 1px solid rgba(23, 55, 97, 0.12);
+        background: var(--cream-card);
+        box-shadow: 0 16px 36px rgba(23, 55, 97, 0.06);
+        color: var(--text);
+        line-height: 1.55;
+      }
+
+      .outcome-list li {
+        position: relative;
+        padding-left: 70px;
+      }
+
+      .outcome-list li::before {
+        content: "✓";
+        position: absolute;
+        top: 24px;
+        left: 24px;
+        width: 28px;
+        height: 28px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: #329766;
+        color: #ffffff;
+        font-weight: 800;
+        line-height: 1;
+      }
+
+      .outcome-list strong,
+      .trust-list strong {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--navy);
+        font-size: 1.05rem;
+      }
+
+      .value { background: var(--cream); }
+
+      .value-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-top: 38px;
+      }
+
+      .value-card {
+        padding: 22px;
+        border-radius: 10px;
+        border: 1px solid rgba(23, 55, 97, 0.12);
+        background: var(--cream-card);
+        box-shadow: 0 16px 36px rgba(23, 55, 97, 0.06);
+      }
+
+      .value-card h3 {
+        margin: 0;
+        color: var(--navy);
+        font-size: 1.08rem;
+        line-height: 1.28;
+      }
+
+      .value-card p {
+        margin: 12px 0 0;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .trust { background: var(--cream-deep); }
+
+      .guarantee { background: var(--cream-card); }
+
+      .guarantee-inner {
+        width: min(100%, 860px);
+        margin: 0 auto;
+        padding: 78px 32px 92px;
+        text-align: center;
+      }
+
+      .guarantee-icon {
+        width: 74px;
+        height: 74px;
+        margin: 0 auto 24px;
+        color: #1f9d62;
+      }
+
+      .guarantee-heading {
+        margin: 0;
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 500;
+        font-size: clamp(2rem, 3.4vw, 3rem);
+        line-height: 1.08;
+      }
+
+      .guarantee-copy {
+        margin: 26px auto 0;
+        max-width: 44rem;
+        color: var(--text);
+        font-size: 1.1rem;
+        line-height: 1.72;
+      }
+
+      .guarantee-copy p {
+        margin: 0 0 20px;
+      }
+
+      .guarantee-line {
+        margin: 32px auto 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 22px;
+        border-radius: 999px;
+        background: #eaf8f1;
+        color: #136b43;
+        font-weight: 800;
+      }
+
+      .final-cta {
+        background: var(--navy);
+        color: #ffffff;
+      }
+
+      .final-cta-inner {
+        width: min(100%, 900px);
+        margin: 0 auto;
+        padding: 74px 32px 84px;
+        text-align: center;
+      }
+
+      .final-cta h2 {
+        margin: 0;
+        font-size: clamp(2rem, 3.6vw, 3.2rem);
+        line-height: 1.08;
+        color: #ffffff;
+      }
+
+      .final-cta p {
+        margin: 22px auto 0;
+        max-width: 42rem;
+        font-size: 1.15rem;
+        line-height: 1.65;
+        color: rgba(255, 255, 255, 0.84);
+      }
+
+      .final-cta .button {
+        margin-top: 34px;
+        background: #ffffff;
+        color: var(--navy);
+        box-shadow: 0 16px 28px rgba(0, 0, 0, 0.22);
+      }
+
+      .final-cta .button:hover {
+        background: var(--gold-soft);
+      }
+
+      @keyframes riseIn {
+        from {
+          opacity: 0;
+          transform: translateY(18px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes imageSettle {
+        to {
+          transform: scale(1);
+        }
+      }
+
+      @media (max-width: 760px) {
+        .top-banner-inner {
+          padding: 10px 18px 12px;
+        }
+
+        .hero {
+          min-height: auto;
+          background: linear-gradient(180deg, #f7f8fc 0%, #ffffff 100%);
+        }
+
+        .hero-grid {
+          min-height: auto;
+          grid-template-columns: 1fr;
+        }
+
+        .hero-copy {
+          padding: 42px 22px 28px;
+        }
+
+        .hero-visual {
+          min-height: 300px;
+        }
+
+        .hero-visual::before {
+          inset: 4% 12% 10%;
+          background-position: center;
+        }
+
+        .hero-content {
+          max-width: 100%;
+        }
+
+        .hero-badge {
+          min-height: 36px;
+          padding: 0 16px;
+          font-size: 0.88rem;
+        }
+
+        h1 {
+          max-width: none;
+          font-size: clamp(2rem, 8.4vw, 2.75rem);
+          line-height: 1.12;
+        }
+
+        .lead {
+          font-size: 1.04rem;
+          max-width: 34rem;
+          line-height: 1.58;
+        }
+
+        .hero .button {
+          min-height: 58px;
+          width: 100%;
+        }
+
+        .hero .note {
+          text-align: left;
+        }
+
+        .story-inner {
+          padding: 56px 22px 68px;
+        }
+
+        .story-subhead {
+          font-size: 1.04rem;
+          line-height: 1.65;
+        }
+
+        .story-copy {
+          margin-top: 34px;
+          font-size: 1rem;
+          line-height: 1.72;
+        }
+
+        .story-copy .quote {
+          font-size: 1.12rem;
+        }
+
+        .clarity-inner {
+          padding: 56px 22px 68px;
+        }
+
+        .clarity-subhead {
+          font-size: 1.04rem;
+          line-height: 1.65;
+        }
+
+        .clarity-copy {
+          margin-top: 34px;
+          font-size: 1rem;
+          line-height: 1.72;
+        }
+
+        .clarity-cards {
+          grid-template-columns: 1fr;
+          gap: 12px;
+          margin: 28px 0 32px;
+        }
+
+        .punch-cards,
+        .punch-list {
+          grid-template-columns: 1fr;
+        }
+
+        .punch-copy p {
+          font-size: 1.08rem;
+          line-height: 1.58;
+        }
+
+        .gold-bullets {
+          margin-top: 42px;
+          gap: 24px;
+        }
+
+        .gold-bullets li {
+          padding-left: 42px;
+          font-size: 1.04rem;
+          line-height: 1.7;
+        }
+
+        .problem-prose {
+          margin-top: 28px;
+          font-size: 1.02rem;
+          line-height: 1.68;
+        }
+
+        .advantage-callout {
+          margin-top: 44px;
+          padding: 28px 26px;
+          font-size: 1.32rem;
+          line-height: 1.55;
+        }
+
+        .shift-heading {
+          margin-top: 46px;
+        }
+
+        .shift-grid {
+          grid-template-columns: 1fr;
+          gap: 14px;
+        }
+
+        .fit-list {
+          margin-top: 38px;
+          gap: 24px;
+        }
+
+        .fit-list li {
+          padding-left: 42px;
+          font-size: 1.04rem;
+          line-height: 1.7;
+        }
+
+        .not-for-card {
+          margin-top: 42px;
+          padding: 22px;
+          font-size: 1rem;
+        }
+
+        .clarity-card {
+          min-height: auto;
+        }
+
+        .inside-inner {
+          padding: 56px 22px 68px;
+        }
+
+        .inside-subhead,
+        .inside-intro {
+          font-size: 1.04rem;
+          line-height: 1.65;
+        }
+
+        .inside-list {
+          grid-template-columns: 1fr;
+          gap: 14px;
+        }
+
+        .inside-item {
+          grid-template-columns: 40px 1fr;
+          padding: 18px;
+        }
+
+        .inside-number {
+          width: 40px;
+          height: 40px;
+        }
+
+        .now-inner {
+          padding: 56px 22px 68px;
+        }
+
+        .now-subhead,
+        .now-copy {
+          font-size: 1.04rem;
+          line-height: 1.65;
+        }
+
+        .now-grid {
+          grid-template-columns: 1fr;
+          gap: 22px;
+          margin-top: 34px;
+        }
+
+        .outcome-inner,
+        .value-inner,
+        .trust-inner {
+          padding: 56px 22px 68px;
+        }
+
+        .testimonials-inner {
+          padding: 58px 22px 68px;
+        }
+
+        .outcome-subhead,
+        .value-subhead,
+        .trust-subhead,
+        .testimonials-subhead {
+          font-size: 1.04rem;
+          line-height: 1.65;
+        }
+
+        .outcome-list,
+        .trust-list,
+        .value-grid {
+          grid-template-columns: 1fr;
+          gap: 14px;
+          margin-top: 30px;
+        }
+
+        .testimonial-list {
+          grid-template-columns: 1fr;
+          margin-top: 36px;
+        }
+
+        .testimonial-card {
+          padding: 24px;
+        }
+
+        .testimonial-quote {
+          font-size: 1.04rem;
+        }
+
+        .testimonial-avatar {
+          width: 42px;
+          height: 42px;
+        }
+
+        .guarantee-inner {
+          padding: 58px 22px 70px;
+        }
+
+        .guarantee-icon {
+          width: 62px;
+          height: 62px;
+        }
+
+        .guarantee-copy {
+          font-size: 1.02rem;
+          line-height: 1.65;
+        }
+
+        .final-cta-inner {
+          padding: 58px 22px 68px;
+        }
+
+        .final-cta p {
+          font-size: 1.04rem;
+        }
+
+        .checks {
+          gap: 13px;
+          font-size: 0.98rem;
+        }
+
+        .button {
+          width: 100%;
+          min-height: 58px;
+        }
+
+        .note {
+          width: 100%;
+          text-align: center;
+        }
+
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          animation-duration: 1ms !important;
+          transition-duration: 1ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      document.addEventListener("click", function (event) {
+        var checkout = event.target.closest("[data-stripe-checkout]");
+        if (checkout && typeof fbq === "function") fbq("track", "InitiateCheckout");
       });
-    }else{
-      window.prompt('Copy this code:', code);
-    }
-  });
-}
-if(discountClose && discountModal){
-  discountClose.addEventListener('click', function(){
-    discountModal.classList.remove('open');
-    discountModal.setAttribute('aria-hidden','true');
-  });
-  discountModal.addEventListener('click', function(event){
-    if(event.target === discountModal){
-      discountModal.classList.remove('open');
-      discountModal.setAttribute('aria-hidden','true');
-    }
-  });
-  document.addEventListener('keydown', function(event){
-    if(event.key === 'Escape' && discountModal.classList.contains('open')){
-      discountModal.classList.remove('open');
-      discountModal.setAttribute('aria-hidden','true');
-    }
-  });
-}
-document.querySelectorAll('.whats-inside-link').forEach(function(link){
-  link.addEventListener('click', function(event){
-    event.preventDefault();
-    var section = document.getElementById('whats-inside');
-    if(section){
-      section.scrollIntoView({behavior:'smooth', block:'start'});
-    }
-  });
-});
-function toggleFaq(el){el.closest('.faq-item').classList.toggle('open')}
-(function(){var CW=1400,CH=780,root=document.getElementById('megaMockup');if(!root)return;function scaleMockup(){var c=root.parentElement,vw=c.offsetWidth,vh=c.offsetHeight,s=Math.min(vw/CW,vh/CH);root.style.transform='translate('+(-CW*s/2)+'px,'+(-CH*s/2)+'px) scale('+s+')'}function scaleScreens(){var screens=root.querySelectorAll('.screen-inner');for(var i=0;i<screens.length;i++){var el=screens[i],cw=parseInt(el.getAttribute('data-canonical-w')),ch=parseInt(el.getAttribute('data-canonical-h')),sw=el.offsetWidth,sh=el.offsetHeight;if(!sw||!sh)continue;var wrap=el.querySelector('.artifact-wrap');if(wrap)wrap.style.transform='scale('+Math.min(sw/cw,sh/ch)+')'}}function layout(){scaleMockup();requestAnimationFrame(scaleScreens)}window.addEventListener('resize',layout);window.addEventListener('load',layout);layout();setTimeout(layout,100);setTimeout(layout,500)})();
-(function(){var CW=1400,CH=780,root=document.getElementById('megaMockupSm');if(!root)return;function scaleMockup(){var c=root.parentElement,vw=c.offsetWidth,vh=c.offsetHeight,s=Math.min(vw/CW,vh/CH);root.style.transform='translate('+(-CW*s/2)+'px,'+(-CH*s/2)+'px) scale('+s+')'}function scaleScreens(){var screens=root.querySelectorAll('.screen-inner');for(var i=0;i<screens.length;i++){var el=screens[i],cw=parseInt(el.getAttribute('data-canonical-w')),ch=parseInt(el.getAttribute('data-canonical-h')),sw=el.offsetWidth,sh=el.offsetHeight;if(!sw||!sh)continue;var wrap=el.querySelector('.artifact-wrap');if(wrap)wrap.style.transform='scale('+Math.min(sw/cw,sh/ch)+')'}}function layout(){scaleMockup();requestAnimationFrame(scaleScreens)}window.addEventListener('resize',layout);window.addEventListener('load',layout);layout();setTimeout(layout,100);setTimeout(layout,500)})();
-(function(){var CW=1400,CH=680,root=document.getElementById('editorialMockup');if(!root)return;function scaleMockup(){var c=root.parentElement,vw=c.offsetWidth,vh=c.offsetHeight,s=Math.min(vw/CW,vh/CH);root.style.transform='translate('+(-CW*s/2)+'px,'+(-CH*s/2)+'px) scale('+s+')'}function scaleScreens(){var screens=root.querySelectorAll('.screen-inner');for(var i=0;i<screens.length;i++){var el=screens[i],cw=parseInt(el.getAttribute('data-canonical-w')),ch=parseInt(el.getAttribute('data-canonical-h')),sw=el.offsetWidth,sh=el.offsetHeight;if(!sw||!sh)continue;var wrap=el.querySelector('.artifact-wrap');if(wrap)wrap.style.transform='scale('+Math.min(sw/cw,sh/ch)+')'}}function layout(){scaleMockup();requestAnimationFrame(scaleScreens)}window.addEventListener('resize',layout);window.addEventListener('load',layout);layout();setTimeout(layout,100);setTimeout(layout,500)})();
-(function(){var step=0,boxes=[document.getElementById('stepBox0'),document.getElementById('stepBox1'),document.getElementById('stepBox2')],arrows=[document.getElementById('stepArrow0'),document.getElementById('stepArrow1')],barFill=document.getElementById('stepsBarFill'),barEnd=document.getElementById('stepsBarEnd');function animate(){step=(step+1)%6;boxes.forEach(function(box,i){box.classList.toggle('active',step>=i+1);box.classList.toggle('highlight',step===i+1||(i===2&&step>=4))});arrows.forEach(function(arrow,i){arrow.classList.toggle('visible',step>=i+2)});barFill.style.width=['0%','15%','45%','75%','100%','100%'][step]||'0%';var done=step>=4;barEnd.classList.toggle('done',done);barEnd.textContent=done?'Better answer':'Better answer'}setInterval(animate,1100)})();
-(function(){let step=0;const problems=document.querySelectorAll('.wvw-problem'),results=document.querySelectorAll('.wvw-result'),vsCircle=document.querySelector('.wvw-vs-circle'),centerLines=document.querySelectorAll('.wvw-center-line'),labelRight=document.querySelector('.wvw-card-label-right'),cardRight=document.querySelector('.wvw-card-right'),tagLeft=document.querySelector('.wvw-tagline-left'),tagRight=document.querySelector('.wvw-tagline-right');function animate(){step=(step+1)%14;problems.forEach(function(el){var i=parseInt(el.dataset.index),active=step>=i+1&&step<7,dimmed=step>=7&&step<14;el.classList.toggle('active',active&&!dimmed);el.classList.toggle('dimmed',dimmed)});tagLeft.classList.toggle('visible',step>=4&&step<7);var centerActive=step>=6;vsCircle.classList.toggle('circle-active',centerActive);centerLines.forEach(function(l){l.classList.toggle('line-active',centerActive)});labelRight.classList.toggle('wvw-label-active',step>=6);cardRight.classList.toggle('wvw-highlight',step>=11);results.forEach(function(el){var i=parseInt(el.dataset.index),active=step>=i+7;el.classList.toggle('active',active);if(active){var fill=el.querySelector('.wvw-bar-fill');fill.style.width=fill.dataset.width}else{el.querySelector('.wvw-bar-fill').style.width='0%'}});tagRight.classList.toggle('visible',step>=11)}setInterval(animate,1000)})();
-</script>
-</body>
+    </script>
+    <div class="top-banner">
+      <div class="top-banner-inner">
+        <strong>Trusted by 1,300+ readers</strong>
+        <p>Many report saving about <strong>2 hours a week</strong> on reading and everyday admin</p>
+        <a href="#reviews">Read reviews</a>
+      </div>
+    </div>
+    <main>
+      <section class="hero" aria-label="AI finally explained in plain English for adults 50+ hero">
+        <div class="hero-inner">
+          <div class="hero-grid">
+            <div class="hero-copy">
+              <div class="hero-content">
+                <div class="hero-badge">For Beginners, Written Plainly</div>
+                <h1>Finally Understand How to Use AI, Without Feeling Lost or Left Behind</h1>
+                <p class="lead">
+                  A calm, practical kit that shows you exactly where to start with AI, how to get genuinely useful answers, make everyday tasks easier, and spot when images or content online may be AI-made or fake.
+                </p>
+                <div class="actions">
+                  <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-stripe-checkout>Get Instant Access - &pound;19</a>
+                </div>
+                <p class="note">Instant download. 60-day money-back guarantee.</p>
+              </div>
+            </div>
+            <div class="hero-visual" aria-hidden="true"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="story punch-section" id="reviews" aria-label="The world is moving fast">
+        <div class="story-inner">
+          <h2 class="story-heading">The World Is Moving Fast. You Don&rsquo;t Have to Feel Left Behind.</h2>
+          <p class="story-subhead">
+            AI is becoming part of how people work, think, make decisions, and handle everyday tasks. If it still feels confusing, that does not mean it is too difficult for you. It means most explanations have made it harder than it needs to be.
+          </p>
+          <div class="problem-prose">
+            <p>You hear about AI in the news, at work, in apps you already use, and in conversations that assume everyone is keeping up. It is no longer some far-off tech trend. It is becoming part of ordinary life before most people have had a clear explanation of what it actually is.</p>
+            <p>So you are left trying to work out where to start, what to ask, what to trust, and how to tell whether the answer is actually useful. What is missing is not more hype. It is a calm foundation that makes AI feel usable in your own life.</p>
+          </div>
+          <div class="advantage-callout">
+            This isn&rsquo;t about being technical. It&rsquo;s about having someone show you, clearly, how to use AI as a genuine advantage in your life.
+          </div>
+          <h3 class="shift-heading">The shift readers describe</h3>
+          <div class="shift-grid">
+            <article class="shift-card">
+              <strong>Before</strong>
+              <p>I felt like AI was something other people understood. I didn&rsquo;t know where I fit in.</p>
+            </article>
+            <article class="shift-card">
+              <strong>After</strong>
+              <p>I use AI to think through problems, make better decisions, and get things done I couldn&rsquo;t before.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="outcome punch-section" aria-label="What you'll gain">
+        <div class="outcome-inner">
+          <h2 class="outcome-heading">What You&rsquo;ll Gain</h2>
+          <p class="outcome-subhead">
+            This short kit gives you real clarity and control. No jargon. No assumptions. Just practical understanding you can use immediately.
+          </p>
+          <ul class="outcome-list punch-list">
+            <li><strong>A thinking partner for decisions</strong>Use AI to work through options, weigh up choices, and see angles you might miss on your own.</li>
+            <li><strong>A way through information overload</strong>Cut long articles, emails, pages, and explanations down to what actually matters.</li>
+            <li><strong>More confidence with everyday admin</strong>Get help drafting replies, organising details, comparing prices, and making confusing tasks easier to start.</li>
+            <li><strong>A better filter for what you see online</strong>Learn how to spot when content, images, or claims may be AI-made, misleading, or fake.</li>
+            <li><strong>Clearer judgement about trust</strong>Know when an answer needs checking, when a claim feels suspect, and when AI is the wrong tool.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="clarity punch-section" aria-label="Who this is for">
+        <div class="clarity-inner">
+          <h2 class="clarity-heading">Who This Is For</h2>
+          <ul class="fit-list">
+            <li>You want more leverage over your time, work, and decisions</li>
+            <li>You&rsquo;d rather understand something deeply than just follow steps blindly</li>
+            <li>You&rsquo;re ready to stop watching from the sidelines and start using AI with intention</li>
+            <li>You want to feel confident about where the world is heading, not anxious about being left behind</li>
+          </ul>
+          <div class="not-for-card">
+            <strong>This isn&rsquo;t for:</strong> tech professionals or anyone looking for advanced techniques. This is for intelligent beginners who want AI explained clearly enough to use it in real life.
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials punch-section" aria-label="What readers say">
+        <div class="testimonials-inner">
+          <h2 class="testimonials-heading">What Readers Say</h2>
+          <p class="testimonials-subhead">Honest feedback from people who wanted clarity, not complexity.</p>
+          <div class="testimonial-list">
+            <article class="testimonial-card">
+              <p class="testimonial-quote">&ldquo;I finally feel like I understand what&rsquo;s happening. I went from anxious to genuinely excited about what I can do now.&rdquo;</p>
+              <div class="testimonial-person">
+                <span class="testimonial-avatar" aria-hidden="true">M</span>
+                <span>Margaret, 62</span>
+              </div>
+            </article>
+            <article class="testimonial-card">
+              <p class="testimonial-quote">&ldquo;I use it to think through decisions now. It&rsquo;s like having a smart colleague available whenever I need one.&rdquo;</p>
+              <div class="testimonial-person">
+                <span class="testimonial-avatar" aria-hidden="true">S</span>
+                <span>Susan, 48</span>
+              </div>
+            </article>
+            <article class="testimonial-card">
+              <p class="testimonial-quote">&ldquo;The calm, clear tone made all the difference. I actually feel in control of AI now instead of intimidated by it.&rdquo;</p>
+              <div class="testimonial-person">
+                <span class="testimonial-avatar" aria-hidden="true">D</span>
+                <span>David, 55</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="inside punch-section" aria-label="Why free AI advice does not fix it">
+        <div class="inside-inner">
+          <h2 class="inside-heading">Why Free Advice Does Not Fix It</h2>
+          <p class="inside-subhead">
+            There is no shortage of free AI advice. That is part of the problem.
+          </p>
+          <div class="value-grid punch-cards">
+            <article class="value-card"><h3>YouTube tutorials assume too much</h3><p>They move quickly, use terms you have not been taught, and make you feel like you arrived halfway through.</p></article>
+            <article class="value-card"><h3>Tech articles bury you in jargon</h3><p>You set out to understand AI and end up reading definitions that make it feel even further away.</p></article>
+            <article class="value-card"><h3>Random ChatGPT tips skip the foundation</h3><p>They tell you what to type, but not what is happening, when to trust it, or why it goes wrong.</p></article>
+            <article class="value-card"><h3>Trying it yourself still leaves doubt</h3><p>The tool was supposed to save time, but you end up checking everything afterwards anyway.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="trust punch-section" aria-label="What you will finally understand">
+        <div class="trust-inner">
+          <h2 class="trust-heading">What You Will Finally Understand</h2>
+          <p class="trust-subhead">
+            The goal is not to turn you into an AI expert. It is to give you enough understanding to stop feeling exposed every time AI comes up.
+          </p>
+          <ul class="trust-list punch-list">
+            <li><strong>What AI actually is</strong>In plain English, without technical detours or clever-sounding waffle.</li>
+            <li><strong>When AI is useful</strong>So you know where it can genuinely save time in normal life.</li>
+            <li><strong>When AI cannot be trusted</strong>So a confident answer does not make the decision for you.</li>
+            <li><strong>What never to type into it</strong>So addresses, bank details, and private family information stay protected.</li>
+            <li><strong>How to spot misleading AI content</strong>So you are not left assuming everything is real or everything is fake.</li>
+            <li><strong>How to use tools like ChatGPT</strong>Without blindly believing them or feeling silly when the answer is weak.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="final-cta" aria-label="Get instant access">
+        <div class="final-cta-inner">
+          <h2>Get Instant Access</h2>
+          <p>Get the calm starting point most AI explanations skip. In one short kit, you can understand what AI is, how to make it useful in everyday life, and how to feel clearer about what to trust.</p>
+          <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-stripe-checkout>Get Instant Access - &pound;19</a>
+          <p class="checkout-note">Instant download. 60-day money-back guarantee.</p>
+        </div>
+      </section>
+
+    </main>
+  </body>
 </html>
-
-
-
