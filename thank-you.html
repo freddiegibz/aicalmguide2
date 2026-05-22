@@ -139,6 +139,81 @@
         margin-top: 0;
       }
 
+      .gift-note {
+        width: min(100%, 42rem);
+        margin: 24px auto 0;
+        padding: 24px;
+        border: 1px solid rgba(31, 157, 98, 0.28);
+        border-left: 7px solid var(--green);
+        border-radius: 12px;
+        background:
+          linear-gradient(135deg, #f3fbf7 0%, #e8f7ef 58%, #fffdf9 100%);
+        color: #12492e;
+        text-align: left;
+        box-shadow: 0 18px 34px rgba(31, 157, 98, 0.12);
+      }
+
+      .gift-note::before {
+        content: "Bonus free gift";
+        display: inline-block;
+        margin-bottom: 12px;
+        padding: 5px 11px;
+        border-radius: 999px;
+        background: var(--green);
+        color: #ffffff;
+        font-size: 0.78rem;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .gift-title {
+        margin: 0;
+        max-width: none;
+        color: var(--ink);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(1.35rem, 2vw, 1.75rem);
+        line-height: 1.15;
+      }
+
+      .gift-copy {
+        margin: 10px 0 0;
+        max-width: none;
+        color: #244b39;
+        font-size: 1.02rem;
+        line-height: 1.6;
+      }
+
+      .gift-save {
+        margin: 10px 0 0;
+        max-width: none;
+        color: #0f5c39;
+        font-size: 0.98rem;
+        font-weight: 800;
+        line-height: 1.55;
+      }
+
+      .gift-note a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 16px;
+        min-height: 48px;
+        padding: 0 20px;
+        border-radius: 8px;
+        background: #ffffff;
+        color: #0f6d42;
+        font-weight: 900;
+        text-decoration: none;
+        box-shadow: inset 0 0 0 1px rgba(31, 157, 98, 0.28), 0 8px 18px rgba(31, 157, 98, 0.1);
+      }
+
+      .gift-note a:hover,
+      .gift-note a:focus-visible {
+        background: #f8fffb;
+        box-shadow: inset 0 0 0 1px rgba(31, 157, 98, 0.42), 0 10px 22px rgba(31, 157, 98, 0.14);
+      }
+
       .walkthrough {
         background: var(--green);
         box-shadow: 0 12px 24px rgba(31, 157, 98, 0.18);
@@ -306,14 +381,12 @@
           >
             Download Your Guide
           </a>
-          <a
-            class="download walkthrough"
-            href="https://aichecklist.vercel.app/"
-            target="_blank"
-            rel="noopener"
-          >
-            Open Checklist Walkthrough
-          </a>
+        </div>
+        <div class="gift-note">
+          <p class="gift-title">100 ready-to-use prompts for daily situations</p>
+          <p class="gift-copy">Your free gift gives you simple prompts you can use straight away. Just copy, paste, send.</p>
+          <p class="gift-save">Important: save or bookmark this prompt library now so you can come back to it whenever you need it.</p>
+          <a href="https://aichecklist.vercel.app/" target="_blank" rel="noopener">Open and save the prompt library</a>
         </div>
         <p class="backup-link">
           If the button does not open straight away, use this link:

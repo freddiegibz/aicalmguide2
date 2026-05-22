@@ -293,85 +293,6 @@
         text-underline-offset: 3px;
       }
 
-      .survey-modal {
-        position: fixed;
-        inset: 0;
-        z-index: 20;
-        display: grid;
-        place-items: center;
-        padding: 22px;
-        background: rgba(7, 27, 63, 0.62);
-      }
-
-      .survey-modal[hidden] {
-        display: none;
-      }
-
-      .survey-card {
-        width: min(100%, 520px);
-        padding: 30px;
-        border-radius: 10px;
-        background: #fffdf9;
-        box-shadow: 0 28px 70px rgba(7, 27, 63, 0.26);
-      }
-
-      .survey-card h2 {
-        margin-bottom: 10px;
-        font-size: clamp(1.65rem, 5vw, 2.15rem);
-      }
-
-      .survey-card p {
-        margin-bottom: 20px;
-        color: var(--muted);
-        font-size: 1rem;
-        line-height: 1.55;
-      }
-
-      .survey-options {
-        display: grid;
-        gap: 10px;
-        margin: 0 0 22px;
-      }
-
-      .survey-option {
-        display: flex;
-        align-items: center;
-        gap: 11px;
-        padding: 13px 14px;
-        border: 1px solid rgba(30, 79, 135, 0.16);
-        border-radius: 8px;
-        background: #f7fbff;
-        color: var(--navy);
-        font-weight: 800;
-        cursor: pointer;
-      }
-
-      .survey-option input {
-        width: 18px;
-        height: 18px;
-        accent-color: var(--blue);
-      }
-
-      .survey-button {
-        width: 100%;
-        border: 0;
-        cursor: pointer;
-      }
-
-      .survey-button[disabled] {
-        opacity: 0.7;
-        cursor: wait;
-      }
-
-      .survey-error {
-        min-height: 1.4em;
-        margin: 12px 0 0;
-        color: #9f2d2d;
-        font-size: 0.94rem;
-        font-weight: 800;
-        text-align: center;
-      }
-
       @media (max-width: 640px) {
         main {
           padding: 0;
@@ -397,10 +318,6 @@
         .benefits-list {
           grid-template-columns: 1fr;
         }
-
-        .survey-card {
-          padding: 22px 18px;
-        }
       }
     </style>
   </head>
@@ -413,40 +330,6 @@
           <div class="confirmation-subtitle">Your AI Confidence Kit order is complete.</div>
         </div>
       </div>
-    </div>
-    <div class="survey-modal" data-survey-modal role="dialog" aria-modal="true" aria-labelledby="survey-title">
-      <form class="survey-card" data-survey-form action="https://formspree.io/f/mwvyywqz" method="POST">
-        <h2 id="survey-title">Quick question before you continue</h2>
-        <p>What do you most want AI to help you with?</p>
-        <div class="survey-options">
-          <label class="survey-option">
-            <input type="radio" name="ai_help_area" value="everyday tasks" required />
-            <span>everyday tasks</span>
-          </label>
-          <label class="survey-option">
-            <input type="radio" name="ai_help_area" value="work/business" />
-            <span>work/business</span>
-          </label>
-          <label class="survey-option">
-            <input type="radio" name="ai_help_area" value="writing/messages" />
-            <span>writing/messages</span>
-          </label>
-          <label class="survey-option">
-            <input type="radio" name="ai_help_area" value="documents/admin" />
-            <span>documents/admin</span>
-          </label>
-          <label class="survey-option">
-            <input type="radio" name="ai_help_area" value="staying safe" />
-            <span>staying safe</span>
-          </label>
-          <label class="survey-option">
-            <input type="radio" name="ai_help_area" value="personal setup help" />
-            <span>personal setup help</span>
-          </label>
-        </div>
-        <button class="button survey-button" type="submit">Continue</button>
-        <div class="survey-error" data-survey-error aria-live="polite"></div>
-      </form>
     </div>
     <main>
       <article>
@@ -464,56 +347,12 @@
           </div>
 
           <div class="cta-wrap">
-            <a class="button" href="https://buy.stripe.com/00wfZgbj550g0U831EbZe0L" data-upgrade-checkout>Add This To My Order &mdash; &pound;37</a>
+            <a class="button" href="thank-you.html" data-upgrade-checkout>Add This To My Order &mdash; &pound;37</a>
             <div class="guarantee">Instant access &middot; Beginner-friendly &middot; One-time offer</div>
-            <a class="decline" href="membership.html">No thanks, I&rsquo;ll stick with the AI Confidence Kit for now.</a>
+            <a class="decline" href="thank-you.html">No thanks, I&rsquo;ll stick with the AI Confidence Kit for now.</a>
           </div>
         </section>
       </article>
     </main>
-    <script>
-      (function () {
-        var modal = document.querySelector("[data-survey-modal]");
-        var form = document.querySelector("[data-survey-form]");
-        var error = document.querySelector("[data-survey-error]");
-        var storageKey = "aiConfidenceOtoSurveyAnswered";
-
-        if (!modal || !form) return;
-
-        if (window.sessionStorage && sessionStorage.getItem(storageKey) === "true") {
-          modal.hidden = true;
-          return;
-        }
-
-        form.addEventListener("submit", function (event) {
-          event.preventDefault();
-          var button = form.querySelector("button[type='submit']");
-          var data = new FormData(form);
-
-          if (button) {
-            button.disabled = true;
-            button.textContent = "Continuing...";
-          }
-          if (error) error.textContent = "";
-
-          fetch(form.action, {
-            method: "POST",
-            body: data,
-            headers: { Accept: "application/json" }
-          })
-            .then(function () {
-              if (window.sessionStorage) sessionStorage.setItem(storageKey, "true");
-              modal.hidden = true;
-            })
-            .catch(function () {
-              if (error) error.textContent = "Please try again.";
-              if (button) {
-                button.disabled = false;
-                button.textContent = "Continue";
-              }
-            });
-        });
-      })();
-    </script>
   </body>
 </html>
