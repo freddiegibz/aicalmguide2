@@ -193,25 +193,51 @@
         line-height: 1.55;
       }
 
-      .gift-note a {
+      .gift-url {
+        display: block;
+        margin-top: 14px;
+        padding: 12px 14px;
+        border: 1px solid rgba(31, 157, 98, 0.24);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.82);
+        color: #173761;
+        font-family: "Courier New", monospace;
+        font-size: 0.95rem;
+        line-height: 1.45;
+        overflow-wrap: anywhere;
+      }
+
+      .gift-url-label {
+        display: block;
+        margin-bottom: 5px;
+        color: #0f5c39;
+        font-family: "Aptos", "Segoe UI", sans-serif;
+        font-size: 0.76rem;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .gift-button {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        margin-top: 16px;
-        min-height: 48px;
-        padding: 0 20px;
+        margin-top: 18px;
+        min-height: 54px;
+        padding: 0 24px;
         border-radius: 8px;
-        background: #ffffff;
-        color: #0f6d42;
+        background: var(--green);
+        color: #ffffff;
         font-weight: 900;
+        font-size: 1rem;
         text-decoration: none;
-        box-shadow: inset 0 0 0 1px rgba(31, 157, 98, 0.28), 0 8px 18px rgba(31, 157, 98, 0.1);
+        box-shadow: 0 14px 26px rgba(31, 157, 98, 0.24);
       }
 
-      .gift-note a:hover,
-      .gift-note a:focus-visible {
-        background: #f8fffb;
-        box-shadow: inset 0 0 0 1px rgba(31, 157, 98, 0.42), 0 10px 22px rgba(31, 157, 98, 0.14);
+      .gift-button:hover,
+      .gift-button:focus-visible {
+        background: #167c4d;
+        box-shadow: 0 16px 30px rgba(31, 157, 98, 0.3);
       }
 
       .walkthrough {
@@ -386,7 +412,8 @@
           <p class="gift-title">100 ready-to-use prompts for daily situations</p>
           <p class="gift-copy">Your free gift gives you simple prompts you can use straight away. Just copy, paste, send.</p>
           <p class="gift-save">Important: save or bookmark this prompt library now so you can come back to it whenever you need it.</p>
-          <a href="https://aichecklist.vercel.app/" target="_blank" rel="noopener">Open and save the prompt library</a>
+          <span class="gift-url"><span class="gift-url-label">Copy this link</span>https://aichecklist.vercel.app/</span>
+          <a class="gift-button" href="https://aichecklist.vercel.app/" target="_blank" rel="noopener">Open and save the prompt library</a>
         </div>
         <p class="backup-link">
           If the button does not open straight away, use this link:
