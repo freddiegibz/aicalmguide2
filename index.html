@@ -258,21 +258,6 @@
         box-shadow: 0 20px 34px rgba(20, 104, 196, 0.28);
       }
 
-      .button-secondary {
-        border: 0;
-        background: transparent;
-        box-shadow: none;
-        color: var(--muted);
-        cursor: pointer;
-      }
-
-      .button-secondary:hover {
-        transform: none;
-        background: transparent;
-        box-shadow: none;
-        color: var(--navy);
-      }
-
       .checkout-note {
         color: var(--muted) !important;
         font-size: 0.92rem !important;
@@ -289,31 +274,6 @@
         color: #697486;
         font-size: 0.96rem;
         line-height: 1.55;
-      }
-
-      .sale-note {
-        margin: 10px 0 0;
-        display: inline-flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 10px;
-        color: var(--muted);
-        font-size: 0.93rem;
-      }
-
-      .sale-note strong {
-        color: var(--blue);
-        font-weight: 700;
-      }
-
-      .sale-note .old-price {
-        text-decoration: line-through;
-        color: var(--muted);
-      }
-
-      .sale-note .new-price {
-        color: var(--blue);
-        font-weight: 700;
       }
 
       .price-line {
@@ -334,80 +294,6 @@
       .price-line .new-price {
         color: var(--blue);
         font-weight: 800;
-      }
-
-      .checkout-modal {
-        position: fixed;
-        inset: 0;
-        z-index: 50;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        padding: 24px;
-        background: rgba(7, 27, 63, 0.58);
-      }
-
-      .checkout-modal.is-open {
-        display: flex;
-      }
-
-      .checkout-modal-card {
-        position: relative;
-        width: min(100%, 440px);
-        padding: 34px;
-        border-radius: 10px;
-        background: #fffdf9;
-        box-shadow: 0 28px 70px rgba(7, 27, 63, 0.28);
-      }
-
-      .checkout-modal-close {
-        position: absolute;
-        top: 14px;
-        right: 14px;
-        width: 38px;
-        height: 38px;
-        border: 0;
-        border-radius: 50%;
-        background: rgba(23, 55, 97, 0.08);
-        color: var(--navy);
-        cursor: pointer;
-        font-size: 1.45rem;
-        line-height: 1;
-      }
-
-      .checkout-modal h2 {
-        margin: 0;
-        color: var(--navy);
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(1.8rem, 4vw, 2.45rem);
-        font-weight: 500;
-        line-height: 1.08;
-      }
-
-      .checkout-modal p {
-        margin: 14px 0 0;
-        color: var(--text);
-        font-size: 1.04rem;
-        line-height: 1.58;
-      }
-
-      .coupon-code {
-        margin-top: 22px;
-        padding: 16px 18px;
-        border: 1px dashed rgba(20, 104, 196, 0.48);
-        border-radius: 8px;
-        background: #f7fbff;
-        color: var(--navy);
-        font-size: 1.28rem;
-        font-weight: 800;
-        letter-spacing: 0.08em;
-        text-align: center;
-      }
-
-      .modal-actions {
-        margin-top: 24px;
-        display: grid;
-        gap: 10px;
       }
 
       .punch-section h2 {
@@ -1455,31 +1341,6 @@
         }
       });
 
-      document.addEventListener("click", function (event) {
-        var modal = document.querySelector("[data-checkout-modal]");
-        var checkout = event.target.closest("[data-open-checkout-modal]");
-        var close = event.target.closest("[data-close-checkout-modal]");
-
-        if (checkout && modal) {
-          event.preventDefault();
-          modal.classList.add("is-open");
-          modal.setAttribute("aria-hidden", "false");
-          if (typeof fbq === "function") fbq("track", "InitiateCheckout");
-        }
-
-        if (close && modal) {
-          modal.classList.remove("is-open");
-          modal.setAttribute("aria-hidden", "true");
-        }
-      });
-
-      document.addEventListener("keydown", function (event) {
-        var modal = document.querySelector("[data-checkout-modal]");
-        if (event.key === "Escape" && modal && modal.classList.contains("is-open")) {
-          modal.classList.remove("is-open");
-          modal.setAttribute("aria-hidden", "true");
-        }
-      });
     </script>
     <div class="top-banner">
       <div class="top-banner-inner">
@@ -1500,9 +1361,9 @@
                   A calm, practical kit that shows you exactly where to start with AI, how to get genuinely useful answers, make everyday tasks easier, and spot when images or content online may be AI-made or fake.
                 </p>
                 <div class="actions">
-                  <a class="button" href="#checkout-sale" data-open-checkout-modal>Get Instant Access - &pound;9.50 Today</a>
+                  <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00">Get Instant Access - &pound;19.00</a>
                 </div>
-                <p class="price-line"><strong>50% off sale:</strong> normally <span class="old-price">&pound;19</span>, today <span class="new-price">&pound;9.50</span> with code <strong>EARLY50</strong>.</p>
+                <p class="price-line"><strong>Price:</strong> &pound;19.00 instant access.</p>
                 <p class="note">Instant download. 60-day money-back guarantee.</p>
               </div>
             </div>
@@ -1629,24 +1490,12 @@
         <div class="final-cta-inner">
           <h2>Get Instant Access</h2>
           <p>Get the calm starting point most AI explanations skip. In one short kit, you can understand what AI is, how to make it useful in everyday life, and how to feel clearer about what to trust.</p>
-          <a class="button" href="#checkout-sale" data-open-checkout-modal>Get Instant Access - &pound;9.50 Today</a>
-          <p class="price-line"><strong>50% off sale:</strong> was <span class="old-price">&pound;19</span>, now <span class="new-price">&pound;9.50</span> with code <strong>EARLY50</strong>.</p>
+          <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00">Get Instant Access - &pound;19.00</a>
+          <p class="price-line"><strong>Price:</strong> &pound;19.00 instant access.</p>
           <p class="checkout-note">Instant download. 60-day money-back guarantee.</p>
         </div>
       </section>
 
     </main>
-    <div class="checkout-modal" data-checkout-modal aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="checkout-sale-title">
-      <div class="checkout-modal-card" id="checkout-sale">
-        <button class="checkout-modal-close" type="button" aria-label="Close checkout offer" data-close-checkout-modal>&times;</button>
-        <h2 id="checkout-sale-title">Use Your 50% Off Sale Code</h2>
-        <p>The guide is normally &pound;19. Use this code at checkout to get instant access for &pound;9.50.</p>
-        <div class="coupon-code">EARLY50</div>
-        <div class="modal-actions">
-          <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00">Continue to Checkout</a>
-          <button class="button button-secondary" type="button" data-close-checkout-modal>Keep reading</button>
-        </div>
-      </div>
-    </div>
   </body>
 </html>
