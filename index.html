@@ -1341,6 +1341,21 @@
         }
       });
 
+      document.addEventListener("click", function (event) {
+        var checkout = event.target.closest('a[href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00"]');
+        if (!checkout) return;
+
+        event.preventDefault();
+
+        if (typeof fbq === "function") {
+          fbq("track", "InitiateCheckout");
+        }
+
+        window.setTimeout(function () {
+          window.location.href = checkout.href;
+        }, 200);
+      });
+
     </script>
     <div class="top-banner">
       <div class="top-banner-inner">
