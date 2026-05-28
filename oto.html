@@ -5,6 +5,69 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>14-Day AI Confidence Plan</title>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@300;400;500;600;700;800&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Meta Pixel Code (Purchase fires here for stability) -->
+<script>
+  (function () {
+    var PIXEL_ID = "1988137388462157";
+    var PURCHASE_KEY = "meta_purchase_fired_" + PIXEL_ID;
+
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq("init", PIXEL_ID);
+    fbq("track", "PageView");
+
+    function alreadyFired() {
+      try { return window.localStorage.getItem(PURCHASE_KEY) === "1"; } catch (e) { return false; }
+    }
+
+    function markFired() {
+      try { window.localStorage.setItem(PURCHASE_KEY, "1"); } catch (e) {}
+    }
+
+    function trackPurchaseOnce() {
+      if (alreadyFired()) return true;
+      if (typeof window.fbq !== "function") return false;
+
+      try {
+        window.fbq("track", "Purchase", { value: 19.0, currency: "GBP" });
+        markFired();
+        return true;
+      } catch (e) {
+        return false;
+      }
+    }
+
+    function retryPurchase(maxAttempts, delayMs) {
+      var attempts = 0;
+      (function tick() {
+        attempts += 1;
+        if (trackPurchaseOnce()) return;
+        if (attempts >= maxAttempts) return;
+        window.setTimeout(tick, delayMs);
+      })();
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", function () {
+        retryPurchase(10, 250);
+      });
+    } else {
+      retryPurchase(10, 250);
+    }
+  })();
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1988137388462157&ev=PageView&noscript=1" alt=""/>
+</noscript>
+<!-- End Meta Pixel Code -->
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--white:#fff;--off:#F5F5F0;--dark:#0A0A0A;--body:#3A3A3A;--muted:#777;--green:#00875A;--line:rgba(0,0,0,.08)}
