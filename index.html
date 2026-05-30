@@ -366,12 +366,27 @@
         line-height: 1.58;
       }
 
+      .modal-kicker {
+        display: inline-flex;
+        align-items: center;
+        margin-bottom: 12px;
+        padding: 5px 10px;
+        border-radius: 999px;
+        background: var(--gold-soft);
+        color: #806722;
+        font-size: 0.76rem;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
       .order-bump {
-        margin-top: 20px;
-        padding: 16px;
-        border: 1px solid rgba(31, 157, 98, 0.28);
+        margin-top: 22px;
+        padding: 18px;
+        border: 1px solid rgba(31, 157, 98, 0.34);
         border-radius: 10px;
         background: linear-gradient(180deg, #f3fbf7 0%, #fffdf9 100%);
+        box-shadow: 0 14px 28px rgba(31, 157, 98, 0.1);
       }
 
       .order-bump label {
@@ -391,30 +406,47 @@
       .order-bump-title {
         display: block;
         color: var(--navy);
-        font-size: 1.02rem;
+        font-size: 1.08rem;
         font-weight: 900;
         line-height: 1.28;
       }
 
       .order-bump-price {
         display: block;
-        margin-top: 4px;
+        margin-top: 5px;
         color: #0f5c39;
-        font-size: 0.96rem;
+        font-size: 1rem;
         font-weight: 900;
       }
 
       .order-bump-copy {
         display: block;
-        margin-top: 6px;
+        margin-top: 8px;
         color: #3f536b;
         font-size: 0.96rem;
         line-height: 1.48;
       }
 
+      .bump-categories {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        margin-top: 12px;
+      }
+
+      .bump-categories span {
+        padding: 5px 8px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.82);
+        color: #244b39;
+        font-size: 0.78rem;
+        font-weight: 800;
+        line-height: 1.2;
+      }
+
       .order-bump-value {
         display: block;
-        margin-top: 9px;
+        margin-top: 12px;
         color: #0f5c39;
         font-size: 0.88rem;
         font-weight: 900;
@@ -424,7 +456,7 @@
 
       .checkout-price {
         margin-top: 18px;
-        padding: 12px 14px;
+        padding: 13px 14px;
         border: 1px solid rgba(20, 104, 196, 0.16);
         border-radius: 8px;
         background: #f7fbff;
@@ -1237,6 +1269,14 @@
           font-size: 0.92rem;
         }
 
+        .bump-categories {
+          gap: 6px;
+        }
+
+        .bump-categories span {
+          font-size: 0.74rem;
+        }
+
         .top-banner-inner {
           padding: 10px 18px 12px;
         }
@@ -1567,7 +1607,7 @@
           }
 
           if (price) {
-            price.textContent = "Today: AI Confidence Kit only - £19";
+            price.textContent = "Your total today: AI Confidence Kit - £19";
           }
 
           if (modalCheckout) {
@@ -1613,8 +1653,8 @@
 
         if (price) {
           price.textContent = hasBump
-            ? "Today: AI Confidence Kit + 100 messages - £26.50"
-            : "Today: AI Confidence Kit only - £19";
+            ? "Your total today: AI Confidence Kit + 100 messages - £26.50"
+            : "Your total today: AI Confidence Kit - £19";
         }
       });
 
@@ -1783,20 +1823,28 @@
     <div class="checkout-modal" data-checkout-modal aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="checkout-offer-title">
       <div class="checkout-modal-card" id="checkout-offer">
         <button class="checkout-modal-close" type="button" aria-label="Close checkout offer" data-close-checkout-modal>&times;</button>
-        <h2 id="checkout-offer-title">Before You Get Access</h2>
-        <p>Get the AI Confidence Kit for &pound;19. You can also add the ready-to-use message pack before checkout.</p>
+        <span class="modal-kicker">Your order</span>
+        <h2 id="checkout-offer-title">Get the AI Confidence Kit</h2>
+        <p>Today you can get the full AI Confidence Kit for &pound;19. Before checkout, you can add a practical message pack so you have ready-made wording when you want to use AI in real life.</p>
         <div class="order-bump">
           <label>
             <input type="checkbox" name="message-bump" data-message-bump />
             <span>
-              <span class="order-bump-title">Add 100 ready-to-use messages</span>
+              <span class="order-bump-title">Yes, add 100 ready-to-use messages</span>
               <span class="order-bump-price">Add for &pound;7.50 today</span>
-              <span class="order-bump-copy">Copy, paste, and adapt simple AI messages for explaining confusing things, emails and messages, everyday admin, decision-making, and safety, scams and trust.</span>
-              <span class="order-bump-value">Optional order bump</span>
+              <span class="order-bump-copy">Use these when you do not want to start from a blank screen. The pack covers everyday situations where AI can quickly make things clearer, easier, or less stressful.</span>
+              <span class="bump-categories" aria-label="Included categories">
+                <span>Confusing things</span>
+                <span>Emails</span>
+                <span>Admin</span>
+                <span>Decisions</span>
+                <span>Scams and trust</span>
+              </span>
+              <span class="order-bump-value">Optional add-on</span>
             </span>
           </label>
         </div>
-        <div class="checkout-price" data-checkout-price>Today: AI Confidence Kit only - &pound;19</div>
+        <div class="checkout-price" data-checkout-price>Your total today: AI Confidence Kit - &pound;19</div>
         <div class="modal-actions">
           <a
             class="button"
