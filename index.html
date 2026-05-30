@@ -396,6 +396,14 @@
         line-height: 1.28;
       }
 
+      .order-bump-price {
+        display: block;
+        margin-top: 4px;
+        color: #0f5c39;
+        font-size: 0.96rem;
+        font-weight: 900;
+      }
+
       .order-bump-copy {
         display: block;
         margin-top: 6px;
@@ -412,6 +420,18 @@
         font-weight: 900;
         letter-spacing: 0.03em;
         text-transform: uppercase;
+      }
+
+      .checkout-price {
+        margin-top: 18px;
+        padding: 12px 14px;
+        border: 1px solid rgba(20, 104, 196, 0.16);
+        border-radius: 8px;
+        background: #f7fbff;
+        color: var(--navy);
+        font-size: 0.98rem;
+        font-weight: 800;
+        text-align: center;
       }
 
       .modal-actions {
@@ -1209,6 +1229,10 @@
           font-size: 0.98rem;
         }
 
+        .order-bump-price {
+          font-size: 0.93rem;
+        }
+
         .order-bump-copy {
           font-size: 0.92rem;
         }
@@ -1534,6 +1558,23 @@
           modal.classList.add("is-open");
           modal.setAttribute("aria-hidden", "false");
 
+          var bump = document.querySelector("[data-message-bump]");
+          var price = document.querySelector("[data-checkout-price]");
+          var modalCheckout = document.querySelector("[data-checkout-link]");
+
+          if (bump) {
+            bump.checked = false;
+          }
+
+          if (price) {
+            price.textContent = "Today: AI Confidence Kit only - £19";
+          }
+
+          if (modalCheckout) {
+            modalCheckout.href = modalCheckout.dataset.baseCheckout;
+            modalCheckout.textContent = "Continue to Checkout - £19";
+          }
+
           if (typeof fbq === "function") {
             fbq("track", "InitiateCheckout");
           }
@@ -1549,6 +1590,31 @@
           checkoutLink.href = bump && bump.checked
             ? checkoutLink.dataset.bumpCheckout
             : checkoutLink.dataset.baseCheckout;
+        }
+      });
+
+      document.addEventListener("change", function (event) {
+        if (!event.target.matches("[data-message-bump]")) {
+          return;
+        }
+
+        var checkoutLink = document.querySelector("[data-checkout-link]");
+        var price = document.querySelector("[data-checkout-price]");
+        var hasBump = event.target.checked;
+
+        if (checkoutLink) {
+          checkoutLink.href = hasBump
+            ? checkoutLink.dataset.bumpCheckout
+            : checkoutLink.dataset.baseCheckout;
+          checkoutLink.textContent = hasBump
+            ? "Continue to Checkout - £28"
+            : "Continue to Checkout - £19";
+        }
+
+        if (price) {
+          price.textContent = hasBump
+            ? "Today: AI Confidence Kit + 100 messages - £28"
+            : "Today: AI Confidence Kit only - £19";
         }
       });
 
@@ -1580,7 +1646,7 @@
                   A calm, practical kit that shows you exactly where to start with AI, how to get genuinely useful answers, make everyday tasks easier, and spot when images or content online may be AI-made or fake.
                 </p>
                 <div class="actions">
-                  <a class="button" href="#checkout-offer" data-open-checkout-modal>Get Instant Access</a>
+                  <a class="button" href="#checkout-offer" data-open-checkout-modal>Get Instant Access - &pound;19</a>
                 </div>
                 <p class="note">Instant download. 60-day money-back guarantee.</p>
               </div>
@@ -1708,7 +1774,7 @@
         <div class="final-cta-inner">
           <h2>Get Instant Access</h2>
           <p>Get the calm starting point most AI explanations skip. In one short kit, you can understand what AI is, how to make it useful in everyday life, and how to feel clearer about what to trust.</p>
-          <a class="button" href="#checkout-offer" data-open-checkout-modal>Get Instant Access</a>
+          <a class="button" href="#checkout-offer" data-open-checkout-modal>Get Instant Access - &pound;19</a>
           <p class="checkout-note">Instant download. 60-day money-back guarantee.</p>
         </div>
       </section>
@@ -1718,17 +1784,19 @@
       <div class="checkout-modal-card" id="checkout-offer">
         <button class="checkout-modal-close" type="button" aria-label="Close checkout offer" data-close-checkout-modal>&times;</button>
         <h2 id="checkout-offer-title">Before You Get Access</h2>
-        <p>Add the AI Confidence Kit now. You can also include a simple message pack if you want ready-made wording to start from.</p>
+        <p>Get the AI Confidence Kit for &pound;19. You can also add the ready-to-use message pack before checkout.</p>
         <div class="order-bump">
           <label>
             <input type="checkbox" name="message-bump" data-message-bump />
             <span>
               <span class="order-bump-title">Add 100 ready-to-use messages</span>
+              <span class="order-bump-price">Add for &pound;9 today</span>
               <span class="order-bump-copy">Copy, paste, and adapt simple AI messages for everyday situations, including admin, replies, planning, decisions, and getting started faster.</span>
               <span class="order-bump-value">Optional order bump</span>
             </span>
           </label>
         </div>
+        <div class="checkout-price" data-checkout-price>Today: AI Confidence Kit only - &pound;19</div>
         <div class="modal-actions">
           <a
             class="button"
@@ -1736,7 +1804,7 @@
             data-checkout-link
             data-base-checkout="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00"
             data-bump-checkout="https://buy.stripe.com/28EeVc72PfEUbyM9q2bZe0b"
-          >Continue to Checkout</a>
+          >Continue to Checkout - &pound;19</a>
           <button class="button button-secondary" type="button" data-close-checkout-modal>Keep reading</button>
         </div>
       </div>
