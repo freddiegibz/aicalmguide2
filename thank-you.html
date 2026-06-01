@@ -154,7 +154,7 @@
       }
 
       .gift-note::before {
-        content: "Bonus free gift";
+        content: "Optional upgrade";
         display: inline-block;
         margin-bottom: 12px;
         padding: 5px 11px;
@@ -193,29 +193,18 @@
         line-height: 1.55;
       }
 
-      .gift-url {
-        display: block;
-        margin-top: 14px;
-        padding: 12px 14px;
-        border: 1px solid rgba(31, 157, 98, 0.24);
-        border-radius: 8px;
-        background: rgba(255, 255, 255, 0.82);
+      .gift-price {
+        margin: 14px 0 0;
+        max-width: none;
         color: #173761;
-        font-family: "Courier New", monospace;
-        font-size: 0.95rem;
+        font-size: 1rem;
+        font-weight: 900;
         line-height: 1.45;
-        overflow-wrap: anywhere;
       }
 
-      .gift-url-label {
-        display: block;
-        margin-bottom: 5px;
-        color: #0f5c39;
-        font-family: "Aptos", "Segoe UI", sans-serif;
-        font-size: 0.76rem;
-        font-weight: 900;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
+      .gift-price .old-price {
+        color: #6d788a;
+        text-decoration: line-through;
       }
 
       .gift-button {
@@ -226,8 +215,10 @@
         min-height: 54px;
         padding: 0 24px;
         border-radius: 8px;
+        border: 0;
         background: var(--green);
         color: #ffffff;
+        cursor: pointer;
         font-weight: 900;
         font-size: 1rem;
         text-decoration: none;
@@ -409,11 +400,11 @@
           </a>
         </div>
         <div class="gift-note">
-          <p class="gift-title">100 ready-to-use prompts for daily situations</p>
-          <p class="gift-copy">Your free gift gives you simple prompts you can use straight away. Just copy, paste, send.</p>
-          <p class="gift-save">Important: save or bookmark this prompt library now so you can come back to it whenever you need it.</p>
-          <span class="gift-url"><span class="gift-url-label">Copy this link</span>https://aichecklist.vercel.app/</span>
-          <a class="gift-button" href="https://aichecklist.vercel.app/" target="_blank" rel="noopener">Open and save the prompt library</a>
+          <p class="gift-title">Want AI prompts and use-cases built around your life?</p>
+          <p class="gift-copy">Get a custom-built AI prompt and use-case system made specifically for your work, personal life, or business.</p>
+          <p class="gift-save">You get ready-to-use messages, practical use cases, and simple workflows tailored to the situations you actually face, without trial and error or figuring it all out yourself.</p>
+          <p class="gift-price"><span class="old-price">&pound;100</span> today for &pound;30.99</p>
+          <a class="gift-button" href="https://buy.stripe.com/eVq28qdrd8cs7iw6dQbZe0T">Get your custom AI plan</a>
         </div>
         <p class="backup-link">
           If the button does not open straight away, use this link:
