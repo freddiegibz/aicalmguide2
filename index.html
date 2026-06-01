@@ -320,143 +320,6 @@
         font-weight: 800;
       }
 
-      .checkout-modal {
-        position: fixed;
-        inset: 0;
-        z-index: 50;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        padding: 24px;
-        background: rgba(7, 27, 63, 0.58);
-      }
-
-      .checkout-modal.is-open {
-        display: flex;
-      }
-
-      .checkout-modal-card {
-        position: relative;
-        width: min(100%, 440px);
-        padding: 34px;
-        border-radius: 10px;
-        background: #fffdf9;
-        box-shadow: 0 28px 70px rgba(7, 27, 63, 0.28);
-      }
-
-      .checkout-modal-close {
-        position: absolute;
-        top: 14px;
-        right: 14px;
-        width: 38px;
-        height: 38px;
-        border: 0;
-        border-radius: 50%;
-        background: rgba(23, 55, 97, 0.08);
-        color: var(--navy);
-        cursor: pointer;
-        font-size: 1.45rem;
-        line-height: 1;
-      }
-
-      .checkout-modal h2 {
-        margin: 0;
-        color: var(--navy);
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(1.8rem, 4vw, 2.45rem);
-        font-weight: 500;
-        line-height: 1.08;
-      }
-
-      .checkout-modal p {
-        margin: 14px 0 0;
-        color: var(--text);
-        font-size: 1.04rem;
-        line-height: 1.58;
-      }
-
-      .order-bump {
-        margin-top: 18px;
-        padding: 15px;
-        border: 1px solid rgba(31, 157, 98, 0.3);
-        border-radius: 8px;
-        background: #f3fbf7;
-      }
-
-      .order-bump label {
-        display: grid;
-        grid-template-columns: 22px 1fr;
-        gap: 12px;
-        cursor: pointer;
-      }
-
-      .order-bump input {
-        width: 20px;
-        height: 20px;
-        margin: 3px 0 0;
-        accent-color: #1f9d62;
-      }
-
-      .order-bump-title {
-        display: block;
-        color: var(--navy);
-        font-size: 1rem;
-        font-weight: 900;
-        line-height: 1.28;
-      }
-
-      .order-bump-price {
-        display: block;
-        margin-top: 4px;
-        color: #0f5c39;
-        font-size: 0.96rem;
-        font-weight: 900;
-      }
-
-      .order-bump-copy {
-        display: block;
-        margin-top: 6px;
-        color: #3f536b;
-        font-size: 0.92rem;
-        line-height: 1.48;
-      }
-
-      .checkout-price {
-        margin-top: 14px;
-        padding: 11px 12px;
-        border: 1px solid rgba(20, 104, 196, 0.16);
-        border-radius: 8px;
-        background: #f7fbff;
-        color: var(--navy);
-        font-size: 0.95rem;
-        font-weight: 800;
-        text-align: center;
-      }
-
-      .modal-actions {
-        margin-top: 22px;
-        display: grid;
-        gap: 10px;
-      }
-
-      .checkout-modal .button {
-        width: 100%;
-      }
-
-      .checkout-modal .button-secondary {
-        border: 0;
-        background: transparent;
-        color: #526176;
-        cursor: pointer;
-        box-shadow: none;
-      }
-
-      .checkout-modal .button-secondary:hover {
-        background: rgba(23, 55, 97, 0.08);
-        color: var(--navy);
-        box-shadow: none;
-      }
-
       .punch-section h2 {
         max-width: 18ch;
       }
@@ -1192,50 +1055,6 @@
       }
 
       @media (max-width: 760px) {
-        .checkout-modal {
-          align-items: flex-end;
-          padding: 14px;
-        }
-
-        .checkout-modal-card {
-          width: 100%;
-          max-height: calc(100vh - 28px);
-          overflow-y: auto;
-          padding: 28px 20px 20px;
-          border-radius: 12px;
-        }
-
-        .checkout-modal h2 {
-          max-width: 12ch;
-          font-size: 1.85rem;
-        }
-
-        .checkout-modal p {
-          font-size: 0.98rem;
-          line-height: 1.55;
-        }
-
-        .order-bump {
-          padding: 14px;
-        }
-
-        .order-bump label {
-          grid-template-columns: 20px 1fr;
-          gap: 10px;
-        }
-
-        .order-bump-title {
-          font-size: 0.98rem;
-        }
-
-        .order-bump-price {
-          font-size: 0.93rem;
-        }
-
-        .order-bump-copy {
-          font-size: 0.92rem;
-        }
-
         .top-banner-inner {
           padding: 10px 18px 12px;
         }
@@ -1547,82 +1366,21 @@
       });
 
       document.addEventListener("click", function (event) {
-        var modal = document.querySelector("[data-checkout-modal]");
-        var checkout = event.target.closest("[data-open-checkout-modal]");
-        var close = event.target.closest("[data-close-checkout-modal]");
-        var checkoutLink = event.target.closest("[data-checkout-link]");
+        var checkout = event.target.closest("[data-direct-checkout]");
 
-        if (checkout && modal) {
-          event.preventDefault();
-          modal.classList.add("is-open");
-          modal.setAttribute("aria-hidden", "false");
-
-          var bump = document.querySelector("[data-message-bump]");
-          var price = document.querySelector("[data-checkout-price]");
-          var modalCheckout = document.querySelector("[data-checkout-link]");
-
-          if (bump) {
-            bump.checked = false;
-          }
-
-          if (price) {
-            price.textContent = "Your total today: AI Confidence Kit - £19";
-          }
-
-          if (modalCheckout) {
-            modalCheckout.href = modalCheckout.dataset.baseCheckout;
-            modalCheckout.textContent = "Continue to Checkout - £19";
-          }
-
-          if (typeof fbq === "function") {
-            fbq("track", "InitiateCheckout");
-          }
-        }
-
-        if (close && modal) {
-          modal.classList.remove("is-open");
-          modal.setAttribute("aria-hidden", "true");
-        }
-
-        if (checkoutLink) {
-          var bump = document.querySelector("[data-message-bump]");
-          checkoutLink.href = bump && bump.checked
-            ? checkoutLink.dataset.bumpCheckout
-            : checkoutLink.dataset.baseCheckout;
-        }
-      });
-
-      document.addEventListener("change", function (event) {
-        if (!event.target.matches("[data-message-bump]")) {
+        if (!checkout) {
           return;
         }
 
-        var checkoutLink = document.querySelector("[data-checkout-link]");
-        var price = document.querySelector("[data-checkout-price]");
-        var hasBump = event.target.checked;
+        event.preventDefault();
 
-        if (checkoutLink) {
-          checkoutLink.href = hasBump
-            ? checkoutLink.dataset.bumpCheckout
-            : checkoutLink.dataset.baseCheckout;
-          checkoutLink.textContent = hasBump
-            ? "Continue to Checkout - £26.50"
-            : "Continue to Checkout - £19";
+        if (typeof fbq === "function") {
+          fbq("track", "InitiateCheckout");
         }
 
-        if (price) {
-          price.textContent = hasBump
-            ? "Your total today: AI Confidence Kit + 100 messages - £26.50"
-            : "Your total today: AI Confidence Kit - £19";
-        }
-      });
-
-      document.addEventListener("keydown", function (event) {
-        var modal = document.querySelector("[data-checkout-modal]");
-        if (event.key === "Escape" && modal && modal.classList.contains("is-open")) {
-          modal.classList.remove("is-open");
-          modal.setAttribute("aria-hidden", "true");
-        }
+        window.setTimeout(function () {
+          window.location.href = checkout.href;
+        }, 200);
       });
 
     </script>
@@ -1650,7 +1408,7 @@
                   <span class="new-price">&pound;19 today</span>
                 </p>
                 <div class="actions">
-                  <a class="button" href="#checkout-offer" data-open-checkout-modal>Get Instant Access - &pound;19</a>
+                  <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-direct-checkout>Get Instant Access - &pound;19</a>
                 </div>
                 <p class="note">Instant download. 60-day money-back guarantee.</p>
               </div>
@@ -1778,39 +1536,11 @@
         <div class="final-cta-inner">
           <h2>Get Instant Access</h2>
           <p>Get the calm starting point most AI explanations skip. In one short kit, you can understand what AI is, how to make it useful in everyday life, and how to feel clearer about what to trust.</p>
-          <a class="button" href="#checkout-offer" data-open-checkout-modal>Get Instant Access - &pound;19</a>
+          <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-direct-checkout>Get Instant Access - &pound;19</a>
           <p class="checkout-note">Instant download. 60-day money-back guarantee.</p>
         </div>
       </section>
 
     </main>
-    <div class="checkout-modal" data-checkout-modal aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="checkout-offer-title">
-      <div class="checkout-modal-card" id="checkout-offer">
-        <button class="checkout-modal-close" type="button" aria-label="Close checkout offer" data-close-checkout-modal>&times;</button>
-        <h2 id="checkout-offer-title">Get the AI Confidence Kit</h2>
-        <p>Your kit today: <strong>&pound;19</strong></p>
-        <div class="order-bump">
-          <label>
-            <input type="checkbox" name="message-bump" data-message-bump />
-            <span>
-              <span class="order-bump-title">Add 100 ready-written messages for everyday situations?</span>
-              <span class="order-bump-price">Add for &pound;7.50 today</span>
-              <span class="order-bump-copy">Copy, paste, and adapt them instead of working out what to type from scratch.</span>
-            </span>
-          </label>
-        </div>
-        <div class="checkout-price" data-checkout-price>Your total today: AI Confidence Kit - &pound;19</div>
-        <div class="modal-actions">
-          <a
-            class="button"
-            href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00"
-            data-checkout-link
-            data-base-checkout="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00"
-            data-bump-checkout="https://buy.stripe.com/28EeVc72PfEUbyM9q2bZe0b"
-          >Continue to Checkout - &pound;19</a>
-          <button class="button button-secondary" type="button" data-close-checkout-modal>Keep reading</button>
-        </div>
-      </div>
-    </div>
   </body>
 </html>
