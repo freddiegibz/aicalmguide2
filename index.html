@@ -1595,7 +1595,7 @@
           try {
             if (navigator.clipboard && navigator.clipboard.writeText) {
               await navigator.clipboard.writeText(SALE_CODE);
-              setStatus("Copied. Paste it at checkout: " + SALE_CODE);
+              setStatus("Copied to clipboard.");
               return;
             }
           } catch (e) {}
@@ -1609,9 +1609,9 @@
           ta.select();
           try {
             document.execCommand("copy");
-            setStatus("Copied. Paste it at checkout: " + SALE_CODE);
+            setStatus("Copied to clipboard.");
           } catch (e) {
-            setStatus("Copy failed. Your code is: " + SALE_CODE);
+            setStatus("Copy failed. Please copy it manually from the box above.");
           }
           document.body.removeChild(ta);
         }
@@ -1659,7 +1659,7 @@
         <div class="sale-modal-panel" role="document">
           <div class="sale-modal-head">
             <div class="sale-modal-kicker">Limited-time code</div>
-            <div class="sale-modal-title" id="sale-modal-title">Use code <span style="white-space:nowrap;">EARLY50</span></div>
+            <div class="sale-modal-title" id="sale-modal-title">Your 50% discount code</div>
           </div>
           <div class="sale-modal-body">
             <p>Copy your code below and paste it at checkout.</p>
