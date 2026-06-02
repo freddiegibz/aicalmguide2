@@ -1528,9 +1528,6 @@
 
         function goToCheckout() {
           if (!pendingCheckoutHref) return;
-          if (typeof fbq === "function") {
-            fbq("track", "InitiateCheckout");
-          }
           window.location.href = pendingCheckoutHref;
         }
 
@@ -1539,6 +1536,9 @@
           if (checkout) {
             event.preventDefault();
             pendingCheckoutHref = checkout.href;
+            if (typeof fbq === "function") {
+              fbq("track", "InitiateCheckout");
+            }
             if (!openSaleModal()) {
               goToCheckout();
             }
