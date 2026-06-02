@@ -291,35 +291,6 @@
         line-height: 1.55;
       }
 
-      .price-line {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        flex-wrap: wrap;
-        margin: 18px 0 0;
-        padding: 9px 12px;
-        border: 1px solid rgba(20, 104, 196, 0.14);
-        border-radius: 8px;
-        background: #f7fbff;
-        color: #4e5b70;
-        font-size: 0.98rem;
-        line-height: 1.5;
-      }
-
-      .price-line strong {
-        color: var(--navy);
-      }
-
-      .price-line .old-price {
-        text-decoration: line-through;
-        color: #788396;
-      }
-
-      .price-line .new-price {
-        color: var(--blue);
-        font-weight: 800;
-      }
-
       .punch-section h2 {
         max-width: 18ch;
       }
@@ -1351,6 +1322,178 @@
           transition-duration: 1ms !important;
         }
       }
+
+      .sale-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        background: rgba(7, 27, 63, 0.55);
+      }
+
+      .sale-modal[aria-hidden="false"] {
+        display: flex;
+      }
+
+      .sale-modal-panel {
+        width: min(560px, 100%);
+        border: 1px solid rgba(7, 27, 63, 0.16);
+        border-radius: 16px;
+        background: #fffdf9;
+        box-shadow: 0 30px 80px rgba(7, 27, 63, 0.22);
+        overflow: hidden;
+      }
+
+      .sale-modal-head {
+        padding: 18px 20px 14px;
+        background: linear-gradient(180deg, #eef6fb 0%, #fffdf9 100%);
+        border-bottom: 1px solid rgba(7, 27, 63, 0.1);
+      }
+
+      .sale-modal-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: rgba(20, 104, 196, 0.08);
+        color: var(--navy);
+        font-weight: 800;
+        font-size: 0.82rem;
+        letter-spacing: 0.01em;
+      }
+
+      .sale-modal-title {
+        margin: 12px 0 0;
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.7rem;
+        font-weight: 500;
+        line-height: 1.15;
+      }
+
+      .sale-modal-body {
+        padding: 18px 20px 22px;
+        color: var(--text);
+      }
+
+      .sale-modal-body p {
+        margin: 0 0 12px;
+        color: #3e4a5c;
+        font-size: 1.02rem;
+        line-height: 1.6;
+      }
+
+      .sale-modal-price {
+        display: inline-flex;
+        align-items: baseline;
+        gap: 10px;
+        margin: 10px 0 16px;
+        padding: 10px 12px;
+        border-radius: 12px;
+        border: 1px solid rgba(7, 27, 63, 0.12);
+        background: rgba(20, 104, 196, 0.06);
+        color: var(--navy);
+      }
+
+      .sale-modal-price .was {
+        color: #6a778d;
+        text-decoration: line-through;
+        font-weight: 800;
+      }
+
+      .sale-modal-price .now {
+        color: var(--blue-dark);
+        font-weight: 900;
+        font-size: 1.25rem;
+        letter-spacing: -0.01em;
+      }
+
+      .sale-modal-price .badge {
+        margin-left: 2px;
+        padding: 4px 8px;
+        border-radius: 999px;
+        background: rgba(29, 155, 83, 0.12);
+        color: #12492e;
+        font-weight: 900;
+        font-size: 0.78rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .sale-code {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 10px;
+        align-items: center;
+        padding: 12px;
+        border-radius: 12px;
+        border: 1px solid rgba(7, 27, 63, 0.12);
+        background: #ffffff;
+      }
+
+      .sale-code strong {
+        display: block;
+        font-size: 0.86rem;
+        color: #5a667a;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .sale-code code {
+        display: inline-block;
+        margin-top: 6px;
+        font-size: 1.2rem;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        color: var(--navy);
+      }
+
+      .sale-modal-actions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 14px;
+      }
+
+      .sale-modal-actions .button {
+        min-width: 220px;
+      }
+
+      .sale-modal-actions .button-secondary {
+        padding: 16px 18px;
+        border-radius: 999px;
+        border: 1px solid rgba(7, 27, 63, 0.18);
+        background: transparent;
+        color: #4f5d72;
+        font-weight: 800;
+      }
+
+      .sale-modal-close {
+        position: absolute;
+        inset: 14px 14px auto auto;
+        width: 40px;
+        height: 40px;
+        border-radius: 999px;
+        border: 1px solid rgba(7, 27, 63, 0.16);
+        background: rgba(255, 255, 255, 0.9);
+        color: var(--navy);
+        cursor: pointer;
+      }
+
+      .sale-modal-wrap {
+        position: relative;
+      }
+
+      .sale-modal-note {
+        margin-top: 10px;
+        color: #6a778d;
+        font-size: 0.9rem;
+      }
     </style>
   </head>
   <body>
@@ -1365,25 +1508,194 @@
         }
       });
 
-      document.addEventListener("click", function (event) {
-        var checkout = event.target.closest("[data-direct-checkout]");
+      (function () {
+        var pendingCheckoutHref = null;
 
-        if (!checkout) {
-          return;
+        function openSaleModal() {
+          var modal = document.getElementById("sale-modal");
+          if (!modal) return false;
+          modal.setAttribute("aria-hidden", "false");
+          document.documentElement.style.overflow = "hidden";
+          return true;
         }
 
-        event.preventDefault();
-
-        if (typeof fbq === "function") {
-          fbq("track", "InitiateCheckout");
+        function closeSaleModal() {
+          var modal = document.getElementById("sale-modal");
+          if (!modal) return;
+          modal.setAttribute("aria-hidden", "true");
+          document.documentElement.style.overflow = "";
         }
 
-        window.setTimeout(function () {
-          window.location.href = checkout.href;
-        }, 200);
-      });
+        function goToCheckout() {
+          if (!pendingCheckoutHref) return;
+          if (typeof fbq === "function") {
+            fbq("track", "InitiateCheckout");
+          }
+          window.location.href = pendingCheckoutHref;
+        }
+
+        document.addEventListener("click", function (event) {
+          var checkout = event.target.closest("[data-direct-checkout]");
+          if (checkout) {
+            event.preventDefault();
+            pendingCheckoutHref = checkout.href;
+            if (!openSaleModal()) {
+              goToCheckout();
+            }
+            return;
+          }
+
+          var goBtn = event.target.closest("[data-sale-go-checkout]");
+          if (goBtn) {
+            event.preventDefault();
+            closeSaleModal();
+            window.setTimeout(goToCheckout, 50);
+            return;
+          }
+        });
+      })();
+
+      (function () {
+        var MODAL_ID = "sale-modal";
+        var SESSION_KEY = "sale_modal_shown";
+        var SALE_CODE = "EARLY50";
+
+        function el(id) {
+          return document.getElementById(id);
+        }
+
+        function openModal() {
+          var modal = el(MODAL_ID);
+          if (!modal) return;
+          modal.setAttribute("aria-hidden", "false");
+          document.documentElement.style.overflow = "hidden";
+        }
+
+        function closeModal() {
+          var modal = el(MODAL_ID);
+          if (!modal) return;
+          modal.setAttribute("aria-hidden", "true");
+          document.documentElement.style.overflow = "";
+        }
+
+        function markShown() {
+          try { sessionStorage.setItem(SESSION_KEY, "1"); } catch (e) {}
+        }
+
+        function wasShown() {
+          try { return sessionStorage.getItem(SESSION_KEY) === "1"; } catch (e) { return false; }
+        }
+
+        function setStatus(text) {
+          var status = el("sale-copy-status");
+          if (status) status.textContent = text || "";
+        }
+
+        async function copyCode() {
+          try {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              await navigator.clipboard.writeText(SALE_CODE);
+              setStatus("Copied. Paste it at checkout: " + SALE_CODE);
+              return;
+            }
+          } catch (e) {}
+
+          var ta = document.createElement("textarea");
+          ta.value = SALE_CODE;
+          ta.setAttribute("readonly", "");
+          ta.style.position = "fixed";
+          ta.style.left = "-9999px";
+          document.body.appendChild(ta);
+          ta.select();
+          try {
+            document.execCommand("copy");
+            setStatus("Copied. Paste it at checkout: " + SALE_CODE);
+          } catch (e) {
+            setStatus("Copy failed. Your code is: " + SALE_CODE);
+          }
+          document.body.removeChild(ta);
+        }
+
+        document.addEventListener("click", function (event) {
+          var closeBtn = event.target.closest("[data-sale-close]");
+          if (closeBtn) {
+            event.preventDefault();
+            closeModal();
+            markShown();
+            return;
+          }
+
+          var copyBtn = event.target.closest("[data-sale-copy]");
+          if (copyBtn) {
+            event.preventDefault();
+            copyCode();
+            return;
+          }
+
+          var continueBtn = event.target.closest("[data-sale-continue]");
+          if (continueBtn) {
+            markShown();
+          }
+
+          var modal = el(MODAL_ID);
+          if (modal && event.target === modal) {
+            closeModal();
+            markShown();
+          }
+        });
+
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            closeModal();
+            markShown();
+          }
+        });
+
+        window.addEventListener("load", function () {
+          var modal = el(MODAL_ID);
+          if (!modal) return;
+          if (wasShown()) return;
+
+          window.setTimeout(function () {
+            if (wasShown()) return;
+            openModal();
+            markShown();
+          }, 2500);
+        });
+      })();
 
     </script>
+    <div class="sale-modal" id="sale-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="sale-modal-title">
+      <div class="sale-modal-wrap">
+        <button class="sale-modal-close" type="button" data-sale-close aria-label="Close">✕</button>
+        <div class="sale-modal-panel" role="document">
+          <div class="sale-modal-head">
+            <div class="sale-modal-kicker">Limited-time code</div>
+            <div class="sale-modal-title" id="sale-modal-title">Use code <span style="white-space:nowrap;">EARLY50</span></div>
+          </div>
+          <div class="sale-modal-body">
+            <p>Copy your code below and paste it at checkout.</p>
+            <div class="sale-modal-price" aria-label="Discounted price">
+              <span class="was">&pound;19</span>
+              <span class="now">&pound;9.50</span>
+              <span class="badge">50% off</span>
+            </div>
+            <div class="sale-code">
+              <div>
+                <strong>Discount code</strong>
+                <code id="sale-code-text">EARLY50</code>
+              </div>
+              <button class="button-secondary" type="button" data-sale-copy>Copy code</button>
+            </div>
+            <div class="sale-modal-actions">
+              <a class="button" href="#" data-sale-go-checkout data-sale-continue>Continue to checkout</a>
+              <button class="button-secondary" type="button" data-sale-close>Not now</button>
+            </div>
+            <div class="sale-modal-note" id="sale-copy-status" aria-live="polite"></div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="top-banner">
       <div class="top-banner-inner">
         <strong>Trusted by 1,300+ readers</strong>
@@ -1402,13 +1714,8 @@
                 <p class="lead">
                   A calm, practical kit that shows you exactly where to start with AI, how to get genuinely useful answers, make everyday tasks easier, and spot when images or content online may be AI-made or fake.
                 </p>
-                <p class="price-line">
-                  <strong>Launch sale active:</strong>
-                  <span class="old-price">&pound;27</span>
-                  <span class="new-price">&pound;19 today</span>
-                </p>
                 <div class="actions">
-                  <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-direct-checkout>Get Instant Access - &pound;19</a>
+                  <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-direct-checkout>Get Instant Access</a>
                 </div>
                 <p class="note">Instant download. 60-day money-back guarantee.</p>
               </div>
@@ -1533,10 +1840,10 @@
       </section>
 
       <section class="final-cta" aria-label="Get instant access">
-        <div class="final-cta-inner">
+        <div class="final-cta-inner" id="get-instant-access">
           <h2>Get Instant Access</h2>
           <p>Get the calm starting point most AI explanations skip. In one short kit, you can understand what AI is, how to make it useful in everyday life, and how to feel clearer about what to trust.</p>
-          <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-direct-checkout>Get Instant Access - &pound;19</a>
+          <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-direct-checkout>Get Instant Access</a>
           <p class="checkout-note">Instant download. 60-day money-back guarantee.</p>
         </div>
       </section>
