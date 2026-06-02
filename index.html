@@ -1650,18 +1650,6 @@
             markShown();
           }
         });
-
-        window.addEventListener("load", function () {
-          var modal = el(MODAL_ID);
-          if (!modal) return;
-          if (wasShown()) return;
-
-          window.setTimeout(function () {
-            if (wasShown()) return;
-            openModal();
-            markShown();
-          }, 2500);
-        });
       })();
 
     </script>
