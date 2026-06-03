@@ -27,18 +27,17 @@
     <!-- End Meta Pixel Code -->
     <style>
       :root {
-        --ink: #071b3f;
-        --navy: #173761;
-        --text: #172033;
-        --muted: #5d6678;
-        --blue: #1468c4;
-        --blue-dark: #0f58a6;
-        --paper: #f7f8fc;
+        --paper: #f4f6fb;
         --card: #ffffff;
-        --cream: #fffdf9;
-        --line: rgba(7, 27, 63, 0.11);
-        --green: #1f9d62;
-        --gold: #f7eed2;
+        --ink: #071b3f;
+        --text: #3f4c61;
+        --muted: #68758a;
+        --blue: #0e4a91;
+        --blue-dark: #0a3972;
+        --green: #1f8f5a;
+        --gold: #b59631;
+        --gold-soft: #f7edcd;
+        --line: rgba(7, 27, 63, 0.12);
       }
 
       * {
@@ -48,36 +47,67 @@
       body {
         margin: 0;
         min-height: 100vh;
-        padding: 28px;
-        background:
-          linear-gradient(180deg, #f7f8fc 0%, #edf4fb 44%, #fffdf9 100%);
+        padding: 12px;
+        background: var(--paper);
         color: var(--text);
         font-family: "Aptos", "Segoe UI", sans-serif;
       }
 
       main {
-        width: min(100%, 920px);
+        width: min(100%, 760px);
         margin: 0 auto;
         display: grid;
-        gap: 24px;
+        gap: 18px;
       }
 
       .panel {
         border: 1px solid var(--line);
+        border-radius: 12px;
         background: var(--card);
-        box-shadow: 0 20px 44px rgba(7, 27, 63, 0.08);
+        box-shadow: 0 12px 34px rgba(7, 27, 63, 0.06);
       }
 
       .download-panel {
-        padding: clamp(34px, 5vw, 54px);
+        padding: clamp(26px, 5vw, 34px);
         text-align: center;
       }
 
-      .icon {
-        width: 68px;
-        height: 68px;
-        margin: 0 auto 20px;
+      .confirmed {
+        display: grid;
+        grid-template-columns: 64px 1fr;
+        gap: 18px;
+        align-items: center;
+        margin-bottom: 24px;
+        padding: 20px 24px;
+        border: 1px solid rgba(31, 143, 90, 0.24);
+        border-radius: 10px;
+        background: #f1faf4;
+        text-align: left;
+      }
+
+      .check-icon {
+        width: 54px;
+        height: 54px;
+        border-radius: 999px;
+        background: rgba(31, 143, 90, 0.1);
         color: var(--green);
+        display: grid;
+        place-items: center;
+      }
+
+      .confirmed strong {
+        display: block;
+        color: #123b27;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(1.45rem, 3vw, 1.85rem);
+        line-height: 1.1;
+      }
+
+      .confirmed span {
+        display: block;
+        margin-top: 6px;
+        color: #123b27;
+        font-size: 1.06rem;
       }
 
       h1,
@@ -85,370 +115,420 @@
         margin: 0;
         color: var(--ink);
         font-family: Georgia, "Times New Roman", serif;
-        font-weight: 500;
+        font-weight: 600;
         letter-spacing: 0;
       }
 
       h1 {
-        font-size: clamp(2rem, 4vw, 3rem);
+        font-size: clamp(2.15rem, 5vw, 3.2rem);
         line-height: 1.06;
       }
 
       h2 {
-        font-size: clamp(1.85rem, 3vw, 2.65rem);
-        line-height: 1.08;
+        font-size: clamp(2.2rem, 5.4vw, 3.6rem);
+        line-height: 1.02;
+        text-align: center;
       }
 
       p {
-        margin: 18px auto 0;
-        max-width: 42rem;
-        line-height: 1.68;
-        font-size: 1.05rem;
+        margin: 14px auto 0;
+        max-width: 34rem;
+        color: var(--text);
+        font-size: 1.08rem;
+        line-height: 1.58;
       }
 
       .download {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        margin-top: 26px;
-        min-height: 56px;
+        gap: 14px;
+        width: min(100%, 460px);
+        min-height: 68px;
+        margin-top: 24px;
         padding: 0 28px;
-        border-radius: 8px;
+        border-radius: 9px;
         background: var(--blue);
         color: #ffffff;
-        font-weight: 800;
-        font-size: 1.02rem;
+        font-size: 1.22rem;
+        font-weight: 900;
         text-decoration: none;
-        box-shadow: 0 12px 24px rgba(20, 104, 196, 0.18);
+        box-shadow: 0 12px 24px rgba(14, 74, 145, 0.2);
       }
 
       .download:hover,
-      .download:focus-visible {
+      .download:focus-visible,
+      .offer-button:hover,
+      .offer-button:focus-visible {
         background: var(--blue-dark);
       }
 
-      .resource-actions {
-        margin-top: 26px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 14px;
-      }
-
-      .resource-actions .download {
-        margin-top: 0;
-      }
-
-      .gift-note {
-        width: min(100%, 42rem);
-        margin: 24px auto 0;
-        padding: 24px;
-        border: 1px solid rgba(31, 157, 98, 0.28);
-        border-left: 7px solid var(--green);
-        border-radius: 12px;
-        background:
-          linear-gradient(135deg, #f3fbf7 0%, #e8f7ef 58%, #fffdf9 100%);
-        color: #12492e;
+      .support-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-top: 30px;
+        padding-top: 26px;
+        border-top: 1px solid var(--line);
         text-align: left;
-        box-shadow: 0 18px 34px rgba(31, 157, 98, 0.12);
       }
 
-      .gift-note::before {
-        content: "Optional upgrade";
-        display: inline-block;
-        margin-bottom: 12px;
-        padding: 5px 11px;
+      .support-item {
+        display: grid;
+        grid-template-columns: 44px 1fr;
+        gap: 14px;
+        align-items: start;
+      }
+
+      .support-icon {
+        width: 44px;
+        height: 44px;
         border-radius: 999px;
-        background: var(--green);
-        color: #ffffff;
-        font-size: 0.78rem;
-        font-weight: 900;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-
-      .gift-title {
-        margin: 0;
-        max-width: none;
+        background: #f0f3fb;
         color: var(--ink);
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(1.35rem, 2vw, 1.75rem);
-        line-height: 1.15;
+        display: grid;
+        place-items: center;
       }
 
-      .gift-copy {
-        margin: 10px 0 0;
-        max-width: none;
-        color: #244b39;
-        font-size: 1.02rem;
-        line-height: 1.6;
-      }
-
-      .gift-save {
-        margin: 10px 0 0;
-        max-width: none;
-        color: #0f5c39;
-        font-size: 0.98rem;
-        font-weight: 800;
-        line-height: 1.55;
-      }
-
-      .gift-price {
-        margin: 14px 0 0;
-        max-width: none;
-        color: #173761;
+      .support-item strong {
+        display: block;
+        color: var(--ink);
         font-size: 1rem;
-        font-weight: 900;
-        line-height: 1.45;
+        line-height: 1.25;
       }
 
-      .gift-price .old-price {
-        color: #6d788a;
-        text-decoration: line-through;
-      }
-
-      .gift-button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 18px;
-        min-height: 54px;
-        padding: 0 24px;
-        border-radius: 8px;
-        border: 0;
-        background: var(--green);
-        color: #ffffff;
-        cursor: pointer;
-        font-weight: 900;
-        font-size: 1rem;
-        text-decoration: none;
-        box-shadow: 0 14px 26px rgba(31, 157, 98, 0.24);
-      }
-
-      .gift-button:hover,
-      .gift-button:focus-visible {
-        background: #167c4d;
-        box-shadow: 0 16px 30px rgba(31, 157, 98, 0.3);
-      }
-
-      .walkthrough {
-        background: var(--green);
-        box-shadow: 0 12px 24px rgba(31, 157, 98, 0.18);
-      }
-
-      .walkthrough:hover,
-      .walkthrough:focus-visible {
-        background: #167c4d;
-      }
-
-      .backup-link {
-        margin-top: 14px;
+      .support-item span {
+        display: block;
+        margin-top: 6px;
+        color: var(--text);
         font-size: 0.96rem;
-        color: var(--muted);
-      }
-
-      .backup-link a {
-        color: var(--blue);
-        text-underline-offset: 3px;
+        line-height: 1.45;
       }
 
       .upsell {
-        display: grid;
-        grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.62fr);
-        overflow: hidden;
-      }
-
-      .upsell-copy {
-        padding: clamp(34px, 5vw, 54px);
-        background: var(--cream);
+        padding: clamp(28px, 5vw, 44px);
+        border-color: rgba(181, 150, 49, 0.2);
+        background: #fffdf9;
       }
 
       .eyebrow {
-        margin: 0 0 14px;
-        color: var(--blue);
-        font-size: 0.82rem;
+        display: table;
+        margin: 0 auto 14px;
+        padding: 7px 18px;
+        border-radius: 999px;
+        background: var(--gold-soft);
+        color: #7d641b;
+        font-size: 0.9rem;
         font-weight: 900;
-        letter-spacing: 0.1em;
+        letter-spacing: 0.04em;
         text-transform: uppercase;
       }
 
-      .price-strip {
-        margin: 24px 0 0;
-        padding: 18px 20px;
-        border-left: 5px solid var(--green);
-        background: #eefaf2;
-        color: #12492e;
-        font-size: 1.14rem;
-        font-weight: 900;
-        line-height: 1.45;
+      .eyebrow .star {
+        margin-right: 8px;
+      }
+
+      .upsell-intro {
+        text-align: center;
+        max-width: 40rem;
+      }
+
+      .headline-underline {
+        text-decoration: underline;
+        text-decoration-thickness: 3px;
+        text-underline-offset: 5px;
+      }
+
+      .offer-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 238px;
+        gap: 26px;
+        align-items: start;
+        margin-top: 28px;
+      }
+
+      .session-title {
+        margin: 0 0 14px;
+        color: var(--ink);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.55rem;
+        font-weight: 700;
+        line-height: 1.15;
       }
 
       .session-list {
-        margin: 24px 0 0;
+        margin: 0;
         padding: 0;
         list-style: none;
         display: grid;
-        gap: 10px;
+        gap: 12px;
       }
 
       .session-list li {
-        position: relative;
-        padding-left: 28px;
-        color: var(--text);
-        font-size: 1.02rem;
-        line-height: 1.5;
+        display: grid;
+        grid-template-columns: 26px 1fr;
+        gap: 12px;
+        align-items: start;
+        color: var(--ink);
+        font-size: 1rem;
+        line-height: 1.38;
       }
 
-      .session-list li::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0.65em;
-        width: 10px;
-        height: 10px;
+      .mini-icon {
+        width: 24px;
+        height: 24px;
         border-radius: 999px;
-        background: var(--green);
-        box-shadow: 0 0 0 4px rgba(31, 157, 98, 0.1);
-      }
-
-      .upsell-side {
-        padding: clamp(30px, 4vw, 44px);
-        background: var(--navy);
+        background: var(--gold);
         color: #ffffff;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        display: grid;
+        place-items: center;
+        font-size: 0.8rem;
+        font-weight: 900;
       }
 
-      .side-price {
-        color: var(--gold);
+      .price-card {
+        padding: 24px 18px;
+        border: 1px solid rgba(181, 150, 49, 0.22);
+        border-radius: 12px;
+        background: #fffaf0;
+        text-align: center;
+      }
+
+      .price-card .label {
+        color: #80681e;
+        font-size: 0.86rem;
+        font-weight: 900;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      .price {
+        margin-top: 8px;
+        color: var(--ink);
         font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(2.6rem, 5vw, 4rem);
+        font-size: clamp(3.2rem, 8vw, 4.6rem);
         line-height: 1;
       }
 
-      .side-copy {
-        margin: 16px 0 0;
-        color: rgba(255,255,255,0.84);
+      .normal {
+        margin-top: 8px;
+        color: #738096;
+        font-size: 1.05rem;
+        text-decoration: line-through;
       }
 
-      .book {
+      .save {
         display: inline-flex;
         align-items: center;
-        justify-content: center;
-        margin-top: 28px;
-        min-height: 58px;
-        padding: 0 24px;
-        border-radius: 8px;
-        background: var(--gold);
-        color: var(--ink);
+        min-height: 36px;
+        margin-top: 16px;
+        padding: 0 16px;
+        border-radius: 999px;
+        background: var(--gold-soft);
+        color: #80681e;
+        font-size: 0.86rem;
         font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .price-card p {
+        margin-top: 16px;
+        font-size: 1rem;
+        line-height: 1.45;
+      }
+
+      .offer-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        min-height: 66px;
+        margin-top: 26px;
+        padding: 0 22px;
+        border-radius: 9px;
+        background: var(--blue);
+        color: #ffffff;
+        font-size: clamp(1.05rem, 3vw, 1.35rem);
+        font-weight: 900;
+        line-height: 1.15;
+        text-align: center;
         text-decoration: none;
       }
 
-      .book:hover,
-      .book:focus-visible {
-        background: #fff2c9;
+      .skip {
+        margin-top: 12px;
+        text-align: center;
       }
 
-      .session-note {
-        margin-top: 14px;
-        color: rgba(255,255,255,0.72);
-        font-size: 0.94rem;
+      .skip a {
+        color: #42516a;
+        font-size: 1rem;
+        text-underline-offset: 4px;
       }
 
-      @media (max-width: 760px) {
+      .guarantee {
+        display: grid;
+        grid-template-columns: 48px 1fr;
+        gap: 16px;
+        align-items: center;
+        margin-top: 16px;
+        padding: 14px 18px;
+        border-radius: 9px;
+        background: #f1f5ff;
+      }
+
+      .guarantee strong {
+        display: block;
+        color: var(--ink);
+        font-size: 1rem;
+      }
+
+      .guarantee span {
+        display: block;
+        margin-top: 4px;
+        color: var(--text);
+        font-size: 0.92rem;
+        line-height: 1.4;
+      }
+
+      @media (max-width: 720px) {
         body {
-          padding: 0;
+          padding: 10px;
         }
 
-        main {
-          gap: 0;
-        }
-
-        .panel {
-          border-left: 0;
-          border-right: 0;
-          box-shadow: none;
-        }
-
+        .download-panel,
         .upsell {
+          padding: 24px 18px;
+        }
+
+        .confirmed {
+          grid-template-columns: 52px 1fr;
+          gap: 14px;
+          padding: 16px;
+        }
+
+        .check-icon {
+          width: 48px;
+          height: 48px;
+        }
+
+        .support-row {
           grid-template-columns: 1fr;
+          gap: 18px;
+        }
+
+        .offer-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .price-card {
+          width: min(100%, 320px);
+          margin: 0 auto;
         }
       }
     </style>
   </head>
   <body>
     <main>
-      <section class="panel download-panel">
-        <svg class="icon" viewBox="0 0 74 74" aria-hidden="true">
-          <circle cx="37" cy="37" r="33" fill="currentColor" opacity="0.14" />
-          <path d="M24 37.8 32.5 46.3 50.3 28.4" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-        <h1>Thank you. Your guide is ready.</h1>
-        <p>
-          Your purchase is complete. You can download your AI Confidence Kit below and use the checklist walkthrough to get your first practical win.
-        </p>
-        <div class="resource-actions">
-          <a
-            class="download"
-            href="https://drive.google.com/uc?export=download&id=1vArbPv3loGt3DnF6-uzwk2U7z8CXHjfO"
-            target="_blank"
-            rel="noopener"
-          >
-            Download Your Guide
-          </a>
+      <section class="panel download-panel" id="download-guide">
+        <div class="confirmed">
+          <div class="check-icon" aria-hidden="true">
+            <svg width="34" height="34" viewBox="0 0 34 34">
+              <path d="m9 17.5 5.4 5.4L25.5 11.8" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div>
+            <strong>Your order is confirmed.</strong>
+            <span>We&rsquo;ve sent the details to your email.</span>
+          </div>
         </div>
-        <div class="gift-note">
-          <p class="gift-title">Want AI prompts and use-cases built around your life?</p>
-          <p class="gift-copy">Get a custom-built AI prompt and use-case system made specifically for your work, personal life, or business.</p>
-          <p class="gift-save">You get ready-to-use messages, practical use cases, and simple workflows tailored to the situations you actually face, without trial and error or figuring it all out yourself.</p>
-          <p class="gift-price"><span class="old-price">&pound;100</span> today for &pound;30.99</p>
-          <a class="gift-button" href="https://buy.stripe.com/eVq28qdrd8cs7iw6dQbZe0T">Get your custom AI plan</a>
+
+        <h1>Thank you! Your order is confirmed.</h1>
+        <p>Your guide is ready below, and we&rsquo;ve also sent your download link by email.</p>
+
+        <a
+          class="download"
+          href="https://drive.google.com/uc?export=download&id=1vArbPv3loGt3DnF6-uzwk2U7z8CXHjfO"
+          target="_blank"
+          rel="noopener"
+        >
+          <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true">
+            <path d="M14 4v14m0 0 5-5m-5 5-5-5M6 22h16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Download Your Guide
+        </a>
+
+        <div class="support-row">
+          <div class="support-item">
+            <span class="support-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24">
+                <path d="M4 6h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/>
+                <path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span><strong>Check your inbox</strong><span>We&rsquo;ve sent your download link and order details.</span></span>
+          </div>
+          <div class="support-item">
+            <span class="support-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24">
+                <path d="M4 7h6l2 2h8v9H4z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span><strong>Can&rsquo;t find it?</strong><span>Check your spam or promotions folder.</span></span>
+          </div>
+          <div class="support-item">
+            <span class="support-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.9"/>
+                <path d="M10.2 9.6a2.1 2.1 0 1 1 3.2 1.8c-.9.6-1.4 1.1-1.4 2.1M12 16.8h.01" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <span><strong>Need help?</strong><span>Reply to the email or contact us and we&rsquo;ll be happy to help.</span></span>
+          </div>
         </div>
-        <p class="backup-link">
-          If the button does not open straight away, use this link:
-          <a
-            href="https://drive.google.com/file/d/1vArbPv3loGt3DnF6-uzwk2U7z8CXHjfO/view?usp=sharing"
-            target="_blank"
-            rel="noopener"
-          >
-            Open the guide in Google Drive
-          </a>
-        </p>
       </section>
 
       <section class="panel upsell">
-        <div class="upsell-copy">
-          <p class="eyebrow">Special One-Time Offer for Guide Buyers</p>
-          <h2>Book your personal AI Clarity Session.</h2>
-          <div class="price-strip">
-            Normally £119, but because you purchased today, you can book your personal AI Clarity Session for £50.
+        <div class="eyebrow"><span class="star" aria-hidden="true">&#9733;</span>Optional next step</div>
+        <h2>Want a personal helping<br>hand with AI?</h2>
+        <p class="upsell-intro">
+          If you&rsquo;d like extra support, I can personally guide you through getting started with AI in a simple 1-to-1 text session. We&rsquo;ll go step by step, answer your questions, and help you feel confident using AI in everyday life.
+        </p>
+
+        <div class="offer-grid">
+          <div>
+            <div class="session-title">AI Confidence Implementation Session</div>
+            <ul class="session-list">
+              <li><span class="mini-icon" aria-hidden="true">&#9679;</span><span>A personal 1-to-1 text session, tailored to you</span></li>
+              <li><span class="mini-icon" aria-hidden="true">&#9679;</span><span>Ask questions and get clear help as we go</span></li>
+              <li><span class="mini-icon" aria-hidden="true">&#9679;</span><span>Get confident using AI with a real person guiding you</span></li>
+            </ul>
           </div>
-          <p>
-            This is a private 1:1 session where I help you:
-          </p>
-          <ul class="session-list">
-            <li>set up the right AI tools</li>
-            <li>learn what to use them for</li>
-            <li>practise using them properly</li>
-            <li>avoid common mistakes</li>
-            <li>find ways AI can actually help in your life or work</li>
-          </ul>
-          <p>
-            Perfect if you want personal guidance instead of figuring it all out alone.
-          </p>
+
+          <aside class="price-card">
+            <div class="label">Special launch price</div>
+            <div class="price">&pound;50</div>
+            <div class="normal">Normally &pound;119</div>
+            <div class="save">Save &pound;69 today</div>
+            <p>Simple, personal help to get you started.</p>
+          </aside>
         </div>
 
-        <aside class="upsell-side">
-          <div class="eyebrow" style="color: var(--gold);">Today Only</div>
-          <div class="side-price">£50</div>
-          <p class="side-copy">
-            A practical 1:1 setup session to help you start using AI with confidence.
-          </p>
-          <a class="book" href="https://buy.stripe.com/bJeaEW0Er2S8auIau6bZe0N">Book Your Session</a>
-          <div class="session-note">Session booking link coming next.</div>
-        </aside>
+        <a class="offer-button" href="https://buy.stripe.com/bJeaEW0Er2S8auIau6bZe0N">
+          Yes, Add My AI Confidence Session for &pound;50
+          <span aria-hidden="true">&rarr;</span>
+        </a>
+        <p class="skip"><a href="#download-guide">No thanks, I&rsquo;ll use the guide on my own</a></p>
+
+        <div class="guarantee">
+          <span class="support-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 28 28">
+              <path d="M14 3 23 7v7c0 5.7-3.6 9.6-9 11-5.4-1.4-9-5.3-9-11V7l9-4Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <path d="m10 14 3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span><strong>60-day money-back guarantee</strong><span>Try it risk-free. If it&rsquo;s not for you, get a full refund.</span></span>
+        </div>
       </section>
     </main>
   </body>
