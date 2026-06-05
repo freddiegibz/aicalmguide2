@@ -1,368 +1,137 @@
-<!doctype html>
+﻿<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>AI Confidence Kit Upgrade</title>
-    <meta
-      name="description"
-      content="A one-time upgrade for AI Confidence Kit customers."
-    />
-    <!-- Meta Pixel Code -->
-    <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '1988137388462157');
-      fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1988137388462157&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
-    <style>
-      :root {
-        --ink: #071b3f;
-        --navy: #173761;
-        --text: #172033;
-        --muted: #5d6678;
-        --blue: #1e4f87;
-        --blue-deep: #123a68;
-        --paper: #faf8f4;
-        --line: rgba(10, 27, 63, 0.13);
-        --gold-soft: #f7eed2;
-      }
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Made Simple For You Pack</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@300;400;500;600;700;800&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Meta Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
 
-      * {
-        box-sizing: border-box;
-      }
-
-      body {
-        margin: 0;
-        background: var(--paper);
-        color: var(--text);
-        font-family: "Aptos", "Segoe UI", sans-serif;
-      }
-
-      .confirmation {
-        border-bottom: 1px solid rgba(27, 108, 63, 0.16);
-        background: linear-gradient(180deg, #f6fff8 0%, #eefaf2 100%);
-      }
-
-      .confirmation-inner {
-        width: min(100%, 820px);
-        margin: 0 auto;
-        padding: 24px 22px 26px;
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        color: #12492e;
-        font-size: 1.14rem;
-        font-weight: 800;
-        line-height: 1.45;
-      }
-
-      .confirmation-icon {
-        flex: 0 0 auto;
-        width: 48px;
-        height: 48px;
-        border-radius: 999px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        background: #1d9b53;
-        color: #fff;
-        font-size: 1.7rem;
-        font-weight: 900;
-        box-shadow: 0 10px 24px rgba(29, 155, 83, 0.22);
-      }
-
-      .confirmation-copy {
-        display: flex;
-        flex-direction: column;
-        gap: 3px;
-      }
-
-      .confirmation-title {
-        font-size: 1.2rem;
-        font-weight: 900;
-        letter-spacing: -0.01em;
-      }
-
-      .confirmation-subtitle {
-        font-size: 0.98rem;
-        font-weight: 700;
-        color: #2b6748;
-      }
-
-      main {
-        width: min(100%, 820px);
-        margin: 0 auto;
-        padding: 28px 22px 42px;
-      }
-
-      article {
-        padding: clamp(24px, 4vw, 42px);
-        border: 1px solid var(--line);
-        background: #fffdf9;
-        box-shadow: 0 18px 42px rgba(7, 27, 63, 0.07);
-      }
-
-      h2 {
-        margin: 0 0 12px;
-        color: var(--navy);
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(1.55rem, 2.1vw, 2rem);
-        font-weight: 500;
-        line-height: 1.12;
-        letter-spacing: 0;
-      }
-
-      p {
-        margin: 0 0 12px;
-        color: var(--text);
-        font-size: clamp(1rem, 1.2vw, 1.08rem);
-        line-height: 1.55;
-      }
-
-      .short-lines {
-        margin: 16px auto 18px;
-        display: grid;
-        gap: 8px;
-        max-width: 36rem;
-        text-align: left;
-      }
-
-      .short-lines p {
-        position: relative;
-        margin: 0;
-        padding-left: 24px;
-        color: var(--navy);
-        font-weight: 800;
-      }
-
-      .short-lines p::before {
-        content: "";
-        position: absolute;
-        left: 4px;
-        top: 0.68em;
-        width: 8px;
-        height: 8px;
-        border-radius: 999px;
-        background: var(--blue);
-      }
-
-      .divider {
-        height: 1px;
-        margin: 36px 0;
-        background: var(--line);
-      }
-
-      .statement {
-        margin: 26px 0;
-        padding: 24px 26px;
-        border-left: 5px solid var(--blue);
-        background: #eef6fb;
-        color: var(--navy);
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(1.35rem, 2vw, 1.72rem);
-        line-height: 1.42;
-      }
-
-      .price-note {
-        margin-top: 30px;
-        padding: 24px 26px;
-        background: var(--gold-soft);
-        color: #775f17;
-        font-weight: 800;
-      }
-
-      .cta-wrap {
-        margin-top: 20px;
-        padding-top: 4px;
-        text-align: center;
-      }
-
-      .fast-offer {
-        margin: 0;
-        padding: 22px;
-        border: 1px solid rgba(30, 79, 135, 0.13);
-        background: #eef6fb;
-        text-align: center;
-      }
-
-      .fast-offer h2 {
-        margin-bottom: 14px;
-      }
-
-      .fast-offer p {
-        max-width: 42rem;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .fast-offer .cta-wrap {
-        margin-top: 22px;
-      }
-
-      .fast-price {
-        display: inline-block;
-        margin: 2px 0 14px;
-        padding: 8px 13px;
-        background: var(--gold-soft);
-        color: #775f17;
-        font-weight: 900;
-      }
-
-      .benefits-section {
-        margin-top: 8px;
-      }
-
-      .benefits-section h2 {
-        margin-bottom: 22px;
-      }
-
-      .benefits-list {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 14px;
-      }
-
-      .benefit-item {
-        position: relative;
-        padding: 18px 18px 18px 46px;
-        border: 1px solid rgba(30, 79, 135, 0.12);
-        border-radius: 14px;
-        background: linear-gradient(180deg, #ffffff 0%, #f6faff 100%);
-        box-shadow: 0 10px 24px rgba(7, 27, 63, 0.05);
-        color: var(--text);
-        font-size: 1.02rem;
-        line-height: 1.6;
-      }
-
-      .benefit-item::before {
-        content: "";
-        position: absolute;
-        left: 18px;
-        top: 22px;
-        width: 14px;
-        height: 14px;
-        border-radius: 999px;
-        background: linear-gradient(180deg, var(--blue) 0%, var(--blue-deep) 100%);
-        box-shadow: 0 0 0 4px rgba(30, 79, 135, 0.1);
-      }
-
-      .button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-width: min(100%, 360px);
-        min-height: 56px;
-        padding: 0 28px;
-        border-radius: 8px;
-        background: var(--blue);
-        color: #fff;
-        font-size: 1.08rem;
-        font-weight: 800;
-        text-decoration: none;
-        box-shadow: 0 18px 34px rgba(30, 79, 135, 0.24);
-      }
-
-      .button:hover,
-      .button:focus-visible {
-        background: var(--blue-deep);
-      }
-
-      .guarantee {
-        margin-top: 10px;
-        color: var(--muted);
-        font-size: 0.92rem;
-        font-weight: 800;
-      }
-
-      .decline {
-        display: inline-block;
-        margin-top: 10px;
-        color: #6f7786;
-        font-size: 0.9rem;
-        text-underline-offset: 3px;
-      }
-
-      @media (max-width: 640px) {
-        main {
-          padding: 0;
-        }
-
-        article {
-          border: 0;
-          box-shadow: none;
-          padding: 26px 18px 34px;
-        }
-
-        .confirmation-inner {
-          align-items: flex-start;
-          padding: 20px 18px 22px;
-        }
-
-        .confirmation-icon {
-          width: 42px;
-          height: 42px;
-          font-size: 1.45rem;
-        }
-
-        .benefits-list {
-          grid-template-columns: 1fr;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="confirmation">
-      <div class="confirmation-inner">
-        <div class="confirmation-icon" aria-hidden="true">✓</div>
-        <div class="confirmation-copy">
-          <div class="confirmation-title">Purchase confirmed.</div>
-          <div class="confirmation-subtitle">Your AI Confidence Kit order is complete.</div>
-        </div>
+  fbq('init', '1988137388462157');
+  fbq('track', 'PageView');
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1988137388462157&ev=PageView&noscript=1" alt=""/>
+</noscript>
+<!-- End Meta Pixel Code -->
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--paper:#f4f6fb;--card:#fff;--ink:#0d234d;--text:#4f5d70;--muted:#697589;--green:#2f6847;--gold:#f5e8b8;--gold-dark:#a48627;--blue:#1f5a99;--blue-dark:#16477d;--line:rgba(13,35,77,.12)}
+body{font-family:'Outfit',sans-serif;background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased}
+.wrap{width:min(100%,680px);margin:0 auto;padding:22px 18px 42px}
+.confirmed{display:grid;grid-template-columns:56px 1fr;gap:18px;align-items:center;margin-bottom:22px;padding:18px 22px;border:1px solid rgba(47,104,71,.18);border-radius:14px;background:#edf8ef;color:var(--green)}
+.check{width:48px;height:48px;border:4px solid currentColor;border-radius:50%;display:grid;place-items:center;font-size:30px;font-weight:800;line-height:1}
+.confirmed strong{display:block;color:#285e3f;font-size:20px;line-height:1.25}
+.confirmed span{display:block;margin-top:4px;color:#23384f;font-size:17px;line-height:1.35}
+.rule{height:1px;background:var(--line);margin:0 0 28px}
+.eyebrow{display:inline-flex;align-items:center;min-height:42px;padding:0 24px;border-radius:999px;background:var(--gold);color:#967721;font-size:15px;font-weight:800}
+h1{margin:20px 0 22px;color:var(--ink);font-family:Georgia,'Times New Roman',serif;font-size:clamp(48px,10vw,72px);font-weight:500;line-height:.98;letter-spacing:0}
+p{color:var(--text);font-size:21px;line-height:1.48;margin:0 0 20px}
+.intro{max-width:620px}
+.pack-card,.price-card,.guarantee{border:1px solid var(--line);border-radius:14px;background:var(--card);box-shadow:0 12px 30px rgba(13,35,77,.07)}
+.pack-card{margin-top:18px;padding:24px 28px}
+.pack-card h2{color:var(--ink);font-family:Georgia,'Times New Roman',serif;font-size:34px;font-weight:600;line-height:1.05;margin-bottom:14px}
+.features{list-style:none;display:grid;gap:13px}
+.features li{display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:start;color:#2f3c4f;font-size:18px;line-height:1.35}
+.tick{width:22px;height:22px;border-radius:50%;background:var(--gold-dark);color:#fff;display:grid;place-items:center;font-size:15px;font-weight:900;margin-top:1px}
+.card-note{margin-top:16px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:18px;line-height:1.4}
+.price-card{margin-top:14px;padding:20px 28px}
+.price-row{display:grid;grid-template-columns:64px 1fr;gap:18px;align-items:center}
+.badge{width:58px;height:58px;border-radius:50%;background:var(--gold-dark);color:#fff;display:grid;place-items:center;font-size:29px;font-weight:900}
+.offer-title{color:#a48627;font-size:18px;font-weight:800;line-height:1.2}
+.price-line{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:4px}
+.current-price{color:var(--ink);font-family:Georgia,'Times New Roman',serif;font-size:48px;line-height:1}
+.old-price{color:#7a8495;font-size:28px;text-decoration:line-through}
+.save{display:inline-flex;align-items:center;min-height:34px;padding:0 14px;border-radius:9px;background:#f7edcd;color:#9b7b20;font-size:13px;font-weight:900;text-transform:uppercase}
+.price-card p{grid-column:2;margin:14px 0 0;color:var(--text);font-size:18px}
+.btn{display:flex;align-items:center;justify-content:center;margin-top:18px;min-height:72px;padding:0 24px;border-radius:10px;background:var(--blue);color:#fff;text-align:center;text-decoration:none;font-size:28px;font-weight:900;line-height:1.1;box-shadow:0 14px 28px rgba(31,90,153,.22);transition:.18s ease}
+.btn:hover,.btn:focus-visible{background:var(--blue-dark);transform:translateY(-1px)}
+.skip{margin:18px 0 0;text-align:center}
+.skip a{color:#5e6777;font-size:19px;text-decoration:underline;text-underline-offset:4px}
+.guarantee{display:grid;grid-template-columns:58px 1fr;gap:16px;align-items:center;margin-top:20px;padding:16px 22px;background:#edf5ff;border-color:rgba(31,90,153,.16)}
+.shield{width:48px;height:48px;color:var(--ink)}
+.guarantee strong{display:block;color:var(--ink);font-size:20px;line-height:1.2}
+.guarantee span{display:block;margin-top:4px;color:var(--text);font-size:16px;line-height:1.35}
+.footer{margin-top:22px;text-align:center;font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:rgba(13,35,77,.35)}
+@media(max-width:560px){.wrap{padding:18px 14px 34px}.confirmed{grid-template-columns:46px 1fr;padding:14px 16px}.check{width:42px;height:42px;font-size:25px;border-width:3px}.confirmed strong{font-size:18px}.confirmed span{font-size:16px}p{font-size:20px}.pack-card,.price-card{padding:20px}.pack-card h2{font-size:30px}.features li{font-size:17px}.price-row{grid-template-columns:54px 1fr;gap:14px}.badge{width:50px;height:50px;font-size:24px}.current-price{font-size:44px}.old-price{font-size:25px}.price-card p{grid-column:1 / -1;font-size:17px}.btn{min-height:66px;font-size:24px}.guarantee{grid-template-columns:50px 1fr;padding:15px 16px}.shield{width:44px;height:44px}}
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="confirmed">
+      <div class="check" aria-hidden="true">✓</div>
+      <div>
+        <strong>Your guide order is confirmed.</strong>
+        <span>You&rsquo;ve taken the first step.</span>
       </div>
     </div>
-    <main>
-      <article>
-        <section class="fast-offer">
-          <h2>You now know what AI is and how to start using it confidently.</h2>
-          <div class="fast-price">Normally &pound;74. Today: &pound;12.</div>
-          <p>
-            But most beginners still hit one problem: they do not always know where AI is actually useful in real life.
-          </p>
-          <p>
-            So even with understanding and guidance, they still underuse it.
-          </p>
-          <p>
-            That is why I created the AI Everyday Use-Case Library.
-          </p>
-          <p>
-            A simple collection of real-world examples that show you when AI is actually useful across life, work, money, health, admin, and decisions.
-          </p>
 
-          <div class="short-lines">
-            <p>See when AI can help</p>
-            <p>Know what to ask</p>
-            <p>See what good output looks like</p>
-            <p>Make tasks quicker, simpler, and less stressful</p>
-          </div>
+    <div class="rule" aria-hidden="true"></div>
 
-          <div class="cta-wrap">
-            <a class="button" href="https://buy.stripe.com/00wfZgbj550g0U831EbZe0L" data-upgrade-checkout>Add This To My Order &mdash; &pound;12</a>
-            <div class="guarantee">Instant access &middot; Beginner-friendly &middot; One-time offer</div>
-            <a class="decline" href="thank-you.html">No thanks, I&rsquo;ll stick with the AI Confidence Kit for now.</a>
+    <section aria-label="Personalised add-on offer">
+      <div class="eyebrow">Personalised Add-On</div>
+      <h1>Now make AI simple for you.</h1>
+
+      <div class="intro">
+        <p>You&rsquo;ve got the guide. Now you can make the next step much easier.</p>
+        <p>Instead of trying to work out where AI fits into your life, we&rsquo;ll build a simple AI plan around your real situations.</p>
+        <p>You answer a short questionnaire, and we turn it into a personalised pack that shows you what to use AI for, what to ask, and where to start.</p>
+      </div>
+
+      <div class="pack-card">
+        <h2>AI Made Simple For You Pack</h2>
+        <ul class="features">
+          <li><span class="tick" aria-hidden="true">✓</span><span>Your personalised AI use-case map</span></li>
+          <li><span class="tick" aria-hidden="true">✓</span><span>Ready-to-use prompts written around your real situations</span></li>
+          <li><span class="tick" aria-hidden="true">✓</span><span>Simple workflows for work, personal life, or business</span></li>
+          <li><span class="tick" aria-hidden="true">✓</span><span>A clear &lsquo;start here&rsquo; page so you know what to do first</span></li>
+          <li><span class="tick" aria-hidden="true">✓</span><span>A 7-day action plan to help you use AI without trial and error</span></li>
+        </ul>
+        <div class="card-note">Built from your answers. Made for beginners. Clear, practical, and ready to use.</div>
+      </div>
+
+      <div class="price-card">
+        <div class="price-row">
+          <div class="badge" aria-hidden="true">★</div>
+          <div>
+            <div class="offer-title">Special launch offer</div>
+            <div class="price-line">
+              <span class="current-price">&pound;27</span>
+              <span class="old-price">&pound;67</span>
+              <span class="save">Save &pound;40 today</span>
+            </div>
           </div>
-        </section>
-      </article>
-    </main>
-  </body>
+          <p>We&rsquo;ll create it for you based on a short questionnaire, so you do not have to figure it out yourself.</p>
+        </div>
+      </div>
+
+      <a class="btn" href="https://buy.stripe.com/eVq28qdrd8cs7iw6dQbZe0T">Add it to my order for &pound;27</a>
+
+      <p class="skip"><a href="thank-you.html">No thanks, I&rsquo;ll skip this</a></p>
+
+      <div class="guarantee">
+        <svg class="shield" viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M32 6 54 15v16c0 13.5-8.8 22.7-22 27-13.2-4.3-22-13.5-22-27V15L32 6Z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+          <path d="m22 32 7 7 14-16" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div>
+          <strong>60-day money-back guarantee</strong>
+          <span>Try it risk-free. If it&rsquo;s not for you, get a full refund.</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">&copy; 2026 AIConfidenceKit. All rights reserved.</div>
+  </main>
+</body>
 </html>
