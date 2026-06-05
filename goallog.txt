@@ -1,0 +1,12 @@
+AI Confidence Kit Goal Log
+==========================
+
+Use this file to record completed goals so progress compounds visibly over time.
+
+Format:
+[YYYY-MM-DD] Complete - Goal name
+Notes: Short note on what changed, shipped, learned, or unlocked.
+
+Completed Goals
+---------------
+
