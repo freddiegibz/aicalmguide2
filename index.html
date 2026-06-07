@@ -1563,6 +1563,21 @@
           window.location.href = addBump && addBump.checked ? bumpCheckoutHref : baseCheckoutHref;
         }
 
+        function updateBumpCta() {
+          var addBump = document.getElementById("order-bump-checkbox");
+          var cta = document.querySelector("[data-bump-go-checkout]");
+          var total = document.querySelector("[data-bump-total]");
+          var hasBump = !addBump || addBump.checked;
+
+          if (cta) {
+            cta.textContent = hasBump ? "Continue to checkout - \u00a326.50" : "Continue to checkout - \u00a319";
+          }
+
+          if (total) {
+            total.textContent = hasBump ? "\u00a326.50 today" : "\u00a319 today";
+          }
+        }
+
         document.addEventListener("click", function (event) {
           var checkout = event.target.closest("[data-direct-checkout]");
           if (checkout) {
@@ -1598,11 +1613,19 @@
           }
         });
 
+        document.addEventListener("change", function (event) {
+          if (event.target && event.target.id === "order-bump-checkbox") {
+            updateBumpCta();
+          }
+        });
+
         document.addEventListener("keydown", function (event) {
           if (event.key === "Escape") {
             closeBumpModal();
           }
         });
+
+        updateBumpCta();
       })();
 
     </script>
@@ -1625,10 +1648,10 @@
             </label>
             <div class="bump-price-row">
               <span>Total today</span>
-              <span class="bump-total">&pound;26.50 with add-on / &pound;19 without</span>
+              <span class="bump-total" data-bump-total>&pound;26.50 today</span>
             </div>
             <div class="bump-modal-actions">
-              <a class="button" href="#" data-bump-go-checkout>Continue to checkout</a>
+              <a class="button" href="#" data-bump-go-checkout>Continue to checkout - &pound;26.50</a>
               <button class="button-secondary" type="button" data-bump-close>Go back</button>
             </div>
             <div class="bump-modal-note">Untick the box if you only want the AI Confidence Kit.</div>
