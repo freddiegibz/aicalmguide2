@@ -1330,8 +1330,8 @@
         display: none;
         align-items: center;
         justify-content: center;
-        padding: 20px;
-        background: rgba(7, 27, 63, 0.55);
+        padding: 18px;
+        background: rgba(7, 27, 63, 0.48);
       }
 
       .bump-modal[aria-hidden="false"] {
@@ -1339,17 +1339,17 @@
       }
 
       .bump-modal-panel {
-        width: min(520px, 100%);
-        border: 1px solid rgba(7, 27, 63, 0.16);
-        border-radius: 14px;
+        width: min(480px, 100%);
+        border: 1px solid rgba(7, 27, 63, 0.12);
+        border-radius: 12px;
         background: #fffdf9;
-        box-shadow: 0 30px 80px rgba(7, 27, 63, 0.22);
+        box-shadow: 0 24px 60px rgba(7, 27, 63, 0.2);
         overflow: hidden;
       }
 
       .bump-modal-head {
-        padding: 18px 20px 12px;
-        background: linear-gradient(180deg, #eef6fb 0%, #fffdf9 100%);
+        padding: 20px 22px 12px;
+        background: #fffdf9;
         border-bottom: 1px solid rgba(7, 27, 63, 0.1);
       }
 
@@ -1357,52 +1357,52 @@
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        padding: 6px 10px;
+        padding: 5px 9px;
         border-radius: 999px;
-        background: rgba(20, 104, 196, 0.08);
+        background: var(--gold-soft);
         color: var(--navy);
         font-weight: 800;
-        font-size: 0.82rem;
+        font-size: 0.78rem;
         letter-spacing: 0.01em;
       }
 
       .bump-modal-title {
-        margin: 12px 0 0;
+        margin: 10px 42px 0 0;
         color: var(--navy);
         font-family: Georgia, "Times New Roman", serif;
-        font-size: 1.65rem;
+        font-size: 1.48rem;
         font-weight: 500;
-        line-height: 1.15;
+        line-height: 1.18;
       }
 
       .bump-modal-body {
-        padding: 18px 20px 22px;
+        padding: 16px 22px 22px;
         color: var(--text);
       }
 
       .bump-modal-body p {
-        margin: 0 0 12px;
+        margin: 0 0 10px;
         color: #3e4a5c;
-        font-size: 1rem;
-        line-height: 1.6;
+        font-size: 0.98rem;
+        line-height: 1.5;
       }
 
       .bump-choice {
         display: grid;
-        grid-template-columns: 28px 1fr;
-        gap: 12px;
+        grid-template-columns: 26px 1fr;
+        gap: 11px;
         align-items: start;
-        margin: 14px 0;
-        padding: 14px;
-        border-radius: 12px;
+        margin: 12px 0;
+        padding: 13px;
+        border-radius: 10px;
         border: 1px solid rgba(20, 104, 196, 0.22);
         background: #f4f9ff;
         cursor: pointer;
       }
 
       .bump-choice input {
-        width: 22px;
-        height: 22px;
+        width: 21px;
+        height: 21px;
         margin: 2px 0 0;
         accent-color: var(--blue);
         cursor: pointer;
@@ -1411,7 +1411,7 @@
       .bump-choice strong {
         display: block;
         color: var(--navy);
-        font-size: 1rem;
+        font-size: 0.98rem;
         font-weight: 900;
       }
 
@@ -1419,41 +1419,47 @@
         display: inline-block;
         margin-top: 4px;
         color: #4d596c;
-        font-size: 0.94rem;
-        line-height: 1.45;
+        font-size: 0.9rem;
+        line-height: 1.42;
       }
 
       .bump-price-row {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         gap: 16px;
-        margin: 12px 0 0;
-        padding-top: 12px;
-        border-top: 1px solid rgba(7, 27, 63, 0.1);
+        margin: 10px 0 0;
+        padding: 10px 12px;
+        border-radius: 10px;
+        background: #f7f8fc;
+        border: 1px solid rgba(7, 27, 63, 0.08);
         color: #4d596c;
         font-weight: 800;
       }
 
       .bump-total {
         color: var(--navy);
-        font-size: 1.1rem;
+        font-size: 1rem;
         font-weight: 900;
+        text-align: right;
       }
 
       .bump-modal-actions {
         display: flex;
         gap: 10px;
         flex-wrap: wrap;
-        margin-top: 14px;
+        margin-top: 12px;
       }
 
       .bump-modal-actions .button {
         width: 100%;
+        min-height: 54px;
       }
 
       .bump-modal-actions .button-secondary {
         width: 100%;
-        padding: 16px 18px;
+        min-height: 46px;
+        padding: 0 18px;
         border-radius: 8px;
         border: 1px solid rgba(7, 27, 63, 0.16);
         background: transparent;
@@ -1463,9 +1469,9 @@
 
       .bump-modal-close {
         position: absolute;
-        inset: 14px 14px auto auto;
-        width: 40px;
-        height: 40px;
+        inset: 12px 12px auto auto;
+        width: 34px;
+        height: 34px;
         border-radius: 999px;
         border: 1px solid rgba(7, 27, 63, 0.16);
         background: rgba(255, 255, 255, 0.9);
@@ -1478,9 +1484,41 @@
       }
 
       .bump-modal-note {
-        margin-top: 10px;
+        margin-top: 9px;
         color: #6a778d;
-        font-size: 0.9rem;
+        font-size: 0.86rem;
+        line-height: 1.4;
+      }
+
+      @media (max-width: 520px) {
+        .bump-modal {
+          align-items: end;
+          padding: 10px;
+        }
+
+        .bump-modal-panel {
+          border-radius: 12px;
+        }
+
+        .bump-modal-head,
+        .bump-modal-body {
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+
+        .bump-modal-title {
+          font-size: 1.34rem;
+        }
+
+        .bump-price-row {
+          display: block;
+        }
+
+        .bump-total {
+          display: block;
+          margin-top: 3px;
+          text-align: left;
+        }
       }
     </style>
   </head>
@@ -1617,7 +1655,7 @@
                   A calm, practical kit that shows you exactly where to start with AI, how to get genuinely useful answers, make everyday tasks easier, and spot when images or content online may be AI-made or fake.
                 </p>
                 <div class="actions">
-                  <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-direct-checkout>Get Instant Access</a>
+                  <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-direct-checkout>Get Instant Access - &pound;19</a>
                 </div>
                 <p class="note">Instant download. 60-day money-back guarantee.</p>
               </div>
@@ -1745,7 +1783,7 @@
         <div class="final-cta-inner" id="get-instant-access">
           <h2>Get Instant Access</h2>
           <p>Get the calm starting point most AI explanations skip. In one short kit, you can understand what AI is, how to make it useful in everyday life, and how to feel clearer about what to trust.</p>
-          <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-direct-checkout>Get Instant Access</a>
+          <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-direct-checkout>Get Instant Access - &pound;19</a>
           <p class="checkout-note">Instant download. 60-day money-back guarantee.</p>
         </div>
       </section>
