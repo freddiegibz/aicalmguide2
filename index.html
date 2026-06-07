@@ -1497,177 +1497,103 @@
       });
 
       (function () {
-        var pendingCheckoutHref = null;
+        var baseCheckoutHref = null;
+        var bumpCheckoutHref = "https://buy.stripe.com/28EeVc72PfEUbyM9q2bZe0b";
 
-        function openSaleModal() {
-          var modal = document.getElementById("sale-modal");
-          if (!modal) return false;
-          modal.setAttribute("aria-hidden", "false");
+        function modal() {
+          return document.getElementById("bump-modal");
+        }
+
+        function openBumpModal() {
+          var bumpModal = modal();
+          if (!bumpModal) return false;
+          bumpModal.setAttribute("aria-hidden", "false");
           document.documentElement.style.overflow = "hidden";
           return true;
         }
 
-        function closeSaleModal() {
-          var modal = document.getElementById("sale-modal");
-          if (!modal) return;
-          modal.setAttribute("aria-hidden", "true");
+        function closeBumpModal() {
+          var bumpModal = modal();
+          if (!bumpModal) return;
+          bumpModal.setAttribute("aria-hidden", "true");
           document.documentElement.style.overflow = "";
         }
 
         function goToCheckout() {
-          if (!pendingCheckoutHref) return;
-          window.location.href = pendingCheckoutHref;
+          if (!baseCheckoutHref) return;
+          var addBump = document.getElementById("order-bump-checkbox");
+          window.location.href = addBump && addBump.checked ? bumpCheckoutHref : baseCheckoutHref;
         }
 
         document.addEventListener("click", function (event) {
           var checkout = event.target.closest("[data-direct-checkout]");
           if (checkout) {
             event.preventDefault();
-            pendingCheckoutHref = checkout.href;
+            baseCheckoutHref = checkout.href;
             if (typeof fbq === "function") {
               fbq("track", "InitiateCheckout");
             }
-            if (!openSaleModal()) {
+            if (!openBumpModal()) {
               goToCheckout();
             }
             return;
           }
 
-          var goBtn = event.target.closest("[data-sale-go-checkout]");
+          var goBtn = event.target.closest("[data-bump-go-checkout]");
           if (goBtn) {
             event.preventDefault();
-            closeSaleModal();
+            closeBumpModal();
             window.setTimeout(goToCheckout, 50);
             return;
           }
-        });
-      })();
 
-      (function () {
-        var MODAL_ID = "sale-modal";
-        var SESSION_KEY = "sale_modal_shown";
-        var SALE_CODE = "EARLY50";
-
-        function el(id) {
-          return document.getElementById(id);
-        }
-
-        function openModal() {
-          var modal = el(MODAL_ID);
-          if (!modal) return;
-          modal.setAttribute("aria-hidden", "false");
-          document.documentElement.style.overflow = "hidden";
-        }
-
-        function closeModal() {
-          var modal = el(MODAL_ID);
-          if (!modal) return;
-          modal.setAttribute("aria-hidden", "true");
-          document.documentElement.style.overflow = "";
-        }
-
-        function markShown() {
-          try { sessionStorage.setItem(SESSION_KEY, "1"); } catch (e) {}
-        }
-
-        function wasShown() {
-          try { return sessionStorage.getItem(SESSION_KEY) === "1"; } catch (e) { return false; }
-        }
-
-        function setStatus(text) {
-          var status = el("sale-copy-status");
-          if (status) status.textContent = text || "";
-        }
-
-        async function copyCode() {
-          try {
-            if (navigator.clipboard && navigator.clipboard.writeText) {
-              await navigator.clipboard.writeText(SALE_CODE);
-              setStatus("Copied to clipboard.");
-              return;
-            }
-          } catch (e) {}
-
-          var ta = document.createElement("textarea");
-          ta.value = SALE_CODE;
-          ta.setAttribute("readonly", "");
-          ta.style.position = "fixed";
-          ta.style.left = "-9999px";
-          document.body.appendChild(ta);
-          ta.select();
-          try {
-            document.execCommand("copy");
-            setStatus("Copied to clipboard.");
-          } catch (e) {
-            setStatus("Copy failed. Please copy it manually from the box above.");
-          }
-          document.body.removeChild(ta);
-        }
-
-        document.addEventListener("click", function (event) {
-          var closeBtn = event.target.closest("[data-sale-close]");
+          var closeBtn = event.target.closest("[data-bump-close]");
           if (closeBtn) {
             event.preventDefault();
-            closeModal();
-            markShown();
+            closeBumpModal();
             return;
           }
 
-          var copyBtn = event.target.closest("[data-sale-copy]");
-          if (copyBtn) {
-            event.preventDefault();
-            copyCode();
-            return;
-          }
-
-          var continueBtn = event.target.closest("[data-sale-continue]");
-          if (continueBtn) {
-            markShown();
-          }
-
-          var modal = el(MODAL_ID);
-          if (modal && event.target === modal) {
-            closeModal();
-            markShown();
+          var bumpModal = modal();
+          if (bumpModal && event.target === bumpModal) {
+            closeBumpModal();
           }
         });
 
         document.addEventListener("keydown", function (event) {
           if (event.key === "Escape") {
-            closeModal();
-            markShown();
+            closeBumpModal();
           }
         });
       })();
 
     </script>
-    <div class="sale-modal" id="sale-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="sale-modal-title">
-      <div class="sale-modal-wrap">
-        <button class="sale-modal-close" type="button" data-sale-close aria-label="Close">✕</button>
-        <div class="sale-modal-panel" role="document">
-          <div class="sale-modal-head">
-            <div class="sale-modal-kicker">Limited-time code</div>
-            <div class="sale-modal-title" id="sale-modal-title">Your 50% discount code</div>
+    <div class="bump-modal" id="bump-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="bump-modal-title">
+      <div class="bump-modal-wrap">
+        <button class="bump-modal-close" type="button" data-bump-close aria-label="Close">✕</button>
+        <div class="bump-modal-panel" role="document">
+          <div class="bump-modal-head">
+            <div class="bump-modal-kicker">Optional add-on</div>
+            <div class="bump-modal-title" id="bump-modal-title">Want the messages already written for you?</div>
           </div>
-          <div class="sale-modal-body">
-            <p>Copy your code below and paste it at checkout.</p>
-            <div class="sale-modal-price" aria-label="Discounted price">
-              <span class="was">&pound;19</span>
-              <span class="now">&pound;9.50</span>
-              <span class="badge">50% off</span>
-            </div>
-            <div class="sale-code">
+          <div class="bump-modal-body">
+            <p>Add 100 ready-to-use messages for everyday situations, so you are not staring at a blank box wondering what to type.</p>
+            <label class="bump-choice" for="order-bump-checkbox">
+              <input id="order-bump-checkbox" type="checkbox" checked />
               <div>
-                <strong>Discount code</strong>
-                <code id="sale-code-text">EARLY50</code>
+                <strong>Add the message pack for &pound;7.50</strong>
+                <span>Useful for emails and messages, everyday admin, decisions, safety checks, and shopping or money questions.</span>
               </div>
-              <button class="button-secondary" type="button" data-sale-copy>Copy code</button>
+            </label>
+            <div class="bump-price-row">
+              <span>Total today</span>
+              <span class="bump-total">&pound;26.50 with add-on / &pound;19 without</span>
             </div>
-            <div class="sale-modal-actions">
-              <a class="button" href="#" data-sale-go-checkout data-sale-continue>Continue to checkout</a>
-              <button class="button-secondary" type="button" data-sale-close>Not now</button>
+            <div class="bump-modal-actions">
+              <a class="button" href="#" data-bump-go-checkout>Continue to checkout</a>
+              <button class="button-secondary" type="button" data-bump-close>Go back</button>
             </div>
-            <div class="sale-modal-note" id="sale-copy-status" aria-live="polite"></div>
+            <div class="bump-modal-note">Untick the box if you only want the AI Confidence Kit.</div>
           </div>
         </div>
       </div>
