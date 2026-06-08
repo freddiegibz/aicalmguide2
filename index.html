@@ -81,6 +81,7 @@
       }
 
       h1,
+      .guide-inside-heading,
       .story-heading,
       .now-heading,
       .clarity-heading,
@@ -141,6 +142,102 @@
         font-size: 0.92rem;
         text-decoration-thickness: 1px;
         text-underline-offset: 3px;
+      }
+
+      .guide-inside {
+        background: #f7f8fc;
+        border-bottom: 1px solid rgba(23, 55, 97, 0.1);
+      }
+
+      .guide-inside-inner {
+        width: min(100%, 980px);
+        margin: 0 auto;
+        padding: 72px 32px 84px;
+      }
+
+      .guide-inside-card {
+        padding: clamp(28px, 5vw, 56px);
+        border-radius: 10px;
+        background: #ffffff;
+        box-shadow: 0 18px 42px rgba(23, 55, 97, 0.07);
+      }
+
+      .guide-inside-badge {
+        display: inline-flex;
+        align-items: center;
+        min-height: 38px;
+        padding: 0 18px;
+        border-radius: 999px;
+        background: var(--gold-soft);
+        color: #91792a;
+        font-size: 0.95rem;
+        font-weight: 800;
+      }
+
+      .guide-inside-heading {
+        margin: 26px 0 0;
+        font-size: clamp(2.35rem, 5vw, 4.25rem);
+        line-height: 1.06;
+      }
+
+      .guide-inside-subhead {
+        margin: 24px 0 0;
+        max-width: 46rem;
+        color: var(--muted);
+        font-size: clamp(1.06rem, 1.6vw, 1.32rem);
+        line-height: 1.65;
+      }
+
+      .guide-list {
+        display: grid;
+        gap: 14px;
+        margin: 38px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .guide-list li {
+        display: grid;
+        grid-template-columns: 58px 1fr;
+        gap: 18px;
+        align-items: center;
+        min-height: 82px;
+        padding: 18px 22px;
+        border: 1px solid rgba(23, 55, 97, 0.12);
+        border-radius: 10px;
+        background: #fffdf9;
+        box-shadow: 0 10px 24px rgba(23, 55, 97, 0.04);
+        color: var(--navy);
+        font-size: clamp(1rem, 1.4vw, 1.2rem);
+        line-height: 1.32;
+      }
+
+      .guide-check {
+        width: 50px;
+        height: 50px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: #fbf5e3;
+        color: var(--navy);
+        font-size: 1.42rem;
+        font-weight: 900;
+      }
+
+      .guide-inside-actions {
+        margin-top: 34px;
+        text-align: center;
+      }
+
+      .guide-inside-actions .button {
+        width: min(100%, 560px);
+        min-height: 64px;
+        font-size: 1.05rem;
+      }
+
+      .guide-inside-actions .checkout-note {
+        margin: 18px 0 0;
+        color: var(--muted) !important;
       }
 
       .hero-inner {
@@ -1323,6 +1420,173 @@
         }
       }
 
+      .sale-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 10000;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 18px;
+        background: rgba(7, 27, 63, 0.5);
+      }
+
+      .sale-modal[aria-hidden="false"] {
+        display: flex;
+      }
+
+      .sale-modal-wrap {
+        position: relative;
+      }
+
+      .sale-modal-panel {
+        width: min(480px, 100%);
+        border: 1px solid rgba(7, 27, 63, 0.12);
+        border-radius: 12px;
+        background: #fffdf9;
+        box-shadow: 0 24px 60px rgba(7, 27, 63, 0.22);
+        overflow: hidden;
+      }
+
+      .sale-modal-head {
+        padding: 20px 22px 12px;
+        border-bottom: 1px solid rgba(7, 27, 63, 0.1);
+        background: #fffdf9;
+      }
+
+      .sale-modal-kicker {
+        display: inline-flex;
+        padding: 5px 9px;
+        border-radius: 999px;
+        background: rgba(29, 155, 83, 0.12);
+        color: #12492e;
+        font-size: 0.78rem;
+        font-weight: 900;
+      }
+
+      .sale-modal-title {
+        margin: 10px 42px 0 0;
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.48rem;
+        font-weight: 500;
+        line-height: 1.18;
+      }
+
+      .sale-modal-body {
+        padding: 16px 22px 22px;
+      }
+
+      .sale-modal-body p {
+        margin: 0 0 12px;
+        color: #3e4a5c;
+        font-size: 0.98rem;
+        line-height: 1.5;
+      }
+
+      .sale-price-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 12px 0;
+        padding: 12px;
+        border: 1px solid rgba(7, 27, 63, 0.08);
+        border-radius: 10px;
+        background: #f7f8fc;
+      }
+
+      .sale-price-row .was {
+        color: #6a778d;
+        font-weight: 800;
+        text-decoration: line-through;
+      }
+
+      .sale-price-row .now {
+        color: var(--navy);
+        font-size: 1.28rem;
+        font-weight: 900;
+      }
+
+      .sale-price-row .badge {
+        margin-left: auto;
+        padding: 4px 8px;
+        border-radius: 999px;
+        background: var(--gold-soft);
+        color: #7c6620;
+        font-size: 0.76rem;
+        font-weight: 900;
+      }
+
+      .sale-code-box {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 10px;
+        align-items: center;
+        padding: 12px;
+        border: 1px solid rgba(20, 104, 196, 0.16);
+        border-radius: 10px;
+        background: #f4f9ff;
+      }
+
+      .sale-code-box strong {
+        display: block;
+        color: #4d596c;
+        font-size: 0.76rem;
+        font-weight: 900;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      .sale-code-box code {
+        display: inline-block;
+        margin-top: 4px;
+        color: var(--navy);
+        font-size: 1.08rem;
+        font-weight: 900;
+        letter-spacing: 0.06em;
+      }
+
+      .sale-modal-actions {
+        display: grid;
+        gap: 10px;
+        margin-top: 12px;
+      }
+
+      .sale-modal-actions .button {
+        width: 100%;
+        min-height: 54px;
+      }
+
+      .sale-modal-actions .button-secondary {
+        min-height: 46px;
+        padding: 0 18px;
+        border: 1px solid rgba(7, 27, 63, 0.16);
+        border-radius: 8px;
+        background: transparent;
+        color: #4f5d72;
+        font-weight: 800;
+      }
+
+      .sale-modal-close {
+        position: absolute;
+        inset: 12px 12px auto auto;
+        width: 34px;
+        height: 34px;
+        border: 1px solid rgba(7, 27, 63, 0.16);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.9);
+        color: var(--navy);
+        cursor: pointer;
+      }
+
+      .sale-modal-note {
+        min-height: 18px;
+        margin-top: 9px;
+        color: #6a778d;
+        font-size: 0.86rem;
+        line-height: 1.4;
+      }
+
       .bump-modal {
         position: fixed;
         inset: 0;
@@ -1537,9 +1801,15 @@
       (function () {
         var baseCheckoutHref = null;
         var bumpCheckoutHref = "https://buy.stripe.com/28EeVc72PfEUbyM9q2bZe0b";
+        var saleCode = "EARLY50";
+        var useTemporarySaleModal = true;
 
         function modal() {
           return document.getElementById("bump-modal");
+        }
+
+        function saleModal() {
+          return document.getElementById("sale-modal");
         }
 
         function openBumpModal() {
@@ -1554,6 +1824,21 @@
           var bumpModal = modal();
           if (!bumpModal) return;
           bumpModal.setAttribute("aria-hidden", "true");
+          document.documentElement.style.overflow = "";
+        }
+
+        function openSaleModal() {
+          var modalEl = saleModal();
+          if (!modalEl) return false;
+          modalEl.setAttribute("aria-hidden", "false");
+          document.documentElement.style.overflow = "hidden";
+          return true;
+        }
+
+        function closeSaleModal() {
+          var modalEl = saleModal();
+          if (!modalEl) return;
+          modalEl.setAttribute("aria-hidden", "true");
           document.documentElement.style.overflow = "";
         }
 
@@ -1578,6 +1863,23 @@
           }
         }
 
+        function setSaleStatus(text) {
+          var status = document.getElementById("sale-copy-status");
+          if (status) status.textContent = text || "";
+        }
+
+        async function copySaleCode() {
+          try {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              await navigator.clipboard.writeText(saleCode);
+              setSaleStatus("Copied.");
+              return;
+            }
+          } catch (e) {}
+
+          setSaleStatus("Please copy the code manually.");
+        }
+
         document.addEventListener("click", function (event) {
           var checkout = event.target.closest("[data-direct-checkout]");
           if (checkout) {
@@ -1586,9 +1888,34 @@
             if (typeof fbq === "function") {
               fbq("track", "InitiateCheckout");
             }
+            if (useTemporarySaleModal && openSaleModal()) {
+              return;
+            }
             if (!openBumpModal()) {
               goToCheckout();
             }
+            return;
+          }
+
+          var saleGoBtn = event.target.closest("[data-sale-go-checkout]");
+          if (saleGoBtn) {
+            event.preventDefault();
+            closeSaleModal();
+            window.setTimeout(goToCheckout, 50);
+            return;
+          }
+
+          var saleCloseBtn = event.target.closest("[data-sale-close]");
+          if (saleCloseBtn) {
+            event.preventDefault();
+            closeSaleModal();
+            return;
+          }
+
+          var saleCopyBtn = event.target.closest("[data-sale-copy]");
+          if (saleCopyBtn) {
+            event.preventDefault();
+            copySaleCode();
             return;
           }
 
@@ -1611,6 +1938,11 @@
           if (bumpModal && event.target === bumpModal) {
             closeBumpModal();
           }
+
+          var saleModalEl = saleModal();
+          if (saleModalEl && event.target === saleModalEl) {
+            closeSaleModal();
+          }
         });
 
         document.addEventListener("change", function (event) {
@@ -1622,6 +1954,7 @@
         document.addEventListener("keydown", function (event) {
           if (event.key === "Escape") {
             closeBumpModal();
+            closeSaleModal();
           }
         });
 
@@ -1629,6 +1962,37 @@
       })();
 
     </script>
+    <div class="sale-modal" id="sale-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="sale-modal-title">
+      <div class="sale-modal-wrap">
+        <button class="sale-modal-close" type="button" data-sale-close aria-label="Close">✕</button>
+        <div class="sale-modal-panel" role="document">
+          <div class="sale-modal-head">
+            <div class="sale-modal-kicker">Temporary launch sale</div>
+            <div class="sale-modal-title" id="sale-modal-title">Use this code to get 50% off today.</div>
+          </div>
+          <div class="sale-modal-body">
+            <p>Copy the code below, then paste it at checkout to get the AI Confidence Kit for &pound;9.50.</p>
+            <div class="sale-price-row" aria-label="Discounted price">
+              <span class="was">&pound;19</span>
+              <span class="now">&pound;9.50</span>
+              <span class="badge">Save 50%</span>
+            </div>
+            <div class="sale-code-box">
+              <div>
+                <strong>Discount code</strong>
+                <code>EARLY50</code>
+              </div>
+              <button class="button-secondary" type="button" data-sale-copy>Copy</button>
+            </div>
+            <div class="sale-modal-actions">
+              <a class="button" href="#" data-sale-go-checkout>Continue to checkout</a>
+              <button class="button-secondary" type="button" data-sale-close>Not now</button>
+            </div>
+            <div class="sale-modal-note" id="sale-copy-status" aria-live="polite"></div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="bump-modal" id="bump-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="bump-modal-title">
       <div class="bump-modal-wrap">
         <button class="bump-modal-close" type="button" data-bump-close aria-label="Close">✕</button>
