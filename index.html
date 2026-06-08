@@ -218,19 +218,103 @@
       }
 
       .guide-inside-actions {
-        margin-top: 34px;
-        text-align: center;
+        margin-top: 30px;
       }
 
       .guide-inside-actions .button {
-        width: min(100%, 560px);
-        min-height: 64px;
-        font-size: 1.05rem;
+        min-height: 48px;
+        padding: 0 22px;
+        font-size: 0.95rem;
       }
 
       .guide-inside-actions .checkout-note {
-        margin: 18px 0 0;
+        margin: 12px 0 0;
         color: var(--muted) !important;
+        font-size: 0.9rem !important;
+      }
+
+      .beginner-fit {
+        background: var(--section-warm);
+        border-bottom: 1px solid rgba(23, 55, 97, 0.1);
+      }
+
+      .beginner-fit-inner {
+        width: min(100%, 1140px);
+        margin: 0 auto;
+        padding: 72px 32px 86px;
+      }
+
+      .beginner-fit-badge {
+        display: inline-flex;
+        align-items: center;
+        min-height: 38px;
+        padding: 0 18px;
+        border-radius: 999px;
+        background: var(--gold-soft);
+        color: #91792a;
+        font-size: 0.95rem;
+        font-weight: 800;
+      }
+
+      .beginner-fit-heading {
+        margin: 24px 0 0;
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(2.2rem, 4.2vw, 3.45rem);
+        font-weight: 500;
+        line-height: 1.08;
+        letter-spacing: 0;
+      }
+
+      .beginner-fit-copy {
+        margin: 24px 0 0;
+        max-width: 58rem;
+        color: var(--text);
+        font-size: 1.12rem;
+        line-height: 1.72;
+      }
+
+      .beginner-fit-copy p {
+        margin: 0 0 18px;
+      }
+
+      .beginner-list {
+        display: grid;
+        gap: 14px;
+        margin: 34px 0 0;
+        padding: 0;
+        list-style: none;
+        max-width: 58rem;
+      }
+
+      .beginner-list li {
+        position: relative;
+        padding: 16px 18px 16px 48px;
+        border: 1px solid rgba(23, 55, 97, 0.12);
+        border-radius: 10px;
+        background: var(--cream-card);
+        box-shadow: 0 12px 28px rgba(23, 55, 97, 0.05);
+        color: var(--text);
+        font-size: 1.04rem;
+        line-height: 1.45;
+      }
+
+      .beginner-list li::before {
+        content: "✓";
+        position: absolute;
+        top: 15px;
+        left: 18px;
+        color: var(--navy);
+        font-weight: 900;
+      }
+
+      .beginner-fit-close {
+        margin-top: 34px;
+        max-width: 58rem;
+        color: var(--navy);
+        font-size: 1.14rem;
+        font-weight: 800;
+        line-height: 1.6;
       }
 
       .hero-inner {
@@ -2063,6 +2147,27 @@
             <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-direct-checkout>Get Instant Access</a>
             <p class="checkout-note">Instant download. 60-day money-back guarantee.</p>
           </div>
+        </div>
+      </section>
+
+      <section class="beginner-fit punch-section" aria-label="Made for beginners">
+        <div class="beginner-fit-inner">
+          <div class="beginner-fit-badge">For beginners</div>
+          <h2 class="beginner-fit-heading">Made For Beginners, Not Tech Experts</h2>
+          <div class="beginner-fit-copy">
+            <p>You do not need to understand complicated AI terms, prompts, tools, or technical settings before this guide makes sense.</p>
+            <p>It is written to help you start from the beginning, in plain English, with simple examples you can use in normal everyday life.</p>
+          </div>
+          <ul class="beginner-list">
+            <li>No technical knowledge needed</li>
+            <li>No confusing jargon</li>
+            <li>No complicated setup</li>
+            <li>No assumption that you already understand AI</li>
+            <li>Simple explanations you can follow at your own pace</li>
+          </ul>
+          <p class="beginner-fit-close">
+            This is for people who want AI explained clearly enough to actually use it, without feeling silly, rushed, or left behind.
+          </p>
         </div>
       </section>
 
