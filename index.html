@@ -3,22 +3,22 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>AI finally explained in plain English</title>
+    <title>Still feel lost with AI? | AI Confidence Kit</title>
     <meta
       name="description"
-      content="AI finally explained in plain English."
+      content="A calm, plain-English AI guide for beginners who want to use AI confidently in everyday life."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="AI finally explained in plain English" />
+    <meta property="og:title" content="Still feel lost with AI?" />
     <meta
       property="og:description"
-      content="A simple plain-English guide to help adults 50+ understand AI, use it in real life, and know what not to trust."
+      content="A calm, plain-English guide for beginners who want to understand AI and use it confidently in everyday life."
     />
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content="AI finally explained in plain English" />
+    <meta property="twitter:title" content="Still feel lost with AI?" />
     <meta
       property="twitter:description"
-      content="A simple plain-English guide to help adults 50+ understand AI, use it in real life, and know what not to trust."
+      content="A calm, plain-English guide for beginners who want to understand AI and use it confidently in everyday life."
     />
     <!-- Meta Pixel Code -->
     <script>
@@ -84,6 +84,8 @@
       .story-heading,
       .now-heading,
       .clarity-heading,
+      .learn-heading,
+      .beginner-heading,
       .inside-heading,
       .outcome-heading,
       .value-heading,
@@ -289,6 +291,141 @@
         color: #697486;
         font-size: 0.96rem;
         line-height: 1.55;
+      }
+
+      .learn {
+        background: var(--section-cream);
+        border-bottom: 1px solid rgba(23, 55, 97, 0.1);
+      }
+
+      .learn-inner,
+      .beginner-inner {
+        width: min(100%, 1140px);
+        margin: 0 auto;
+        padding: 70px 32px 84px;
+      }
+
+      .learn-kicker,
+      .beginner-kicker {
+        display: inline-flex;
+        align-items: center;
+        min-height: 34px;
+        padding: 0 16px;
+        border-radius: 999px;
+        background: var(--gold-soft);
+        color: #91792a;
+        font-size: 0.88rem;
+        font-weight: 800;
+      }
+
+      .learn-heading,
+      .beginner-heading {
+        margin: 18px 0 0;
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 500;
+        font-size: clamp(2rem, 3.4vw, 3rem);
+        line-height: 1.08;
+        max-width: 16ch;
+      }
+
+      .learn-subhead,
+      .beginner-subhead {
+        margin: 20px 0 0;
+        max-width: 58rem;
+        color: var(--text);
+        font-size: 1.12rem;
+        line-height: 1.68;
+      }
+
+      .learn-list {
+        margin: 34px 0 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+
+      .learn-list li {
+        display: grid;
+        grid-template-columns: 42px 1fr;
+        gap: 14px;
+        align-items: start;
+        min-height: 112px;
+        padding: 20px;
+        border: 1px solid rgba(23, 55, 97, 0.12);
+        border-radius: 10px;
+        background: #ffffff;
+        box-shadow: 0 14px 34px rgba(23, 55, 97, 0.06);
+        color: var(--text);
+        font-size: 1rem;
+        line-height: 1.45;
+      }
+
+      .learn-number {
+        width: 42px;
+        height: 42px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: var(--navy);
+        color: #ffffff;
+        font-weight: 900;
+      }
+
+      .learn-list strong {
+        display: block;
+        margin-bottom: 6px;
+        color: var(--navy);
+        font-size: 1.02rem;
+        line-height: 1.25;
+      }
+
+      .beginner {
+        background: var(--section-mint);
+        border-bottom: 1px solid rgba(23, 55, 97, 0.1);
+      }
+
+      .beginner-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(300px, 0.72fr);
+        gap: 30px;
+        align-items: start;
+        margin-top: 34px;
+      }
+
+      .beginner-card {
+        padding: 26px 28px;
+        border: 1px solid rgba(23, 55, 97, 0.12);
+        border-radius: 10px;
+        background: #ffffff;
+        box-shadow: 0 16px 36px rgba(23, 55, 97, 0.06);
+      }
+
+      .beginner-card p {
+        margin: 0;
+        color: var(--text);
+        font-size: 1.08rem;
+        line-height: 1.68;
+      }
+
+      .beginner-checks {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 12px;
+      }
+
+      .beginner-checks li {
+        padding: 15px 18px;
+        border: 1px solid rgba(23, 55, 97, 0.1);
+        border-radius: 10px;
+        background: #fffdf9;
+        color: var(--navy);
+        font-weight: 800;
+        line-height: 1.35;
       }
 
       .punch-section h2 {
@@ -969,6 +1106,64 @@
         font-weight: 800;
       }
 
+      .faq {
+        background: var(--section-cream);
+        border-bottom: 1px solid rgba(23, 55, 97, 0.1);
+      }
+
+      .faq-inner {
+        width: min(100%, 980px);
+        margin: 0 auto;
+        padding: 76px 32px 88px;
+      }
+
+      .faq-heading {
+        margin: 0;
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 500;
+        font-size: clamp(2rem, 3.4vw, 3rem);
+        line-height: 1.08;
+        text-align: center;
+      }
+
+      .faq-subhead {
+        margin: 20px auto 0;
+        max-width: 42rem;
+        color: var(--text);
+        font-size: 1.12rem;
+        line-height: 1.65;
+        text-align: center;
+      }
+
+      .faq-list {
+        display: grid;
+        gap: 14px;
+        margin-top: 36px;
+      }
+
+      .faq-item {
+        padding: 22px 24px;
+        border: 1px solid rgba(23, 55, 97, 0.12);
+        border-radius: 10px;
+        background: #ffffff;
+        box-shadow: 0 14px 34px rgba(23, 55, 97, 0.06);
+      }
+
+      .faq-item h3 {
+        margin: 0;
+        color: var(--navy);
+        font-size: 1.08rem;
+        line-height: 1.3;
+      }
+
+      .faq-item p {
+        margin: 10px 0 0;
+        color: var(--muted);
+        font-size: 1rem;
+        line-height: 1.55;
+      }
+
       .final-cta {
         background: var(--navy);
         color: #ffffff;
@@ -1082,6 +1277,49 @@
 
         .hero .note {
           text-align: left;
+        }
+
+        .learn-inner,
+        .beginner-inner {
+          padding: 54px 22px 66px;
+        }
+
+        .learn-heading,
+        .beginner-heading {
+          max-width: none;
+        }
+
+        .learn-subhead,
+        .beginner-subhead {
+          font-size: 1.04rem;
+          line-height: 1.65;
+        }
+
+        .learn-list {
+          grid-template-columns: 1fr;
+          gap: 12px;
+          margin-top: 28px;
+        }
+
+        .learn-list li {
+          min-height: auto;
+          grid-template-columns: 38px 1fr;
+          padding: 18px;
+        }
+
+        .learn-number {
+          width: 38px;
+          height: 38px;
+        }
+
+        .beginner-grid {
+          grid-template-columns: 1fr;
+          gap: 16px;
+          margin-top: 28px;
+        }
+
+        .beginner-card {
+          padding: 22px;
         }
 
         .story-inner {
@@ -1288,6 +1526,23 @@
           line-height: 1.65;
         }
 
+        .faq-inner {
+          padding: 56px 22px 68px;
+        }
+
+        .faq-subhead {
+          font-size: 1.04rem;
+          line-height: 1.65;
+        }
+
+        .faq-list {
+          margin-top: 30px;
+        }
+
+        .faq-item {
+          padding: 20px;
+        }
+
         .final-cta-inner {
           padding: 58px 22px 68px;
         }
@@ -1366,9 +1621,9 @@
             <div class="hero-copy">
               <div class="hero-content">
                 <div class="hero-badge">Made for beginners - no technical knowledge needed</div>
-                <h1>Finally Understand How to Use AI, Without Feeling Lost or Left Behind</h1>
+                <h1>Still Feel Lost With AI?</h1>
                 <p class="lead">
-                  A calm, practical kit that shows you exactly where to start with AI, how to get genuinely useful answers, make everyday tasks easier, and spot when images or content online may be AI-made or fake.
+                  Learn to use it confidently in everyday life with a calm, plain-English guide made for beginners. Understand what AI can help with, what to ask, and when not to trust it.
                 </p>
                 <div class="actions">
                   <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-direct-checkout>Get Instant Access</a>
@@ -1377,6 +1632,45 @@
               </div>
             </div>
             <div class="hero-visual" aria-hidden="true"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="learn" aria-label="What you'll learn">
+        <div class="learn-inner">
+          <div class="learn-kicker">What you&rsquo;ll learn</div>
+          <h2 class="learn-heading">What You&rsquo;ll Learn</h2>
+          <p class="learn-subhead">
+            A simple guide to help you understand AI, know what to ask, and use it more confidently in normal everyday life.
+          </p>
+          <ul class="learn-list">
+            <li><span class="learn-number" aria-hidden="true">1</span><span><strong>What AI can help with</strong>See the everyday tasks where AI can make things quicker, clearer, or easier to start.</span></li>
+            <li><span class="learn-number" aria-hidden="true">2</span><span><strong>Which tools are worth using</strong>Know which AI tools are useful for beginners, and which ones you can ignore for now.</span></li>
+            <li><span class="learn-number" aria-hidden="true">3</span><span><strong>What to ask AI</strong>Learn simple ways to ask for useful answers without needing complicated prompt formulas.</span></li>
+            <li><span class="learn-number" aria-hidden="true">4</span><span><strong>How to get clearer replies</strong>Understand how to make weak answers better when AI misses the point.</span></li>
+            <li><span class="learn-number" aria-hidden="true">5</span><span><strong>When not to trust AI</strong>Know when to check, pause, or avoid using an AI answer as the final word.</span></li>
+            <li><span class="learn-number" aria-hidden="true">6</span><span><strong>How to spot AI-made content</strong>Get a calmer way to think about fake images, misleading claims, and online content.</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="beginner" aria-label="Made for beginners">
+        <div class="beginner-inner">
+          <div class="beginner-kicker">Made for beginners</div>
+          <h2 class="beginner-heading">No Technical Knowledge Needed</h2>
+          <p class="beginner-subhead">
+            This starts from the beginning, in plain English, with simple examples you can use at your own pace.
+          </p>
+          <div class="beginner-grid">
+            <div class="beginner-card">
+              <p>You do not need to understand AI terms, prompts, apps, or settings before this guide makes sense. It is written for people who want AI explained clearly enough to actually use it, without feeling silly, rushed, or left behind.</p>
+            </div>
+            <ul class="beginner-checks">
+              <li>No jargon</li>
+              <li>No complicated setup</li>
+              <li>No assumption you already understand AI</li>
+              <li>Simple examples from everyday life</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -1436,24 +1730,24 @@
       <section class="testimonials punch-section" id="reviews" aria-label="What readers say">
         <div class="testimonials-inner">
           <h2 class="testimonials-heading">What Readers Say</h2>
-          <p class="testimonials-subhead">Honest feedback from people who wanted clarity, not complexity.</p>
+          <p class="testimonials-subhead">From people who wanted AI to feel simple, useful, and less intimidating.</p>
           <div class="testimonial-list">
             <article class="testimonial-card">
-              <p class="testimonial-quote">&ldquo;I finally feel like I understand what&rsquo;s happening. I went from anxious to genuinely excited about what I can do now.&rdquo;</p>
+              <p class="testimonial-quote">&ldquo;I had heard everyone talking about AI, but I never really knew where to start. This made it feel calm and much less intimidating.&rdquo;</p>
               <div class="testimonial-person">
                 <span class="testimonial-avatar" aria-hidden="true">M</span>
                 <span>Margaret, 62</span>
               </div>
             </article>
             <article class="testimonial-card">
-              <p class="testimonial-quote">&ldquo;I use it to think through decisions now. It&rsquo;s like having a smart colleague available whenever I need one.&rdquo;</p>
+              <p class="testimonial-quote">&ldquo;I liked that it did not assume I already knew the words or the tools. It explained things in a way I could actually follow.&rdquo;</p>
               <div class="testimonial-person">
                 <span class="testimonial-avatar" aria-hidden="true">S</span>
                 <span>Susan, 48</span>
               </div>
             </article>
             <article class="testimonial-card">
-              <p class="testimonial-quote">&ldquo;The calm, clear tone made all the difference. I actually feel in control of AI now instead of intimidated by it.&rdquo;</p>
+              <p class="testimonial-quote">&ldquo;The first useful thing for me was knowing what not to trust. I feel much more confident using AI without blindly believing it.&rdquo;</p>
               <div class="testimonial-person">
                 <span class="testimonial-avatar" aria-hidden="true">D</span>
                 <span>David, 55</span>
@@ -1492,6 +1786,50 @@
             <li><strong>How to spot misleading AI content</strong>So you are not left assuming everything is real or everything is fake.</li>
             <li><strong>How to use tools like ChatGPT</strong>Without blindly believing them or feeling silly when the answer is weak.</li>
           </ul>
+        </div>
+      </section>
+
+      <section class="faq" aria-label="Common questions">
+        <div class="faq-inner">
+          <h2 class="faq-heading">Common Questions</h2>
+          <p class="faq-subhead">A few quick answers before you decide if this is the right starting point for you.</p>
+          <div class="faq-list">
+            <article class="faq-item">
+              <h3>Is this suitable if I know almost nothing about AI?</h3>
+              <p>Yes. It starts from the beginning and explains the important parts in plain English.</p>
+            </article>
+            <article class="faq-item">
+              <h3>Do I need ChatGPT or any AI tool already?</h3>
+              <p>No. The guide helps you understand what matters first, including which tools are useful for beginners.</p>
+            </article>
+            <article class="faq-item">
+              <h3>Is it technical?</h3>
+              <p>No. There is no coding, complicated setup, or advanced prompt engineering. It is written for normal everyday use.</p>
+            </article>
+            <article class="faq-item">
+              <h3>Will I get access straight away?</h3>
+              <p>Yes. After checkout, you will get instant access to download the guide.</p>
+            </article>
+            <article class="faq-item">
+              <h3>What if it is not useful for me?</h3>
+              <p>You are covered by the 60-day money-back guarantee. Try it, and if it is not for you, you can ask for a refund.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="guarantee" aria-label="Money-back guarantee">
+        <div class="guarantee-inner">
+          <svg class="guarantee-icon" viewBox="0 0 64 64" aria-hidden="true">
+            <path d="M32 6 54 15v16c0 13.5-8.8 22.7-22 27-13.2-4.3-22-13.5-22-27V15L32 6Z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+            <path d="m22 32 7 7 14-16" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h2 class="guarantee-heading">Try It For 60 Days</h2>
+          <div class="guarantee-copy">
+            <p>If the guide does not make AI feel clearer, calmer, and easier to understand, just email us for a refund.</p>
+            <p>You can read it, try it, and decide whether it helped.</p>
+          </div>
+          <div class="guarantee-line">60-day money-back guarantee</div>
         </div>
       </section>
 
