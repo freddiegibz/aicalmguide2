@@ -205,6 +205,100 @@
         line-height: 1.45;
       }
 
+      .question-panel {
+        padding: clamp(24px, 5vw, 36px);
+        background: #fffdf9;
+      }
+
+      .question-panel h2 {
+        max-width: 35rem;
+        margin: 0 auto;
+        font-size: clamp(1.8rem, 4vw, 2.6rem);
+        line-height: 1.08;
+      }
+
+      .question-panel p {
+        max-width: 32rem;
+        text-align: center;
+      }
+
+      .choice-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 22px;
+      }
+
+      .choice-card {
+        display: grid;
+        grid-template-columns: 22px 1fr;
+        gap: 12px;
+        align-items: start;
+        padding: 16px;
+        border: 2px solid rgba(7, 27, 63, 0.1);
+        border-radius: 10px;
+        background: #ffffff;
+        cursor: pointer;
+      }
+
+      .choice-card:has(input:checked) {
+        border-color: var(--blue);
+        background: #f1f6ff;
+      }
+
+      .choice-card input {
+        width: 18px;
+        height: 18px;
+        margin-top: 3px;
+        accent-color: var(--blue);
+      }
+
+      .choice-card strong {
+        display: block;
+        color: var(--ink);
+        font-size: 1rem;
+        line-height: 1.25;
+      }
+
+      .choice-card span span {
+        display: block;
+        margin-top: 5px;
+        color: var(--muted);
+        font-size: 0.92rem;
+        line-height: 1.4;
+      }
+
+      .question-submit {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: min(100%, 340px);
+        min-height: 54px;
+        margin: 20px auto 0;
+        border: 0;
+        border-radius: 9px;
+        background: var(--blue);
+        color: #ffffff;
+        font: inherit;
+        font-size: 1rem;
+        font-weight: 900;
+        cursor: pointer;
+      }
+
+      .question-submit:hover,
+      .question-submit:focus-visible {
+        background: var(--blue-dark);
+      }
+
+      .form-status {
+        min-height: 1.4em;
+        margin-top: 12px;
+        color: var(--green);
+        font-size: 0.96rem;
+        font-weight: 800;
+        text-align: center;
+      }
+
       .upsell {
         padding: clamp(28px, 5vw, 44px);
         border-color: rgba(181, 150, 49, 0.2);
@@ -417,6 +511,10 @@
           gap: 18px;
         }
 
+        .choice-grid {
+          grid-template-columns: 1fr;
+        }
+
         .offer-grid {
           grid-template-columns: 1fr;
         }
@@ -488,6 +586,35 @@
         </div>
       </section>
 
+      <section class="panel question-panel" aria-label="AI help question">
+        <h2>Before you go — what would you most like AI to help you with first?</h2>
+        <p>Choose the closest answer. It helps us make the next resources more useful.</p>
+
+        <form action="https://formspree.io/f/xrewejey" method="POST" data-ai-question-form>
+          <input type="hidden" name="_subject" value="AI Confidence Kit thank-you page answer" />
+          <div class="choice-grid">
+            <label class="choice-card">
+              <input type="radio" name="ai_help_first" value="Work or business" required />
+              <span><strong>Work or business</strong><span>Emails, ideas, admin, customers, content, or getting more done.</span></span>
+            </label>
+            <label class="choice-card">
+              <input type="radio" name="ai_help_first" value="Saving time at home" required />
+              <span><strong>Saving time at home</strong><span>Planning, shopping, appointments, organising tasks, or reducing mental load.</span></span>
+            </label>
+            <label class="choice-card">
+              <input type="radio" name="ai_help_first" value="Understanding confusing things" required />
+              <span><strong>Understanding confusing things</strong><span>Letters, bills, instructions, articles, online claims, or complicated information.</span></span>
+            </label>
+            <label class="choice-card">
+              <input type="radio" name="ai_help_first" value="Getting personally set up" required />
+              <span><strong>Getting personally set up</strong><span>Choosing where to start, what to use, and how to feel comfortable using AI.</span></span>
+            </label>
+          </div>
+          <button class="question-submit" type="submit">Send my answer</button>
+          <div class="form-status" data-form-status aria-live="polite"></div>
+        </form>
+      </section>
+
       <section class="panel upsell">
         <div class="eyebrow"><span class="star" aria-hidden="true">&#9733;</span>Optional next step</div>
         <h2>Prefer not to figure AI<br>out by yourself?</h2>
@@ -533,5 +660,30 @@
         </div>
       </section>
     </main>
+    <script>
+      document.addEventListener("submit", function (event) {
+        var form = event.target.closest("[data-ai-question-form]");
+        if (!form || !window.fetch) return;
+
+        event.preventDefault();
+        var status = form.querySelector("[data-form-status]");
+        var submit = form.querySelector("button[type='submit']");
+        if (status) status.textContent = "Sending...";
+        if (submit) submit.disabled = true;
+
+        fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { Accept: "application/json" }
+        }).then(function (response) {
+          if (!response.ok) throw new Error("Form submission failed");
+          if (status) status.textContent = "Thank you — your answer has been sent.";
+          if (submit) submit.textContent = "Answer sent";
+        }).catch(function () {
+          if (status) status.textContent = "Sorry, that did not send. Please try again.";
+          if (submit) submit.disabled = false;
+        });
+      });
+    </script>
   </body>
 </html>
