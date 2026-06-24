@@ -225,7 +225,7 @@
         width: min(100%, 680px);
         max-height: calc(100vh - 32px);
         overflow-y: auto;
-        padding: clamp(24px, 5vw, 36px);
+        padding: clamp(20px, 4vw, 30px);
         background: #fffdf9;
       }
 
@@ -257,13 +257,14 @@
       }
 
       .question-panel h2 {
-        max-width: 35rem;
+        max-width: 30rem;
         margin: 0 auto;
-        font-size: clamp(1.8rem, 4vw, 2.6rem);
+        font-size: clamp(1.65rem, 3.6vw, 2.25rem);
         line-height: 1.08;
       }
 
       .question-panel p {
+        margin-top: 10px;
         max-width: 32rem;
         text-align: center;
       }
@@ -271,16 +272,16 @@
       .choice-grid {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
-        margin-top: 22px;
+        gap: 10px;
+        margin-top: 18px;
       }
 
       .choice-card {
         display: grid;
         grid-template-columns: 22px 1fr;
         gap: 12px;
-        align-items: start;
-        padding: 16px;
+        align-items: center;
+        padding: 13px 14px;
         border: 2px solid rgba(7, 27, 63, 0.1);
         border-radius: 10px;
         background: #ffffff;
@@ -319,8 +320,8 @@
         align-items: center;
         justify-content: center;
         width: min(100%, 340px);
-        min-height: 54px;
-        margin: 20px auto 0;
+        min-height: 50px;
+        margin: 16px auto 0;
         border: 0;
         border-radius: 9px;
         background: var(--blue);
@@ -338,7 +339,7 @@
 
       .form-status {
         min-height: 1.4em;
-        margin-top: 12px;
+        margin-top: 10px;
         color: var(--green);
         font-size: 0.96rem;
         font-weight: 800;
@@ -539,7 +540,19 @@
         .download-panel,
         .upsell,
         .question-panel {
-          padding: 24px 18px;
+          padding: 20px 16px;
+        }
+
+        .question-close {
+          top: 10px;
+          right: 10px;
+          width: 34px;
+          height: 34px;
+        }
+
+        .question-panel p {
+          font-size: 0.98rem;
+          line-height: 1.45;
         }
 
         .confirmed {
@@ -636,27 +649,27 @@
       <section class="question-modal" data-question-modal aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="question-title">
         <div class="panel question-panel">
           <button class="question-close" type="button" data-question-close aria-label="Close">&times;</button>
-          <h2 id="question-title">Before you go &mdash; what would you most like AI to help you with first?</h2>
-          <p>Choose the closest answer. It helps us make the next resources more useful.</p>
+          <h2 id="question-title">What would you most like AI to help with first?</h2>
+          <p>Choose one so we can point you toward the most useful next step.</p>
 
           <form action="https://formspree.io/f/xrewejey" method="POST" data-ai-question-form>
             <input type="hidden" name="_subject" value="AI Confidence Kit thank-you page answer" />
             <div class="choice-grid">
               <label class="choice-card">
                 <input type="radio" name="ai_help_first" value="Work or business" required />
-                <span><strong>Work or business</strong><span>Emails, ideas, admin, customers, content, or getting more done.</span></span>
+                <span><strong>Work or business</strong></span>
               </label>
               <label class="choice-card">
                 <input type="radio" name="ai_help_first" value="Saving time at home" required />
-                <span><strong>Saving time at home</strong><span>Planning, shopping, appointments, organising tasks, or reducing mental load.</span></span>
+                <span><strong>Saving time at home</strong></span>
               </label>
               <label class="choice-card">
                 <input type="radio" name="ai_help_first" value="Understanding confusing things" required />
-                <span><strong>Understanding confusing things</strong><span>Letters, bills, instructions, articles, online claims, or complicated information.</span></span>
+                <span><strong>Understanding confusing things</strong></span>
               </label>
               <label class="choice-card">
                 <input type="radio" name="ai_help_first" value="Getting personally set up" required />
-                <span><strong>Getting personally set up</strong><span>Choosing where to start, what to use, and how to feel comfortable using AI.</span></span>
+                <span><strong>Getting personally set up</strong></span>
               </label>
             </div>
             <button class="question-submit" type="submit">Send my answer</button>
