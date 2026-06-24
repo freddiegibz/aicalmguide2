@@ -205,145 +205,38 @@
         line-height: 1.45;
       }
 
-      .question-modal {
-        position: fixed;
-        inset: 0;
-        z-index: 50;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        padding: 16px;
-        background: rgba(7, 27, 63, 0.55);
+      .next-step-link {
+        padding: 22px;
+        text-align: center;
       }
 
-      .question-modal.is-open {
-        display: flex;
-      }
-
-      .question-panel {
-        position: relative;
-        width: min(100%, 680px);
-        max-height: calc(100vh - 32px);
-        overflow-y: auto;
-        padding: clamp(20px, 4vw, 30px);
-        background: #fffdf9;
-      }
-
-      .question-close {
-        position: absolute;
-        top: 14px;
-        right: 14px;
-        display: grid;
-        width: 38px;
-        height: 38px;
-        place-items: center;
-        border: 0;
-        border-radius: 999px;
-        background: rgba(7, 27, 63, 0.08);
-        color: var(--ink);
-        font: inherit;
-        font-size: 1.45rem;
-        line-height: 1;
-        cursor: pointer;
-      }
-
-      .question-close:hover,
-      .question-close:focus-visible {
-        background: rgba(7, 27, 63, 0.13);
-      }
-
-      body.question-locked {
-        overflow: hidden;
-      }
-
-      .question-panel h2 {
-        max-width: 30rem;
-        margin: 0 auto;
-        font-size: clamp(1.65rem, 3.6vw, 2.25rem);
+      .next-step-link h2 {
+        font-size: clamp(1.55rem, 4vw, 2.2rem);
         line-height: 1.08;
       }
 
-      .question-panel p {
+      .next-step-link p {
         margin-top: 10px;
-        max-width: 32rem;
-        text-align: center;
-      }
-
-      .choice-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
-        margin-top: 18px;
-      }
-
-      .choice-card {
-        display: grid;
-        grid-template-columns: 22px 1fr;
-        gap: 12px;
-        align-items: center;
-        padding: 13px 14px;
-        border: 2px solid rgba(7, 27, 63, 0.1);
-        border-radius: 10px;
-        background: #ffffff;
-        cursor: pointer;
-      }
-
-      .choice-card:has(input:checked) {
-        border-color: var(--blue);
-        background: #f1f6ff;
-      }
-
-      .choice-card input {
-        width: 18px;
-        height: 18px;
-        margin-top: 3px;
-        accent-color: var(--blue);
-      }
-
-      .choice-card strong {
-        display: block;
-        color: var(--ink);
         font-size: 1rem;
-        line-height: 1.25;
       }
 
-      .choice-card span span {
-        display: block;
-        margin-top: 5px;
-        color: var(--muted);
-        font-size: 0.92rem;
-        line-height: 1.4;
-      }
-
-      .question-submit {
-        display: flex;
+      .next-step-button {
+        display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: min(100%, 340px);
-        min-height: 50px;
-        margin: 16px auto 0;
-        border: 0;
+        min-height: 52px;
+        margin-top: 16px;
+        padding: 0 22px;
         border-radius: 9px;
         background: var(--blue);
         color: #ffffff;
-        font: inherit;
-        font-size: 1rem;
         font-weight: 900;
-        cursor: pointer;
+        text-decoration: none;
       }
 
-      .question-submit:hover,
-      .question-submit:focus-visible {
+      .next-step-button:hover,
+      .next-step-button:focus-visible {
         background: var(--blue-dark);
-      }
-
-      .form-status {
-        min-height: 1.4em;
-        margin-top: 10px;
-        color: var(--green);
-        font-size: 0.96rem;
-        font-weight: 800;
-        text-align: center;
       }
 
       .upsell {
@@ -538,21 +431,8 @@
         }
 
         .download-panel,
-        .upsell,
-        .question-panel {
+        .upsell {
           padding: 20px 16px;
-        }
-
-        .question-close {
-          top: 10px;
-          right: 10px;
-          width: 34px;
-          height: 34px;
-        }
-
-        .question-panel p {
-          font-size: 0.98rem;
-          line-height: 1.45;
         }
 
         .confirmed {
@@ -646,37 +526,12 @@
         </div>
       </section>
 
-      <section class="question-modal" data-question-modal aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="question-title">
-        <div class="panel question-panel">
-          <button class="question-close" type="button" data-question-close aria-label="Close">&times;</button>
-          <h2 id="question-title">What would you most like AI to help with first?</h2>
-          <p>Choose one so we can point you toward the most useful next step.</p>
-
-          <form action="https://formspree.io/f/xrewejey" method="POST" data-ai-question-form>
-            <input type="hidden" name="_subject" value="AI Confidence Kit thank-you page answer" />
-            <div class="choice-grid">
-              <label class="choice-card">
-                <input type="radio" name="ai_help_first" value="Work or business" required />
-                <span><strong>Work or business</strong></span>
-              </label>
-              <label class="choice-card">
-                <input type="radio" name="ai_help_first" value="Saving time at home" required />
-                <span><strong>Saving time at home</strong></span>
-              </label>
-              <label class="choice-card">
-                <input type="radio" name="ai_help_first" value="Understanding confusing things" required />
-                <span><strong>Understanding confusing things</strong></span>
-              </label>
-              <label class="choice-card">
-                <input type="radio" name="ai_help_first" value="Getting personally set up" required />
-                <span><strong>Getting personally set up</strong></span>
-              </label>
-            </div>
-            <button class="question-submit" type="submit">Send my answer</button>
-            <div class="form-status" data-form-status aria-live="polite"></div>
-          </form>
-        </div>
+      <section class="panel next-step-link">
+        <h2>Want help choosing what to use AI for first?</h2>
+        <p>Answer one quick question and we&rsquo;ll point you toward the most useful next step.</p>
+        <a class="next-step-button" href="ai-help-question.html">Answer the quick question</a>
       </section>
+
       <section class="panel upsell">
         <div class="eyebrow"><span class="star" aria-hidden="true">&#9733;</span>Optional next step</div>
         <h2>Prefer not to figure AI<br>out by yourself?</h2>
@@ -698,15 +553,15 @@
 
           <aside class="price-card">
             <div class="label">Special launch price</div>
-            <div class="price">&pound;50</div>
-            <div class="normal">Normally &pound;119</div>
-            <div class="save">Save &pound;69 today</div>
+            <div class="price">&pound;30</div>
+            <div class="normal">Normally &pound;60</div>
+            <div class="save">Save &pound;30 today</div>
             <p>Get set up, use it with help, and leave knowing what to do next.</p>
           </aside>
         </div>
 
         <a class="offer-button" href="https://buy.stripe.com/bJeaEW0Er2S8auIau6bZe0N">
-          Yes, Add Personal AI Setup Help for &pound;50
+          Yes, Add Personal AI Setup Help for &pound;30
           <span aria-hidden="true">&rarr;</span>
         </a>
         <p class="skip"><a href="#download-guide">No thanks, I&rsquo;ll use the guide on my own</a></p>
@@ -722,71 +577,8 @@
         </div>
       </section>
     </main>
-    <script>
-      function openQuestionModal() {
-        var modal = document.querySelector("[data-question-modal]");
-        if (!modal) return;
 
-        modal.classList.add("is-open");
-        modal.setAttribute("aria-hidden", "false");
-        document.body.classList.add("question-locked");
-      }
-
-      function closeQuestionModal() {
-        var modal = document.querySelector("[data-question-modal]");
-        if (!modal) return;
-
-        modal.classList.remove("is-open");
-        modal.setAttribute("aria-hidden", "true");
-        document.body.classList.remove("question-locked");
-      }
-
-      window.addEventListener("load", function () {
-        window.setTimeout(openQuestionModal, 700);
-      });
-
-      document.addEventListener("click", function (event) {
-        var close = event.target.closest("[data-question-close]");
-        var modal = event.target.closest("[data-question-modal]");
-        var panel = event.target.closest(".question-panel");
-
-        if (close || (modal && !panel)) {
-          event.preventDefault();
-          closeQuestionModal();
-        }
-      });
-
-      document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape") {
-          closeQuestionModal();
-        }
-      });
-
-      document.addEventListener("submit", function (event) {
-        var form = event.target.closest("[data-ai-question-form]");
-        if (!form || !window.fetch) return;
-
-        event.preventDefault();
-        var status = form.querySelector("[data-form-status]");
-        var submit = form.querySelector("button[type='submit']");
-        if (status) status.textContent = "Sending...";
-        if (submit) submit.disabled = true;
-
-        fetch(form.action, {
-          method: "POST",
-          body: new FormData(form),
-          headers: { Accept: "application/json" }
-        }).then(function (response) {
-          if (!response.ok) throw new Error("Form submission failed");
-          if (status) status.textContent = "Thank you — your answer has been sent.";
-          if (status) status.textContent = "Thank you - your answer has been sent.";
-          if (submit) submit.textContent = "Answer sent";
-        }).catch(function () {
-          if (status) status.textContent = "Sorry, that did not send. Please try again.";
-          if (submit) submit.disabled = false;
-        });
-      });
-    </script>
   </body>
 </html>
+
 

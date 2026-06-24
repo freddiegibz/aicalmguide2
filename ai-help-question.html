@@ -1,0 +1,413 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>What Would You Like AI To Help With First?</title>
+    <meta
+      name="description"
+      content="Tell us what you would most like AI to help with first."
+    />
+    <style>
+      :root {
+        --paper: #f4f6fb;
+        --card: #fffdf9;
+        --ink: #071b3f;
+        --text: #3f4c61;
+        --muted: #68758a;
+        --blue: #0e4a91;
+        --blue-dark: #0a3972;
+        --green: #1f8f5a;
+        --line: rgba(7, 27, 63, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 16px;
+        background: var(--paper);
+        color: var(--text);
+        font-family: "Aptos", "Segoe UI", sans-serif;
+      }
+
+      main {
+        width: min(100%, 680px);
+      }
+
+      .panel {
+        padding: clamp(24px, 5vw, 36px);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: var(--card);
+        box-shadow: 0 18px 42px rgba(7, 27, 63, 0.08);
+      }
+
+      h1 {
+        max-width: 34rem;
+        margin: 0 auto;
+        color: var(--ink);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(1.9rem, 5vw, 2.8rem);
+        font-weight: 600;
+        line-height: 1.08;
+        text-align: center;
+      }
+
+      p {
+        max-width: 32rem;
+        margin: 12px auto 0;
+        color: var(--text);
+        font-size: 1.02rem;
+        line-height: 1.5;
+        text-align: center;
+      }
+
+      .choice-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 22px;
+      }
+
+      .choice-card {
+        display: grid;
+        grid-template-columns: 22px 1fr;
+        gap: 12px;
+        align-items: center;
+        min-height: 58px;
+        padding: 13px 14px;
+        border: 2px solid rgba(7, 27, 63, 0.1);
+        border-radius: 10px;
+        background: #ffffff;
+        cursor: pointer;
+      }
+
+      .choice-card:has(input:checked) {
+        border-color: var(--blue);
+        background: #f1f6ff;
+      }
+
+      .choice-card input {
+        width: 18px;
+        height: 18px;
+        accent-color: var(--blue);
+      }
+
+      .choice-card strong {
+        display: block;
+        color: var(--ink);
+        font-size: 1rem;
+        line-height: 1.25;
+      }
+
+      .submit {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: min(100%, 340px);
+        min-height: 54px;
+        margin: 20px auto 0;
+        border: 0;
+        border-radius: 9px;
+        background: var(--blue);
+        color: #ffffff;
+        font: inherit;
+        font-size: 1rem;
+        font-weight: 900;
+        cursor: pointer;
+      }
+
+      .submit:hover,
+      .submit:focus-visible {
+        background: var(--blue-dark);
+      }
+
+      .status {
+        min-height: 1.4em;
+        margin-top: 12px;
+        color: var(--green);
+        font-size: 0.96rem;
+        font-weight: 800;
+        text-align: center;
+      }
+
+      .offer-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 50;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 16px;
+        background: rgba(7, 27, 63, 0.55);
+      }
+
+      .offer-modal.is-open {
+        display: flex;
+      }
+
+      .offer-card {
+        position: relative;
+        width: min(100%, 560px);
+        padding: clamp(22px, 5vw, 34px);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: var(--card);
+        box-shadow: 0 24px 70px rgba(7, 27, 63, 0.22);
+        text-align: center;
+      }
+
+      .offer-close {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        display: grid;
+        width: 36px;
+        height: 36px;
+        place-items: center;
+        border: 0;
+        border-radius: 999px;
+        background: rgba(7, 27, 63, 0.08);
+        color: var(--ink);
+        font: inherit;
+        font-size: 1.35rem;
+        line-height: 1;
+        cursor: pointer;
+      }
+
+      .offer-kicker {
+        display: inline-flex;
+        align-items: center;
+        min-height: 30px;
+        padding: 0 14px;
+        border-radius: 999px;
+        background: #f7edcd;
+        color: #80681e;
+        font-size: 0.82rem;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .offer-card h2 {
+        margin: 14px 0 0;
+        color: var(--ink);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(1.9rem, 5vw, 2.8rem);
+        line-height: 1.05;
+      }
+
+      .offer-card p {
+        margin-top: 12px;
+      }
+
+      .price-row {
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+        gap: 13px;
+        margin-top: 18px;
+      }
+
+      .current-price {
+        color: var(--ink);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 3rem;
+        line-height: 1;
+      }
+
+      .old-price {
+        color: var(--muted);
+        font-size: 1.25rem;
+        text-decoration: line-through;
+      }
+
+      .offer-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 56px;
+        margin-top: 18px;
+        border-radius: 9px;
+        background: var(--blue);
+        color: #ffffff;
+        font-weight: 900;
+        text-decoration: none;
+      }
+
+      .offer-button:hover,
+      .offer-button:focus-visible {
+        background: var(--blue-dark);
+      }
+
+      .back-link {
+        display: block;
+        margin-top: 14px;
+        color: var(--muted);
+        text-align: center;
+        text-underline-offset: 4px;
+      }
+
+      @media (max-width: 620px) {
+        .choice-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="panel">
+        <h1>What would you most like AI to help with first?</h1>
+        <p>Choose one so we can point you toward the most useful next step.</p>
+
+        <form action="https://formspree.io/f/xrewejey" method="POST" data-ai-question-form>
+          <input type="hidden" name="_subject" value="AI Confidence Kit next-step answer" />
+          <div class="choice-grid">
+            <label class="choice-card">
+              <input type="radio" name="ai_help_first" value="Work or business" required />
+              <span><strong>Work or business</strong></span>
+            </label>
+            <label class="choice-card">
+              <input type="radio" name="ai_help_first" value="Saving time at home" required />
+              <span><strong>Saving time at home</strong></span>
+            </label>
+            <label class="choice-card">
+              <input type="radio" name="ai_help_first" value="Understanding confusing things" required />
+              <span><strong>Understanding confusing things</strong></span>
+            </label>
+            <label class="choice-card">
+              <input type="radio" name="ai_help_first" value="Getting personally set up" required />
+              <span><strong>Getting personally set up</strong></span>
+            </label>
+          </div>
+          <button class="submit" type="submit">Send my answer</button>
+          <div class="status" data-form-status aria-live="polite"></div>
+        </form>
+
+        <a class="back-link" href="thank-you.html">Back to your download page</a>
+      </section>
+    </main>
+    <section class="offer-modal" data-offer-modal aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="offer-title">
+      <div class="offer-card">
+        <button class="offer-close" type="button" data-offer-close aria-label="Close">&times;</button>
+        <div class="offer-kicker">50% off today</div>
+        <h2 id="offer-title" data-offer-title></h2>
+        <p data-offer-description></p>
+        <div class="price-row">
+          <span class="current-price" data-offer-price></span>
+          <span class="old-price" data-offer-old-price></span>
+        </div>
+        <a class="offer-button" href="#" data-offer-link>Yes, add this to my order</a>
+        <a class="back-link" href="thank-you.html">No thanks, back to my download</a>
+      </div>
+    </section>
+    <script>
+      var offers = {
+        "Work or business": {
+          title: "AI Work Starter Kit",
+          description: "A simple toolkit for using AI at work or in your business, with ready-to-use prompts and examples for emails, admin, planning, ideas, customers, and getting more done without starting from a blank page.",
+          price: "\u00a319",
+          oldPrice: "\u00a338",
+          url: "https://buy.stripe.com/4gMaEW5YL1O4fP27hUbZe0U"
+        },
+        "Saving time at home": {
+          title: "Everyday AI Time-Saver Kit",
+          description: "A practical kit for using AI to make home life and everyday tasks easier, including prompts and simple workflows for planning, shopping, appointments, organising information, comparing options, and reducing mental load.",
+          price: "\u00a319",
+          oldPrice: "\u00a338",
+          url: "https://buy.stripe.com/3cI8wOfzlcsI46kcCebZe0V"
+        },
+        "Understanding confusing things": {
+          title: "AI Explain It Simply Kit",
+          description: "A plain-English toolkit for using AI to make confusing information easier to understand, including prompts for letters, bills, instructions, articles, online claims, forms, and anything that feels unclear or overwhelming.",
+          price: "\u00a319",
+          oldPrice: "\u00a338",
+          url: "https://buy.stripe.com/8x2dR8af19gw9qE6dQbZe0W"
+        },
+        "Getting personally set up": {
+          title: "Personal AI Setup Help",
+          description: "A simple 1-to-1 text session where I help you choose the right AI tool, get comfortable using it, send your first useful prompts, answer your questions, and create a personal 7-day use plan based on your needs.",
+          price: "\u00a330",
+          oldPrice: "\u00a360",
+          url: "https://buy.stripe.com/bJeaEW0Er2S8auIau6bZe0N"
+        }
+      };
+
+      function selectedAnswer(form) {
+        var checked = form.querySelector("input[name='ai_help_first']:checked");
+        return checked ? checked.value : "";
+      }
+
+      function openOffer(answer) {
+        var offer = offers[answer];
+        var modal = document.querySelector("[data-offer-modal]");
+        if (!offer || !modal) return;
+
+        document.querySelector("[data-offer-title]").textContent = offer.title;
+        document.querySelector("[data-offer-description]").textContent = offer.description;
+        document.querySelector("[data-offer-price]").textContent = offer.price;
+        document.querySelector("[data-offer-old-price]").textContent = offer.oldPrice;
+        document.querySelector("[data-offer-link]").href = offer.url;
+        modal.classList.add("is-open");
+        modal.setAttribute("aria-hidden", "false");
+      }
+
+      function closeOffer() {
+        var modal = document.querySelector("[data-offer-modal]");
+        if (!modal) return;
+        modal.classList.remove("is-open");
+        modal.setAttribute("aria-hidden", "true");
+      }
+
+      document.addEventListener("click", function (event) {
+        var close = event.target.closest("[data-offer-close]");
+        var modal = event.target.closest("[data-offer-modal]");
+        var card = event.target.closest(".offer-card");
+
+        if (close || (modal && !card)) {
+          event.preventDefault();
+          closeOffer();
+        }
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          closeOffer();
+        }
+      });
+
+      document.addEventListener("submit", function (event) {
+        var form = event.target.closest("[data-ai-question-form]");
+        if (!form || !window.fetch) return;
+
+        event.preventDefault();
+        var answer = selectedAnswer(form);
+        var status = form.querySelector("[data-form-status]");
+        var submit = form.querySelector("button[type='submit']");
+        if (status) status.textContent = "Sending...";
+        if (submit) submit.disabled = true;
+
+        fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { Accept: "application/json" }
+        }).then(function (response) {
+          if (!response.ok) throw new Error("Form submission failed");
+          if (status) status.textContent = "Thank you - your answer has been sent.";
+          if (submit) submit.textContent = "Answer sent";
+          openOffer(answer);
+        }).catch(function () {
+          if (status) status.textContent = "Sorry, that did not send. Please try again.";
+          if (submit) submit.disabled = false;
+        });
+      });
+    </script>
+  </body>
+</html>
+
