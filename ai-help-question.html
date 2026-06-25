@@ -50,13 +50,50 @@
 
       h1 {
         max-width: 34rem;
-        margin: 0 auto;
+        margin: 18px auto 0;
         color: var(--ink);
         font-family: Georgia, "Times New Roman", serif;
         font-size: clamp(1.9rem, 5vw, 2.8rem);
         font-weight: 600;
         line-height: 1.08;
         text-align: center;
+      }
+
+      .confirmed {
+        display: grid;
+        grid-template-columns: 46px 1fr;
+        gap: 13px;
+        align-items: center;
+        padding: 14px 16px;
+        border: 1px solid rgba(31, 143, 90, 0.22);
+        border-radius: 10px;
+        background: #f2fbf5;
+        color: #145c3a;
+      }
+
+      .confirmed-icon {
+        display: grid;
+        width: 46px;
+        height: 46px;
+        place-items: center;
+        border-radius: 999px;
+        background: #e1f4e8;
+        color: var(--green);
+        font-size: 1.6rem;
+        font-weight: 900;
+      }
+
+      .confirmed-title {
+        color: #145c3a;
+        font-weight: 900;
+        line-height: 1.2;
+      }
+
+      .confirmed-copy {
+        margin-top: 3px;
+        color: #2f674d;
+        font-size: 0.96rem;
+        line-height: 1.35;
       }
 
       p {
@@ -263,8 +300,16 @@
   <body>
     <main>
       <section class="panel">
-        <h1>What would you most like AI to help with first?</h1>
-        <p>Choose one so we can point you toward the most useful next step.</p>
+        <div class="confirmed">
+          <div class="confirmed-icon" aria-hidden="true">&#10003;</div>
+          <div>
+            <div class="confirmed-title">Your order is confirmed.</div>
+            <div class="confirmed-copy">Your download is ready on the next page. This is just one quick question before you get it.</div>
+          </div>
+        </div>
+
+        <h1>One last question before your download</h1>
+        <p>What would you most like AI to help you with first?</p>
 
         <form action="https://formspree.io/f/xrewejey" method="POST" data-ai-question-form>
           <input type="hidden" name="_subject" value="AI Confidence Kit next-step answer" />
@@ -286,7 +331,7 @@
               <span><strong>Getting personally set up</strong></span>
             </label>
           </div>
-          <button class="submit" type="submit">Send my answer</button>
+          <button class="submit" type="submit">Send my answer and continue</button>
           <div class="status" data-form-status aria-live="polite"></div>
         </form>
 
