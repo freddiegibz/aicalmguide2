@@ -380,29 +380,31 @@
       .discount-price {
         display: flex;
         flex-wrap: wrap;
-        gap: 10px;
+        gap: 8px;
         align-items: baseline;
         margin-top: 14px;
+        padding: 12px 14px;
+        border-radius: 10px;
+        background: #f7fbff;
       }
 
       .discount-price del {
         color: var(--muted);
-        font-size: 1.05rem;
+        font-size: 1rem;
       }
 
       .discount-price strong {
         color: var(--navy);
-        font-size: 1.5rem;
+        font-size: 1.25rem;
       }
 
       .discount-code {
         display: grid;
         gap: 10px;
-        margin-top: 18px;
-        padding: 16px;
-        border: 2px solid rgba(30, 79, 135, 0.18);
-        border-radius: 10px;
-        background: #ffffff;
+        margin-top: 16px;
+        padding: 0;
+        border: 0;
+        background: transparent;
       }
 
       .discount-code strong {
@@ -1949,7 +1951,7 @@
           }
           copyButton.textContent = "Copied";
           window.setTimeout(function () {
-            copyButton.textContent = "Copy";
+            copyButton.textContent = "Copy code";
           }, 1800);
           return;
         }
@@ -1969,26 +1971,24 @@
     <div class="discount-modal" data-discount-modal aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="discount-title">
       <div class="discount-dialog">
         <button class="discount-x" type="button" data-discount-dismiss aria-label="Close">&times;</button>
-        <div class="discount-topline">Temporary early discount</div>
-        <h2 id="discount-title">Take 50% off today</h2>
+        <div class="discount-topline">Temporary discount</div>
+        <h2 id="discount-title">Save 50%</h2>
         <p>
-          Use the code below at checkout to get instant access for half price while this early offer is available.
+          Copy this code, then paste it at checkout.
         </p>
-        <div class="discount-price" aria-label="Temporary discounted price">
-          <del>&pound;19</del>
-          <strong>&pound;9.50 with EARLY50</strong>
-        </div>
         <div class="discount-code">
-          <strong>Discount code</strong>
+          <strong>Your code</strong>
           <div class="discount-copy-row">
             <input class="discount-copy-field" type="text" value="EARLY50" readonly aria-label="Discount code" />
-            <button class="discount-copy-button" type="button" data-copy-discount="EARLY50">Copy</button>
+            <button class="discount-copy-button" type="button" data-copy-discount="EARLY50">Copy code</button>
           </div>
-          <span>This temporary 50% code takes the guide from &pound;19 to &pound;9.50 at checkout.</span>
+        </div>
+        <div class="discount-price" aria-label="Temporary discounted price">
+          <del>&pound;19</del>
+          <strong>&pound;9.50 after code</strong>
         </div>
         <div class="discount-actions">
           <button class="discount-continue" type="button" data-discount-continue>Continue to checkout</button>
-          <button class="discount-close" type="button" data-discount-close>I'll use the code at checkout</button>
         </div>
       </div>
     </div>
