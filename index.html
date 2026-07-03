@@ -293,7 +293,7 @@
         line-height: 1.55;
       }
 
-      .discount-modal {
+      .bump-modal {
         position: fixed;
         inset: 0;
         z-index: 50;
@@ -305,12 +305,12 @@
         background: rgba(7, 27, 63, 0.54);
       }
 
-      .discount-modal.is-open {
+      .bump-modal.is-open {
         display: flex;
         align-items: flex-end;
       }
 
-      .discount-dialog {
+      .bump-dialog {
         position: relative;
         width: min(100%, 520px);
         max-height: calc(100vh - 36px);
@@ -321,7 +321,7 @@
         box-shadow: 0 28px 80px rgba(7, 27, 63, 0.28);
       }
 
-      .discount-dialog::before {
+      .bump-dialog::before {
         content: "";
         display: block;
         width: 46px;
@@ -331,7 +331,7 @@
         background: rgba(23, 55, 97, 0.18);
       }
 
-      .discount-x {
+      .bump-x {
         position: absolute;
         top: 14px;
         right: 14px;
@@ -349,11 +349,11 @@
         cursor: pointer;
       }
 
-      .discount-x:hover {
+      .bump-x:hover {
         background: rgba(23, 55, 97, 0.13);
       }
 
-      .discount-topline {
+      .bump-topline {
         color: var(--muted);
         font-size: 0.9rem;
         font-weight: 800;
@@ -361,7 +361,7 @@
         text-transform: uppercase;
       }
 
-      .discount-dialog h2 {
+      .bump-dialog h2 {
         margin: 10px 0 0;
         color: var(--navy);
         font-family: Georgia, "Times New Roman", serif;
@@ -370,101 +370,54 @@
         line-height: 1.08;
       }
 
-      .discount-dialog p {
+      .bump-dialog p {
         margin: 12px 0 0;
         color: var(--text);
         font-size: 1rem;
         line-height: 1.55;
       }
 
-      .discount-price {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        align-items: baseline;
-        margin-top: 14px;
-        padding: 12px 14px;
-        border-radius: 10px;
-        background: #f7fbff;
-      }
-
-      .discount-price del {
-        color: var(--muted);
-        font-size: 1rem;
-      }
-
-      .discount-price strong {
-        color: var(--navy);
-        font-size: 1.25rem;
-      }
-
-      .discount-code {
+      .bump-option {
         display: grid;
-        gap: 10px;
-        margin-top: 16px;
-        padding: 0;
-        border: 0;
-        background: transparent;
+        grid-template-columns: 24px 1fr;
+        gap: 13px;
+        margin-top: 18px;
+        padding: 16px;
+        border: 2px solid rgba(30, 79, 135, 0.18);
+        border-radius: 10px;
+        background: #ffffff;
+        cursor: pointer;
       }
 
-      .discount-code strong {
+      .bump-option input {
+        width: 20px;
+        height: 20px;
+        margin-top: 2px;
+        accent-color: var(--blue);
+      }
+
+      .bump-option strong {
         display: block;
         color: var(--navy);
         font-size: 1rem;
       }
 
-      .discount-code span {
+      .bump-option span {
         display: block;
+        margin-top: 5px;
         color: var(--muted);
         font-size: 0.95rem;
         line-height: 1.45;
       }
 
-      .discount-copy-row {
-        display: grid;
-        grid-template-columns: 1fr auto;
-        gap: 8px;
-        align-items: stretch;
-      }
-
-      .discount-copy-field {
-        min-width: 0;
-        min-height: 50px;
-        padding: 0 14px;
-        border: 1px solid rgba(30, 79, 135, 0.26);
-        border-radius: 8px;
-        background: #f7fbff;
-        color: var(--navy);
-        font: inherit;
-        font-size: 1.25rem;
-        font-weight: 900;
-        letter-spacing: 0.08em;
-      }
-
-      .discount-copy-button {
-        min-height: 50px;
-        padding: 0 16px;
-        border: 0;
-        border-radius: 8px;
-        background: var(--navy);
-        color: #ffffff;
-        font: inherit;
-        font-weight: 900;
-        cursor: pointer;
-      }
-
-      .discount-copy-button:hover {
-        background: #071b3f;
-      }
-
-      .discount-actions {
+      .bump-actions {
         display: grid;
         gap: 10px;
         margin-top: 18px;
       }
 
-      .discount-continue,
-      .discount-close {
+      .bump-continue,
+      .bump-close {
         min-height: 54px;
         border-radius: 8px;
         font: inherit;
@@ -472,24 +425,23 @@
         cursor: pointer;
       }
 
-      .discount-continue {
+      .bump-continue {
         border: 0;
         background: var(--blue);
         color: #ffffff;
         box-shadow: 0 14px 26px rgba(30, 79, 135, 0.2);
       }
 
-      .discount-close {
+      .bump-close {
         border: 0;
         background: transparent;
         color: var(--muted);
         text-decoration: underline;
       }
 
-      body.discount-locked {
+      body.bump-locked {
         overflow: hidden;
       }
-
       .learn {
         background: var(--section-cream);
         border-bottom: 1px solid rgba(23, 55, 97, 0.1);
@@ -1880,36 +1832,49 @@
       });
 
       var guideCheckoutUrl = "https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00";
+      var guideWithMessagesUrl = "https://buy.stripe.com/28EeVc72PfEUbyM9q2bZe0b";
 
-      function openDiscountModal() {
-        var modal = document.querySelector("[data-discount-modal]");
-        if (!modal) {
+      function updateBumpButton() {
+        var checkbox = document.querySelector("[data-bump-checkbox]");
+        var button = document.querySelector("[data-bump-continue]");
+        if (!checkbox || !button) return;
+
+        button.textContent = checkbox.checked
+          ? "Continue to checkout - £26.50"
+          : "Continue to checkout - £19";
+      }
+
+      function openBumpModal() {
+        var modal = document.querySelector("[data-bump-modal]");
+        var checkbox = document.querySelector("[data-bump-checkbox]");
+        if (!modal || !checkbox) {
           window.location.href = guideCheckoutUrl;
           return;
         }
 
+        checkbox.checked = false;
+        updateBumpButton();
         modal.classList.add("is-open");
         modal.setAttribute("aria-hidden", "false");
-        document.body.classList.add("discount-locked");
+        document.body.classList.add("bump-locked");
       }
 
-      function closeDiscountModal() {
-        var modal = document.querySelector("[data-discount-modal]");
+      function closeBumpModal() {
+        var modal = document.querySelector("[data-bump-modal]");
         if (!modal) return;
 
         modal.classList.remove("is-open");
         modal.setAttribute("aria-hidden", "true");
-        document.body.classList.remove("discount-locked");
+        document.body.classList.remove("bump-locked");
       }
 
       document.addEventListener("click", function (event) {
         var checkout = event.target.closest("[data-direct-checkout]");
-        var close = event.target.closest("[data-discount-close]");
-        var dismiss = event.target.closest("[data-discount-dismiss]");
-        var modal = event.target.closest("[data-discount-modal]");
-        var dialog = event.target.closest(".discount-dialog");
-        var continueButton = event.target.closest("[data-discount-continue]");
-        var copyButton = event.target.closest("[data-copy-discount]");
+        var close = event.target.closest("[data-bump-close]");
+        var dismiss = event.target.closest("[data-bump-dismiss]");
+        var modal = event.target.closest("[data-bump-modal]");
+        var dialog = event.target.closest(".bump-dialog");
+        var continueButton = event.target.closest("[data-bump-continue]");
 
         if (checkout) {
           event.preventDefault();
@@ -1917,13 +1882,13 @@
             fbq("track", "InitiateCheckout");
           }
 
-          window.setTimeout(openDiscountModal, 150);
+          window.setTimeout(openBumpModal, 150);
           return;
         }
 
         if (dismiss) {
           event.preventDefault();
-          closeDiscountModal();
+          closeBumpModal();
           return;
         }
 
@@ -1935,60 +1900,47 @@
 
         if (modal && !dialog) {
           event.preventDefault();
-          closeDiscountModal();
-          return;
-        }
-
-        if (copyButton) {
-          event.preventDefault();
-          var code = copyButton.getAttribute("data-copy-discount") || "EARLY50";
-          var field = document.querySelector(".discount-copy-field");
-          if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(code);
-          } else if (field) {
-            field.select();
-            document.execCommand("copy");
-          }
-          copyButton.textContent = "Copied";
-          window.setTimeout(function () {
-            copyButton.textContent = "Copy code";
-          }, 1800);
+          closeBumpModal();
           return;
         }
 
         if (continueButton) {
-          window.location.href = guideCheckoutUrl;
+          var checkbox = document.querySelector("[data-bump-checkbox]");
+          window.location.href = checkbox && checkbox.checked ? guideWithMessagesUrl : guideCheckoutUrl;
+        }
+      });
+
+      document.addEventListener("change", function (event) {
+        if (event.target.matches("[data-bump-checkbox]")) {
+          updateBumpButton();
         }
       });
 
       document.addEventListener("keydown", function (event) {
         if (event.key === "Escape") {
-          closeDiscountModal();
+          closeBumpModal();
         }
       });
 
     </script>
-    <div class="discount-modal" data-discount-modal aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="discount-title">
-      <div class="discount-dialog">
-        <button class="discount-x" type="button" data-discount-dismiss aria-label="Close">&times;</button>
-        <div class="discount-topline">Temporary discount</div>
-        <h2 id="discount-title">Save 50%</h2>
+    <div class="bump-modal" data-bump-modal aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="bump-title">
+      <div class="bump-dialog">
+        <button class="bump-x" type="button" data-bump-dismiss aria-label="Close">&times;</button>
+        <div class="bump-topline">Optional add-on</div>
+        <h2 id="bump-title">Want the messages written out for you?</h2>
         <p>
-          Copy this code, then paste it at checkout.
+          Add 100 ready-to-use messages for everyday situations, so you are not staring at a blank box wondering what to type.
         </p>
-        <div class="discount-code">
-          <strong>Your code</strong>
-          <div class="discount-copy-row">
-            <input class="discount-copy-field" type="text" value="EARLY50" readonly aria-label="Discount code" />
-            <button class="discount-copy-button" type="button" data-copy-discount="EARLY50">Copy code</button>
-          </div>
-        </div>
-        <div class="discount-price" aria-label="Temporary discounted price">
-          <del>&pound;19</del>
-          <strong>&pound;9.50 after code</strong>
-        </div>
-        <div class="discount-actions">
-          <button class="discount-continue" type="button" data-discount-continue>Continue to checkout</button>
+        <label class="bump-option">
+          <input type="checkbox" data-bump-checkbox />
+          <span>
+            <strong>Add the messages pack for &pound;7.50</strong>
+            <span>Helpful examples for messages, admin, decisions, shopping, appointments, and confusing information.</span>
+          </span>
+        </label>
+        <div class="bump-actions">
+          <button class="bump-continue" type="button" data-bump-continue>Continue to checkout - &pound;19</button>
+          <button class="bump-close" type="button" data-bump-close>No thanks, just the guide</button>
         </div>
       </div>
     </div>
@@ -2010,9 +1962,8 @@
                   A short plain-English guide that shows you where to start with AI, what it is useful for, what to ask, and how to get helpful answers for everyday tasks like emails, planning, and decisions.
                 </p>
                 <div class="actions">
-                  <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-direct-checkout>Get Instant Access - &pound;9.50</a>
+                  <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-direct-checkout>Get Instant Access - &pound;19</a>
                 </div>
-                <div class="early-discount-note"><span>Early Launch 50% Discount:</span> <del>&pound;19</del> <strong>&pound;9.50</strong></div>
                 <p class="note">Instant download. 60-day money-back guarantee.</p>
               </div>
             </div>
@@ -2189,8 +2140,7 @@
         <div class="final-cta-inner" id="get-instant-access">
           <h2>Get Instant Access</h2>
           <p>Get the calm starting point most AI explanations skip. In one short kit, you can understand what AI is, how to make it useful in everyday life, and how to feel clearer about what to trust.</p>
-          <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-direct-checkout>Get Instant Access - &pound;9.50</a>
-          <div class="early-discount-note"><span>Early Launch 50% Discount:</span> <del>&pound;19</del> <strong>&pound;9.50</strong></div>
+          <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-direct-checkout>Get Instant Access - &pound;19</a>
           <p class="checkout-note">Instant download. 60-day money-back guarantee.</p>
         </div>
       </section>
@@ -2198,6 +2148,10 @@
     </main>
   </body>
 </html>
+
+
+
+
 
 
 
