@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>What Would You Like AI To Help With First?</title>
+    <title>Claim Your Free AI Bonus</title>
     <meta
       name="description"
-      content="Tell us what you would most like AI to help with first."
+      content="Answer a few quick questions to help us understand what you need from AI, then continue to your free download."
     />
     <style>
       :root {
@@ -37,26 +37,15 @@
       }
 
       main {
-        width: min(100%, 680px);
+        width: min(100%, 760px);
       }
 
       .panel {
-        padding: clamp(24px, 5vw, 36px);
+        padding: clamp(24px, 5vw, 38px);
         border: 1px solid var(--line);
         border-radius: 12px;
         background: var(--card);
         box-shadow: 0 18px 42px rgba(7, 27, 63, 0.08);
-      }
-
-      h1 {
-        max-width: 34rem;
-        margin: 18px auto 0;
-        color: var(--ink);
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(1.9rem, 5vw, 2.8rem);
-        font-weight: 600;
-        line-height: 1.08;
-        text-align: center;
       }
 
       .confirmed {
@@ -96,8 +85,19 @@
         line-height: 1.35;
       }
 
+      h1 {
+        max-width: 36rem;
+        margin: 20px auto 0;
+        color: var(--ink);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(1.9rem, 5vw, 2.75rem);
+        font-weight: 600;
+        line-height: 1.08;
+        text-align: center;
+      }
+
       p {
-        max-width: 32rem;
+        max-width: 34rem;
         margin: 12px auto 0;
         color: var(--text);
         font-size: 1.02rem;
@@ -105,11 +105,60 @@
         text-align: center;
       }
 
+      .progress {
+        margin: 24px 0 0;
+      }
+
+      .progress-top {
+        display: flex;
+        justify-content: space-between;
+        gap: 14px;
+        color: var(--muted);
+        font-size: 0.92rem;
+        font-weight: 800;
+      }
+
+      .progress-bar {
+        height: 8px;
+        margin-top: 9px;
+        overflow: hidden;
+        border-radius: 999px;
+        background: rgba(7, 27, 63, 0.1);
+      }
+
+      .progress-fill {
+        width: 16.66%;
+        height: 100%;
+        border-radius: inherit;
+        background: var(--blue);
+        transition: width 180ms ease;
+      }
+
+      form {
+        margin-top: 22px;
+      }
+
+      .quiz-step {
+        display: none;
+      }
+
+      .quiz-step.is-active {
+        display: block;
+      }
+
+      .question-title {
+        margin: 0;
+        color: var(--ink);
+        font-size: clamp(1.25rem, 3vw, 1.55rem);
+        line-height: 1.25;
+        text-align: left;
+      }
+
       .choice-grid {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
         gap: 10px;
-        margin-top: 22px;
+        margin-top: 16px;
       }
 
       .choice-card {
@@ -117,7 +166,7 @@
         grid-template-columns: 22px 1fr;
         gap: 12px;
         align-items: center;
-        min-height: 58px;
+        min-height: 56px;
         padding: 13px 14px;
         border: 2px solid rgba(7, 27, 63, 0.1);
         border-radius: 10px;
@@ -143,26 +192,63 @@
         line-height: 1.25;
       }
 
-      .submit {
+      .other-field {
+        width: 100%;
+        min-height: 46px;
+        margin-top: 10px;
+        padding: 0 13px;
+        border: 1px solid var(--line);
+        border-radius: 9px;
+        color: var(--ink);
+        font: inherit;
+      }
+
+      .actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      .submit,
+      .secondary-button,
+      .bonus-button {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: min(100%, 340px);
         min-height: 54px;
-        margin: 20px auto 0;
-        border: 0;
         border-radius: 9px;
-        background: var(--blue);
-        color: #ffffff;
         font: inherit;
         font-size: 1rem;
         font-weight: 900;
         cursor: pointer;
       }
 
+      .submit,
+      .bonus-button {
+        border: 0;
+        background: var(--blue);
+        color: #ffffff;
+        text-decoration: none;
+      }
+
       .submit:hover,
-      .submit:focus-visible {
+      .submit:focus-visible,
+      .bonus-button:hover,
+      .bonus-button:focus-visible {
         background: var(--blue-dark);
+      }
+
+      .secondary-button {
+        border: 1px solid var(--line);
+        background: #ffffff;
+        color: var(--ink);
+      }
+
+      .secondary-button[disabled],
+      .submit[disabled] {
+        cursor: not-allowed;
+        opacity: 0.55;
       }
 
       .status {
@@ -174,124 +260,74 @@
         text-align: center;
       }
 
-      .offer-modal {
-        position: fixed;
-        inset: 0;
-        z-index: 50;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        padding: 16px;
-        background: rgba(7, 27, 63, 0.55);
-      }
-
-      .offer-modal.is-open {
-        display: flex;
-      }
-
-      .offer-card {
-        position: relative;
-        width: min(100%, 560px);
-        padding: clamp(22px, 5vw, 34px);
-        border: 1px solid var(--line);
-        border-radius: 12px;
-        background: var(--card);
-        box-shadow: 0 24px 70px rgba(7, 27, 63, 0.22);
-        text-align: center;
-      }
-
-      .offer-close {
-        position: absolute;
-        top: 12px;
-        right: 12px;
-        display: grid;
-        width: 36px;
-        height: 36px;
-        place-items: center;
-        border: 0;
-        border-radius: 999px;
-        background: rgba(7, 27, 63, 0.08);
-        color: var(--ink);
-        font: inherit;
-        font-size: 1.35rem;
-        line-height: 1;
-        cursor: pointer;
-      }
-
-      .offer-kicker {
-        display: inline-flex;
-        align-items: center;
-        min-height: 30px;
-        padding: 0 14px;
-        border-radius: 999px;
-        background: #f7edcd;
-        color: #80681e;
-        font-size: 0.82rem;
-        font-weight: 900;
-        text-transform: uppercase;
-      }
-
-      .offer-card h2 {
-        margin: 14px 0 0;
-        color: var(--ink);
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(1.9rem, 5vw, 2.8rem);
-        line-height: 1.05;
-      }
-
-      .offer-card p {
-        margin-top: 12px;
-      }
-
-      .price-row {
-        display: flex;
-        align-items: baseline;
-        justify-content: center;
-        gap: 13px;
-        margin-top: 18px;
-      }
-
-      .current-price {
-        color: var(--ink);
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 3rem;
-        line-height: 1;
-      }
-
-      .old-price {
-        color: var(--muted);
-        font-size: 1.25rem;
-        text-decoration: line-through;
-      }
-
-      .offer-button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 56px;
-        margin-top: 18px;
-        border-radius: 9px;
-        background: var(--blue);
-        color: #ffffff;
-        font-weight: 900;
-        text-decoration: none;
-      }
-
-      .offer-button:hover,
-      .offer-button:focus-visible {
-        background: var(--blue-dark);
-      }
-
       .back-link {
         display: block;
-        margin-top: 14px;
+        margin-top: 16px;
         color: var(--muted);
         text-align: center;
         text-underline-offset: 4px;
       }
 
+      .bonus-panel {
+        display: none;
+        margin-top: 24px;
+        padding: 22px;
+        border: 1px solid rgba(31, 143, 90, 0.24);
+        border-radius: 12px;
+        background: #f2fbf5;
+        text-align: center;
+      }
+
+      .bonus-panel.is-visible {
+        display: block;
+      }
+
+      .bonus-kicker {
+        display: inline-flex;
+        align-items: center;
+        min-height: 30px;
+        padding: 0 14px;
+        border-radius: 999px;
+        background: #e1f4e8;
+        color: #145c3a;
+        font-size: 0.82rem;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .bonus-panel h2 {
+        margin: 14px 0 0;
+        color: var(--ink);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(1.7rem, 5vw, 2.35rem);
+        line-height: 1.08;
+      }
+
+      .bonus-panel p {
+        margin-top: 10px;
+      }
+
+      .bonus-description {
+        max-width: 31rem;
+        margin: 12px auto 0;
+        padding: 13px 14px;
+        border: 1px solid rgba(31, 143, 90, 0.18);
+        border-radius: 10px;
+        background: #ffffff;
+        color: var(--ink);
+        font-weight: 800;
+      }
+
       @media (max-width: 620px) {
-        .choice-grid {
+        body {
+          align-items: start;
+        }
+
+        .panel {
+          padding: 22px;
+        }
+
+        .actions {
           grid-template-columns: 1fr;
         }
       }
@@ -304,155 +340,261 @@
           <div class="confirmed-icon" aria-hidden="true">&#10003;</div>
           <div>
             <div class="confirmed-title">Your order is confirmed.</div>
-            <div class="confirmed-copy">Your download is ready on the next page. This is just one quick question before you get it.</div>
+            <div class="confirmed-copy">Answer a few quick questions and we&rsquo;ll unlock a free bonus before your download.</div>
           </div>
         </div>
 
-        <h1>One last question before your download</h1>
-        <p>What would you most like AI to help you with first?</p>
+        <h1>Claim your free AI bonus</h1>
+        <p>These quick answers help us make future guides more useful. You can skip straight to your download anytime.</p>
+
+        <div class="progress" aria-hidden="true">
+          <div class="progress-top">
+            <span data-progress-label>Question 1 of 6</span>
+            <span>Free bonus unlocked at the end</span>
+          </div>
+          <div class="progress-bar"><div class="progress-fill" data-progress-fill></div></div>
+        </div>
 
         <form action="https://formspree.io/f/xrewejey" method="POST" data-ai-question-form>
-          <input type="hidden" name="_subject" value="AI Confidence Kit next-step answer" />
-          <div class="choice-grid">
-            <label class="choice-card">
-              <input type="radio" name="ai_help_first" value="Work or business" required />
-              <span><strong>Work or business</strong></span>
-            </label>
-            <label class="choice-card">
-              <input type="radio" name="ai_help_first" value="Saving time at home" required />
-              <span><strong>Saving time at home</strong></span>
-            </label>
-            <label class="choice-card">
-              <input type="radio" name="ai_help_first" value="Understanding confusing things" required />
-              <span><strong>Understanding confusing things</strong></span>
-            </label>
-            <label class="choice-card">
-              <input type="radio" name="ai_help_first" value="Getting personally set up" required />
-              <span><strong>Getting personally set up</strong></span>
-            </label>
+          <input type="hidden" name="_subject" value="AI Confidence Kit post-purchase quiz" />
+
+          <section class="quiz-step is-active" data-step="1">
+            <h2 class="question-title">Before buying, what best described your situation?</h2>
+            <div class="choice-grid">
+              <label class="choice-card"><input type="radio" name="before_buying_situation" value="I wanted to try AI but didn’t know where to start" required /><span><strong>I wanted to try AI but didn&rsquo;t know where to start</strong></span></label>
+              <label class="choice-card"><input type="radio" name="before_buying_situation" value="I had tried AI but didn’t get useful answers" required /><span><strong>I had tried AI but didn&rsquo;t get useful answers</strong></span></label>
+              <label class="choice-card"><input type="radio" name="before_buying_situation" value="I wanted simple everyday uses" required /><span><strong>I wanted simple everyday uses</strong></span></label>
+              <label class="choice-card"><input type="radio" name="before_buying_situation" value="I wanted to feel more confident with AI" required /><span><strong>I wanted to feel more confident with AI</strong></span></label>
+              <label class="choice-card"><input type="radio" name="before_buying_situation" value="Other" required /><span><strong>Other</strong></span></label>
+              <input class="other-field" type="text" name="before_buying_situation_other" placeholder="Other: type your answer here" />
+            </div>
+          </section>
+
+          <section class="quiz-step" data-step="2">
+            <h2 class="question-title">What made the guide feel relevant today?</h2>
+            <div class="choice-grid">
+              <label class="choice-card"><input type="radio" name="why_relevant_today" value="AI keeps coming up in daily life" required /><span><strong>AI keeps coming up in daily life</strong></span></label>
+              <label class="choice-card"><input type="radio" name="why_relevant_today" value="I wanted to save time on tasks" required /><span><strong>I wanted to save time on tasks</strong></span></label>
+              <label class="choice-card"><input type="radio" name="why_relevant_today" value="I felt confused by other explanations" required /><span><strong>I felt confused by other explanations</strong></span></label>
+              <label class="choice-card"><input type="radio" name="why_relevant_today" value="I wanted practical examples" required /><span><strong>I wanted practical examples</strong></span></label>
+              <label class="choice-card"><input type="radio" name="why_relevant_today" value="I saw the ad and it described my problem clearly" required /><span><strong>I saw the ad and it described my problem clearly</strong></span></label>
+            </div>
+          </section>
+
+          <section class="quiz-step" data-step="3">
+            <h2 class="question-title">What were you hoping this would help you do first?</h2>
+            <div class="choice-grid">
+              <label class="choice-card"><input type="radio" name="first_help_hoped_for" value="Write better emails/messages" required /><span><strong>Write better emails/messages</strong></span></label>
+              <label class="choice-card"><input type="radio" name="first_help_hoped_for" value="Understand confusing information" required /><span><strong>Understand confusing information</strong></span></label>
+              <label class="choice-card"><input type="radio" name="first_help_hoped_for" value="Plan things faster" required /><span><strong>Plan things faster</strong></span></label>
+              <label class="choice-card"><input type="radio" name="first_help_hoped_for" value="Ask better questions" required /><span><strong>Ask better questions</strong></span></label>
+              <label class="choice-card"><input type="radio" name="first_help_hoped_for" value="Use AI generally with more confidence" required /><span><strong>Use AI generally with more confidence</strong></span></label>
+              <label class="choice-card"><input type="radio" name="first_help_hoped_for" value="Other" required /><span><strong>Other</strong></span></label>
+              <input class="other-field" type="text" name="first_help_hoped_for_other" placeholder="Other: type your answer here" />
+            </div>
+          </section>
+
+          <section class="quiz-step" data-step="4">
+            <h2 class="question-title">What nearly stopped you from buying?</h2>
+            <div class="choice-grid">
+              <label class="choice-card"><input type="radio" name="nearly_stopped_buying" value="Worried it would be too technical" required /><span><strong>Worried it would be too technical</strong></span></label>
+              <label class="choice-card"><input type="radio" name="nearly_stopped_buying" value="Didn’t know if I’d actually use it" required /><span><strong>Didn&rsquo;t know if I&rsquo;d actually use it</strong></span></label>
+              <label class="choice-card"><input type="radio" name="nearly_stopped_buying" value="Price" required /><span><strong>Price</strong></span></label>
+              <label class="choice-card"><input type="radio" name="nearly_stopped_buying" value="Didn’t trust it yet" required /><span><strong>Didn&rsquo;t trust it yet</strong></span></label>
+              <label class="choice-card"><input type="radio" name="nearly_stopped_buying" value="Felt I could find free info elsewhere" required /><span><strong>Felt I could find free info elsewhere</strong></span></label>
+              <label class="choice-card"><input type="radio" name="nearly_stopped_buying" value="Nothing really" required /><span><strong>Nothing really</strong></span></label>
+            </div>
+          </section>
+
+          <section class="quiz-step" data-step="5">
+            <h2 class="question-title">Which phrase best describes what you wanted?</h2>
+            <div class="choice-grid">
+              <label class="choice-card"><input type="radio" name="wanted_phrase" value="AI explained simply" required /><span><strong>&ldquo;AI explained simply&rdquo;</strong></span></label>
+              <label class="choice-card"><input type="radio" name="wanted_phrase" value="Know what to ask AI" required /><span><strong>&ldquo;Know what to ask AI&rdquo;</strong></span></label>
+              <label class="choice-card"><input type="radio" name="wanted_phrase" value="Use AI in everyday life" required /><span><strong>&ldquo;Use AI in everyday life&rdquo;</strong></span></label>
+              <label class="choice-card"><input type="radio" name="wanted_phrase" value="Feel confident using AI" required /><span><strong>&ldquo;Feel confident using AI&rdquo;</strong></span></label>
+              <label class="choice-card"><input type="radio" name="wanted_phrase" value="Stop feeling confused by AI" required /><span><strong>&ldquo;Stop feeling confused by AI&rdquo;</strong></span></label>
+            </div>
+          </section>
+
+          <section class="quiz-step" data-step="6">
+            <h2 class="question-title">What would you most like AI to help you with first?</h2>
+            <div class="choice-grid">
+              <label class="choice-card"><input type="radio" name="ai_help_first" value="Work or business" required /><span><strong>Work or business</strong></span></label>
+              <label class="choice-card"><input type="radio" name="ai_help_first" value="Saving time at home" required /><span><strong>Saving time at home</strong></span></label>
+              <label class="choice-card"><input type="radio" name="ai_help_first" value="Understanding confusing things" required /><span><strong>Understanding confusing things</strong></span></label>
+              <label class="choice-card"><input type="radio" name="ai_help_first" value="Getting personally set up" required /><span><strong>Getting personally set up</strong></span></label>
+            </div>
+          </section>
+
+          <div class="actions">
+            <button class="secondary-button" type="button" data-prev disabled>Back</button>
+            <button class="submit" type="button" data-next>Next</button>
           </div>
-          <button class="submit" type="submit">Send my answer and continue</button>
           <div class="status" data-form-status aria-live="polite"></div>
         </form>
 
-        <a class="back-link" href="thank-you.html">Continue to your download page</a>
+        <div class="bonus-panel" data-bonus-panel>
+          <div class="bonus-kicker">Free bonus unlocked</div>
+          <h2 data-bonus-title>Your download is ready</h2>
+          <p class="bonus-description" data-bonus-description>Your free bonus gives you simple use cases and ready-to-use prompts for the area you chose.</p>
+          <p data-bonus-copy>Thanks for answering. Your bonus will be sent to your purchase email alongside the AI Confidence Kit, and you can continue to your download page now.</p>
+          <a class="bonus-button" href="thank-you.html" data-bonus-button>Go to my download</a>
+        </div>
+
+        <a class="back-link" href="thank-you.html">Skip the questions and go straight to my download</a>
       </section>
     </main>
-    <section class="offer-modal" data-offer-modal aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="offer-title">
-      <div class="offer-card">
-        <button class="offer-close" type="button" data-offer-close aria-label="Close">&times;</button>
-        <div class="offer-kicker">50% off today</div>
-        <h2 id="offer-title" data-offer-title></h2>
-        <p data-offer-description></p>
-        <div class="price-row">
-          <span class="current-price" data-offer-price></span>
-          <span class="old-price" data-offer-old-price></span>
-        </div>
-        <a class="offer-button" href="#" data-offer-link>Yes, add this to my order</a>
-        <a class="back-link" href="thank-you.html">No thanks, take me to my download</a>
-      </div>
-    </section>
+
     <script>
-      var offers = {
+      var currentStep = 1;
+      var totalSteps = 6;
+      var bonuses = {
         "Work or business": {
-          title: "AI Work Starter Kit",
-          description: "A simple toolkit for using AI at work or in your business, with ready-to-use prompts and examples for emails, admin, planning, ideas, customers, and getting more done without starting from a blank page.",
-          price: "\u00a319",
-          oldPrice: "\u00a338",
-          url: "https://buy.stripe.com/4gMaEW5YL1O4fP27hUbZe0U"
+          name: "AI Work Starter Kit",
+          description: "Simple work and business use cases with ready-to-use prompts for writing, planning, organising tasks, and getting a useful first draft when you need one."
         },
         "Saving time at home": {
-          title: "Everyday AI Time-Saver Kit",
-          description: "A practical kit for using AI to make home life and everyday tasks easier, including prompts and simple workflows for planning, shopping, appointments, organising information, comparing options, and reducing mental load.",
-          price: "\u00a319",
-          oldPrice: "\u00a338",
-          url: "https://buy.stripe.com/3cI8wOfzlcsI46kcCebZe0V"
+          name: "Everyday AI Time-Saver Kit",
+          description: "Everyday use cases and simple prompts to help with planning, comparing options, sorting life admin, writing messages, and making small tasks feel lighter."
         },
         "Understanding confusing things": {
-          title: "AI Explain It Simply Kit",
-          description: "A plain-English toolkit for using AI to make confusing information easier to understand, including prompts for letters, bills, instructions, articles, online claims, forms, and anything that feels unclear or overwhelming.",
-          price: "\u00a319",
-          oldPrice: "\u00a338",
-          url: "https://buy.stripe.com/8x2dR8af19gw9qE6dQbZe0W"
+          name: "AI Explain It Simply Kit",
+          description: "Plain-English use cases and prompts to help you make sense of letters, bills, forms, articles, instructions, and anything that feels unclear."
         },
         "Getting personally set up": {
-          title: "Personal AI Setup Help",
-          description: "A simple 1-to-1 text session where I help you choose the right AI tool, get comfortable using it, send your first useful prompts, answer your questions, and create a personal 7-day use plan based on your needs.",
-          price: "\u00a330",
-          oldPrice: "\u00a360",
-          url: "https://buy.stripe.com/bJeaEW0Er2S8auIau6bZe0N"
+          name: "Personal AI Setup Plan",
+          description: "A gentle starting plan with simple use cases, first prompts, and small confidence-building steps so you know what to try first."
         }
       };
 
-      function selectedAnswer(form) {
-        var checked = form.querySelector("input[name='ai_help_first']:checked");
-        return checked ? checked.value : "";
+      function stepElement(step) {
+        return document.querySelector('[data-step="' + step + '"]');
       }
 
-      function openOffer(answer) {
-        var offer = offers[answer];
-        var modal = document.querySelector("[data-offer-modal]");
-        if (!offer || !modal) return;
+      function updateProgress() {
+        var label = document.querySelector('[data-progress-label]');
+        var fill = document.querySelector('[data-progress-fill]');
+        var prev = document.querySelector('[data-prev]');
+        var next = document.querySelector('[data-next]');
 
-        document.querySelector("[data-offer-title]").textContent = offer.title;
-        document.querySelector("[data-offer-description]").textContent = offer.description;
-        document.querySelector("[data-offer-price]").textContent = offer.price;
-        document.querySelector("[data-offer-old-price]").textContent = offer.oldPrice;
-        document.querySelector("[data-offer-link]").href = offer.url;
-        modal.classList.add("is-open");
-        modal.setAttribute("aria-hidden", "false");
+        if (label) label.textContent = 'Question ' + currentStep + ' of ' + totalSteps;
+        if (fill) fill.style.width = (currentStep / totalSteps * 100) + '%';
+        if (prev) prev.disabled = currentStep === 1;
+        if (next) next.textContent = currentStep === totalSteps ? 'Unlock my free bonus' : 'Next';
       }
 
-      function closeOffer() {
-        var modal = document.querySelector("[data-offer-modal]");
-        if (!modal) return;
-        modal.classList.remove("is-open");
-        modal.setAttribute("aria-hidden", "true");
+      function showStep(step) {
+        document.querySelectorAll('[data-step]').forEach(function (section) {
+          section.classList.toggle('is-active', Number(section.getAttribute('data-step')) === step);
+        });
+        currentStep = step;
+        updateProgress();
       }
 
-      document.addEventListener("click", function (event) {
-        var close = event.target.closest("[data-offer-close]");
-        var modal = event.target.closest("[data-offer-modal]");
-        var card = event.target.closest(".offer-card");
+      function currentStepIsAnswered() {
+        var section = stepElement(currentStep);
+        if (!section) return false;
+        var checked = section.querySelector('input[type="radio"]:checked');
+        if (!checked) return false;
+        return true;
+      }
 
-        if (close || (modal && !card)) {
-          event.preventDefault();
-          closeOffer();
+      function setStatus(message, isError) {
+        var status = document.querySelector('[data-form-status]');
+        if (!status) return;
+        status.textContent = message;
+        status.style.color = isError ? '#9d2d21' : 'var(--green)';
+      }
+
+      function selectedBonus(form) {
+        var checked = form.querySelector('input[name="ai_help_first"]:checked');
+        return checked && bonuses[checked.value]
+          ? bonuses[checked.value]
+          : {
+              name: 'your free AI bonus',
+              description: 'Simple use cases and ready-to-use prompts for the area you chose.'
+            };
+      }
+
+      function showBonusPanel(form) {
+        var bonus = selectedBonus(form);
+        var title = document.querySelector('[data-bonus-title]');
+        var description = document.querySelector('[data-bonus-description]');
+        var copy = document.querySelector('[data-bonus-copy]');
+        var button = document.querySelector('[data-bonus-button]');
+        var panel = document.querySelector('[data-bonus-panel]');
+
+        if (title) title.textContent = bonus.name + ' is yours';
+        if (description) description.textContent = bonus.description;
+        if (copy) copy.textContent = bonus.name + ' will be sent to your purchase email alongside the AI Confidence Kit. You can continue to your download page now.';
+        if (button) button.textContent = 'Go to my download';
+        if (panel) panel.classList.add('is-visible');
+      }
+
+      function submitQuiz(form) {
+        var next = document.querySelector('[data-next]');
+        if (next) {
+          next.disabled = true;
+          next.textContent = 'Sending...';
         }
-      });
+        setStatus('Sending your answers...', false);
 
-      document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape") {
-          closeOffer();
+        if (!window.fetch) {
+          form.submit();
+          return;
         }
-      });
-
-      document.addEventListener("submit", function (event) {
-        var form = event.target.closest("[data-ai-question-form]");
-        if (!form || !window.fetch) return;
-
-        event.preventDefault();
-        var answer = selectedAnswer(form);
-        var status = form.querySelector("[data-form-status]");
-        var submit = form.querySelector("button[type='submit']");
-        if (status) status.textContent = "Sending...";
-        if (submit) submit.disabled = true;
 
         fetch(form.action, {
-          method: "POST",
+          method: 'POST',
           body: new FormData(form),
-          headers: { Accept: "application/json" }
+          headers: { Accept: 'application/json' }
         }).then(function (response) {
-          if (!response.ok) throw new Error("Form submission failed");
-          if (status) status.textContent = "Thank you - your answer has been sent.";
-          if (submit) submit.textContent = "Answer sent";
-          openOffer(answer);
+          if (!response.ok) throw new Error('Form submission failed');
+          form.style.display = 'none';
+          document.querySelector('.progress').style.display = 'none';
+          showBonusPanel(form);
+          setStatus('', false);
         }).catch(function () {
-          if (status) status.textContent = "Sorry, that did not send. Please try again.";
-          if (submit) submit.disabled = false;
+          setStatus('Sorry, that did not send. Please try again or skip to your download.', true);
+          if (next) {
+            next.disabled = false;
+            next.textContent = 'Unlock my free bonus';
+          }
         });
+      }
+
+      document.addEventListener('click', function (event) {
+        var form = document.querySelector('[data-ai-question-form]');
+        var next = event.target.closest('[data-next]');
+        var prev = event.target.closest('[data-prev]');
+
+        if (prev) {
+          event.preventDefault();
+          setStatus('', false);
+          if (currentStep > 1) showStep(currentStep - 1);
+          return;
+        }
+
+        if (next) {
+          event.preventDefault();
+          if (!currentStepIsAnswered()) {
+            setStatus('Please choose an answer, or skip straight to your download.', true);
+            return;
+          }
+          setStatus('', false);
+          if (currentStep < totalSteps) {
+            showStep(currentStep + 1);
+          } else if (form) {
+            submitQuiz(form);
+          }
+        }
       });
+
+      updateProgress();
     </script>
   </body>
 </html>
+
+
 
