@@ -1,0 +1,1250 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Explain It Simply Kit</title>
+    <meta
+      name="description"
+      content="A calm, plain-English prompt kit for using AI to understand confusing letters, bills, forms, claims, articles, and jargon."
+    />
+    <style>
+      :root {
+        --ink: #132238;
+        --navy: #173761;
+        --text: #334155;
+        --muted: #627084;
+        --paper: #fffdf8;
+        --wash: #f3f7f4;
+        --blue-wash: #eef6fb;
+        --mint: #e9f5ee;
+        --gold: #f7eed2;
+        --rose: #faeeee;
+        --line: rgba(19, 34, 56, 0.14);
+        --accent: #206a54;
+        --button: #145ca8;
+        --button-dark: #0f4b89;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: #f7f4ed;
+        color: var(--text);
+        font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+        font-size: 18px;
+        line-height: 1.65;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      button,
+      input,
+      textarea {
+        font: inherit;
+      }
+
+      .skip-link {
+        position: absolute;
+        left: 16px;
+        top: -60px;
+        z-index: 10;
+        padding: 10px 14px;
+        background: var(--navy);
+        color: #ffffff;
+      }
+
+      .skip-link:focus {
+        top: 16px;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        border-bottom: 1px solid var(--line);
+        background: rgba(255, 253, 248, 0.96);
+        backdrop-filter: blur(10px);
+      }
+
+      .topbar-inner {
+        width: min(100%, 1120px);
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 12px 20px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--navy);
+        font-weight: 800;
+        line-height: 1.2;
+      }
+
+      .brand-mark {
+        display: grid;
+        flex: 0 0 auto;
+        width: 34px;
+        height: 34px;
+        place-items: center;
+        border-radius: 8px;
+        background: var(--mint);
+        color: var(--accent);
+        font-weight: 900;
+      }
+
+      .top-actions {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+
+      .icon-button {
+        min-height: 42px;
+        padding: 9px 13px;
+        border: 1px solid rgba(20, 92, 168, 0.24);
+        border-radius: 8px;
+        background: #ffffff;
+        color: var(--button);
+        font-weight: 800;
+        cursor: pointer;
+      }
+
+      .icon-button:hover {
+        background: #f3f8ff;
+      }
+
+      main {
+        width: min(100%, 1120px);
+        margin: 0 auto;
+        padding: 22px 20px 72px;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1.16fr) minmax(300px, 0.84fr);
+        gap: 34px;
+        align-items: stretch;
+        min-height: 620px;
+        padding: clamp(30px, 5vw, 58px);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background:
+          linear-gradient(135deg, rgba(238, 246, 251, 0.92), rgba(255, 253, 248, 0.92)),
+          url("productimage.jpg") center right / cover;
+        box-shadow: 0 18px 50px rgba(19, 34, 56, 0.08);
+      }
+
+      .hero-copy {
+        align-self: center;
+        max-width: 660px;
+      }
+
+      .eyebrow {
+        margin: 0 0 16px;
+        color: var(--accent);
+        font-size: 0.88rem;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3,
+      .big-number {
+        margin: 0;
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 500;
+        letter-spacing: 0;
+      }
+
+      h1 {
+        max-width: 12ch;
+        font-size: clamp(3rem, 8vw, 5.8rem);
+        line-height: 0.95;
+      }
+
+      .subtitle {
+        max-width: 38rem;
+        margin: 24px 0 0;
+        color: #34465d;
+        font-size: clamp(1.12rem, 2vw, 1.32rem);
+      }
+
+      .calm-strip {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 28px;
+      }
+
+      .calm-strip span {
+        min-height: 74px;
+        padding: 14px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.78);
+        color: var(--navy);
+        font-weight: 800;
+        line-height: 1.3;
+      }
+
+      .hero-panel {
+        align-self: end;
+        padding: 24px;
+        border: 1px solid rgba(19, 34, 56, 0.16);
+        border-radius: 8px;
+        background: rgba(255, 253, 248, 0.92);
+      }
+
+      .hero-panel h2 {
+        font-size: 1.55rem;
+      }
+
+      .hero-panel ul,
+      .check-list {
+        margin: 16px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .hero-panel li,
+      .check-list li {
+        position: relative;
+        margin: 0 0 10px;
+        padding-left: 30px;
+      }
+
+      .hero-panel li::before,
+      .check-list li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: var(--accent);
+        font-weight: 900;
+      }
+
+      .section {
+        margin-top: 22px;
+        padding: clamp(28px, 5vw, 48px);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--paper);
+      }
+
+      .section.alt {
+        background: var(--wash);
+      }
+
+      .section.blue {
+        background: var(--blue-wash);
+      }
+
+      .section.gold {
+        background: #fff9e9;
+      }
+
+      .section-head {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 24px;
+      }
+
+      .section-kicker {
+        margin: 0 0 8px;
+        color: var(--accent);
+        font-size: 0.84rem;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      h2 {
+        font-size: clamp(2rem, 4vw, 3.1rem);
+        line-height: 1.06;
+      }
+
+      h3 {
+        font-size: 1.35rem;
+        line-height: 1.2;
+      }
+
+      .intro {
+        max-width: 44rem;
+        margin: 16px 0 0;
+        color: var(--muted);
+        font-size: 1.06rem;
+      }
+
+      .toc {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 26px;
+      }
+
+      .toc a {
+        display: block;
+        min-height: 96px;
+        padding: 18px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #ffffff;
+        text-decoration: none;
+      }
+
+      .toc strong {
+        display: block;
+        color: var(--navy);
+        font-size: 1.08rem;
+        line-height: 1.25;
+      }
+
+      .toc span {
+        display: block;
+        margin-top: 6px;
+        color: var(--muted);
+        line-height: 1.35;
+      }
+
+      .tool-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+        margin-top: 26px;
+      }
+
+      .tool-card,
+      .prompt-card,
+      .worksheet,
+      .plain-card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #ffffff;
+      }
+
+      .tool-card {
+        padding: 22px;
+      }
+
+      .tool-card p {
+        margin: 10px 0 0;
+      }
+
+      .prompt-stack {
+        display: grid;
+        gap: 14px;
+        margin-top: 24px;
+      }
+
+      .prompt-card {
+        overflow: hidden;
+      }
+
+      .prompt-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 14px 16px;
+        border-bottom: 1px solid var(--line);
+        background: #f8fbf9;
+      }
+
+      .prompt-top strong {
+        color: var(--navy);
+      }
+
+      .copy-button {
+        flex: 0 0 auto;
+        min-height: 38px;
+        padding: 7px 12px;
+        border: 1px solid rgba(32, 106, 84, 0.25);
+        border-radius: 8px;
+        background: #ffffff;
+        color: var(--accent);
+        font-size: 0.95rem;
+        font-weight: 900;
+        cursor: pointer;
+      }
+
+      .copy-button:hover {
+        background: var(--mint);
+      }
+
+      .prompt-text {
+        margin: 0;
+        padding: 18px;
+        color: #233148;
+        white-space: pre-wrap;
+      }
+
+      .soft-note,
+      .warning-note {
+        margin-top: 24px;
+        padding: 18px 20px;
+        border-radius: 8px;
+      }
+
+      .soft-note {
+        border: 1px solid rgba(32, 106, 84, 0.18);
+        background: var(--mint);
+      }
+
+      .warning-note {
+        border: 1px solid rgba(153, 92, 37, 0.2);
+        background: #fff4df;
+      }
+
+      .steps {
+        counter-reset: step;
+        display: grid;
+        gap: 14px;
+        margin-top: 26px;
+      }
+
+      .step {
+        counter-increment: step;
+        display: grid;
+        grid-template-columns: 54px 1fr;
+        gap: 14px;
+        padding: 18px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #ffffff;
+      }
+
+      .step::before {
+        content: counter(step);
+        display: grid;
+        width: 48px;
+        height: 48px;
+        place-items: center;
+        border-radius: 8px;
+        background: var(--navy);
+        color: #ffffff;
+        font-weight: 900;
+      }
+
+      .step h3 {
+        margin-top: 2px;
+      }
+
+      .step p {
+        margin: 7px 0 0;
+      }
+
+      .jargon-table {
+        width: 100%;
+        margin-top: 24px;
+        border-collapse: collapse;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #ffffff;
+      }
+
+      .jargon-table th,
+      .jargon-table td {
+        padding: 14px 16px;
+        border-bottom: 1px solid var(--line);
+        text-align: left;
+        vertical-align: top;
+      }
+
+      .jargon-table th {
+        background: #f8fbf9;
+        color: var(--navy);
+      }
+
+      .jargon-table tr:last-child td {
+        border-bottom: 0;
+      }
+
+      .worksheet {
+        margin-top: 24px;
+        padding: 22px;
+      }
+
+      .field-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 16px;
+      }
+
+      label {
+        display: block;
+        color: var(--navy);
+        font-weight: 900;
+      }
+
+      textarea,
+      input {
+        width: 100%;
+        margin-top: 7px;
+        border: 1px solid rgba(19, 34, 56, 0.22);
+        border-radius: 8px;
+        background: #fffefb;
+        color: var(--ink);
+      }
+
+      textarea {
+        min-height: 118px;
+        padding: 12px;
+        resize: vertical;
+      }
+
+      input {
+        min-height: 48px;
+        padding: 10px 12px;
+      }
+
+      .full {
+        grid-column: 1 / -1;
+      }
+
+      .mini-label {
+        display: inline-block;
+        margin-bottom: 8px;
+        padding: 4px 9px;
+        border-radius: 999px;
+        background: var(--gold);
+        color: #66511b;
+        font-size: 0.82rem;
+        font-weight: 900;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .plain-card {
+        padding: 20px;
+      }
+
+      .plain-card ul {
+        margin: 12px 0 0;
+        padding-left: 22px;
+      }
+
+      .three-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 24px;
+      }
+
+      .footer {
+        margin-top: 22px;
+        padding: 24px;
+        border-radius: 8px;
+        background: var(--navy);
+        color: #eef5ff;
+      }
+
+      .footer strong {
+        color: #ffffff;
+      }
+
+      .footer p {
+        margin: 0;
+      }
+
+      @media (max-width: 860px) {
+        body {
+          font-size: 17px;
+        }
+
+        .topbar {
+          position: static;
+        }
+
+        .topbar-inner,
+        .section-head {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .top-actions {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .hero,
+        .toc,
+        .tool-grid,
+        .field-grid,
+        .three-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          min-height: auto;
+          padding: 28px;
+          background:
+            linear-gradient(135deg, rgba(238, 246, 251, 0.96), rgba(255, 253, 248, 0.96)),
+            url("productimage.jpg") center / cover;
+        }
+
+        .calm-strip {
+          grid-template-columns: 1fr;
+        }
+
+        .step {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 560px) {
+        main {
+          padding: 14px 12px 48px;
+        }
+
+        .section,
+        .hero {
+          padding: 22px 18px;
+        }
+
+        h1 {
+          font-size: 3rem;
+        }
+
+        .prompt-top {
+          align-items: stretch;
+          flex-direction: column;
+        }
+
+        .copy-button {
+          width: 100%;
+        }
+
+        .jargon-table,
+        .jargon-table tbody,
+        .jargon-table tr,
+        .jargon-table th,
+        .jargon-table td {
+          display: block;
+        }
+
+        .jargon-table thead {
+          display: none;
+        }
+
+        .jargon-table td {
+          border-bottom: 0;
+        }
+
+        .jargon-table td:first-child {
+          padding-bottom: 4px;
+          color: var(--navy);
+          font-weight: 900;
+        }
+
+        .jargon-table td:last-child {
+          padding-top: 0;
+          border-bottom: 1px solid var(--line);
+        }
+      }
+
+      @media print {
+        @page {
+          size: A4;
+          margin: 16mm;
+        }
+
+        body {
+          background: #ffffff;
+          font-size: 12pt;
+        }
+
+        .topbar,
+        .copy-button {
+          display: none;
+        }
+
+        main {
+          width: 100%;
+          padding: 0;
+        }
+
+        .hero,
+        .section,
+        .footer {
+          margin: 0 0 14mm;
+          border: 0;
+          box-shadow: none;
+          break-inside: avoid;
+        }
+
+        .hero {
+          min-height: auto;
+          background: #ffffff;
+        }
+
+        .prompt-card,
+        .worksheet,
+        .step,
+        .plain-card {
+          break-inside: avoid;
+        }
+
+        textarea,
+        input {
+          min-height: 90px;
+          border: 1px solid #999999;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#contents">Skip to kit contents</a>
+
+    <header class="topbar" aria-label="Kit navigation">
+      <div class="topbar-inner">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">AI</span>
+          <span>Explain It Simply Kit</span>
+        </div>
+        <div class="top-actions">
+          <button class="icon-button" type="button" onclick="window.print()">Print</button>
+          <a class="icon-button" href="#quick-start">Start</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">AI Confidence Companion Kit</p>
+          <h1 id="hero-title">AI Explain It Simply Kit</h1>
+          <p class="subtitle">
+            A calm, plain-English toolkit for using AI to understand confusing information without feeling rushed,
+            talked down to, or overwhelmed.
+          </p>
+          <div class="calm-strip" aria-label="Main outcomes">
+            <span>Understand difficult text faster</span>
+            <span>Turn jargon into plain English</span>
+            <span>Know what needs checking</span>
+          </div>
+        </div>
+        <aside class="hero-panel" aria-label="What is included">
+          <h2>Inside this kit</h2>
+          <ul>
+            <li>Ready-to-copy “explain this simply” prompts</li>
+            <li>Letters, bills, and forms walkthrough</li>
+            <li>Claims and article breakdown prompts</li>
+            <li>Jargon translator cheat sheet</li>
+            <li>Trust-check prompts before you act</li>
+            <li>Step-by-step understanding template</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="section" id="contents">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Start Here</p>
+            <h2>Use This When Something Feels Confusing</h2>
+            <p class="intro">
+              This kit is for everyday moments: a letter with formal wording, a bill that looks unclear, a form with
+              boxes you do not understand, a long article, or a claim online that sounds worrying.
+            </p>
+          </div>
+        </div>
+        <nav class="toc" aria-label="Kit sections">
+          <a href="#quick-start">
+            <strong>1. Quick Start Method</strong>
+            <span>A simple three-step way to use AI without overthinking it.</span>
+          </a>
+          <a href="#prompt-set">
+            <strong>2. Explain This Simply Prompts</strong>
+            <span>Copy-and-paste prompts for confusing text, letters, bills, and forms.</span>
+          </a>
+          <a href="#walkthroughs">
+            <strong>3. Walkthroughs</strong>
+            <span>Guided help for letters, bills, forms, claims, and articles.</span>
+          </a>
+          <a href="#jargon">
+            <strong>4. Jargon Translator</strong>
+            <span>Plain-English meanings for common official, medical, money, and online terms.</span>
+          </a>
+          <a href="#trust-checks">
+            <strong>5. What Should I Check?</strong>
+            <span>Prompts that help you spot what matters before you trust or act on information.</span>
+          </a>
+          <a href="#template">
+            <strong>6. Understanding Template</strong>
+            <span>A printable page to slow things down and make the next step clear.</span>
+          </a>
+        </nav>
+      </section>
+
+      <section class="section alt" id="quick-start">
+        <p class="section-kicker">Quick Start</p>
+        <h2>The Calm 3-Step Method</h2>
+        <p class="intro">
+          You do not need a clever question. You only need to tell AI what you have, what you want, and how simple you
+          want the answer to be.
+        </p>
+        <div class="steps">
+          <div class="step">
+            <div>
+              <h3>Paste or describe the confusing information</h3>
+              <p>Remove private details first, such as account numbers, full addresses, passwords, and medical IDs.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div>
+              <h3>Ask for a simple explanation</h3>
+              <p>Use one of the prompts below. Ask for short sections, bullet points, and plain English.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div>
+              <h3>Ask what to check before acting</h3>
+              <p>AI can help you understand, but important decisions should be checked with the original source or a trusted person.</p>
+            </div>
+          </div>
+        </div>
+        <div class="warning-note">
+          <strong>Privacy pause:</strong> Before you paste anything into AI, remove personal details. You can replace them
+          with words like [my name], [my address], [account number], or [doctor name].
+        </div>
+      </section>
+
+      <section class="section" id="prompt-set">
+        <p class="section-kicker">Prompt Set</p>
+        <h2>“Explain This Simply” Prompts</h2>
+        <p class="intro">
+          Copy a prompt, add your text, and send it to your AI assistant. These are written to produce calm, useful
+          answers instead of long technical explanations.
+        </p>
+
+        <div class="prompt-stack">
+          <article class="prompt-card">
+            <div class="prompt-top">
+              <strong>The simplest all-purpose prompt</strong>
+              <button class="copy-button" type="button">Copy</button>
+            </div>
+            <p class="prompt-text">Please explain this in plain English for someone who is not technical. Keep it calm and short. Tell me:
+1. What this is about
+2. What matters most
+3. Anything I need to do
+4. Anything I should check before I act
+
+Here is the text:
+[paste the text here]</p>
+          </article>
+
+          <article class="prompt-card">
+            <div class="prompt-top">
+              <strong>When the text is too long</strong>
+              <button class="copy-button" type="button">Copy</button>
+            </div>
+            <p class="prompt-text">This is a long document. Please break it into simple sections. For each section, tell me:
+- The main point
+- Why it matters
+- Any dates, costs, actions, or warnings
+- Questions I should ask if something is unclear
+
+Use short sentences and avoid jargon.</p>
+          </article>
+
+          <article class="prompt-card">
+            <div class="prompt-top">
+              <strong>When you feel worried by the wording</strong>
+              <button class="copy-button" type="button">Copy</button>
+            </div>
+            <p class="prompt-text">This wording is making me feel worried. Please help me understand it calmly. Separate facts from possible concerns. Do not make it sound more serious than the text says. Tell me what I should check next.</p>
+          </article>
+
+          <article class="prompt-card">
+            <div class="prompt-top">
+              <strong>When you only want the important parts</strong>
+              <button class="copy-button" type="button">Copy</button>
+            </div>
+            <p class="prompt-text">Please read this and pull out only the important details. I want:
+- Key dates
+- Money amounts
+- Required actions
+- Contact details
+- Risks or warnings
+- Anything that is just background information</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section blue" id="walkthroughs">
+        <p class="section-kicker">Walkthroughs</p>
+        <h2>Letters, Bills, Forms, Claims, And Articles</h2>
+        <p class="intro">
+          Pick the type of information you have, then use the matching prompt. The aim is to turn a confusing page into
+          a small list of clear next steps.
+        </p>
+
+        <div class="tool-grid">
+          <article class="tool-card">
+            <span class="mini-label">Letter</span>
+            <h3>Official Letter Walkthrough</h3>
+            <p>Use for council letters, insurance letters, bank letters, appointment letters, or legal-looking notices.</p>
+            <ul class="check-list">
+              <li>Who sent it?</li>
+              <li>Why did they send it?</li>
+              <li>What do they want from me?</li>
+              <li>Is there a deadline?</li>
+            </ul>
+          </article>
+          <article class="tool-card">
+            <span class="mini-label">Bill</span>
+            <h3>Bill Or Charge Walkthrough</h3>
+            <p>Use when you need to understand what you are being charged and whether anything looks unusual.</p>
+            <ul class="check-list">
+              <li>Total amount due</li>
+              <li>Due date</li>
+              <li>New charges or changes</li>
+              <li>Who to contact with questions</li>
+            </ul>
+          </article>
+          <article class="tool-card">
+            <span class="mini-label">Form</span>
+            <h3>Form Walkthrough</h3>
+            <p>Use when a form asks for information in a way that feels awkward or unclear.</p>
+            <ul class="check-list">
+              <li>What each section is asking</li>
+              <li>Which parts are required</li>
+              <li>What documents may be needed</li>
+              <li>Questions to ask before submitting</li>
+            </ul>
+          </article>
+          <article class="tool-card">
+            <span class="mini-label">Online</span>
+            <h3>Claim Or Article Walkthrough</h3>
+            <p>Use for health claims, money claims, product claims, news articles, and posts that sound dramatic.</p>
+            <ul class="check-list">
+              <li>What is being claimed?</li>
+              <li>What evidence is shown?</li>
+              <li>What might be missing?</li>
+              <li>Where can I check it?</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="prompt-stack">
+          <article class="prompt-card">
+            <div class="prompt-top">
+              <strong>Letter prompt</strong>
+              <button class="copy-button" type="button">Copy</button>
+            </div>
+            <p class="prompt-text">Please walk me through this letter in plain English. Tell me:
+1. Who it appears to be from
+2. The reason for the letter
+3. What they are asking me to do
+4. Any deadline or important date
+5. What I should check before replying
+
+Do not assume anything that is not written in the letter.</p>
+          </article>
+
+          <article class="prompt-card">
+            <div class="prompt-top">
+              <strong>Bill prompt</strong>
+              <button class="copy-button" type="button">Copy</button>
+            </div>
+            <p class="prompt-text">Please explain this bill simply. Show me:
+- The total amount
+- The due date
+- What the charges seem to be for
+- Anything that looks like a new charge, fee, or change
+- Questions I could ask the company if I am unsure</p>
+          </article>
+
+          <article class="prompt-card">
+            <div class="prompt-top">
+              <strong>Form prompt</strong>
+              <button class="copy-button" type="button">Copy</button>
+            </div>
+            <p class="prompt-text">Please help me understand this form. Explain what each section is asking for in plain English. Tell me which parts seem required, which parts seem optional, and what information I should gather before filling it in.</p>
+          </article>
+
+          <article class="prompt-card">
+            <div class="prompt-top">
+              <strong>Online claim prompt</strong>
+              <button class="copy-button" type="button">Copy</button>
+            </div>
+            <p class="prompt-text">Please break down this online claim. Tell me:
+1. The exact claim being made
+2. Whether evidence is provided
+3. What information may be missing
+4. What words are emotional or persuasive
+5. Where I could check this from a more reliable source</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="jargon">
+        <p class="section-kicker">Cheat Sheet</p>
+        <h2>Jargon Translator</h2>
+        <p class="intro">
+          Jargon often makes simple things feel bigger than they are. Use this section to translate common phrases into
+          plainer language.
+        </p>
+
+        <table class="jargon-table">
+          <thead>
+            <tr>
+              <th scope="col">Phrase</th>
+              <th scope="col">Plain-English Meaning</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Further action may be taken</td>
+              <td>They may do something else if the issue is not dealt with. Check what action and when.</td>
+            </tr>
+            <tr>
+              <td>Outstanding balance</td>
+              <td>Money they say is still unpaid.</td>
+            </tr>
+            <tr>
+              <td>Eligibility criteria</td>
+              <td>The rules that decide whether someone can apply or qualify.</td>
+            </tr>
+            <tr>
+              <td>Supporting documentation</td>
+              <td>Extra papers or proof they want you to provide.</td>
+            </tr>
+            <tr>
+              <td>Subject to approval</td>
+              <td>It is not guaranteed yet. Someone still needs to say yes.</td>
+            </tr>
+            <tr>
+              <td>Terms and conditions</td>
+              <td>The rules of the agreement. Look for costs, cancellation rules, and responsibilities.</td>
+            </tr>
+            <tr>
+              <td>Variable rate</td>
+              <td>A rate that can change, often meaning the cost could go up or down.</td>
+            </tr>
+            <tr>
+              <td>Clinical evidence</td>
+              <td>Research or medical information used to support a health claim. Ask where it comes from.</td>
+            </tr>
+            <tr>
+              <td>Limited time offer</td>
+              <td>A sales message designed to make you act quickly. Pause and check if you really need it.</td>
+            </tr>
+            <tr>
+              <td>Data processing</td>
+              <td>How an organisation collects, uses, stores, or shares your information.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <article class="prompt-card" style="margin-top: 20px">
+          <div class="prompt-top">
+            <strong>Jargon translator prompt</strong>
+            <button class="copy-button" type="button">Copy</button>
+          </div>
+          <p class="prompt-text">Please translate the jargon in this text into plain English. Make a table with two columns:
+1. The original phrase
+2. What it means in everyday language
+
+If a phrase could have more than one meaning, tell me what I should check.</p>
+        </article>
+      </section>
+
+      <section class="section gold" id="trust-checks">
+        <p class="section-kicker">Trust Prompts</p>
+        <h2>“What Should I Check?” Before You Believe Or Act</h2>
+        <p class="intro">
+          AI can make things easier to understand, but it can still be wrong. These prompts help you slow down and check
+          the parts that matter.
+        </p>
+
+        <div class="three-grid">
+          <article class="plain-card">
+            <h3>Check the source</h3>
+            <ul>
+              <li>Who wrote or sent this?</li>
+              <li>Is it from an official website or account?</li>
+              <li>Can I contact the organisation directly?</li>
+            </ul>
+          </article>
+          <article class="plain-card">
+            <h3>Check the pressure</h3>
+            <ul>
+              <li>Does it push me to act immediately?</li>
+              <li>Does it use fear, urgency, or shame?</li>
+              <li>Does it ask for money or private details?</li>
+            </ul>
+          </article>
+          <article class="plain-card">
+            <h3>Check the facts</h3>
+            <ul>
+              <li>Are dates, prices, and names clear?</li>
+              <li>Is there evidence for big claims?</li>
+              <li>What would a reliable source say?</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="prompt-stack">
+          <article class="prompt-card">
+            <div class="prompt-top">
+              <strong>Trust check prompt</strong>
+              <button class="copy-button" type="button">Copy</button>
+            </div>
+            <p class="prompt-text">Please help me check this information carefully. Tell me:
+- What parts are facts
+- What parts are claims or opinions
+- What details I should verify
+- Any signs of pressure, urgency, or sales language
+- The safest next step if I am unsure</p>
+          </article>
+
+          <article class="prompt-card">
+            <div class="prompt-top">
+              <strong>Scam-safety prompt</strong>
+              <button class="copy-button" type="button">Copy</button>
+            </div>
+            <p class="prompt-text">Please look at this message for possible scam warning signs. Do not decide for me. Just list anything I should check, such as unusual links, pressure to act fast, requests for payment, requests for personal details, or wording that seems suspicious.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="template">
+        <p class="section-kicker">Template</p>
+        <h2>Step-By-Step Understanding Page</h2>
+        <p class="intro">
+          Use this page when a document feels like too much. Fill in what you can, then ask AI to help with the blanks.
+        </p>
+
+        <div class="worksheet">
+          <h3>My Understanding Worksheet</h3>
+          <div class="field-grid">
+            <label>
+              What am I trying to understand?
+              <input type="text" placeholder="Example: A bill, a letter, a form, an online article" />
+            </label>
+            <label>
+              Who is it from?
+              <input type="text" placeholder="Example: Bank, council, insurer, website, company" />
+            </label>
+            <label class="full">
+              In one sentence, what does it seem to be about?
+              <textarea placeholder="Write the simplest version here."></textarea>
+            </label>
+            <label>
+              Important dates or deadlines
+              <textarea placeholder="List any dates you can see."></textarea>
+            </label>
+            <label>
+              Money, charges, or amounts
+              <textarea placeholder="List any amounts you can see."></textarea>
+            </label>
+            <label class="full">
+              What does it ask me to do?
+              <textarea placeholder="Example: Reply, pay, call, send proof, book an appointment, do nothing."></textarea>
+            </label>
+            <label>
+              What words are confusing?
+              <textarea placeholder="Paste phrases or jargon here."></textarea>
+            </label>
+            <label>
+              What should I check before acting?
+              <textarea placeholder="Example: Contact details, official website, due date, whether the amount is correct."></textarea>
+            </label>
+            <label class="full">
+              My next small step
+              <textarea placeholder="Choose one calm next step."></textarea>
+            </label>
+          </div>
+        </div>
+
+        <article class="prompt-card" style="margin-top: 20px">
+          <div class="prompt-top">
+            <strong>Worksheet helper prompt</strong>
+            <button class="copy-button" type="button">Copy</button>
+          </div>
+          <p class="prompt-text">I am filling in an understanding worksheet. Please help me complete it from the text below. Use plain English and do not guess. If something is missing, write "not shown". The worksheet sections are:
+- What this is about
+- Who it is from
+- Important dates
+- Money or amounts
+- What it asks me to do
+- Confusing words
+- What I should check
+- My next small step</p>
+        </article>
+
+        <div class="soft-note">
+          <strong>One calm rule:</strong> If you are unsure, your next step can simply be “check with the original
+          organisation using contact details from their official website.”
+        </div>
+      </section>
+
+      <section class="section alt">
+        <p class="section-kicker">Keep Handy</p>
+        <h2>Your One-Sentence AI Request</h2>
+        <p class="intro">
+          When you forget everything else, use this. It is enough.
+        </p>
+        <article class="prompt-card">
+          <div class="prompt-top">
+            <strong>The pocket prompt</strong>
+            <button class="copy-button" type="button">Copy</button>
+          </div>
+          <p class="prompt-text">Please explain this simply, tell me what matters, and tell me what I should check before I do anything.</p>
+        </article>
+      </section>
+
+      <footer class="footer">
+        <p>
+          <strong>Remember:</strong> AI is a helpful explainer, not the final authority. Use it to make confusing words
+          easier to understand, then check important details before making decisions about money, health, legal matters,
+          accounts, or personal information.
+        </p>
+      </footer>
+    </main>
+
+    <script>
+      const buttons = document.querySelectorAll(".copy-button");
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", async () => {
+          const card = button.closest(".prompt-card");
+          const text = card.querySelector(".prompt-text").innerText.trim();
+          try {
+            await navigator.clipboard.writeText(text);
+            button.textContent = "Copied";
+            window.setTimeout(() => {
+              button.textContent = "Copy";
+            }, 1600);
+          } catch (error) {
+            button.textContent = "Select text";
+            window.setTimeout(() => {
+              button.textContent = "Copy";
+            }, 1800);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
