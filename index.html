@@ -500,8 +500,9 @@
         padding: 0;
         list-style: none;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 1fr;
         gap: 14px;
+        max-width: 58rem;
       }
 
       .learn-list li {
@@ -535,8 +536,19 @@
         display: block;
         margin-bottom: 6px;
         color: var(--navy);
-        font-size: 1.02rem;
+        font-size: 1.12rem;
         line-height: 1.25;
+      }
+
+      .journey-action,
+      .journey-result {
+        display: block;
+      }
+
+      .journey-result {
+        margin-top: 10px;
+        color: var(--navy);
+        font-weight: 700;
       }
 
       .beginner {
@@ -714,14 +726,46 @@
       .advantage-callout {
         margin: 48px 0 0;
         max-width: 50rem;
-        padding: 24px 28px;
+        padding: 30px 32px;
         border-left: 6px solid var(--navy);
         border-radius: 10px;
         background: var(--cream-card);
         box-shadow: 0 18px 42px rgba(23, 55, 97, 0.08);
         color: var(--navy);
-        font-size: clamp(1.12rem, 1.55vw, 1.45rem);
-        line-height: 1.5;
+      }
+
+      .advantage-callout h3 {
+        margin: 0;
+        max-width: 38rem;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(1.55rem, 2.5vw, 2.15rem);
+        font-weight: 500;
+        line-height: 1.18;
+      }
+
+      .advantage-callout > p {
+        margin: 14px 0 0;
+        max-width: 42rem;
+        color: var(--text);
+        font-size: 1.08rem;
+        line-height: 1.65;
+      }
+
+      .advantage-guarantee {
+        margin-top: 22px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(23, 55, 97, 0.14);
+        color: var(--muted);
+        font-size: 0.98rem;
+        line-height: 1.6;
+      }
+
+      .advantage-guarantee strong {
+        color: var(--navy);
+      }
+
+      .advantage-callout .button {
+        margin-top: 24px;
       }
 
       .shift-heading {
@@ -2000,8 +2044,9 @@
           <div class="story-copy">
             <h3>A simpler way to start</h3>
             <p><strong>The problem isn&rsquo;t that you aren&rsquo;t technical.</strong> It&rsquo;s that AI is usually explained in a way that assumes understanding before it gives you any.</p>
-            <p>This guide starts with the basics in calm, plain English. You&rsquo;ll learn what AI is useful for, how to recognise a task where it could help, what to type, how to improve a weak answer, and what to check before relying on it.</p>
-            <p>The process is simple: understand what AI can do, give it the right kind of instruction, check and improve the answer, and decide what is useful to you.</p>
+            <p>This guide takes you from understanding AI to actually using it. First, you&rsquo;ll learn what AI is, what it is good at, and where it can help in everyday life. Then you&rsquo;ll learn what to type, how to improve an unhelpful answer, and what to check before relying on it.</p>
+            <p>That means when a real task comes up, you&rsquo;ll be able to recognise that AI could help, ask for what you need, and turn the answer into something genuinely useful.</p>
+            <p><strong>Understand it. Know when to use it. Know what to ask. Get practical help with the task in front of you.</strong></p>
           </div>
           <h3 class="shift-heading">The change you can expect</h3>
           <div class="shift-grid">
@@ -2011,44 +2056,33 @@
             </article>
             <article class="shift-card">
               <strong>After</strong>
-              <p>I understand what AI can do, where it can help me, and how to use it confidently in everyday life.</p>
+              <p>I understand AI, know when it can help, and can use it confidently to get real help with everyday tasks.</p>
             </article>
           </div>
           <div class="advantage-callout">
-            <strong>Start with the missing basics.</strong> Learn how AI works in everyday life, what to ask, and how to use the answer sensibly. If, after reading the guide, you don&rsquo;t feel clearer about where AI helps and what to ask, simply email us within 60 days and we&rsquo;ll give you a full refund. No complicated terms. No technical knowledge required.
+            <h3>Go from hearing about AI to confidently using it.</h3>
+            <p>Understand what it can do, know what to ask, and use it for real help with everyday tasks.</p>
+            <div class="advantage-guarantee">
+              <strong>Try it for 60 days without the risk.</strong> If you don&rsquo;t feel clearer about where AI helps and how to use it, simply email us for a full refund. No complicated terms. No technical knowledge required.
+            </div>
+            <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-direct-checkout>Get Instant Access - &pound;19</a>
           </div>
-          <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-direct-checkout>Get Instant Access - &pound;19</a>
         </div>
       </section>
 
-      <section class="learn" aria-label="What you'll learn">
+      <section class="learn" aria-label="Your journey from confused to confident with AI">
         <div class="learn-inner">
-          <div class="learn-kicker">What you&rsquo;ll learn</div>
-          <h2 class="learn-heading">Use AI when real life gives you a task</h2>
+          <div class="learn-kicker">Your step-by-step journey</div>
+          <h2 class="learn-heading">From unsure about AI to using it confidently in everyday life</h2>
           <p class="learn-subhead">
-            By the end of this guide, you&rsquo;ll understand where AI fits into everyday life and feel calm enough to try it, even if you&rsquo;re not technical or have never used it before.
+            Each part of the guide removes one source of confusion and gives you the next skill you need, until you can turn AI into useful help with the tasks in front of you.
           </p>
           <ul class="learn-list">
-            <li><span class="learn-number">1</span><span><strong>Know where to start</strong>Understand which AI tools are worth using, which ones to ignore, and what to do first.</span></li>
-            <li><span class="learn-number">2</span><span><strong>Ask in a way that gets useful answers</strong>Learn what to say, how to improve weak answers, and how to avoid vague or confusing results.</span></li>
-            <li><span class="learn-number">3</span><span><strong>Use AI for everyday tasks</strong>Get help with messages, admin, ideas, choices, comparing options, and making sense of information.</span></li>
-            <li><span class="learn-number">4</span><span><strong>Know when to trust it and when to check</strong>Feel clearer about what AI is good at, where it gets things wrong, and how to stay in control.</span></li>
-            <li><span class="learn-number">5</span><span><strong>Feel capable without technical help</strong>Move from &ldquo;I should probably understand this&rdquo; to &ldquo;I know where this can help and what to ask.&rdquo;</span></li>
-          </ul>
-        </div>
-      </section>
-      <section class="outcome punch-section" aria-label="What you'll gain">
-        <div class="outcome-inner">
-          <h2 class="outcome-heading">What You&rsquo;ll Gain</h2>
-          <p class="outcome-subhead">
-            This short kit gives you real clarity and control. No jargon. No assumptions. Just practical understanding you can use immediately.
-          </p>
-          <ul class="outcome-list punch-list">
-            <li><strong>A calmer way to think things through</strong>Use AI to talk through simple choices, compare options, and feel clearer before deciding.</li>
-            <li><strong>A way through information overload</strong>Cut long articles, emails, pages, and explanations down to what actually matters.</li>
-            <li><strong>Everyday admin feels easier to start</strong>Get help drafting replies, organising details, comparing prices, and making confusing tasks feel less overwhelming.</li>
-            <li><strong>A better filter for what you see online</strong>Learn how to spot when content, images, or claims may be AI-made, misleading, or fake.</li>
-            <li><strong>Clearer judgement about trust</strong>Know when an answer needs checking, when a claim feels suspect, and when AI is the wrong tool.</li>
+            <li><span class="learn-number">1</span><span><strong>Understand what AI actually is</strong><span class="journey-action">The plain-English introduction explains what AI does, what it is good at, and where its limits are, without jargon or technical assumptions.</span><span class="journey-result">You stop feeling as though everyone else understands something you have missed.</span></span></li>
+            <li><span class="learn-number">2</span><span><strong>Recognise where it can help you</strong><span class="journey-action">Everyday examples show how AI can help with writing, admin, planning, ideas, choices, comparisons, and making sense of information.</span><span class="journey-result">You begin to notice real moments in your own day when AI could make a task easier or clearer.</span></span></li>
+            <li><span class="learn-number">3</span><span><strong>Know what to type</strong><span class="journey-action">Simple prompt examples and a repeatable question method show you how to explain what you need and give AI enough useful detail.</span><span class="journey-result">You can open ChatGPT with a clear starting point instead of staring at the blank box and guessing.</span></span></li>
+            <li><span class="learn-number">4</span><span><strong>Turn the first answer into useful help</strong><span class="journey-action">You learn how to ask follow-up questions, simplify confusing replies, improve vague answers, and pull out the part that matters.</span><span class="journey-result">You can use AI to work through the task in front of you, rather than accepting an unhelpful first response.</span></span></li>
+            <li><span class="learn-number">5</span><span><strong>Use AI confidently and stay in control</strong><span class="journey-action">Clear trust prompts show you what to check, when to be cautious, and when AI is not the right tool.</span><span class="journey-result">You finish knowing where AI helps, what to ask, and how to use it sensibly for real everyday tasks.</span></span></li>
           </ul>
         </div>
       </section>
