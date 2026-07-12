@@ -301,6 +301,122 @@
         line-height: 1.55;
       }
 
+      .sale-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 100;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        background: rgba(7, 27, 63, 0.62);
+      }
+
+      .sale-modal.is-open {
+        display: flex;
+      }
+
+      .sale-dialog {
+        position: relative;
+        width: min(100%, 470px);
+        padding: 32px 26px 28px;
+        border-radius: 16px;
+        background: #fffdf9;
+        box-shadow: 0 28px 80px rgba(7, 27, 63, 0.32);
+        text-align: center;
+      }
+
+      .sale-close {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        display: grid;
+        width: 38px;
+        height: 38px;
+        place-items: center;
+        border: 0;
+        border-radius: 999px;
+        background: rgba(23, 55, 97, 0.08);
+        color: var(--navy);
+        font: inherit;
+        font-size: 1.45rem;
+        cursor: pointer;
+      }
+
+      .sale-kicker {
+        margin: 0;
+        color: var(--blue);
+        font-size: 0.9rem;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .sale-dialog h2 {
+        margin: 10px 0 0;
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(2rem, 7vw, 2.8rem);
+        font-weight: 500;
+        line-height: 1.05;
+      }
+
+      .sale-deadline {
+        margin: 12px 0 0;
+        color: var(--muted);
+        font-weight: 800;
+      }
+
+      .sale-instruction {
+        margin: 14px 0 0;
+        color: var(--text);
+        line-height: 1.5;
+      }
+
+      .sale-code-row {
+        display: flex;
+        gap: 10px;
+        margin-top: 22px;
+      }
+
+      .sale-code {
+        flex: 1;
+        min-width: 0;
+        padding: 14px;
+        border: 2px dashed rgba(30, 79, 135, 0.4);
+        border-radius: 9px;
+        background: #f4f8fd;
+        color: var(--navy);
+        font-size: 1.2rem;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+      }
+
+      .sale-copy {
+        padding: 0 18px;
+        border: 0;
+        border-radius: 9px;
+        background: var(--blue);
+        color: #fff;
+        font: inherit;
+        font-weight: 800;
+        cursor: pointer;
+      }
+
+      .sale-copy:hover {
+        background: var(--navy);
+      }
+
+      @media (max-width: 420px) {
+        .sale-code-row {
+          flex-direction: column;
+        }
+
+        .sale-copy {
+          min-height: 48px;
+        }
+      }
+
       .bump-modal {
         position: fixed;
         inset: 0;
@@ -2085,6 +2201,58 @@
       var guideCheckoutUrl = "https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00";
       var guideWithMessagesUrl = "https://buy.stripe.com/28EeVc72PfEUbyM9q2bZe0b";
 
+      function closeSaleModal() {
+        var modal = document.querySelector("[data-sale-modal]");
+        if (!modal) return;
+        modal.classList.remove("is-open");
+        modal.setAttribute("aria-hidden", "true");
+      }
+
+      function copySaleCode(button) {
+        var code = "EARLY50";
+
+        function showCopied() {
+          button.textContent = "Copied!";
+          if (!button.dataset.pixelTracked && typeof fbq === "function") {
+            fbq("trackCustom", "DiscountCodeCopied", {
+              promotion_code: code,
+              promotion_name: "Early Sale",
+              discount_percent: 50
+            });
+            button.dataset.pixelTracked = "true";
+          }
+          window.setTimeout(function () {
+            button.textContent = "Copy code";
+          }, 1800);
+        }
+
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(code).then(showCopied);
+          return;
+        }
+
+        var input = document.createElement("textarea");
+        input.value = code;
+        input.style.position = "fixed";
+        input.style.opacity = "0";
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand("copy");
+        input.remove();
+        showCopied();
+      }
+
+      window.addEventListener("DOMContentLoaded", function () {
+        var modal = document.querySelector("[data-sale-modal]");
+        var offerEnds = Date.UTC(2026, 6, 16, 23, 0, 0);
+        if (modal && Date.now() < offerEnds) {
+          window.setTimeout(function () {
+            modal.classList.add("is-open");
+            modal.setAttribute("aria-hidden", "false");
+          }, 450);
+        }
+      });
+
       function updateBumpButton() {
         var checkbox = document.querySelector("[data-bump-checkbox]");
         var button = document.querySelector("[data-bump-continue]");
@@ -2126,6 +2294,21 @@
         var modal = event.target.closest("[data-bump-modal]");
         var dialog = event.target.closest(".bump-dialog");
         var continueButton = event.target.closest("[data-bump-continue]");
+        var saleClose = event.target.closest("[data-sale-close]");
+        var saleCopy = event.target.closest("[data-sale-copy]");
+        var saleModal = event.target.closest("[data-sale-modal]");
+        var saleDialog = event.target.closest(".sale-dialog");
+
+        if (saleCopy) {
+          copySaleCode(saleCopy);
+          return;
+        }
+
+        if (saleClose || (saleModal && !saleDialog)) {
+          event.preventDefault();
+          closeSaleModal();
+          return;
+        }
 
         if (checkout) {
           event.preventDefault();
@@ -2169,11 +2352,25 @@
 
       document.addEventListener("keydown", function (event) {
         if (event.key === "Escape") {
+          closeSaleModal();
           closeBumpModal();
         }
       });
 
     </script>
+    <div class="sale-modal" data-sale-modal aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="sale-title">
+      <div class="sale-dialog">
+        <button class="sale-close" type="button" data-sale-close aria-label="Close sale offer">&times;</button>
+        <p class="sale-kicker">A special early offer</p>
+        <h2 id="sale-title">Start with 50% off everything</h2>
+        <p class="sale-deadline">Use your code by 16 July 2026.</p>
+        <p class="sale-instruction">Use this code at any checkout for 50% off your order.</p>
+        <div class="sale-code-row">
+          <div class="sale-code" aria-label="Discount code EARLY50">EARLY50</div>
+          <button class="sale-copy" type="button" data-sale-copy>Copy code</button>
+        </div>
+      </div>
+    </div>
     <div class="bump-modal" data-bump-modal aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="bump-title">
       <div class="bump-dialog">
         <button class="bump-x" type="button" data-bump-dismiss aria-label="Close">&times;</button>
