@@ -643,6 +643,84 @@
         line-height: 1.62;
       }
 
+      .prompt-pack-offer {
+        margin: 42px auto 0;
+        max-width: 48rem;
+        padding: 34px 36px;
+        border: 1px solid rgba(23, 55, 97, 0.16);
+        border-radius: 8px;
+        background: #ffffff;
+        box-shadow: 0 18px 42px rgba(23, 55, 97, 0.08);
+      }
+
+      .prompt-pack-kicker {
+        margin: 0;
+        color: var(--blue-dark);
+        font-size: 0.84rem;
+        font-weight: 900;
+        letter-spacing: 0;
+        text-transform: uppercase;
+      }
+
+      .prompt-pack-offer h3 {
+        margin: 10px 0 0;
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(1.65rem, 3vw, 2.35rem);
+        font-weight: 500;
+        line-height: 1.16;
+      }
+
+      .prompt-pack-copy {
+        margin: 16px 0 0;
+        color: var(--text);
+        font-size: 1.08rem;
+        line-height: 1.65;
+      }
+
+      .prompt-pack-price {
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 22px;
+        color: var(--navy);
+      }
+
+      .prompt-pack-was {
+        color: var(--muted);
+        font-size: 1rem;
+      }
+
+      .prompt-pack-was s {
+        text-decoration-thickness: 2px;
+      }
+
+      .prompt-pack-now {
+        font-size: 1.35rem;
+        font-weight: 900;
+      }
+
+      .prompt-pack-saving {
+        padding: 5px 9px;
+        border-radius: 5px;
+        background: var(--gold-soft);
+        color: var(--navy);
+        font-size: 0.88rem;
+        font-weight: 900;
+      }
+
+      .prompt-pack-total {
+        margin: 12px 0 0;
+        color: var(--muted);
+        font-size: 0.96rem;
+        line-height: 1.55;
+      }
+
+      .prompt-pack-offer .button {
+        margin-top: 24px;
+      }
+
       .beginner {
         background: var(--section-mint);
         border-bottom: 1px solid rgba(23, 55, 97, 0.1);
@@ -1692,6 +1770,10 @@
           padding-top: 32px;
         }
 
+        .prompt-pack-offer {
+          padding: 28px 22px;
+        }
+
         .learn-number {
           width: 38px;
           height: 38px;
@@ -2233,6 +2315,19 @@
           </div>
 
           <p class="demonstrations-close">These are only three examples. Once you understand what AI can do and how to ask, you begin to notice useful opportunities across everyday life.</p>
+
+          <aside class="prompt-pack-offer" aria-label="Guide and prompt pack offer">
+            <p class="prompt-pack-kicker">Want the words ready for you?</p>
+            <h3>Get 100 ready-to-use prompts for 10 everyday situations</h3>
+            <p class="prompt-pack-copy">The guide shows you how to use AI confidently. The prompt pack makes starting even easier, with practical prompts you can copy, personalise, and use whenever you need help. No need to work out what to type from scratch.</p>
+            <div class="prompt-pack-price">
+              <span class="prompt-pack-was">Usually <s>&pound;19</s> on its own</span>
+              <span class="prompt-pack-now">Add it for &pound;7.50</span>
+              <span class="prompt-pack-saving">Save &pound;11.50</span>
+            </div>
+            <p class="prompt-pack-total">Get the guide and the complete prompt pack together for just <strong>&pound;26.50</strong>.</p>
+            <a class="button" href="https://buy.stripe.com/28EeVc72PfEUbyM9q2bZe0b">Get the Guide + Prompt Pack - &pound;26.50</a>
+          </aside>
         </div>
       </section>
 
