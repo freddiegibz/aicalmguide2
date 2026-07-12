@@ -407,6 +407,23 @@
         background: var(--navy);
       }
 
+      .sale-dismiss {
+        width: 100%;
+        min-height: 48px;
+        margin-top: 12px;
+        border: 2px solid rgba(30, 79, 135, 0.22);
+        border-radius: 9px;
+        background: #fff;
+        color: var(--navy);
+        font: inherit;
+        font-weight: 800;
+        cursor: pointer;
+      }
+
+      .sale-dismiss:hover {
+        background: #f4f8fd;
+      }
+
       @media (max-width: 420px) {
         .sale-code-row {
           flex-direction: column;
@@ -2368,6 +2385,7 @@
           <div class="sale-code" aria-label="Discount code EARLY50">EARLY50</div>
           <button class="sale-copy" type="button" data-sale-copy>Copy code</button>
         </div>
+        <button class="sale-dismiss" type="button" data-sale-close>Close window</button>
         <p class="sale-deadline">Offer ends 16 July 2026.</p>
       </div>
     </div>
