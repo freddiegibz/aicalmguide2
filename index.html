@@ -551,6 +551,98 @@
         font-weight: 700;
       }
 
+      .demonstrations {
+        background: var(--section-sage);
+        border-bottom: 1px solid rgba(23, 55, 97, 0.1);
+      }
+
+      .demonstrations-inner {
+        width: min(100%, 1120px);
+        margin: 0 auto;
+        padding: 82px 28px 94px;
+      }
+
+      .demonstrations-heading {
+        margin: 0;
+        max-width: 18ch;
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(2.1rem, 4.4vw, 4rem);
+        font-weight: 500;
+        line-height: 1.08;
+      }
+
+      .demonstrations-subhead {
+        margin: 24px 0 0;
+        max-width: 46rem;
+        color: var(--muted);
+        font-size: 1.16rem;
+        line-height: 1.68;
+      }
+
+      .demonstration-list {
+        display: grid;
+        gap: 72px;
+        margin-top: 58px;
+      }
+
+      .demonstration-example {
+        padding-top: 42px;
+        border-top: 1px solid rgba(23, 55, 97, 0.16);
+      }
+
+      .demonstration-copy {
+        max-width: 48rem;
+        margin: 0 auto 26px;
+      }
+
+      .demonstration-copy h3 {
+        margin: 0;
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(1.55rem, 2.8vw, 2.25rem);
+        font-weight: 500;
+        line-height: 1.18;
+      }
+
+      .demonstration-copy p {
+        margin: 12px 0 0;
+        color: var(--text);
+        font-size: 1.08rem;
+        line-height: 1.65;
+      }
+
+      .demonstration-image {
+        display: block;
+        width: min(100%, 620px);
+        height: auto;
+        margin: 0 auto;
+        border: 1px solid rgba(23, 55, 97, 0.14);
+        border-radius: 8px;
+        background: #ffffff;
+        box-shadow: 0 20px 48px rgba(23, 55, 97, 0.1);
+      }
+
+      .demonstration-result {
+        max-width: 48rem;
+        margin: 22px auto 0;
+        color: var(--navy);
+        font-size: 1.08rem;
+        font-weight: 700;
+        line-height: 1.6;
+      }
+
+      .demonstrations-close {
+        margin: 58px auto 0;
+        max-width: 48rem;
+        padding-top: 28px;
+        border-top: 1px solid rgba(23, 55, 97, 0.16);
+        color: var(--navy);
+        font-size: 1.2rem;
+        font-weight: 700;
+        line-height: 1.62;
+      }
+
       .beginner {
         background: var(--section-mint);
         border-bottom: 1px solid rgba(23, 55, 97, 0.1);
@@ -1581,6 +1673,25 @@
           padding: 18px;
         }
 
+        .demonstrations-inner {
+          padding: 56px 22px 68px;
+        }
+
+        .demonstrations-subhead,
+        .demonstration-copy p,
+        .demonstration-result {
+          font-size: 1rem;
+        }
+
+        .demonstration-list {
+          gap: 52px;
+          margin-top: 42px;
+        }
+
+        .demonstration-example {
+          padding-top: 32px;
+        }
+
         .learn-number {
           width: 38px;
           height: 38px;
@@ -2084,6 +2195,44 @@
             <li><span class="learn-number">4</span><span><strong>Know how to fix a bad answer</strong><span class="journey-action">You learn how to ask follow-up questions, simplify confusing replies, improve vague answers, and tell AI what needs to change.</span><span class="journey-result">A disappointing first answer no longer means giving up. You know how to guide AI towards something useful.</span></span></li>
             <li><span class="learn-number">5</span><span><strong>Use it where it can genuinely help in real life</strong><span class="journey-action">Everyday examples show how to use AI for writing, admin, planning, ideas, choices, comparisons, and understanding confusing information, along with what to check before relying on an answer.</span><span class="journey-result">You finish knowing when AI can help, what to ask, and how to use it confidently and sensibly for real everyday tasks.</span></span></li>
           </ul>
+        </div>
+      </section>
+
+      <section class="demonstrations" aria-label="Examples of useful AI help">
+        <div class="demonstrations-inner">
+          <h2 class="demonstrations-heading">See What Useful AI Help Actually Looks Like</h2>
+          <p class="demonstrations-subhead">You don&rsquo;t need complicated instructions or technical knowledge. Start with a real everyday problem, explain what you need, and let AI help you work through it.</p>
+
+          <div class="demonstration-list">
+            <article class="demonstration-example">
+              <div class="demonstration-copy">
+                <h3>Understand a confusing letter</h3>
+                <p><strong>The situation:</strong> You receive an important letter but aren&rsquo;t sure what it means or whether you need to act.</p>
+              </div>
+              <img class="demonstration-image" src="ex1.png" alt="Example AI conversation explaining a confusing energy tariff letter in plain English" loading="lazy" />
+              <p class="demonstration-result">Instead of reading it repeatedly and still feeling unsure, you get a plain-English explanation and a clear next step.</p>
+            </article>
+
+            <article class="demonstration-example">
+              <div class="demonstration-copy">
+                <h3>Write a message you&rsquo;re struggling to word</h3>
+                <p><strong>The situation:</strong> You know what you want to say, but you&rsquo;re worried about sounding rude or getting the tone wrong.</p>
+              </div>
+              <img class="demonstration-image" src="ex2.png" alt="Example AI conversation helping to write a polite message declining an invitation" loading="lazy" />
+              <p class="demonstration-result">AI turns your thoughts into a polite message you can adjust until it sounds like you.</p>
+            </article>
+
+            <article class="demonstration-example">
+              <div class="demonstration-copy">
+                <h3>Think through a difficult choice</h3>
+                <p><strong>The situation:</strong> You need to compare two options but aren&rsquo;t sure which factors you should consider.</p>
+              </div>
+              <img class="demonstration-image" src="ex3.png" alt="Example AI conversation helping compare repairing or replacing a washing machine" loading="lazy" />
+              <p class="demonstration-result">AI helps you organise the decision and see the trade-offs without making the choice for you.</p>
+            </article>
+          </div>
+
+          <p class="demonstrations-close">These are only three examples. Once you understand what AI can do and how to ask, you begin to notice useful opportunities across everyday life.</p>
         </div>
       </section>
 
