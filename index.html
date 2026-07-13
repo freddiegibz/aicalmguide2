@@ -301,6 +301,15 @@
         line-height: 1.55;
       }
 
+      .hero-quick-win {
+        margin: 20px 0 0;
+        max-width: 38rem;
+        color: var(--navy);
+        font-size: 1rem;
+        font-weight: 850;
+        line-height: 1.5;
+      }
+
       .sale-modal {
         position: fixed;
         inset: 0;
@@ -719,6 +728,82 @@
         margin-top: 10px;
         color: var(--navy);
         font-weight: 700;
+      }
+
+      .contents {
+        background: #ffffff;
+        border-bottom: 1px solid rgba(23, 55, 97, 0.1);
+      }
+
+      .contents-inner {
+        width: min(100%, 1140px);
+        margin: 0 auto;
+        padding: 78px 32px 88px;
+      }
+
+      .contents-kicker {
+        margin: 0;
+        color: var(--blue-dark);
+        font-size: 0.88rem;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .contents-heading {
+        margin: 14px 0 0;
+        max-width: 17ch;
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(2rem, 3.8vw, 3.25rem);
+        font-weight: 500;
+        line-height: 1.08;
+      }
+
+      .contents-subhead {
+        margin: 20px 0 0;
+        max-width: 48rem;
+        color: var(--text);
+        font-size: 1.1rem;
+        line-height: 1.68;
+      }
+
+      .contents-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+        margin-top: 36px;
+      }
+
+      .contents-card {
+        padding: 24px;
+        border: 1px solid rgba(23, 55, 97, 0.13);
+        border-radius: 10px;
+        background: #f8fbff;
+      }
+
+      .contents-card strong {
+        display: block;
+        color: var(--navy);
+        font-size: 1.08rem;
+        line-height: 1.3;
+      }
+
+      .contents-card span {
+        display: block;
+        margin-top: 8px;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .contents-note {
+        margin: 24px 0 0;
+        padding: 18px 20px;
+        border-left: 4px solid var(--blue);
+        background: var(--section-cream);
+        color: var(--navy);
+        font-weight: 800;
+        line-height: 1.55;
       }
 
       .demonstrations {
@@ -1921,6 +2006,19 @@
           padding: 18px;
         }
 
+        .contents-inner {
+          padding: 56px 22px 68px;
+        }
+
+        .contents-grid {
+          grid-template-columns: 1fr;
+          margin-top: 28px;
+        }
+
+        .contents-card {
+          padding: 21px;
+        }
+
         .demonstrations-inner {
           padding: 56px 22px 68px;
         }
@@ -2547,7 +2645,7 @@
     </div>
     <div class="top-banner">
       <div class="top-banner-inner">
-        <p><strong>Trusted by 1,300 readers</strong> who went from <strong>unsure where to start with AI</strong> to <strong>using it to help with real tasks</strong>.</p>
+        <p><strong>Trusted by 1,300 readers</strong> who wanted a <strong>simple starting point</strong>&mdash;not another technical AI course.</p>
         <a href="#reviews">Read reviews</a>
       </div>
     </div>
@@ -2562,6 +2660,7 @@
                 <p class="lead">
                   A short, simple guide that shows you where to start, what to ask, and how to get useful answers&mdash;so you can finally understand how to use AI confidently for everyday tasks like writing clear emails and planning meals.
                 </p>
+                <p class="hero-quick-win">Follow your first starter prompt and see a useful AI result within 10 minutes.</p>
                 <div class="actions">
                   <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-direct-checkout>Get Instant Access - &pound;19</a>
                 </div>
@@ -2588,6 +2687,7 @@
             <h3>A simpler way to start</h3>
             <p><strong>You don&rsquo;t need to be technical.</strong> You only need a clear explanation that starts at the beginning.</p>
             <p>This guide gently shows you what AI is, where it can help, what to type, and how to check its answers.</p>
+            <p><strong>Open ChatGPT &rarr; follow a starter prompt &rarr; improve the answer &rarr; check it &rarr; use it.</strong></p>
             <p><strong>Your first quick win:</strong> Follow the included starter prompt and see a useful AI result within 10 minutes.</p>
             <p>So when a real task comes up, you can ask for what you need and turn the answer into practical help.</p>
             <p><strong>Understand it. Know what to ask. Use it with confidence.</strong></p>
@@ -2631,6 +2731,23 @@
         </div>
       </section>
 
+      <section class="contents" aria-label="What is inside the AI Confidence Kit">
+        <div class="contents-inner">
+          <p class="contents-kicker">Inside your &pound;19 guide</p>
+          <h2 class="contents-heading">Everything you need to start using AI with confidence</h2>
+          <p class="contents-subhead">A clear, practical path from opening the right tool to getting useful help with real tasks&mdash;without piecing together videos, tips, or technical explanations.</p>
+          <div class="contents-grid">
+            <div class="contents-card"><strong>Know what to use first</strong><span>See why ChatGPT is the simplest place to begin and exactly how to get started.</span></div>
+            <div class="contents-card"><strong>Your first 10-minute quick win</strong><span>Follow an included starter prompt and turn a rough message into something clear and ready to send.</span></div>
+            <div class="contents-card"><strong>A simple way to get useful answers</strong><span>Learn what to include when you ask, then improve vague or unhelpful replies without starting again.</span></div>
+            <div class="contents-card"><strong>Practical everyday uses</strong><span>See how AI can help with writing, information, planning, decisions, ideas, and ordinary life admin.</span></div>
+            <div class="contents-card"><strong>Checks that keep you in control</strong><span>Know when to double-check an answer, protect private information, and avoid relying on something inaccurate.</span></div>
+            <div class="contents-card"><strong>Starter prompts and quick reference</strong><span>Return to copyable prompts and simple reminders whenever you need help getting started.</span></div>
+          </div>
+          <p class="contents-note">You don&rsquo;t need to read it cover to cover. Start with the quick-win section, then jump to the guidance you need.</p>
+        </div>
+      </section>
+
       <section class="demonstrations" aria-label="Examples of useful AI help">
         <div class="demonstrations-inner">
           <h2 class="demonstrations-heading">See What Useful AI Help Actually Looks Like</h2>
@@ -2670,7 +2787,7 @@
           <aside class="prompt-pack-offer" aria-label="Guide and prompt pack offer">
             <p class="prompt-pack-kicker">Want the words ready for you?</p>
             <h3>Get 100 ready-to-use prompts for 10 everyday situations</h3>
-            <p class="prompt-pack-copy">The guide shows you how to use AI confidently. The prompt pack makes starting even easier, with practical prompts you can copy, personalise, and use whenever you need help. No need to work out what to type from scratch.</p>
+            <p class="prompt-pack-copy">The guide already includes starter prompts to help you begin. The optional prompt pack makes starting even easier, adding 100 practical prompts you can copy, personalise, and use across 10 everyday situations.</p>
             <div class="prompt-pack-price">
               <span class="prompt-pack-was">Usually <s>&pound;19</s> on its own</span>
               <span class="prompt-pack-now">Add it for &pound;7.50</span>
@@ -2702,7 +2819,7 @@
       <section class="testimonials punch-section" id="reviews" aria-label="What readers say">
         <div class="testimonials-inner">
           <h2 class="testimonials-heading">What Readers Say</h2>
-          <p class="testimonials-subhead">From people who wanted AI to feel simple, useful, and less intimidating.</p>
+          <p class="testimonials-subhead">Real beginners in their 40s, 50s, and 60s who wanted AI to feel simple, useful, and less intimidating.</p>
           <div class="testimonial-list">
             <article class="testimonial-card">
               <p class="testimonial-quote">&ldquo;I&rsquo;d tried ChatGPT a couple of times but never knew what to ask. This finally showed me where AI is actually useful and how to get answers I can use in everyday life.&rdquo;</p>
