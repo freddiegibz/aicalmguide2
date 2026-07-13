@@ -796,14 +796,71 @@
         line-height: 1.55;
       }
 
-      .contents-note {
-        margin: 24px 0 0;
-        padding: 18px 20px;
-        border-left: 4px solid var(--blue);
-        background: var(--section-cream);
+      .included-bonuses {
+        margin-top: 36px;
+        padding: 30px;
+        border: 1px solid rgba(177, 143, 37, 0.32);
+        border-radius: 10px;
+        background: var(--section-gold);
+      }
+
+      .included-bonuses-kicker {
+        margin: 0;
+        color: var(--blue-dark);
+        font-size: 0.82rem;
+        font-weight: 900;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+      }
+
+      .included-bonuses h3 {
+        margin: 10px 0 0;
         color: var(--navy);
-        font-weight: 800;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(1.55rem, 2.8vw, 2.2rem);
+        font-weight: 500;
+        line-height: 1.15;
+      }
+
+      .included-bonuses-intro {
+        margin: 12px 0 0;
+        max-width: 46rem;
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      .included-bonuses-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 22px;
+      }
+
+      .included-bonus-card {
+        padding: 22px;
+        border: 1px solid rgba(23, 55, 97, 0.13);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.82);
+      }
+
+      .included-bonus-card strong {
+        display: block;
+        color: var(--navy);
+        font-size: 1.08rem;
+        line-height: 1.35;
+      }
+
+      .included-bonus-card span {
+        display: block;
+        margin-top: 8px;
+        color: var(--text);
         line-height: 1.55;
+      }
+
+      .included-bonuses-free {
+        margin: 20px 0 0;
+        color: var(--navy);
+        font-weight: 900;
       }
 
       .guide-preview {
@@ -2182,6 +2239,14 @@
           padding: 28px 22px;
         }
 
+        .included-bonuses {
+          padding: 26px 22px;
+        }
+
+        .included-bonuses-grid {
+          grid-template-columns: 1fr;
+        }
+
         .learn-number {
           width: 38px;
           height: 38px;
@@ -2883,7 +2948,22 @@
             <div class="contents-card"><strong>Checks that keep you in control</strong><span>Know when to double-check an answer, protect private information, and avoid relying on something inaccurate.</span></div>
             <div class="contents-card"><strong>Starter prompts and quick reference</strong><span>Return to copyable prompts and simple reminders whenever you need help getting started.</span></div>
           </div>
-          <p class="contents-note"><strong>Free bonus included: The 7-Day AI Confidence Starter Plan.</strong> Follow one simple task each day to put the guide into practice and make AI part of everyday life.</p>
+          <aside class="included-bonuses" aria-label="Bonuses included with the AI Confidence Kit">
+            <p class="included-bonuses-kicker">Two practical bonuses included</p>
+            <h3>Use what you learn&mdash;and feel confident about the answers</h3>
+            <p class="included-bonuses-intro">These are short, practical tools designed to remove the two things most likely to stop you using AI after you buy.</p>
+            <div class="included-bonuses-grid">
+              <div class="included-bonus-card">
+                <strong>Bonus 1: 7-Day AI Confidence Starter Plan</strong>
+                <span>One simple task each day to turn what you learn into confident everyday action&mdash;so the guide doesn&rsquo;t sit forgotten in your downloads.</span>
+              </div>
+              <div class="included-bonus-card">
+                <strong>Bonus 2: AI Answer Confidence Checklist</strong>
+                <span>A one-page tool showing what to check, when to verify an answer elsewhere, and what personal information never to share.</span>
+              </div>
+            </div>
+            <p class="included-bonuses-free">Both bonuses are included free with your &pound;19 guide.</p>
+          </aside>
         </div>
       </section>
 
@@ -3091,7 +3171,7 @@
       <section class="final-cta" aria-label="Get instant access">
         <div class="final-cta-inner" id="get-instant-access">
           <h2>Get Instant Access</h2>
-          <p>Get the calm starting point most AI explanations skip. Understand where AI fits into everyday life, what to type, and how to get useful answers without feeling overwhelmed. Your 7-Day AI Confidence Starter Plan is included free to help you put it into practice.</p>
+          <p>Get the calm starting point most AI explanations skip. Understand where AI fits into everyday life, what to type, and how to get useful answers without feeling overwhelmed. Your 7-Day Starter Plan and AI Answer Confidence Checklist are both included free.</p>
           <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-direct-checkout>Get Instant Access - &pound;19</a>
           <p class="checkout-note">Instant download. 60-day money-back guarantee.</p>
         </div>
