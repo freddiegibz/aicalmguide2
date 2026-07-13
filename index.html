@@ -319,6 +319,8 @@
       .sale-dialog {
         position: relative;
         width: min(100%, 470px);
+        max-height: calc(100vh - 40px);
+        overflow-y: auto;
         padding: 32px 26px 28px;
         border-radius: 16px;
         background: #fffdf9;
@@ -373,6 +375,41 @@
         line-height: 1.5;
       }
 
+      .sale-question {
+        margin: 22px 0 0;
+        color: var(--navy);
+        font-size: 1.08rem;
+        font-weight: 900;
+        line-height: 1.35;
+      }
+
+      .sale-options {
+        display: grid;
+        gap: 9px;
+        margin-top: 14px;
+      }
+
+      .sale-option {
+        width: 100%;
+        min-height: 48px;
+        padding: 11px 14px;
+        border: 2px solid rgba(30, 79, 135, 0.2);
+        border-radius: 9px;
+        background: #fff;
+        color: var(--navy);
+        font: inherit;
+        font-weight: 800;
+        line-height: 1.3;
+        text-align: left;
+        cursor: pointer;
+      }
+
+      .sale-option:hover,
+      .sale-option:focus-visible {
+        border-color: var(--blue);
+        background: #f4f8fd;
+      }
+
       .sale-code-row {
         display: flex;
         gap: 10px;
@@ -393,6 +430,9 @@
       }
 
       .sale-copy {
+        width: 100%;
+        min-height: 50px;
+        margin-top: 12px;
         padding: 0 18px;
         border: 0;
         border-radius: 9px;
@@ -429,9 +469,6 @@
           flex-direction: column;
         }
 
-        .sale-copy {
-          min-height: 48px;
-        }
       }
 
       .bump-modal {
@@ -2225,6 +2262,47 @@
         modal.setAttribute("aria-hidden", "true");
       }
 
+      function saveSaleAnswer(answer) {
+        try {
+          window.localStorage.setItem("aiStartingPoint", answer);
+        } catch (error) {}
+
+        if (!window.fetch || !window.URLSearchParams) return;
+
+        try {
+          var fields = new URLSearchParams();
+          fields.append("_subject", "AI Confidence Kit pre-purchase discount question");
+          fields.append("response_source", "early_launch_modal");
+          fields.append("ai_starting_point", answer);
+
+          window.fetch("https://formspree.io/f/xrewejey", {
+            method: "POST",
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: fields.toString(),
+            keepalive: true
+          }).catch(function () {
+            return null;
+          });
+        } catch (error) {}
+      }
+
+      function revealSaleCode(answer) {
+        var modal = document.querySelector("[data-sale-modal]");
+        var questionStep = document.querySelector("[data-sale-question-step]");
+        var codeStep = document.querySelector("[data-sale-code-step]");
+        var codeTitle = document.querySelector("#sale-code-title");
+        if (!modal || !questionStep || !codeStep) return;
+
+        saveSaleAnswer(answer);
+        questionStep.hidden = true;
+        codeStep.hidden = false;
+        modal.setAttribute("aria-labelledby", "sale-code-title");
+        if (codeTitle) codeTitle.focus();
+      }
+
       function copySaleCode(button) {
         var code = "EARLY50";
 
@@ -2262,12 +2340,44 @@
       window.addEventListener("DOMContentLoaded", function () {
         var modal = document.querySelector("[data-sale-modal]");
         var offerEnds = Date.UTC(2026, 6, 16, 23, 0, 0);
-        if (modal && Date.now() < offerEnds) {
-          window.setTimeout(function () {
-            modal.classList.add("is-open");
-            modal.setAttribute("aria-hidden", "false");
-          }, 450);
+        var offerSeenKey = "earlyLaunchOfferSeen20260716";
+        var offerSeen = false;
+
+        try {
+          offerSeen = window.localStorage.getItem(offerSeenKey) === "true";
+        } catch (error) {}
+
+        if (!modal || Date.now() >= offerEnds || offerSeen) return;
+
+        var hasOpened = false;
+        var engagementTimer;
+        var activeSeconds = 0;
+
+        function openSaleModal() {
+          if (hasOpened) return;
+          hasOpened = true;
+          window.clearInterval(engagementTimer);
+          window.removeEventListener("scroll", checkScrollEngagement);
+          try {
+            window.localStorage.setItem(offerSeenKey, "true");
+          } catch (error) {}
+          modal.classList.add("is-open");
+          modal.setAttribute("aria-hidden", "false");
         }
+
+        function checkScrollEngagement() {
+          var scrollable = document.documentElement.scrollHeight - window.innerHeight;
+          if (scrollable > 0 && window.scrollY / scrollable >= 0.4) {
+            openSaleModal();
+          }
+        }
+
+        engagementTimer = window.setInterval(function () {
+          if (document.visibilityState !== "visible") return;
+          activeSeconds += 1;
+          if (activeSeconds >= 45) openSaleModal();
+        }, 1000);
+        window.addEventListener("scroll", checkScrollEngagement, { passive: true });
       });
 
       function updateBumpButton() {
@@ -2313,11 +2423,22 @@
         var continueButton = event.target.closest("[data-bump-continue]");
         var saleClose = event.target.closest("[data-sale-close]");
         var saleCopy = event.target.closest("[data-sale-copy]");
+        var saleAnswer = event.target.closest("[data-sale-answer]");
         var saleModal = event.target.closest("[data-sale-modal]");
         var saleDialog = event.target.closest(".sale-dialog");
 
+        if (saleAnswer) {
+          revealSaleCode(saleAnswer.getAttribute("data-sale-answer"));
+          return;
+        }
+
         if (saleCopy) {
           copySaleCode(saleCopy);
+          if (typeof fbq === "function") {
+            fbq("track", "InitiateCheckout");
+          }
+          closeSaleModal();
+          window.setTimeout(openBumpModal, 150);
           return;
         }
 
@@ -2378,15 +2499,29 @@
     <div class="sale-modal" data-sale-modal aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="sale-title">
       <div class="sale-dialog">
         <button class="sale-close" type="button" data-sale-close aria-label="Close sale offer">&times;</button>
-        <p class="sale-kicker">A special early offer</p>
-        <h2 id="sale-title">Get 50% off</h2>
-        <p class="sale-instruction">Use this code at checkout for 50% off your order.</p>
-        <div class="sale-code-row">
-          <div class="sale-code" aria-label="Discount code EARLY50">EARLY50</div>
-          <button class="sale-copy" type="button" data-sale-copy>Copy code</button>
+        <div data-sale-question-step>
+          <p class="sale-kicker">You&rsquo;ve unlocked the early-launch offer</p>
+          <h2 id="sale-title">Get 50% off the AI Confidence Kit</h2>
+          <p class="sale-instruction">Answer one quick question to reveal your discount code. No email required.</p>
+          <p class="sale-question" id="sale-question">Which best describes where you are with AI?</p>
+          <div class="sale-options" role="group" aria-labelledby="sale-question">
+            <button class="sale-option" type="button" data-sale-answer="I want to try AI but don’t know where to start">I want to try AI but don&rsquo;t know where to start</button>
+            <button class="sale-option" type="button" data-sale-answer="I’ve tried AI but don’t get useful answers">I&rsquo;ve tried AI but don&rsquo;t get useful answers</button>
+            <button class="sale-option" type="button" data-sale-answer="I want practical ways to use AI in everyday life">I want practical ways to use AI in everyday life</button>
+            <button class="sale-option" type="button" data-sale-answer="I want to feel more confident using AI">I want to feel more confident using AI</button>
+          </div>
         </div>
-        <button class="sale-dismiss" type="button" data-sale-close>Close window</button>
-        <p class="sale-deadline">Offer ends 16 July 2026.</p>
+        <div data-sale-code-step hidden>
+          <p class="sale-kicker">Thanks&mdash;that really helps</p>
+          <h2 id="sale-code-title" tabindex="-1">Here&rsquo;s your 50% discount</h2>
+          <p class="sale-instruction">Use this code at checkout to get the AI Confidence Kit for &pound;9.50.</p>
+          <div class="sale-code-row">
+            <div class="sale-code" aria-label="Discount code EARLY50">EARLY50</div>
+          </div>
+          <button class="sale-copy" type="button" data-sale-copy>Copy code &amp; continue to checkout</button>
+          <button class="sale-dismiss" type="button" data-sale-close>Close window</button>
+          <p class="sale-deadline">Early-launch offer ends 16 July 2026.</p>
+        </div>
       </div>
     </div>
     <div class="bump-modal" data-bump-modal aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="bump-title">
