@@ -806,6 +806,133 @@
         line-height: 1.55;
       }
 
+      .guide-preview {
+        background: var(--section-lilac);
+        border-bottom: 1px solid rgba(23, 55, 97, 0.1);
+      }
+
+      .guide-preview-inner {
+        width: min(100%, 1180px);
+        margin: 0 auto;
+        padding: 82px 32px 92px;
+      }
+
+      .guide-preview-kicker {
+        margin: 0;
+        color: var(--blue-dark);
+        font-size: 0.88rem;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .guide-preview-heading {
+        margin: 14px 0 0;
+        max-width: 17ch;
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(2.1rem, 4vw, 3.5rem);
+        font-weight: 500;
+        line-height: 1.08;
+      }
+
+      .guide-preview-subhead {
+        margin: 20px 0 0;
+        max-width: 49rem;
+        color: var(--text);
+        font-size: 1.1rem;
+        line-height: 1.68;
+      }
+
+      .guide-preview-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+        gap: 22px;
+        margin-top: 42px;
+      }
+
+      .guide-preview-card {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .guide-preview-page {
+        flex: 1;
+        padding: 26px;
+        border: 1px solid rgba(23, 55, 97, 0.14);
+        border-radius: 10px;
+        background: #fffdf9;
+        box-shadow: 0 20px 46px rgba(23, 55, 97, 0.1);
+      }
+
+      .guide-preview-label {
+        display: inline-block;
+        color: var(--blue-dark);
+        font-size: 0.76rem;
+        font-weight: 900;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+      }
+
+      .guide-preview-page h3 {
+        margin: 10px 0 0;
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.42rem;
+        font-weight: 500;
+        line-height: 1.18;
+      }
+
+      .guide-preview-page p,
+      .guide-preview-page li {
+        color: var(--text);
+        font-size: 0.96rem;
+        line-height: 1.58;
+      }
+
+      .guide-preview-page p {
+        margin: 15px 0 0;
+      }
+
+      .guide-preview-page ul {
+        margin: 14px 0 0;
+        padding-left: 20px;
+      }
+
+      .guide-preview-box {
+        margin-top: 16px;
+        padding: 15px;
+        border-radius: 8px;
+        background: var(--section-blue);
+      }
+
+      .guide-preview-box p:first-child {
+        margin-top: 0;
+      }
+
+      .guide-preview-result {
+        border-left: 4px solid var(--blue);
+        background: #f3f8fd;
+      }
+
+      .guide-preview-caption {
+        margin: 0;
+        padding: 0 4px;
+        color: var(--navy);
+        font-weight: 850;
+        line-height: 1.5;
+      }
+
+      .guide-preview-close {
+        margin: 34px 0 0;
+        color: var(--navy);
+        font-size: 1.08rem;
+        font-weight: 800;
+        line-height: 1.6;
+        text-align: center;
+      }
+
       .demonstrations {
         background: var(--section-sage);
         border-bottom: 1px solid rgba(23, 55, 97, 0.1);
@@ -2019,6 +2146,19 @@
           padding: 21px;
         }
 
+        .guide-preview-inner {
+          padding: 58px 22px 70px;
+        }
+
+        .guide-preview-grid {
+          grid-template-columns: 1fr;
+          margin-top: 30px;
+        }
+
+        .guide-preview-page {
+          padding: 22px;
+        }
+
         .demonstrations-inner {
           padding: 56px 22px 68px;
         }
@@ -2743,6 +2883,65 @@
             <div class="contents-card"><strong>Starter prompts and quick reference</strong><span>Return to copyable prompts and simple reminders whenever you need help getting started.</span></div>
           </div>
           <p class="contents-note">You don&rsquo;t need to read it cover to cover. Start with the quick-win section, then jump to the guidance you need.</p>
+        </div>
+      </section>
+
+      <section class="guide-preview" aria-label="Preview pages from the AI Confidence Kit">
+        <div class="guide-preview-inner">
+          <p class="guide-preview-kicker">Actual excerpts from the guide</p>
+          <h2 class="guide-preview-heading">Take a look inside before you buy</h2>
+          <p class="guide-preview-subhead">See how the guide shows you where to begin, what to type, and what to check&mdash;using calm explanations and worked examples you can follow.</p>
+
+          <div class="guide-preview-grid">
+            <article class="guide-preview-card">
+              <div class="guide-preview-page">
+                <span class="guide-preview-label">Inside the guide &middot; Getting started</span>
+                <h3>What Should I Use First?</h3>
+                <p>If you are new, start with ChatGPT. It is the simplest place to learn the rhythm of using AI because you can ask questions, rewrite a message, summarise text, or get help thinking through an ordinary task.</p>
+                <div class="guide-preview-box">
+                  <p><strong>You do not need every AI tool.</strong></p>
+                  <p>Start with one, learn how it works, and let the others wait until you actually need them.</p>
+                </div>
+              </div>
+              <p class="guide-preview-caption">Know exactly where to begin instead of comparing every AI app.</p>
+            </article>
+
+            <article class="guide-preview-card">
+              <div class="guide-preview-page">
+                <span class="guide-preview-label">Inside the guide &middot; Worked example</span>
+                <h3>Make a message clearer</h3>
+                <div class="guide-preview-box">
+                  <p><strong>Copy this prompt:</strong></p>
+                  <p>Text to rewrite: [paste your message here]<br />Instruction: Rewrite this so it sounds clear and polite.</p>
+                </div>
+                <p><strong>Original message:</strong><br />&ldquo;I need the report tomorrow morning. If it is late again, this will be a problem.&rdquo;</p>
+                <div class="guide-preview-box guide-preview-result">
+                  <p><strong>A clearer reply:</strong></p>
+                  <p>&ldquo;Could you please send the report by tomorrow morning? It is important that it arrives on time, as we need it for the next step.&rdquo;</p>
+                </div>
+              </div>
+              <p class="guide-preview-caption">See what to type, what a useful answer looks like, and how to try it yourself.</p>
+            </article>
+
+            <article class="guide-preview-card">
+              <div class="guide-preview-page">
+                <span class="guide-preview-label">Inside the guide &middot; Staying in control</span>
+                <h3>How To Check AI Answers</h3>
+                <p>AI can be useful, but it should not be treated like a final authority. Read the answer once before acting on it and ask whether it actually answers what you asked.</p>
+                <div class="guide-preview-box">
+                  <p><strong>Check anything that matters.</strong></p>
+                  <ul>
+                    <li>Use low-risk answers as a draft.</li>
+                    <li>Pause when something sounds vague or too confident.</li>
+                    <li>Check health, money, legal, or safety information somewhere reliable.</li>
+                  </ul>
+                </div>
+              </div>
+              <p class="guide-preview-caption">Use AI for help without feeling you have to trust every answer.</p>
+            </article>
+          </div>
+
+          <p class="guide-preview-close">No theory-heavy lessons. Open the section you need, follow the example, and use it with a real task.</p>
         </div>
       </section>
 
