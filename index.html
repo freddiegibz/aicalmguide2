@@ -1025,6 +1025,77 @@
         line-height: 1.62;
       }
 
+      .starter-bonus {
+        margin: 42px auto 0;
+        max-width: 54rem;
+        padding: 36px;
+        border: 2px solid rgba(177, 143, 37, 0.3);
+        border-radius: 10px;
+        background: var(--section-gold);
+        box-shadow: 0 20px 46px rgba(23, 55, 97, 0.08);
+      }
+
+      .starter-bonus-kicker {
+        display: inline-flex;
+        min-height: 30px;
+        align-items: center;
+        padding: 0 12px;
+        border-radius: 999px;
+        background: var(--navy);
+        color: #ffffff;
+        font-size: 0.78rem;
+        font-weight: 900;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+      }
+
+      .starter-bonus h3 {
+        margin: 16px 0 0;
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(1.8rem, 3.4vw, 2.7rem);
+        font-weight: 500;
+        line-height: 1.12;
+      }
+
+      .starter-bonus-copy {
+        margin: 16px 0 0;
+        max-width: 46rem;
+        color: var(--text);
+        font-size: 1.08rem;
+        line-height: 1.65;
+      }
+
+      .starter-bonus-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        margin: 24px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .starter-bonus-list li {
+        padding: 13px 14px;
+        border: 1px solid rgba(23, 55, 97, 0.13);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.78);
+        color: var(--text);
+        line-height: 1.45;
+      }
+
+      .starter-bonus-list strong {
+        color: var(--navy);
+      }
+
+      .starter-bonus-included {
+        margin: 24px 0 0;
+        color: var(--navy);
+        font-size: 1.05rem;
+        font-weight: 900;
+        text-align: center;
+      }
+
       .prompt-pack-offer {
         margin: 42px auto 0;
         max-width: 48rem;
@@ -2182,6 +2253,14 @@
           padding: 28px 22px;
         }
 
+        .starter-bonus {
+          padding: 28px 22px;
+        }
+
+        .starter-bonus-list {
+          grid-template-columns: 1fr;
+        }
+
         .learn-number {
           width: 38px;
           height: 38px;
@@ -2981,6 +3060,22 @@
 
           <p class="demonstrations-close">These are only three examples. Once you understand what AI can do and how to ask, you begin to notice useful opportunities across everyday life.</p>
 
+          <aside class="starter-bonus" aria-label="Included 7-Day AI Confidence Starter Plan bonus">
+            <span class="starter-bonus-kicker">Included bonus</span>
+            <h3>Turn confidence into action with the 7-Day AI Confidence Starter Plan</h3>
+            <p class="starter-bonus-copy">One practical 10-minute task a day helps you use what you learn straight away&mdash;so the guide becomes something you act on, not something that sits forgotten in your downloads folder.</p>
+            <ul class="starter-bonus-list">
+              <li><strong>Day 1:</strong> Start with ChatGPT</li>
+              <li><strong>Day 2:</strong> Write a clearer message</li>
+              <li><strong>Day 3:</strong> Understand something confusing</li>
+              <li><strong>Day 4:</strong> Plan something faster</li>
+              <li><strong>Day 5:</strong> Compare two options</li>
+              <li><strong>Day 6:</strong> Improve and check an answer</li>
+              <li><strong>Day 7:</strong> Build your personal AI routine</li>
+            </ul>
+            <p class="starter-bonus-included">Included free with the AI Confidence Kit.</p>
+          </aside>
+
           <aside class="prompt-pack-offer" aria-label="Guide and prompt pack offer">
             <p class="prompt-pack-kicker">Want the words ready for you?</p>
             <h3>Get 100 ready-to-use prompts for 10 everyday situations</h3>
@@ -3090,7 +3185,7 @@
       <section class="final-cta" aria-label="Get instant access">
         <div class="final-cta-inner" id="get-instant-access">
           <h2>Get Instant Access</h2>
-          <p>Get the calm starting point most AI explanations skip. In one short kit, you can understand where AI fits into everyday life, what to type, and how to get useful answers without feeling overwhelmed.</p>
+          <p>Get the calm starting point most AI explanations skip. Understand where AI fits into everyday life, what to type, and how to get useful answers without feeling overwhelmed. Your 7-Day AI Confidence Starter Plan is included free to help you put it into practice.</p>
           <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-direct-checkout>Get Instant Access - &pound;19</a>
           <p class="checkout-note">Instant download. 60-day money-back guarantee.</p>
         </div>
