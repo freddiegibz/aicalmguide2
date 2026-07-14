@@ -301,7 +301,7 @@
         line-height: 1.55;
       }
 
-      .hero-quick-win {
+      .hero-reassurance {
         margin: 20px 0 0;
         max-width: 38rem;
         color: var(--navy);
@@ -794,6 +794,10 @@
         margin-top: 8px;
         color: var(--muted);
         line-height: 1.55;
+      }
+
+      .contents-card:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
       }
 
       .included-bonuses {
@@ -1432,6 +1436,29 @@
         line-height: 1.62;
       }
 
+      .early-testimonial {
+        margin: 30px 0 0;
+        max-width: 58rem;
+        padding: 26px 30px;
+        border-left: 4px solid var(--blue);
+        background: #ffffff;
+        box-shadow: 0 14px 34px rgba(23, 55, 97, 0.06);
+      }
+
+      .early-testimonial blockquote {
+        margin: 0;
+        color: var(--text);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(1.08rem, 1.8vw, 1.28rem);
+        line-height: 1.6;
+      }
+
+      .early-testimonial figcaption {
+        margin-top: 14px;
+        color: var(--muted);
+        font-weight: 800;
+      }
+
       .fit-list li strong {
         display: block;
         margin-bottom: 4px;
@@ -1827,7 +1854,7 @@
 
       .testimonial-list {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 18px;
         margin: 44px 0 0;
       }
@@ -2218,6 +2245,10 @@
 
         .contents-card {
           padding: 21px;
+        }
+
+        .contents-card:last-child:nth-child(odd) {
+          grid-column: auto;
         }
 
         .guide-preview-inner {
@@ -2878,11 +2909,11 @@
             <div class="hero-copy">
               <div class="hero-content">
                 <div class="hero-badge">New to AI? Start here.</div>
-                <h1>Finally understand how to use AI confidently in everyday life. <span class="headline-soft">Even if no one has shown you where to start.</span></h1>
+                <h1>Finally understand AI and feel confident using it in everyday life.</h1>
                 <p class="lead">
-                  A simple, step-by-step guide showing you where to start, what to ask, and where AI fits into everyday life&mdash;giving you a clear path to confident everyday use.
+                  A short, plain-English guide showing you where to start, where AI can help, and what to ask&mdash;so you can use it for yourself without technical confusion.
                 </p>
-                <p class="hero-quick-win">See your first useful AI result within 10 minutes.</p>
+                <p class="hero-reassurance">No jargon. No technical knowledge required.</p>
                 <div class="actions">
                   <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-direct-checkout>Get Instant Access - &pound;19</a>
                 </div>
@@ -2896,21 +2927,15 @@
 
       <section class="story punch-section" aria-label="Understand and use AI in everyday life">
         <div class="story-inner">
-          <h2 class="story-heading">Finally understand how to use AI in everyday life</h2>
+          <h2 class="story-heading">AI is everywhere. But where does it actually fit into your life?</h2>
           <p class="story-subhead">
-            If AI still feels confusing, you&rsquo;re not alone. This guide starts with the basics, shows you what AI can help with and what to type, and makes each step clear.
+            If AI has felt confusing or more suited to technical people, that is usually because it has not been explained in a practical way.
           </p>
-          <ul class="problem-list">
-            <li>You may have tried ChatGPT or watched a few videos but still feel unsure.</li>
-            <li>You may wonder where AI fits into ordinary life and whether it is really for you.</li>
-            <li>When a task comes up, you may not know what to ask or whether you are doing it correctly.</li>
-          </ul>
           <div class="story-copy">
-            <h3>A simpler way to start</h3>
-            <p><strong>You don&rsquo;t need to be technical.</strong> You only need a clear explanation that starts at the beginning.</p>
-            <p>This guide gently shows you what AI is, where it can help, what to type, and how to check its answers.</p>
-            <p>So when a real task comes up, you can ask for what you need and turn the answer into practical help.</p>
-            <p><strong>Understand it. Know what to ask. Use it with confidence.</strong></p>
+            <h3>You need a clearer starting point</h3>
+            <p>You don&rsquo;t need more scattered tips, technical explanations, or another video that assumes you already know what to do.</p>
+            <p>You need to see where AI can help in ordinary life, which tool to open, and what to ask when a real task comes up.</p>
+            <p><strong>The problem is not your ability. The practical part has simply been skipped.</strong></p>
           </div>
           <div class="story-plan">
             <strong>Included: 7-Day Everyday AI Starter Plan</strong>
@@ -2927,6 +2952,10 @@
               <p>I know when AI can help, what to ask, and how to use it confidently.</p>
             </article>
           </div>
+          <figure class="early-testimonial">
+            <blockquote>&ldquo;I&rsquo;d tried ChatGPT a couple of times but never knew what to ask. This finally showed me where AI is actually useful and how to get answers I can use in everyday life.&rdquo;</blockquote>
+            <figcaption>Margaret, 62</figcaption>
+          </figure>
           <div class="advantage-callout">
             <h3>Start using AI with clarity and confidence.</h3>
             <p>Take it one step at a time, with clear guidance and everyday examples.</p>
@@ -2935,115 +2964,6 @@
             </div>
             <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-direct-checkout>Get Instant Access - &pound;19</a>
           </div>
-        </div>
-      </section>
-
-      <section class="learn" aria-label="Your journey from confused to confident with AI">
-        <div class="learn-inner">
-          <div class="learn-kicker">Your step-by-step journey</div>
-          <h2 class="learn-heading">From not knowing where to start to using AI with confidence</h2>
-          <p class="learn-subhead">
-            Follow one simple step at a time, from choosing the right tool to knowing what to ask and using the answers in everyday life.
-          </p>
-          <ul class="learn-list">
-            <li><span class="learn-number">1</span><span><strong>Know exactly where to start</strong><span class="journey-action">Begin with one clear, beginner-friendly AI tool.</span><span class="journey-result">You&rsquo;ll stop wondering which tool to open or what to do first.</span></span></li>
-            <li><span class="learn-number">2</span><span><strong>Try AI on a real task</strong><span class="journey-action">Turn a rough message into something clear and ready to send.</span><span class="journey-result">You&rsquo;ll see how AI can make something you already do feel easier.</span></span></li>
-            <li><span class="learn-number">3</span><span><strong>Know what to ask</strong><span class="journey-action">Use a simple, repeatable method to explain what you need.</span><span class="journey-result">You&rsquo;ll know what to type and how to start getting useful help.</span></span></li>
-            <li><span class="learn-number">4</span><span><strong>Turn answers into something useful</strong><span class="journey-action">Ask follow-up questions, improve unclear replies, and tell AI what to change.</span><span class="journey-result">You&rsquo;ll be able to guide the conversation and stay in control.</span></span></li>
-            <li><span class="learn-number">5</span><span><strong>Use AI confidently in everyday life</strong><span class="journey-action">Work through practical examples across 10 areas of everyday life.</span><span class="journey-result">You&rsquo;ll be ready to use AI confidently to make everyday tasks easier.</span></span></li>
-            <li><span class="learn-number">6</span><span><strong>Make AI part of everyday life</strong><span class="journey-action">Follow the included 7-Day Everyday AI Starter Plan, with one simple task each day.</span><span class="journey-result">You&rsquo;ll turn what you learn into confident, practical use.</span></span></li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="contents" aria-label="What is inside the AI Confidence Kit">
-        <div class="contents-inner">
-          <p class="contents-kicker">Inside your &pound;19 guide</p>
-          <h2 class="contents-heading">Everything you need to start using AI with confidence</h2>
-          <p class="contents-subhead">A clear, practical path from opening the right tool to getting useful help with real tasks&mdash;without piecing together videos, tips, or technical explanations.</p>
-          <div class="contents-grid">
-            <div class="contents-card"><strong>Know what to use first</strong><span>See why ChatGPT is the simplest place to begin and exactly how to get started.</span></div>
-            <div class="contents-card"><strong>A guided first task</strong><span>Use an included starter prompt to turn a rough message into something clear and ready to send.</span></div>
-            <div class="contents-card"><strong>A simple way to get useful answers</strong><span>Learn what to include when you ask, then improve vague or unhelpful replies without starting again.</span></div>
-            <div class="contents-card"><strong>Practical everyday uses</strong><span>See how AI can help with writing, information, planning, decisions, ideas, and ordinary life admin.</span></div>
-            <div class="contents-card"><strong>Checks that keep you in control</strong><span>Know when to double-check an answer, protect private information, and avoid relying on something inaccurate.</span></div>
-            <div class="contents-card"><strong>Starter prompts and quick reference</strong><span>Return to copyable prompts and simple reminders whenever you need help getting started.</span></div>
-          </div>
-          <aside class="included-bonuses" aria-label="Bonuses included with the AI Confidence Kit">
-            <p class="included-bonuses-kicker">Two practical bonuses included</p>
-            <h3>Start using AI confidently&mdash;and keep using it</h3>
-            <p class="included-bonuses-intro">One bonus turns learning into everyday action. The other makes it easy to know what to ask for your own tasks.</p>
-            <div class="included-bonuses-grid">
-              <div class="included-bonus-card">
-                <strong>Bonus 1: 7-Day Everyday AI Starter Plan</strong>
-                <span>Start by finding your three best everyday uses for AI, then complete one simple task each day so you quickly turn understanding into confident use.</span>
-              </div>
-              <div class="included-bonus-card">
-                <strong>Bonus 2: The &ldquo;What to Ask&rdquo; Builder</strong>
-                <span>Fill in four simple boxes about your task, the help you want, the relevant details and how you want the answer&mdash;then copy your completed request into AI.</span>
-              </div>
-            </div>
-            <p class="included-bonuses-free">Both bonuses are included free with your &pound;19 guide.</p>
-          </aside>
-        </div>
-      </section>
-
-      <section class="guide-preview" aria-label="Preview pages from the AI Confidence Kit">
-        <div class="guide-preview-inner">
-          <p class="guide-preview-kicker">Actual excerpts from the guide</p>
-          <h2 class="guide-preview-heading">Take a look inside before you buy</h2>
-          <p class="guide-preview-subhead">See how the guide shows you where to begin, what to type, and what to check&mdash;using calm explanations and worked examples you can follow.</p>
-
-          <div class="guide-preview-grid">
-            <article class="guide-preview-card">
-              <div class="guide-preview-page">
-                <span class="guide-preview-label">Inside the guide &middot; Getting started</span>
-                <h3>What Should I Use First?</h3>
-                <p>If you are new, start with ChatGPT. It is the simplest place to learn the rhythm of using AI because you can ask questions, rewrite a message, summarise text, or get help thinking through an ordinary task.</p>
-                <div class="guide-preview-box">
-                  <p><strong>You do not need every AI tool.</strong></p>
-                  <p>Start with one, learn how it works, and let the others wait until you actually need them.</p>
-                </div>
-              </div>
-              <p class="guide-preview-caption">Know exactly where to begin instead of comparing every AI app.</p>
-            </article>
-
-            <article class="guide-preview-card">
-              <div class="guide-preview-page">
-                <span class="guide-preview-label">Inside the guide &middot; Worked example</span>
-                <h3>Make a message clearer</h3>
-                <div class="guide-preview-box">
-                  <p><strong>Copy this prompt:</strong></p>
-                  <p>Text to rewrite: [paste your message here]<br />Instruction: Rewrite this so it sounds clear and polite.</p>
-                </div>
-                <p><strong>Original message:</strong><br />&ldquo;I need the report tomorrow morning. If it is late again, this will be a problem.&rdquo;</p>
-                <div class="guide-preview-box guide-preview-result">
-                  <p><strong>A clearer reply:</strong></p>
-                  <p>&ldquo;Could you please send the report by tomorrow morning? It is important that it arrives on time, as we need it for the next step.&rdquo;</p>
-                </div>
-              </div>
-              <p class="guide-preview-caption">See what to type, what a useful answer looks like, and how to try it yourself.</p>
-            </article>
-
-            <article class="guide-preview-card">
-              <div class="guide-preview-page">
-                <span class="guide-preview-label">Inside the guide &middot; Staying in control</span>
-                <h3>How To Check AI Answers</h3>
-                <p>AI can be useful, but it should not be treated like a final authority. Read the answer once before acting on it and ask whether it actually answers what you asked.</p>
-                <div class="guide-preview-box">
-                  <p><strong>Check anything that matters.</strong></p>
-                  <ul>
-                    <li>Use low-risk answers as a draft.</li>
-                    <li>Pause when something sounds vague or too confident.</li>
-                    <li>Check health, money, legal, or safety information somewhere reliable.</li>
-                  </ul>
-                </div>
-              </div>
-              <p class="guide-preview-caption">Use AI for help without feeling you have to trust every answer.</p>
-            </article>
-          </div>
-
-          <p class="guide-preview-close">No theory-heavy lessons. Open the section you need, follow the example, and use it with a real task.</p>
         </div>
       </section>
 
@@ -3098,35 +3018,129 @@
         </div>
       </section>
 
+      <section class="learn" aria-label="Your journey from confused to confident with AI">
+        <div class="learn-inner">
+          <div class="learn-kicker">Your step-by-step journey</div>
+          <h2 class="learn-heading">From not knowing where to start to using AI with confidence</h2>
+          <p class="learn-subhead">
+            Follow four clear stages from understanding what AI can do to using it confidently for yourself.
+          </p>
+          <ul class="learn-list">
+            <li><span class="learn-number">1</span><span><strong>Understand AI simply</strong><span class="journey-action">See what AI is useful for in clear, ordinary language.</span><span class="journey-result">AI will start to feel relevant rather than technical or abstract.</span></span></li>
+            <li><span class="learn-number">2</span><span><strong>See where it fits</strong><span class="journey-action">Explore practical examples across 10 areas of everyday life.</span><span class="journey-result">You&rsquo;ll recognise the tasks where AI could genuinely help you.</span></span></li>
+            <li><span class="learn-number">3</span><span><strong>Know what to ask</strong><span class="journey-action">Use starter prompts and a repeatable method to explain what you need.</span><span class="journey-result">You&rsquo;ll know what to type when a real task comes up.</span></span></li>
+            <li><span class="learn-number">4</span><span><strong>Use it confidently</strong><span class="journey-action">Improve the answers and practise with one simple task each day.</span><span class="journey-result">You&rsquo;ll turn understanding into confident, practical use.</span></span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="contents" aria-label="What is inside the AI Confidence Kit">
+        <div class="contents-inner">
+          <p class="contents-kicker">Inside your &pound;19 guide</p>
+          <h2 class="contents-heading">Everything you need to start using AI with confidence</h2>
+          <p class="contents-subhead">A clear, practical path from opening the right tool to getting useful help with real tasks&mdash;without piecing together videos, tips, or technical explanations.</p>
+          <div class="contents-grid">
+            <div class="contents-card"><strong>Practical everyday uses</strong><span>See how AI can help with writing, information, planning, decisions, ideas, and ordinary life admin.</span></div>
+            <div class="contents-card"><strong>Starter prompts and quick reference</strong><span>Return to copyable prompts and simple reminders whenever you need help getting started.</span></div>
+            <div class="contents-card"><strong>A guided first task</strong><span>Use an included starter prompt to turn a rough message into something clear and ready to send.</span></div>
+            <div class="contents-card"><strong>Know what to use first</strong><span>See why ChatGPT is the simplest place to begin and exactly how to get started.</span></div>
+            <div class="contents-card"><strong>A simple way to get useful answers</strong><span>Learn what to include when you ask, then improve vague or unhelpful replies without starting again.</span></div>
+          </div>
+          <aside class="included-bonuses" aria-label="Bonuses included with the AI Confidence Kit">
+            <p class="included-bonuses-kicker">Two practical bonuses included</p>
+            <h3>Start using AI confidently&mdash;and keep using it</h3>
+            <p class="included-bonuses-intro">One bonus turns learning into everyday action. The other makes it easy to know what to ask for your own tasks.</p>
+            <div class="included-bonuses-grid">
+              <div class="included-bonus-card">
+                <strong>Bonus 1: 7-Day Everyday AI Starter Plan</strong>
+                <span>Start by finding your three best everyday uses for AI, then complete one simple task each day so you quickly turn understanding into confident use.</span>
+              </div>
+              <div class="included-bonus-card">
+                <strong>Bonus 2: The &ldquo;What to Ask&rdquo; Builder</strong>
+                <span>Fill in four simple boxes about your task, the help you want, the relevant details and how you want the answer&mdash;then copy your completed request into AI.</span>
+              </div>
+            </div>
+            <p class="included-bonuses-free">Both bonuses are included free with your &pound;19 guide.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="guide-preview" aria-label="Preview pages from the AI Confidence Kit">
+        <div class="guide-preview-inner">
+          <p class="guide-preview-kicker">Actual excerpts from the guide</p>
+          <h2 class="guide-preview-heading">Take a look inside before you buy</h2>
+          <p class="guide-preview-subhead">See how the guide shows you where to begin, where AI can help, and what to type&mdash;using calm explanations and worked examples you can follow.</p>
+
+          <div class="guide-preview-grid">
+            <article class="guide-preview-card">
+              <div class="guide-preview-page">
+                <span class="guide-preview-label">Inside the guide &middot; Getting started</span>
+                <h3>What Should I Use First?</h3>
+                <p>If you are new, start with ChatGPT. It is the simplest place to learn the rhythm of using AI because you can ask questions, rewrite a message, summarise text, or get help thinking through an ordinary task.</p>
+                <div class="guide-preview-box">
+                  <p><strong>You do not need every AI tool.</strong></p>
+                  <p>Start with one, learn how it works, and let the others wait until you actually need them.</p>
+                </div>
+              </div>
+              <p class="guide-preview-caption">Know exactly where to begin instead of comparing every AI app.</p>
+            </article>
+
+            <article class="guide-preview-card">
+              <div class="guide-preview-page">
+                <span class="guide-preview-label">Inside the guide &middot; Worked example</span>
+                <h3>Make a message clearer</h3>
+                <div class="guide-preview-box">
+                  <p><strong>Copy this prompt:</strong></p>
+                  <p>Text to rewrite: [paste your message here]<br />Instruction: Rewrite this so it sounds clear and polite.</p>
+                </div>
+                <p><strong>Original message:</strong><br />&ldquo;I need the report tomorrow morning. If it is late again, this will be a problem.&rdquo;</p>
+                <div class="guide-preview-box guide-preview-result">
+                  <p><strong>A clearer reply:</strong></p>
+                  <p>&ldquo;Could you please send the report by tomorrow morning? It is important that it arrives on time, as we need it for the next step.&rdquo;</p>
+                </div>
+              </div>
+              <p class="guide-preview-caption">See what to type, what a useful answer looks like, and how to try it yourself.</p>
+            </article>
+
+            <article class="guide-preview-card">
+              <div class="guide-preview-page">
+                <span class="guide-preview-label">Inside the guide &middot; Everyday uses</span>
+                <h3>Where AI Fits Into Everyday Life</h3>
+                <p>You do not need to use AI for everything. Start with ordinary tasks where it can make something clearer, quicker, or easier.</p>
+                <div class="guide-preview-box">
+                  <p><strong>Three useful places to begin:</strong></p>
+                  <ul>
+                    <li>Writing or improving an everyday message.</li>
+                    <li>Understanding information that feels confusing.</li>
+                    <li>Planning something or comparing your options.</li>
+                  </ul>
+                </div>
+              </div>
+              <p class="guide-preview-caption">Recognise practical opportunities to use AI in the things you already do.</p>
+            </article>
+          </div>
+
+          <p class="guide-preview-close">No theory-heavy lessons. Open the section you need, follow the example, and use it with a real task.</p>
+        </div>
+      </section>
+
       <section class="clarity punch-section" aria-label="Who this is for">
         <div class="clarity-inner">
           <h2 class="clarity-heading">Who This Is For</h2>
+          <p class="clarity-subhead">For people who are comfortable with everyday technology but still want AI explained in a clear, practical way.</p>
           <ul class="fit-list">
             <li><strong>You keep hearing about AI but don&rsquo;t really understand what it is for</strong><span>Get a clear, plain-English explanation of what AI can and cannot help you do.</span></li>
             <li><strong>You are not sure where AI fits into your everyday life</strong><span>See practical examples that connect AI to the ordinary things you already do.</span></li>
-            <li><strong>You open ChatGPT and don&rsquo;t know what to type</strong><span>Learn how to start a useful conversation without guessing or feeling foolish.</span></li>
-            <li><strong>You get answers that are too vague, complicated, or unhelpful</strong><span>Understand how to ask better questions and guide AI towards the answer you need.</span></li>
-            <li><strong>You are unsure when to trust an AI answer</strong><span>Know what to check, where AI can get things wrong, and how to stay in control.</span></li>
-            <li><strong>You want to use AI for real tasks without becoming technical</strong><span>Follow a simple process for getting help with writing, information, planning, ideas, and everyday decisions.</span></li>
+            <li><strong>You want to know where to start and what to ask</strong><span>Follow a simple process for getting useful help without becoming technical.</span></li>
           </ul>
-          <div class="not-for-card">
-            <strong>This isn&rsquo;t for:</strong> tech professionals or anyone looking for advanced techniques. This is for intelligent beginners who want AI explained clearly enough to use it in real life.
-          </div>
         </div>
       </section>
 
       <section class="testimonials punch-section" id="reviews" aria-label="What readers say">
         <div class="testimonials-inner">
           <h2 class="testimonials-heading">What Readers Say</h2>
-          <p class="testimonials-subhead">Real beginners in their 40s, 50s, and 60s who wanted AI to feel simple, useful, and less intimidating.</p>
+          <p class="testimonials-subhead">Readers who wanted AI to feel simple, relevant, and practical enough to use for themselves.</p>
           <div class="testimonial-list">
-            <article class="testimonial-card">
-              <p class="testimonial-quote">&ldquo;I&rsquo;d tried ChatGPT a couple of times but never knew what to ask. This finally showed me where AI is actually useful and how to get answers I can use in everyday life.&rdquo;</p>
-              <div class="testimonial-person">
-                <span class="testimonial-avatar" aria-hidden="true">M</span>
-                <span>Margaret, 62</span>
-              </div>
-            </article>
             <article class="testimonial-card">
               <p class="testimonial-quote">&ldquo;Every explanation I found online felt too technical. This explained everything in plain English, and I finally understood how AI could help with normal everyday tasks.&rdquo;</p>
               <div class="testimonial-person">
@@ -3151,8 +3165,8 @@
           <p class="faq-subhead">A few quick answers before you decide if this is the right starting point for you.</p>
           <div class="faq-list">
             <article class="faq-item">
-              <h3>Is this suitable if I know almost nothing about AI?</h3>
-              <p>Yes. It starts from the beginning and explains the important parts in plain English.</p>
+              <h3>Is this suitable if AI still feels confusing?</h3>
+              <p>Yes. It explains the important parts in plain English, then shows you where AI can help, where to start, and what to ask.</p>
             </article>
             <article class="faq-item">
               <h3>Do I need ChatGPT or any AI tool already?</h3>
@@ -3161,6 +3175,10 @@
             <article class="faq-item">
               <h3>Is it technical?</h3>
               <p>No. There is no coding, complicated setup, or advanced prompt engineering. It is written for normal everyday use.</p>
+            </article>
+            <article class="faq-item">
+              <h3>What will I be able to do after reading it?</h3>
+              <p>You will know where to start, recognise where AI can help, know what to ask, and turn its answers into practical help with everyday tasks.</p>
             </article>
             <article class="faq-item">
               <h3>Will I get access straight away?</h3>
@@ -3191,7 +3209,7 @@
 
       <section class="final-cta" aria-label="Get instant access">
         <div class="final-cta-inner" id="get-instant-access">
-          <h2>Get Instant Access</h2>
+          <h2>Finally understand AI&mdash;and start using it with confidence</h2>
           <p>Get the calm starting point most AI explanations skip. Understand where AI fits into everyday life, what to type, and how to get useful answers without feeling overwhelmed. Your 7-Day Everyday AI Starter Plan and &ldquo;What to Ask&rdquo; Builder are both included free.</p>
           <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-direct-checkout>Get Instant Access - &pound;19</a>
           <p class="checkout-note">Instant download. 60-day money-back guarantee.</p>
