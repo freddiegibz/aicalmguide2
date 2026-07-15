@@ -263,13 +263,23 @@
       }
 
       .guide-only-link {
+        display: inline-flex;
+        min-height: 44px;
+        align-items: center;
+        justify-content: center;
+        padding: 0 16px;
+        border: 2px solid rgba(30, 79, 135, 0.34);
+        border-radius: 7px;
+        background: #ffffff;
         color: var(--muted);
-        font-size: 0.94rem;
+        font-size: 0.96rem;
         font-weight: 850;
-        text-underline-offset: 3px;
+        text-decoration: none;
       }
 
       .guide-only-link:hover {
+        border-color: var(--blue);
+        background: #f4f8fd;
         color: var(--navy);
       }
 
@@ -280,8 +290,8 @@
         background: transparent;
         color: var(--muted);
         font: inherit;
-        font-size: 0.9rem;
-        font-weight: 650;
+        font-size: 0.86rem;
+        font-weight: 500;
         text-decoration: underline;
         text-decoration-thickness: 1px;
         text-underline-offset: 3px;
@@ -1276,7 +1286,7 @@
       }
 
       .prompt-pack-offer .guide-only-link {
-        display: inline-block;
+        display: inline-flex;
         margin-top: 14px;
       }
 
@@ -1503,7 +1513,7 @@
       }
 
       .advantage-callout .guide-only-link {
-        display: block;
+        display: inline-flex;
         width: fit-content;
         margin-top: 12px;
       }
@@ -2262,13 +2272,17 @@
       }
 
       .final-cta .guide-only-link {
-        display: block;
+        display: inline-flex;
         width: fit-content;
         margin: 14px auto 0;
+        border-color: rgba(255, 255, 255, 0.52);
+        background: transparent;
         color: rgba(255, 255, 255, 0.78);
       }
 
       .final-cta .guide-only-link:hover {
+        border-color: #ffffff;
+        background: rgba(255, 255, 255, 0.1);
         color: #ffffff;
       }
 
