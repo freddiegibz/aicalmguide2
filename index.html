@@ -30,8 +30,16 @@
       t.src=v;s=b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t,s)}(window, document,'script',
       'https://connect.facebook.net/en_US/fbevents.js');
+      window.createMetaEventId = function (prefix) {
+        var randomPart = window.crypto && window.crypto.randomUUID
+          ? window.crypto.randomUUID()
+          : Math.random().toString(36).slice(2) + Date.now().toString(36);
+
+        return prefix + "_" + randomPart;
+      };
+      window.metaPageViewEventId = window.createMetaEventId("pageview");
       fbq('init', '1988137388462157');
-      fbq('track', 'PageView');
+      fbq('track', 'PageView', {}, { eventID: window.metaPageViewEventId });
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1988137388462157&ev=PageView&noscript=1"
@@ -2593,6 +2601,111 @@
   </head>
   <body>
     <script>
+      function readCookie(name) {
+        var prefix = name + "=";
+        var cookies = document.cookie ? document.cookie.split(";") : [];
+
+        for (var index = 0; index < cookies.length; index += 1) {
+          var cookie = cookies[index].trim();
+          if (cookie.indexOf(prefix) === 0) {
+            return decodeURIComponent(cookie.slice(prefix.length));
+          }
+        }
+
+        return "";
+      }
+
+      function getMetaVisitorId() {
+        var storageKey = "aiMetaVisitorId";
+        var visitorId = "";
+
+        try {
+          visitorId = window.localStorage.getItem(storageKey) || "";
+        } catch (error) {}
+
+        if (!visitorId) {
+          visitorId = window.createMetaEventId("visitor");
+
+          try {
+            window.localStorage.setItem(storageKey, visitorId);
+          } catch (error) {}
+        }
+
+        return visitorId;
+      }
+
+      function getMetaClickId() {
+        var fbc = readCookie("_fbc");
+        if (fbc) return fbc;
+
+        try {
+          fbc = window.sessionStorage.getItem("aiMetaFbc") || "";
+        } catch (error) {}
+
+        if (fbc) return fbc;
+
+        var fbclid = new URLSearchParams(window.location.search).get("fbclid");
+        if (!fbclid) return "";
+
+        fbc = "fb.1." + Date.now() + "." + fbclid;
+
+        try {
+          window.sessionStorage.setItem("aiMetaFbc", fbc);
+        } catch (error) {}
+
+        return fbc;
+      }
+
+      function sendMetaServerEvent(eventName, eventId, customData) {
+        var payload = {
+          event_name: eventName,
+          event_id: eventId,
+          event_source_url: window.location.href,
+          external_id: getMetaVisitorId(),
+          fbp: readCookie("_fbp"),
+          fbc: getMetaClickId(),
+        };
+
+        if (customData && customData.value) payload.value = customData.value;
+
+        var body = JSON.stringify(payload);
+
+        if (navigator.sendBeacon) {
+          var blob = new Blob([body], { type: "application/json" });
+          if (navigator.sendBeacon("/api/meta-events", blob)) return;
+        }
+
+        if (window.fetch) {
+          window.fetch("/api/meta-events", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: body,
+            keepalive: true,
+          }).catch(function () {});
+        }
+      }
+
+      function trackMetaEvent(eventName, customData) {
+        var eventId = window.createMetaEventId(eventName.toLowerCase());
+        var eventData = customData || {};
+
+        if (typeof fbq === "function") {
+          fbq("track", eventName, eventData, { eventID: eventId });
+        }
+
+        sendMetaServerEvent(eventName, eventId, eventData);
+      }
+
+      function goToCheckout(url, value) {
+        trackMetaEvent("InitiateCheckout", {
+          content_name: "AI Confidence Kit",
+          currency: "GBP",
+          value: value,
+        });
+
+        window.location.href = url;
+      }
+
       if ("scrollRestoration" in history) {
         history.scrollRestoration = "manual";
       }
@@ -2602,6 +2715,10 @@
           window.scrollTo(0, 0);
         }
       });
+
+      window.addEventListener("load", function () {
+        sendMetaServerEvent("PageView", window.metaPageViewEventId);
+      }, { once: true });
 
       var guideCheckoutUrl = "https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00";
       var guideWithMessagesUrl = "https://buy.stripe.com/28EeVc72PfEUbyM9q2bZe0b";
@@ -2745,7 +2862,7 @@
         var modal = document.querySelector("[data-bump-modal]");
         var checkbox = document.querySelector("[data-bump-checkbox]");
         if (!modal || !checkbox) {
-          window.location.href = guideCheckoutUrl;
+          goToCheckout(guideCheckoutUrl, 19);
           return;
         }
 
@@ -2777,6 +2894,16 @@
         var saleAnswer = event.target.closest("[data-sale-answer]");
         var saleModal = event.target.closest("[data-sale-modal]");
         var saleDialog = event.target.closest(".sale-dialog");
+        var checkoutLink = event.target.closest("[data-checkout-link]");
+
+        if (checkoutLink) {
+          event.preventDefault();
+          goToCheckout(
+            checkoutLink.getAttribute("href"),
+            Number(checkoutLink.getAttribute("data-checkout-value")) || 19
+          );
+          return;
+        }
 
         if (saleAnswer) {
           revealSaleCode(saleAnswer.getAttribute("data-sale-answer"));
@@ -2785,9 +2912,6 @@
 
         if (saleCopy) {
           copySaleCode(saleCopy);
-          if (typeof fbq === "function") {
-            fbq("track", "InitiateCheckout");
-          }
           closeSaleModal();
           window.setTimeout(openBumpModal, 150);
           return;
@@ -2801,10 +2925,6 @@
 
         if (checkout) {
           event.preventDefault();
-          if (typeof fbq === "function") {
-            fbq("track", "InitiateCheckout");
-          }
-
           window.setTimeout(openBumpModal, 150);
           return;
         }
@@ -2817,7 +2937,7 @@
 
         if (close) {
           event.preventDefault();
-          window.location.href = guideCheckoutUrl;
+          goToCheckout(guideCheckoutUrl, 19);
           return;
         }
 
@@ -2829,7 +2949,8 @@
 
         if (continueButton) {
           var checkbox = document.querySelector("[data-bump-checkbox]");
-          window.location.href = checkbox && checkbox.checked ? guideWithMessagesUrl : guideCheckoutUrl;
+          var includesMessages = checkbox && checkbox.checked;
+          goToCheckout(includesMessages ? guideWithMessagesUrl : guideCheckoutUrl, includesMessages ? 26.5 : 19);
         }
       });
 
@@ -3013,7 +3134,7 @@
               <span class="prompt-pack-saving">Save &pound;11.50</span>
             </div>
             <p class="prompt-pack-total">Get the guide and the complete prompt pack together for just <strong>&pound;26.50</strong>.</p>
-            <a class="button" href="https://buy.stripe.com/28EeVc72PfEUbyM9q2bZe0b">Get the Guide + Prompt Pack - &pound;26.50</a>
+            <a class="button" href="https://buy.stripe.com/28EeVc72PfEUbyM9q2bZe0b" data-checkout-link data-checkout-value="26.5">Get the Guide + Prompt Pack - &pound;26.50</a>
           </aside>
         </div>
       </section>
