@@ -236,119 +236,6 @@
         flex-wrap: wrap;
       }
 
-      .offer-actions {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .offer-actions .button {
-        max-width: 100%;
-        height: auto;
-        padding-top: 15px;
-        padding-bottom: 15px;
-        text-align: center;
-      }
-
-      .bundle-button {
-        max-width: 100%;
-        height: auto;
-        padding-top: 14px;
-        padding-bottom: 14px;
-        text-align: center;
-      }
-
-      .bundle-button-copy {
-        line-height: 1.55;
-      }
-
-      .guide-only-link {
-        display: inline-flex;
-        min-height: 44px;
-        align-items: center;
-        justify-content: center;
-        padding: 0 16px;
-        border: 2px solid rgba(30, 79, 135, 0.34);
-        border-radius: 7px;
-        background: #ffffff;
-        color: var(--muted);
-        font-size: 0.96rem;
-        font-weight: 850;
-        text-decoration: none;
-      }
-
-      .guide-only-link:hover {
-        border-color: var(--blue);
-        background: #f4f8fd;
-        color: var(--navy);
-      }
-
-      .message-info-link {
-        display: inline;
-        padding: 0;
-        border: 0;
-        background: transparent;
-        color: var(--muted);
-        font: inherit;
-        font-size: 0.86rem;
-        font-weight: 500;
-        text-decoration: underline;
-        text-decoration-thickness: 1px;
-        text-underline-offset: 3px;
-        cursor: pointer;
-      }
-
-      .message-info-link:hover,
-      .message-info-link:focus-visible {
-        color: var(--navy);
-      }
-
-      .message-info-dialog {
-        width: min(calc(100% - 36px), 500px);
-        padding: 30px 28px 26px;
-        border: 0;
-        border-radius: 14px;
-        background: #fffdf9;
-        box-shadow: 0 28px 80px rgba(7, 27, 63, 0.3);
-        color: var(--text);
-      }
-
-      .message-info-dialog::backdrop {
-        background: rgba(7, 27, 63, 0.62);
-      }
-
-      .message-info-dialog h2 {
-        margin: 0;
-        color: var(--navy);
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(1.65rem, 4vw, 2.2rem);
-        font-weight: 500;
-        line-height: 1.12;
-      }
-
-      .message-info-dialog p {
-        margin: 16px 0 0;
-        font-size: 1.05rem;
-        line-height: 1.65;
-      }
-
-      .message-info-close {
-        width: 100%;
-        min-height: 50px;
-        margin-top: 22px;
-        border: 0;
-        border-radius: 8px;
-        background: var(--blue);
-        color: #ffffff;
-        font: inherit;
-        font-weight: 800;
-        cursor: pointer;
-      }
-
-      .message-info-close:hover {
-        background: var(--navy);
-      }
-
       .hero .button {
         min-width: 220px;
         min-height: 58px;
@@ -1285,16 +1172,6 @@
         margin-top: 24px;
       }
 
-      .prompt-pack-offer .guide-only-link {
-        display: inline-flex;
-        margin-top: 14px;
-      }
-
-      .prompt-pack-offer .message-info-link {
-        display: block;
-        margin: 10px auto 0;
-      }
-
       .beginner {
         background: var(--section-mint);
         border-bottom: 1px solid rgba(23, 55, 97, 0.1);
@@ -1510,17 +1387,6 @@
 
       .advantage-callout .button {
         margin-top: 24px;
-      }
-
-      .advantage-callout .guide-only-link {
-        display: inline-flex;
-        width: fit-content;
-        margin-top: 12px;
-      }
-
-      .advantage-callout .message-info-link {
-        display: block;
-        margin-top: 10px;
       }
 
       .shift-heading {
@@ -2271,32 +2137,6 @@
         background: var(--gold-soft);
       }
 
-      .final-cta .guide-only-link {
-        display: inline-flex;
-        width: fit-content;
-        margin: 14px auto 0;
-        border-color: rgba(255, 255, 255, 0.52);
-        background: transparent;
-        color: rgba(255, 255, 255, 0.78);
-      }
-
-      .final-cta .guide-only-link:hover {
-        border-color: #ffffff;
-        background: rgba(255, 255, 255, 0.1);
-        color: #ffffff;
-      }
-
-      .final-cta .message-info-link {
-        display: block;
-        margin: 10px auto 0;
-        color: rgba(255, 255, 255, 0.72);
-      }
-
-      .final-cta .message-info-link:hover,
-      .final-cta .message-info-link:focus-visible {
-        color: #ffffff;
-      }
-
       @keyframes riseIn {
         from {
           opacity: 0;
@@ -3042,16 +2882,6 @@
         document.body.classList.remove("bump-locked");
       }
 
-      function openMessageInfo() {
-        var dialog = document.querySelector("[data-message-info-dialog]");
-        if (dialog && typeof dialog.showModal === "function") dialog.showModal();
-      }
-
-      function closeMessageInfo() {
-        var dialog = document.querySelector("[data-message-info-dialog]");
-        if (dialog && dialog.open) dialog.close();
-      }
-
       document.addEventListener("click", function (event) {
         var checkout = event.target.closest("[data-direct-checkout]");
         var close = event.target.closest("[data-bump-close]");
@@ -3065,22 +2895,6 @@
         var saleModal = event.target.closest("[data-sale-modal]");
         var saleDialog = event.target.closest(".sale-dialog");
         var checkoutLink = event.target.closest("[data-checkout-link]");
-        var messageInfoTrigger = event.target.closest("[data-message-info-trigger]");
-        var messageInfoClose = event.target.closest("[data-message-info-close]");
-        var messageInfoDialog = event.target.closest("[data-message-info-dialog]");
-
-        if (messageInfoTrigger) {
-          event.preventDefault();
-          openMessageInfo();
-          return;
-        }
-
-        if (messageInfoClose || (messageInfoDialog && event.target === messageInfoDialog)) {
-          event.preventDefault();
-          closeMessageInfo();
-          return;
-        }
-
         if (checkoutLink) {
           event.preventDefault();
           goToCheckout(
@@ -3163,11 +2977,6 @@
       });
 
     </script>
-    <dialog class="message-info-dialog" data-message-info-dialog aria-labelledby="message-info-title">
-      <h2 id="message-info-title">100 ready-to-use AI messages for 10 everyday situations</h2>
-      <p>These are complete instructions and questions you can copy, personalise, and paste into ChatGPT, so you always know what to type. They cover useful situations such as writing, planning, life admin, shopping, appointments, decisions, and more.</p>
-      <button class="message-info-close" type="button" data-message-info-close>Close</button>
-    </dialog>
     <div class="sale-modal" data-sale-modal aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="sale-title">
       <div class="sale-dialog">
         <button class="sale-close" type="button" data-sale-close aria-label="Close sale offer">&times;</button>
@@ -3235,10 +3044,8 @@
                   A short, plain-English guide showing you where to start, where AI can help, and what to ask&mdash;so you can use it for yourself without technical confusion.
                 </p>
                 <p class="hero-reassurance">No jargon. No technical knowledge required.</p>
-                <div class="actions offer-actions">
-                  <a class="button bundle-button" href="https://buy.stripe.com/28EeVc72PfEUbyM9q2bZe0b" data-checkout-link data-checkout-value="26.5"><span class="bundle-button-copy">Get the Guide + 100 Ready-to-Use AI Messages &mdash; &pound;26.50</span></a>
-                  <a class="guide-only-link" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-checkout-link data-checkout-value="19">Get the Guide Only &mdash; &pound;19</a>
-                  <button class="message-info-link" type="button" data-message-info-trigger>What are ready-to-use AI messages?</button>
+                <div class="actions">
+                  <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-direct-checkout>Get Instant Access - &pound;19</a>
                 </div>
                 <p class="note">Instant download. 60-day money-back guarantee.</p>
               </div>
@@ -3285,9 +3092,7 @@
             <div class="advantage-guarantee">
               <strong>Try it for 60 days without risk.</strong> If you don&rsquo;t feel clearer about using AI, email us for a full refund. No complicated terms.
             </div>
-            <a class="button bundle-button" href="https://buy.stripe.com/28EeVc72PfEUbyM9q2bZe0b" data-checkout-link data-checkout-value="26.5"><span class="bundle-button-copy">Get the Guide + 100 Ready-to-Use AI Messages &mdash; &pound;26.50</span></a>
-            <a class="guide-only-link" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-checkout-link data-checkout-value="19">Get the Guide Only &mdash; &pound;19</a>
-            <button class="message-info-link" type="button" data-message-info-trigger>What are ready-to-use AI messages?</button>
+            <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-direct-checkout>Get Instant Access - &pound;19</a>
           </div>
         </div>
       </section>
@@ -3338,9 +3143,7 @@
               <span class="prompt-pack-saving">Save &pound;11.50</span>
             </div>
             <p class="prompt-pack-total">Get the guide and all 100 ready-to-use messages together for just <strong>&pound;26.50</strong>.</p>
-            <a class="button bundle-button" href="https://buy.stripe.com/28EeVc72PfEUbyM9q2bZe0b" data-checkout-link data-checkout-value="26.5"><span class="bundle-button-copy">Get the Guide + 100 Ready-to-Use AI Messages &mdash; &pound;26.50</span></a>
-            <a class="guide-only-link" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-checkout-link data-checkout-value="19">Get the Guide Only &mdash; &pound;19</a>
-            <button class="message-info-link" type="button" data-message-info-trigger>What are ready-to-use AI messages?</button>
+            <a class="button" href="https://buy.stripe.com/28EeVc72PfEUbyM9q2bZe0b" data-checkout-link data-checkout-value="26.5">Get the Guide + 100 Ready-to-Use AI Messages - &pound;26.50</a>
           </aside>
         </div>
       </section>
@@ -3538,9 +3341,7 @@
         <div class="final-cta-inner" id="get-instant-access">
           <h2>Finally understand AI&mdash;and start using it with confidence</h2>
           <p>Get the calm starting point most AI explanations skip. Understand where AI fits into everyday life, what to type, and how to get useful answers without feeling overwhelmed. Your 7-Day Everyday AI Starter Plan and &ldquo;What to Ask&rdquo; Builder are both included free.</p>
-          <a class="button bundle-button" href="https://buy.stripe.com/28EeVc72PfEUbyM9q2bZe0b" data-checkout-link data-checkout-value="26.5"><span class="bundle-button-copy">Get the Guide + 100 Ready-to-Use AI Messages &mdash; &pound;26.50</span></a>
-          <a class="guide-only-link" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-checkout-link data-checkout-value="19">Get the Guide Only &mdash; &pound;19</a>
-          <button class="message-info-link" type="button" data-message-info-trigger>What are ready-to-use AI messages?</button>
+          <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-direct-checkout>Get Instant Access - &pound;19</a>
           <p class="checkout-note">Instant download. 60-day money-back guarantee.</p>
         </div>
       </section>
