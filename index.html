@@ -2693,6 +2693,7 @@
 
       var guideCheckoutUrl = "https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00";
       var guideWithMessagesUrl = "https://buy.stripe.com/28EeVc72PfEUbyM9q2bZe0b";
+      var orderBumpEnabled = false;
 
       function openDiscountModal() {
         var modal = document.querySelector("[data-discount-modal]");
@@ -2748,6 +2749,11 @@
       }
 
       function openBumpModal() {
+        if (!orderBumpEnabled) {
+          window.location.href = guideCheckoutUrl;
+          return;
+        }
+
         var modal = document.querySelector("[data-bump-modal]");
         var checkbox = document.querySelector("[data-bump-checkbox]");
         if (!modal || !checkbox) {
