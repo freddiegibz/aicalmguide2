@@ -2618,8 +2618,6 @@
         if (typeof fbq === "function") {
           fbq("track", eventName, eventData, { eventID: eventId });
         }
-
-        sendMetaServerEvent(eventName, eventId, eventData);
       }
 
       function goToCheckout(url, value) {
