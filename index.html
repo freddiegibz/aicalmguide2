@@ -318,7 +318,7 @@
         line-height: 1.5;
       }
 
-      .sale-modal {
+      .discount-modal {
         position: fixed;
         inset: 0;
         z-index: 100;
@@ -329,23 +329,21 @@
         background: rgba(7, 27, 63, 0.62);
       }
 
-      .sale-modal.is-open {
+      .discount-modal.is-open {
         display: flex;
       }
 
-      .sale-dialog {
+      .discount-dialog {
         position: relative;
-        width: min(100%, 470px);
-        max-height: calc(100vh - 40px);
-        overflow-y: auto;
-        padding: 32px 26px 28px;
+        width: min(100%, 440px);
+        padding: 34px 28px 28px;
         border-radius: 16px;
         background: #fffdf9;
         box-shadow: 0 28px 80px rgba(7, 27, 63, 0.32);
         text-align: center;
       }
 
-      .sale-close {
+      .discount-close {
         position: absolute;
         top: 12px;
         right: 12px;
@@ -362,130 +360,58 @@
         cursor: pointer;
       }
 
-      .sale-kicker {
+      .discount-kicker {
         margin: 0;
         color: var(--blue);
-        font-size: 0.9rem;
+        font-size: 0.86rem;
         font-weight: 900;
-        letter-spacing: 0.08em;
+        letter-spacing: 0.07em;
         text-transform: uppercase;
       }
 
-      .sale-dialog h2 {
+      .discount-dialog h2 {
         margin: 10px 0 0;
         color: var(--navy);
         font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(2rem, 7vw, 2.8rem);
+        font-size: clamp(2rem, 7vw, 2.7rem);
         font-weight: 500;
-        line-height: 1.05;
+        line-height: 1.06;
       }
 
-      .sale-deadline {
-        margin: 16px 0 0;
-        color: var(--muted);
-        font-weight: 800;
-      }
-
-      .sale-instruction {
+      .discount-dialog p {
         margin: 14px 0 0;
         color: var(--text);
-        line-height: 1.5;
+        line-height: 1.55;
       }
 
-      .sale-question {
-        margin: 22px 0 0;
-        color: var(--navy);
-        font-size: 1.08rem;
-        font-weight: 900;
-        line-height: 1.35;
-      }
-
-      .sale-options {
-        display: grid;
-        gap: 9px;
-        margin-top: 14px;
-      }
-
-      .sale-option {
-        width: 100%;
-        min-height: 48px;
-        padding: 11px 14px;
-        border: 2px solid rgba(30, 79, 135, 0.2);
-        border-radius: 9px;
-        background: #fff;
-        color: var(--navy);
-        font: inherit;
-        font-weight: 800;
-        line-height: 1.3;
-        text-align: left;
-        cursor: pointer;
-      }
-
-      .sale-option:hover,
-      .sale-option:focus-visible {
-        border-color: var(--blue);
-        background: #f4f8fd;
-      }
-
-      .sale-code-row {
-        display: flex;
-        gap: 10px;
+      .discount-code {
         margin-top: 22px;
-      }
-
-      .sale-code {
-        flex: 1;
-        min-width: 0;
         padding: 14px;
         border: 2px dashed rgba(30, 79, 135, 0.4);
         border-radius: 9px;
         background: #f4f8fd;
         color: var(--navy);
-        font-size: 1.2rem;
+        font-size: 1.25rem;
         font-weight: 900;
         letter-spacing: 0.08em;
       }
 
-      .sale-copy {
+      .discount-continue {
         width: 100%;
-        min-height: 50px;
-        margin-top: 12px;
+        min-height: 52px;
+        margin-top: 14px;
         padding: 0 18px;
         border: 0;
         border-radius: 9px;
         background: var(--blue);
-        color: #fff;
+        color: #ffffff;
         font: inherit;
-        font-weight: 800;
+        font-weight: 850;
         cursor: pointer;
       }
 
-      .sale-copy:hover {
+      .discount-continue:hover {
         background: var(--navy);
-      }
-
-      .sale-dismiss {
-        width: 100%;
-        min-height: 48px;
-        margin-top: 12px;
-        border: 2px solid rgba(30, 79, 135, 0.22);
-        border-radius: 9px;
-        background: #fff;
-        color: var(--navy);
-        font: inherit;
-        font-weight: 800;
-        cursor: pointer;
-      }
-
-      .sale-dismiss:hover {
-        background: #f4f8fd;
-      }
-
-      @media (max-width: 420px) {
-        .sale-code-row {
-          flex-direction: column;
-        }
-
       }
 
       .bump-modal {
@@ -2723,74 +2649,37 @@
       var guideCheckoutUrl = "https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00";
       var guideWithMessagesUrl = "https://buy.stripe.com/28EeVc72PfEUbyM9q2bZe0b";
 
-      function closeSaleModal() {
-        var modal = document.querySelector("[data-sale-modal]");
+      function openDiscountModal() {
+        var modal = document.querySelector("[data-discount-modal]");
+        var button = document.querySelector("[data-discount-continue]");
+        if (!modal) {
+          openBumpModal();
+          return;
+        }
+
+        if (button) button.textContent = "Copy code & continue to checkout";
+        modal.classList.add("is-open");
+        modal.setAttribute("aria-hidden", "false");
+      }
+
+      function closeDiscountModal() {
+        var modal = document.querySelector("[data-discount-modal]");
         if (!modal) return;
         modal.classList.remove("is-open");
         modal.setAttribute("aria-hidden", "true");
       }
 
-      function saveSaleAnswer(answer) {
-        try {
-          window.localStorage.setItem("aiStartingPoint", answer);
-        } catch (error) {}
-
-        if (!window.fetch || !window.URLSearchParams) return;
-
-        try {
-          var fields = new URLSearchParams();
-          fields.append("_subject", "AI Confidence Kit pre-purchase discount question");
-          fields.append("response_source", "early_launch_modal");
-          fields.append("ai_starting_point", answer);
-
-          window.fetch("https://formspree.io/f/xrewejey", {
-            method: "POST",
-            headers: {
-              Accept: "application/json",
-              "Content-Type": "application/x-www-form-urlencoded"
-            },
-            body: fields.toString(),
-            keepalive: true
-          }).catch(function () {
-            return null;
-          });
-        } catch (error) {}
-      }
-
-      function revealSaleCode(answer) {
-        var modal = document.querySelector("[data-sale-modal]");
-        var questionStep = document.querySelector("[data-sale-question-step]");
-        var codeStep = document.querySelector("[data-sale-code-step]");
-        var codeTitle = document.querySelector("#sale-code-title");
-        if (!modal || !questionStep || !codeStep) return;
-
-        saveSaleAnswer(answer);
-        questionStep.hidden = true;
-        codeStep.hidden = false;
-        modal.setAttribute("aria-labelledby", "sale-code-title");
-        if (codeTitle) codeTitle.focus();
-      }
-
-      function copySaleCode(button) {
+      function copyDiscountAndContinue(button) {
         var code = "EARLY50";
 
-        function showCopied() {
+        function continueFlow() {
           button.textContent = "Copied!";
-          if (!button.dataset.pixelTracked && typeof fbq === "function") {
-            fbq("trackCustom", "DiscountCodeCopied", {
-              promotion_code: code,
-              promotion_name: "Early Sale",
-              discount_percent: 50
-            });
-            button.dataset.pixelTracked = "true";
-          }
-          window.setTimeout(function () {
-            button.textContent = "Copy code";
-          }, 1800);
+          closeDiscountModal();
+          window.setTimeout(openBumpModal, 150);
         }
 
         if (navigator.clipboard && window.isSecureContext) {
-          navigator.clipboard.writeText(code).then(showCopied);
+          navigator.clipboard.writeText(code).then(continueFlow).catch(continueFlow);
           return;
         }
 
@@ -2802,51 +2691,8 @@
         input.select();
         document.execCommand("copy");
         input.remove();
-        showCopied();
+        continueFlow();
       }
-
-      window.addEventListener("DOMContentLoaded", function () {
-        var modal = document.querySelector("[data-sale-modal]");
-        var offerEnds = Date.UTC(2026, 6, 16, 23, 0, 0);
-        var offerSeenKey = "earlyLaunchOfferSeen20260716";
-        var offerSeen = false;
-
-        try {
-          offerSeen = window.localStorage.getItem(offerSeenKey) === "true";
-        } catch (error) {}
-
-        if (!modal || Date.now() >= offerEnds || offerSeen) return;
-
-        var hasOpened = false;
-        var engagementTimer;
-        var activeSeconds = 0;
-
-        function openSaleModal() {
-          if (hasOpened) return;
-          hasOpened = true;
-          window.clearInterval(engagementTimer);
-          window.removeEventListener("scroll", checkScrollEngagement);
-          try {
-            window.localStorage.setItem(offerSeenKey, "true");
-          } catch (error) {}
-          modal.classList.add("is-open");
-          modal.setAttribute("aria-hidden", "false");
-        }
-
-        function checkScrollEngagement() {
-          var scrollable = document.documentElement.scrollHeight - window.innerHeight;
-          if (scrollable > 0 && window.scrollY / scrollable >= 0.4) {
-            openSaleModal();
-          }
-        }
-
-        engagementTimer = window.setInterval(function () {
-          if (document.visibilityState !== "visible") return;
-          activeSeconds += 1;
-          if (activeSeconds >= 45) openSaleModal();
-        }, 1000);
-        window.addEventListener("scroll", checkScrollEngagement, { passive: true });
-      });
 
       function updateBumpButton() {
         var checkbox = document.querySelector("[data-bump-checkbox]");
@@ -2889,41 +2735,30 @@
         var modal = event.target.closest("[data-bump-modal]");
         var dialog = event.target.closest(".bump-dialog");
         var continueButton = event.target.closest("[data-bump-continue]");
-        var saleClose = event.target.closest("[data-sale-close]");
-        var saleCopy = event.target.closest("[data-sale-copy]");
-        var saleAnswer = event.target.closest("[data-sale-answer]");
-        var saleModal = event.target.closest("[data-sale-modal]");
-        var saleDialog = event.target.closest(".sale-dialog");
         var checkoutLink = event.target.closest("[data-checkout-link]");
+        var discountContinue = event.target.closest("[data-discount-continue]");
+        var discountClose = event.target.closest("[data-discount-close]");
+        var discountModal = event.target.closest("[data-discount-modal]");
+        var discountDialog = event.target.closest(".discount-dialog");
+
+        if (discountContinue) {
+          event.preventDefault();
+          copyDiscountAndContinue(discountContinue);
+          return;
+        }
+
+        if (discountClose || (discountModal && !discountDialog)) {
+          event.preventDefault();
+          closeDiscountModal();
+          return;
+        }
+
         if (checkoutLink) {
           event.preventDefault();
           goToCheckout(
             checkoutLink.getAttribute("href"),
             Number(checkoutLink.getAttribute("data-checkout-value")) || 19
           );
-          return;
-        }
-
-        if (saleAnswer) {
-          revealSaleCode(saleAnswer.getAttribute("data-sale-answer"));
-          return;
-        }
-
-        if (saleCopy) {
-          copySaleCode(saleCopy);
-          trackMetaEvent("InitiateCheckout", {
-            content_name: "AI Confidence Kit",
-            currency: "GBP",
-            value: 19,
-          });
-          closeSaleModal();
-          window.setTimeout(openBumpModal, 150);
-          return;
-        }
-
-        if (saleClose || (saleModal && !saleDialog)) {
-          event.preventDefault();
-          closeSaleModal();
           return;
         }
 
@@ -2934,7 +2769,7 @@
             currency: "GBP",
             value: 19,
           });
-          window.setTimeout(openBumpModal, 150);
+          window.setTimeout(openDiscountModal, 150);
           return;
         }
 
@@ -2971,38 +2806,20 @@
 
       document.addEventListener("keydown", function (event) {
         if (event.key === "Escape") {
-          closeSaleModal();
+          closeDiscountModal();
           closeBumpModal();
         }
       });
 
     </script>
-    <div class="sale-modal" data-sale-modal aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="sale-title">
-      <div class="sale-dialog">
-        <button class="sale-close" type="button" data-sale-close aria-label="Close sale offer">&times;</button>
-        <div data-sale-question-step>
-          <p class="sale-kicker">You&rsquo;ve unlocked the early-launch offer</p>
-          <h2 id="sale-title">Get 50% off the AI Confidence Kit</h2>
-          <p class="sale-instruction">Answer one quick question to reveal your discount code. No email required.</p>
-          <p class="sale-question" id="sale-question">Which best describes where you are with AI?</p>
-          <div class="sale-options" role="group" aria-labelledby="sale-question">
-            <button class="sale-option" type="button" data-sale-answer="I want to try AI but don’t know where to start">I want to try AI but don&rsquo;t know where to start</button>
-            <button class="sale-option" type="button" data-sale-answer="I’ve tried AI but don’t get useful answers">I&rsquo;ve tried AI but don&rsquo;t get useful answers</button>
-            <button class="sale-option" type="button" data-sale-answer="I want practical ways to use AI in everyday life">I want practical ways to use AI in everyday life</button>
-            <button class="sale-option" type="button" data-sale-answer="I want to feel more confident using AI">I want to feel more confident using AI</button>
-          </div>
-        </div>
-        <div data-sale-code-step hidden>
-          <p class="sale-kicker">Thanks&mdash;that really helps</p>
-          <h2 id="sale-code-title" tabindex="-1">Here&rsquo;s your 50% discount</h2>
-          <p class="sale-instruction">Use this code at checkout to get the AI Confidence Kit for &pound;9.50.</p>
-          <div class="sale-code-row">
-            <div class="sale-code" aria-label="Discount code EARLY50">EARLY50</div>
-          </div>
-          <button class="sale-copy" type="button" data-sale-copy>Copy code &amp; continue to checkout</button>
-          <button class="sale-dismiss" type="button" data-sale-close>Close window</button>
-          <p class="sale-deadline">Early-launch offer ends 16 July 2026.</p>
-        </div>
+    <div class="discount-modal" data-discount-modal aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="discount-title">
+      <div class="discount-dialog">
+        <button class="discount-close" type="button" data-discount-close aria-label="Close discount offer">&times;</button>
+        <p class="discount-kicker">Your 50% discount</p>
+        <h2 id="discount-title">Get the guide for &pound;9.50</h2>
+        <p>Copy the code below, then enter it at checkout to take 50% off.</p>
+        <div class="discount-code" aria-label="Discount code EARLY50">EARLY50</div>
+        <button class="discount-continue" type="button" data-discount-continue>Copy code &amp; continue to checkout</button>
       </div>
     </div>
     <div class="bump-modal" data-bump-modal aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="bump-title">
@@ -3021,7 +2838,7 @@
           </span>
         </label>
         <div class="bump-actions">
-          <button class="bump-continue" type="button" data-bump-continue>Continue to checkout - &pound;19</button>
+          <button class="bump-continue" type="button" data-bump-continue>Continue to checkout</button>
           <button class="bump-close" type="button" data-bump-close>No thanks, just the guide</button>
         </div>
       </div>
@@ -3045,7 +2862,7 @@
                 </p>
                 <p class="hero-reassurance">No jargon. No technical knowledge required.</p>
                 <div class="actions">
-                  <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-direct-checkout>Get Instant Access - &pound;19</a>
+                  <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-direct-checkout>Get Instant Access</a>
                 </div>
                 <p class="note">Instant download. 60-day money-back guarantee.</p>
               </div>
@@ -3092,7 +2909,7 @@
             <div class="advantage-guarantee">
               <strong>Try it for 60 days without risk.</strong> If you don&rsquo;t feel clearer about using AI, email us for a full refund. No complicated terms.
             </div>
-            <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-direct-checkout>Get Instant Access - &pound;19</a>
+            <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-direct-checkout>Get Instant Access</a>
           </div>
         </div>
       </section>
@@ -3341,7 +3158,7 @@
         <div class="final-cta-inner" id="get-instant-access">
           <h2>Finally understand AI&mdash;and start using it with confidence</h2>
           <p>Get the calm starting point most AI explanations skip. Understand where AI fits into everyday life, what to type, and how to get useful answers without feeling overwhelmed. Your 7-Day Everyday AI Starter Plan and &ldquo;What to Ask&rdquo; Builder are both included free.</p>
-          <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-direct-checkout>Get Instant Access - &pound;19</a>
+          <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-direct-checkout>Get Instant Access</a>
           <p class="checkout-note">Instant download. 60-day money-back guarantee.</p>
         </div>
       </section>
