@@ -378,6 +378,20 @@
         line-height: 1.06;
       }
 
+      .discount-price-was {
+        color: var(--muted);
+        font-size: 0.76em;
+      }
+
+      .discount-price-was s {
+        text-decoration-thickness: 3px;
+      }
+
+      .discount-price-now {
+        color: var(--navy);
+        font-weight: 700;
+      }
+
       .discount-dialog p {
         margin: 14px 0 0;
         color: var(--text);
@@ -2853,7 +2867,7 @@
       <div class="discount-dialog">
         <button class="discount-close" type="button" data-discount-close aria-label="Close discount offer">&times;</button>
         <p class="discount-kicker">Your 50% discount</p>
-        <h2 id="discount-title">Get the guide for &pound;9.50</h2>
+        <h2 id="discount-title"><span class="discount-price-was"><s>&pound;19</s></span> &rarr; <span class="discount-price-now">&pound;9.50</span></h2>
         <p>Copy the code below, then enter it at checkout to take 50% off.</p>
         <div class="discount-code-row">
           <div class="discount-code" aria-label="Discount code EARLY50">EARLY50</div>
