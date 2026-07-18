@@ -384,8 +384,14 @@
         line-height: 1.55;
       }
 
-      .discount-code {
+      .discount-code-row {
+        display: flex;
+        gap: 10px;
         margin-top: 22px;
+      }
+
+      .discount-code {
+        flex: 1;
         padding: 14px;
         border: 2px dashed rgba(30, 79, 135, 0.4);
         border-radius: 9px;
@@ -394,6 +400,23 @@
         font-size: 1.25rem;
         font-weight: 900;
         letter-spacing: 0.08em;
+      }
+
+      .discount-copy {
+        min-width: 92px;
+        padding: 0 16px;
+        border: 2px solid rgba(30, 79, 135, 0.24);
+        border-radius: 9px;
+        background: #ffffff;
+        color: var(--navy);
+        font: inherit;
+        font-weight: 850;
+        cursor: pointer;
+      }
+
+      .discount-copy:hover {
+        border-color: var(--blue);
+        background: #f4f8fd;
       }
 
       .discount-continue {
@@ -412,6 +435,16 @@
 
       .discount-continue:hover {
         background: var(--navy);
+      }
+
+      @media (max-width: 420px) {
+        .discount-code-row {
+          flex-direction: column;
+        }
+
+        .discount-copy {
+          min-height: 48px;
+        }
       }
 
       .bump-modal {
@@ -2649,13 +2682,13 @@
 
       function openDiscountModal() {
         var modal = document.querySelector("[data-discount-modal]");
-        var button = document.querySelector("[data-discount-continue]");
+        var copyButton = document.querySelector("[data-discount-copy]");
         if (!modal) {
           openBumpModal();
           return;
         }
 
-        if (button) button.textContent = "Copy code & continue to checkout";
+        if (copyButton) copyButton.textContent = "Copy";
         modal.classList.add("is-open");
         modal.setAttribute("aria-hidden", "false");
       }
@@ -2667,17 +2700,15 @@
         modal.setAttribute("aria-hidden", "true");
       }
 
-      function copyDiscountAndContinue(button) {
+      function copyDiscountCode(button) {
         var code = "EARLY50";
 
-        function continueFlow() {
+        function showCopied() {
           button.textContent = "Copied!";
-          closeDiscountModal();
-          window.setTimeout(openBumpModal, 150);
         }
 
         if (navigator.clipboard && window.isSecureContext) {
-          navigator.clipboard.writeText(code).then(continueFlow).catch(continueFlow);
+          navigator.clipboard.writeText(code).then(showCopied).catch(showCopied);
           return;
         }
 
@@ -2689,7 +2720,7 @@
         input.select();
         document.execCommand("copy");
         input.remove();
-        continueFlow();
+        showCopied();
       }
 
       function updateBumpButton() {
@@ -2734,14 +2765,22 @@
         var dialog = event.target.closest(".bump-dialog");
         var continueButton = event.target.closest("[data-bump-continue]");
         var checkoutLink = event.target.closest("[data-checkout-link]");
+        var discountCopy = event.target.closest("[data-discount-copy]");
         var discountContinue = event.target.closest("[data-discount-continue]");
         var discountClose = event.target.closest("[data-discount-close]");
         var discountModal = event.target.closest("[data-discount-modal]");
         var discountDialog = event.target.closest(".discount-dialog");
 
+        if (discountCopy) {
+          event.preventDefault();
+          copyDiscountCode(discountCopy);
+          return;
+        }
+
         if (discountContinue) {
           event.preventDefault();
-          copyDiscountAndContinue(discountContinue);
+          closeDiscountModal();
+          window.setTimeout(openBumpModal, 150);
           return;
         }
 
@@ -2816,8 +2855,11 @@
         <p class="discount-kicker">Your 50% discount</p>
         <h2 id="discount-title">Get the guide for &pound;9.50</h2>
         <p>Copy the code below, then enter it at checkout to take 50% off.</p>
-        <div class="discount-code" aria-label="Discount code EARLY50">EARLY50</div>
-        <button class="discount-continue" type="button" data-discount-continue>Copy code &amp; continue to checkout</button>
+        <div class="discount-code-row">
+          <div class="discount-code" aria-label="Discount code EARLY50">EARLY50</div>
+          <button class="discount-copy" type="button" data-discount-copy>Copy</button>
+        </div>
+        <button class="discount-continue" type="button" data-discount-continue>Continue to checkout</button>
       </div>
     </div>
     <div class="bump-modal" data-bump-modal aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="bump-title">
