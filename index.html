@@ -113,44 +113,22 @@
       }
 
       .top-banner {
-        border-top: 1px solid rgba(7, 27, 63, 0.12);
-        border-bottom: 1px solid rgba(7, 27, 63, 0.12);
-        background: #fffdf9;
+        border-bottom: 1px solid rgba(23, 55, 97, 0.14);
+        background: var(--navy);
+        color: #ffffff;
       }
 
       .top-banner-inner {
         width: min(100%, 1100px);
         margin: 0 auto;
-        padding: 12px 22px 14px;
+        padding: 11px 22px;
+        text-align: center;
+        font-size: 0.94rem;
+        line-height: 1.4;
       }
 
-      .top-banner-inner > strong {
-        display: block;
-        color: var(--navy);
-        font-size: 0.98rem;
-        font-weight: 700;
-        line-height: 1.3;
-      }
-
-      .top-banner p {
-        margin: 4px 0 0;
-        color: #677286;
-        font-size: 0.92rem;
-        line-height: 1.45;
-      }
-
-      .top-banner p strong {
-        color: #173761;
-        font-weight: 700;
-      }
-
-      .top-banner a {
-        display: inline-block;
-        margin-top: 8px;
-        color: #51647f;
-        font-size: 0.92rem;
-        text-decoration-thickness: 1px;
-        text-underline-offset: 3px;
+      .top-banner strong {
+        color: var(--gold);
       }
 
       .hero-inner {
@@ -268,6 +246,13 @@
 
       .hero-look-link:hover span {
         color: var(--blue-dark);
+      }
+
+      .hero-checkout-note {
+        margin: -2px 0 0;
+        color: var(--muted);
+        font-size: 0.88rem;
+        line-height: 1.45;
       }
 
       .button {
@@ -1029,6 +1014,11 @@
       }
 
       @media (max-width: 760px) {
+        .top-banner-inner {
+          padding: 10px 18px;
+          font-size: 0.88rem;
+        }
+
         .quick-offer {
           padding: 64px 18px;
         }
@@ -2228,10 +2218,6 @@
       }
 
       @media (max-width: 760px) {
-        .top-banner-inner {
-          padding: 10px 18px 12px;
-        }
-
         .hero {
           min-height: auto;
           background: linear-gradient(180deg, #f7f8fc 0%, #ffffff 100%);
@@ -2915,10 +2901,7 @@
       </div>
     </div>
     <div class="top-banner">
-      <div class="top-banner-inner">
-        <p><strong>Trusted by 1,300 readers</strong> who wanted a <strong>simple starting point</strong>&mdash;not another technical AI course.</p>
-        <a href="#reviews">Read reviews</a>
-      </div>
+      <div class="top-banner-inner"><strong>Special introductory offer:</strong> <s>&pound;19.00</s> &rarr; <strong>&pound;9.50 today</strong></div>
     </div>
     <main>
       <section class="hero" aria-label="AI finally explained in plain English hero">
@@ -2929,7 +2912,7 @@
                 <div class="hero-badge">New to AI? Start here.</div>
                 <h1>Finally understand AI and feel confident using it in everyday life.</h1>
                 <p class="lead">
-                  A short, practical, plain-English guide showing you exactly where to start, how to get genuinely useful answers, and how to use AI to write clearer messages, plan everyday tasks and think through decisions&mdash;without technical confusion.
+                  A practical, plain-English guide to where to start, what to write, and how AI can help with everyday tasks like writing clearer messages, planning and making decisions&mdash;and more.
                 </p>
                 <p class="hero-reassurance">No jargon. No technical knowledge required.</p>
                 <div class="actions">
@@ -2938,12 +2921,9 @@
                     href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00?prefilled_promo_code=EARLY50"
                     data-direct-checkout
                   >Get Instant Access &mdash; &pound;9.50</a>
+                  <p class="hero-checkout-note">Instant download. 60-day money-back guarantee.</p>
                   <a class="hero-look-link" href="#inside-the-guide">Want to look first? <span>See what&rsquo;s inside</span></a>
                 </div>
-                <p class="note">
-                  <strong>Normally &pound;19 &mdash; limited-time 50% off.</strong>
-                  Instant download. 60-day money-back guarantee.
-                </p>
               </div>
             </div>
             <div class="hero-visual" aria-hidden="true"></div>
