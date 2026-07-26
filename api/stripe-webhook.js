@@ -1,5 +1,6 @@
 const crypto = require("crypto");
 const Stripe = require("stripe");
+const { loadCheckoutContext } = require("./meta-kv");
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
@@ -47,23 +48,42 @@ module.exports = async function stripeWebhook(req, res) {
 
   console.log("Stripe webhook received:", event.type);
 
-  if (event.type !== "checkout.session.completed") {
+  if (event.type !== "checkout.session.completed" && event.type !== "checkout.session.async_payment_succeeded") {
     return res.status(200).json({ received: true });
   }
 
   const session = event.data.object;
+  if (session.payment_status !== "paid") {
+    return res.status(200).json({ received: true });
+  }
+
   const email = session.customer_details && session.customer_details.email;
   const amountTotal = session.amount_total || 0;
   const currency = session.currency ? session.currency.toUpperCase() : undefined;
+  let context = null;
+
+  try {
+    context = await loadCheckoutContext(session.client_reference_id);
+  } catch (error) {
+    console.error("Loading Meta checkout context failed:", error.message);
+  }
+
+  const userData = email ? { em: sha256(email) } : {};
+  if (context?.fbp) userData.fbp = context.fbp;
+  if (context?.fbc) userData.fbc = context.fbc;
+  if (context?.external_id) userData.external_id = sha256(context.external_id);
+  if (context?.client_ip_address) userData.client_ip_address = context.client_ip_address;
+  if (context?.client_user_agent) userData.client_user_agent = context.client_user_agent;
 
   const payload = {
     data: [
       {
         event_name: "Purchase",
-        event_time: Math.floor(Date.now() / 1000),
+        event_time: event.created || Math.floor(Date.now() / 1000),
         event_id: session.id,
         action_source: "website",
-        user_data: email ? { em: sha256(email) } : {},
+        event_source_url: context?.event_source_url || "https://www.aiconfidencekit.com/",
+        user_data: userData,
         custom_data: {
           value: amountTotal / 100,
           currency,

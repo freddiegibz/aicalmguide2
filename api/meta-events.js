@@ -1,6 +1,6 @@
 const crypto = require("crypto");
 
-const ALLOWED_EVENTS = new Set(["PageView"]);
+const ALLOWED_EVENTS = new Set(["PageView", "InitiateCheckout"]);
 
 function sha256(value) {
   return crypto
@@ -108,6 +108,14 @@ module.exports = async function metaEvents(req, res) {
     action_source: "website",
     user_data: userData,
   };
+
+  if (eventName === "InitiateCheckout") {
+    serverEvent.custom_data = {
+      content_name: "AI Confidence Kit",
+      currency: "GBP",
+      value: Number.isFinite(Number(body.value)) ? Number(body.value) : 19,
+    };
+  }
 
   try {
     const metaResponse = await fetch(

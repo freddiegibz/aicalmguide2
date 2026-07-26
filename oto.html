@@ -20,6 +20,26 @@
       'https://connect.facebook.net/en_US/fbevents.js');
       fbq('init', '1988137388462157');
       fbq('track', 'PageView');
+
+      (function () {
+        var sessionId = new URLSearchParams(window.location.search).get('session_id');
+        if (!/^cs_(?:test_|live_)[A-Za-z0-9]+$/.test(sessionId || '')) return;
+
+        window.fetch('/api/checkout-session?session_id=' + encodeURIComponent(sessionId))
+          .then(function (response) {
+            if (!response.ok) throw new Error('Checkout session unavailable');
+            return response.json();
+          })
+          .then(function (purchase) {
+            fbq('track', 'Purchase', {
+              value: purchase.value,
+              currency: purchase.currency
+            }, { eventID: purchase.session_id });
+          })
+          .catch(function () {
+            // The server-side Purchase event still records the order if this lookup fails.
+          });
+      })();
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1988137388462157&ev=PageView&noscript=1"

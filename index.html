@@ -2751,14 +2751,37 @@
         if (typeof fbq === "function") {
           fbq("track", eventName, eventData, { eventID: eventId });
         }
+
+        sendMetaServerEvent(eventName, eventId, eventData);
       }
 
-      function goToCheckout(url, value) {
+      async function goToCheckout(url, value) {
         trackMetaEvent("InitiateCheckout", {
           content_name: "AI Confidence Kit",
           currency: "GBP",
           value: value,
         });
+
+        try {
+          var response = await window.fetch("/api/meta-checkout-context", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              event_source_url: window.location.href,
+              external_id: getMetaVisitorId(),
+              fbp: readCookie("_fbp"),
+              fbc: getMetaClickId(),
+            }),
+          });
+          var result = await response.json();
+
+          if (response.ok && result.client_reference_id) {
+            var checkoutUrl = new URL(url);
+            checkoutUrl.searchParams.set("client_reference_id", result.client_reference_id);
+            window.location.href = checkoutUrl.toString();
+            return;
+          }
+        } catch (error) {}
 
         window.location.href = url;
       }
@@ -2794,7 +2817,7 @@
         var modal = document.querySelector("[data-bump-modal]");
         var checkbox = document.querySelector("[data-bump-checkbox]");
         if (!modal || !checkbox) {
-          window.location.href = guideCheckoutUrl;
+          goToCheckout(guideCheckoutUrl, 9.5);
           return;
         }
 
@@ -2833,11 +2856,6 @@
 
         if (checkout) {
           event.preventDefault();
-          trackMetaEvent("InitiateCheckout", {
-            content_name: "AI Confidence Kit",
-            currency: "GBP",
-            value: 9.5,
-          });
           openBumpModal();
           return;
         }
@@ -2850,7 +2868,7 @@
 
         if (close) {
           event.preventDefault();
-          window.location.href = guideCheckoutUrl;
+          goToCheckout(guideCheckoutUrl, 9.5);
           return;
         }
 
@@ -2863,7 +2881,7 @@
         if (continueButton) {
           var checkbox = document.querySelector("[data-bump-checkbox]");
           var includesMessages = checkbox && checkbox.checked;
-          window.location.href = includesMessages ? guideWithMessagesUrl : guideCheckoutUrl;
+          goToCheckout(includesMessages ? guideWithMessagesUrl : guideCheckoutUrl, includesMessages ? 13.25 : 9.5);
         }
       });
 

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Know how to use AI to make everyday life easier, even if you've never known where to start</title>
+    <title>Use AI to Understand Confusing Information | AI Explain It Simply Kit</title>
     <meta
       name="description"
       content="A calm, plain-English prompt kit for using AI to understand confusing letters, bills, forms, claims, articles, and jargon."
@@ -143,9 +143,7 @@
         padding: clamp(30px, 5vw, 58px);
         border: 1px solid var(--line);
         border-radius: 8px;
-        background:
-          linear-gradient(135deg, rgba(238, 246, 251, 0.92), rgba(255, 253, 248, 0.92)),
-          url("productimage.jpg") center right / cover;
+        background: linear-gradient(135deg, rgba(238, 246, 251, 0.92), rgba(255, 253, 248, 0.92));
         box-shadow: 0 18px 50px rgba(19, 34, 56, 0.08);
       }
 
@@ -567,6 +565,170 @@
         margin: 0;
       }
 
+      /* A more compact desktop reading scale. Mobile keeps its existing larger, easier-to-read sizing. */
+      @media (min-width: 861px) {
+        body {
+          font-size: 16px;
+          line-height: 1.55;
+        }
+
+        .topbar-inner,
+        main {
+          width: min(100%, 1000px);
+        }
+
+        .topbar-inner {
+          padding: 10px 18px;
+        }
+
+        main {
+          padding: 18px 20px 52px;
+        }
+
+        .hero {
+          min-height: 500px;
+          gap: 26px;
+          padding: clamp(26px, 3.5vw, 40px);
+        }
+
+        .hero-copy {
+          max-width: 600px;
+        }
+
+        .eyebrow {
+          margin-bottom: 12px;
+        }
+
+        h1 {
+          max-width: 13ch;
+          font-size: clamp(2.7rem, 5vw, 4.5rem);
+          line-height: 1;
+        }
+
+        .subtitle {
+          margin-top: 18px;
+          font-size: clamp(1.05rem, 1.5vw, 1.18rem);
+        }
+
+        .calm-strip {
+          margin-top: 22px;
+        }
+
+        .calm-strip span {
+          min-height: 62px;
+          padding: 12px;
+        }
+
+        .hero-panel {
+          padding: 20px;
+        }
+
+        .hero-panel h2 {
+          font-size: 1.35rem;
+        }
+
+        .section {
+          margin-top: 18px;
+          padding: clamp(24px, 3.5vw, 36px);
+        }
+
+        h2 {
+          font-size: clamp(1.85rem, 3vw, 2.55rem);
+          line-height: 1.1;
+        }
+
+        h3 {
+          font-size: 1.2rem;
+        }
+
+        .intro {
+          margin-top: 12px;
+          font-size: 1rem;
+        }
+
+        .toc,
+        .tool-grid,
+        .prompt-stack,
+        .steps,
+        .three-grid {
+          margin-top: 20px;
+        }
+
+        .toc {
+          gap: 10px;
+        }
+
+        .toc a {
+          min-height: 82px;
+          padding: 15px;
+        }
+
+        .toc strong {
+          font-size: 1rem;
+        }
+
+        .tool-grid,
+        .three-grid {
+          gap: 14px;
+        }
+
+        .tool-card,
+        .worksheet {
+          padding: 18px;
+        }
+
+        .prompt-stack,
+        .steps {
+          gap: 12px;
+        }
+
+        .prompt-top {
+          padding: 12px 14px;
+        }
+
+        .prompt-text {
+          padding: 15px;
+        }
+
+        .soft-note,
+        .warning-note {
+          margin-top: 20px;
+          padding: 15px 17px;
+        }
+
+        .step {
+          grid-template-columns: 48px 1fr;
+          gap: 12px;
+          padding: 15px;
+        }
+
+        .step::before {
+          width: 42px;
+          height: 42px;
+        }
+
+        .jargon-table,
+        .worksheet,
+        .plain-card {
+          margin-top: 20px;
+        }
+
+        .jargon-table th,
+        .jargon-table td {
+          padding: 12px 14px;
+        }
+
+        .field-grid {
+          gap: 12px;
+          margin-top: 14px;
+        }
+
+        .footer {
+          margin-top: 18px;
+          padding: 20px;
+        }
+      }
+
       @media (max-width: 860px) {
         body {
           font-size: 17px;
@@ -598,9 +760,7 @@
         .hero {
           min-height: auto;
           padding: 28px;
-          background:
-            linear-gradient(135deg, rgba(238, 246, 251, 0.96), rgba(255, 253, 248, 0.96)),
-            url("productimage.jpg") center / cover;
+          background: linear-gradient(135deg, rgba(238, 246, 251, 0.96), rgba(255, 253, 248, 0.96));
         }
 
         .calm-strip {
@@ -733,7 +893,7 @@
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
           <p class="eyebrow">AI Confidence Companion Kit</p>
-          <h1 id="hero-title">Know how to use AI to make everyday life easier, even if you've never known where to start</h1>
+          <h1 id="hero-title">Use AI to understand confusing information in plain English.</h1>
           <p class="subtitle">
             A calm, plain-English toolkit for using AI to understand confusing information without feeling rushed,
             talked down to, or overwhelmed.
