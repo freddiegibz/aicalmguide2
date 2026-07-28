@@ -20,68 +20,6 @@
       'https://connect.facebook.net/en_US/fbevents.js');
       fbq('init', '1988137388462157');
       fbq('track', 'PageView');
-
-      function readMetaCookie(name) {
-        var prefix = name + '=';
-        var cookies = document.cookie ? document.cookie.split(';') : [];
-
-        for (var index = 0; index < cookies.length; index += 1) {
-          var cookie = cookies[index].trim();
-          if (cookie.indexOf(prefix) === 0) return decodeURIComponent(cookie.slice(prefix.length));
-        }
-
-        return '';
-      }
-
-      function getMetaVisitorId() {
-        var key = 'aiMetaVisitorId';
-        var value = '';
-
-        try { value = window.localStorage.getItem(key) || ''; } catch (error) {}
-        if (value) return value;
-
-        value = 'visitor_' + Math.random().toString(36).slice(2) + Date.now().toString(36);
-        try { window.localStorage.setItem(key, value); } catch (error) {}
-        return value;
-      }
-
-      function getMetaClickId() {
-        var fbc = readMetaCookie('_fbc');
-        if (fbc) return fbc;
-
-        try { return window.sessionStorage.getItem('aiMetaFbc') || ''; } catch (error) { return ''; }
-      }
-
-      document.addEventListener('click', function (event) {
-        var checkout = event.target.closest('[data-upgrade-checkout]');
-        if (!checkout) return;
-
-        event.preventDefault();
-        var checkoutUrl = checkout.href;
-
-        window.fetch('/api/meta-checkout-context', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            event_source_url: window.location.href,
-            external_id: getMetaVisitorId(),
-            fbp: readMetaCookie('_fbp'),
-            fbc: getMetaClickId()
-          })
-        })
-          .then(function (response) { return response.ok ? response.json() : null; })
-          .then(function (result) {
-            if (result && result.client_reference_id) {
-              var url = new URL(checkoutUrl);
-              url.searchParams.set('client_reference_id', result.client_reference_id);
-              window.location.assign(url.toString());
-              return;
-            }
-
-            window.location.assign(checkoutUrl);
-          })
-          .catch(function () { window.location.assign(checkoutUrl); });
-      });
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1988137388462157&ev=PageView&noscript=1"

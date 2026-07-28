@@ -1,6 +1,5 @@
 const crypto = require("crypto");
 const Stripe = require("stripe");
-const { loadCheckoutContext } = require("./meta-kv");
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
@@ -60,20 +59,7 @@ module.exports = async function stripeWebhook(req, res) {
   const email = session.customer_details && session.customer_details.email;
   const amountTotal = session.amount_total || 0;
   const currency = session.currency ? session.currency.toUpperCase() : undefined;
-  let context = null;
-
-  try {
-    context = await loadCheckoutContext(session.client_reference_id);
-  } catch (error) {
-    console.error("Loading Meta checkout context failed:", error.message);
-  }
-
   const userData = email ? { em: sha256(email) } : {};
-  if (context?.fbp) userData.fbp = context.fbp;
-  if (context?.fbc) userData.fbc = context.fbc;
-  if (context?.external_id) userData.external_id = sha256(context.external_id);
-  if (context?.client_ip_address) userData.client_ip_address = context.client_ip_address;
-  if (context?.client_user_agent) userData.client_user_agent = context.client_user_agent;
 
   const payload = {
     data: [
@@ -82,7 +68,7 @@ module.exports = async function stripeWebhook(req, res) {
         event_time: event.created || Math.floor(Date.now() / 1000),
         event_id: session.id,
         action_source: "website",
-        event_source_url: context?.event_source_url || "https://www.aiconfidencekit.com/",
+        event_source_url: "https://www.aiconfidencekit.com/",
         user_data: userData,
         custom_data: {
           value: amountTotal / 100,
@@ -94,7 +80,7 @@ module.exports = async function stripeWebhook(req, res) {
 
   try {
     const metaResponse = await fetch(
-      `https://graph.facebook.com/v19.0/${metaPixelId}/events?access_token=${metaAccessToken}`,
+      `https://graph.facebook.com/v25.0/${metaPixelId}/events?access_token=${metaAccessToken}`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },

@@ -46,7 +46,26 @@
       }
 
       function getMetaClickId() {
-        var fbc = readCookie("_fbc");
+        var fbclid = new URLSearchParams(window.location.search).get("fbclid");
+        var fbc = "";
+
+        // A click ID on the current URL belongs to the current ad visit and
+        // must take priority over any click ID saved by an earlier visit.
+        if (fbclid) {
+          fbc = readCookie("_fbc");
+          if (fbc && fbc.slice(-(fbclid.length + 1)) === "." + fbclid) return fbc;
+
+          try {
+            fbc = window.sessionStorage.getItem("aiMetaFbc") || "";
+          } catch (error) {}
+          if (fbc && fbc.slice(-(fbclid.length + 1)) === "." + fbclid) return fbc;
+
+          fbc = "fb.1." + Date.now() + "." + fbclid;
+          saveMetaClickId(fbc);
+          return fbc;
+        }
+
+        fbc = readCookie("_fbc");
         if (fbc) return fbc;
 
         try {
@@ -54,13 +73,7 @@
         } catch (error) {}
 
         if (fbc) return fbc;
-
-        var fbclid = new URLSearchParams(window.location.search).get("fbclid");
-        if (!fbclid) return "";
-
-        fbc = "fb.1." + Date.now() + "." + fbclid;
-        saveMetaClickId(fbc);
-        return fbc;
+        return "";
       }
 
       !function(f,b,e,v,n,t,s)
@@ -2788,33 +2801,12 @@
         sendMetaServerEvent(eventName, eventId, eventData);
       }
 
-      async function goToCheckout(url, value) {
+      function goToCheckout(url, value) {
         trackMetaEvent("InitiateCheckout", {
           content_name: "AI Confidence Kit",
           currency: "GBP",
           value: value,
         });
-
-        try {
-          var response = await window.fetch("/api/meta-checkout-context", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              event_source_url: window.location.href,
-              external_id: getMetaVisitorId(),
-              fbp: readCookie("_fbp"),
-              fbc: getMetaClickId(),
-            }),
-          });
-          var result = await response.json();
-
-          if (response.ok && result.client_reference_id) {
-            var checkoutUrl = new URL(url);
-            checkoutUrl.searchParams.set("client_reference_id", result.client_reference_id);
-            window.location.href = checkoutUrl.toString();
-            return;
-          }
-        } catch (error) {}
 
         window.location.href = url;
       }
