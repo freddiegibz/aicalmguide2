@@ -40,15 +40,3 @@ No Stripe Dashboard link replacement is needed. The checkout button adds a uniqu
 5. In Meta Test Events, confirm the server Purchase includes a stronger Event Match Quality and has the expected value/currency.
 
 If the KV variables are missing, checkout still works normally, but the webhook falls back to email-only matching.
-
-## Browser Purchase deduplication on the order-bump page
-
-`oto.html` now sends a browser Purchase only when its URL contains the completed Stripe Checkout Session ID. It uses that ID as Meta's `eventID`, exactly matching the server-side webhook's `event_id`, so Meta can deduplicate the two events.
-
-In each primary Stripe Payment Link that redirects customers into the order-bump flow, set the post-payment redirect URL to:
-
-```text
-https://www.aiconfidencekit.com/oto-pixel-redirect.html?session_id={CHECKOUT_SESSION_ID}
-```
-
-Stripe replaces `{CHECKOUT_SESSION_ID}` after a successful payment. The short redirect page preserves it, and `oto.html` checks the paid session with Stripe before it fires the browser Purchase. Do not add a static Purchase event to `oto.html`: without the session ID, it cannot be safely deduplicated.
