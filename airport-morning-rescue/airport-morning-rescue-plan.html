@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Calm Departure Plan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#1e3043;--navy:#243f59;--sky:#d9edf2;--paper:#fffdf7;--cream:#f6efdf;--orange:#dd754d;--yellow:#e7bd64;--green:#477866;--line:#d8cfbc;--muted:#68747a}
+    *{box-sizing:border-box} body{margin:0;background:#d9d6ce;color:var(--ink);font:15px/1.45 "DM Sans",Arial,sans-serif} h1,h2,h3,p{margin-top:0} h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.08;letter-spacing:-.035em}.screen-note{position:fixed;z-index:3;right:20px;bottom:18px;background:var(--navy);color:#fff;padding:10px 14px;border-radius:6px;font-size:12px;box-shadow:0 4px 16px #0003}.page{width:210mm;min-height:297mm;margin:18px auto;background:var(--paper);padding:16mm;position:relative;overflow:hidden;box-shadow:0 3px 22px #0002;page-break-after:always}.page:last-of-type{page-break-after:auto}.page-number{position:absolute;bottom:10mm;left:16mm;font-size:10px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}.eyebrow{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange)}.rule{height:1px;background:var(--line);margin:14px 0 20px}.cover{background:linear-gradient(145deg,var(--sky) 0%,#f8f0de 66%,#f3d29d 100%);padding:22mm 18mm}.cover:after{content:"";position:absolute;width:270px;height:270px;border:28px solid #ffffff91;border-radius:50%;right:-92px;bottom:-76px}.cover h1{font-size:57px;max-width:580px;margin:18px 0}.cover h1 em{font-style:normal;color:var(--orange)}.cover .lead{font-size:21px;max-width:470px;color:#455a67}.departure-card{position:absolute;right:18mm;bottom:26mm;width:260px;background:#fffdf7;padding:18px;border:1px solid #c7bfae;border-radius:7px;transform:rotate(2deg);box-shadow:7px 8px 0 #243f591c}.departure-card h3{font-size:20px;margin-bottom:10px}.check-row{font-size:12px;padding:7px 0;border-bottom:1px dashed #d5cbb8}.check-row:before{content:"✓";font-weight:900;color:var(--green);margin-right:8px}.section-title{font-size:38px;margin:8px 0 8px}.intro{font-size:17px;max-width:620px;color:#52636b}.callout{border-left:4px solid var(--orange);padding:13px 16px;background:#fff8e9;margin:22px 0;color:#33495a}.three{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:25px}.step{border:1px solid var(--line);border-radius:7px;padding:17px;background:#fff}.step .number{width:29px;height:29px;border-radius:50%;display:grid;place-items:center;background:var(--yellow);font-weight:800;font-size:13px;margin-bottom:16px}.step h3{font-size:20px;margin-bottom:8px}.step p{font-size:13px;color:#617077}.quick-list{list-style:none;margin:22px 0;padding:0}.quick-list li{padding:9px 0;border-bottom:1px dashed var(--line)}.quick-list li:before{content:"→";font-weight:800;color:var(--orange);margin-right:9px}.map-head{display:flex;justify-content:space-between;gap:20px;align-items:end}.trip-fields{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:10px;margin:20px 0}.field{border:1px solid var(--line);border-radius:5px;padding:10px 11px;min-height:55px;background:#fff}.field label,.line-label{display:block;text-transform:uppercase;letter-spacing:.09em;font-size:9px;font-weight:800;color:#6d777a;margin-bottom:9px}.write-line{border-bottom:1px solid #7c878a;height:17px}.phase{border:1px solid var(--line);border-radius:7px;margin:16px 0;overflow:hidden}.phase-title{padding:10px 14px;background:var(--navy);color:#fff;font-weight:700;font-size:14px}.phase.orange .phase-title{background:var(--orange)}.phase.yellow .phase-title{background:#d5a842;color:var(--navy)}.task{display:grid;grid-template-columns:18px 1.15fr 1.2fr;gap:10px;padding:10px 14px;border-top:1px solid #e6dfd1;min-height:40px;font-size:12px}.task:first-of-type{border:0}.box{width:16px;height:16px;border:1.5px solid #4c6471;border-radius:3px;margin-top:1px}.task .prompt{color:#5f6d70}.blank{border-bottom:1px solid #b8b1a4;min-height:18px}.micro-note{font-size:11px;color:#667276;margin:9px 0 0}.table{width:100%;border-collapse:collapse;margin-top:20px;font-size:12px}.table th{background:#edf5f3;text-align:left;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#53656a;padding:10px;border:1px solid var(--line)}.table td{height:43px;border:1px solid var(--line);padding:8px}.table td:first-child{width:27%}.table td:nth-child(2){width:39%}.non-neg{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:19px}.non-card{border:1px solid var(--line);padding:13px;border-radius:6px;background:#fff}.non-card h3{font:700 14px/1.25 "DM Sans",sans-serif;letter-spacing:0;margin-bottom:12px}.non-card h3:before{content:"□";font-size:19px;color:var(--green);margin-right:8px;vertical-align:-2px}.line-pair{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}.bag-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:19px}.bag{border:1.5px dashed #b6a882;border-radius:7px;padding:14px;min-height:170px;background:#fffdf7}.bag h3{font-size:19px;margin-bottom:13px}.bag .tiny{font-size:10px;color:#6b7474;margin-bottom:4px}.bag .blank{margin-bottom:12px}.door-page{background:linear-gradient(135deg,#fff9eb,#e3f1f3)}.door-card-big{max-width:590px;margin:28px auto 0;background:#fffdf7;border:2px solid #d3b56e;border-radius:10px;padding:23px 27px;box-shadow:9px 10px 0 #243f591a}.door-card-big h2{font-size:43px;margin-bottom:7px}.door-card-big .sub{font-size:15px;color:#637075;margin-bottom:18px}.door-check{display:grid;grid-template-columns:25px 1fr;gap:9px;padding:10px 0;border-top:1px solid #e2dac9;font-size:15px}.door-check .box{width:19px;height:19px}.door-write{margin-top:15px;border:1px dashed #bcb19b;padding:12px;border-radius:5px;font-size:12px}.door-close{text-align:center;font:700 20px/1.2 Fraunces,Georgia,serif;margin:20px 0 0;color:var(--navy)}.details-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}.details-card{border:1px solid var(--line);border-radius:6px;padding:13px;background:#fff}.details-card h3{font:700 13px/1.2 "DM Sans",sans-serif;letter-spacing:.03em;margin-bottom:13px;color:var(--navy)}.details-card.wide{grid-column:span 2}.detail-line{border-bottom:1px solid #b8b1a4;min-height:27px;margin-bottom:9px}.detail-line:last-child{margin-bottom:0}.phone-note{background:var(--navy);color:#fff;padding:15px 17px;border-radius:7px;margin-top:18px;font-size:13px}.phone-note b{color:#ffdc91}@media(max-width:850px){.page{width:100%;margin:0 0 12px;padding:25px;min-height:0}.cover{min-height:750px}.cover h1{font-size:46px}.departure-card{position:relative;right:auto;bottom:auto;margin:70px 0 0}.three,.non-neg,.bag-grid,.details-grid{grid-template-columns:1fr}.details-card.wide{grid-column:auto}.trip-fields{grid-template-columns:1fr}.screen-note{display:none}}@media print{body{background:#fff}.page{margin:0;box-shadow:none}.screen-note{display:none}@page{size:A4;margin:0}}
+    .cover{background-image:linear-gradient(90deg,rgba(255,253,247,.94) 0%,rgba(255,253,247,.79) 42%,rgba(255,253,247,.06) 68%),url("coverphoto.png");background-size:cover;background-position:center}.cover:after{display:none}.cover h1{max-width:480px}.cover .lead{max-width:400px}.cover .departure-card{display:none}
+    @media screen{body:has(.page:target){background:#fff}.page:target{display:block;margin:0}.page:not(:target){display:none}}
+  </style>
+</head>
+<body>
+  <div class="screen-note">Print at 100% scale for the best result</div>
+
+  <section class="page cover">
+    <p class="eyebrow">The Calm Departure Plan</p>
+    <h1>Get everyone out the door. <em>With the passports. Without the panic.</em></h1>
+    <p class="lead">A reusable family flight plan for the final 24 hours before you leave home.</p>
+    <div class="departure-card">
+      <p class="eyebrow">Before the door shuts</p>
+      <h3>Final door check</h3>
+      <div class="check-row">Documents in hand luggage</div>
+      <div class="check-row">Medication packed</div>
+      <div class="check-row">Phones and chargers</div>
+      <div class="check-row">Everyone ready to leave</div>
+    </div>
+    <p class="page-number">Your departure file</p>
+  </section>
+
+  <section class="page" id="start-here">
+    <p class="eyebrow">Start here tonight</p>
+    <h2 class="section-title">You do not need to fill in every page.</h2>
+    <p class="intro">Start with the map. Put the important things somewhere other than your head. Then use the cards that apply to your family and trip.</p>
+    <div class="callout"><b>This is not another packing list.</b><br>It is for the things that tend to turn into last-minute questions: who has the passports, where the medication is, when you need to leave and whether the house is actually ready to close up.</div>
+    <div class="three">
+      <div class="step"><div class="number">1</div><h3>Fill in the map</h3><p>Add your flight, leave-home time, transport and anything that needs doing before bed.</p></div>
+      <div class="step"><div class="number">2</div><h3>Sort the important stuff</h3><p>Use the Non-Negotiables Check and bag cards for the things that cannot belong to “someone, probably.”</p></div>
+      <div class="step"><div class="number">3</div><h3>Use the door card tomorrow</h3><p>Put it by the door. Check it once. Then leave.</p></div>
+    </div>
+    <h3 style="font-size:23px;margin:34px 0 10px">What to use when</h3>
+    <ul class="quick-list">
+      <li><b>Tonight:</b> Departure Map, Non-Negotiables Check and Travel Details Card.</li>
+      <li><b>As you pack:</b> Family Bag Assignment Cards.</li>
+      <li><b>Tomorrow:</b> Kitchen-Door Final Check.</li>
+    </ul>
+    <p class="micro-note">Confirm airline and destination requirements directly with the relevant official sources. This file helps your family organise the details you have already checked.</p>
+    <p class="page-number">1 of 7</p>
+  </section>
+
+  <section class="page" id="departure-map">
+    <div class="map-head"><div><p class="eyebrow">24-Hour Departure Map</p><h2 class="section-title">Tonight &amp; before bed</h2></div><p class="micro-note">Write only what matters for this trip.</p></div>
+    <div class="trip-fields"><div class="field"><label>Flight / destination</label><div class="write-line"></div></div><div class="field"><label>Flight time</label><div class="write-line"></div></div><div class="field"><label>Leave home at</label><div class="write-line"></div></div></div>
+    <div class="phase orange"><div class="phase-title">TONIGHT — get the loose ends out of your head</div>
+      <div class="task"><div class="box"></div><div class="prompt">Check flight details and complete online check-in</div><div class="blank"></div></div>
+      <div class="task"><div class="box"></div><div class="prompt">Confirm how you are getting to the airport</div><div class="blank"></div></div>
+      <div class="task"><div class="box"></div><div class="prompt">Put documents, medication and money/cards where they belong</div><div class="blank"></div></div>
+      <div class="task"><div class="box"></div><div class="prompt">Any trip-specific job that needs doing tonight</div><div class="blank"></div></div>
+      <div class="task"><div class="box"></div><div class="prompt">Another job</div><div class="blank"></div></div>
+    </div>
+    <div class="phase"><div class="phase-title">BEFORE BED — make the morning lighter</div>
+      <div class="task"><div class="box"></div><div class="prompt">Charge phones, tablets and any essential devices</div><div class="blank"></div></div>
+      <div class="task"><div class="box"></div><div class="prompt">Put clothes, shoes and travel documents where they are easy to find</div><div class="blank"></div></div>
+      <div class="task"><div class="box"></div><div class="prompt">Set alarms and agree who is responsible for what</div><div class="blank"></div></div>
+      <div class="task"><div class="box"></div><div class="prompt">Anything that will make tomorrow morning easier</div><div class="blank"></div></div>
+    </div>
+    <div class="callout"><b>Before you close this page:</b> make sure the leave-home time is agreed. It is the one time everyone needs to know.</div>
+    <p class="page-number">2 of 7</p>
+  </section>
+
+  <section class="page">
+    <div class="map-head"><div><p class="eyebrow">24-Hour Departure Map</p><h2 class="section-title">Morning &amp; final ten minutes</h2></div><p class="micro-note">You are not trying to do more. You are making sure nothing is left floating.</p></div>
+    <div class="trip-fields"><div class="field"><label>Wake-up time</label><div class="write-line"></div></div><div class="field"><label>Transport arrives</label><div class="write-line"></div></div><div class="field"><label>Leave home at</label><div class="write-line"></div></div></div>
+    <div class="phase yellow"><div class="phase-title">MORNING — get everyone moving</div>
+      <div class="task"><div class="box"></div><div class="prompt">Wake-up, breakfast and getting dressed</div><div class="blank"></div></div>
+      <div class="task"><div class="box"></div><div class="prompt">Collect the bags and any chilled or last-minute items</div><div class="blank"></div></div>
+      <div class="task"><div class="box"></div><div class="prompt">Check everyone has their own essentials</div><div class="blank"></div></div>
+      <div class="task"><div class="box"></div><div class="prompt">One job that is unique to this morning</div><div class="blank"></div></div>
+    </div>
+    <div class="phase"><div class="phase-title">FINAL 10 MINUTES — the things that still need a person</div>
+      <div class="task"><div class="box"></div><div class="prompt">Documents and medication into hand luggage</div><div class="blank"></div></div>
+      <div class="task"><div class="box"></div><div class="prompt">Phones, chargers, keys and wallets</div><div class="blank"></div></div>
+      <div class="task"><div class="box"></div><div class="prompt">Final house check: windows, appliances, bins, locks</div><div class="blank"></div></div>
+      <div class="task"><div class="box"></div><div class="prompt">Kitchen-Door Final Check</div><div class="blank"></div></div>
+    </div>
+    <p class="door-close">The final check is not a second packing session. It is the point where you leave.</p>
+    <p class="page-number">3 of 7</p>
+  </section>
+
+  <section class="page" id="non-negotiables">
+    <p class="eyebrow">Non-Negotiables Check</p>
+    <h2 class="section-title">The things that are difficult to sort out later.</h2>
+    <p class="intro">Put a place and a person against every essential. If you cannot write both, it is not sorted yet.</p>
+    <table class="table"><thead><tr><th>Essential item</th><th>Where it is</th><th>Who has it</th></tr></thead><tbody>
+      <tr><td>Passports / travel ID</td><td></td><td></td></tr><tr><td>Boarding passes / check-in</td><td></td><td></td></tr><tr><td>Medication</td><td></td><td></td></tr><tr><td>Money / cards</td><td></td><td></td></tr><tr><td>Transport details</td><td></td><td></td></tr><tr><td>Keys</td><td></td><td></td></tr><tr><td>Phones</td><td></td><td></td></tr><tr><td>Chargers</td><td></td><td></td></tr>
+    </tbody></table>
+    <div class="non-neg">
+      <div class="non-card"><h3>Something specific to this trip</h3><div class="line-pair"><div><span class="line-label">Item</span><div class="write-line"></div></div><div><span class="line-label">Who has it</span><div class="write-line"></div></div></div></div>
+      <div class="non-card"><h3>One thing to check again in the morning</h3><div class="line-pair"><div><span class="line-label">Item</span><div class="write-line"></div></div><div><span class="line-label">Who checks it</span><div class="write-line"></div></div></div></div>
+    </div>
+    <p class="page-number">4 of 7</p>
+  </section>
+
+  <section class="page">
+    <p class="eyebrow">Family Bag Assignment Cards</p>
+    <h2 class="section-title">Put a name against every important bag.</h2>
+    <p class="intro">Cut these out if useful, or fill them in and take a photo. One of these should always be the documents and essentials bag.</p>
+    <div class="bag-grid">
+      <div class="bag"><h3>Bag / person</h3><p class="tiny">NAME OR BAG TYPE</p><div class="blank"></div><p class="tiny">THE IMPORTANT THINGS INSIDE</p><div class="blank"></div><div class="blank"></div><p class="tiny">WHO CARRIES IT</p><div class="blank"></div></div>
+      <div class="bag"><h3>Bag / person</h3><p class="tiny">NAME OR BAG TYPE</p><div class="blank"></div><p class="tiny">THE IMPORTANT THINGS INSIDE</p><div class="blank"></div><div class="blank"></div><p class="tiny">WHO CARRIES IT</p><div class="blank"></div></div>
+      <div class="bag"><h3>Bag / person</h3><p class="tiny">NAME OR BAG TYPE</p><div class="blank"></div><p class="tiny">THE IMPORTANT THINGS INSIDE</p><div class="blank"></div><div class="blank"></div><p class="tiny">WHO CARRIES IT</p><div class="blank"></div></div>
+      <div class="bag"><h3>Documents &amp; essentials</h3><p class="tiny">BAG / PLACE</p><div class="blank"></div><p class="tiny">PASSPORTS, MEDICATION, MONEY, PHONES…</p><div class="blank"></div><div class="blank"></div><p class="tiny">WHO CARRIES IT</p><div class="blank"></div></div>
+    </div>
+    <p class="page-number">5 of 7</p>
+  </section>
+
+  <section class="page door-page" id="final-door-check">
+    <p class="eyebrow">Print this page or save it to your phone</p>
+    <div class="door-card-big">
+      <h2>Final door check</h2>
+      <p class="sub">One check. Then leave.</p>
+      <div class="door-check"><div class="box"></div><div>Everyone is here, dressed and ready to go</div></div>
+      <div class="door-check"><div class="box"></div><div>Passports / ID and boarding passes are in hand luggage</div></div>
+      <div class="door-check"><div class="box"></div><div>Medication, money/cards and keys are with the right person</div></div>
+      <div class="door-check"><div class="box"></div><div>Phones and essential devices are charged and packed</div></div>
+      <div class="door-check"><div class="box"></div><div>Every bag has an owner</div></div>
+      <div class="door-check"><div class="box"></div><div>Windows, appliances and doors checked</div></div>
+      <div class="door-check"><div class="box"></div><div>Transport is confirmed / has arrived</div></div>
+      <div class="door-write"><span class="line-label">One thing specific to this trip</span><div class="write-line"></div></div>
+      <p class="door-close">Checked. Time to go.</p>
+    </div>
+    <p class="page-number">6 of 7</p>
+  </section>
+
+  <section class="page">
+    <p class="eyebrow">Travel Disruption Details Card</p>
+    <h2 class="section-title">The details you do not want to hunt for in an inbox.</h2>
+    <p class="intro">Fill this in before you go, save a photo to your phone and keep it with your travel documents.</p>
+    <div class="details-grid">
+      <div class="details-card"><h3>Flight</h3><span class="line-label">Airline / flight number</span><div class="detail-line"></div><span class="line-label">Booking reference</span><div class="detail-line"></div><span class="line-label">Airline contact</span><div class="detail-line"></div></div>
+      <div class="details-card"><h3>Accommodation</h3><span class="line-label">Name / booking reference</span><div class="detail-line"></div><span class="line-label">Address</span><div class="detail-line"></div><span class="line-label">Contact number</span><div class="detail-line"></div></div>
+      <div class="details-card"><h3>Transfers / car hire</h3><span class="line-label">Provider / booking reference</span><div class="detail-line"></div><span class="line-label">Pick-up details</span><div class="detail-line"></div><span class="line-label">Contact number</span><div class="detail-line"></div></div>
+      <div class="details-card"><h3>Insurance</h3><span class="line-label">Provider / policy number</span><div class="detail-line"></div><span class="line-label">Emergency assistance number</span><div class="detail-line"></div><span class="line-label">Other useful number</span><div class="detail-line"></div></div>
+      <div class="details-card wide"><h3>Key contacts</h3><table class="table" style="margin-top:0"><thead><tr><th>Name</th><th>Phone number</th><th>Why they may be needed</th></tr></thead><tbody><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr></tbody></table></div>
+    </div>
+    <div class="phone-note"><b>Before you leave:</b> take a clear photo of this completed page and save it to your phone. If plans change, you will have the details without searching through old emails.</div>
+    <p class="page-number">7 of 7</p>
+  </section>
+</body>
+</html>
