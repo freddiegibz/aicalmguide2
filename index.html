@@ -2821,8 +2821,8 @@
         }
       });
 
-      var guideCheckoutUrl = "https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00?prefilled_promo_code=EARLY50";
-      var guideWithMessagesUrl = "https://buy.stripe.com/28EeVc72PfEUbyM9q2bZe0b?prefilled_promo_code=EARLY50";
+      var guideCheckoutUrl = "https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00";
+      var guideWithMessagesUrl = "https://buy.stripe.com/28EeVc72PfEUbyM9q2bZe0b";
 
       function updateBumpButton() {
         var checkbox = document.querySelector("[data-bump-checkbox]");
@@ -2830,15 +2830,15 @@
         if (!checkbox || !button) return;
 
         button.textContent = checkbox.checked
-          ? "Get the guide + messages - £13.25"
-          : "Get the guide - £9.50";
+          ? "Get the guide + messages - £26.50"
+          : "Get the guide - £19";
       }
 
       function openBumpModal() {
         var modal = document.querySelector("[data-bump-modal]");
         var checkbox = document.querySelector("[data-bump-checkbox]");
         if (!modal || !checkbox) {
-          goToCheckout(guideCheckoutUrl, 9.5);
+          goToCheckout(guideCheckoutUrl, 19);
           return;
         }
 
@@ -2889,7 +2889,7 @@
 
         if (close) {
           event.preventDefault();
-          goToCheckout(guideCheckoutUrl, 9.5);
+          goToCheckout(guideCheckoutUrl, 19);
           return;
         }
 
@@ -2902,7 +2902,7 @@
         if (continueButton) {
           var checkbox = document.querySelector("[data-bump-checkbox]");
           var includesMessages = checkbox && checkbox.checked;
-          goToCheckout(includesMessages ? guideWithMessagesUrl : guideCheckoutUrl, includesMessages ? 13.25 : 9.5);
+          goToCheckout(includesMessages ? guideWithMessagesUrl : guideCheckoutUrl, includesMessages ? 26.5 : 19);
         }
       });
 
@@ -2922,25 +2922,25 @@
     <div class="bump-modal" data-bump-modal aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="bump-title">
       <div class="bump-dialog">
         <button class="bump-x" type="button" data-bump-dismiss aria-label="Close">&times;</button>
-        <div class="bump-topline">Limited-time 50% off</div>
+        <div class="bump-topline">Optional message pack</div>
         <h2 id="bump-title">Would it help to have more examples ready when you need them?</h2>
         <p>Add 100 more ready-to-use messages for everyday situations:</p>
         <label class="bump-option">
           <input type="checkbox" data-bump-checkbox />
           <span>
-            <strong>Add the 100-message pack for &pound;3.75</strong>
+            <strong>Add the 100-message pack for &pound;7.50</strong>
             <span>Writing &middot; planning &middot; decisions &middot; shopping &middot; appointments &middot; confusing information</span>
-            <span class="bump-price"><s>&pound;26.50</s><b>&pound;13.25 today</b><em>Save &pound;13.25</em></span>
+            <span class="bump-price"><b>&pound;26.50 total</b><em>Guide + 100-message pack</em></span>
           </span>
         </label>
         <div class="bump-actions">
-          <button class="bump-continue" type="button" data-bump-continue>Get the guide - &pound;9.50</button>
-          <button class="bump-close" type="button" data-bump-close>No thanks, get the guide for &pound;9.50</button>
+          <button class="bump-continue" type="button" data-bump-continue>Get the guide - &pound;19</button>
+          <button class="bump-close" type="button" data-bump-close>No thanks, get the guide for &pound;19</button>
         </div>
       </div>
     </div>
     <div class="top-banner">
-      <div class="top-banner-inner"><strong>Special introductory offer:</strong> <s>&pound;19.00</s> &rarr; <strong>&pound;9.50 today</strong></div>
+      <div class="top-banner-inner"><strong>33% introductory discount:</strong> <s>&pound;28.50</s> &rarr; <strong>&pound;19</strong></div>
     </div>
     <main>
       <section class="hero" aria-label="AI finally explained in plain English hero">
@@ -2957,9 +2957,9 @@
                 <div class="actions">
                   <a
                     class="button"
-                    href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00?prefilled_promo_code=EARLY50"
+                    href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00"
                     data-direct-checkout
-                  >Get the guide &mdash; &pound;9.50</a>
+                  >Get the guide &mdash; &pound;19</a>
                   <p class="hero-checkout-note">Instant download. 60-day money-back guarantee.</p>
                   <a class="hero-look-link" href="#inside-the-guide">Want to look first? <span>See what&rsquo;s included</span></a>
                 </div>
@@ -3077,17 +3077,17 @@
           </div>
 
           <div class="quick-offer-buy">
-            <span class="quick-discount">Limited-time 50% off</span>
+            <span class="quick-discount">33% introductory discount</span>
             <div class="quick-price">
-              <s>&pound;19</s>
-              <strong>&pound;9.50</strong>
+              <s>&pound;28.50</s>
+              <strong>&pound;19</strong>
             </div>
             <p>Get the complete guide and practical tools as an instant download, ready whenever you want to take the first step.</p>
             <a
               class="button"
-              href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00?prefilled_promo_code=EARLY50"
+              href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00"
               data-direct-checkout
-            >Get the AI Confidence Kit &mdash; &pound;9.50</a>
+            >Get the AI Confidence Kit &mdash; &pound;19</a>
             <p class="quick-checkout-note">60-day money-back guarantee. Secure checkout with Stripe.</p>
           </div>
         </div>
@@ -3161,8 +3161,8 @@
         <div class="final-cta-inner" id="get-instant-access">
           <h2>Know where to start, what to ask and how AI can help in everyday life.</h2>
           <p>Get a calm guide, everyday examples and practical tools that help you take the first step and use AI with more confidence.</p>
-          <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00?prefilled_promo_code=EARLY50" data-direct-checkout>Get the guide &mdash; &pound;9.50</a>
-          <p class="checkout-note">Normally &pound;19 &mdash; limited-time 50% off. Instant download. 60-day money-back guarantee.</p>
+          <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-direct-checkout>Get the guide &mdash; &pound;19</a>
+          <p class="checkout-note">Normally &pound;28.50 &mdash; now &pound;19. Instant download. 60-day money-back guarantee.</p>
         </div>
       </section>
 
