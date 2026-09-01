@@ -44,42 +44,42 @@
 
       body {
         margin: 0;
-        background: #ffffff;
+        background: var(--paper);
         color: var(--text);
         font-family: "Aptos", "Segoe UI", sans-serif;
       }
 
       .confirmation {
-        border-bottom: 1px solid var(--line);
-        background: #ffffff;
+        border-bottom: 1px solid rgba(27, 108, 63, 0.16);
+        background: linear-gradient(180deg, #f6fff8 0%, #eefaf2 100%);
       }
 
       .confirmation-inner {
-        width: min(100%, 760px);
+        width: min(100%, 820px);
         margin: 0 auto;
-        padding: 14px 22px;
+        padding: 24px 22px 26px;
         display: flex;
         align-items: center;
-        gap: 11px;
-        color: var(--navy);
-        font-size: 0.96rem;
+        gap: 16px;
+        color: #12492e;
+        font-size: 1.14rem;
         font-weight: 800;
         line-height: 1.45;
       }
 
       .confirmation-icon {
         flex: 0 0 auto;
-        width: 30px;
-        height: 30px;
+        width: 48px;
+        height: 48px;
         border-radius: 999px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        background: #1b6c3f;
+        background: #1d9b53;
         color: #fff;
-        font-size: 1rem;
+        font-size: 1.7rem;
         font-weight: 900;
-        box-shadow: none;
+        box-shadow: 0 10px 24px rgba(29, 155, 83, 0.22);
       }
 
       .confirmation-copy {
@@ -89,21 +89,21 @@
       }
 
       .confirmation-title {
-        font-size: 0.93rem;
+        font-size: 1.2rem;
         font-weight: 900;
         letter-spacing: -0.01em;
       }
 
       .confirmation-subtitle {
-        font-size: 0.8rem;
-        font-weight: 600;
-        color: var(--muted);
+        font-size: 0.98rem;
+        font-weight: 700;
+        color: #2b6748;
       }
 
       main {
-        width: min(100%, 760px);
+        width: min(100%, 820px);
         margin: 0 auto;
-        padding: 58px 22px 70px;
+        padding: 28px 22px 42px;
       }
 
       article {
@@ -200,15 +200,6 @@
         margin-bottom: 14px;
       }
 
-      .offer-subheading {
-        margin: 0 0 10px;
-        color: var(--navy);
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(1.28rem, 1.9vw, 1.55rem);
-        font-weight: 500;
-        line-height: 1.2;
-      }
-
       .fast-offer p {
         max-width: 42rem;
         margin-left: auto;
@@ -287,135 +278,6 @@
         background: var(--blue-deep);
       }
 
-      .button[disabled] {
-        border: 0;
-        cursor: not-allowed;
-        opacity: 0.7;
-      }
-
-      .oto {
-        max-width: 690px;
-        margin: 0 auto;
-        padding: 0;
-        border: 0;
-        background: transparent;
-        box-shadow: none;
-      }
-
-      .oto-eyebrow {
-        margin: 0 0 15px;
-        color: var(--blue);
-        font-size: 0.78rem;
-        font-weight: 850;
-        letter-spacing: 0.11em;
-        text-transform: uppercase;
-      }
-
-      .oto h1 {
-        margin: 0;
-        color: var(--navy);
-        font-family: Georgia, "Times New Roman", serif;
-        max-width: 17ch;
-        font-size: clamp(2.2rem, 4.3vw, 3.05rem);
-        font-weight: 500;
-        line-height: 1.12;
-      }
-
-      .oto .intro {
-        margin-top: 22px;
-        color: var(--text);
-        font-size: 1.13rem;
-        line-height: 1.65;
-      }
-
-      .oto h2 {
-        margin: 39px 0 13px;
-        color: var(--navy);
-        font-size: clamp(1.45rem, 2.35vw, 1.72rem);
-      }
-
-      .oto p {
-        max-width: none;
-        margin: 0 0 15px;
-        color: #38475a;
-        line-height: 1.68;
-      }
-
-      .oto-list {
-        margin: 21px 0 0;
-        padding: 0;
-        list-style: none;
-      }
-
-      .oto-list li {
-        position: relative;
-        margin-top: 14px;
-        padding-left: 28px;
-        color: #38475a;
-        line-height: 1.6;
-      }
-
-      .oto-list li::before {
-        position: absolute;
-        top: 0;
-        left: 1px;
-        color: var(--blue);
-        content: "\2713";
-        font-weight: 900;
-      }
-
-      .oto-list strong {
-        color: var(--navy);
-      }
-
-      .checkout-box {
-        display: grid;
-        grid-template-columns: 1fr auto;
-        align-items: center;
-        gap: 30px;
-        margin-top: 44px;
-        padding: 29px 0;
-        border-top: 1px solid var(--line);
-        border-bottom: 1px solid var(--line);
-        background: transparent;
-      }
-
-      .checkout-label {
-        display: block;
-        color: var(--muted);
-        font-size: 0.78rem;
-        font-weight: 800;
-      }
-
-      .checkout-price {
-        display: block;
-        margin-top: 5px;
-        color: var(--navy);
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 2.8rem;
-        line-height: 1;
-      }
-
-      .checkout-box p {
-        margin: 8px 0 0;
-        color: var(--muted);
-        font-size: 0.82rem;
-      }
-
-      .checkout-actions {
-        min-width: 285px;
-        text-align: center;
-      }
-
-      .checkout-actions .button {
-        width: 100%;
-        min-width: 0;
-      }
-
-      .checkout-actions .decline {
-        margin-top: 11px;
-      }
-
       .guarantee {
         margin-top: 10px;
         color: var(--muted);
@@ -433,7 +295,7 @@
 
       @media (max-width: 640px) {
         main {
-          padding: 35px 0 46px;
+          padding: 0;
         }
 
         article {
@@ -456,22 +318,6 @@
         .benefits-list {
           grid-template-columns: 1fr;
         }
-
-        .oto {
-          border: 0;
-          box-shadow: none;
-          padding: 0 18px;
-        }
-
-        .checkout-box {
-          grid-template-columns: 1fr;
-          gap: 20px;
-          padding: 25px 0;
-        }
-
-        .checkout-actions {
-          min-width: 0;
-        }
       }
     </style>
   </head>
@@ -486,41 +332,36 @@
       </div>
     </div>
     <main>
-      <article class="oto">
-        <p class="oto-eyebrow">A practical next step for AI Confidence Kit customers</p>
-        <h1>Your AI Confidence Kit is on its way.</h1>
-        <p class="intro">You now know where to begin with AI. You understand that it is not something reserved for people who are technical, younger or already ahead of the curve.</p>
-        <p>The next time an email needs writing, a letter makes no sense or a decision is taking up too much headspace, you will know that AI is worth opening.</p>
-        <p>But knowing that is only the beginning.</p>
-        <p>When that moment arrives, you still need a way to turn the task in front of you into something AI can actually help with.</p>
+      <article>
+        <section class="fast-offer">
+          <h2>You now know what AI is and how to start using it confidently.</h2>
+          <div class="fast-price">Normally &pound;74. Today: &pound;12.</div>
+          <p>
+            But most beginners still hit one problem: they do not always know where AI is actually useful in real life.
+          </p>
+          <p>
+            So even with understanding and guidance, they still underuse it.
+          </p>
+          <p>
+            That is why I created the AI Everyday Use-Case Library.
+          </p>
+          <p>
+            A simple collection of real-world examples that show you when AI is actually useful across life, work, money, health, admin, and decisions.
+          </p>
 
-        <h2>That is what Everyday AI Shortcuts gives you.</h2>
-        <p>That email sitting in drafts becomes a clear message you can send.</p>
-        <p>A long, confusing explanation becomes a short list of what matters and what needs doing next.</p>
-        <p>Sales language gives way to a clearer view of what you are actually paying for.</p>
-        <p>A loose plan becomes manageable steps before the details start to feel overwhelming.</p>
-        <p>And the tasks that normally stay on your list because you do not know where to begin finally have a practical first move.</p>
-        <p>These are the moments when AI begins to earn its place in your life. Not as another piece of technology you are supposed to keep up with, but as something you can turn to when a job feels harder, slower or more complicated than it needs to be.</p>
+          <div class="short-lines">
+            <p>See when AI can help</p>
+            <p>Know what to ask</p>
+            <p>See what good output looks like</p>
+            <p>Make tasks quicker, simpler, and less stressful</p>
+          </div>
 
-        <h2>Everyday AI Shortcuts shows you exactly how to do that.</h2>
-        <p>Each shortcut starts with a situation you will recognise: a difficult letter, an awkward email, a purchase you need to compare, a plan that needs organising or a decision you need to think through.</p>
-        <p>From there, you are shown what information to have ready, what to type first and how to guide the answer until it becomes useful.</p>
-        <p>There is no need to begin with an empty box and work everything out as you go. You have a clear route through the task.</p>
-        <ul class="oto-list">
-          <li>What to have ready before you begin</li>
-          <li>What to type first</li>
-          <li>How to guide an answer that is not quite right</li>
-          <li>What to do with the result once you have it</li>
-        </ul>
-
-        <h2>The guide gives you the understanding. These shortcuts give that understanding somewhere useful to go.</h2>
-        <p>And if you added the Everyday AI Messages, this is what brings the two together: the messages give you strong starting words, while the shortcuts show you how to use them for a particular job and carry the conversation through to a finished result.</p>
-        <p>For a one-time customer price of <strong>&pound;23</strong>, you will have a practical collection to return to whenever something arrives in your day and you think, &ldquo;There must be an easier way to deal with this.&rdquo;</p>
-
-        <div class="checkout-box">
-          <div><span class="checkout-label">One-time customer price</span><span class="checkout-price">&pound;23</span><p>Instant digital access. Yours to keep.</p></div>
-          <div class="checkout-actions"><!-- Replace data-checkout-url and enable this button with the new £23 Stripe link before publishing. --><button class="button" type="button" disabled data-checkout-url="">Add Everyday AI Shortcuts to My Order</button><a class="decline" href="ai-help-question.html">No thanks&mdash;I&rsquo;ll begin with the AI Confidence Kit.</a></div>
-        </div>
+          <div class="cta-wrap">
+            <a class="button" href="https://buy.stripe.com/00wfZgbj550g0U831EbZe0L" data-upgrade-checkout>Add This To My Order &mdash; &pound;12</a>
+            <div class="guarantee">Instant access &middot; Beginner-friendly &middot; One-time offer</div>
+            <a class="decline" href="ai-help-question.html">No thanks, I&rsquo;ll stick with the AI Confidence Kit for now.</a>
+          </div>
+        </section>
       </article>
     </main>
   </body>
