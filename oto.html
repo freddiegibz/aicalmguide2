@@ -370,21 +370,23 @@
 
       .checkout-box {
         display: grid;
-        grid-template-columns: 1fr auto;
+        grid-template-columns: minmax(0, 1fr) minmax(280px, 0.9fr);
         align-items: center;
-        gap: 30px;
-        margin-top: 44px;
-        padding: 29px 0;
-        border-top: 1px solid var(--line);
-        border-bottom: 1px solid var(--line);
-        background: transparent;
+        gap: 28px;
+        margin-top: 42px;
+        padding: 28px 30px;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        background: #f8f6ef;
       }
 
       .checkout-label {
         display: block;
-        color: var(--muted);
+        color: var(--blue-deep);
         font-size: 0.78rem;
         font-weight: 800;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
       }
 
       .checkout-price {
@@ -392,24 +394,31 @@
         margin-top: 5px;
         color: var(--navy);
         font-family: Georgia, "Times New Roman", serif;
-        font-size: 2.8rem;
+        font-size: 3rem;
         line-height: 1;
       }
 
       .checkout-box p {
-        margin: 8px 0 0;
+        max-width: 25rem;
+        margin: 7px 0 0;
         color: var(--muted);
         font-size: 0.82rem;
       }
 
       .checkout-actions {
-        min-width: 285px;
+        min-width: 0;
         text-align: center;
       }
 
       .checkout-actions .button {
         width: 100%;
         min-width: 0;
+      }
+
+      .checkout-actions .button[disabled] {
+        background: var(--blue);
+        color: #ffffff;
+        opacity: 1;
       }
 
       .checkout-actions .decline {
@@ -466,7 +475,7 @@
         .checkout-box {
           grid-template-columns: 1fr;
           gap: 20px;
-          padding: 25px 0;
+          padding: 24px 22px;
         }
 
         .checkout-actions {
@@ -489,33 +498,51 @@
       <article class="oto">
         <p class="oto-eyebrow">A practical next step for AI Confidence Kit customers</p>
         <h1>Your AI Confidence Kit is on its way.</h1>
-        <p class="intro">You now know where to begin with AI. You understand that it is not something reserved for people who are technical, younger or already ahead of the curve.</p>
-        <p>The next time an email needs writing, a letter makes no sense or a decision is taking up too much headspace, you will know that AI is worth opening.</p>
-        <p>But knowing that is only the beginning.</p>
-        <p>When that moment arrives, you still need a way to turn the task in front of you into something AI can actually help with.</p>
+        <p class="intro">You now know where to begin with AI. You know it is not something reserved for technical people, younger people or people who already seem to understand it all.</p>
+        <p>The next time an email needs writing, a letter makes no sense or a decision is taking up too much headspace, you will know AI is worth opening.</p>
+        <p>But there is still a difference between knowing AI can help and knowing exactly how to use it for the task in front of you.</p>
 
-        <h2>That is what Everyday AI Shortcuts gives you.</h2>
-        <p>That email sitting in drafts becomes a clear message you can send.</p>
-        <p>A long, confusing explanation becomes a short list of what matters and what needs doing next.</p>
-        <p>Sales language gives way to a clearer view of what you are actually paying for.</p>
-        <p>A loose plan becomes manageable steps before the details start to feel overwhelming.</p>
-        <p>And the tasks that normally stay on your list because you do not know where to begin finally have a practical first move.</p>
-        <p>These are the moments when AI begins to earn its place in your life. Not as another piece of technology you are supposed to keep up with, but as something you can turn to when a job feels harder, slower or more complicated than it needs to be.</p>
+        <h2>That is why I created Everyday AI Shortcuts.</h2>
+        <p>It is a practical collection of 20 clear, step-by-step ways to use AI when ordinary life gives you something that feels harder, slower or more complicated than it needs to be.</p>
 
-        <h2>Everyday AI Shortcuts shows you exactly how to do that.</h2>
-        <p>Each shortcut starts with a situation you will recognise: a difficult letter, an awkward email, a purchase you need to compare, a plan that needs organising or a decision you need to think through.</p>
-        <p>From there, you are shown what information to have ready, what to type first and how to guide the answer until it becomes useful.</p>
-        <p>There is no need to begin with an empty box and work everything out as you go. You have a clear route through the task.</p>
+        <h2>You will have a shortcut ready when you need to:</h2>
         <ul class="oto-list">
-          <li>What to have ready before you begin</li>
-          <li>What to type first</li>
-          <li>How to guide an answer that is not quite right</li>
-          <li>What to do with the result once you have it</li>
+          <li>Understand a difficult letter and work out what to do next</li>
+          <li>Write a complaint, follow-up or important email</li>
+          <li>Prepare useful questions before an appointment or call</li>
+          <li>Compare two quotes, products or service providers</li>
+          <li>Research a larger purchase without getting lost online</li>
+          <li>Plan a trip, event or household task</li>
+          <li>Sort rough notes into something clear and usable</li>
+          <li>Think through a difficult decision without handing it over to AI</li>
+          <li>Make sense of a bill, price increase or contract change</li>
+          <li>Get started on a task you have been avoiding</li>
         </ul>
 
-        <h2>The guide gives you the understanding. These shortcuts give that understanding somewhere useful to go.</h2>
-        <p>And if you added the Everyday AI Messages, this is what brings the two together: the messages give you strong starting words, while the shortcuts show you how to use them for a particular job and carry the conversation through to a finished result.</p>
-        <p>For a one-time customer price of <strong>&pound;23</strong>, you will have a practical collection to return to whenever something arrives in your day and you think, &ldquo;There must be an easier way to deal with this.&rdquo;</p>
+        <p>So that email sitting in drafts becomes a clear message you can send.</p>
+        <p>A long, confusing explanation becomes a short list of what matters and what needs doing next.</p>
+        <p>Two expensive options become a comparison based on what actually matters to you.</p>
+        <p>And a task that has been sitting on your list finally has a practical first move.</p>
+
+        <h2>Every shortcut shows you the way through.</h2>
+        <p>You are not handed a prompt and left to work out the rest.</p>
+        <p>For each situation, you will see:</p>
+        <ul class="oto-list">
+          <li>What the shortcut is for</li>
+          <li>What information to have ready before you begin</li>
+          <li>Exactly what to type first</li>
+          <li>What to ask next if the first answer is too vague, too long or not quite right</li>
+          <li>What a useful result should look like</li>
+          <li>What still needs your own checking, decision or action</li>
+        </ul>
+
+        <p>That means no more opening ChatGPT, staring at the blank box and trying to invent the right approach from scratch.</p>
+        <p>You open the shortcut that fits the job, follow the clear guidance and use AI to move the task forward.</p>
+
+        <h2>The guide gives you the understanding. Everyday AI Shortcuts gives that understanding somewhere useful to go.</h2>
+        <p>It turns AI from something you have learned about into something you can reach for when you need clearer information, better words, a simpler plan or a more organised way to deal with a problem.</p>
+        <p>And if you added the Everyday AI Messages, the two products work together naturally. The messages give you strong starting words. Everyday AI Shortcuts shows you how to use those words for a particular job, guide the conversation and turn the response into something you can actually use.</p>
+        <p>For a one-time customer price of <strong>&pound;23</strong>, you will have 20 practical ways to make everyday life easier with AI&mdash;ready whenever a real task appears.</p>
 
         <div class="checkout-box">
           <div><span class="checkout-label">One-time customer price</span><span class="checkout-price">&pound;23</span><p>Instant digital access. Yours to keep.</p></div>
