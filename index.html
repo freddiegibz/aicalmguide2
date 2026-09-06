@@ -2759,6 +2759,30 @@
 
       }
 
+      .checkout-dialog {
+        width: min(520px, calc(100% - 32px));
+        max-height: calc(100dvh - 32px);
+        padding: 0;
+        border: 0;
+        border-radius: 14px;
+        background: var(--navy);
+        color: white;
+      }
+
+      .checkout-dialog::backdrop { background: rgba(7, 27, 63, 0.65); }
+      .checkout-dialog .quick-offer-buy { padding-top: 58px; }
+      .checkout-dialog-close {
+        position: absolute;
+        top: 12px;
+        right: 16px;
+        border: 0;
+        background: transparent;
+        color: white;
+        font: inherit;
+        cursor: pointer;
+        padding: 8px;
+      }
+
       @media (prefers-reduced-motion: reduce) {
         *,
         *::before,
@@ -2813,13 +2837,13 @@
 
       function updateInlineCheckout() {
         var checkbox = document.querySelector("[data-bump-checkbox]");
-        var button = document.querySelector("[data-direct-checkout]");
-        if (!checkbox || !button) return;
-
-        button.href = checkbox.checked ? guideWithMessagesUrl : guideCheckoutUrl;
-        button.textContent = checkbox.checked
-          ? "Get the guide + 100 messages - £26.50"
-          : "Get the AI Confidence Kit - £19";
+        if (!checkbox) return;
+        document.querySelectorAll("[data-direct-checkout]").forEach(function (button) {
+          button.href = checkbox.checked ? guideWithMessagesUrl : guideCheckoutUrl;
+          button.textContent = checkbox.checked
+            ? "Get the guide + 100 messages - £26.50"
+            : "Get the AI Confidence Kit - £19";
+        });
       }
 
       document.addEventListener("click", function (event) {
@@ -2845,11 +2869,29 @@
 
       document.addEventListener("change", function (event) {
         if (event.target.matches("[data-bump-checkbox]")) {
+          document.querySelectorAll("[data-bump-checkbox]").forEach(function (checkbox) {
+            checkbox.checked = event.target.checked;
+          });
           updateInlineCheckout();
         }
       });
 
       window.addEventListener("DOMContentLoaded", function () {
+        var dialog = document.querySelector("#checkout-dialog");
+        var offer = document.querySelector(".quick-offer-buy").cloneNode(true);
+        offer.querySelectorAll("[id]").forEach(function (element) { element.removeAttribute("id"); });
+        dialog.appendChild(offer);
+        document.querySelector("[data-open-checkout]").addEventListener("click", function (event) {
+          event.preventDefault();
+          dialog.showModal();
+        });
+        dialog.querySelector(".checkout-dialog-close").addEventListener("click", function () { dialog.close(); });
+        dialog.addEventListener("click", function (event) {
+          if (event.target === dialog) {
+            var bounds = dialog.getBoundingClientRect();
+            if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
+          }
+        });
         updateInlineCheckout();
       });
 
@@ -2872,7 +2914,7 @@
                 <div class="actions">
                   <a
                     class="button"
-                    href="#introductory-discount"
+                    href="#introductory-discount" data-open-checkout aria-haspopup="dialog" aria-controls="checkout-dialog"
                   >Get the guide &mdash; &pound;19</a>
                   <p class="hero-checkout-note">Instant download. 60-day money-back guarantee.</p>
                   <a class="hero-look-link" href="#inside-the-guide">Want to look first? <span>See what&rsquo;s included</span></a>
@@ -3106,6 +3148,9 @@
       </section>
 
     </main>
+    <dialog class="checkout-dialog" id="checkout-dialog" aria-label="Get the AI Confidence Kit">
+      <button class="checkout-dialog-close" type="button" autofocus>Close &times;</button>
+    </dialog>
   </body>
 </html>
 
