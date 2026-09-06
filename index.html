@@ -2759,14 +2759,178 @@
 
       }
 
+      .bump-dialog {
+        position: relative;
+        width: min(100%, 520px);
+        max-height: calc(100vh - 36px);
+        overflow-y: auto;
+        padding: 24px;
+        border-radius: 16px 16px 12px 12px;
+        background: #fffdf9;
+        box-shadow: 0 28px 80px rgba(7, 27, 63, 0.28);
+      }
+
+      .bump-dialog::before {
+        content: "";
+        display: block;
+        width: 46px;
+        height: 5px;
+        margin: 0 auto 16px;
+        border-radius: 999px;
+        background: rgba(23, 55, 97, 0.18);
+      }
+
+      .bump-x {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        display: grid;
+        width: 38px;
+        height: 38px;
+        place-items: center;
+        border: 0;
+        border-radius: 999px;
+        background: rgba(23, 55, 97, 0.08);
+        color: var(--navy);
+        font: inherit;
+        font-size: 1.45rem;
+        line-height: 1;
+        cursor: pointer;
+      }
+
+      .bump-x:hover {
+        background: rgba(23, 55, 97, 0.13);
+      }
+
+      .bump-topline {
+        display: inline-flex;
+        align-items: center;
+        min-height: 30px;
+        padding: 0 11px;
+        border-radius: 999px;
+        background: #fff0bc;
+        color: #765400;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .bump-dialog h2 {
+        margin: 10px 0 0;
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(1.8rem, 4vw, 2.35rem);
+        font-weight: 500;
+        line-height: 1.08;
+      }
+
+      .bump-dialog p {
+        margin: 12px 0 0;
+        color: var(--text);
+        font-size: 1rem;
+        line-height: 1.55;
+      }
+
+      .bump-option {
+        display: grid;
+        grid-template-columns: 24px 1fr;
+        gap: 13px;
+        margin-top: 18px;
+        padding: 16px;
+        border: 2px solid rgba(30, 79, 135, 0.18);
+        border-radius: 10px;
+        background: #ffffff;
+        cursor: pointer;
+      }
+
+      .bump-option input {
+        width: 20px;
+        height: 20px;
+        margin-top: 2px;
+        accent-color: var(--blue);
+      }
+
+      .bump-option strong {
+        display: block;
+        color: var(--navy);
+        font-size: 1rem;
+      }
+
+      .bump-option span {
+        display: block;
+        margin-top: 5px;
+        color: var(--muted);
+        font-size: 0.95rem;
+        line-height: 1.45;
+      }
+
+      .bump-option .bump-price {
+        display: flex;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 7px;
+        margin-top: 12px;
+        padding-top: 11px;
+        border-top: 1px solid rgba(30, 79, 135, 0.14);
+      }
+
+      .bump-price s {
+        color: #8a94a5;
+        font-size: 0.92rem;
+      }
+
+      .bump-price b {
+        color: var(--navy);
+        font-size: 1.22rem;
+      }
+
+      .bump-price em {
+        padding: 3px 7px;
+        border-radius: 999px;
+        background: #e7f5ec;
+        color: #17673e;
+        font-size: 0.78rem;
+        font-style: normal;
+        font-weight: 850;
+      }
+
+      .bump-actions {
+        display: grid;
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      .bump-continue,
+      .bump-close {
+        min-height: 54px;
+        border-radius: 8px;
+        font: inherit;
+        font-weight: 900;
+        cursor: pointer;
+      }
+
+      .bump-continue {
+        border: 0;
+        background: var(--blue);
+        color: #ffffff;
+        box-shadow: 0 14px 26px rgba(30, 79, 135, 0.2);
+      }
+
+      .bump-close {
+        border: 0;
+        background: transparent;
+        color: var(--muted);
+        text-decoration: underline;
+      }
       .checkout-dialog {
         width: min(520px, calc(100% - 32px));
         max-height: calc(100dvh - 32px);
-        padding: 0;
+        padding: 24px;
         border: 0;
         border-radius: 14px;
-        background: var(--navy);
-        color: white;
+        background: #fffdf9;
+        color: var(--navy);
       }
 
       .checkout-dialog::backdrop { background: rgba(7, 27, 63, 0.65); }
@@ -2878,14 +3042,12 @@
 
       window.addEventListener("DOMContentLoaded", function () {
         var dialog = document.querySelector("#checkout-dialog");
-        var offer = document.querySelector(".quick-offer-buy").cloneNode(true);
-        offer.querySelectorAll("[id]").forEach(function (element) { element.removeAttribute("id"); });
-        dialog.appendChild(offer);
         document.querySelector("[data-open-checkout]").addEventListener("click", function (event) {
           event.preventDefault();
           dialog.showModal();
         });
-        dialog.querySelector(".checkout-dialog-close").addEventListener("click", function () { dialog.close(); });
+        dialog.querySelector(".bump-x").addEventListener("click", function () { dialog.close(); });
+        dialog.querySelector(".bump-close").addEventListener("click", function () { goToCheckout(guideCheckoutUrl, 19); });
         dialog.addEventListener("click", function (event) {
           if (event.target === dialog) {
             var bounds = dialog.getBoundingClientRect();
@@ -3148,8 +3310,23 @@
       </section>
 
     </main>
-    <dialog class="checkout-dialog" id="checkout-dialog" aria-label="Get the AI Confidence Kit">
-      <button class="checkout-dialog-close" type="button" autofocus>Close &times;</button>
+    <dialog class="checkout-dialog bump-dialog" id="checkout-dialog" aria-labelledby="bump-title">
+      <button class="bump-x" type="button" autofocus aria-label="Close">&times;</button>
+      <div class="bump-topline">Optional message pack</div>
+      <h2 id="bump-title">Would it help to have more examples ready when you need them?</h2>
+      <p>Add 100 more ready-to-use messages for everyday situations:</p>
+      <label class="bump-option">
+        <input type="checkbox" data-bump-checkbox checked />
+        <span>
+          <strong>Add the 100-message pack for &pound;7.50</strong>
+          <span>Writing &middot; planning &middot; decisions &middot; shopping &middot; appointments &middot; confusing information</span>
+          <span class="bump-price"><b>&pound;26.50 total</b><em>Guide + 100-message pack</em></span>
+        </span>
+      </label>
+      <div class="bump-actions">
+        <button class="bump-continue" type="button" data-direct-checkout>Get the guide + 100 messages - &pound;26.50</button>
+        <button class="bump-close" type="button">No thanks, get the guide for &pound;19</button>
+      </div>
     </dialog>
   </body>
 </html>
