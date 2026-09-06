@@ -1027,6 +1027,19 @@
         text-align: center;
       }
 
+      .quick-guide-only {
+        display: block;
+        padding: 14px 8px 4px;
+        color: #e9eff7;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        text-align: center;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      .quick-guide-only:hover { color: #ffffff; }
+
       @media (max-width: 760px) {
         .top-banner-inner {
           padding: 10px 18px;
@@ -3241,6 +3254,7 @@
               id="purchase-button"
               data-direct-checkout
             >Get the guide + 100 messages &mdash; &pound;26.50</a>
+            <a class="quick-guide-only" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-checkout-link data-checkout-value="19">No thanks, just the guide &mdash; &pound;19</a>
             <p class="quick-checkout-note">60-day money-back guarantee. Secure checkout with Stripe.</p>
           </div>
         </div>
