@@ -3,24 +3,667 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Redirecting...</title>
-    <meta http-equiv="refresh" content="0; url=./ai-help-question.html" />
-    <script>
-      window.location.replace("./ai-help-question.html");
-    </script>
+    <title>Your Personal AI Setup — £37</title>
+    <meta name="description" content="A personal AI setup built around your tasks, interests and everyday life." />
     <style>
+      :root {
+        --ink: #071b3f;
+        --navy: #173761;
+        --text: #172033;
+        --muted: #5d6678;
+        --blue: #1e4f87;
+        --blue-deep: #123a68;
+        --paper: #faf8f4;
+        --line: rgba(10, 27, 63, 0.13);
+        --gold-soft: #f7eed2;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
       body {
         margin: 0;
-        min-height: 100vh;
-        display: grid;
-        place-items: center;
-        background: #f7f4ee;
-        color: #173761;
+        background: #ffffff;
+        color: var(--text);
         font-family: "Aptos", "Segoe UI", sans-serif;
+      }
+
+      .confirmation {
+        border-bottom: 1px solid var(--line);
+        background: #ffffff;
+      }
+
+      .confirmation-inner {
+        width: min(100%, 760px);
+        margin: 0 auto;
+        padding: 14px 22px;
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        color: var(--navy);
+        font-size: 0.96rem;
+        font-weight: 800;
+        line-height: 1.45;
+      }
+
+      .confirmation-icon {
+        flex: 0 0 auto;
+        width: 30px;
+        height: 30px;
+        border-radius: 999px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: #1b6c3f;
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 900;
+        box-shadow: none;
+      }
+
+      .confirmation-copy {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+      }
+
+      .confirmation-title {
+        font-size: 0.93rem;
+        font-weight: 900;
+        letter-spacing: -0.01em;
+      }
+
+      .confirmation-subtitle {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--muted);
+      }
+
+      main {
+        width: min(100%, 760px);
+        margin: 0 auto;
+        padding: 58px 22px 70px;
+      }
+
+      article {
+        padding: clamp(24px, 4vw, 42px);
+        border: 1px solid var(--line);
+        background: #fffdf9;
+        box-shadow: 0 18px 42px rgba(7, 27, 63, 0.07);
+      }
+
+      h2 {
+        margin: 0 0 12px;
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(1.55rem, 2.1vw, 2rem);
+        font-weight: 500;
+        line-height: 1.12;
+        letter-spacing: 0;
+      }
+
+      p {
+        margin: 0 0 12px;
+        color: var(--text);
+        font-size: clamp(1rem, 1.2vw, 1.08rem);
+        line-height: 1.55;
+      }
+
+      .short-lines {
+        margin: 16px auto 18px;
+        display: grid;
+        gap: 8px;
+        max-width: 36rem;
+        text-align: left;
+      }
+
+      .short-lines p {
+        position: relative;
+        margin: 0;
+        padding-left: 24px;
+        color: var(--navy);
+        font-weight: 800;
+      }
+
+      .short-lines p::before {
+        content: "";
+        position: absolute;
+        left: 4px;
+        top: 0.68em;
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: var(--blue);
+      }
+
+      .divider {
+        height: 1px;
+        margin: 36px 0;
+        background: var(--line);
+      }
+
+      .statement {
+        margin: 26px 0;
+        padding: 24px 26px;
+        border-left: 5px solid var(--blue);
+        background: #eef6fb;
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(1.35rem, 2vw, 1.72rem);
+        line-height: 1.42;
+      }
+
+      .price-note {
+        margin-top: 30px;
+        padding: 24px 26px;
+        background: var(--gold-soft);
+        color: #775f17;
+        font-weight: 800;
+      }
+
+      .cta-wrap {
+        margin-top: 20px;
+        padding-top: 4px;
+        text-align: center;
+      }
+
+      .fast-offer {
+        margin: 0;
+        padding: 22px;
+        border: 1px solid rgba(30, 79, 135, 0.13);
+        background: #eef6fb;
+        text-align: center;
+      }
+
+      .fast-offer h2 {
+        margin-bottom: 14px;
+      }
+
+      .offer-subheading {
+        margin: 0 0 10px;
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(1.28rem, 1.9vw, 1.55rem);
+        font-weight: 500;
+        line-height: 1.2;
+      }
+
+      .fast-offer p {
+        max-width: 42rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .fast-offer .cta-wrap {
+        margin-top: 22px;
+      }
+
+      .fast-price {
+        display: inline-block;
+        margin: 2px 0 14px;
+        padding: 8px 13px;
+        background: var(--gold-soft);
+        color: #775f17;
+        font-weight: 900;
+      }
+
+      .benefits-section {
+        margin-top: 8px;
+      }
+
+      .benefits-section h2 {
+        margin-bottom: 22px;
+      }
+
+      .benefits-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .benefit-item {
+        position: relative;
+        padding: 18px 18px 18px 46px;
+        border: 1px solid rgba(30, 79, 135, 0.12);
+        border-radius: 14px;
+        background: linear-gradient(180deg, #ffffff 0%, #f6faff 100%);
+        box-shadow: 0 10px 24px rgba(7, 27, 63, 0.05);
+        color: var(--text);
+        font-size: 1.02rem;
+        line-height: 1.6;
+      }
+
+      .benefit-item::before {
+        content: "";
+        position: absolute;
+        left: 18px;
+        top: 22px;
+        width: 14px;
+        height: 14px;
+        border-radius: 999px;
+        background: linear-gradient(180deg, var(--blue) 0%, var(--blue-deep) 100%);
+        box-shadow: 0 0 0 4px rgba(30, 79, 135, 0.1);
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: min(100%, 360px);
+        min-height: 56px;
+        padding: 0 28px;
+        border-radius: 8px;
+        background: var(--blue);
+        color: #fff;
+        font-size: 1.08rem;
+        font-weight: 800;
+        text-decoration: none;
+        box-shadow: 0 18px 34px rgba(30, 79, 135, 0.24);
+      }
+
+      .button:hover,
+      .button:focus-visible {
+        background: var(--blue-deep);
+      }
+
+      .button[disabled] {
+        border: 0;
+        cursor: not-allowed;
+        opacity: 0.7;
+      }
+
+      .oto {
+        max-width: 690px;
+        margin: 0 auto;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        box-shadow: none;
+      }
+
+      .oto-eyebrow {
+        margin: 0 0 15px;
+        color: var(--blue);
+        font-size: 0.78rem;
+        font-weight: 850;
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+      }
+
+      .oto h1 {
+        margin: 0;
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        max-width: 17ch;
+        font-size: clamp(2.2rem, 4.3vw, 3.05rem);
+        font-weight: 500;
+        line-height: 1.12;
+      }
+
+      .oto .intro {
+        margin-top: 22px;
+        color: var(--text);
+        font-size: 1.13rem;
+        line-height: 1.65;
+      }
+
+      .oto h2 {
+        margin: 39px 0 13px;
+        color: var(--navy);
+        font-size: clamp(1.45rem, 2.35vw, 1.72rem);
+      }
+
+      .oto p {
+        max-width: none;
+        margin: 0 0 15px;
+        color: #38475a;
+        line-height: 1.68;
+      }
+
+      .oto-list {
+        margin: 21px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .oto-list li {
+        position: relative;
+        margin-top: 14px;
+        padding-left: 28px;
+        color: #38475a;
+        line-height: 1.6;
+      }
+
+      .oto-list li::before {
+        position: absolute;
+        top: 0;
+        left: 1px;
+        color: var(--blue);
+        content: "\2713";
+        font-weight: 900;
+      }
+
+      .oto-list strong {
+        color: var(--navy);
+      }
+
+      .checkout-box {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(280px, 0.9fr);
+        align-items: center;
+        gap: 28px;
+        margin-top: 42px;
+        padding: 28px 30px;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        background: #f8f6ef;
+      }
+
+      .oto-testimonials {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        margin: 22px 0 32px;
+      }
+
+      .oto-testimonial {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 25px;
+        border: 1px solid var(--line);
+        border-radius: 0;
+        background: #f8f6ef;
+      }
+
+      .oto-testimonial blockquote {
+        margin: 0 0 18px;
+        color: var(--navy);
+        font-size: 1rem;
+        line-height: 1.65;
+      }
+
+      .oto-testimonial figcaption {
+        margin-top: auto;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .oto-testimonial-stars {
+        margin-top: 12px;
+        color: #a8750d;
+        font-size: 1.2rem;
+        letter-spacing: 3px;
+      }
+
+      @media (max-width: 640px) {
+        .oto-testimonials { grid-template-columns: 1fr; }
+      }
+
+      .checkout-label {
+        display: block;
+        color: var(--blue-deep);
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .checkout-price {
+        display: block;
+        margin-top: 5px;
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 3rem;
+        line-height: 1;
+      }
+
+      .checkout-box p {
+        max-width: 25rem;
+        margin: 7px 0 0;
+        color: var(--muted);
+        font-size: 0.82rem;
+      }
+
+      .checkout-actions {
+        min-width: 0;
+        text-align: center;
+      }
+
+      .checkout-actions .button {
+        width: 100%;
+        min-width: 0;
+      }
+
+      .checkout-actions .button[disabled] {
+        background: var(--blue);
+        color: #ffffff;
+        opacity: 1;
+      }
+
+      .checkout-actions .decline {
+        margin-top: 11px;
+      }
+
+      .guarantee {
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 0.92rem;
+        font-weight: 800;
+      }
+
+      .decline {
+        display: inline-block;
+        margin-top: 10px;
+        color: #6f7786;
+        font-size: 0.9rem;
+        text-underline-offset: 3px;
+      }
+
+      @media (max-width: 640px) {
+        main {
+          padding: 35px 0 46px;
+        }
+
+        article {
+          border: 0;
+          box-shadow: none;
+          padding: 26px 18px 34px;
+        }
+
+        .confirmation-inner {
+          align-items: flex-start;
+          padding: 20px 18px 22px;
+        }
+
+        .confirmation-icon {
+          width: 42px;
+          height: 42px;
+          font-size: 1.45rem;
+        }
+
+        .benefits-list {
+          grid-template-columns: 1fr;
+        }
+
+        .oto {
+          border: 0;
+          box-shadow: none;
+          padding: 0 18px;
+        }
+
+        .checkout-box {
+          grid-template-columns: 1fr;
+          gap: 20px;
+          padding: 24px 22px;
+        }
+
+        .checkout-actions {
+          min-width: 0;
+        }
       }
     </style>
   </head>
   <body>
-    <p>Redirecting you now...</p>
+    <main>
+      <article class="oto">
+        <h1>Your Personal AI Setup</h1>
+        <p>You’ve already taken the first step.</p>
+        <p>You know AI can be useful.</p>
+        <p>You know how to start using it.</p>
+        <p>You’ve got prompts, examples and ready-made shortcuts to help you get useful results.</p>
+        <p>But there’s still a difference between:</p>
+        <p>“I know how to use ChatGPT.”</p>
+        <p>and:</p>
+        <p>“ChatGPT is set up around me, the things I do, and the things I actually want help with.”</p>
+        <p>That’s what we’ll do next.</p>
+        <p>Instead of giving you another guide to read…</p>
+        <p>we do the thinking for you.</p>
+        <p>You tell us a little about your life.</p>
+        <p>The things you regularly do.</p>
+        <p>The things that take too long.</p>
+        <p>The things you find frustrating.</p>
+        <p>The decisions you make.</p>
+        <p>The interests you have.</p>
+        <p>The areas where you’d love an extra pair of hands.</p>
+        <p>And we turn that into a personal AI setup built specifically around you.</p>
+        <p>So rather than wondering:</p>
+        <p>“What else could I use AI for?”</p>
+        <p>You’ll have a clear answer sitting in front of you.</p>
+        <p>It’s yours.</p>
+        <p>Most examples of AI are necessarily generic.</p>
+        <p>They might show you how somebody could use ChatGPT to plan a holiday…</p>
+        <p>write an email…</p>
+        <p>research something…</p>
+        <p>or organise their week.</p>
+        <p>Useful, yes.</p>
+        <p>But your life isn’t generic.</p>
+        <p>Perhaps you travel several times a year.</p>
+        <p>Perhaps you manage appointments for yourself and somebody else.</p>
+        <p>Perhaps you have a hobby you research constantly.</p>
+        <p>Perhaps you regularly compare insurance, holidays or household costs.</p>
+        <p>Perhaps there are letters and documents you wish somebody would simply explain properly.</p>
+        <p>Perhaps you write the same kinds of emails again and again.</p>
+        <p>Perhaps there’s something you’ve wanted to organise for months but never seem to get around to.</p>
+        <p>Those are the opportunities that matter.</p>
+        <p>And instead of leaving you to find them yourself…</p>
+        <p>we find them for you.</p>
+        <h2>Getting your Personal AI Setup is simple.</h2>
+        <p>You’ll complete a short questionnaire telling us about:</p>
+        <ul class="oto-list">
+        <li>the things you regularly spend time doing</li>
+        <li>tasks you find annoying or repetitive</li>
+        <li>things you often need help understanding</li>
+        <li>decisions you regularly make</li>
+        <li>your hobbies and interests</li>
+        <li>plans you have coming up</li>
+        <li>areas where you’d like to save time</li>
+        <li>the kinds of things you’d normally ask somebody else to help with</li>
+        <li>how you prefer information explained to you</li>
+        </ul>
+        <p>Then we use those answers to build your own personalised AI setup.</p>
+        <p>Not generic examples.</p>
+        <p>Not another hundred prompts for situations you may never encounter.</p>
+        <p>Ways for you to use AI based on the life you actually live.</p>
+        <p>We’ll identify the most useful opportunities for AI in your life and show you where it can save time, make something easier, help you understand something or simply give you a better way to get things done.</p>
+        <p>You’ll stop wondering:</p>
+        <p>“What would I actually use AI for?”</p>
+        <p>Because you’ll have your own answers.</p>
+        <p>We’ll write a collection of prompts around the things you actually want help with.</p>
+        <p>Not:</p>
+        <p>“Plan a holiday.”</p>
+        <p>But perhaps:</p>
+        <p>“Help me compare three European city breaks based on total cost, walking distance, restaurants, flight times and the things my partner and I actually enjoy.”</p>
+        <p>Not:</p>
+        <p>“Help me prepare for an appointment.”</p>
+        <p>But:</p>
+        <p>“Help me organise the questions I want to ask at this appointment, using the concerns I’ve written below, and put the most important ones first.”</p>
+        <p>The difference is simple:</p>
+        <p>you don’t have to translate generic AI advice into your own situation.</p>
+        <p>We’ve already done it.</p>
+        <p>We’ll take five recurring situations from your life and build complete start-to-finish ways to use AI for them.</p>
+        <p>Each one will show you:</p>
+        <p>when to use it → what to say first → what details to add → what to ask next → what result you’re aiming for</p>
+        <p>So when that situation comes up again…</p>
+        <p>you don’t have to figure anything out.</p>
+        <p>You already know exactly what to do.</p>
+        <p>We’ll also help you make ChatGPT respond in a way that suits you.</p>
+        <p>Perhaps you prefer:</p>
+        <ul class="oto-list">
+        <li>plain English</li>
+        <li>shorter answers</li>
+        <li>more detail</li>
+        <li>step-by-step instructions</li>
+        <li>questions before recommendations</li>
+        <li>clear comparisons</li>
+        <li>simple summaries</li>
+        <li>explanations without jargon</li>
+        </ul>
+        <p>Once you know how you want AI to respond, using it starts to feel far more natural.</p>
+        <p>Less like talking to a machine.</p>
+        <p>More like using a tool that understands how you like to work.</p>
+        <p>And finally, we’ll pull the most useful parts together onto one simple page.</p>
+        <p>Something you can keep beside your computer and glance at whenever you think:</p>
+        <p>“Could AI help me with this?”</p>
+        <p>Your most useful applications.</p>
+        <p>Your best starting prompts.</p>
+        <p>Your personal shortcuts.</p>
+        <p>All in one place.</p>
+        <p>You’ve already bought the knowledge.</p>
+        <p>You’ve already decided you want to become confident with AI.</p>
+        <p>And with your prompts and Everyday AI Shortcuts, you’ll have plenty of ways to begin using it.</p>
+        <p>But imagine going one step further.</p>
+        <p>Imagine opening a document that says:</p>
+        <p>Here are the 12 ways AI could be most useful to you.</p>
+        <p>Here are the prompts written around your life.</p>
+        <p>Here are the five situations you deal with regularly — already mapped out from beginning to end.</p>
+        <p>Suddenly, you’re not trying to work out what everyone else is doing with AI.</p>
+        <p>You know what you are doing with it.</p>
+        <p>And that’s a very different feeling.</p>
+        <p>You go from:</p>
+        <p>“I’m starting to understand AI.”</p>
+        <p>to:</p>
+        <p>“I know exactly how AI fits into my life.”</p>
+        <p>That’s the whole point.</p>
+        <p>You could spend the next few months using ChatGPT, experimenting, spotting opportunities and gradually building up your own collection of useful prompts.</p>
+        <p>And eventually, you probably would.</p>
+        <p>Or…</p>
+        <p>you can tell us about yourself once and let us do the difficult part now.</p>
+        <p>We find the opportunities.</p>
+        <p>We organise them.</p>
+        <p>We write the prompts.</p>
+        <p>We build the shortcuts.</p>
+        <p>We put it all together.</p>
+        <p>You simply start using it.</p>
+        <h2>Your Personal AI Setup includes:</h2>
+        <h3>Your Personal AI Use Map</h3>
+        <p>The most useful ways for you to put AI to work.</p>
+        <h3>Your Personal Prompt Collection</h3>
+        <p>Prompts written around your own tasks, interests and situations.</p>
+        <h3>5 Personal AI Shortcuts</h3>
+        <p>Complete step-by-step conversations for things you regularly need help with.</p>
+        <h3>Your ChatGPT Preferences</h3>
+        <p>A simple setup for getting answers in the style and format that works best for you.</p>
+        <h3>Your Personal Quick-Start Sheet</h3>
+        <p>The most useful parts of your setup condensed onto one easy reference page.</p>
+        <p>You complete one simple questionnaire.</p>
+        <p>We do the rest.</p>
+        <p>You’ve already taken the step from:</p>
+        <p>“AI seems useful.”</p>
+        <p>to:</p>
+        <p>“I’m going to learn how to use it.”</p>
+        <p>Now you can take the much more interesting step:</p>
+        <p>“Here’s exactly how AI can make my life easier.”</p>
+        <div class="checkout-box">
+          <div><span class="checkout-label">One-time price</span><span class="checkout-price">£37</span></div>
+          <div class="checkout-actions">
+            <!-- Add the Personal AI Setup £37 Stripe checkout URL and enable this button before taking orders. -->
+            <button class="button" type="button" disabled data-checkout-url="">YES — CREATE MY PERSONAL AI SETUP FOR £37</button>
+            <a class="decline" href="ai-help-question.html">No thanks. I’ll continue with the AI Confidence Kit and Everyday AI Shortcuts on my own.</a>
+          </div>
+        </div>
+      </article>
+    </main>
   </body>
 </html>

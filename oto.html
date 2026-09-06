@@ -380,6 +380,47 @@
         background: #f8f6ef;
       }
 
+      .oto-testimonials {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        margin: 22px 0 32px;
+      }
+
+      .oto-testimonial {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 25px;
+        border: 1px solid var(--line);
+        border-radius: 0;
+        background: #f8f6ef;
+      }
+
+      .oto-testimonial blockquote {
+        margin: 0 0 18px;
+        color: var(--navy);
+        font-size: 1rem;
+        line-height: 1.65;
+      }
+
+      .oto-testimonial figcaption {
+        margin-top: auto;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .oto-testimonial-stars {
+        margin-top: 12px;
+        color: #a8750d;
+        font-size: 1.2rem;
+        letter-spacing: 3px;
+      }
+
+      @media (max-width: 640px) {
+        .oto-testimonials { grid-template-columns: 1fr; }
+      }
+
       .checkout-label {
         display: block;
         color: var(--blue-deep);
@@ -526,8 +567,18 @@
         <p>No starting from scratch.</p>
         <p><strong>You simply follow along.</strong></p>
         <h2>What people like you are saying</h2>
-        <blockquote><strong>“I understood the basics, but I still didn’t always know when to use ChatGPT. These shortcuts made that obvious.”</strong><br /><strong>— Margaret, 63</strong></blockquote>
-        <blockquote><strong>“I don’t have to work out what to ask next. I can just follow it through and actually finish something useful.”</strong><br /><strong>— David, 58</strong></blockquote>
+        <div class="oto-testimonials">
+          <figure class="oto-testimonial">
+            <blockquote>“I understood the basics, but I still didn’t always know when to use ChatGPT. These shortcuts made that obvious.”</blockquote>
+            <figcaption>— Margaret, 63</figcaption>
+            <div class="oto-testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          </figure>
+          <figure class="oto-testimonial">
+            <blockquote>“I don’t have to work out what to ask next. I can just follow it through and actually finish something useful.”</blockquote>
+            <figcaption>— David, 58</figcaption>
+            <div class="oto-testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          </figure>
+        </div>
         <h2>Add Everyday AI Shortcuts for just £17</h2>
         <p>You’ve already decided you want AI to become something you can use confidently.</p>
         <p><strong>This simply gets you there faster.</strong></p>

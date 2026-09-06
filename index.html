@@ -2785,11 +2785,15 @@
       }
 
       function goToCheckout(url, value) {
-        trackMetaEvent("InitiateCheckout", {
-          content_name: "AI Confidence Kit",
-          currency: "GBP",
-          value: value,
-        });
+        try {
+          trackMetaEvent("InitiateCheckout", {
+            content_name: "AI Confidence Kit",
+            currency: "GBP",
+            value: value,
+          });
+        } catch (error) {
+          // Analytics must never prevent a customer from reaching checkout.
+        }
 
         window.location.href = url;
       }
@@ -2812,6 +2816,7 @@
         var button = document.querySelector("[data-direct-checkout]");
         if (!checkbox || !button) return;
 
+        button.href = checkbox.checked ? guideWithMessagesUrl : guideCheckoutUrl;
         button.textContent = checkbox.checked
           ? "Get the guide + 100 messages - £26.50"
           : "Get the AI Confidence Kit - £19";
@@ -2867,7 +2872,7 @@
                 <div class="actions">
                   <a
                     class="button"
-                    href="#inside-the-guide"
+                    href="#introductory-discount"
                   >Get the guide &mdash; &pound;19</a>
                   <p class="hero-checkout-note">Instant download. 60-day money-back guarantee.</p>
                   <a class="hero-look-link" href="#inside-the-guide">Want to look first? <span>See what&rsquo;s included</span></a>
@@ -3012,7 +3017,7 @@
           </div>
 
           <div class="quick-offer-buy">
-            <span class="quick-discount">33% introductory discount</span>
+            <span class="quick-discount" id="introductory-discount">33% introductory discount</span>
             <div class="quick-price">
               <s>&pound;28.50</s>
               <strong>&pound;19</strong>
@@ -3029,6 +3034,7 @@
             <a
               class="button"
               href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00"
+              id="purchase-button"
               data-direct-checkout
             >Get the guide + 100 messages &mdash; &pound;26.50</a>
             <p class="quick-checkout-note">60-day money-back guarantee. Secure checkout with Stripe.</p>
@@ -3093,7 +3099,7 @@
           <h2>Start using AI confidently to make everyday tasks easier.</h2>
           <p>Write the email you&rsquo;ve been putting off. Make sense of a confusing document. Compare your options and organise your plans.</p>
           <p>The AI Confidence Kit shows you where to start, gives you the words to use and teaches you how to get help with your own tasks. All in plain English, with examples you can follow straight away.</p>
-          <a class="button" href="#inside-the-guide">Get the AI Confidence Kit &mdash; &pound;19</a>
+          <a class="button" href="#introductory-discount">Get the AI Confidence Kit &mdash; &pound;19</a>
           <p class="checkout-note">Normally &pound;28.50. Download instantly and put it to use today.</p>
           <p class="checkout-note">Try it with your own everyday tasks. If it doesn&rsquo;t make AI clearer and easier to use, ask for a full refund within 60 days.</p>
         </div>
