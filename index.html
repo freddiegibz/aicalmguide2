@@ -3028,7 +3028,7 @@
         if (originalCta && !originalCta.closest("dialog")) {
           var offer = originalCta.closest(".quick-offer-buy");
           var selectedBump = offer && offer.querySelector("[data-bump-checkbox]");
-          var value = originalCta.matches("[data-direct-checkout]") && selectedBump && selectedBump.checked ? 26.5 : 19;
+          var value = Number(originalCta.getAttribute("data-checkout-value")) || 19;
           try {
             trackMetaEvent("InitiateCheckout", {
               content_name: "AI Confidence Kit",
@@ -3251,21 +3251,19 @@
               <strong>&pound;19</strong>
             </div>
             <p>Get the complete kit instantly and use it to complete your first genuinely useful AI task today.</p>
-            <label class="inline-bump">
-              <input type="checkbox" data-bump-checkbox checked />
+            <div class="inline-bump" style="display: block; cursor: default;">
               <span class="inline-bump-copy">
-                <strong>Yes, add the 100 Everyday AI Messages pack for just &pound;7.50</strong>
-                <span>Have the right words ready whenever you need help with emails, planning, decisions, shopping, appointments or confusing information&mdash;without facing the blank box again.</span>
-                <span class="bump-price"><b>&pound;26.50 total</b><em>Guide + 100-message pack</em></span>
+                <strong>Want 100 ready-to-use AI messages too?</strong>
+                <span>Add the message pack for &pound;7.50. Get the words for emails, planning, shopping, appointments and more&mdash;ready to copy into ChatGPT.</span>
               </span>
-            </label>
+            </div>
             <a
               class="button"
-              href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00"
+              href="https://buy.stripe.com/28EeVc72PfEUbyM9q2bZe0b"
               id="purchase-button"
-              data-direct-checkout
-            >Get the guide + 100 messages &mdash; &pound;26.50</a>
-            <a class="quick-guide-only" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-checkout-link data-checkout-value="19">No thanks, just the guide &mdash; &pound;19</a>
+              data-checkout-link data-checkout-value="26.50"
+            >Get the kit + 100 messages &mdash; &pound;26.50</a>
+            <a class="quick-guide-only" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-checkout-link data-checkout-value="19">Just the kit &mdash; &pound;19</a>
             <p class="quick-checkout-note">60-day money-back guarantee. Secure checkout with Stripe.</p>
           </div>
         </div>
