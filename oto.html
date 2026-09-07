@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>AI Confidence Kit Upgrade</title>
+    <title>Everyday AI Shortcuts — Your Next Conversation, Ready</title>
     <meta
       name="description"
       content="A one-time upgrade for AI Confidence Kit customers."
@@ -26,547 +26,156 @@
     /></noscript>
     <!-- End Meta Pixel Code -->
     <style>
-      :root {
-        --ink: #071b3f;
-        --navy: #173761;
-        --text: #172033;
-        --muted: #5d6678;
-        --blue: #1e4f87;
-        --blue-deep: #123a68;
-        --paper: #faf8f4;
-        --line: rgba(10, 27, 63, 0.13);
-        --gold-soft: #f7eed2;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      body {
-        margin: 0;
-        background: #ffffff;
-        color: var(--text);
-        font-family: "Aptos", "Segoe UI", sans-serif;
-      }
-
-      .confirmation {
-        border-bottom: 1px solid var(--line);
-        background: #ffffff;
-      }
-
-      .confirmation-inner {
-        width: min(100%, 760px);
-        margin: 0 auto;
-        padding: 14px 22px;
-        display: flex;
-        align-items: center;
-        gap: 11px;
-        color: var(--navy);
-        font-size: 0.96rem;
-        font-weight: 800;
-        line-height: 1.45;
-      }
-
-      .confirmation-icon {
-        flex: 0 0 auto;
-        width: 30px;
-        height: 30px;
-        border-radius: 999px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        background: #1b6c3f;
-        color: #fff;
-        font-size: 1rem;
-        font-weight: 900;
-        box-shadow: none;
-      }
-
-      .confirmation-copy {
-        display: flex;
-        flex-direction: column;
-        gap: 3px;
-      }
-
-      .confirmation-title {
-        font-size: 0.93rem;
-        font-weight: 900;
-        letter-spacing: -0.01em;
-      }
-
-      .confirmation-subtitle {
-        font-size: 0.8rem;
-        font-weight: 600;
-        color: var(--muted);
-      }
-
-      main {
-        width: min(100%, 760px);
-        margin: 0 auto;
-        padding: 58px 22px 70px;
-      }
-
-      article {
-        padding: clamp(24px, 4vw, 42px);
-        border: 1px solid var(--line);
-        background: #fffdf9;
-        box-shadow: 0 18px 42px rgba(7, 27, 63, 0.07);
-      }
-
-      h2 {
-        margin: 0 0 12px;
-        color: var(--navy);
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(1.55rem, 2.1vw, 2rem);
-        font-weight: 500;
-        line-height: 1.12;
-        letter-spacing: 0;
-      }
-
-      p {
-        margin: 0 0 12px;
-        color: var(--text);
-        font-size: clamp(1rem, 1.2vw, 1.08rem);
-        line-height: 1.55;
-      }
-
-      .short-lines {
-        margin: 16px auto 18px;
-        display: grid;
-        gap: 8px;
-        max-width: 36rem;
-        text-align: left;
-      }
-
-      .short-lines p {
-        position: relative;
-        margin: 0;
-        padding-left: 24px;
-        color: var(--navy);
-        font-weight: 800;
-      }
-
-      .short-lines p::before {
-        content: "";
-        position: absolute;
-        left: 4px;
-        top: 0.68em;
-        width: 8px;
-        height: 8px;
-        border-radius: 999px;
-        background: var(--blue);
-      }
-
-      .divider {
-        height: 1px;
-        margin: 36px 0;
-        background: var(--line);
-      }
-
-      .statement {
-        margin: 26px 0;
-        padding: 24px 26px;
-        border-left: 5px solid var(--blue);
-        background: #eef6fb;
-        color: var(--navy);
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(1.35rem, 2vw, 1.72rem);
-        line-height: 1.42;
-      }
-
-      .price-note {
-        margin-top: 30px;
-        padding: 24px 26px;
-        background: var(--gold-soft);
-        color: #775f17;
-        font-weight: 800;
-      }
-
-      .cta-wrap {
-        margin-top: 20px;
-        padding-top: 4px;
-        text-align: center;
-      }
-
-      .fast-offer {
-        margin: 0;
-        padding: 22px;
-        border: 1px solid rgba(30, 79, 135, 0.13);
-        background: #eef6fb;
-        text-align: center;
-      }
-
-      .fast-offer h2 {
-        margin-bottom: 14px;
-      }
-
-      .offer-subheading {
-        margin: 0 0 10px;
-        color: var(--navy);
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(1.28rem, 1.9vw, 1.55rem);
-        font-weight: 500;
-        line-height: 1.2;
-      }
-
-      .fast-offer p {
-        max-width: 42rem;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .fast-offer .cta-wrap {
-        margin-top: 22px;
-      }
-
-      .fast-price {
-        display: inline-block;
-        margin: 2px 0 14px;
-        padding: 8px 13px;
-        background: var(--gold-soft);
-        color: #775f17;
-        font-weight: 900;
-      }
-
-      .benefits-section {
-        margin-top: 8px;
-      }
-
-      .benefits-section h2 {
-        margin-bottom: 22px;
-      }
-
-      .benefits-list {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 14px;
-      }
-
-      .benefit-item {
-        position: relative;
-        padding: 18px 18px 18px 46px;
-        border: 1px solid rgba(30, 79, 135, 0.12);
-        border-radius: 14px;
-        background: linear-gradient(180deg, #ffffff 0%, #f6faff 100%);
-        box-shadow: 0 10px 24px rgba(7, 27, 63, 0.05);
-        color: var(--text);
-        font-size: 1.02rem;
-        line-height: 1.6;
-      }
-
-      .benefit-item::before {
-        content: "";
-        position: absolute;
-        left: 18px;
-        top: 22px;
-        width: 14px;
-        height: 14px;
-        border-radius: 999px;
-        background: linear-gradient(180deg, var(--blue) 0%, var(--blue-deep) 100%);
-        box-shadow: 0 0 0 4px rgba(30, 79, 135, 0.1);
-      }
-
-      .button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-width: min(100%, 360px);
-        min-height: 56px;
-        padding: 0 28px;
-        border-radius: 8px;
-        background: var(--blue);
-        color: #fff;
-        font-size: 1.08rem;
-        font-weight: 800;
-        text-decoration: none;
-        box-shadow: 0 18px 34px rgba(30, 79, 135, 0.24);
-      }
-
-      .button:hover,
-      .button:focus-visible {
-        background: var(--blue-deep);
-      }
-
-      .button[disabled] {
-        border: 0;
-        cursor: not-allowed;
-        opacity: 0.7;
-      }
-
-      .oto {
-        max-width: 690px;
-        margin: 0 auto;
-        padding: 0;
-        border: 0;
-        background: transparent;
-        box-shadow: none;
-      }
-
-      .oto-eyebrow {
-        margin: 0 0 15px;
-        color: var(--blue);
-        font-size: 0.78rem;
-        font-weight: 850;
-        letter-spacing: 0.11em;
-        text-transform: uppercase;
-      }
-
-      .oto h1 {
-        margin: 0;
-        color: var(--navy);
-        font-family: Georgia, "Times New Roman", serif;
-        max-width: 17ch;
-        font-size: clamp(2.2rem, 4.3vw, 3.05rem);
-        font-weight: 500;
-        line-height: 1.12;
-      }
-
-      .oto .intro {
-        margin-top: 22px;
-        color: var(--text);
-        font-size: 1.13rem;
-        line-height: 1.65;
-      }
-
-      .oto h2 {
-        margin: 39px 0 13px;
-        color: var(--navy);
-        font-size: clamp(1.45rem, 2.35vw, 1.72rem);
-      }
-
-      .oto p {
-        max-width: none;
-        margin: 0 0 15px;
-        color: #38475a;
-        line-height: 1.68;
-      }
-
-      .oto-list {
-        margin: 21px 0 0;
-        padding: 0;
-        list-style: none;
-      }
-
-      .oto-list li {
-        position: relative;
-        margin-top: 14px;
-        padding-left: 28px;
-        color: #38475a;
-        line-height: 1.6;
-      }
-
-      .oto-list li::before {
-        position: absolute;
-        top: 0;
-        left: 1px;
-        color: var(--blue);
-        content: "\2713";
-        font-weight: 900;
-      }
-
-      .oto-list strong {
-        color: var(--navy);
-      }
-
-      .checkout-box {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(280px, 0.9fr);
-        align-items: center;
-        gap: 28px;
-        margin-top: 42px;
-        padding: 28px 30px;
-        border: 1px solid var(--line);
-        border-radius: 10px;
-        background: #f8f6ef;
-      }
-
-      .oto-testimonials {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 18px;
-        margin: 22px 0 32px;
-      }
-
-      .oto-testimonial {
-        display: flex;
-        flex-direction: column;
-        margin: 0;
-        padding: 25px;
-        border: 1px solid var(--line);
-        border-radius: 0;
-        background: #f8f6ef;
-      }
-
-      .oto-testimonial blockquote {
-        margin: 0 0 18px;
-        color: var(--navy);
-        font-size: 1rem;
-        line-height: 1.65;
-      }
-
-      .oto-testimonial figcaption {
-        margin-top: auto;
-        color: var(--muted);
-        font-size: 0.92rem;
-      }
-
-      .oto-testimonial-stars {
-        margin-top: 12px;
-        color: #a8750d;
-        font-size: 1.2rem;
-        letter-spacing: 3px;
-      }
-
-      @media (max-width: 640px) {
-        .oto-testimonials { grid-template-columns: 1fr; }
-      }
-
-      .checkout-label {
-        display: block;
-        color: var(--blue-deep);
-        font-size: 0.78rem;
-        font-weight: 800;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-      }
-
-      .checkout-price {
-        display: block;
-        margin-top: 5px;
-        color: var(--navy);
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 3rem;
-        line-height: 1;
-      }
-
-      .checkout-box p {
-        max-width: 25rem;
-        margin: 7px 0 0;
-        color: var(--muted);
-        font-size: 0.82rem;
-      }
-
-      .checkout-actions {
-        min-width: 0;
-        text-align: center;
-      }
-
-      .checkout-actions .button {
-        width: 100%;
-        min-width: 0;
-      }
-
-      .checkout-actions .button[disabled] {
-        background: var(--blue);
-        color: #ffffff;
-        opacity: 1;
-      }
-
-      .checkout-actions .decline {
-        margin-top: 11px;
-      }
-
-      .guarantee {
-        margin-top: 10px;
-        color: var(--muted);
-        font-size: 0.92rem;
-        font-weight: 800;
-      }
-
-      .decline {
-        display: inline-block;
-        margin-top: 10px;
-        color: #6f7786;
-        font-size: 0.9rem;
-        text-underline-offset: 3px;
-      }
-
-      @media (max-width: 640px) {
-        main {
-          padding: 35px 0 46px;
-        }
-
-        article {
-          border: 0;
-          box-shadow: none;
-          padding: 26px 18px 34px;
-        }
-
-        .confirmation-inner {
-          align-items: flex-start;
-          padding: 20px 18px 22px;
-        }
-
-        .confirmation-icon {
-          width: 42px;
-          height: 42px;
-          font-size: 1.45rem;
-        }
-
-        .benefits-list {
-          grid-template-columns: 1fr;
-        }
-
-        .oto {
-          border: 0;
-          box-shadow: none;
-          padding: 0 18px;
-        }
-
-        .checkout-box {
-          grid-template-columns: 1fr;
-          gap: 20px;
-          padding: 24px 22px;
-        }
-
-        .checkout-actions {
-          min-width: 0;
-        }
+      :root { --ink:#243c35; --muted:#626961; --line:#deded3; --paper:#f5f3eb; --accent:#285c46; }
+      * { box-sizing:border-box; }
+      body { margin:0; background:var(--paper); color:var(--ink); font-family:"Segoe UI",Arial,sans-serif; font-size:18px; line-height:1.7; }
+      .confirmation { background:#e8ede4; border-bottom:1px solid #d8dfd2; padding:13px 20px; text-align:center; font-size:14px; color:#375642; }
+      .confirmation strong { font-weight:650; }
+      main { max-width:850px; margin:38px auto 65px; padding:0 20px; }
+      .oto { background:#fffefa; border:1px solid var(--line); border-radius:8px; padding:52px 64px; box-shadow:0 8px 32px #273a2810; }
+      h1,h2 { font-family:Georgia,"Times New Roman",serif; font-weight:400; letter-spacing:-.035em; line-height:1.13; }
+      h1 { font-size:clamp(34px,4.7vw,49px); margin:12px 0 24px; }
+      h2 { font-size:clamp(27px,3.2vw,34px); margin:40px 0 18px; }
+      p { margin:0 0 19px; }
+      strong { font-weight:650; }
+      .eyebrow { margin:0; color:#68735f; text-transform:uppercase; font-size:11px; font-weight:700; letter-spacing:.14em; }
+      .lead { font-size:20px; line-height:1.6; }
+      .opening { padding-bottom:12px; border-bottom:1px solid var(--line); }
+      .aside { border-left:3px solid #a7b895; padding:3px 0 3px 19px; margin:24px 0; color:#52624e; }
+      .example { margin:27px 0; padding:25px 27px; background:#eef2ea; border:1px solid #d7e0d0; border-radius:5px; }
+      .example h3 { margin:6px 0 20px; font-size:19px; line-height:1.4; }
+      .example ol { padding:0; list-style:none; counter-reset:steps; margin:0; }
+      .example li { counter-increment:steps; position:relative; padding:0 0 20px 36px; font-size:16px; line-height:1.65; }
+      .example li::before { content:counter(steps); position:absolute; left:0; top:2px; width:24px; height:24px; border:1px solid #b9c8ae; border-radius:50%; text-align:center; font-size:13px; color:var(--accent); }
+      .example li:last-child { padding-bottom:0; }
+      .example li strong { display:block; margin-bottom:4px; }
+      .example .result { margin:20px 0 0; border-top:1px solid #d0dbc7; padding-top:16px; font-size:16px; }
+      .uses { list-style:none; padding:0; margin:22px 0; }
+      .uses li { padding:15px 0; border-bottom:1px solid var(--line); font-size:17px; }
+      .uses li:first-child { border-top:1px solid var(--line); }
+      .uses strong { display:block; color:var(--ink); margin-bottom:3px; }
+      .offer { margin-top:36px; padding:28px; background:#f6f0df; border:1px solid #e6dbbc; border-radius:5px; text-align:center; }
+      .offer h2 { margin:0 0 12px; font-size:30px; }
+      .offer p { font-size:16px; line-height:1.6; }
+      .price { margin:20px 0 16px; color:var(--muted); font-size:14px; }
+      .price strong { font-family:Georgia,serif; font-size:45px; color:var(--ink); margin-right:7px; font-weight:400; }
+      .button { display:block; background:var(--accent); color:white; border-radius:5px; padding:17px 18px; font-size:17px; line-height:1.4; font-weight:650; text-decoration:none; }
+      .button:hover { background:#1d4835; }
+      a:focus-visible { outline:3px solid #ba8e32; outline-offset:4px; }
+      .offer .guarantee { margin:13px 0 0; font-size:13px; color:#636959; }
+      .decline { display:block; text-align:center; margin:19px auto 0; color:#687068; font-size:14px; text-underline-offset:4px; }
+      @media(max-width:600px) { body {font-size:17px;} main {margin:18px auto 30px;padding:0 12px;} .oto {padding:30px 22px;} .lead {font-size:18px;} .example,.offer {padding:21px 18px;} h2 {margin-top:32px;} }
+      /* Visual treatment adapted from the local Ice Vault OTO reference. */
+      :root { --ink:#152a45; --muted:#68707d; --line:#e6dcc5; --paper:#fdfcf8; --accent:#ad8534; }
+      body { color:#283447; }
+      .mast { max-width:1000px; margin:auto; padding:29px 32px; display:flex; justify-content:space-between; align-items:center; gap:25px; }
+      .brand { color:#152a45; font-size:18px; font-weight:800; letter-spacing:.09em; line-height:1.2; }
+      .brand span { display:block; margin-top:8px; color:#9c792d; font-size:9px; font-weight:500; letter-spacing:.16em; }
+      .mast-step { color:#858c98; font-size:10px; letter-spacing:.11em; text-align:right; }
+      .mast-step b { color:#152a45; }
+      .confirmation { background:#152a45; color:#e5c568; border:0; padding:14px 22px; font-size:13px; }
+      main { max-width:840px; margin:0 auto; padding:63px 45px 55px; }
+      .oto { background:transparent; border:0; border-radius:0; padding:0; box-shadow:none; }
+      .oto > p,.oto > h2,.uses { max-width:660px; margin-left:auto; margin-right:auto; }
+      p { margin-bottom:25px; line-height:1.85; }
+      h1 { font-size:clamp(38px,4.4vw,57px); line-height:1.18; font-weight:500; margin:0 0 30px; }
+      h1 em { color:#ad8534; }
+      h2 { font-size:33px; line-height:1.28; letter-spacing:-.022em; font-weight:500; margin-top:57px; margin-bottom:25px; }
+      .opening { text-align:center; border:0; padding:0; }
+      .opening::after { content:""; display:block; width:64px; height:2px; background:#d4a84b; margin:43px auto; }
+      .eyebrow { color:#9b7328; margin-bottom:25px; font-size:11px; letter-spacing:.16em; }
+      .lead { max-width:590px; margin:0 auto 23px; color:#68707d; font-size:18px; line-height:1.65; }
+      .opening > p:last-child { max-width:590px; margin:0 auto; font-size:17px; color:#68707d; }
+      .oto > .aside { padding:22px 0 22px 25px; border-left:3px solid #d4a84b; font-family:Georgia,serif; font-size:25px; line-height:1.5; color:#152a45; margin-top:34px; margin-bottom:34px; }
+      .example { max-width:660px; margin:35px auto; padding:27px 30px; border:1px solid #e6dcc5; border-radius:6px; background:#f7f3e9; }
+      .example .eyebrow { color:#94742f; font-size:10px; letter-spacing:.12em; }
+      .example li::before { background:#152a45; color:#e5c568; border-color:#152a45; }
+      .example .result { border-color:#dfd4ba; color:#69707a; }
+      .uses li { border-color:#dfd7c7; padding:18px 0; color:#68707d; }
+      .offer { max-width:708px; margin:55px auto 24px; padding:38px 30px 28px; background:#f5f0e4; border:1px solid #dfcfac; border-radius:9px; }
+      .offer h2 { font-size:34px; margin-bottom:25px; }
+      .offer-includes { max-width:440px; margin:20px auto 24px; padding-left:22px; text-align:left; font-size:16px; line-height:1.65; }
+      .offer-includes li { margin:7px 0; padding-left:3px; }
+      .offer-includes li::marker { color:#ad8534; }
+      .oto-testimonials { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; max-width:660px; margin:38px auto; }
+      .oto-testimonial { display:flex; flex-direction:column; margin:0; padding:24px; background:#f7f3e9; border:1px solid #e6dcc5; }
+      .oto-testimonial blockquote { margin:0 0 18px; font-size:16px; line-height:1.7; color:#283447; }
+      .oto-testimonial figcaption { margin-top:auto; font-size:14px; color:#68707d; }
+      .oto-testimonial-stars { margin-top:10px; color:#ad8534; letter-spacing:3px; font-size:18px; }
+      @media(max-width:600px) { .oto-testimonials { grid-template-columns:1fr; } }
+      .button { background:linear-gradient(180deg,#e5c568,#b68d3b); color:#152a45; border-radius:8px; padding:18px 25px; box-shadow:0 7px 23px #d4a84b1c; font-size:16px; }
+      .button:hover { background:linear-gradient(180deg,#efcf76,#c59a43); }
+      .price strong { color:#152a45; }
+      .decline { color:#68707d; font-size:13px; }
+      @media(max-width:600px) {
+        .mast { padding:23px; } .brand { font-size:15px; } .mast-step { font-size:8px; max-width:100px; }
+        .confirmation { font-size:11px; } main { padding:40px 24px; } .oto {padding:0;}
+        h1 {font-size:38px;} h2 {font-size:29px;margin-top:44px;} .lead {font-size:16px;}
+        .oto > .aside {font-size:23px;padding-left:20px;} .example {padding:23px;}
+        .offer {padding:27px 22px;} .offer h2 {font-size:29px;} .button {font-size:14px;padding:17px;}
       }
     </style>
   </head>
   <body>
-    <div class="confirmation">
-      <div class="confirmation-inner">
-        <div class="confirmation-icon" aria-hidden="true">&#10003;</div>
-        <div class="confirmation-copy">
-          <div class="confirmation-title">Purchase confirmed.</div>
-          <div class="confirmation-subtitle">Your AI Confidence Kit order is complete.</div>
-        </div>
-      </div>
-    </div>
+    <header class="mast"><div class="brand">AI CONFIDENCE KIT<span>AI FOR EVERYDAY LIFE.</span></div><div class="mast-step">YOUR GUIDE<br /><b>THE NEXT STEP</b></div></header>
+    <div class="confirmation"><strong>Your AI Confidence Kit order is complete.</strong> One optional extra before you go.</div>
     <main>
       <article class="oto">
-        <h1>Get to “I use AI all the time” faster — with 20 ready-made Everyday AI Shortcuts</h1>
-        <p>You’ve already taken the first step towards understanding AI.</p>
-        <p>Now make it useful in real life.</p>
-        <p><strong>Knowing AI can help is not the same as knowing exactly how to use it when something comes up.</strong></p>
-        <p>That’s what <strong>Everyday AI Shortcuts</strong> solves.</p>
-        <p>Instead of stopping to think:</p>
-        <p><em>Could AI help with this?</em><br /><em>What should I ask?</em><br /><em>What do I say next?</em></p>
-        <p>You simply find the situation you’re dealing with…</p>
-        <p><strong>and follow the ready-made conversation from start to finish.</strong></p>
-        <h2>20 complete ways to use AI in everyday life</h2>
-        <p>Each shortcut shows you:</p>
-        <ul class="oto-list"><li>when to use AI</li><li>exactly what to say first</li><li>what information to give it</li><li>what to ask next</li><li>what a useful finished result should look like</li></ul>
-        <p>So instead of just learning about AI…</p>
-        <p>you start having the moment that makes it really click:</p>
-        <blockquote><strong>“Hang on. I could use ChatGPT for this.”</strong></blockquote>
-        <h3>Use it to:</h3>
-        <p><strong>Understand a confusing letter</strong><br />Turn difficult information into plain English and work out what to do next.</p>
-        <p><strong>Write an awkward email</strong><br />Explain the situation, choose the tone and get a message you’re happy to send.</p>
-        <p><strong>Plan a trip</strong><br />Give AI your dates, budget and preferences and turn them into a personalised plan.</p>
-        <p><strong>Prepare for an appointment</strong><br />Organise your questions so you don’t forget what matters.</p>
-        <p><strong>Think through a difficult decision</strong><br />Lay out the options and see the trade-offs more clearly.</p>
-        <p><strong>Research something you’ve always wanted to understand</strong><br />Turn a broad question into a simple path to follow.</p>
-        <p>And that’s only a sample.</p>
-        <h2>The path is already there</h2>
-        <p><strong>1. Pick the situation.</strong><br /><strong>2. Copy the starting message.</strong><br /><strong>3. Add your own details.</strong><br /><strong>4. Follow the next questions.</strong><br /><strong>5. Finish with something useful.</strong></p>
-        <p>No complicated formulas.</p>
-        <p>No prompt engineering.</p>
-        <p>No starting from scratch.</p>
-        <p><strong>You simply follow along.</strong></p>
-        <h2>What people like you are saying</h2>
+        <div class="opening">
+          <p class="eyebrow">An easier way to put your guide to work</p>
+          <h1>Get the email written.<br />Get the plan sorted.<br /><em>Know what to ask, right through to the result.</em></h1>
+          <p class="lead">The best part of learning AI is the moment it takes something off your plate. Make that moment easier to reach.</p>
+          <p>Your guide shows you how to use AI. This makes it easier to reach for it when there’s something you want done.</p>
+        </div>
+
+        <h2>You probably have something in mind already.</h2>
+        <p>An email you keep putting off because you don’t know how to word it. A letter you’ve read twice and still don’t quite understand. A trip you’d like to plan, if it didn’t mean another evening of searching.</p>
+        <p>These are the moments when learning AI starts paying off. You bring it something that’s taking up your time—and come away with clearer words, a simpler explanation or a plan you can act on.</p>
+        <p><strong>Getting that first useful result is what makes you want to use it again.</strong></p>
+        <p>But between “ChatGPT could help with this” and a result you’re happy with, there are a few decisions to make. What do you tell it? What do you leave out? What do you ask when its first answer misses the point?</p>
+        <p>When you just want the job finished, having those next steps ready is a relief.</p>
+
+        <h2>What if you could just follow the conversation?</h2>
+        <p>You know which situation you’re dealing with. The starting words are there. So are the questions that help you improve the answer. You add your details and keep going.</p>
+        <p><strong>You can spend your attention on getting the job done.</strong> And when you need help with it again, you have a familiar place to start.</p>
+
+        <h2>Imagine finally sending that awkward email.</h2>
+        <p>You want to complain about something, but you don’t want to sound rude. You’ve started the message, changed it, deleted a sentence and left it for later.</p>
+        <p>Now imagine having the conversation laid out for you:</p>
+        <div class="example">
+          <p class="eyebrow">A short example · from situation to usable draft</p>
+          <h3>“I need to say this clearly, without sounding difficult.”</h3>
+          <ol>
+            <li><strong>Explain what happened.</strong>“Help me write an email about [the situation]. I want [the outcome]. Ask me for any details you need before drafting it.”</li>
+            <li><strong>Get the tone right.</strong>“Make it polite but firm. Keep the facts clear and say exactly what I’m asking them to do.”</li>
+            <li><strong>Make it sound like you.</strong>“Use simpler, more natural wording. Shorten it, but keep my main request and the important details.”</li>
+          </ol>
+          <p class="result">Read it, check the facts, make any final changes—and you have an email you’re ready to send.</p>
+        </div>
+        <p><strong>The email you’d been avoiding now has a clear way forward.</strong></p>
+
+        <h2>That’s what Everyday AI Shortcuts gives you.</h2>
+        <p><strong>A digital collection of 20 written task walkthroughs you follow alongside ChatGPT.</strong> Each one tells you what information to prepare, gives you the opening message to copy and shows you the follow-ups that move the task forward.</p>
+        <p>Your guide teaches you how to use AI. These let you put it into practice with instructions beside you. If you added the 100-message pack, those messages help you begin; the walkthroughs guide you through the rest of the job.</p>
+        <p>You finish with something useful, see how you got there, and have a way to do it again. <strong>That’s practice you can build confidence on.</strong></p>
+
+        <h2>Have that kind of help ready for the next thing, too.</h2>
+        <p>There are 20 complete shortcuts in the collection, organised by the situation you’re dealing with. Alongside writing difficult emails, you can:</p>
+        <ul class="uses">
+          <li><strong>Understand the letter that keeps getting put aside.</strong>Pull out the important points, ask what unfamiliar wording means and identify the questions you still need answered.</li>
+          <li><strong>Compare two options without going round in circles.</strong>Put the quotes or choices side by side, bring in your priorities and work through the trade-offs.</li>
+          <li><strong>Turn “we should go away” into a trip you can plan.</strong>Give your dates, budget and interests, then refine the suggestions into an itinerary you can check before booking.</li>
+          <li><strong>Remember what you wanted to ask at your appointment.</strong>Turn scattered concerns into a clear list, with the most important questions first.</li>
+          <li><strong>Get a project out of your head and into a plan.</strong>Break the idea into decisions, tasks and a manageable first step.</li>
+          <li><strong>Make progress on something you’ve always wanted to understand.</strong>Start with your question and follow a clearer route through the subject, one useful explanation at a time.</li>
+        </ul>
+        <p><strong>Pick the situation. Copy the starting message. Add your details. Follow the next questions.</strong></p>
+
+        <h2>Start with one task you’d be glad to get done.</h2>
+        <p>You don’t have to study the whole collection. Open the shortcut you need and keep it beside ChatGPT as you go.</p>
+        <p>Once you’ve used it to finish something that normally takes you too long, AI has a place in your day. The next time a similar task appears, you already have a way in.</p>
+        <p>That’s how “I should try using AI” starts becoming <strong>“I’ll use ChatGPT for this.”</strong></p>
+
         <div class="oto-testimonials">
           <figure class="oto-testimonial">
             <blockquote>“I understood the basics, but I still didn’t always know when to use ChatGPT. These shortcuts made that obvious.”</blockquote>
@@ -579,18 +188,22 @@
             <div class="oto-testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
           </figure>
         </div>
-        <h2>Add Everyday AI Shortcuts for just £17</h2>
-        <p>You’ve already decided you want AI to become something you can use confidently.</p>
-        <p><strong>This simply gets you there faster.</strong></p>
-        <p>Get:</p>
-        <ul class="oto-list"><li>20 complete Everyday AI Shortcuts</li><li>exact starting messages</li><li>suggested follow-up questions</li><li>clear finished outcomes</li><li>instant access</li></ul>
-        <div class="checkout-box">
-          <div><span class="checkout-label">One-time customer price</span><span class="checkout-price">£17</span><p>60-day money-back guarantee.</p></div>
-          <div class="checkout-actions">
-            <a class="button" href="https://buy.stripe.com/4gM5kC5YL3Wc5ao1XAbZe13">Yes — add Everyday AI Shortcuts for £17</a>
-            <a class="decline" href="OTO2.html">No, thanks. I’ll continue with the AI Confidence Kit on its own.</a>
-          </div>
+        <div class="offer">
+          <p class="eyebrow">Put your next useful result within reach</p>
+          <h2>Have the conversation ready.<br /><em>Get on with the task.</em></h2>
+          <p>Get the digital collection of <strong>20 written task walkthroughs</strong> to follow alongside ChatGPT. Every walkthrough includes:</p>
+          <ul class="offer-includes">
+            <li>Exact opening messages to copy</li>
+            <li>The details to add from your own situation</li>
+            <li>Follow-up questions to improve the answer</li>
+            <li>A clear result to work towards</li>
+          </ul>
+          <p><strong>Use AI to get a real task done, with guidance at each step.</strong> Start with the job you’ve been putting off, then return to the collection whenever you need it.</p>
+          <div class="price"><strong>£17</strong> one-time payment · instant digital access</div>
+          <a class="button" href="https://buy.stripe.com/4gM5kC5YL3Wc5ao1XAbZe13">Yes — give me the Everyday AI Shortcuts for £17</a>
+          <p class="guarantee">Try them on your own everyday tasks. If they don’t make AI easier to use, ask for a refund within 60 days.</p>
         </div>
+        <a class="decline" href="OTO2.html">No thanks, I’ll continue without the shortcuts.</a>
       </article>
     </main>
   </body>
