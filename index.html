@@ -2986,16 +2986,6 @@
       }
 
       function goToCheckout(url, value) {
-        try {
-          trackMetaEvent("InitiateCheckout", {
-            content_name: "AI Confidence Kit",
-            currency: "GBP",
-            value: value,
-          });
-        } catch (error) {
-          // Analytics must never prevent a customer from reaching checkout.
-        }
-
         window.location.href = url;
       }
 
@@ -3023,6 +3013,21 @@
       }
 
       document.addEventListener("click", function (event) {
+        var originalCta = event.target.closest("[data-open-checkout], .quick-offer-buy [data-direct-checkout], .quick-offer-buy [data-checkout-link], .final-cta .button");
+        if (originalCta && !originalCta.closest("dialog")) {
+          var offer = originalCta.closest(".quick-offer-buy");
+          var selectedBump = offer && offer.querySelector("[data-bump-checkbox]");
+          var value = originalCta.matches("[data-direct-checkout]") && selectedBump && selectedBump.checked ? 26.5 : 19;
+          try {
+            trackMetaEvent("InitiateCheckout", {
+              content_name: "AI Confidence Kit",
+              currency: "GBP",
+              value: value,
+            });
+          } catch (error) {
+            // Tracking failures must not interrupt the CTA action.
+          }
+        }
         var checkout = event.target.closest("[data-direct-checkout]");
         var checkoutLink = event.target.closest("[data-checkout-link]");
         if (checkoutLink) {
