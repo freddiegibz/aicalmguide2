@@ -3013,9 +3013,8 @@
       var guideWithMessagesUrl = "https://buy.stripe.com/28EeVc72PfEUbyM9q2bZe0b";
 
       function updateInlineCheckout() {
-        var checkbox = document.querySelector("[data-bump-checkbox]");
-        if (!checkbox) return;
         document.querySelectorAll("[data-direct-checkout]").forEach(function (button) {
+          var checkbox = button.closest(".quick-offer-buy, dialog").querySelector("[data-bump-checkbox]");
           button.href = checkbox.checked ? guideWithMessagesUrl : guideCheckoutUrl;
           button.textContent = checkbox.checked
             ? "Get the guide + 100 messages - £26.50"
@@ -3037,7 +3036,7 @@
 
         if (checkout) {
           event.preventDefault();
-          var checkbox = document.querySelector("[data-bump-checkbox]");
+          var checkbox = checkout.closest(".quick-offer-buy, dialog").querySelector("[data-bump-checkbox]");
           var includesMessages = checkbox && checkbox.checked;
           goToCheckout(includesMessages ? guideWithMessagesUrl : guideCheckoutUrl, includesMessages ? 26.5 : 19);
           return;
@@ -3046,9 +3045,6 @@
 
       document.addEventListener("change", function (event) {
         if (event.target.matches("[data-bump-checkbox]")) {
-          document.querySelectorAll("[data-bump-checkbox]").forEach(function (checkbox) {
-            checkbox.checked = event.target.checked;
-          });
           updateInlineCheckout();
         }
       });
@@ -3057,6 +3053,8 @@
         var dialog = document.querySelector("#checkout-dialog");
         document.querySelector("[data-open-checkout]").addEventListener("click", function (event) {
           event.preventDefault();
+          dialog.querySelector("[data-bump-checkbox]").checked = false;
+          updateInlineCheckout();
           dialog.showModal();
         });
         dialog.querySelector(".bump-x").addEventListener("click", function () { dialog.close(); });
@@ -3330,7 +3328,7 @@
       <h2 id="bump-title">Would it help to have more examples ready when you need them?</h2>
       <p>Add 100 more ready-to-use messages for everyday situations:</p>
       <label class="bump-option">
-        <input type="checkbox" data-bump-checkbox checked />
+        <input type="checkbox" data-bump-checkbox />
         <span>
           <strong>Add the 100-message pack for &pound;7.50</strong>
           <span>Writing &middot; planning &middot; decisions &middot; shopping &middot; appointments &middot; confusing information</span>
@@ -3338,7 +3336,7 @@
         </span>
       </label>
       <div class="bump-actions">
-        <button class="bump-continue" type="button" data-direct-checkout>Get the guide + 100 messages - &pound;26.50</button>
+        <button class="bump-continue" type="button" data-direct-checkout>Get the AI Confidence Kit - &pound;19</button>
         <button class="bump-close" type="button">No thanks, get the guide for &pound;19</button>
       </div>
     </dialog>
