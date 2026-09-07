@@ -2937,9 +2937,9 @@
         text-decoration: underline;
       }
       .checkout-dialog {
-        width: min(520px, calc(100% - 32px));
+        width: min(440px, calc(100% - 32px));
         max-height: calc(100dvh - 32px);
-        padding: 24px;
+        padding: 42px 24px 22px;
         border: 0;
         border-radius: 14px;
         background: #fffdf9;
@@ -2947,6 +2947,17 @@
       }
 
       .checkout-dialog::backdrop { background: rgba(7, 27, 63, 0.65); }
+      .checkout-dialog::before { display: none; }
+      .checkout-dialog h2 { margin: 0; font-size: clamp(1.55rem, 5vw, 1.9rem); line-height: 1.15; }
+      .checkout-dialog .bump-actions a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px;
+        text-align: center;
+        line-height: 1.35;
+      }
+      .checkout-dialog .bump-continue { text-decoration: none; box-shadow: none; }
       .checkout-dialog .quick-offer-buy { padding-top: 58px; }
       .checkout-dialog-close {
         position: absolute;
@@ -3058,12 +3069,9 @@
         var dialog = document.querySelector("#checkout-dialog");
         document.querySelector("[data-open-checkout]").addEventListener("click", function (event) {
           event.preventDefault();
-          dialog.querySelector("[data-bump-checkbox]").checked = false;
-          updateInlineCheckout();
           dialog.showModal();
         });
         dialog.querySelector(".bump-x").addEventListener("click", function () { dialog.close(); });
-        dialog.querySelector(".bump-close").addEventListener("click", function () { goToCheckout(guideCheckoutUrl, 19); });
         dialog.addEventListener("click", function (event) {
           if (event.target === dialog) {
             var bounds = dialog.getBoundingClientRect();
@@ -3329,20 +3337,11 @@
     </main>
     <dialog class="checkout-dialog bump-dialog" id="checkout-dialog" aria-labelledby="bump-title">
       <button class="bump-x" type="button" autofocus aria-label="Close">&times;</button>
-      <div class="bump-topline">Optional message pack</div>
-      <h2 id="bump-title">Would it help to have more examples ready when you need them?</h2>
-      <p>Add 100 more ready-to-use messages for everyday situations:</p>
-      <label class="bump-option">
-        <input type="checkbox" data-bump-checkbox />
-        <span>
-          <strong>Add the 100-message pack for &pound;7.50</strong>
-          <span>Writing &middot; planning &middot; decisions &middot; shopping &middot; appointments &middot; confusing information</span>
-          <span class="bump-price"><b>&pound;26.50 total</b><em>Guide + 100-message pack</em></span>
-        </span>
-      </label>
+      <h2 id="bump-title">Want 100 ready-to-use AI messages too?</h2>
+      <p>Get the words for emails, planning, shopping, appointments and more&mdash;ready to copy into ChatGPT.</p>
       <div class="bump-actions">
-        <button class="bump-continue" type="button" data-direct-checkout>Get the AI Confidence Kit - &pound;19</button>
-        <button class="bump-close" type="button">No thanks, get the guide for &pound;19</button>
+        <a class="bump-continue" href="https://buy.stripe.com/28EeVc72PfEUbyM9q2bZe0b">Add the messages &mdash; &pound;26.50 total</a>
+        <a class="bump-close" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00">Just the guide &mdash; &pound;19</a>
       </div>
     </dialog>
   </body>
