@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -22,60 +22,6 @@
     />
     <!-- Meta Pixel Code -->
     <script>
-      function readCookie(name) {
-        var prefix = name + "=";
-        var cookies = document.cookie ? document.cookie.split(";") : [];
-
-        for (var index = 0; index < cookies.length; index += 1) {
-          var cookie = cookies[index].trim();
-          if (cookie.indexOf(prefix) === 0) {
-            return decodeURIComponent(cookie.slice(prefix.length));
-          }
-        }
-
-        return "";
-      }
-
-      function saveMetaClickId(value) {
-        try {
-          window.sessionStorage.setItem("aiMetaFbc", value);
-        } catch (error) {}
-
-        var secure = window.location.protocol === "https:" ? "; Secure" : "";
-        document.cookie = "_fbc=" + encodeURIComponent(value) + "; Path=/; Max-Age=7776000; SameSite=Lax" + secure;
-      }
-
-      function getMetaClickId() {
-        var fbclid = new URLSearchParams(window.location.search).get("fbclid");
-        var fbc = "";
-
-        // A click ID on the current URL belongs to the current ad visit and
-        // must take priority over any click ID saved by an earlier visit.
-        if (fbclid) {
-          fbc = readCookie("_fbc");
-          if (fbc && fbc.slice(-(fbclid.length + 1)) === "." + fbclid) return fbc;
-
-          try {
-            fbc = window.sessionStorage.getItem("aiMetaFbc") || "";
-          } catch (error) {}
-          if (fbc && fbc.slice(-(fbclid.length + 1)) === "." + fbclid) return fbc;
-
-          fbc = "fb.1." + Date.now() + "." + fbclid;
-          saveMetaClickId(fbc);
-          return fbc;
-        }
-
-        fbc = readCookie("_fbc");
-        if (fbc) return fbc;
-
-        try {
-          fbc = window.sessionStorage.getItem("aiMetaFbc") || "";
-        } catch (error) {}
-
-        if (fbc) return fbc;
-        return "";
-      }
-
       !function(f,b,e,v,n,t,s)
       {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
       n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -91,85 +37,9 @@
 
         return prefix + "_" + randomPart;
       };
-
-      function getMetaVisitorId() {
-        var storageKey = "aiMetaVisitorId";
-        var visitorId = "";
-
-        try {
-          visitorId = window.localStorage.getItem(storageKey) || "";
-        } catch (error) {}
-
-        if (!visitorId) {
-          visitorId = window.createMetaEventId("visitor");
-
-          try {
-            window.localStorage.setItem(storageKey, visitorId);
-          } catch (error) {}
-        }
-
-        return visitorId;
-      }
-
-      function sendMetaServerEvent(eventName, eventId, customData) {
-        var payload = {
-          event_name: eventName,
-          event_id: eventId,
-          event_source_url: window.location.href,
-          external_id: getMetaVisitorId(),
-          fbp: readCookie("_fbp"),
-          fbc: getMetaClickId(),
-        };
-
-        if (customData && customData.value) payload.value = customData.value;
-
-        var body = JSON.stringify(payload);
-
-        if (navigator.sendBeacon) {
-          var blob = new Blob([body], { type: "application/json" });
-          if (navigator.sendBeacon("/api/meta-events", blob)) return;
-        }
-
-        if (window.fetch) {
-          window.fetch("/api/meta-events", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: body,
-            keepalive: true,
-          }).catch(function () {});
-        }
-      }
-
-      // Make the Meta click ID available before the browser PageView is queued.
-      // This also gives the paired CAPI PageView the best chance of carrying fbp + fbc.
-      getMetaClickId();
       window.metaPageViewEventId = window.createMetaEventId("pageview");
       fbq('init', '1988137388462157');
       fbq('track', 'PageView', {}, { eventID: window.metaPageViewEventId });
-
-      (function sendEarlyServerPageView() {
-        var sent = false;
-        var deadline = Date.now() + 1200;
-
-        function send() {
-          if (sent) return;
-          sent = true;
-          sendMetaServerEvent("PageView", window.metaPageViewEventId);
-        }
-
-        function waitForBrowserId() {
-          if (readCookie("_fbp") || Date.now() >= deadline) {
-            send();
-            return;
-          }
-
-          window.setTimeout(waitForBrowserId, 120);
-        }
-
-        window.metaPageViewServerSent = send;
-        window.addEventListener("pagehide", send, { once: true });
-        waitForBrowserId();
-      })();
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1988137388462157&ev=PageView&noscript=1"
@@ -452,65 +322,190 @@
         line-height: 1.5;
       }
 
-      .inline-bump {
+      .bump-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 50;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 18px;
+        padding-top: 72px;
+        background: rgba(7, 27, 63, 0.54);
+      }
+
+      .bump-modal.is-open {
+        display: flex;
+        align-items: flex-end;
+      }
+
+      .bump-dialog {
+        position: relative;
+        width: min(100%, 520px);
+        max-height: calc(100vh - 36px);
+        overflow-y: auto;
+        padding: 24px;
+        border-radius: 16px 16px 12px 12px;
+        background: #fffdf9;
+        box-shadow: 0 28px 80px rgba(7, 27, 63, 0.28);
+      }
+
+      .bump-dialog::before {
+        content: "";
+        display: block;
+        width: 46px;
+        height: 5px;
+        margin: 0 auto 16px;
+        border-radius: 999px;
+        background: rgba(23, 55, 97, 0.18);
+      }
+
+      .bump-x {
+        position: absolute;
+        top: 14px;
+        right: 14px;
         display: grid;
-        grid-template-columns: 24px 1fr;
-        gap: 13px;
-        width: 100%;
-        margin: 22px 0 20px;
-        padding: 17px;
-        border: 2px solid rgba(255, 255, 255, 0.32);
-        border-radius: 10px;
-        background: rgba(255, 255, 255, 0.1);
-        text-align: left;
+        width: 38px;
+        height: 38px;
+        place-items: center;
+        border: 0;
+        border-radius: 999px;
+        background: rgba(23, 55, 97, 0.08);
+        color: var(--navy);
+        font: inherit;
+        font-size: 1.45rem;
+        line-height: 1;
         cursor: pointer;
       }
 
-      .inline-bump input {
+      .bump-x:hover {
+        background: rgba(23, 55, 97, 0.13);
+      }
+
+      .bump-topline {
+        display: inline-flex;
+        align-items: center;
+        min-height: 30px;
+        padding: 0 11px;
+        border-radius: 999px;
+        background: #fff0bc;
+        color: #765400;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .bump-dialog h2 {
+        margin: 10px 0 0;
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(1.8rem, 4vw, 2.35rem);
+        font-weight: 500;
+        line-height: 1.08;
+      }
+
+      .bump-dialog p {
+        margin: 12px 0 0;
+        color: var(--text);
+        font-size: 1rem;
+        line-height: 1.55;
+      }
+
+      .bump-option {
+        display: grid;
+        grid-template-columns: 24px 1fr;
+        gap: 13px;
+        margin-top: 18px;
+        padding: 16px;
+        border: 2px solid rgba(30, 79, 135, 0.18);
+        border-radius: 10px;
+        background: #ffffff;
+        cursor: pointer;
+      }
+
+      .bump-option input {
         width: 20px;
         height: 20px;
         margin-top: 2px;
-        accent-color: #f0c66c;
+        accent-color: var(--blue);
       }
 
-      .inline-bump strong {
+      .bump-option strong {
         display: block;
-        color: #ffffff;
-        font-size: 0.98rem;
-        line-height: 1.35;
+        color: var(--navy);
+        font-size: 1rem;
       }
 
-      .inline-bump-copy > span {
+      .bump-option span {
         display: block;
-        margin-top: 7px;
-        color: #dbe7f0;
-        font-size: 0.84rem;
+        margin-top: 5px;
+        color: var(--muted);
+        font-size: 0.95rem;
         line-height: 1.45;
       }
 
-      .inline-bump .bump-price {
+      .bump-option .bump-price {
         display: flex;
         align-items: baseline;
         flex-wrap: wrap;
         gap: 7px;
-        margin-top: 11px;
-        padding-top: 10px;
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        margin-top: 12px;
+        padding-top: 11px;
+        border-top: 1px solid rgba(30, 79, 135, 0.14);
+      }
+
+      .bump-price s {
+        color: #8a94a5;
+        font-size: 0.92rem;
       }
 
       .bump-price b {
-        color: #ffffff;
-        font-size: 1rem;
+        color: var(--navy);
+        font-size: 1.22rem;
       }
 
       .bump-price em {
         padding: 3px 7px;
         border-radius: 999px;
-        background: #f0c66c;
-        color: var(--navy);
-        font-size: 0.72rem;
+        background: #e7f5ec;
+        color: #17673e;
+        font-size: 0.78rem;
         font-style: normal;
         font-weight: 850;
+      }
+
+      .bump-actions {
+        display: grid;
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      .bump-continue,
+      .bump-close {
+        min-height: 54px;
+        border-radius: 8px;
+        font: inherit;
+        font-weight: 900;
+        cursor: pointer;
+      }
+
+      .bump-continue {
+        border: 0;
+        background: var(--blue);
+        color: #ffffff;
+        box-shadow: 0 14px 26px rgba(30, 79, 135, 0.2);
+      }
+
+      .bump-close {
+        border: 0;
+        background: transparent;
+        color: var(--muted);
+        text-decoration: underline;
+      }
+
+      body.bump-locked {
+        overflow: hidden;
       }
       .learn {
         background: var(--section-cream);
@@ -649,15 +644,6 @@
         color: var(--text);
         font-size: 1.1rem;
         line-height: 1.68;
-      }
-
-      .learn-outro {
-        max-width: 58rem;
-        margin: 28px 0 0;
-        color: var(--navy);
-        font-size: 1.1rem;
-        font-weight: 800;
-        line-height: 1.65;
       }
 
       .contents-grid {
@@ -1026,19 +1012,6 @@
         line-height: 1.45;
         text-align: center;
       }
-
-      .quick-guide-only {
-        display: block;
-        padding: 14px 8px 4px;
-        color: #e9eff7;
-        font-size: 0.95rem;
-        line-height: 1.5;
-        text-align: center;
-        text-decoration: underline;
-        text-underline-offset: 3px;
-      }
-
-      .quick-guide-only:hover { color: #ffffff; }
 
       @media (max-width: 760px) {
         .top-banner-inner {
@@ -1587,7 +1560,7 @@
         font-weight: 500;
         font-size: clamp(2rem, 3.4vw, 3rem);
         line-height: 1.06;
-        max-width: 18ch;
+        max-width: 12ch;
       }
 
       .story-kicker {
@@ -1621,133 +1594,6 @@
 
       .story-copy strong {
         color: var(--navy);
-      }
-
-      .catch-up {
-        background: var(--section-cream);
-        border-bottom: 1px solid rgba(23, 55, 97, 0.1);
-      }
-
-      .catch-up-inner {
-        width: min(100%, 1040px);
-        margin: 0 auto;
-        padding: 72px 32px 78px;
-      }
-
-      .catch-up-kicker {
-        margin: 0 0 12px;
-        color: var(--blue-dark);
-        font-size: 0.78rem;
-        font-weight: 800;
-        letter-spacing: 0.13em;
-        text-align: center;
-        text-transform: uppercase;
-      }
-
-      .catch-up-heading {
-        margin: 0;
-        color: var(--navy);
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(2rem, 3.4vw, 3rem);
-        font-weight: 500;
-        line-height: 1.08;
-        text-align: center;
-      }
-
-      .catch-up-list {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 14px 34px;
-        margin: 34px auto 0;
-        padding: 0;
-        max-width: 860px;
-        list-style: none;
-      }
-
-      .catch-up-list li {
-        position: relative;
-        padding: 17px 20px 17px 48px;
-        border: 1px solid rgba(23, 55, 97, 0.12);
-        border-radius: 9px;
-        background: var(--cream-card);
-        color: var(--navy);
-        font-size: 1rem;
-        font-weight: 700;
-        line-height: 1.48;
-      }
-
-      .catch-up-list li::before {
-        position: absolute;
-        top: 17px;
-        left: 19px;
-        color: #1f8a58;
-        content: "\2713";
-        font-weight: 900;
-      }
-
-      .catch-up-mechanism {
-        max-width: 820px;
-        margin: 28px auto 0;
-        color: var(--muted);
-        font-size: 1.02rem;
-        line-height: 1.7;
-        text-align: center;
-      }
-
-      .catch-up-copy {
-        max-width: 720px;
-        margin: 28px auto 0;
-        color: var(--text);
-        font-size: 1.05rem;
-        line-height: 1.72;
-        text-align: center;
-      }
-
-      .catch-up-copy p {
-        margin: 0 0 17px;
-      }
-
-      .catch-up-copy strong {
-        color: var(--navy);
-      }
-
-      .clear-start-points {
-        max-width: 780px;
-        margin: 30px auto 0;
-      }
-
-      .clear-start-points > div {
-        padding: 20px 0;
-        border-top: 1px solid rgba(23, 55, 97, 0.14);
-      }
-
-      .clear-start-points dt {
-        color: var(--navy);
-        font-size: 1.15rem;
-        font-weight: 800;
-      }
-
-      .clear-start-points dd {
-        margin: 8px 0 0;
-        color: var(--text);
-        font-size: 1.05rem;
-        line-height: 1.65;
-      }
-
-      .catch-up .early-testimonial {
-        max-width: 780px;
-        margin: 30px auto 0;
-      }
-
-      @media (max-width: 680px) {
-        .catch-up-inner {
-          padding: 58px 22px 64px;
-        }
-
-        .catch-up-list {
-          grid-template-columns: 1fr;
-          gap: 11px;
-        }
       }
 
       .clarity {
@@ -2800,205 +2646,6 @@
 
       }
 
-      .bump-dialog {
-        position: relative;
-        width: min(100%, 520px);
-        max-height: calc(100vh - 36px);
-        overflow-y: auto;
-        padding: 24px;
-        border-radius: 16px 16px 12px 12px;
-        background: #fffdf9;
-        box-shadow: 0 28px 80px rgba(7, 27, 63, 0.28);
-      }
-
-      .bump-dialog::before {
-        content: "";
-        display: block;
-        width: 46px;
-        height: 5px;
-        margin: 0 auto 16px;
-        border-radius: 999px;
-        background: rgba(23, 55, 97, 0.18);
-      }
-
-      .bump-x {
-        position: absolute;
-        top: 14px;
-        right: 14px;
-        display: grid;
-        width: 38px;
-        height: 38px;
-        place-items: center;
-        border: 0;
-        border-radius: 999px;
-        background: rgba(23, 55, 97, 0.08);
-        color: var(--navy);
-        font: inherit;
-        font-size: 1.45rem;
-        line-height: 1;
-        cursor: pointer;
-      }
-
-      .bump-x:hover {
-        background: rgba(23, 55, 97, 0.13);
-      }
-
-      .bump-topline {
-        display: inline-flex;
-        align-items: center;
-        min-height: 30px;
-        padding: 0 11px;
-        border-radius: 999px;
-        background: #fff0bc;
-        color: #765400;
-        font-size: 0.78rem;
-        font-weight: 800;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-      }
-
-      .bump-dialog h2 {
-        margin: 10px 0 0;
-        color: var(--navy);
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(1.8rem, 4vw, 2.35rem);
-        font-weight: 500;
-        line-height: 1.08;
-      }
-
-      .bump-dialog p {
-        margin: 12px 0 0;
-        color: var(--text);
-        font-size: 1rem;
-        line-height: 1.55;
-      }
-
-      .bump-option {
-        display: grid;
-        grid-template-columns: 24px 1fr;
-        gap: 13px;
-        margin-top: 18px;
-        padding: 16px;
-        border: 2px solid rgba(30, 79, 135, 0.18);
-        border-radius: 10px;
-        background: #ffffff;
-        cursor: pointer;
-      }
-
-      .bump-option input {
-        width: 20px;
-        height: 20px;
-        margin-top: 2px;
-        accent-color: var(--blue);
-      }
-
-      .bump-option strong {
-        display: block;
-        color: var(--navy);
-        font-size: 1rem;
-      }
-
-      .bump-option span {
-        display: block;
-        margin-top: 5px;
-        color: var(--muted);
-        font-size: 0.95rem;
-        line-height: 1.45;
-      }
-
-      .bump-option .bump-price {
-        display: flex;
-        align-items: baseline;
-        flex-wrap: wrap;
-        gap: 7px;
-        margin-top: 12px;
-        padding-top: 11px;
-        border-top: 1px solid rgba(30, 79, 135, 0.14);
-      }
-
-      .bump-price s {
-        color: #8a94a5;
-        font-size: 0.92rem;
-      }
-
-      .bump-price b {
-        color: var(--navy);
-        font-size: 1.22rem;
-      }
-
-      .bump-price em {
-        padding: 3px 7px;
-        border-radius: 999px;
-        background: #e7f5ec;
-        color: #17673e;
-        font-size: 0.78rem;
-        font-style: normal;
-        font-weight: 850;
-      }
-
-      .bump-actions {
-        display: grid;
-        gap: 10px;
-        margin-top: 18px;
-      }
-
-      .bump-continue,
-      .bump-close {
-        min-height: 54px;
-        border-radius: 8px;
-        font: inherit;
-        font-weight: 900;
-        cursor: pointer;
-      }
-
-      .bump-continue {
-        border: 0;
-        background: var(--blue);
-        color: #ffffff;
-        box-shadow: 0 14px 26px rgba(30, 79, 135, 0.2);
-      }
-
-      .bump-close {
-        border: 0;
-        background: transparent;
-        color: var(--muted);
-        text-decoration: underline;
-      }
-      .checkout-dialog {
-        width: min(440px, calc(100% - 32px));
-        max-height: calc(100dvh - 32px);
-        padding: 42px 24px 22px;
-        border: 0;
-        border-radius: 14px;
-        background: #fffdf9;
-        color: var(--navy);
-      }
-
-      .checkout-dialog::backdrop { background: rgba(7, 27, 63, 0.65); }
-      .checkout-dialog::before { display: none; }
-      .checkout-dialog h2 { margin: 0; font-size: clamp(1.55rem, 5vw, 1.9rem); line-height: 1.15; }
-      .checkout-dialog .bump-actions a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 12px;
-        text-align: center;
-        line-height: 1.35;
-      }
-      .checkout-dialog .bump-continue { text-decoration: none; box-shadow: none; }
-      .checkout-dialog .quick-offer-buy { padding-top: 58px; }
-      .checkout-dialog-close {
-        position: absolute;
-        top: 12px;
-        right: 16px;
-        border: 0;
-        background: transparent;
-        color: white;
-        font: inherit;
-        cursor: pointer;
-        padding: 8px;
-      }
-
       @media (prefers-reduced-motion: reduce) {
         *,
         *::before,
@@ -3013,6 +2660,90 @@
   </head>
   <body>
     <script>
+      function readCookie(name) {
+        var prefix = name + "=";
+        var cookies = document.cookie ? document.cookie.split(";") : [];
+
+        for (var index = 0; index < cookies.length; index += 1) {
+          var cookie = cookies[index].trim();
+          if (cookie.indexOf(prefix) === 0) {
+            return decodeURIComponent(cookie.slice(prefix.length));
+          }
+        }
+
+        return "";
+      }
+
+      function getMetaVisitorId() {
+        var storageKey = "aiMetaVisitorId";
+        var visitorId = "";
+
+        try {
+          visitorId = window.localStorage.getItem(storageKey) || "";
+        } catch (error) {}
+
+        if (!visitorId) {
+          visitorId = window.createMetaEventId("visitor");
+
+          try {
+            window.localStorage.setItem(storageKey, visitorId);
+          } catch (error) {}
+        }
+
+        return visitorId;
+      }
+
+      function getMetaClickId() {
+        var fbc = readCookie("_fbc");
+        if (fbc) return fbc;
+
+        try {
+          fbc = window.sessionStorage.getItem("aiMetaFbc") || "";
+        } catch (error) {}
+
+        if (fbc) return fbc;
+
+        var fbclid = new URLSearchParams(window.location.search).get("fbclid");
+        if (!fbclid) return "";
+
+        fbc = "fb.1." + Date.now() + "." + fbclid;
+
+        try {
+          window.sessionStorage.setItem("aiMetaFbc", fbc);
+        } catch (error) {}
+
+        return fbc;
+      }
+
+      function sendMetaServerEvent(eventName, eventId, customData) {
+        var payload = {
+          event_name: eventName,
+          event_id: eventId,
+          event_source_url: window.location.href,
+          external_id: getMetaVisitorId(),
+          fbp: readCookie("_fbp"),
+          fbc: getMetaClickId(),
+        };
+
+        if (customData && customData.value) payload.value = customData.value;
+
+        var body = JSON.stringify(payload);
+
+        if (navigator.sendBeacon) {
+          var blob = new Blob([body], { type: "application/json" });
+          if (navigator.sendBeacon("/api/meta-events", blob)) return;
+        }
+
+        if (window.fetch) {
+          window.fetch("/api/meta-events", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: body,
+            keepalive: true,
+          }).catch(function () {});
+        }
+      }
+
       function trackMetaEvent(eventName, customData) {
         var eventId = window.createMetaEventId(eventName.toLowerCase());
         var eventData = customData || {};
@@ -3024,7 +2755,34 @@
         sendMetaServerEvent(eventName, eventId, eventData);
       }
 
-      function goToCheckout(url, value) {
+      async function goToCheckout(url, value) {
+        trackMetaEvent("InitiateCheckout", {
+          content_name: "AI Confidence Kit",
+          currency: "GBP",
+          value: value,
+        });
+
+        try {
+          var response = await window.fetch("/api/meta-checkout-context", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              event_source_url: window.location.href,
+              external_id: getMetaVisitorId(),
+              fbp: readCookie("_fbp"),
+              fbc: getMetaClickId(),
+            }),
+          });
+          var result = await response.json();
+
+          if (response.ok && result.client_reference_id) {
+            var checkoutUrl = new URL(url);
+            checkoutUrl.searchParams.set("client_reference_id", result.client_reference_id);
+            window.location.href = checkoutUrl.toString();
+            return;
+          }
+        } catch (error) {}
+
         window.location.href = url;
       }
 
@@ -3038,36 +2796,54 @@
         }
       });
 
+      window.addEventListener("load", function () {
+        sendMetaServerEvent("PageView", window.metaPageViewEventId);
+      }, { once: true });
+
       var guideCheckoutUrl = "https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00";
       var guideWithMessagesUrl = "https://buy.stripe.com/28EeVc72PfEUbyM9q2bZe0b";
 
-      function updateInlineCheckout() {
-        document.querySelectorAll("[data-direct-checkout]").forEach(function (button) {
-          var checkbox = button.closest(".quick-offer-buy, dialog").querySelector("[data-bump-checkbox]");
-          button.href = checkbox.checked ? guideWithMessagesUrl : guideCheckoutUrl;
-          button.textContent = checkbox.checked
-            ? "Get the guide + 100 messages - £26.50"
-            : "Get the AI Confidence Kit - £19";
-        });
+      function updateBumpButton() {
+        var checkbox = document.querySelector("[data-bump-checkbox]");
+        var button = document.querySelector("[data-bump-continue]");
+        if (!checkbox || !button) return;
+
+        button.textContent = checkbox.checked
+          ? "Get the guide + messages - £26.50"
+          : "Get the guide - £19";
+      }
+
+      function openBumpModal() {
+        var modal = document.querySelector("[data-bump-modal]");
+        var checkbox = document.querySelector("[data-bump-checkbox]");
+        if (!modal || !checkbox) {
+          goToCheckout(guideCheckoutUrl, 9.5);
+          return;
+        }
+
+        checkbox.checked = false;
+        updateBumpButton();
+        modal.classList.add("is-open");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.classList.add("bump-locked");
+      }
+
+      function closeBumpModal() {
+        var modal = document.querySelector("[data-bump-modal]");
+        if (!modal) return;
+
+        modal.classList.remove("is-open");
+        modal.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("bump-locked");
       }
 
       document.addEventListener("click", function (event) {
-        var originalCta = event.target.closest("[data-open-checkout], .quick-offer-buy [data-direct-checkout], .quick-offer-buy [data-checkout-link], .final-cta .button");
-        if (originalCta && !originalCta.closest("dialog")) {
-          var offer = originalCta.closest(".quick-offer-buy");
-          var selectedBump = offer && offer.querySelector("[data-bump-checkbox]");
-          var value = Number(originalCta.getAttribute("data-checkout-value")) || 19;
-          try {
-            trackMetaEvent("InitiateCheckout", {
-              content_name: "AI Confidence Kit",
-              currency: "GBP",
-              value: value,
-            });
-          } catch (error) {
-            // Tracking failures must not interrupt the CTA action.
-          }
-        }
         var checkout = event.target.closest("[data-direct-checkout]");
+        var close = event.target.closest("[data-bump-close]");
+        var dismiss = event.target.closest("[data-bump-dismiss]");
+        var modal = event.target.closest("[data-bump-modal]");
+        var dialog = event.target.closest(".bump-dialog");
+        var continueButton = event.target.closest("[data-bump-continue]");
         var checkoutLink = event.target.closest("[data-checkout-link]");
         if (checkoutLink) {
           event.preventDefault();
@@ -3080,38 +2856,70 @@
 
         if (checkout) {
           event.preventDefault();
-          var checkbox = checkout.closest(".quick-offer-buy, dialog").querySelector("[data-bump-checkbox]");
+          openBumpModal();
+          return;
+        }
+
+        if (dismiss) {
+          event.preventDefault();
+          closeBumpModal();
+          return;
+        }
+
+        if (close) {
+          event.preventDefault();
+          goToCheckout(guideCheckoutUrl, 9.5);
+          return;
+        }
+
+        if (modal && !dialog) {
+          event.preventDefault();
+          closeBumpModal();
+          return;
+        }
+
+        if (continueButton) {
+          var checkbox = document.querySelector("[data-bump-checkbox]");
           var includesMessages = checkbox && checkbox.checked;
           goToCheckout(includesMessages ? guideWithMessagesUrl : guideCheckoutUrl, includesMessages ? 26.5 : 19);
-          return;
         }
       });
 
       document.addEventListener("change", function (event) {
         if (event.target.matches("[data-bump-checkbox]")) {
-          updateInlineCheckout();
+          updateBumpButton();
         }
       });
 
-      window.addEventListener("DOMContentLoaded", function () {
-        var dialog = document.querySelector("#checkout-dialog");
-        document.querySelector("[data-open-checkout]").addEventListener("click", function (event) {
-          event.preventDefault();
-          dialog.showModal();
-        });
-        dialog.querySelector(".bump-x").addEventListener("click", function () { dialog.close(); });
-        dialog.addEventListener("click", function (event) {
-          if (event.target === dialog) {
-            var bounds = dialog.getBoundingClientRect();
-            if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
-          }
-        });
-        updateInlineCheckout();
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          closeBumpModal();
+        }
       });
 
     </script>
+    <div class="bump-modal" data-bump-modal aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="bump-title">
+      <div class="bump-dialog">
+        <button class="bump-x" type="button" data-bump-dismiss aria-label="Close">&times;</button>
+        <div class="bump-topline">Add 100 ready-to-use messages</div>
+        <h2 id="bump-title">Would it help to have more examples ready when you need them?</h2>
+        <p>Add 100 more ready-to-use messages for everyday situations:</p>
+        <label class="bump-option">
+          <input type="checkbox" data-bump-checkbox />
+          <span>
+            <strong>Add the 100-message pack for &pound;3.75</strong>
+            <span>Writing &middot; planning &middot; decisions &middot; shopping &middot; appointments &middot; confusing information</span>
+            <span class="bump-price"><b>&pound;26.50 total</b></span>
+          </span>
+        </label>
+        <div class="bump-actions">
+          <button class="bump-continue" type="button" data-bump-continue>Get the guide - &pound;19</button>
+          <button class="bump-close" type="button" data-bump-close>No thanks, get the guide for &pound;19</button>
+        </div>
+      </div>
+    </div>
     <div class="top-banner">
-      <div class="top-banner-inner"><strong>33% introductory discount:</strong> <s>&pound;28.50</s> &rarr; <strong>&pound;19</strong></div>
+      <div class="top-banner-inner"><strong>AI Confidence Kit — &pound;19.</strong> Instant download.</div>
     </div>
     <main>
       <section class="hero" aria-label="AI finally explained in plain English hero">
@@ -3120,15 +2928,16 @@
             <div class="hero-copy">
               <div class="hero-content">
                 <div class="hero-badge">Not sure what to ask ChatGPT?</div>
-                <h1>Finally understand how to use AI in everyday life &mdash; even if you&rsquo;re not technical.</h1>
+                <h1>Not sure what to ask ChatGPT? Start using AI confidently in everyday life.</h1>
                 <p class="lead">
-                  This simple, step-by-step guide takes you from unsure beginner to using AI confidently in everyday life &mdash; by showing you what tools to use, what questions to ask and where AI actually fits into your life.
+                  A calm, practical guide that shows you where to start, where AI can genuinely help, what to ask and how to use the answers. Everyday examples and ready-to-use messages help you begin without trial and error.
                 </p>
                 <p class="hero-reassurance">No jargon. No pressure. Just a clear way in.</p>
                 <div class="actions">
                   <a
                     class="button"
-                    href="#introductory-discount" data-open-checkout aria-haspopup="dialog" aria-controls="checkout-dialog"
+                    href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00"
+                    data-direct-checkout
                   >Get the guide &mdash; &pound;19</a>
                   <p class="hero-checkout-note">Instant download. 60-day money-back guarantee.</p>
                   <a class="hero-look-link" href="#inside-the-guide">Want to look first? <span>See what&rsquo;s included</span></a>
@@ -3142,34 +2951,37 @@
 
       <section class="story punch-section" aria-label="Understand and use AI in everyday life">
         <div class="story-inner">
-          <h2 class="story-heading">AI is everywhere. But what does it actually mean for you?</h2>
+          <p class="story-kicker">You know it could help. You just do not know what to ask.</p>
+          <h2 class="story-heading">A clear, calm way to go from unsure beginner to confident everyday user.</h2>
+          <p class="story-subhead">
+            You may have opened ChatGPT, seen the blank box and wondered what to ask. A message you need to write, a letter you do not understand, a choice you are weighing up&mdash;you know you need help, but not how to put it into words.
+          </p>
           <div class="story-copy">
-            <p>Friends mention it. Family members use it. You hear about people writing emails, planning trips and making everyday tasks easier with AI.</p>
-            <p>But there&rsquo;s a difference between knowing other people find it useful and <strong>knowing what to do with it yourself.</strong></p>
-            <p>Perhaps you haven&rsquo;t tried it yet. Perhaps you&rsquo;ve opened ChatGPT, asked a question and wondered what all the fuss was about.</p>
-            <p><strong>Where do you start? What should you ask? And where would any of this actually help in your life?</strong></p>
-            <p>You don&rsquo;t need more convincing that AI matters. You need someone to show you how to make it useful <strong>for you.</strong></p>
+            <p><strong>You do not need to know the perfect words.</strong></p>
+            <p>The guide shows you where AI is useful in everyday life, gives you clear questions to start with, and helps you make any question fit your own situation.</p>
           </div>
-        </div>
-      </section>
-
-      <section class="catch-up" aria-label="A clear way to start using AI">
-        <div class="catch-up-inner">
-          <h2 class="catch-up-heading">You don&rsquo;t need to become technical. You need someone to show you how.</h2>
-          <div class="catch-up-copy">
-            <p>AI feels much less complicated when you have a clear starting point and something useful to try. That&rsquo;s what the AI Confidence Guide gives you.</p>
+          <h3 class="shift-heading">The change you can expect</h3>
+          <div class="shift-grid">
+            <article class="shift-card">
+              <strong>Before</strong>
+              <p>I knew ChatGPT might help, but I did not know what to ask or how to explain what I needed.</p>
+            </article>
+            <article class="shift-card">
+              <strong>After</strong>
+              <p>I can start with a clear question, adapt it to my situation and use AI with more confidence.</p>
+            </article>
           </div>
-          <dl class="clear-start-points">
-            <div><dt>Where to start</dt><dd>We show you which tool to open and walk you through using it for the first time. You don&rsquo;t have to piece together the basics yourself.</dd></div>
-            <div><dt>What to ask</dt><dd>Start with messages already written for you. Follow the examples to see how to add your details, improve an answer and ask your own questions.</dd></div>
-            <div><dt>Where it helps in your life</dt><dd>See how to use AI for an awkward email, a confusing letter, options you need to compare or a trip you want to plan.</dd></div>
-          </dl>
-          <p class="catch-up-mechanism"><strong>You get to try something useful before you have to work it all out yourself.</strong> And when you understand how you got that answer, the next question becomes easier to ask.</p>
           <figure class="early-testimonial">
             <blockquote>&ldquo;I&rsquo;d tried ChatGPT a couple of times but never knew what to ask. This finally showed me where AI is actually useful and how to get answers I can use in everyday life.&rdquo;</blockquote>
             <figcaption>Margaret, 62</figcaption>
           </figure>
-          <p class="catch-up-mechanism"><strong>Here&rsquo;s what that can look like in everyday life.</strong></p>
+          <div class="advantage-callout">
+            <h3>Start with a question that is already written for you.</h3>
+            <p>Then learn how to make it your own, one familiar everyday task at a time.</p>
+            <div class="advantage-guarantee">
+              <strong>Try it for 60 days without risk.</strong> If you don&rsquo;t feel clearer about using AI, email us for a full refund. No complicated terms.
+            </div>
+          </div>
         </div>
       </section>
 
@@ -3212,18 +3024,17 @@
 
       <section class="learn" aria-label="Your journey from confused to confident with AI">
         <div class="learn-inner">
-          <h2 class="learn-heading">From unsure where to start to using AI confidently</h2>
+          <div class="learn-kicker">A calm step-by-step guide</div>
+          <h2 class="learn-heading">From &ldquo;What do I ask?&rdquo; to using AI comfortably in everyday life</h2>
           <p class="learn-subhead">
-            <strong>Our guide takes you through a short, simple process that starts where you are &mdash; and makes AI understandable, easy and relevant to you.</strong>
+            There is no need to take it all in at once. Follow each small step when you are ready.
           </p>
           <ul class="learn-list">
-            <li><span class="learn-number">1</span><span><strong>Know what tool to use</strong><span class="journey-action">We show you exactly where to go, what to use and how to get started.</span></span></li>
-            <li><span class="learn-number">2</span><span><strong>Know what to say</strong><span class="journey-action">You get simple prompts to try straight away, so you&rsquo;re never staring at a blank box wondering what to type.</span></span></li>
-            <li><span class="learn-number">3</span><span><strong>See what a good prompt looks like</strong><span class="journey-action">We show you why some prompts work better than others, in plain English.</span></span></li>
-            <li><span class="learn-number">4</span><span><strong>Learn to write your own</strong><span class="journey-action">You&rsquo;ll learn how to turn your own questions, problems and tasks into prompts that actually help.</span></span></li>
-            <li><span class="learn-number">5</span><span><strong>Use AI to make everyday tasks easier</strong><span class="journey-action">We show you the areas of life where AI is most helpful, so you know exactly when to use it.</span></span></li>
+            <li><span class="learn-number">1</span><span><strong>Understand the basics</strong><span class="journey-action">See what AI is useful for in clear, ordinary language.</span><span class="journey-result">It will begin to feel less technical and unfamiliar.</span></span></li>
+            <li><span class="learn-number">2</span><span><strong>Try a familiar task</strong><span class="journey-action">Start with writing, planning, decisions or confusing information.</span><span class="journey-result">You will see where AI can be genuinely helpful in your life.</span></span></li>
+            <li><span class="learn-number">3</span><span><strong>Know what to ask</strong><span class="journey-action">Use the included ready-made questions and learn how to make them fit your situation.</span><span class="journey-result">You will not have to face a blank box on your own.</span></span></li>
+            <li><span class="learn-number">4</span><span><strong>Build confidence gently</strong><span class="journey-action">Use the What to Ask Builder and try one small task a day.</span><span class="journey-result">Using AI will start to feel calmer and more natural.</span></span></li>
           </ul>
-          <p class="learn-outro">By the end, AI stops feeling like something other people know how to use &mdash; and starts feeling like a tool you can use yourself.</p>
         </div>
       </section>
 
@@ -3232,37 +3043,30 @@
           <div class="quick-offer-copy">
             <p class="quick-offer-kicker">Get instant access now</p>
             <h2>The AI Confidence Kit</h2>
-            <p class="quick-offer-intro">Everything you need to go from unsure where to start to using AI confidently to make everyday tasks easier.</p>
+            <p class="quick-offer-intro">A calm, practical guide to where to start with AI, what to ask and how to use it confidently in everyday life.</p>
 
             <ul class="quick-offer-list">
-              <li><strong>The complete 31-page AI Confidence Guide</strong> &mdash; understand what AI is, know where to start and follow clear examples that show you how to use it yourself.</li>
-              <li><strong>10 ready-to-use messages</strong> &mdash; know exactly what to type when you need help, with starting messages you can copy, try and adapt to your own situation.</li>
-              <li><strong>10 practical everyday use cases</strong> &mdash; see how to use AI to write an awkward email, understand confusing information, compare options and organise a plan.</li>
-              <li><strong>The &ldquo;What to Ask&rdquo; Builder</strong> &mdash; turn your own questions, problems and tasks into clear requests, so you can get useful help beyond the examples in the guide.</li>
+              <li><strong>31-page digital guide</strong>&mdash;clear explanations that show where to start and how AI can help</li>
+              <li><strong>A gentle first step</strong>&mdash;which tool to open, a familiar task to try and what to do next</li>
+              <li><strong>10 everyday AI use cases</strong>&mdash;see where AI can genuinely help with ordinary life</li>
+              <li><strong>10 ready-to-use messages</strong>&mdash;a simple, reassuring shortcut when you are not sure what to ask</li>
+              <li><strong>The &ldquo;What to Ask&rdquo; Builder</strong>&mdash;a calm way to turn your own situation into a useful question</li>
+              <li><strong>7-Day Everyday AI Starter Plan</strong>&mdash;one small task a day, at your own pace</li>
             </ul>
-            <p class="quick-offer-intro" style="margin-top: 24px;">Know what to open, what to ask and how to put AI to use when something needs doing.</p>
           </div>
 
           <div class="quick-offer-buy">
-            <span class="quick-discount" id="introductory-discount">33% introductory discount</span>
+
             <div class="quick-price">
-              <s>&pound;28.50</s>
+
               <strong>&pound;19</strong>
             </div>
-            <p>Get the complete kit instantly and use it to complete your first genuinely useful AI task today.</p>
-            <div class="inline-bump" style="display: block; cursor: default;">
-              <span class="inline-bump-copy">
-                <strong>Want 100 ready-to-use AI messages too?</strong>
-                <span>Add the message pack for &pound;7.50. Get the words for emails, planning, shopping, appointments and more&mdash;ready to copy into ChatGPT.</span>
-              </span>
-            </div>
+            <p>Get the complete guide and practical tools as an instant download, ready whenever you want to take the first step.</p>
             <a
               class="button"
-              href="https://buy.stripe.com/28EeVc72PfEUbyM9q2bZe0b"
-              id="purchase-button"
-              data-checkout-link data-checkout-value="26.50"
-            >Get the kit + 100 messages &mdash; &pound;26.50</a>
-            <a class="quick-guide-only" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-checkout-link data-checkout-value="19">Just the kit &mdash; &pound;19</a>
+              href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00"
+              data-direct-checkout
+            >Get the AI Confidence Kit &mdash; &pound;19</a>
             <p class="quick-checkout-note">60-day money-back guarantee. Secure checkout with Stripe.</p>
           </div>
         </div>
@@ -3301,20 +3105,32 @@
           <p class="faq-subhead">A few quick answers before you decide if this is the right starting point for you.</p>
           <div class="faq-list">
             <article class="faq-item">
-              <h3>Who is this for?</h3>
-              <p>This is for anyone who knows AI is becoming useful, has maybe tried ChatGPT a few times, but still doesn&rsquo;t feel confident using it in everyday life.</p>
+              <h3>What if I have no idea what to ask ChatGPT?</h3>
+              <p>That is exactly what the kit is for. It gives you 10 ready-made questions, familiar examples and a calm way to turn your own situation into useful words.</p>
             </article>
             <article class="faq-item">
-              <h3>What if I&rsquo;m not technical?</h3>
-              <p>That&rsquo;s exactly who the guide is designed for. It starts from the beginning, avoids complicated terminology, and shows you what to do step by step.</p>
+              <h3>Do I need to be good at writing prompts?</h3>
+              <p>No. You do not need clever wording or technical prompts. The guide is written in ordinary language and shows you what to ask step by step.</p>
             </article>
             <article class="faq-item">
-              <h3>How quickly will I see results?</h3>
-              <p>You can start using the guide straight away. The aim is to get you trying useful prompts early, so AI begins to feel practical rather than abstract.</p>
+              <h3>Is it technical?</h3>
+              <p>No. There is no coding, complicated setup or technical message-writing. It is written for normal everyday use.</p>
             </article>
             <article class="faq-item">
-              <h3>Is this a course?</h3>
-              <p>No. It&rsquo;s a simple, practical guide you can work through at your own pace, with examples and prompts you can try as you go.</p>
+              <h3>What will I be able to do after reading it?</h3>
+              <p>You will feel clearer about where AI can help, know how to begin with familiar tasks and have a calmer way to ask for useful help.</p>
+            </article>
+            <article class="faq-item">
+              <h3>Will I still have to work everything out on my own?</h3>
+              <p>No. The guide gives you a clear starting point, examples you can follow, ready-to-send messages and a simple builder for your own tasks.</p>
+            </article>
+            <article class="faq-item">
+              <h3>Will I get access straight away?</h3>
+              <p>Yes. After checkout, you will get instant access to download the guide.</p>
+            </article>
+            <article class="faq-item">
+              <h3>What if it is not useful for me?</h3>
+              <p>You are covered by the 60-day money-back guarantee. Try it, and if it is not for you, you can ask for a refund.</p>
             </article>
           </div>
         </div>
@@ -3322,28 +3138,16 @@
 
       <section class="final-cta" aria-label="Get instant access">
         <div class="final-cta-inner" id="get-instant-access">
-          <h2>Start using AI confidently to make everyday tasks easier.</h2>
-          <p>Write the email you&rsquo;ve been putting off. Make sense of a confusing document. Compare your options and organise your plans.</p>
-          <p>The AI Confidence Kit shows you where to start, gives you the words to use and teaches you how to get help with your own tasks. All in plain English, with examples you can follow straight away.</p>
-          <a class="button" href="#introductory-discount">Get the AI Confidence Kit &mdash; &pound;19</a>
-          <p class="checkout-note">Normally &pound;28.50. Download instantly and put it to use today.</p>
-          <p class="checkout-note">Try it with your own everyday tasks. If it doesn&rsquo;t make AI clearer and easier to use, ask for a full refund within 60 days.</p>
+          <h2>Know where to start, what to ask and how AI can help in everyday life.</h2>
+          <p>Get a calm guide, everyday examples and practical tools that help you take the first step and use AI with more confidence.</p>
+          <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-direct-checkout>Get the guide &mdash; &pound;19</a>
+          <p class="checkout-note">Instant download. 60-day money-back guarantee.</p>
         </div>
       </section>
 
     </main>
-    <dialog class="checkout-dialog bump-dialog" id="checkout-dialog" aria-labelledby="bump-title">
-      <button class="bump-x" type="button" autofocus aria-label="Close">&times;</button>
-      <h2 id="bump-title">Want 100 ready-to-use AI messages too?</h2>
-      <p>Get the words for emails, planning, shopping, appointments and more&mdash;ready to copy into ChatGPT.</p>
-      <div class="bump-actions">
-        <a class="bump-continue" href="https://buy.stripe.com/28EeVc72PfEUbyM9q2bZe0b">Add the messages &mdash; &pound;26.50 total</a>
-        <a class="bump-close" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00">Just the guide &mdash; &pound;19</a>
-      </div>
-    </dialog>
   </body>
 </html>
-
 
 
 
