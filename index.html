@@ -3,22 +3,22 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Not Sure What to Ask ChatGPT? | AI Confidence Kit</title>
+    <title>AI finally explained in plain English for adults 50+ in the UK</title>
     <meta
       name="description"
-      content="Not sure what to ask ChatGPT? A calm, simple guide with ready-made questions and practical help for everyday life."
+      content="AI finally explained in plain English for adults 50+ in the UK."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Finally Understand How to Use AI" />
+    <meta property="og:title" content="AI finally explained in plain English for adults 50+ in the UK" />
     <meta
       property="og:description"
-      content="Not sure what to ask ChatGPT? Learn what to ask, start with ready-made questions and use AI confidently in everyday life."
+      content="A simple plain-English guide to help adults 50+ understand AI, use it in real life, and know what not to trust."
     />
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content="Finally Understand How to Use AI" />
+    <meta property="twitter:title" content="AI finally explained in plain English for adults 50+ in the UK" />
     <meta
       property="twitter:description"
-      content="Not sure what to ask ChatGPT? Learn what to ask, start with ready-made questions and use AI confidently in everyday life."
+      content="A simple plain-English guide to help adults 50+ understand AI, use it in real life, and know what not to trust."
     />
     <!-- Meta Pixel Code -->
     <script>
@@ -30,16 +30,8 @@
       t.src=v;s=b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t,s)}(window, document,'script',
       'https://connect.facebook.net/en_US/fbevents.js');
-      window.createMetaEventId = function (prefix) {
-        var randomPart = window.crypto && window.crypto.randomUUID
-          ? window.crypto.randomUUID()
-          : Math.random().toString(36).slice(2) + Date.now().toString(36);
-
-        return prefix + "_" + randomPart;
-      };
-      window.metaPageViewEventId = window.createMetaEventId("pageview");
       fbq('init', '1988137388462157');
-      fbq('track', 'PageView', {}, { eventID: window.metaPageViewEventId });
+      fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1988137388462157&ev=PageView&noscript=1"
@@ -60,13 +52,6 @@
         --cream-card: #fffdf9;
         --sage: #f1f6f2;
         --gold-soft: #f7eed2;
-        --section-blue: #eef6fb;
-        --section-cream: #fffdf9;
-        --section-sage: #f1f6f2;
-        --section-warm: #f8f1e7;
-        --section-lilac: #f4f1fb;
-        --section-gold: #fbf5e3;
-        --section-mint: #edf8f2;
       }
 
       * {
@@ -74,7 +59,7 @@
       }
 
       html {
-        scroll-behavior: auto;
+        scroll-behavior: smooth;
       }
 
       body {
@@ -92,8 +77,6 @@
       .story-heading,
       .now-heading,
       .clarity-heading,
-      .learn-heading,
-      .beginner-heading,
       .inside-heading,
       .outcome-heading,
       .value-heading,
@@ -113,22 +96,44 @@
       }
 
       .top-banner {
-        border-bottom: 1px solid rgba(23, 55, 97, 0.14);
-        background: var(--navy);
-        color: #ffffff;
+        border-top: 1px solid rgba(7, 27, 63, 0.12);
+        border-bottom: 1px solid rgba(7, 27, 63, 0.12);
+        background: #fffdf9;
       }
 
       .top-banner-inner {
         width: min(100%, 1100px);
         margin: 0 auto;
-        padding: 11px 22px;
-        text-align: center;
-        font-size: 0.94rem;
-        line-height: 1.4;
+        padding: 12px 22px 14px;
       }
 
-      .top-banner strong {
-        color: var(--gold);
+      .top-banner-inner > strong {
+        display: block;
+        color: var(--navy);
+        font-size: 0.98rem;
+        font-weight: 700;
+        line-height: 1.3;
+      }
+
+      .top-banner p {
+        margin: 4px 0 0;
+        color: #677286;
+        font-size: 0.92rem;
+        line-height: 1.45;
+      }
+
+      .top-banner p strong {
+        color: #173761;
+        font-weight: 700;
+      }
+
+      .top-banner a {
+        display: inline-block;
+        margin-top: 8px;
+        color: #51647f;
+        font-size: 0.92rem;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 3px;
       }
 
       .hero-inner {
@@ -187,15 +192,7 @@
         font-weight: 500;
         line-height: 1.08;
         letter-spacing: 0;
-        max-width: 19ch;
-      }
-
-      h1 .headline-soft {
-        display: block;
-        margin-top: 8px;
-        color: var(--blue);
-        font-size: 0.72em;
-        line-height: 1.16;
+        max-width: 17ch;
       }
 
       .lead {
@@ -209,9 +206,8 @@
       .actions {
         margin-top: 26px;
         display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 11px;
+        align-items: center;
+        gap: 14px;
         flex-wrap: wrap;
       }
 
@@ -228,31 +224,6 @@
       .hero .button:hover {
         background: #173f6d;
         box-shadow: 0 22px 38px rgba(23, 63, 109, 0.28);
-      }
-
-      .hero-look-link {
-        color: var(--muted);
-        font-size: 0.96rem;
-        line-height: 1.4;
-        text-decoration: none;
-      }
-
-      .hero-look-link span {
-        color: var(--navy);
-        font-weight: 850;
-        text-decoration: underline;
-        text-underline-offset: 3px;
-      }
-
-      .hero-look-link:hover span {
-        color: var(--blue-dark);
-      }
-
-      .hero-checkout-note {
-        margin: -2px 0 0;
-        color: var(--muted);
-        font-size: 0.88rem;
-        line-height: 1.45;
       }
 
       .button {
@@ -280,21 +251,6 @@
         box-shadow: 0 20px 34px rgba(20, 104, 196, 0.28);
       }
 
-      .button-secondary {
-        border: 0;
-        background: transparent;
-        box-shadow: none;
-        color: var(--muted);
-        cursor: pointer;
-      }
-
-      .button-secondary:hover {
-        transform: none;
-        background: transparent;
-        box-shadow: none;
-        color: var(--navy);
-      }
-
       .checkout-note {
         color: var(--muted) !important;
         font-size: 0.92rem !important;
@@ -313,16 +269,1050 @@
         line-height: 1.55;
       }
 
-      .hero-reassurance {
-        margin: 20px 0 0;
-        max-width: 38rem;
+      .sale-note {
+        margin: 10px 0 0;
+        display: inline-flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+        color: var(--muted);
+        font-size: 0.93rem;
+      }
+
+      .sale-note strong {
+        color: var(--blue);
+        font-weight: 700;
+      }
+
+      .sale-note .old-price {
+        text-decoration: line-through;
+        color: var(--muted);
+      }
+
+      .sale-note .new-price {
+        color: var(--blue);
+        font-weight: 700;
+      }
+
+      .punch-section h2 {
+        max-width: 18ch;
+      }
+
+      .punch-copy {
+        margin-top: 30px;
+        max-width: 46rem;
+      }
+
+      .punch-copy p {
+        font-size: 1.22rem;
+        line-height: 1.62;
+      }
+
+      .punch-cards {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .punch-cards .clarity-card,
+      .punch-cards .value-card {
+        min-height: 190px;
+      }
+
+      .punch-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gold-bullets {
+        margin: 52px 0 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 28px;
+        max-width: 50rem;
+      }
+
+      .gold-bullets li {
+        position: relative;
+        padding-left: 48px;
+        color: var(--text);
+        font-size: 1.18rem;
+        line-height: 1.65;
+      }
+
+      .gold-bullets li::before {
+        content: "";
+        position: absolute;
+        top: 0.72em;
+        left: 0;
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        background: #d6ad22;
+      }
+
+      .problem-prose {
+        margin: 34px 0 0;
+        max-width: 58rem;
+        color: var(--text);
+        font-size: 1.14rem;
+        line-height: 1.78;
+      }
+
+      .problem-prose p {
+        margin: 0 0 18px;
+      }
+
+      .advantage-callout {
+        margin: 48px 0 0;
+        max-width: 50rem;
+        padding: 24px 28px;
+        border-left: 6px solid var(--navy);
+        border-radius: 10px;
+        background: var(--cream-card);
+        box-shadow: 0 18px 42px rgba(23, 55, 97, 0.08);
         color: var(--navy);
-        font-size: 1rem;
-        font-weight: 850;
+        font-size: clamp(1.12rem, 1.55vw, 1.45rem);
         line-height: 1.5;
       }
 
-      .bump-modal {
+      .shift-heading {
+        margin: 58px 0 0;
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(1.85rem, 3vw, 2.6rem);
+        font-weight: 500;
+        line-height: 1.12;
+      }
+
+      .shift-grid {
+        margin-top: 24px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+        max-width: 58rem;
+      }
+
+      .shift-card {
+        padding: 26px;
+        border-radius: 10px;
+        border: 1px solid rgba(23, 55, 97, 0.12);
+        background: var(--cream-card);
+        box-shadow: 0 16px 36px rgba(23, 55, 97, 0.06);
+      }
+
+      .shift-card strong {
+        display: block;
+        margin-bottom: 14px;
+        color: var(--navy);
+        font-size: 1.08rem;
+      }
+
+      .shift-card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 1.06rem;
+        line-height: 1.65;
+      }
+
+      .fit-list {
+        margin: 46px 0 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 28px;
+        max-width: 58rem;
+      }
+
+      .fit-list li {
+        position: relative;
+        padding-left: 48px;
+        color: var(--text);
+        font-size: 1.2rem;
+        line-height: 1.62;
+      }
+
+      .fit-list li::before {
+        content: "→";
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: var(--navy);
+        font-size: 1.35rem;
+        font-weight: 800;
+        line-height: 1.45;
+      }
+
+      .not-for-card {
+        margin-top: 58px;
+        max-width: 58rem;
+        padding: 28px 34px;
+        border-radius: 10px;
+        border: 1px solid rgba(23, 55, 97, 0.12);
+        background: var(--cream-card);
+        box-shadow: 0 16px 36px rgba(23, 55, 97, 0.06);
+        color: var(--muted);
+        font-size: 1.08rem;
+        line-height: 1.68;
+      }
+
+      .not-for-card strong {
+        color: var(--navy);
+      }
+
+      .story { background: var(--cream-card); }
+
+      .story-inner {
+        width: min(100%, 1140px);
+        margin: 0 auto;
+        padding: 72px 32px 88px;
+      }
+
+      .story-heading {
+        margin: 0;
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 500;
+        font-size: clamp(2rem, 3.4vw, 3rem);
+        line-height: 1.06;
+        max-width: 12ch;
+      }
+
+      .story-subhead {
+        margin: 22px 0 0;
+        color: var(--text);
+        font-size: 1.15rem;
+        line-height: 1.7;
+        max-width: 58rem;
+      }
+
+      .story-copy {
+        margin-top: 42px;
+        color: var(--text);
+        font-size: 1.06rem;
+        line-height: 1.82;
+        max-width: 60rem;
+      }
+
+      .story-copy p {
+        margin: 0 0 22px;
+      }
+
+      .story-copy .quote {
+        margin: 26px 0;
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.28rem;
+        line-height: 1.55;
+      }
+
+      .clarity { background: var(--cream); }
+
+      .clarity-inner {
+        width: min(100%, 1140px);
+        margin: 0 auto;
+        padding: 76px 32px 92px;
+      }
+
+      .clarity-heading {
+        margin: 0;
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 500;
+        font-size: clamp(2rem, 3.4vw, 3rem);
+        line-height: 1.08;
+        max-width: 18ch;
+      }
+
+      .clarity-subhead {
+        margin: 22px 0 0;
+        max-width: 58rem;
+        color: var(--text);
+        font-size: 1.15rem;
+        line-height: 1.7;
+      }
+
+      .clarity-copy {
+        margin-top: 42px;
+        max-width: 60rem;
+        color: var(--text);
+        font-size: 1.06rem;
+        line-height: 1.78;
+      }
+
+      .clarity-copy p {
+        margin: 0 0 22px;
+      }
+
+      .clarity-cards {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 14px;
+        margin: 34px 0 38px;
+      }
+
+      .clarity-card {
+        min-height: 170px;
+        padding: 20px;
+        border: 1px solid rgba(23, 55, 97, 0.12);
+        border-radius: 10px;
+        background: var(--cream-card);
+        box-shadow: 0 16px 36px rgba(23, 55, 97, 0.06);
+      }
+
+      .clarity-card svg {
+        width: 30px;
+        height: 30px;
+        margin-bottom: 14px;
+        color: #1f9d62;
+      }
+
+      .clarity-card h3 {
+        margin: 0;
+        color: var(--navy);
+        font-size: 1rem;
+        line-height: 1.28;
+      }
+
+      .clarity-card p {
+        margin: 12px 0 0;
+        color: var(--muted);
+        font-size: 0.95rem;
+        line-height: 1.48;
+      }
+
+      .inside { background: var(--cream-deep); }
+
+      .inside-inner {
+        width: min(100%, 1140px);
+        margin: 0 auto;
+        padding: 76px 32px 92px;
+      }
+
+      .inside-heading {
+        margin: 0;
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 500;
+        font-size: clamp(2rem, 3.4vw, 3rem);
+        line-height: 1.08;
+        max-width: 16ch;
+      }
+
+      .inside-subhead {
+        margin: 22px 0 0;
+        max-width: 58rem;
+        color: var(--text);
+        font-size: 1.15rem;
+        line-height: 1.7;
+      }
+
+      .inside-intro {
+        margin: 34px 0 0;
+        max-width: 60rem;
+        color: var(--text);
+        font-size: 1.06rem;
+        line-height: 1.78;
+      }
+
+      .inside-list {
+        margin: 38px 0 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+      }
+
+      .inside-item {
+        display: grid;
+        grid-template-columns: 46px 1fr;
+        gap: 16px;
+        padding: 22px;
+        border-radius: 10px;
+        border: 1px solid rgba(23, 55, 97, 0.12);
+        background: var(--cream-card);
+        box-shadow: 0 16px 36px rgba(23, 55, 97, 0.06);
+      }
+
+      .inside-number {
+        width: 46px;
+        height: 46px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: var(--navy);
+        color: #ffffff;
+        font-weight: 800;
+      }
+
+      .inside-item h3 {
+        margin: 0;
+        color: var(--navy);
+        font-size: 1.08rem;
+        line-height: 1.28;
+      }
+
+      .inside-item p {
+        margin: 10px 0 0;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .now { background: var(--sage); }
+
+      .now-inner {
+        width: min(100%, 1140px);
+        margin: 0 auto;
+        padding: 76px 32px 92px;
+        text-align: center;
+      }
+
+      .now-heading {
+        margin: 0;
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 500;
+        font-size: clamp(2rem, 3.4vw, 3rem);
+        line-height: 1.08;
+        max-width: 17ch;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .now-subhead {
+        margin: 22px 0 0;
+        max-width: 58rem;
+        color: var(--text);
+        font-size: 1.15rem;
+        line-height: 1.7;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .now-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+        align-items: start;
+        margin-top: 42px;
+      }
+
+      .now-copy {
+        color: var(--text);
+        font-size: 1.06rem;
+        line-height: 1.78;
+        max-width: 44rem;
+        margin: 0 auto;
+      }
+
+      .now-copy p {
+        margin: 0 0 22px;
+      }
+
+      .now-list {
+        display: grid;
+        gap: 14px;
+      }
+
+      .now-item {
+        display: grid;
+        grid-template-columns: 34px 1fr;
+        gap: 14px;
+        padding: 18px;
+        border-radius: 10px;
+        background: var(--cream-card);
+        border: 1px solid rgba(23, 55, 97, 0.12);
+        box-shadow: 0 16px 36px rgba(23, 55, 97, 0.06);
+      }
+
+      .now-item svg {
+        width: 34px;
+        height: 34px;
+        color: #1f9d62;
+      }
+
+      .now-item h3 {
+        margin: 0;
+        color: var(--navy);
+        font-size: 1.02rem;
+        line-height: 1.3;
+      }
+
+      .now-item p {
+        margin: 8px 0 0;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      .outcome { background: var(--cream-card); }
+
+      .testimonials { background: var(--cream); }
+
+      .outcome-inner,
+      .value-inner,
+      .trust-inner {
+        width: min(100%, 1140px);
+        margin: 0 auto;
+        padding: 76px 32px 92px;
+      }
+
+      .testimonials-inner {
+        width: min(100%, 1140px);
+        margin: 0 auto;
+        padding: 78px 32px 92px;
+      }
+
+      .outcome-heading,
+      .value-heading,
+      .trust-heading,
+      .testimonials-heading {
+        margin: 0;
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 500;
+        font-size: clamp(2rem, 3.4vw, 3rem);
+        line-height: 1.08;
+        max-width: 17ch;
+      }
+
+      .outcome-subhead,
+      .value-subhead,
+      .trust-subhead,
+      .testimonials-subhead {
+        margin: 22px 0 0;
+        max-width: 58rem;
+        color: var(--text);
+        font-size: 1.15rem;
+        line-height: 1.7;
+      }
+
+      .testimonial-list {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        margin: 44px 0 0;
+      }
+
+      .testimonial-card {
+        padding: 28px;
+        border: 1px solid rgba(23, 55, 97, 0.12);
+        border-radius: 10px;
+        background: var(--cream-card);
+        box-shadow: 0 16px 34px rgba(23, 55, 97, 0.06);
+      }
+
+      .testimonial-quote {
+        margin: 0;
+        color: var(--text);
+        font-size: 1.12rem;
+        line-height: 1.65;
+      }
+
+      .testimonial-person {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-top: 24px;
+        color: var(--muted);
+        font-size: 1rem;
+      }
+
+      .testimonial-avatar {
+        display: grid;
+        width: 48px;
+        height: 48px;
+        place-items: center;
+        border-radius: 50%;
+        background: #1f578f;
+        color: #ffffff;
+        font-weight: 800;
+        letter-spacing: 0.02em;
+      }
+
+      .outcome-list,
+      .trust-list {
+        margin: 38px 0 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+
+      .outcome-list li,
+      .trust-list li {
+        padding: 22px;
+        border-radius: 10px;
+        border: 1px solid rgba(23, 55, 97, 0.12);
+        background: var(--cream-card);
+        box-shadow: 0 16px 36px rgba(23, 55, 97, 0.06);
+        color: var(--text);
+        line-height: 1.55;
+      }
+
+      .outcome-list li {
+        position: relative;
+        padding-left: 70px;
+      }
+
+      .outcome-list li::before {
+        content: "✓";
+        position: absolute;
+        top: 24px;
+        left: 24px;
+        width: 28px;
+        height: 28px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: #329766;
+        color: #ffffff;
+        font-weight: 800;
+        line-height: 1;
+      }
+
+      .outcome-list strong,
+      .trust-list strong {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--navy);
+        font-size: 1.05rem;
+      }
+
+      .value { background: var(--cream); }
+
+      .value-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-top: 38px;
+      }
+
+      .value-card {
+        padding: 22px;
+        border-radius: 10px;
+        border: 1px solid rgba(23, 55, 97, 0.12);
+        background: var(--cream-card);
+        box-shadow: 0 16px 36px rgba(23, 55, 97, 0.06);
+      }
+
+      .value-card h3 {
+        margin: 0;
+        color: var(--navy);
+        font-size: 1.08rem;
+        line-height: 1.28;
+      }
+
+      .value-card p {
+        margin: 12px 0 0;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .trust { background: var(--cream-deep); }
+
+      .guarantee { background: var(--cream-card); }
+
+      .guarantee-inner {
+        width: min(100%, 860px);
+        margin: 0 auto;
+        padding: 78px 32px 92px;
+        text-align: center;
+      }
+
+      .guarantee-icon {
+        width: 74px;
+        height: 74px;
+        margin: 0 auto 24px;
+        color: #1f9d62;
+      }
+
+      .guarantee-heading {
+        margin: 0;
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 500;
+        font-size: clamp(2rem, 3.4vw, 3rem);
+        line-height: 1.08;
+      }
+
+      .guarantee-copy {
+        margin: 26px auto 0;
+        max-width: 44rem;
+        color: var(--text);
+        font-size: 1.1rem;
+        line-height: 1.72;
+      }
+
+      .guarantee-copy p {
+        margin: 0 0 20px;
+      }
+
+      .guarantee-line {
+        margin: 32px auto 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 22px;
+        border-radius: 999px;
+        background: #eaf8f1;
+        color: #136b43;
+        font-weight: 800;
+      }
+
+      .final-cta {
+        background: var(--navy);
+        color: #ffffff;
+      }
+
+      .final-cta-inner {
+        width: min(100%, 900px);
+        margin: 0 auto;
+        padding: 74px 32px 84px;
+        text-align: center;
+      }
+
+      .final-cta h2 {
+        margin: 0;
+        font-size: clamp(2rem, 3.6vw, 3.2rem);
+        line-height: 1.08;
+        color: #ffffff;
+      }
+
+      .final-cta p {
+        margin: 22px auto 0;
+        max-width: 42rem;
+        font-size: 1.15rem;
+        line-height: 1.65;
+        color: rgba(255, 255, 255, 0.84);
+      }
+
+      .final-cta .button {
+        margin-top: 34px;
+        background: #ffffff;
+        color: var(--navy);
+        box-shadow: 0 16px 28px rgba(0, 0, 0, 0.22);
+      }
+
+      .final-cta .button:hover {
+        background: var(--gold-soft);
+      }
+
+      @keyframes riseIn {
+        from {
+          opacity: 0;
+          transform: translateY(18px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes imageSettle {
+        to {
+          transform: scale(1);
+        }
+      }
+
+      @media (max-width: 760px) {
+        .top-banner-inner {
+          padding: 10px 18px 12px;
+        }
+
+        .hero {
+          min-height: auto;
+          background: linear-gradient(180deg, #f7f8fc 0%, #ffffff 100%);
+        }
+
+        .hero-grid {
+          min-height: auto;
+          grid-template-columns: 1fr;
+        }
+
+        .hero-copy {
+          padding: 42px 22px 28px;
+        }
+
+        .hero-visual {
+          min-height: 300px;
+        }
+
+        .hero-visual::before {
+          inset: 4% 12% 10%;
+          background-position: center;
+        }
+
+        .hero-content {
+          max-width: 100%;
+        }
+
+        .hero-badge {
+          min-height: 36px;
+          padding: 0 16px;
+          font-size: 0.88rem;
+        }
+
+        h1 {
+          max-width: none;
+          font-size: clamp(2rem, 8.4vw, 2.75rem);
+          line-height: 1.12;
+        }
+
+        .lead {
+          font-size: 1.04rem;
+          max-width: 34rem;
+          line-height: 1.58;
+        }
+
+        .hero .button {
+          min-height: 58px;
+          width: 100%;
+        }
+
+        .hero .note {
+          text-align: left;
+        }
+
+        .story-inner {
+          padding: 56px 22px 68px;
+        }
+
+        .story-subhead {
+          font-size: 1.04rem;
+          line-height: 1.65;
+        }
+
+        .story-copy {
+          margin-top: 34px;
+          font-size: 1rem;
+          line-height: 1.72;
+        }
+
+        .story-copy .quote {
+          font-size: 1.12rem;
+        }
+
+        .clarity-inner {
+          padding: 56px 22px 68px;
+        }
+
+        .clarity-subhead {
+          font-size: 1.04rem;
+          line-height: 1.65;
+        }
+
+        .clarity-copy {
+          margin-top: 34px;
+          font-size: 1rem;
+          line-height: 1.72;
+        }
+
+        .clarity-cards {
+          grid-template-columns: 1fr;
+          gap: 12px;
+          margin: 28px 0 32px;
+        }
+
+        .punch-cards,
+        .punch-list {
+          grid-template-columns: 1fr;
+        }
+
+        .punch-copy p {
+          font-size: 1.08rem;
+          line-height: 1.58;
+        }
+
+        .gold-bullets {
+          margin-top: 42px;
+          gap: 24px;
+        }
+
+        .gold-bullets li {
+          padding-left: 42px;
+          font-size: 1.04rem;
+          line-height: 1.7;
+        }
+
+        .problem-prose {
+          margin-top: 28px;
+          font-size: 1.02rem;
+          line-height: 1.68;
+        }
+
+        .advantage-callout {
+          margin-top: 44px;
+          padding: 28px 26px;
+          font-size: 1.32rem;
+          line-height: 1.55;
+        }
+
+        .shift-heading {
+          margin-top: 46px;
+        }
+
+        .shift-grid {
+          grid-template-columns: 1fr;
+          gap: 14px;
+        }
+
+        .fit-list {
+          margin-top: 38px;
+          gap: 24px;
+        }
+
+        .fit-list li {
+          padding-left: 42px;
+          font-size: 1.04rem;
+          line-height: 1.7;
+        }
+
+        .not-for-card {
+          margin-top: 42px;
+          padding: 22px;
+          font-size: 1rem;
+        }
+
+        .clarity-card {
+          min-height: auto;
+        }
+
+        .inside-inner {
+          padding: 56px 22px 68px;
+        }
+
+        .inside-subhead,
+        .inside-intro {
+          font-size: 1.04rem;
+          line-height: 1.65;
+        }
+
+        .inside-list {
+          grid-template-columns: 1fr;
+          gap: 14px;
+        }
+
+        .inside-item {
+          grid-template-columns: 40px 1fr;
+          padding: 18px;
+        }
+
+        .inside-number {
+          width: 40px;
+          height: 40px;
+        }
+
+        .now-inner {
+          padding: 56px 22px 68px;
+        }
+
+        .now-subhead,
+        .now-copy {
+          font-size: 1.04rem;
+          line-height: 1.65;
+        }
+
+        .now-grid {
+          grid-template-columns: 1fr;
+          gap: 22px;
+          margin-top: 34px;
+        }
+
+        .outcome-inner,
+        .value-inner,
+        .trust-inner {
+          padding: 56px 22px 68px;
+        }
+
+        .testimonials-inner {
+          padding: 58px 22px 68px;
+        }
+
+        .outcome-subhead,
+        .value-subhead,
+        .trust-subhead,
+        .testimonials-subhead {
+          font-size: 1.04rem;
+          line-height: 1.65;
+        }
+
+        .outcome-list,
+        .trust-list,
+        .value-grid {
+          grid-template-columns: 1fr;
+          gap: 14px;
+          margin-top: 30px;
+        }
+
+        .testimonial-list {
+          grid-template-columns: 1fr;
+          margin-top: 36px;
+        }
+
+        .testimonial-card {
+          padding: 24px;
+        }
+
+        .testimonial-quote {
+          font-size: 1.04rem;
+        }
+
+        .testimonial-avatar {
+          width: 42px;
+          height: 42px;
+        }
+
+        .guarantee-inner {
+          padding: 58px 22px 70px;
+        }
+
+        .guarantee-icon {
+          width: 62px;
+          height: 62px;
+        }
+
+        .guarantee-copy {
+          font-size: 1.02rem;
+          line-height: 1.65;
+        }
+
+        .final-cta-inner {
+          padding: 58px 22px 68px;
+        }
+
+        .final-cta p {
+          font-size: 1.04rem;
+        }
+
+        .checks {
+          gap: 13px;
+          font-size: 0.98rem;
+        }
+
+        .button {
+          width: 100%;
+          min-height: 58px;
+        }
+
+        .note {
+          width: 100%;
+          text-align: center;
+        }
+
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          animation-duration: 1ms !important;
+          transition-duration: 1ms !important;
+        }
+      }
+          .bump-modal {
         position: fixed;
         inset: 0;
         z-index: 50;
@@ -507,2398 +1497,207 @@
       body.bump-locked {
         overflow: hidden;
       }
-      .learn {
-        background: var(--section-cream);
-        border-bottom: 1px solid rgba(23, 55, 97, 0.1);
-      }
 
-      .learn-inner,
-      .beginner-inner {
-        width: min(100%, 1140px);
-        margin: 0 auto;
-        padding: 70px 32px 84px;
-      }
-
-      .learn-kicker,
-      .beginner-kicker {
-        display: inline-flex;
-        align-items: center;
-        min-height: 34px;
-        padding: 0 16px;
-        border-radius: 999px;
-        background: var(--gold-soft);
-        color: #91792a;
-        font-size: 0.88rem;
-        font-weight: 800;
-      }
-
-      .learn-heading,
-      .beginner-heading {
-        margin: 18px 0 0;
-        color: var(--navy);
-        font-family: Georgia, "Times New Roman", serif;
-        font-weight: 500;
-        font-size: clamp(2rem, 3.4vw, 3rem);
-        line-height: 1.08;
-        max-width: 16ch;
-      }
-
-      .learn-subhead,
-      .beginner-subhead {
-        margin: 20px 0 0;
-        max-width: 58rem;
-        color: var(--text);
-        font-size: 1.12rem;
-        line-height: 1.68;
-      }
-
-      .learn-list {
-        margin: 34px 0 0;
-        padding: 0;
-        list-style: none;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 14px;
-        max-width: 58rem;
-      }
-
-      .learn-list li {
-        display: grid;
-        grid-template-columns: 42px 1fr;
-        gap: 14px;
-        align-items: start;
-        min-height: 112px;
-        padding: 20px;
-        border: 1px solid rgba(23, 55, 97, 0.12);
-        border-radius: 10px;
-        background: #ffffff;
-        box-shadow: 0 14px 34px rgba(23, 55, 97, 0.06);
-        color: var(--text);
-        font-size: 1rem;
-        line-height: 1.45;
-      }
-
-      .learn-number {
-        width: 42px;
-        height: 42px;
-        display: grid;
-        place-items: center;
-        border-radius: 50%;
-        background: var(--navy);
-        color: #ffffff;
-        font-weight: 900;
-      }
-
-      .learn-list strong {
-        display: block;
-        margin-bottom: 6px;
-        color: var(--navy);
-        font-size: 1.12rem;
-        line-height: 1.25;
-      }
-
-      .journey-action,
-      .journey-result {
-        display: block;
-      }
-
-      .journey-result {
-        margin-top: 10px;
-        color: var(--navy);
-        font-weight: 700;
-      }
-
-      .contents {
-        background: #ffffff;
-        border-bottom: 1px solid rgba(23, 55, 97, 0.1);
-      }
-
-      .contents-inner {
-        width: min(100%, 1140px);
-        margin: 0 auto;
-        padding: 78px 32px 88px;
-      }
-
-      .contents-kicker {
-        margin: 0;
-        color: var(--blue-dark);
-        font-size: 0.88rem;
-        font-weight: 900;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-
-      .contents-heading {
-        margin: 14px 0 0;
-        max-width: 17ch;
-        color: var(--navy);
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(2rem, 3.8vw, 3.25rem);
-        font-weight: 500;
-        line-height: 1.08;
-      }
-
-      .contents-subhead {
-        margin: 20px 0 0;
-        max-width: 48rem;
-        color: var(--text);
-        font-size: 1.1rem;
-        line-height: 1.68;
-      }
-
-      .contents-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 16px;
-        margin-top: 36px;
-      }
-
-      .contents-card {
-        padding: 24px;
-        border: 1px solid rgba(23, 55, 97, 0.13);
-        border-radius: 10px;
-        background: #f8fbff;
-      }
-
-      .contents-card strong {
-        display: block;
-        color: var(--navy);
-        font-size: 1.08rem;
-        line-height: 1.3;
-      }
-
-      .contents-card span {
-        display: block;
-        margin-top: 8px;
-        color: var(--muted);
-        line-height: 1.55;
-      }
-
-      .contents-card:last-child:nth-child(odd) {
-        grid-column: 1 / -1;
-      }
-
-      .included-bonuses {
-        margin-top: 36px;
-        padding: 30px;
-        border: 1px solid rgba(177, 143, 37, 0.32);
-        border-radius: 10px;
-        background: var(--section-gold);
-      }
-
-      .included-bonuses-kicker {
-        margin: 0;
-        color: var(--blue-dark);
-        font-size: 0.82rem;
-        font-weight: 900;
-        letter-spacing: 0.07em;
-        text-transform: uppercase;
-      }
-
-      .included-bonuses h3 {
-        margin: 10px 0 0;
-        color: var(--navy);
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(1.55rem, 2.8vw, 2.2rem);
-        font-weight: 500;
-        line-height: 1.15;
-      }
-
-      .included-bonuses-intro {
-        margin: 12px 0 0;
-        max-width: 46rem;
-        color: var(--text);
-        line-height: 1.6;
-      }
-
-      .included-bonuses-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 14px;
-        margin-top: 22px;
-      }
-
-      .included-bonus-card {
-        padding: 22px;
-        border: 1px solid rgba(23, 55, 97, 0.13);
-        border-radius: 8px;
-        background: rgba(255, 255, 255, 0.82);
-      }
-
-      .included-bonus-card strong {
-        display: block;
-        color: var(--navy);
-        font-size: 1.08rem;
-        line-height: 1.35;
-      }
-
-      .included-bonus-card span {
-        display: block;
-        margin-top: 8px;
-        color: var(--text);
-        line-height: 1.55;
-      }
-
-      .included-bonuses-free {
-        margin: 20px 0 0;
-        color: var(--navy);
-        font-weight: 900;
-      }
-
-      .guide-preview {
-        background: var(--section-lilac);
-        border-bottom: 1px solid rgba(23, 55, 97, 0.1);
-      }
-
-      .guide-preview-inner {
-        width: min(100%, 1180px);
-        margin: 0 auto;
-        padding: 82px 32px 92px;
-      }
-
-      .guide-preview-kicker {
-        margin: 0;
-        color: var(--blue-dark);
-        font-size: 0.88rem;
-        font-weight: 900;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-
-      .guide-preview-heading {
-        margin: 14px 0 0;
-        max-width: 17ch;
-        color: var(--navy);
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(2.1rem, 4vw, 3.5rem);
-        font-weight: 500;
-        line-height: 1.08;
-      }
-
-      .guide-preview-subhead {
-        margin: 20px 0 0;
-        max-width: 49rem;
-        color: var(--text);
-        font-size: 1.1rem;
-        line-height: 1.68;
-      }
-
-      .guide-preview-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-        gap: 22px;
-        margin-top: 42px;
-      }
-
-      .guide-preview-card {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-      }
-
-      .guide-preview-page {
-        flex: 1;
-        padding: 26px;
-        border: 1px solid rgba(23, 55, 97, 0.14);
-        border-radius: 10px;
-        background: #fffdf9;
-        box-shadow: 0 20px 46px rgba(23, 55, 97, 0.1);
-      }
-
-      .guide-preview-label {
-        display: inline-block;
-        color: var(--blue-dark);
-        font-size: 0.76rem;
-        font-weight: 900;
-        letter-spacing: 0.07em;
-        text-transform: uppercase;
-      }
-
-      .guide-preview-page h3 {
-        margin: 10px 0 0;
-        color: var(--navy);
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 1.42rem;
-        font-weight: 500;
-        line-height: 1.18;
-      }
-
-      .guide-preview-page p,
-      .guide-preview-page li {
-        color: var(--text);
-        font-size: 0.96rem;
-        line-height: 1.58;
-      }
-
-      .guide-preview-page p {
-        margin: 15px 0 0;
-      }
-
-      .guide-preview-page ul {
-        margin: 14px 0 0;
-        padding-left: 20px;
-      }
-
-      .guide-preview-box {
-        margin-top: 16px;
-        padding: 15px;
-        border-radius: 8px;
-        background: var(--section-blue);
-      }
-
-      .guide-preview-box p:first-child {
-        margin-top: 0;
-      }
-
-      .guide-preview-result {
-        border-left: 4px solid var(--blue);
-        background: #f3f8fd;
-      }
-
-      .guide-preview-caption {
-        margin: 0;
-        padding: 0 4px;
-        color: var(--navy);
-        font-weight: 850;
-        line-height: 1.5;
-      }
-
-      .guide-preview-close {
-        margin: 34px 0 0;
-        color: var(--navy);
-        font-size: 1.08rem;
-        font-weight: 800;
-        line-height: 1.6;
-        text-align: center;
-      }
-
-      .quick-offer {
-        padding: 84px 28px 92px;
-        background: var(--cream-deep);
-        border-bottom: 1px solid rgba(23, 55, 97, 0.1);
-      }
-
-      .quick-offer-card {
-        display: grid;
-        grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-        width: min(100%, 1120px);
-        margin: 0 auto;
-        overflow: hidden;
-        border: 1px solid rgba(23, 55, 97, 0.14);
-        border-radius: 20px;
-        background: #ffffff;
-        box-shadow: 0 24px 65px rgba(23, 55, 97, 0.12);
-      }
-
-      .quick-offer-copy,
-      .quick-offer-buy {
-        padding: 42px;
-      }
-
-      .quick-offer-copy {
-        border-right: 1px solid rgba(23, 55, 97, 0.13);
-      }
-
-      .quick-offer-kicker {
-        margin: 0;
-        color: var(--blue-dark);
-        font-size: 0.82rem;
-        font-weight: 900;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-      }
-
-      .quick-offer-copy h2 {
-        margin: 12px 0 14px;
-        color: var(--navy);
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(2rem, 3.4vw, 3rem);
-        font-weight: 500;
-        line-height: 1.08;
-      }
-
-      .quick-offer-intro {
-        margin: 0;
-        color: var(--muted);
-        font-size: 1.05rem;
-        line-height: 1.62;
-      }
-
-      .quick-offer-list {
-        display: grid;
-        gap: 11px;
-        margin: 25px 0 0;
-        padding: 0;
-        list-style: none;
-      }
-
-      .quick-offer-list li {
-        position: relative;
-        padding-left: 28px;
-        color: var(--text);
-        line-height: 1.5;
-      }
-
-      .quick-offer-list li::before {
-        content: "✓";
-        position: absolute;
-        left: 0;
-        color: #17673e;
-        font-weight: 900;
-      }
-
-      .quick-offer-buy {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        background: var(--navy);
-        color: #e9eff7;
-      }
-
-      .quick-discount {
-        align-self: flex-start;
-        padding: 7px 12px;
-        border-radius: 999px;
-        background: #e5c861;
-        color: var(--navy);
-        font-size: 0.78rem;
-        font-weight: 900;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-      }
-
-      .quick-price {
-        display: flex;
-        align-items: baseline;
-        gap: 12px;
-        margin: 20px 0 5px;
-      }
-
-      .quick-price s {
-        color: #aebbd0;
-        font-size: 1.2rem;
-      }
-
-      .quick-price strong {
-        color: #ffffff;
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 3.6rem;
-        font-weight: 500;
-        line-height: 1;
-      }
-
-      .quick-offer-buy > p {
-        margin: 8px 0 0;
-        color: #d8e2ef;
-        line-height: 1.58;
-      }
-
-      .quick-offer-buy .button {
-        width: 100%;
-        margin-top: 24px;
-        background: #ffffff;
-        color: var(--navy);
-        box-shadow: none;
-      }
-
-      .quick-offer-buy .button:hover {
-        background: var(--gold-soft);
-      }
-
-      .quick-offer-buy .quick-checkout-note {
-        margin-top: 13px;
-        color: #cbd7e6;
-        font-size: 0.9rem;
-        line-height: 1.45;
-        text-align: center;
-      }
-
-      @media (max-width: 760px) {
-        .top-banner-inner {
-          padding: 10px 18px;
-          font-size: 0.88rem;
-        }
-
-        .quick-offer {
-          padding: 64px 18px;
-        }
-
-        .quick-offer-card {
-          grid-template-columns: 1fr;
-        }
-
-        .quick-offer-copy {
-          border-right: 0;
-          border-bottom: 1px solid rgba(23, 55, 97, 0.13);
-        }
-
-        .quick-offer-copy,
-        .quick-offer-buy {
-          padding: 28px 22px;
-        }
-
-        .quick-price strong {
-          font-size: 3rem;
-        }
-      }
-
-      .demonstrations {
-        background: var(--section-sage);
-        border-bottom: 1px solid rgba(23, 55, 97, 0.1);
-      }
-
-      .demonstrations-inner {
-        width: min(100%, 1120px);
-        margin: 0 auto;
-        padding: 82px 28px 94px;
-      }
-
-      .demonstrations-heading {
-        margin: 0;
-        max-width: 18ch;
-        color: var(--navy);
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(2.1rem, 4.4vw, 4rem);
-        font-weight: 500;
-        line-height: 1.08;
-      }
-
-      .demonstrations-kicker {
-        margin: 0 0 14px;
-        color: var(--blue-dark);
-        font-size: 0.78rem;
-        font-weight: 800;
-        letter-spacing: 0.13em;
-        text-transform: uppercase;
-      }
-
-      .demonstrations-subhead {
-        margin: 24px 0 0;
-        max-width: 46rem;
-        color: var(--muted);
-        font-size: 1.16rem;
-        line-height: 1.68;
-      }
-
-      .demonstration-list {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 20px;
-        margin-top: 58px;
-      }
-
-      .demonstration-example {
-        overflow: hidden;
-        border: 1px solid rgba(23, 55, 97, 0.14);
-        border-radius: 15px;
-        background: var(--cream-card);
-        box-shadow: 0 15px 42px rgba(23, 55, 97, 0.08);
-      }
-
-      .demonstration-copy {
-        padding: 22px;
-      }
-
-      .demonstration-copy h3 {
-        margin: 0;
-        color: var(--navy);
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 1.15rem;
-        font-weight: 500;
-        line-height: 1.18;
-      }
-
-      .demonstration-copy p {
-        margin: 8px 0 0;
-        color: var(--text);
-        font-size: 0.96rem;
-        line-height: 1.58;
-      }
-
-      .demonstration-image {
-        display: block;
-        width: 100%;
-        aspect-ratio: 16 / 10;
-        object-fit: cover;
-        object-position: top;
-        border-bottom: 1px solid rgba(23, 55, 97, 0.14);
-      }
-
-      .demonstrations-close {
-        margin: 58px auto 0;
-        max-width: 48rem;
-        padding-top: 28px;
-        border-top: 1px solid rgba(23, 55, 97, 0.16);
-        color: var(--navy);
-        font-size: 1.2rem;
-        font-weight: 700;
-        line-height: 1.62;
-      }
-
-      .prompt-pack-offer {
-        margin: 42px auto 0;
-        max-width: 48rem;
-        padding: 34px 36px;
-        border: 1px solid rgba(23, 55, 97, 0.16);
-        border-radius: 8px;
-        background: #ffffff;
-        box-shadow: 0 18px 42px rgba(23, 55, 97, 0.08);
-      }
-
-      .prompt-pack-kicker {
-        margin: 0;
-        color: var(--blue-dark);
-        font-size: 0.84rem;
-        font-weight: 900;
-        letter-spacing: 0;
-        text-transform: uppercase;
-      }
-
-      .prompt-pack-offer h3 {
-        margin: 10px 0 0;
-        color: var(--navy);
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(1.65rem, 3vw, 2.35rem);
-        font-weight: 500;
-        line-height: 1.16;
-      }
-
-      .prompt-pack-copy {
-        margin: 16px 0 0;
-        color: var(--text);
-        font-size: 1.08rem;
-        line-height: 1.65;
-      }
-
-      .prompt-pack-price {
-        display: flex;
-        align-items: baseline;
-        gap: 12px;
-        flex-wrap: wrap;
-        margin-top: 22px;
-        color: var(--navy);
-      }
-
-      .prompt-pack-was {
-        color: var(--muted);
-        font-size: 1rem;
-      }
-
-      .prompt-pack-was s {
-        text-decoration-thickness: 2px;
-      }
-
-      .prompt-pack-now {
-        font-size: 1.35rem;
-        font-weight: 900;
-      }
-
-      .prompt-pack-saving {
-        padding: 5px 9px;
-        border-radius: 5px;
-        background: var(--gold-soft);
-        color: var(--navy);
-        font-size: 0.88rem;
-        font-weight: 900;
-      }
-
-      .prompt-pack-total {
-        margin: 12px 0 0;
-        color: var(--muted);
-        font-size: 0.96rem;
-        line-height: 1.55;
-      }
-
-      .prompt-pack-offer .button {
-        margin-top: 24px;
-      }
-
-      .beginner {
-        background: var(--section-mint);
-        border-bottom: 1px solid rgba(23, 55, 97, 0.1);
-      }
-
-      .beginner-grid {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(300px, 0.72fr);
-        gap: 30px;
-        align-items: start;
-        margin-top: 34px;
-      }
-
-      .beginner-card {
-        padding: 26px 28px;
-        border: 1px solid rgba(23, 55, 97, 0.12);
-        border-radius: 10px;
-        background: #ffffff;
-        box-shadow: 0 16px 36px rgba(23, 55, 97, 0.06);
-      }
-
-      .beginner-card p {
-        margin: 0;
-        color: var(--text);
-        font-size: 1.08rem;
-        line-height: 1.68;
-      }
-
-      .beginner-checks {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        display: grid;
-        gap: 12px;
-      }
-
-      .beginner-checks li {
-        padding: 15px 18px;
-        border: 1px solid rgba(23, 55, 97, 0.1);
-        border-radius: 10px;
-        background: #fffdf9;
-        color: var(--navy);
-        font-weight: 800;
-        line-height: 1.35;
-      }
-
-      .punch-section h2 {
-        max-width: 18ch;
-      }
-
-      .punch-copy {
-        margin-top: 30px;
-        max-width: 46rem;
-      }
-
-      .punch-copy p {
-        font-size: 1.22rem;
-        line-height: 1.62;
-      }
-
-      .punch-cards {
-        grid-template-columns: repeat(4, 1fr);
-      }
-
-      .punch-cards .clarity-card,
-      .punch-cards .value-card {
-        min-height: 190px;
-      }
-
-      .punch-list {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .gold-bullets {
-        margin: 52px 0 0;
-        padding: 0;
-        list-style: none;
-        display: grid;
-        gap: 28px;
-        max-width: 50rem;
-      }
-
-      .gold-bullets li {
-        position: relative;
-        padding-left: 48px;
-        color: var(--text);
-        font-size: 1.18rem;
-        line-height: 1.65;
-      }
-
-      .gold-bullets li::before {
-        content: "";
-        position: absolute;
-        top: 0.72em;
-        left: 0;
-        width: 11px;
-        height: 11px;
-        border-radius: 50%;
-        background: #d6ad22;
-      }
-
-      .problem-prose {
-        margin: 34px 0 0;
-        max-width: 58rem;
-        color: var(--text);
-        font-size: 1.14rem;
-        line-height: 1.78;
-      }
-
-      .problem-prose p {
-        margin: 0 0 18px;
-      }
-
-      .problem-list {
-        display: grid;
-        gap: 22px;
-        margin: 52px 0 0;
-        padding: 0;
-        max-width: 54rem;
-        list-style: none;
-        color: var(--ink);
-        font-size: clamp(1.08rem, 2vw, 1.35rem);
-        line-height: 1.62;
-      }
-
-      .problem-list li {
-        position: relative;
-        padding-left: 46px;
-      }
-
-      .problem-list li::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0.72em;
-        width: 11px;
-        height: 11px;
-        border-radius: 999px;
-        background: var(--gold);
-        box-shadow: 0 0 0 6px rgba(203, 171, 73, 0.12);
-      }
-
-      .belief-shift {
-        margin: 30px 0 0;
-        max-width: 54rem;
-        padding: 24px 26px;
-        border: 1px solid rgba(23, 55, 97, 0.13);
-        border-radius: 10px;
-        background: #fffdf9;
-        box-shadow: 0 14px 34px rgba(23, 55, 97, 0.06);
-      }
-
-      .belief-shift h3 {
-        margin: 0 0 12px;
-        color: var(--navy);
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(1.45rem, 2.2vw, 2rem);
-        font-weight: 500;
-        line-height: 1.14;
-      }
-
-      .belief-shift p {
-        margin: 0;
-        color: var(--text);
-        font-size: 1.08rem;
-        line-height: 1.62;
-      }
-
-      .belief-shift p + p {
-        margin-top: 12px;
-      }
-
-      .advantage-callout {
-        margin: 48px 0 0;
-        max-width: 50rem;
-        padding: 30px 32px;
-        border-left: 6px solid var(--navy);
-        border-radius: 10px;
-        background: var(--cream-card);
-        box-shadow: 0 18px 42px rgba(23, 55, 97, 0.08);
-        color: var(--navy);
-      }
-
-      .advantage-callout h3 {
-        margin: 0;
-        max-width: 38rem;
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(1.55rem, 2.5vw, 2.15rem);
-        font-weight: 500;
-        line-height: 1.18;
-      }
-
-      .advantage-callout > p {
-        margin: 14px 0 0;
-        max-width: 42rem;
-        color: var(--text);
-        font-size: 1.08rem;
-        line-height: 1.65;
-      }
-
-      .advantage-guarantee {
-        margin-top: 22px;
-        padding-top: 20px;
-        border-top: 1px solid rgba(23, 55, 97, 0.14);
-        color: var(--muted);
-        font-size: 0.98rem;
-        line-height: 1.6;
-      }
-
-      .advantage-guarantee strong {
-        color: var(--navy);
-      }
-
-      .advantage-callout .button {
-        margin-top: 24px;
-      }
-
-      .shift-heading {
-        margin: 54px 0 0;
-        color: var(--navy);
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(1.7rem, 3vw, 2.5rem);
-        font-weight: 500;
-        line-height: 1.12;
-      }
-
-      .shift-grid {
-        display: grid;
-        gap: 22px;
-        margin: 26px 0 0;
-        max-width: 58rem;
-      }
-
-      .shift-card {
-        padding: 28px 30px;
-        border: 1px solid rgba(23, 55, 97, 0.13);
-        border-radius: 14px;
-        background: #fff;
-        box-shadow: 0 16px 30px rgba(23, 55, 97, 0.07);
-      }
-
-      .shift-card strong {
-        display: block;
-        margin-bottom: 16px;
-        color: var(--navy);
-        font-size: 1.02rem;
-      }
-
-      .shift-card p {
-        margin: 0;
-        color: var(--text);
-        font-size: clamp(1.05rem, 1.8vw, 1.25rem);
-        line-height: 1.62;
-      }
-
-      .fit-list {
-        margin: 46px 0 0;
-        padding: 0;
-        list-style: none;
-        display: grid;
-        gap: 28px;
-        max-width: 58rem;
-      }
-
-      .fit-list li {
-        position: relative;
-        padding-left: 48px;
-        color: var(--text);
-        font-size: 1.2rem;
-        line-height: 1.62;
-      }
-
-      .early-testimonial {
-        margin: 30px 0 0;
-        max-width: 58rem;
-        padding: 26px 30px;
-        border-left: 4px solid var(--blue);
-        background: #ffffff;
-        box-shadow: 0 14px 34px rgba(23, 55, 97, 0.06);
-      }
-
-      .early-testimonial blockquote {
-        margin: 0;
-        color: var(--text);
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(1.08rem, 1.8vw, 1.28rem);
-        line-height: 1.6;
-      }
-
-      .early-testimonial figcaption {
-        margin-top: 14px;
-        color: var(--muted);
-        font-weight: 800;
-      }
-
-      .fit-list li strong {
-        display: block;
-        margin-bottom: 4px;
-        color: var(--navy);
-      }
-
-      .fit-list li::before {
-        content: "→";
-        position: absolute;
-        top: 0;
-        left: 0;
-        color: var(--navy);
-        font-size: 1.35rem;
-        font-weight: 800;
-        line-height: 1.45;
-      }
-
-      .not-for-card {
-        margin-top: 58px;
-        max-width: 58rem;
-        padding: 28px 34px;
-        border-radius: 10px;
-        border: 1px solid rgba(23, 55, 97, 0.12);
-        background: var(--cream-card);
-        box-shadow: 0 16px 36px rgba(23, 55, 97, 0.06);
-        color: var(--muted);
-        font-size: 1.08rem;
-        line-height: 1.68;
-      }
-
-      .not-for-card strong {
-        color: var(--navy);
-      }
-
-      .story {
-        background: var(--section-blue);
-        border-bottom: 1px solid rgba(23, 55, 97, 0.1);
-      }
-
-      .story-inner {
-        width: min(100%, 1140px);
-        margin: 0 auto;
-        padding: 72px 32px 88px;
-      }
-
-      .story-heading {
-        margin: 0;
-        color: var(--navy);
-        font-family: Georgia, "Times New Roman", serif;
-        font-weight: 500;
-        font-size: clamp(2rem, 3.4vw, 3rem);
-        line-height: 1.06;
-        max-width: 12ch;
-      }
-
-      .story-kicker {
-        margin: 0 0 14px;
-        color: var(--blue-dark);
-        font-size: 0.78rem;
-        font-weight: 800;
-        letter-spacing: 0.13em;
-        text-transform: uppercase;
-      }
-
-      .story-subhead {
-        margin: 22px 0 0;
-        color: var(--text);
-        font-size: 1.15rem;
-        line-height: 1.7;
-        max-width: 58rem;
-      }
-
-      .story-copy {
-        max-width: 58rem;
-        margin-top: 34px;
-        color: var(--text);
-        font-size: 1.08rem;
-        line-height: 1.75;
-      }
-
-      .story-copy p {
-        margin: 0 0 18px;
-      }
-
-      .story-copy strong {
-        color: var(--navy);
-      }
-
-      .clarity {
-        background: var(--section-warm);
-        border-bottom: 1px solid rgba(23, 55, 97, 0.1);
-      }
-
-      .clarity-inner {
-        width: min(100%, 1140px);
-        margin: 0 auto;
-        padding: 76px 32px 92px;
-      }
-
-      .clarity-heading {
-        margin: 0;
-        color: var(--navy);
-        font-family: Georgia, "Times New Roman", serif;
-        font-weight: 500;
-        font-size: clamp(2rem, 3.4vw, 3rem);
-        line-height: 1.08;
-        max-width: 18ch;
-      }
-
-      .clarity-subhead {
-        margin: 22px 0 0;
-        max-width: 58rem;
-        color: var(--text);
-        font-size: 1.15rem;
-        line-height: 1.7;
-      }
-
-      .clarity-copy {
-        margin-top: 42px;
-        max-width: 60rem;
-        color: var(--text);
-        font-size: 1.06rem;
-        line-height: 1.78;
-      }
-
-      .clarity-copy p {
-        margin: 0 0 22px;
-      }
-
-      .clarity-cards {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 14px;
-        margin: 34px 0 38px;
-      }
-
-      .clarity-card {
-        min-height: 170px;
-        padding: 20px;
-        border: 1px solid rgba(23, 55, 97, 0.12);
-        border-radius: 10px;
-        background: var(--cream-card);
-        box-shadow: 0 16px 36px rgba(23, 55, 97, 0.06);
-      }
-
-      .clarity-card svg {
-        width: 30px;
-        height: 30px;
-        margin-bottom: 14px;
-        color: #1f9d62;
-      }
-
-      .clarity-card h3 {
-        margin: 0;
-        color: var(--navy);
-        font-size: 1rem;
-        line-height: 1.28;
-      }
-
-      .clarity-card p {
-        margin: 12px 0 0;
-        color: var(--muted);
-        font-size: 0.95rem;
-        line-height: 1.48;
-      }
-
-      .inside {
-        background: var(--section-gold);
-        border-bottom: 1px solid rgba(23, 55, 97, 0.1);
-      }
-
-      .inside-inner {
-        width: min(100%, 1140px);
-        margin: 0 auto;
-        padding: 76px 32px 92px;
-      }
-
-      .inside-heading {
-        margin: 0;
-        color: var(--navy);
-        font-family: Georgia, "Times New Roman", serif;
-        font-weight: 500;
-        font-size: clamp(2rem, 3.4vw, 3rem);
-        line-height: 1.08;
-        max-width: 16ch;
-      }
-
-      .inside-subhead {
-        margin: 22px 0 0;
-        max-width: 58rem;
-        color: var(--text);
-        font-size: 1.15rem;
-        line-height: 1.7;
-      }
-
-      .inside-intro {
-        margin: 34px 0 0;
-        max-width: 60rem;
-        color: var(--text);
-        font-size: 1.06rem;
-        line-height: 1.78;
-      }
-
-      .inside-list {
-        margin: 38px 0 0;
-        padding: 0;
-        list-style: none;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 18px;
-      }
-
-      .inside-item {
-        display: grid;
-        grid-template-columns: 46px 1fr;
-        gap: 16px;
-        padding: 22px;
-        border-radius: 10px;
-        border: 1px solid rgba(23, 55, 97, 0.12);
-        background: var(--cream-card);
-        box-shadow: 0 16px 36px rgba(23, 55, 97, 0.06);
-      }
-
-      .inside-number {
-        width: 46px;
-        height: 46px;
-        display: grid;
-        place-items: center;
-        border-radius: 50%;
-        background: var(--navy);
-        color: #ffffff;
-        font-weight: 800;
-      }
-
-      .inside-item h3 {
-        margin: 0;
-        color: var(--navy);
-        font-size: 1.08rem;
-        line-height: 1.28;
-      }
-
-      .inside-item p {
-        margin: 10px 0 0;
-        color: var(--muted);
-        line-height: 1.55;
-      }
-
-      .now { background: var(--sage); }
-
-      .now-inner {
-        width: min(100%, 1140px);
-        margin: 0 auto;
-        padding: 76px 32px 92px;
-        text-align: center;
-      }
-
-      .now-heading {
-        margin: 0;
-        color: var(--navy);
-        font-family: Georgia, "Times New Roman", serif;
-        font-weight: 500;
-        font-size: clamp(2rem, 3.4vw, 3rem);
-        line-height: 1.08;
-        max-width: 17ch;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .now-subhead {
-        margin: 22px 0 0;
-        max-width: 58rem;
-        color: var(--text);
-        font-size: 1.15rem;
-        line-height: 1.7;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .now-grid {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr);
-        gap: 28px;
-        align-items: start;
-        margin-top: 42px;
-      }
-
-      .now-copy {
-        color: var(--text);
-        font-size: 1.06rem;
-        line-height: 1.78;
-        max-width: 44rem;
-        margin: 0 auto;
-      }
-
-      .now-copy p {
-        margin: 0 0 22px;
-      }
-
-      .now-list {
-        display: grid;
-        gap: 14px;
-      }
-
-      .now-item {
-        display: grid;
-        grid-template-columns: 34px 1fr;
-        gap: 14px;
-        padding: 18px;
-        border-radius: 10px;
-        background: var(--cream-card);
-        border: 1px solid rgba(23, 55, 97, 0.12);
-        box-shadow: 0 16px 36px rgba(23, 55, 97, 0.06);
-      }
-
-      .now-item svg {
-        width: 34px;
-        height: 34px;
-        color: #1f9d62;
-      }
-
-      .now-item h3 {
-        margin: 0;
-        color: var(--navy);
-        font-size: 1.02rem;
-        line-height: 1.3;
-      }
-
-      .now-item p {
-        margin: 8px 0 0;
-        color: var(--muted);
-        line-height: 1.5;
-      }
-
-      .outcome {
-        background: var(--section-cream);
-        border-bottom: 1px solid rgba(23, 55, 97, 0.1);
-      }
-
-      .testimonials {
-        background: var(--section-lilac);
-        border-bottom: 1px solid rgba(23, 55, 97, 0.1);
-      }
-
-      .outcome-inner,
-      .value-inner,
-      .trust-inner {
-        width: min(100%, 1140px);
-        margin: 0 auto;
-        padding: 76px 32px 92px;
-      }
-
-      .testimonials-inner {
-        width: min(100%, 1140px);
-        margin: 0 auto;
-        padding: 78px 32px 92px;
-      }
-
-      .outcome-heading,
-      .value-heading,
-      .trust-heading,
-      .testimonials-heading {
-        margin: 0;
-        color: var(--navy);
-        font-family: Georgia, "Times New Roman", serif;
-        font-weight: 500;
-        font-size: clamp(2rem, 3.4vw, 3rem);
-        line-height: 1.08;
-        max-width: 17ch;
-      }
-
-      .testimonials-kicker {
-        margin: 0 0 14px;
-        color: var(--blue-dark);
-        font-size: 0.78rem;
-        font-weight: 800;
-        letter-spacing: 0.13em;
-        text-transform: uppercase;
-      }
-
-      .outcome-subhead,
-      .value-subhead,
-      .trust-subhead,
-      .testimonials-subhead {
-        margin: 22px 0 0;
-        max-width: 58rem;
-        color: var(--text);
-        font-size: 1.15rem;
-        line-height: 1.7;
-      }
-
-      .testimonial-list {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 18px;
-        margin: 44px 0 0;
-      }
-
-      .testimonial-card {
-        padding: 28px;
-        border: 1px solid rgba(23, 55, 97, 0.12);
-        border-radius: 10px;
-        background: var(--cream-card);
-        box-shadow: 0 16px 34px rgba(23, 55, 97, 0.06);
-      }
-
-      .testimonial-quote {
-        margin: 0;
-        color: var(--text);
-        font-size: 1.12rem;
-        line-height: 1.65;
-      }
-
-      .testimonial-person {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        margin-top: 24px;
-        color: var(--muted);
-        font-size: 1rem;
-      }
-
-      .testimonials-guarantee {
-        max-width: 48rem;
-        margin: 34px auto 0;
-        padding: 28px 30px;
-        border: 1px solid rgba(23, 55, 97, 0.15);
-        border-radius: 10px;
-        background: rgba(255, 255, 255, 0.62);
-        text-align: center;
-      }
-
-      .testimonials-guarantee h3 {
-        margin: 0;
-        color: var(--navy);
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 1.55rem;
-        font-weight: 500;
-      }
-
-      .testimonials-guarantee p {
-        margin: 12px 0 0;
-        color: var(--text);
-        line-height: 1.65;
-      }
-
-      .testimonial-avatar {
-        display: grid;
-        width: 48px;
-        height: 48px;
-        place-items: center;
-        border-radius: 50%;
-        background: #1f578f;
-        color: #ffffff;
-        font-weight: 800;
-        letter-spacing: 0.02em;
-      }
-
-      .outcome-list,
-      .trust-list {
-        margin: 38px 0 0;
-        padding: 0;
-        list-style: none;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 16px;
-      }
-
-      .outcome-list li,
-      .trust-list li {
-        padding: 22px;
-        border-radius: 10px;
-        border: 1px solid rgba(23, 55, 97, 0.12);
-        background: var(--cream-card);
-        box-shadow: 0 16px 36px rgba(23, 55, 97, 0.06);
-        color: var(--text);
-        line-height: 1.55;
-      }
-
-      .outcome-list li {
-        position: relative;
-        padding-left: 70px;
-      }
-
-      .outcome-list li::before {
-        content: "✓";
-        position: absolute;
-        top: 24px;
-        left: 24px;
-        width: 28px;
-        height: 28px;
-        display: grid;
-        place-items: center;
-        border-radius: 50%;
-        background: #329766;
-        color: #ffffff;
-        font-weight: 800;
-        line-height: 1;
-      }
-
-      .outcome-list strong,
-      .trust-list strong {
-        display: block;
-        margin-bottom: 8px;
-        color: var(--navy);
-        font-size: 1.05rem;
-      }
-
-      .value { background: var(--cream); }
-
-      .value-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 16px;
-        margin-top: 38px;
-      }
-
-      .value-card {
-        padding: 22px;
-        border-radius: 10px;
-        border: 1px solid rgba(23, 55, 97, 0.12);
-        background: var(--cream-card);
-        box-shadow: 0 16px 36px rgba(23, 55, 97, 0.06);
-      }
-
-      .value-card h3 {
-        margin: 0;
-        color: var(--navy);
-        font-size: 1.08rem;
-        line-height: 1.28;
-      }
-
-      .value-card p {
-        margin: 12px 0 0;
-        color: var(--muted);
-        line-height: 1.55;
-      }
-
-      .trust {
-        background: var(--section-mint);
-        border-bottom: 1px solid rgba(23, 55, 97, 0.1);
-      }
-
-      .guarantee {
-        background: var(--section-sage);
-        border-bottom: 1px solid rgba(23, 55, 97, 0.1);
-      }
-
-      .guarantee-inner {
-        width: min(100%, 860px);
-        margin: 0 auto;
-        padding: 78px 32px 92px;
-        text-align: center;
-      }
-
-      .guarantee-icon {
-        width: 74px;
-        height: 74px;
-        margin: 0 auto 24px;
-        color: #1f9d62;
-      }
-
-      .guarantee-heading {
-        margin: 0;
-        color: var(--navy);
-        font-family: Georgia, "Times New Roman", serif;
-        font-weight: 500;
-        font-size: clamp(2rem, 3.4vw, 3rem);
-        line-height: 1.08;
-      }
-
-      .guarantee-copy {
-        margin: 26px auto 0;
-        max-width: 44rem;
-        color: var(--text);
-        font-size: 1.1rem;
-        line-height: 1.72;
-      }
-
-      .guarantee-copy p {
-        margin: 0 0 20px;
-      }
-
-      .guarantee-line {
-        margin: 32px auto 0;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 48px;
-        padding: 0 22px;
-        border-radius: 999px;
-        background: #eaf8f1;
-        color: #136b43;
-        font-weight: 800;
-      }
-
-      .faq {
-        background: var(--section-cream);
-        border-bottom: 1px solid rgba(23, 55, 97, 0.1);
-      }
-
-      .faq-inner {
-        width: min(100%, 980px);
-        margin: 0 auto;
-        padding: 76px 32px 88px;
-      }
-
-      .faq-heading {
-        margin: 0;
-        color: var(--navy);
-        font-family: Georgia, "Times New Roman", serif;
-        font-weight: 500;
-        font-size: clamp(2rem, 3.4vw, 3rem);
-        line-height: 1.08;
-        text-align: center;
-      }
-
-      .faq-subhead {
-        margin: 20px auto 0;
-        max-width: 42rem;
-        color: var(--text);
-        font-size: 1.12rem;
-        line-height: 1.65;
-        text-align: center;
-      }
-
-      .faq-list {
-        display: grid;
-        gap: 14px;
-        margin-top: 36px;
-      }
-
-      .faq-item {
-        padding: 22px 24px;
-        border: 1px solid rgba(23, 55, 97, 0.12);
-        border-radius: 10px;
-        background: #ffffff;
-        box-shadow: 0 14px 34px rgba(23, 55, 97, 0.06);
-      }
-
-      .faq-item h3 {
-        margin: 0;
-        color: var(--navy);
-        font-size: 1.08rem;
-        line-height: 1.3;
-      }
-
-      .faq-item p {
-        margin: 10px 0 0;
-        color: var(--muted);
-        font-size: 1rem;
-        line-height: 1.55;
-      }
-
-      .final-cta {
-        background: var(--navy);
-        color: #ffffff;
-      }
-
-      .final-cta-inner {
-        width: min(100%, 900px);
-        margin: 0 auto;
-        padding: 74px 32px 84px;
-        text-align: center;
-      }
-
-      .final-cta h2 {
-        margin: 0;
-        font-size: clamp(2rem, 3.6vw, 3.2rem);
-        line-height: 1.08;
-        color: #ffffff;
-      }
-
-      .final-cta p {
-        margin: 22px auto 0;
-        max-width: 42rem;
-        font-size: 1.15rem;
-        line-height: 1.65;
-        color: rgba(255, 255, 255, 0.84);
-      }
-
-      .final-cta .button {
-        margin-top: 34px;
-        background: #ffffff;
-        color: var(--navy);
-        box-shadow: 0 16px 28px rgba(0, 0, 0, 0.22);
-      }
-
-      .final-cta .button:hover {
-        background: var(--gold-soft);
-      }
-
-      @keyframes riseIn {
-        from {
-          opacity: 0;
-          transform: translateY(18px);
-        }
-
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      @keyframes imageSettle {
-        to {
-          transform: scale(1);
-        }
-      }
-
-      @media (max-width: 760px) {
-        .hero {
-          min-height: auto;
-          background: linear-gradient(180deg, #f7f8fc 0%, #ffffff 100%);
-        }
-
-        .hero-grid {
-          min-height: auto;
-          grid-template-columns: 1fr;
-        }
-
-        .hero-copy {
-          padding: 42px 22px 28px;
-        }
-
-        .hero-visual {
-          min-height: min(118vw, 500px);
-        }
-
-        .hero-visual::before {
-          inset: 0 20px 18px;
-          background-position: center top;
-        }
-
-        .hero-content {
-          max-width: 100%;
-        }
-
-        .hero-badge {
-          min-height: 36px;
-          padding: 0 16px;
-          font-size: 0.88rem;
-        }
-
-        h1 {
-          max-width: none;
-          font-size: clamp(2rem, 8.4vw, 2.75rem);
-          line-height: 1.12;
-        }
-
-        .lead {
-          font-size: 1.04rem;
-          max-width: 34rem;
-          line-height: 1.58;
-        }
-
-        .hero .button {
-          min-height: 58px;
-          width: 100%;
-        }
-
-        .hero .note {
-          text-align: left;
-        }
-
-        .learn-inner,
-        .beginner-inner {
-          padding: 54px 22px 66px;
-        }
-
-        .learn-heading,
-        .beginner-heading {
-          max-width: none;
-        }
-
-        .learn-subhead,
-        .beginner-subhead {
-          font-size: 1.04rem;
-          line-height: 1.65;
-        }
-
-        .learn-list {
-          grid-template-columns: 1fr;
-          gap: 12px;
-          margin-top: 28px;
-        }
-
-        .learn-list li {
-          min-height: auto;
-          grid-template-columns: 38px 1fr;
-          padding: 18px;
-        }
-
-        .contents-inner {
-          padding: 56px 22px 68px;
-        }
-
-        .contents-grid {
-          grid-template-columns: 1fr;
-          margin-top: 28px;
-        }
-
-        .contents-card {
-          padding: 21px;
-        }
-
-        .contents-card:last-child:nth-child(odd) {
-          grid-column: auto;
-        }
-
-        .guide-preview-inner {
-          padding: 58px 22px 70px;
-        }
-
-        .guide-preview-grid {
-          grid-template-columns: 1fr;
-          margin-top: 30px;
-        }
-
-        .guide-preview-page {
-          padding: 22px;
-        }
-
-        .demonstrations-inner {
-          padding: 56px 22px 68px;
-        }
-
-        .demonstrations-subhead,
-        .demonstration-copy p {
-          font-size: 1rem;
-        }
-
-        .demonstration-list {
-          grid-template-columns: 1fr;
-          gap: 16px;
-          margin-top: 42px;
-        }
-
-        .demonstration-example {
-          border-radius: 12px;
-        }
-
-        .prompt-pack-offer {
-          padding: 28px 22px;
-        }
-
-        .included-bonuses {
-          padding: 26px 22px;
-        }
-
-        .included-bonuses-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .learn-number {
-          width: 38px;
-          height: 38px;
-        }
-
-        .beginner-grid {
-          grid-template-columns: 1fr;
-          gap: 16px;
-          margin-top: 28px;
-        }
-
-        .beginner-card {
-          padding: 22px;
-        }
-
-        .story-inner {
-          padding: 56px 22px 68px;
-        }
-
-        .story-subhead {
-          font-size: 1.04rem;
-          line-height: 1.65;
-        }
-
-        .story-copy {
-          margin-top: 30px;
-          font-size: 1rem;
-          line-height: 1.7;
-        }
-
-        .clarity-inner {
-          padding: 56px 22px 68px;
-        }
-
-        .clarity-subhead {
-          font-size: 1.04rem;
-          line-height: 1.65;
-        }
-
-        .clarity-copy {
-          margin-top: 34px;
-          font-size: 1rem;
-          line-height: 1.72;
-        }
-
-        .clarity-cards {
-          grid-template-columns: 1fr;
-          gap: 12px;
-          margin: 28px 0 32px;
-        }
-
-        .punch-cards,
-        .punch-list {
-          grid-template-columns: 1fr;
-        }
-
-        .punch-copy p {
-          font-size: 1.08rem;
-          line-height: 1.58;
-        }
-
-        .gold-bullets {
-          margin-top: 42px;
-          gap: 24px;
-        }
-
-        .gold-bullets li {
-          padding-left: 42px;
-          font-size: 1.04rem;
-          line-height: 1.7;
-        }
-
-        .problem-prose {
-          margin-top: 28px;
-          font-size: 1.02rem;
-          line-height: 1.68;
-        }
-
-        .problem-list {
-          gap: 20px;
-          margin-top: 42px;
-          font-size: 1.08rem;
-        }
-
-        .problem-list li {
-          padding-left: 34px;
-        }
-
-        .problem-list li::before {
-          width: 9px;
-          height: 9px;
-        }
-
-        .belief-shift {
-          margin-top: 24px;
-          padding: 22px 20px;
-        }
-
-        .belief-shift p {
-          font-size: 1rem;
-          line-height: 1.62;
-        }
-
-        .advantage-callout {
-          margin-top: 34px;
-          padding: 28px 26px;
-          font-size: 1.32rem;
-          line-height: 1.55;
-        }
-
-        .shift-heading {
-          margin-top: 46px;
-        }
-
-        .shift-card {
-          padding: 24px;
-        }
-
-        .fit-list {
-          margin-top: 38px;
-          gap: 24px;
-        }
-
-        .fit-list li {
-          padding-left: 42px;
-          font-size: 1.04rem;
-          line-height: 1.7;
-        }
-
-        .not-for-card {
-          margin-top: 42px;
-          padding: 22px;
-          font-size: 1rem;
-        }
-
-        .clarity-card {
-          min-height: auto;
-        }
-
-        .inside-inner {
-          padding: 56px 22px 68px;
-        }
-
-        .inside-subhead,
-        .inside-intro {
-          font-size: 1.04rem;
-          line-height: 1.65;
-        }
-
-        .inside-list {
-          grid-template-columns: 1fr;
-          gap: 14px;
-        }
-
-        .inside-item {
-          grid-template-columns: 40px 1fr;
-          padding: 18px;
-        }
-
-        .inside-number {
-          width: 40px;
-          height: 40px;
-        }
-
-        .now-inner {
-          padding: 56px 22px 68px;
-        }
-
-        .now-subhead,
-        .now-copy {
-          font-size: 1.04rem;
-          line-height: 1.65;
-        }
-
-        .now-grid {
-          grid-template-columns: 1fr;
-          gap: 22px;
-          margin-top: 34px;
-        }
-
-        .outcome-inner,
-        .value-inner,
-        .trust-inner {
-          padding: 56px 22px 68px;
-        }
-
-        .testimonials-inner {
-          padding: 58px 22px 68px;
-        }
-
-        .outcome-subhead,
-        .value-subhead,
-        .trust-subhead,
-        .testimonials-subhead {
-          font-size: 1.04rem;
-          line-height: 1.65;
-        }
-
-        .outcome-list,
-        .trust-list,
-        .value-grid {
-          grid-template-columns: 1fr;
-          gap: 14px;
-          margin-top: 30px;
-        }
-
-        .testimonial-list {
-          grid-template-columns: 1fr;
-          margin-top: 36px;
-        }
-
-        .testimonial-card {
-          padding: 24px;
-        }
-
-        .testimonials-guarantee {
-          margin-top: 26px;
-          padding: 24px 22px;
-        }
-
-        .testimonial-quote {
-          font-size: 1.04rem;
-        }
-
-        .testimonial-avatar {
-          width: 42px;
-          height: 42px;
-        }
-
-        .guarantee-inner {
-          padding: 58px 22px 70px;
-        }
-
-        .guarantee-icon {
-          width: 62px;
-          height: 62px;
-        }
-
-        .guarantee-copy {
-          font-size: 1.02rem;
-          line-height: 1.65;
-        }
-
-        .faq-inner {
-          padding: 56px 22px 68px;
-        }
-
-        .faq-subhead {
-          font-size: 1.04rem;
-          line-height: 1.65;
-        }
-
-        .faq-list {
-          margin-top: 30px;
-        }
-
-        .faq-item {
-          padding: 20px;
-        }
-
-        .final-cta-inner {
-          padding: 58px 22px 68px;
-        }
-
-        .final-cta p {
-          font-size: 1.04rem;
-        }
-
-        .checks {
-          gap: 13px;
-          font-size: 0.98rem;
-        }
-
-        .button {
-          width: 100%;
-          min-height: 58px;
-        }
-
-        .note {
-          width: 100%;
-          text-align: center;
-        }
-
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        *,
-        *::before,
-        *::after {
-          scroll-behavior: auto !important;
-          animation-duration: 1ms !important;
-          transition-duration: 1ms !important;
-        }
-      }
-
-    </style>
+.bump-modal { border:0; width:100%; height:100%; max-width:none; max-height:none; margin:0; color:inherit; }
+.bump-modal[open] { display:flex; }
+.bump-modal::backdrop { background:transparent; }
+</style>
   </head>
   <body>
-    <script>
-      function readCookie(name) {
-        var prefix = name + "=";
-        var cookies = document.cookie ? document.cookie.split(";") : [];
-
-        for (var index = 0; index < cookies.length; index += 1) {
-          var cookie = cookies[index].trim();
-          if (cookie.indexOf(prefix) === 0) {
-            return decodeURIComponent(cookie.slice(prefix.length));
+        <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var modal = document.querySelector('[data-bump-modal]');
+        var checkbox = modal.querySelector('[data-bump-checkbox]');
+        var proceed = modal.querySelector('[data-bump-continue]');
+        function closeModal() { modal.close(); }
+        function updatePrice() {
+          proceed.textContent = checkbox.checked ? 'Get the guide + messages - £26.50' : 'Get the guide - £19';
+        }
+        document.addEventListener('click', function (event) {
+          var checkout = event.target.closest('[data-stripe-checkout]');
+          if (checkout) {
+            event.preventDefault();
+            checkbox.checked = false;
+            updatePrice();
+            modal.showModal();
+            document.body.classList.add('bump-locked');
+            if (typeof fbq === 'function') fbq('track', 'InitiateCheckout');
           }
-        }
-
-        return "";
-      }
-
-      function getMetaVisitorId() {
-        var storageKey = "aiMetaVisitorId";
-        var visitorId = "";
-
-        try {
-          visitorId = window.localStorage.getItem(storageKey) || "";
-        } catch (error) {}
-
-        if (!visitorId) {
-          visitorId = window.createMetaEventId("visitor");
-
-          try {
-            window.localStorage.setItem(storageKey, visitorId);
-          } catch (error) {}
-        }
-
-        return visitorId;
-      }
-
-      function getMetaClickId() {
-        var fbc = readCookie("_fbc");
-        if (fbc) return fbc;
-
-        try {
-          fbc = window.sessionStorage.getItem("aiMetaFbc") || "";
-        } catch (error) {}
-
-        if (fbc) return fbc;
-
-        var fbclid = new URLSearchParams(window.location.search).get("fbclid");
-        if (!fbclid) return "";
-
-        fbc = "fb.1." + Date.now() + "." + fbclid;
-
-        try {
-          window.sessionStorage.setItem("aiMetaFbc", fbc);
-        } catch (error) {}
-
-        return fbc;
-      }
-
-      function sendMetaServerEvent(eventName, eventId, customData) {
-        var payload = {
-          event_name: eventName,
-          event_id: eventId,
-          event_source_url: window.location.href,
-          external_id: getMetaVisitorId(),
-          fbp: readCookie("_fbp"),
-          fbc: getMetaClickId(),
-        };
-
-        if (customData && customData.value) payload.value = customData.value;
-
-        var body = JSON.stringify(payload);
-
-        if (navigator.sendBeacon) {
-          var blob = new Blob([body], { type: "application/json" });
-          if (navigator.sendBeacon("/api/meta-events", blob)) return;
-        }
-
-        if (window.fetch) {
-          window.fetch("/api/meta-events", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: body,
-            keepalive: true,
-          }).catch(function () {});
-        }
-      }
-
-      function trackMetaEvent(eventName, customData) {
-        var eventId = window.createMetaEventId(eventName.toLowerCase());
-        var eventData = customData || {};
-
-        if (typeof fbq === "function") {
-          fbq("track", eventName, eventData, { eventID: eventId });
-        }
-
-        sendMetaServerEvent(eventName, eventId, eventData);
-      }
-
-      async function goToCheckout(url, value) {
-        trackMetaEvent("InitiateCheckout", {
-          content_name: "AI Confidence Kit",
-          currency: "GBP",
-          value: value,
         });
-
-        try {
-          var response = await window.fetch("/api/meta-checkout-context", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              event_source_url: window.location.href,
-              external_id: getMetaVisitorId(),
-              fbp: readCookie("_fbp"),
-              fbc: getMetaClickId(),
-            }),
-          });
-          var result = await response.json();
-
-          if (response.ok && result.client_reference_id) {
-            var checkoutUrl = new URL(url);
-            checkoutUrl.searchParams.set("client_reference_id", result.client_reference_id);
-            window.location.href = checkoutUrl.toString();
-            return;
-          }
-        } catch (error) {}
-
-        window.location.href = url;
-      }
-
-      if ("scrollRestoration" in history) {
-        history.scrollRestoration = "manual";
-      }
-
-      window.addEventListener("pageshow", function () {
-        if (!location.hash) {
-          window.scrollTo(0, 0);
-        }
+        checkbox.addEventListener('change', updatePrice);
+        modal.querySelector('[data-bump-dismiss]').addEventListener('click', closeModal);
+        modal.addEventListener('click', function (event) { if (event.target === modal) closeModal(); });
+        modal.addEventListener('close', function () { document.body.classList.remove('bump-locked'); });
+        modal.querySelector('[data-bump-close]').addEventListener('click', function () {
+          window.location.href = 'https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00';
+        });
+        proceed.addEventListener('click', function () {
+          window.location.href = checkbox.checked
+            ? 'https://buy.stripe.com/28EeVc72PfEUbyM9q2bZe0b'
+            : 'https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00';
+        });
       });
-
-      window.addEventListener("load", function () {
-        sendMetaServerEvent("PageView", window.metaPageViewEventId);
-      }, { once: true });
-
-      var guideCheckoutUrl = "https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00";
-      var guideWithMessagesUrl = "https://buy.stripe.com/28EeVc72PfEUbyM9q2bZe0b";
-
-      function updateBumpButton() {
-        var checkbox = document.querySelector("[data-bump-checkbox]");
-        var button = document.querySelector("[data-bump-continue]");
-        if (!checkbox || !button) return;
-
-        button.textContent = checkbox.checked
-          ? "Get the guide + messages - £26.50"
-          : "Get the guide - £19";
-      }
-
-      function openBumpModal() {
-        var modal = document.querySelector("[data-bump-modal]");
-        var checkbox = document.querySelector("[data-bump-checkbox]");
-        if (!modal || !checkbox) {
-          goToCheckout(guideCheckoutUrl, 9.5);
-          return;
-        }
-
-        checkbox.checked = false;
-        updateBumpButton();
-        modal.classList.add("is-open");
-        modal.setAttribute("aria-hidden", "false");
-        document.body.classList.add("bump-locked");
-      }
-
-      function closeBumpModal() {
-        var modal = document.querySelector("[data-bump-modal]");
-        if (!modal) return;
-
-        modal.classList.remove("is-open");
-        modal.setAttribute("aria-hidden", "true");
-        document.body.classList.remove("bump-locked");
-      }
-
-      document.addEventListener("click", function (event) {
-        var checkout = event.target.closest("[data-direct-checkout]");
-        var close = event.target.closest("[data-bump-close]");
-        var dismiss = event.target.closest("[data-bump-dismiss]");
-        var modal = event.target.closest("[data-bump-modal]");
-        var dialog = event.target.closest(".bump-dialog");
-        var continueButton = event.target.closest("[data-bump-continue]");
-        var checkoutLink = event.target.closest("[data-checkout-link]");
-        if (checkoutLink) {
-          event.preventDefault();
-          goToCheckout(
-            checkoutLink.getAttribute("href"),
-            Number(checkoutLink.getAttribute("data-checkout-value")) || 19
-          );
-          return;
-        }
-
-        if (checkout) {
-          event.preventDefault();
-          openBumpModal();
-          return;
-        }
-
-        if (dismiss) {
-          event.preventDefault();
-          closeBumpModal();
-          return;
-        }
-
-        if (close) {
-          event.preventDefault();
-          goToCheckout(guideCheckoutUrl, 9.5);
-          return;
-        }
-
-        if (modal && !dialog) {
-          event.preventDefault();
-          closeBumpModal();
-          return;
-        }
-
-        if (continueButton) {
-          var checkbox = document.querySelector("[data-bump-checkbox]");
-          var includesMessages = checkbox && checkbox.checked;
-          goToCheckout(includesMessages ? guideWithMessagesUrl : guideCheckoutUrl, includesMessages ? 26.5 : 19);
-        }
-      });
-
-      document.addEventListener("change", function (event) {
-        if (event.target.matches("[data-bump-checkbox]")) {
-          updateBumpButton();
-        }
-      });
-
-      document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape") {
-          closeBumpModal();
-        }
-      });
-
     </script>
-    <div class="bump-modal" data-bump-modal aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="bump-title">
+    <div class="top-banner">
+      <div class="top-banner-inner">
+        <strong>Trusted by 1,300+ readers</strong>
+        <p>Many report saving about <strong>2 hours a week</strong> on reading and everyday admin</p>
+        <a href="#reviews">Read reviews</a>
+      </div>
+    </div>
+    <main>
+      <section class="hero" aria-label="AI finally explained in plain English for adults 50+ hero">
+        <div class="hero-inner">
+          <div class="hero-grid">
+            <div class="hero-copy">
+              <div class="hero-content">
+                <div class="hero-badge">For Beginners, Written Plainly</div>
+                <h1>Finally Understand How to Use AI, Without Feeling Lost or Left Behind</h1>
+                <p class="lead">
+                  A calm, practical kit that shows you exactly where to start with AI, how to get genuinely useful answers, make everyday tasks easier, and spot when images or content online may be AI-made or fake.
+                </p>
+                <div class="actions">
+                  <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-stripe-checkout>Get Instant Access - &pound;19</a>
+                </div>
+                <p class="note">Instant download. 60-day money-back guarantee.</p>
+              </div>
+            </div>
+            <div class="hero-visual" aria-hidden="true"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="story punch-section" id="reviews" aria-label="The world is moving fast">
+        <div class="story-inner">
+          <h2 class="story-heading">The World Is Moving Fast. You Don&rsquo;t Have to Feel Left Behind.</h2>
+          <p class="story-subhead">
+            AI is becoming part of how people work, think, make decisions, and handle everyday tasks. If it still feels confusing, that does not mean it is too difficult for you. It means most explanations have made it harder than it needs to be.
+          </p>
+          <div class="problem-prose">
+            <p>You hear about AI in the news, at work, in apps you already use, and in conversations that assume everyone is keeping up. It is no longer some far-off tech trend. It is becoming part of ordinary life before most people have had a clear explanation of what it actually is.</p>
+            <p>So you are left trying to work out where to start, what to ask, what to trust, and how to tell whether the answer is actually useful. What is missing is not more hype. It is a calm foundation that makes AI feel usable in your own life.</p>
+          </div>
+          <div class="advantage-callout">
+            This isn&rsquo;t about being technical. It&rsquo;s about having someone show you, clearly, how to use AI as a genuine advantage in your life.
+          </div>
+          <h3 class="shift-heading">The shift readers describe</h3>
+          <div class="shift-grid">
+            <article class="shift-card">
+              <strong>Before</strong>
+              <p>I felt like AI was something other people understood. I didn&rsquo;t know where I fit in.</p>
+            </article>
+            <article class="shift-card">
+              <strong>After</strong>
+              <p>I use AI to think through problems, make better decisions, and get things done I couldn&rsquo;t before.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="outcome punch-section" aria-label="What you'll gain">
+        <div class="outcome-inner">
+          <h2 class="outcome-heading">What You&rsquo;ll Gain</h2>
+          <p class="outcome-subhead">
+            This short kit gives you real clarity and control. No jargon. No assumptions. Just practical understanding you can use immediately.
+          </p>
+          <ul class="outcome-list punch-list">
+            <li><strong>A thinking partner for decisions</strong>Use AI to work through options, weigh up choices, and see angles you might miss on your own.</li>
+            <li><strong>A way through information overload</strong>Cut long articles, emails, pages, and explanations down to what actually matters.</li>
+            <li><strong>More confidence with everyday admin</strong>Get help drafting replies, organising details, comparing prices, and making confusing tasks easier to start.</li>
+            <li><strong>A better filter for what you see online</strong>Learn how to spot when content, images, or claims may be AI-made, misleading, or fake.</li>
+            <li><strong>Clearer judgement about trust</strong>Know when an answer needs checking, when a claim feels suspect, and when AI is the wrong tool.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="clarity punch-section" aria-label="Who this is for">
+        <div class="clarity-inner">
+          <h2 class="clarity-heading">Who This Is For</h2>
+          <ul class="fit-list">
+            <li>You want more leverage over your time, work, and decisions</li>
+            <li>You&rsquo;d rather understand something deeply than just follow steps blindly</li>
+            <li>You&rsquo;re ready to stop watching from the sidelines and start using AI with intention</li>
+            <li>You want to feel confident about where the world is heading, not anxious about being left behind</li>
+          </ul>
+          <div class="not-for-card">
+            <strong>This isn&rsquo;t for:</strong> tech professionals or anyone looking for advanced techniques. This is for intelligent beginners who want AI explained clearly enough to use it in real life.
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials punch-section" aria-label="What readers say">
+        <div class="testimonials-inner">
+          <h2 class="testimonials-heading">What Readers Say</h2>
+          <p class="testimonials-subhead">Honest feedback from people who wanted clarity, not complexity.</p>
+          <div class="testimonial-list">
+            <article class="testimonial-card">
+              <p class="testimonial-quote">&ldquo;I finally feel like I understand what&rsquo;s happening. I went from anxious to genuinely excited about what I can do now.&rdquo;</p>
+              <div class="testimonial-person">
+                <span class="testimonial-avatar" aria-hidden="true">M</span>
+                <span>Margaret, 62</span>
+              </div>
+            </article>
+            <article class="testimonial-card">
+              <p class="testimonial-quote">&ldquo;I use it to think through decisions now. It&rsquo;s like having a smart colleague available whenever I need one.&rdquo;</p>
+              <div class="testimonial-person">
+                <span class="testimonial-avatar" aria-hidden="true">S</span>
+                <span>Susan, 48</span>
+              </div>
+            </article>
+            <article class="testimonial-card">
+              <p class="testimonial-quote">&ldquo;The calm, clear tone made all the difference. I actually feel in control of AI now instead of intimidated by it.&rdquo;</p>
+              <div class="testimonial-person">
+                <span class="testimonial-avatar" aria-hidden="true">D</span>
+                <span>David, 55</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="inside punch-section" aria-label="Why free AI advice does not fix it">
+        <div class="inside-inner">
+          <h2 class="inside-heading">Why Free Advice Does Not Fix It</h2>
+          <p class="inside-subhead">
+            There is no shortage of free AI advice. That is part of the problem.
+          </p>
+          <div class="value-grid punch-cards">
+            <article class="value-card"><h3>YouTube tutorials assume too much</h3><p>They move quickly, use terms you have not been taught, and make you feel like you arrived halfway through.</p></article>
+            <article class="value-card"><h3>Tech articles bury you in jargon</h3><p>You set out to understand AI and end up reading definitions that make it feel even further away.</p></article>
+            <article class="value-card"><h3>Random ChatGPT tips skip the foundation</h3><p>They tell you what to type, but not what is happening, when to trust it, or why it goes wrong.</p></article>
+            <article class="value-card"><h3>Trying it yourself still leaves doubt</h3><p>The tool was supposed to save time, but you end up checking everything afterwards anyway.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="trust punch-section" aria-label="What you will finally understand">
+        <div class="trust-inner">
+          <h2 class="trust-heading">What You Will Finally Understand</h2>
+          <p class="trust-subhead">
+            The goal is not to turn you into an AI expert. It is to give you enough understanding to stop feeling exposed every time AI comes up.
+          </p>
+          <ul class="trust-list punch-list">
+            <li><strong>What AI actually is</strong>In plain English, without technical detours or clever-sounding waffle.</li>
+            <li><strong>When AI is useful</strong>So you know where it can genuinely save time in normal life.</li>
+            <li><strong>When AI cannot be trusted</strong>So a confident answer does not make the decision for you.</li>
+            <li><strong>What never to type into it</strong>So addresses, bank details, and private family information stay protected.</li>
+            <li><strong>How to spot misleading AI content</strong>So you are not left assuming everything is real or everything is fake.</li>
+            <li><strong>How to use tools like ChatGPT</strong>Without blindly believing them or feeling silly when the answer is weak.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="final-cta" aria-label="Get instant access">
+        <div class="final-cta-inner">
+          <h2>Get Instant Access</h2>
+          <p>Get the calm starting point most AI explanations skip. In one short kit, you can understand what AI is, how to make it useful in everyday life, and how to feel clearer about what to trust.</p>
+          <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-stripe-checkout>Get Instant Access - &pound;19</a>
+          <p class="checkout-note">Instant download. 60-day money-back guarantee.</p>
+        </div>
+      </section>
+
+    </main>
+      <dialog class="bump-modal" data-bump-modal aria-labelledby="bump-title">
       <div class="bump-dialog">
         <button class="bump-x" type="button" data-bump-dismiss aria-label="Close">&times;</button>
         <div class="bump-topline">Add 100 ready-to-use messages</div>
@@ -2907,7 +1706,7 @@
         <label class="bump-option">
           <input type="checkbox" data-bump-checkbox />
           <span>
-            <strong>Add the 100-message pack for &pound;3.75</strong>
+            <strong>Add the 100-message pack for &pound;7.50</strong>
             <span>Writing &middot; planning &middot; decisions &middot; shopping &middot; appointments &middot; confusing information</span>
             <span class="bump-price"><b>&pound;26.50 total</b></span>
           </span>
@@ -2917,257 +1716,5 @@
           <button class="bump-close" type="button" data-bump-close>No thanks, get the guide for &pound;19</button>
         </div>
       </div>
-    </div>
-    <div class="top-banner">
-      <div class="top-banner-inner"><strong>AI Confidence Kit — &pound;19.</strong> Instant download.</div>
-    </div>
-    <main>
-      <section class="hero" aria-label="AI finally explained in plain English hero">
-        <div class="hero-inner">
-          <div class="hero-grid">
-            <div class="hero-copy">
-              <div class="hero-content">
-                <div class="hero-badge">Not sure what to ask ChatGPT?</div>
-                <h1>Not sure what to ask ChatGPT? Start using AI confidently in everyday life.</h1>
-                <p class="lead">
-                  A calm, practical guide that shows you where to start, where AI can genuinely help, what to ask and how to use the answers. Everyday examples and ready-to-use messages help you begin without trial and error.
-                </p>
-                <p class="hero-reassurance">No jargon. No pressure. Just a clear way in.</p>
-                <div class="actions">
-                  <a
-                    class="button"
-                    href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00"
-                    data-direct-checkout
-                  >Get the guide &mdash; &pound;19</a>
-                  <p class="hero-checkout-note">Instant download. 60-day money-back guarantee.</p>
-                  <a class="hero-look-link" href="#inside-the-guide">Want to look first? <span>See what&rsquo;s included</span></a>
-                </div>
-              </div>
-            </div>
-            <div class="hero-visual" aria-hidden="true"></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="story punch-section" aria-label="Understand and use AI in everyday life">
-        <div class="story-inner">
-          <p class="story-kicker">You know it could help. You just do not know what to ask.</p>
-          <h2 class="story-heading">A clear, calm way to go from unsure beginner to confident everyday user.</h2>
-          <p class="story-subhead">
-            You may have opened ChatGPT, seen the blank box and wondered what to ask. A message you need to write, a letter you do not understand, a choice you are weighing up&mdash;you know you need help, but not how to put it into words.
-          </p>
-          <div class="story-copy">
-            <p><strong>You do not need to know the perfect words.</strong></p>
-            <p>The guide shows you where AI is useful in everyday life, gives you clear questions to start with, and helps you make any question fit your own situation.</p>
-          </div>
-          <h3 class="shift-heading">The change you can expect</h3>
-          <div class="shift-grid">
-            <article class="shift-card">
-              <strong>Before</strong>
-              <p>I knew ChatGPT might help, but I did not know what to ask or how to explain what I needed.</p>
-            </article>
-            <article class="shift-card">
-              <strong>After</strong>
-              <p>I can start with a clear question, adapt it to my situation and use AI with more confidence.</p>
-            </article>
-          </div>
-          <figure class="early-testimonial">
-            <blockquote>&ldquo;I&rsquo;d tried ChatGPT a couple of times but never knew what to ask. This finally showed me where AI is actually useful and how to get answers I can use in everyday life.&rdquo;</blockquote>
-            <figcaption>Margaret, 62</figcaption>
-          </figure>
-          <div class="advantage-callout">
-            <h3>Start with a question that is already written for you.</h3>
-            <p>Then learn how to make it your own, one familiar everyday task at a time.</p>
-            <div class="advantage-guarantee">
-              <strong>Try it for 60 days without risk.</strong> If you don&rsquo;t feel clearer about using AI, email us for a full refund. No complicated terms.
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="demonstrations" aria-label="Examples of useful AI help">
-        <div class="demonstrations-inner">
-          <p class="demonstrations-kicker">Questions for ordinary life</p>
-          <h2 class="demonstrations-heading">See the kinds of questions that can make everyday tasks easier</h2>
-          <p class="demonstrations-subhead">The guide shows you what to ask, what a helpful answer can look like, and how to make the question fit your own situation.</p>
-
-          <div class="demonstration-list">
-            <article class="demonstration-example">
-              <img class="demonstration-image" src="ex3.png" alt="AI explaining a confusing letter in plain English" loading="lazy" />
-              <div class="demonstration-copy">
-                <h3>Understand confusing information</h3>
-                <p>Turn a difficult letter or explanation into clear language and see a sensible next step.</p>
-              </div>
-            </article>
-
-            <article class="demonstration-example">
-              <img class="demonstration-image" src="ex2.png" alt="AI helping write a polite message" loading="lazy" />
-              <div class="demonstration-copy">
-                <h3>Write a message in the right tone</h3>
-                <p>Use a simple starting message to get a clear draft, then adjust it until it sounds like you.</p>
-              </div>
-            </article>
-
-            <article class="demonstration-example">
-              <img class="demonstration-image" src="ex1.png" alt="AI helping compare an everyday decision" loading="lazy" />
-              <div class="demonstration-copy">
-                <h3>Think through a difficult choice</h3>
-                <p>Lay out the options and get help thinking through them calmly, one step at a time.</p>
-              </div>
-            </article>
-          </div>
-
-          <p class="demonstrations-close">These are only three examples. The guide helps you see where AI is useful, gives you 10 ready-to-use messages to start with, then shows you how to ask in your own way.</p>
-
-        </div>
-      </section>
-
-      <section class="learn" aria-label="Your journey from confused to confident with AI">
-        <div class="learn-inner">
-          <div class="learn-kicker">A calm step-by-step guide</div>
-          <h2 class="learn-heading">From &ldquo;What do I ask?&rdquo; to using AI comfortably in everyday life</h2>
-          <p class="learn-subhead">
-            There is no need to take it all in at once. Follow each small step when you are ready.
-          </p>
-          <ul class="learn-list">
-            <li><span class="learn-number">1</span><span><strong>Understand the basics</strong><span class="journey-action">See what AI is useful for in clear, ordinary language.</span><span class="journey-result">It will begin to feel less technical and unfamiliar.</span></span></li>
-            <li><span class="learn-number">2</span><span><strong>Try a familiar task</strong><span class="journey-action">Start with writing, planning, decisions or confusing information.</span><span class="journey-result">You will see where AI can be genuinely helpful in your life.</span></span></li>
-            <li><span class="learn-number">3</span><span><strong>Know what to ask</strong><span class="journey-action">Use the included ready-made questions and learn how to make them fit your situation.</span><span class="journey-result">You will not have to face a blank box on your own.</span></span></li>
-            <li><span class="learn-number">4</span><span><strong>Build confidence gently</strong><span class="journey-action">Use the What to Ask Builder and try one small task a day.</span><span class="journey-result">Using AI will start to feel calmer and more natural.</span></span></li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="quick-offer" id="inside-the-guide" aria-label="What is included in the AI Confidence Kit">
-        <div class="quick-offer-card">
-          <div class="quick-offer-copy">
-            <p class="quick-offer-kicker">Get instant access now</p>
-            <h2>The AI Confidence Kit</h2>
-            <p class="quick-offer-intro">A calm, practical guide to where to start with AI, what to ask and how to use it confidently in everyday life.</p>
-
-            <ul class="quick-offer-list">
-              <li><strong>31-page digital guide</strong>&mdash;clear explanations that show where to start and how AI can help</li>
-              <li><strong>A gentle first step</strong>&mdash;which tool to open, a familiar task to try and what to do next</li>
-              <li><strong>10 everyday AI use cases</strong>&mdash;see where AI can genuinely help with ordinary life</li>
-              <li><strong>10 ready-to-use messages</strong>&mdash;a simple, reassuring shortcut when you are not sure what to ask</li>
-              <li><strong>The &ldquo;What to Ask&rdquo; Builder</strong>&mdash;a calm way to turn your own situation into a useful question</li>
-              <li><strong>7-Day Everyday AI Starter Plan</strong>&mdash;one small task a day, at your own pace</li>
-            </ul>
-          </div>
-
-          <div class="quick-offer-buy">
-
-            <div class="quick-price">
-
-              <strong>&pound;19</strong>
-            </div>
-            <p>Get the complete guide and practical tools as an instant download, ready whenever you want to take the first step.</p>
-            <a
-              class="button"
-              href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00"
-              data-direct-checkout
-            >Get the AI Confidence Kit &mdash; &pound;19</a>
-            <p class="quick-checkout-note">60-day money-back guarantee. Secure checkout with Stripe.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="testimonials punch-section" id="reviews" aria-label="What readers say">
-        <div class="testimonials-inner">
-          <p class="testimonials-kicker">For ordinary everyday users</p>
-          <h2 class="testimonials-heading">Designed to make AI feel clear, calm and approachable</h2>
-          <div class="testimonial-list">
-            <article class="testimonial-card">
-              <p class="testimonial-quote">&ldquo;Every explanation I found online felt too technical. This explained everything in plain English, and I finally understood how AI could help with normal everyday tasks.&rdquo;</p>
-              <div class="testimonial-person">
-                <span class="testimonial-avatar" aria-hidden="true">S</span>
-                <span>Susan, 48</span>
-              </div>
-            </article>
-            <article class="testimonial-card">
-              <p class="testimonial-quote">&ldquo;I thought AI probably wasn&rsquo;t for people like me. Now I know where it helps, what to ask, and I feel calm enough to open it instead of avoiding it.&rdquo;</p>
-              <div class="testimonial-person">
-                <span class="testimonial-avatar" aria-hidden="true">D</span>
-                <span>David, 55</span>
-              </div>
-            </article>
-          </div>
-          <aside class="testimonials-guarantee" aria-label="60-day money-back guarantee">
-            <h3>Try it for 60 days</h3>
-            <p>Read it, try it and decide whether it helped. If the guide does not make AI feel clearer, calmer and easier to use, email for a full refund.</p>
-          </aside>
-        </div>
-      </section>
-
-      <section class="faq" aria-label="Common questions">
-        <div class="faq-inner">
-          <h2 class="faq-heading">Common Questions</h2>
-          <p class="faq-subhead">A few quick answers before you decide if this is the right starting point for you.</p>
-          <div class="faq-list">
-            <article class="faq-item">
-              <h3>What if I have no idea what to ask ChatGPT?</h3>
-              <p>That is exactly what the kit is for. It gives you 10 ready-made questions, familiar examples and a calm way to turn your own situation into useful words.</p>
-            </article>
-            <article class="faq-item">
-              <h3>Do I need to be good at writing prompts?</h3>
-              <p>No. You do not need clever wording or technical prompts. The guide is written in ordinary language and shows you what to ask step by step.</p>
-            </article>
-            <article class="faq-item">
-              <h3>Is it technical?</h3>
-              <p>No. There is no coding, complicated setup or technical message-writing. It is written for normal everyday use.</p>
-            </article>
-            <article class="faq-item">
-              <h3>What will I be able to do after reading it?</h3>
-              <p>You will feel clearer about where AI can help, know how to begin with familiar tasks and have a calmer way to ask for useful help.</p>
-            </article>
-            <article class="faq-item">
-              <h3>Will I still have to work everything out on my own?</h3>
-              <p>No. The guide gives you a clear starting point, examples you can follow, ready-to-send messages and a simple builder for your own tasks.</p>
-            </article>
-            <article class="faq-item">
-              <h3>Will I get access straight away?</h3>
-              <p>Yes. After checkout, you will get instant access to download the guide.</p>
-            </article>
-            <article class="faq-item">
-              <h3>What if it is not useful for me?</h3>
-              <p>You are covered by the 60-day money-back guarantee. Try it, and if it is not for you, you can ask for a refund.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="final-cta" aria-label="Get instant access">
-        <div class="final-cta-inner" id="get-instant-access">
-          <h2>Know where to start, what to ask and how AI can help in everyday life.</h2>
-          <p>Get a calm guide, everyday examples and practical tools that help you take the first step and use AI with more confidence.</p>
-          <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00" data-direct-checkout>Get the guide &mdash; &pound;19</a>
-          <p class="checkout-note">Instant download. 60-day money-back guarantee.</p>
-        </div>
-      </section>
-
-    </main>
-  </body>
+    </dialog></body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
