@@ -1481,7 +1481,21 @@
       .lesson-outcome { margin-top: 18px; padding: 32px 36px; border-radius: 14px; background: var(--navy); color: #fff; box-shadow: 0 18px 36px rgba(23, 55, 97, .14); }
       .lesson-transition { margin: 0 0 14px; color: #dce9f7; font-size: 1.08rem; line-height: 1.6; }
       .lesson-conclusion { max-width: 60rem; margin: 0; color: #fff; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.2rem, 2vw, 1.5rem); font-weight: 500; line-height: 1.5; }
-      @media (max-width: 760px) { .lesson-inner { padding: 56px 22px 68px; } .lesson-grid { grid-template-columns: 1fr; } .lesson-intro-card, .lesson-card, .lesson-outcome { padding: 24px; } .lesson-card { min-height: auto; } }</style>
+      @media (max-width: 760px) { .lesson-inner { padding: 56px 22px 68px; } .lesson-grid { grid-template-columns: 1fr; } .lesson-intro-card, .lesson-card, .lesson-outcome { padding: 24px; } .lesson-card { min-height: auto; } }      .story-before-after { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin: 34px 0; }
+      .story-state { position: relative; min-height: 300px; padding: 30px 32px; border-radius: 14px; box-shadow: 0 16px 36px rgba(23, 55, 97, .06); }
+      .story-state h3 { margin: 0 0 12px; font-family: Georgia, "Times New Roman", serif; font-size: 1.65rem; font-weight: 500; }
+      .story-state strong { display: block; margin-bottom: 20px; font-size: 1.06rem; line-height: 1.5; }
+      .story-state ul { margin: 0; padding: 0; list-style: none; }
+      .story-state li { margin: 0 0 10px; line-height: 1.55; }
+      .story-before { border: 1px solid #edcaca; background: #fff2f1; color: #6d2929; }
+      .story-after { border: 1px solid #c9dfcf; background: #edf8f0; color: #24543a; }
+      .story-before::before, .story-after::before { position: absolute; top: 22px; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; font-size: 1.2rem; font-weight: 800; }
+      .story-before::before { content: "×"; left: 24px; background: #f5dada; }
+      .story-after::before { content: "✓"; right: 24px; background: #d4ebda; }
+      .story-before h3 { padding-left: 42px; }
+      .story-after h3 { padding-right: 42px; }
+      .story-copy .story-emphasis { color: var(--navy); font-family: Georgia, "Times New Roman", serif; font-size: 1.24rem; line-height: 1.55; }
+      @media (max-width: 760px) { .story-before-after { grid-template-columns: 1fr; } .story-state { min-height: auto; padding: 26px; } }</style>
   </head>
   <body>
     <div class="top-banner">
@@ -1516,18 +1530,37 @@
         <div class="story-inner">
           <h2 class="story-heading">AI arrived fast, but nobody gave us an instruction manual.</h2>
           <div class="story-copy">
-            <p>When AI first started appearing everywhere, I was sceptical. Friends were talking about it, family were using it, it was constantly in the news, and I could see that some people were finding it genuinely useful. So eventually I gave it a go.</p>
+            <p>When AI first started appearing everywhere, I was sceptical. Friends were talking about it, family were using it, it was constantly in the news, and eventually I decided to see what all the fuss was about.</p>
             <p>The problem was, I had no idea what I was supposed to type.</p>
-            <p>I would ask something fairly ordinary, get a vague or disappointing answer back, try again once or twice, and then decide it was probably more trouble than it was worth. For a while, I assumed that maybe AI was simply more useful if you were younger, more technical, or already knew what you were doing.</p>
+            <p>I would ask something fairly ordinary, get a vague or disappointing answer back, try again once or twice, and decide it was probably more trouble than it was worth. For a while I assumed AI was simply more useful if you were younger, technical, or already knew what you were doing.</p>
             <p><strong>So I stopped using it.</strong></p>
-            <p>But it kept coming up everywhere, and I kept seeing people use it for things that actually looked useful. Eventually curiosity got the better of me and I started properly experimenting with it. I changed the way I asked questions, gave it more context, tested what happened when I challenged weak answers, worked out the kinds of things it was genuinely good at, and learned when I should double-check what it told me.</p>
+            <p>But it kept appearing everywhere, and I kept seeing people use it for things that genuinely looked useful. Eventually curiosity got the better of me and I started experimenting properly — changing the way I asked questions, adding context, improving weak answers and learning which jobs AI was actually good at.</p>
             <p>It took far more trial and error than it should have, but eventually something clicked.</p>
-            <p>And once it did, everyday life started feeling noticeably easier.</p>
-            <p>The awkward email I would normally put off for half an hour could be drafted in minutes. A long document I did not want to read could be turned into a clear summary before I had finished my coffee. I could plan a trip, compare options, organise a messy list of jobs, research something unfamiliar, or get a sensible starting point for a task without staring at a blank screen wondering where to begin.</p>
-            <p>The biggest difference was not that I had become “good at AI.” It was that I stopped wasting time and mental energy on small jobs that used to drag on.</p>
-            <p><strong>I felt more capable. More current. Less dependent on other people to explain what was going on.</strong></p>
-            <p>And when friends or family talked about AI, I was no longer sitting there thinking, “I really should understand this by now.” I had my own examples. I knew what it was useful for. I knew how to get a decent answer. <strong>And I was actually using it.</strong></p>
-            <p>That is why I put this guide together: to give other people the straightforward starting point I wish somebody had given me before I spent all those hours figuring it out for myself.</p>
+            <div class="story-before-after">
+              <article class="story-state story-before">
+                <h3>Before</h3>
+                <strong>AI felt like something happening around me.</strong>
+                <ul>
+                  <li>I did not know what to ask.</li>
+                  <li>The answers were disappointing.</li>
+                  <li>I still did everyday jobs the slow way.</li>
+                  <li>And when people talked about AI, I mostly listened.</li>
+                </ul>
+              </article>
+              <article class="story-state story-after">
+                <h3>After</h3>
+                <strong>AI became something I actually used.</strong>
+                <ul>
+                  <li>Awkward emails took minutes instead of half an hour.</li>
+                  <li>Long documents became quick summaries.</li>
+                  <li>Trips, comparisons and research became easier to organise.</li>
+                  <li>Blank-page jobs were easier to start.</li>
+                </ul>
+              </article>
+            </div>
+            <p>And, perhaps most importantly, I stopped feeling as though everybody else had been handed a tool I had somehow missed.</p>
+            <p class="story-emphasis"><strong>I felt more capable, more current, and far less dependent on other people to explain it to me.</strong></p>
+            <p>That is why I put the AI Confidence Kit together: to give other people the straightforward starting point I wish somebody had given me before I spent all those hours figuring it out for myself.</p>
           </div>
         </div>
       </section>
