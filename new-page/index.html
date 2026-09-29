@@ -1495,7 +1495,18 @@
       .story-before h3 { padding-left: 42px; }
       .story-after h3 { padding-right: 42px; }
       .story-copy .story-emphasis { color: var(--navy); font-family: Georgia, "Times New Roman", serif; font-size: 1.24rem; line-height: 1.55; }
-      @media (max-width: 760px) { .story-before-after { grid-template-columns: 1fr; } .story-state { min-height: auto; padding: 26px; } }</style>
+      @media (max-width: 760px) { .story-before-after { grid-template-columns: 1fr; } .story-state { min-height: auto; padding: 26px; } }      .benefits-section { background: var(--cream-card); }
+      .benefits-inner { width: min(100%, 1140px); margin: 0 auto; padding: 78px 32px 94px; }
+      .benefits-heading { max-width: 23ch; margin: 0 0 34px; color: var(--navy); font-family: Georgia, "Times New Roman", serif; font-size: clamp(2rem, 3.4vw, 3rem); font-weight: 500; line-height: 1.08; }
+      .benefits-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 18px; }
+      .benefit-card { grid-column: span 2; min-height: 250px; padding: 28px 30px 30px; border: 1px solid rgba(23, 55, 97, .12); border-radius: 14px; background: #fff; box-shadow: 0 16px 36px rgba(23, 55, 97, .06); }
+      .benefit-card:nth-child(4) { grid-column: 2 / span 2; }
+      .benefit-card:nth-child(5) { grid-column: 4 / span 2; }
+      .benefit-card::before { content: attr(data-step); display: grid; place-items: center; width: 42px; height: 42px; margin-bottom: 20px; border-radius: 11px; background: #eaf2fc; color: var(--blue); font-size: .94rem; font-weight: 800; }
+      .benefit-card h3 { margin: 0 0 13px; color: var(--navy); font-family: Georgia, "Times New Roman", serif; font-size: 1.4rem; font-weight: 500; line-height: 1.28; }
+      .benefit-card p { margin: 0; color: var(--text); font-size: 1.02rem; line-height: 1.7; }
+      @media (max-width: 900px) { .benefits-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .benefit-card, .benefit-card:nth-child(4), .benefit-card:nth-child(5) { grid-column: auto; } }
+      @media (max-width: 600px) { .benefits-inner { padding: 58px 22px 72px; } .benefits-grid { grid-template-columns: 1fr; } .benefit-card { min-height: auto; padding: 25px; } }</style>
   </head>
   <body>
     <div class="top-banner">
@@ -1588,6 +1599,33 @@
           </div>
           <div class="lesson-outcome"><p class="lesson-transition">Once I understood those things, the whole experience changed.</p>
           <p class="lesson-conclusion"><strong>The AI Confidence Kit is the guide I wish I had at the beginning: the practical lessons that took me hours of trial and error, laid out simply so you can start getting useful results without having to figure it all out for yourself.</strong></p></div>
+        </div>
+      </section>
+      <section class="benefits-section" aria-label="What you will learn">
+        <div class="benefits-inner">
+          <h2 class="benefits-heading">Everything you need to start using AI properly — without becoming technical</h2>
+          <div class="benefits-grid">
+            <article class="benefit-card" data-step="01">
+              <h3>Know which AI tool to use</h3>
+              <p>Start with the simple, reliable tools that are actually useful for everyday life, so you are not wasting time comparing dozens of apps you do not need.</p>
+            </article>
+            <article class="benefit-card" data-step="02">
+              <h3>Ask questions that get useful answers</h3>
+              <p>Learn how to give AI the right information so it understands what you want and gives you something clear, specific and genuinely helpful back.</p>
+            </article>
+            <article class="benefit-card" data-step="03">
+              <h3>Improve an answer instead of starting again</h3>
+              <p>If the first response is weak, you will know how to correct it, add context and guide AI towards something much closer to what you need.</p>
+            </article>
+            <article class="benefit-card" data-step="04">
+              <h3>Know what AI is actually useful for</h3>
+              <p>See the everyday jobs where AI can genuinely save time and effort — from emails and planning to research, organising ideas and making sense of information.</p>
+            </article>
+            <article class="benefit-card" data-step="05">
+              <h3>Know when to double-check it</h3>
+              <p>Learn where AI can get things wrong, when you should verify an answer, and how to use it confidently without blindly trusting everything it says.</p>
+            </article>
+          </div>
         </div>
       </section>    </main>
   </body>
