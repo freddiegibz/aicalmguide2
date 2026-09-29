@@ -1546,7 +1546,25 @@
       .kit-checklist li { display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: 15px; padding: 21px 0; border-bottom: 1px solid rgba(23, 55, 97, .14); }
       .kit-checklist li::before { content: "✓"; display: grid; place-items: center; width: 28px; height: 28px; margin-top: 2px; border-radius: 50%; background: #d8eddd; color: #24613c; font-size: .95rem; font-weight: 800; }
       .kit-checklist strong { display: block; margin: 0 0 6px; color: var(--navy); font-family: Georgia, "Times New Roman", serif; font-size: 1.27rem; font-weight: 500; line-height: 1.3; }
-      .kit-checklist span { display: block; color: var(--text); font-size: 1rem; line-height: 1.62; }</style>
+      .kit-checklist span { display: block; color: var(--text); font-size: 1rem; line-height: 1.62; }      .offer-section { background: var(--cream); }
+      .offer-section-inner { width: min(100%, 1100px); margin: 0 auto; padding: 86px 32px 100px; }
+      .offer-card { overflow: hidden; border: 1px solid rgba(23,55,97,.14); border-radius: 20px; background: #fffdf9; box-shadow: 0 25px 60px rgba(23,55,97,.11); }
+      .offer-card-main { display: grid; grid-template-columns: minmax(0,1.35fr) minmax(270px,.65fr); gap: 42px; padding: clamp(32px,5vw,62px); }
+      .offer-card h2 { margin: 0 0 16px; color: var(--navy); font-family: Georgia,"Times New Roman",serif; font-size: clamp(2rem,3.4vw,3rem); font-weight: 500; line-height: 1.08; }
+      .offer-card-promise { max-width: 43rem; margin: 0 0 28px; color: var(--navy); font-size: clamp(1.13rem,1.8vw,1.35rem); line-height: 1.55; }
+      .offer-checklist { margin: 0; padding: 0; list-style: none; display: grid; gap: 15px; }
+      .offer-checklist li { display: flex; gap: 12px; align-items: flex-start; color: var(--text); font-size: 1.04rem; line-height: 1.5; }
+      .offer-checklist li::before { content: "✓"; flex: 0 0 26px; display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: #d8eddd; color: #24613c; font-size: .9rem; font-weight: 800; }
+      .offer-buy { align-self: center; padding: 30px; border: 1px solid #e0d6bf; border-radius: 14px; background: #f8f3e8; text-align: center; }
+      .offer-buy h3 { margin: 0; color: var(--navy); font-family: Georgia,"Times New Roman",serif; font-size: 1.3rem; font-weight: 500; }
+      .offer-price { margin: 8px 0 4px; color: var(--navy); font-family: Georgia,"Times New Roman",serif; font-size: 3.8rem; line-height: 1; }
+      .offer-payment { margin: 0 0 22px; color: var(--muted); font-size: .96rem; }
+      .offer-buy .button { display: flex; width: 100%; min-height: 58px; padding: 12px 18px; background: #1e4f87; text-align: center; }
+      .offer-guarantee { margin: 18px 0 0; color: var(--navy); font-size: .95rem; }
+      .offer-access { margin: 10px 0 0; color: var(--muted); font-size: .9rem; line-height: 1.5; }
+      .offer-foot { margin: 0; padding: 20px 30px; border-top: 1px solid rgba(23,55,97,.1); background: #eef4fb; color: var(--navy); font-size: 1rem; line-height: 1.5; text-align: center; }
+      @media (max-width: 780px) { .offer-card-main { grid-template-columns: 1fr; gap: 30px; } .offer-buy { max-width: 420px; width: 100%; margin: 0 auto; } }
+      @media (max-width: 600px) { .offer-section-inner { padding: 60px 18px 74px; } .offer-card-main { padding: 28px 23px; } .offer-buy { padding: 25px 20px; } }</style>
   </head>
   <body>
     <div class="top-banner">
@@ -1707,6 +1725,36 @@
               <p class="testimonial-quote">“I used to ask my son whenever I got stuck with this sort of thing. Now I use AI for emails, planning, comparing things and making sense of long information myself. It’s made me feel much more confident and independent with it.”</p>
               <div class="testimonial-person"><span class="testimonial-avatar" aria-hidden="true">M</span><span>Michael, 67</span></div>
             </article>
+          </div>
+        </div>
+      </section>
+      <section class="offer-section" aria-label="Get AI Confidence Kit today">
+        <div class="offer-section-inner">
+          <div class="offer-card">
+            <div class="offer-card-main">
+              <div>
+                <h2>Get AI Confidence Kit Today</h2>
+                <p class="offer-card-promise"><strong>Everything you need to go from curious beginner to confidently using AI in everyday life.</strong></p>
+                <ul class="offer-checklist">
+                  <li>Complete beginner-friendly AI guide</li>
+                  <li>Plain-English explanations with nothing assumed</li>
+                  <li>Practical examples you can follow</li>
+                  <li>Everyday use cases that save time and effort</li>
+                  <li>Guidance on improving weak answers</li>
+                  <li>Clear advice on when to double-check AI</li>
+                  <li>Instant digital access</li>
+                </ul>
+              </div>
+              <div class="offer-buy">
+                <h3>Today:</h3>
+                <p class="offer-price">£19</p>
+                <p class="offer-payment"><strong>One payment. No subscription.</strong></p>
+                <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00">Get Instant Access — £19</a>
+                <p class="offer-guarantee"><strong>60-day money-back guarantee</strong></p>
+                <p class="offer-access">Download it immediately and start from the beginning at your own pace.</p>
+              </div>
+            </div>
+            <p class="offer-foot"><strong>No jargon. No technical background required. No need to already know what to ask.</strong></p>
           </div>
         </div>
       </section>    </main>
