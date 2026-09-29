@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title></title>
+    <title>Use AI Confidently in Everyday Life | AI Confidence Kit</title>
     <style>
       :root { --ink:#243c35; --muted:#626961; --line:#deded3; --paper:#f5f3eb; --accent:#285c46; }
       * { box-sizing:border-box; }
@@ -100,9 +100,30 @@
       .copy-section h3 { color:var(--ink); font-size:23px; line-height:1.35; margin:30px 0 16px; }
       blockquote { margin:20px 0; padding-left:20px; border-left:3px solid #d4a84b; line-height:1.85; }
       .deliverables h3:not(:first-child) { border-top:1px solid var(--line); padding-top:28px; }
-    </style>
+      .hero-page { max-width:1120px; padding-top:72px; }
+      .hero { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr); align-items:center; gap:58px; }
+      .hero h1 { margin:0 0 28px; }
+      .hero-copy p { max-width:580px; margin:0 0 22px; color:#596476; font-size:18px; line-height:1.7; }
+      .hero-copy p:last-child { margin-bottom:0; }
+      .hero-image { width:100%; height:auto; display:block; border-radius:8px; }
+      @media(max-width:760px) {
+        .hero-page { padding:42px 24px; }
+        .hero { grid-template-columns:1fr; gap:30px; }
+        .hero h1 { font-size:38px; }
+        .hero-copy p { font-size:17px; }
+      }    </style>
   </head>
   <body>
-    <main><article class="oto"></article></main>
+        <main class="hero-page">
+      <article class="hero">
+        <div class="hero-copy">
+          <h1>Use AI Confidently in Everyday Life</h1>
+          <p>A simple guide for complete beginners who want to understand how to use AI in daily life, even if you've never tried it and aren't sure what to ask.</p>
+          <p>You'll learn how to get useful answers, how to improve the ones that fall flat, where AI can help with everyday things, and when it's worth double-checking what it tells you.</p>
+          <p>Everything is explained in plain language, starting from the very beginning.</p>
+        </div>
+        <img class="hero-image" src="product-image.png" alt="AI Confidence Kit guide held by a smiling reader" width="1254" height="1254" />
+      </article>
+    </main>
   </body>
 </html>
