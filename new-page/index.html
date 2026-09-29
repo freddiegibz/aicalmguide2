@@ -1542,7 +1542,11 @@
       .kit-skill-card p { margin: 0; color: var(--text); font-size: 1rem; line-height: 1.62; }
       .kit-showcase-result { max-width: 100%; margin: 28px 0 0; padding: 24px 29px; border-left: 4px solid var(--blue); border-radius: 0 10px 10px 0; background: #eaf2fc; color: var(--navy); font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.15rem, 1.8vw, 1.4rem); line-height: 1.5; }
       @media (max-width: 800px) { .kit-showcase-layout { grid-template-columns: 1fr; } .kit-cover-frame { max-width: 420px; margin: 0 auto; } }
-      @media (max-width: 600px) { .kit-showcase-inner { padding: 58px 22px 72px; } .kit-skill-card { padding: 18px; gap: 12px; } .kit-showcase-result { padding: 22px; } }</style>
+      @media (max-width: 600px) { .kit-showcase-inner { padding: 58px 22px 72px; } .kit-skill-card { padding: 18px; gap: 12px; } .kit-showcase-result { padding: 22px; } }      .kit-checklist { margin: 0; padding: 0; list-style: none; border-top: 1px solid rgba(23, 55, 97, .14); }
+      .kit-checklist li { display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: 15px; padding: 21px 0; border-bottom: 1px solid rgba(23, 55, 97, .14); }
+      .kit-checklist li::before { content: "✓"; display: grid; place-items: center; width: 28px; height: 28px; margin-top: 2px; border-radius: 50%; background: #d8eddd; color: #24613c; font-size: .95rem; font-weight: 800; }
+      .kit-checklist strong { display: block; margin: 0 0 6px; color: var(--navy); font-family: Georgia, "Times New Roman", serif; font-size: 1.27rem; font-weight: 500; line-height: 1.3; }
+      .kit-checklist span { display: block; color: var(--text); font-size: 1rem; line-height: 1.62; }</style>
   </head>
   <body>
     <div class="top-banner">
@@ -1677,14 +1681,13 @@
           <h2 class="kit-showcase-heading">What you get inside AI Confidence Kit</h2>
           <div class="kit-showcase-layout">
             <div class="kit-cover-frame"><img src="guide-cover.png" alt="AI Confidence Kit guide cover" width="1129" height="1434" loading="lazy" /></div>
-            <div class="kit-skill-list">
-              <article class="kit-skill-card" data-step="01"><div><h3>The complete beginner’s guide</h3><p>A straightforward, start-to-finish introduction you can work through in order, so you are not piecing together random advice from videos, articles and social posts.</p></div></article>
-              <article class="kit-skill-card" data-step="02"><div><h3>A simple guide to the AI tools worth knowing</h3><p>A clear starting point for the main tools you are likely to encounter, so you know what is worth paying attention to and what you can safely ignore for now.</p></div></article>
-              <article class="kit-skill-card" data-step="03"><div><h3>Real examples you can follow</h3><p>See what a weak question looks like, how it is improved, and what changes in the answer, so you are not trying to learn from theory alone.</p></div></article>
-              <article class="kit-skill-card" data-step="04"><div><h3>Everyday AI ideas</h3><p>Practical examples of where people are already using AI to make writing, planning, research, organising and everyday admin easier, so you can quickly spot where it could help in your own life.</p></div></article>
-              <article class="kit-skill-card" data-step="05"><div><h3>A simple guide to using AI sensibly</h3><p>Clear explanations of where AI can make mistakes, what information you should be careful sharing, and when an answer deserves a second look.</p></div></article>
-            </div>
-          </div>
+            <ul class="kit-checklist">
+              <li><div><strong>The complete beginner’s guide</strong><span>A straightforward, start-to-finish introduction you can work through in order, so you are not piecing together random advice from videos, articles and social posts.</span></div></li>
+              <li><div><strong>A simple guide to the AI tools worth knowing</strong><span>A clear starting point for the main tools you are likely to encounter, so you know what is worth paying attention to and what you can safely ignore for now.</span></div></li>
+              <li><div><strong>Real examples you can follow</strong><span>See what a weak question looks like, how it is improved, and what changes in the answer, so you are not trying to learn from theory alone.</span></div></li>
+              <li><div><strong>Everyday AI ideas</strong><span>Practical examples of where people are already using AI to make writing, planning, research, organising and everyday admin easier, so you can quickly spot where it could help in your own life.</span></div></li>
+              <li><div><strong>A simple guide to using AI sensibly</strong><span>Clear explanations of where AI can make mistakes, what information you should be careful sharing, and when an answer deserves a second look.</span></div></li>
+            </ul>          </div>
           <p class="kit-showcase-result"><strong>Everything is designed to give you one clear place to start, without assuming you already understand any of it.</strong></p>
         </div>
       </section>
