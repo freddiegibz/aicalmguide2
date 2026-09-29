@@ -1575,7 +1575,14 @@
       .faq-item[open] summary::after { content: "−"; }
       .faq-item p { margin: 0; padding: 0 25px 23px; color: var(--text); font-size: 1.02rem; line-height: 1.7; }
       .faq-item summary:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; border-radius: 10px; }
-      @media (max-width: 600px) { .faq-inner { padding: 60px 22px 76px; } .faq-item summary { padding: 18px; } .faq-item p { padding: 0 18px 20px; } }</style>
+      @media (max-width: 600px) { .faq-inner { padding: 60px 22px 76px; } .faq-item summary { padding: 18px; } .faq-item p { padding: 0 18px 20px; } }      .closing-section { background: var(--navy); color: #fff; }
+      .closing-inner { width: min(100%, 960px); margin: 0 auto; padding: 82px 32px 92px; text-align: center; }
+      .closing-inner h2 { max-width: 18ch; margin: 0 auto 20px; color: #fff; font-family: Georgia,"Times New Roman",serif; font-size: clamp(2.1rem,4vw,3.4rem); font-weight: 500; line-height: 1.1; }
+      .closing-inner > p { max-width: 44rem; margin: 0 auto 25px; color: #e3ebf6; font-size: 1.14rem; line-height: 1.7; }
+      .closing-inner .button { min-height: 60px; margin: 4px auto 0; padding: 0 30px; background: #fff; color: var(--navy); box-shadow: 0 18px 36px rgba(0,0,0,.16); }
+      .closing-inner .button:hover { background: #eef4fb; }
+      .closing-inner .closing-note { margin: 17px auto 0; color: #d8e4f1; font-size: .96rem; }
+      @media (max-width: 600px) { .closing-inner { padding: 64px 22px 74px; } .closing-inner .button { width: 100%; } }</style>
   </head>
   <body>
     <div class="top-banner">
@@ -1782,6 +1789,14 @@
             <details class="faq-item"><summary>Is this a subscription?</summary><p>No. AI Confidence Kit is a one-time £19 purchase with instant digital access.</p></details>
             <details class="faq-item"><summary>How does the 60-day guarantee work?</summary><p>Try the guide. If it does not help you feel more confident using AI, ask for a refund within 60 days of your purchase.</p></details>
           </div>
+        </div>
+      </section>
+      <section class="closing-section" aria-label="Get AI Confidence Kit">
+        <div class="closing-inner">
+          <h2>Start using AI with confidence</h2>
+          <p>Get one clear place to start, with practical examples you can follow and no technical background required.</p>
+          <a class="button" href="https://buy.stripe.com/eVqaEWbj52S8auI45IbZe00">Get Instant Access — £19</a>
+          <p class="closing-note">One payment. Instant digital access. 60-day money-back guarantee.</p>
         </div>
       </section>    </main>
   </body>
