@@ -1564,7 +1564,18 @@
       .offer-access { margin: 10px 0 0; color: var(--muted); font-size: .9rem; line-height: 1.5; }
       .offer-foot { margin: 0; padding: 20px 30px; border-top: 1px solid rgba(23,55,97,.1); background: #eef4fb; color: var(--navy); font-size: 1rem; line-height: 1.5; text-align: center; }
       @media (max-width: 780px) { .offer-card-main { grid-template-columns: 1fr; gap: 30px; } .offer-buy { max-width: 420px; width: 100%; margin: 0 auto; } }
-      @media (max-width: 600px) { .offer-section-inner { padding: 60px 18px 74px; } .offer-card-main { padding: 28px 23px; } .offer-buy { padding: 25px 20px; } }</style>
+      @media (max-width: 600px) { .offer-section-inner { padding: 60px 18px 74px; } .offer-card-main { padding: 28px 23px; } .offer-buy { padding: 25px 20px; } }      .faq-section { background: var(--cream-card); }
+      .faq-inner { width: min(100%, 980px); margin: 0 auto; padding: 82px 32px 98px; }
+      .faq-heading { margin: 0 0 30px; color: var(--navy); font-family: Georgia,"Times New Roman",serif; font-size: clamp(2rem,3.4vw,3rem); font-weight: 500; line-height: 1.08; }
+      .faq-list { display: grid; gap: 12px; }
+      .faq-item { border: 1px solid rgba(23,55,97,.12); border-radius: 12px; background: #fff; box-shadow: 0 10px 28px rgba(23,55,97,.04); }
+      .faq-item summary { display: flex; justify-content: space-between; align-items: center; gap: 18px; padding: 21px 25px; color: var(--navy); font-size: 1.08rem; font-weight: 700; line-height: 1.4; cursor: pointer; list-style: none; }
+      .faq-item summary::-webkit-details-marker { display: none; }
+      .faq-item summary::after { content: "+"; flex: 0 0 29px; display: grid; place-items: center; width: 29px; height: 29px; border-radius: 50%; background: #eaf2fc; color: var(--blue); font-size: 1.35rem; font-weight: 500; }
+      .faq-item[open] summary::after { content: "−"; }
+      .faq-item p { margin: 0; padding: 0 25px 23px; color: var(--text); font-size: 1.02rem; line-height: 1.7; }
+      .faq-item summary:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; border-radius: 10px; }
+      @media (max-width: 600px) { .faq-inner { padding: 60px 22px 76px; } .faq-item summary { padding: 18px; } .faq-item p { padding: 0 18px 20px; } }</style>
   </head>
   <body>
     <div class="top-banner">
@@ -1755,6 +1766,21 @@
               </div>
             </div>
             <p class="offer-foot"><strong>No jargon. No technical background required. No need to already know what to ask.</strong></p>
+          </div>
+        </div>
+      </section>
+      <section class="faq-section" aria-label="Frequently asked questions">
+        <div class="faq-inner">
+          <h2 class="faq-heading">Frequently asked questions</h2>
+          <div class="faq-list">
+            <details class="faq-item"><summary>Do I need to be technical?</summary><p>No. The guide explains everything in plain English and starts with the basics. You can follow it without knowing how AI works behind the scenes.</p></details>
+            <details class="faq-item"><summary>What if I’ve barely used AI before?</summary><p>That is exactly who the guide is for. It shows you where to start, what to ask, and how to improve an answer when it is not quite right.</p></details>
+            <details class="faq-item"><summary>Which AI tools do I need?</summary><p>The guide gives you a clear starting point with the main tools worth knowing. You can start with one tool and leave the rest until you need them.</p></details>
+            <details class="faq-item"><summary>Do I need to pay for ChatGPT or other tools?</summary><p>No paid AI subscription is required to begin using what you learn in the guide. If you later choose a paid tool, that is a separate decision.</p></details>
+            <details class="faq-item"><summary>How quickly can I start using what I learn?</summary><p>You get instant digital access, so you can start as soon as you download the guide. Work through it at your own pace and try the examples as you go.</p></details>
+            <details class="faq-item"><summary>What if I still find AI confusing after buying?</summary><p>Start from the beginning and take it one step at a time. The examples show what to ask and how to make a weak answer better. If the guide is not right for you, you can use the 60-day money-back guarantee.</p></details>
+            <details class="faq-item"><summary>Is this a subscription?</summary><p>No. AI Confidence Kit is a one-time £19 purchase with instant digital access.</p></details>
+            <details class="faq-item"><summary>How does the 60-day guarantee work?</summary><p>Try the guide. If it does not help you feel more confident using AI, ask for a refund within 60 days of your purchase.</p></details>
           </div>
         </div>
       </section>    </main>
