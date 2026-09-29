@@ -1468,7 +1468,20 @@
 .bump-modal { border:0; width:100%; height:100%; max-width:none; max-height:none; margin:0; color:inherit; }
 .bump-modal[open] { display:flex; }
 .bump-modal::backdrop { background:transparent; }
-</style>
+      .lesson-section { background: var(--cream); }
+      .lesson-inner { width: min(100%, 1140px); margin: 0 auto; padding: 76px 32px 92px; }
+      .lesson-heading { max-width: 20ch; margin: 0 0 30px; color: var(--navy); font-family: Georgia, "Times New Roman", serif; font-size: clamp(2rem, 3.4vw, 3rem); font-weight: 500; line-height: 1.08; }
+      .lesson-intro-card { padding: 30px 34px; margin-bottom: 18px; border: 1px solid rgba(23, 55, 97, .13); border-radius: 14px; background: #eef4fb; box-shadow: 0 16px 36px rgba(23, 55, 97, .05); }
+      .lesson-intro-card p { max-width: 58rem; margin: 0; color: var(--navy); font-size: 1.16rem; line-height: 1.7; }
+      .lesson-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+      .lesson-card { position: relative; min-height: 218px; padding: 30px 32px 32px; border: 1px solid rgba(23, 55, 97, .12); border-radius: 14px; background: var(--cream-card); box-shadow: 0 16px 36px rgba(23, 55, 97, .06); }
+      .lesson-card::before { content: attr(data-step); display: block; width: 40px; height: 40px; margin-bottom: 19px; border-radius: 50%; background: var(--gold-soft); color: #91792a; font-size: .92rem; font-weight: 800; line-height: 40px; text-align: center; }
+      .lesson-card h3 { margin: 0 0 12px; color: var(--navy); font-family: Georgia, "Times New Roman", serif; font-size: 1.42rem; font-weight: 500; line-height: 1.3; }
+      .lesson-card p { margin: 0; color: var(--text); font-size: 1.04rem; line-height: 1.7; }
+      .lesson-outcome { margin-top: 18px; padding: 32px 36px; border-radius: 14px; background: var(--navy); color: #fff; box-shadow: 0 18px 36px rgba(23, 55, 97, .14); }
+      .lesson-transition { margin: 0 0 14px; color: #dce9f7; font-size: 1.08rem; line-height: 1.6; }
+      .lesson-conclusion { max-width: 60rem; margin: 0; color: #fff; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.2rem, 2vw, 1.5rem); font-weight: 500; line-height: 1.5; }
+      @media (max-width: 760px) { .lesson-inner { padding: 56px 22px 68px; } .lesson-grid { grid-template-columns: 1fr; } .lesson-intro-card, .lesson-card, .lesson-outcome { padding: 24px; } .lesson-card { min-height: auto; } }</style>
   </head>
   <body>
     <div class="top-banner">
@@ -1521,27 +1534,27 @@
       <section class="lesson-section" aria-label="What made AI useful">
         <div class="lesson-inner">
           <h2 class="lesson-heading">What finally made AI useful wasn’t learning more about technology.</h2>
-          <p class="lesson-intro">I did not suddenly become technical, and I certainly did not learn how AI works behind the scenes. What changed was much simpler: I learned how to use it in a way that gave me useful results.</p>
+          <div class="lesson-intro-card"><p>I did not suddenly become technical, and I certainly did not learn how AI works behind the scenes. What changed was much simpler: I learned how to use it in a way that gave me useful results.</p></div>
           <div class="lesson-grid">
-            <article class="lesson-card">
+            <article class="lesson-card" data-step="01">
               <h3>I learned how to ask properly</h3>
               <p>Instead of giving it a vague sentence and hoping for the best, I learned what information to give it so it understood what I actually wanted.</p>
             </article>
-            <article class="lesson-card">
+            <article class="lesson-card" data-step="02">
               <h3>I stopped accepting the first answer</h3>
               <p>If the response was weak, I learned how to correct it, add context and get something much closer to what I needed.</p>
             </article>
-            <article class="lesson-card">
+            <article class="lesson-card" data-step="03">
               <h3>I worked out what it was genuinely useful for</h3>
               <p>Some jobs became dramatically quicker and easier with AI. Others were better done the old-fashioned way.</p>
             </article>
-            <article class="lesson-card">
+            <article class="lesson-card" data-step="04">
               <h3>And I learned when not to trust it</h3>
               <p>AI can sound very confident even when it is wrong. Knowing when to check the answer made it far more useful, not less.</p>
             </article>
           </div>
-          <p class="lesson-transition">Once I understood those things, the whole experience changed.</p>
-          <p class="lesson-conclusion"><strong>The AI Confidence Kit is the guide I wish I had at the beginning: the practical lessons that took me hours of trial and error, laid out simply so you can start getting useful results without having to figure it all out for yourself.</strong></p>
+          <div class="lesson-outcome"><p class="lesson-transition">Once I understood those things, the whole experience changed.</p>
+          <p class="lesson-conclusion"><strong>The AI Confidence Kit is the guide I wish I had at the beginning: the practical lessons that took me hours of trial and error, laid out simply so you can start getting useful results without having to figure it all out for yourself.</strong></p></div>
         </div>
       </section>    </main>
   </body>
