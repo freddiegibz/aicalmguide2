@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Everyday AI Shortcuts — Your Next Conversation, Ready</title>
+    <title>AI Confidence Kit Upgrade</title>
     <meta
       name="description"
       content="A one-time upgrade for AI Confidence Kit customers."
@@ -26,186 +26,500 @@
     /></noscript>
     <!-- End Meta Pixel Code -->
     <style>
-      :root { --ink:#243c35; --muted:#626961; --line:#deded3; --paper:#f5f3eb; --accent:#285c46; }
-      * { box-sizing:border-box; }
-      body { margin:0; background:var(--paper); color:var(--ink); font-family:"Segoe UI",Arial,sans-serif; font-size:18px; line-height:1.7; }
-      .confirmation { background:#e8ede4; border-bottom:1px solid #d8dfd2; padding:13px 20px; text-align:center; font-size:14px; color:#375642; }
-      .confirmation strong { font-weight:650; }
-      main { max-width:850px; margin:38px auto 65px; padding:0 20px; }
-      .oto { background:#fffefa; border:1px solid var(--line); border-radius:8px; padding:52px 64px; box-shadow:0 8px 32px #273a2810; }
-      h1,h2 { font-family:Georgia,"Times New Roman",serif; font-weight:400; letter-spacing:-.035em; line-height:1.13; }
-      h1 { font-size:clamp(34px,4.7vw,49px); margin:12px 0 24px; }
-      h2 { font-size:clamp(27px,3.2vw,34px); margin:40px 0 18px; }
-      p { margin:0 0 19px; }
-      strong { font-weight:650; }
-      .eyebrow { margin:0; color:#68735f; text-transform:uppercase; font-size:11px; font-weight:700; letter-spacing:.14em; }
-      .lead { font-size:20px; line-height:1.6; }
-      .opening { padding-bottom:12px; border-bottom:1px solid var(--line); }
-      .aside { border-left:3px solid #a7b895; padding:3px 0 3px 19px; margin:24px 0; color:#52624e; }
-      .example { margin:27px 0; padding:25px 27px; background:#eef2ea; border:1px solid #d7e0d0; border-radius:5px; }
-      .example h3 { margin:6px 0 20px; font-size:19px; line-height:1.4; }
-      .example ol { padding:0; list-style:none; counter-reset:steps; margin:0; }
-      .example li { counter-increment:steps; position:relative; padding:0 0 20px 36px; font-size:16px; line-height:1.65; }
-      .example li::before { content:counter(steps); position:absolute; left:0; top:2px; width:24px; height:24px; border:1px solid #b9c8ae; border-radius:50%; text-align:center; font-size:13px; color:var(--accent); }
-      .example li:last-child { padding-bottom:0; }
-      .example li strong { display:block; margin-bottom:4px; }
-      .example .result { margin:20px 0 0; border-top:1px solid #d0dbc7; padding-top:16px; font-size:16px; }
-      .uses { list-style:none; padding:0; margin:22px 0; }
-      .uses li { padding:15px 0; border-bottom:1px solid var(--line); font-size:17px; }
-      .uses li:first-child { border-top:1px solid var(--line); }
-      .uses strong { display:block; color:var(--ink); margin-bottom:3px; }
-      .offer { margin-top:36px; padding:28px; background:#f6f0df; border:1px solid #e6dbbc; border-radius:5px; text-align:center; }
-      .offer h2 { margin:0 0 12px; font-size:30px; }
-      .offer p { font-size:16px; line-height:1.6; }
-      .price { margin:20px 0 16px; color:var(--muted); font-size:14px; }
-      .price strong { font-family:Georgia,serif; font-size:45px; color:var(--ink); margin-right:7px; font-weight:400; }
-      .button { display:block; background:var(--accent); color:white; border-radius:5px; padding:17px 18px; font-size:17px; line-height:1.4; font-weight:650; text-decoration:none; }
-      .button:hover { background:#1d4835; }
-      a:focus-visible { outline:3px solid #ba8e32; outline-offset:4px; }
-      .offer .guarantee { margin:13px 0 0; font-size:13px; color:#636959; }
-      .decline { display:block; text-align:center; margin:19px auto 0; color:#687068; font-size:14px; text-underline-offset:4px; }
-      @media(max-width:600px) { body {font-size:17px;} main {margin:18px auto 30px;padding:0 12px;} .oto {padding:30px 22px;} .lead {font-size:18px;} .example,.offer {padding:21px 18px;} h2 {margin-top:32px;} }
-      /* Visual treatment adapted from the local Ice Vault OTO reference. */
-      :root { --ink:#152a45; --muted:#68707d; --line:#e6dcc5; --paper:#fdfcf8; --accent:#ad8534; }
-      body { color:#283447; }
-      .mast { max-width:1000px; margin:auto; padding:29px 32px; display:flex; justify-content:space-between; align-items:center; gap:25px; }
-      .brand { color:#152a45; font-size:18px; font-weight:800; letter-spacing:.09em; line-height:1.2; }
-      .brand span { display:block; margin-top:8px; color:#9c792d; font-size:9px; font-weight:500; letter-spacing:.16em; }
-      .mast-step { color:#858c98; font-size:10px; letter-spacing:.11em; text-align:right; }
-      .mast-step b { color:#152a45; }
-      .confirmation { background:#152a45; color:#e5c568; border:0; padding:14px 22px; font-size:13px; }
-      main { max-width:840px; margin:0 auto; padding:63px 45px 55px; }
-      .oto { background:transparent; border:0; border-radius:0; padding:0; box-shadow:none; }
-      .oto > p,.oto > h2,.uses { max-width:660px; margin-left:auto; margin-right:auto; }
-      p { margin-bottom:25px; line-height:1.85; }
-      h1 { font-size:clamp(38px,4.4vw,57px); line-height:1.18; font-weight:500; margin:0 0 30px; }
-      h1 em { color:#ad8534; }
-      h2 { font-size:33px; line-height:1.28; letter-spacing:-.022em; font-weight:500; margin-top:57px; margin-bottom:25px; }
-      .opening { text-align:center; border:0; padding:0; }
-      .opening::after { content:""; display:block; width:64px; height:2px; background:#d4a84b; margin:43px auto; }
-      .eyebrow { color:#9b7328; margin-bottom:25px; font-size:11px; letter-spacing:.16em; }
-      .lead { max-width:590px; margin:0 auto 23px; color:#68707d; font-size:18px; line-height:1.65; }
-      .opening > p:last-child { max-width:590px; margin:0 auto; font-size:17px; color:#68707d; }
-      .oto > .aside { padding:22px 0 22px 25px; border-left:3px solid #d4a84b; font-family:Georgia,serif; font-size:25px; line-height:1.5; color:#152a45; margin-top:34px; margin-bottom:34px; }
-      .example { max-width:660px; margin:35px auto; padding:27px 30px; border:1px solid #e6dcc5; border-radius:6px; background:#f7f3e9; }
-      .example .eyebrow { color:#94742f; font-size:10px; letter-spacing:.12em; }
-      .example li::before { background:#152a45; color:#e5c568; border-color:#152a45; }
-      .example .result { border-color:#dfd4ba; color:#69707a; }
-      .uses li { border-color:#dfd7c7; padding:18px 0; color:#68707d; }
-      .offer { max-width:708px; margin:55px auto 24px; padding:38px 30px 28px; background:#f5f0e4; border:1px solid #dfcfac; border-radius:9px; }
-      .offer h2 { font-size:34px; margin-bottom:25px; }
-      .offer-includes { max-width:440px; margin:20px auto 24px; padding-left:22px; text-align:left; font-size:16px; line-height:1.65; }
-      .offer-includes li { margin:7px 0; padding-left:3px; }
-      .offer-includes li::marker { color:#ad8534; }
-      .oto-testimonials { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; max-width:660px; margin:38px auto; }
-      .oto-testimonial { display:flex; flex-direction:column; margin:0; padding:24px; background:#f7f3e9; border:1px solid #e6dcc5; }
-      .oto-testimonial blockquote { margin:0 0 18px; font-size:16px; line-height:1.7; color:#283447; }
-      .oto-testimonial figcaption { margin-top:auto; font-size:14px; color:#68707d; }
-      .oto-testimonial-stars { margin-top:10px; color:#ad8534; letter-spacing:3px; font-size:18px; }
-      @media(max-width:600px) { .oto-testimonials { grid-template-columns:1fr; } }
-      .button { background:linear-gradient(180deg,#e5c568,#b68d3b); color:#152a45; border-radius:8px; padding:18px 25px; box-shadow:0 7px 23px #d4a84b1c; font-size:16px; }
-      .button:hover { background:linear-gradient(180deg,#efcf76,#c59a43); }
-      .price strong { color:#152a45; }
-      .decline { color:#68707d; font-size:13px; }
-      @media(max-width:600px) {
-        .mast { padding:23px; } .brand { font-size:15px; } .mast-step { font-size:8px; max-width:100px; }
-        .confirmation { font-size:11px; } main { padding:40px 24px; } .oto {padding:0;}
-        h1 {font-size:38px;} h2 {font-size:29px;margin-top:44px;} .lead {font-size:16px;}
-        .oto > .aside {font-size:23px;padding-left:20px;} .example {padding:23px;}
-        .offer {padding:27px 22px;} .offer h2 {font-size:29px;} .button {font-size:14px;padding:17px;}
+      :root {
+        --ink: #071b3f;
+        --navy: #173761;
+        --text: #172033;
+        --muted: #5d6678;
+        --blue: #1e4f87;
+        --blue-deep: #123a68;
+        --paper: #faf8f4;
+        --line: rgba(10, 27, 63, 0.13);
+        --gold-soft: #f7eed2;
       }
-      .opening::after { margin:30px auto; }
-      .mechanism { padding:18px 20px; border-left:3px solid #d4a84b; background:#f7f3e9; font-size:16px; line-height:1.8; }
-      .uses { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 24px; }
-      .uses li { padding:10px 0; color:var(--ink); font-size:16px; }
-      .uses li:first-child { border-top:0; }
-      .offer { margin-top:32px; }
-      .offer h2 { margin-bottom:16px; }
-      @media(max-width:600px) { .uses { grid-template-columns:1fr; } }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--text);
+        font-family: "Aptos", "Segoe UI", sans-serif;
+      }
+
+      .confirmation {
+        border-bottom: 1px solid rgba(27, 108, 63, 0.16);
+        background: linear-gradient(180deg, #f6fff8 0%, #eefaf2 100%);
+      }
+
+      .confirmation-inner {
+        width: min(100%, 820px);
+        margin: 0 auto;
+        padding: 24px 22px 26px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        color: #12492e;
+        font-size: 1.14rem;
+        font-weight: 800;
+        line-height: 1.45;
+      }
+
+      .confirmation-icon {
+        flex: 0 0 auto;
+        width: 48px;
+        height: 48px;
+        border-radius: 999px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: #1d9b53;
+        color: #fff;
+        font-size: 1.7rem;
+        font-weight: 900;
+        box-shadow: 0 10px 24px rgba(29, 155, 83, 0.22);
+      }
+
+      .confirmation-copy {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+      }
+
+      .confirmation-title {
+        font-size: 1.2rem;
+        font-weight: 900;
+        letter-spacing: -0.01em;
+      }
+
+      .confirmation-subtitle {
+        font-size: 0.98rem;
+        font-weight: 700;
+        color: #2b6748;
+      }
+
+      main {
+        width: min(100%, 820px);
+        margin: 0 auto;
+        padding: 54px 22px 64px;
+      }
+
+      article {
+        padding: clamp(34px, 6vw, 68px);
+        border: 1px solid var(--line);
+        background: #fffdf9;
+        box-shadow: 0 18px 42px rgba(7, 27, 63, 0.07);
+      }
+
+      h2 {
+        margin: 0 0 18px;
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(1.7rem, 2.4vw, 2.3rem);
+        font-weight: 500;
+        line-height: 1.12;
+        letter-spacing: 0;
+      }
+
+      p {
+        margin: 0 0 20px;
+        color: var(--text);
+        font-size: clamp(1.06rem, 1.35vw, 1.18rem);
+        line-height: 1.75;
+      }
+
+      .short-lines {
+        margin: 8px 0 34px;
+      }
+
+      .short-lines p {
+        margin-bottom: 6px;
+        color: var(--navy);
+        font-weight: 800;
+      }
+
+      .divider {
+        height: 1px;
+        margin: 36px 0;
+        background: var(--line);
+      }
+
+      .statement {
+        margin: 26px 0;
+        padding: 24px 26px;
+        border-left: 5px solid var(--blue);
+        background: #eef6fb;
+        color: var(--navy);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(1.35rem, 2vw, 1.72rem);
+        line-height: 1.42;
+      }
+
+      .price-note {
+        margin-top: 30px;
+        padding: 24px 26px;
+        background: var(--gold-soft);
+        color: #775f17;
+        font-weight: 800;
+      }
+
+      .cta-wrap {
+        margin-top: 30px;
+        padding-top: 4px;
+        text-align: center;
+      }
+
+      .fast-offer {
+        margin: 0 0 34px;
+        padding: 28px;
+        border: 1px solid rgba(30, 79, 135, 0.13);
+        background: #eef6fb;
+        text-align: center;
+      }
+
+      .fast-offer h2 {
+        margin-bottom: 14px;
+      }
+
+      .fast-offer p {
+        max-width: 42rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .fast-offer .cta-wrap {
+        margin-top: 22px;
+      }
+
+      .fast-price {
+        display: inline-block;
+        margin: 6px 0 18px;
+        padding: 8px 13px;
+        background: var(--gold-soft);
+        color: #775f17;
+        font-weight: 900;
+      }
+
+      .benefits-section {
+        margin-top: 8px;
+      }
+
+      .benefits-section h2 {
+        margin-bottom: 22px;
+      }
+
+      .benefits-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .benefit-item {
+        position: relative;
+        padding: 18px 18px 18px 46px;
+        border: 1px solid rgba(30, 79, 135, 0.12);
+        border-radius: 14px;
+        background: linear-gradient(180deg, #ffffff 0%, #f6faff 100%);
+        box-shadow: 0 10px 24px rgba(7, 27, 63, 0.05);
+        color: var(--text);
+        font-size: 1.02rem;
+        line-height: 1.6;
+      }
+
+      .benefit-item::before {
+        content: "";
+        position: absolute;
+        left: 18px;
+        top: 22px;
+        width: 14px;
+        height: 14px;
+        border-radius: 999px;
+        background: linear-gradient(180deg, var(--blue) 0%, var(--blue-deep) 100%);
+        box-shadow: 0 0 0 4px rgba(30, 79, 135, 0.1);
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: min(100%, 360px);
+        min-height: 62px;
+        padding: 0 28px;
+        border-radius: 8px;
+        background: var(--blue);
+        color: #fff;
+        font-size: 1.08rem;
+        font-weight: 800;
+        text-decoration: none;
+        box-shadow: 0 18px 34px rgba(30, 79, 135, 0.24);
+      }
+
+      .button:hover,
+      .button:focus-visible {
+        background: var(--blue-deep);
+      }
+
+      .guarantee {
+        margin-top: 16px;
+        color: var(--muted);
+        font-size: 0.98rem;
+        font-weight: 800;
+      }
+
+      .decline {
+        display: inline-block;
+        margin-top: 14px;
+        color: #6f7786;
+        font-size: 0.94rem;
+        text-underline-offset: 3px;
+      }
+
+      .survey-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 20;
+        display: grid;
+        place-items: center;
+        padding: 22px;
+        background: rgba(7, 27, 63, 0.62);
+      }
+
+      .survey-modal[hidden] {
+        display: none;
+      }
+
+      .survey-card {
+        width: min(100%, 520px);
+        padding: 30px;
+        border-radius: 10px;
+        background: #fffdf9;
+        box-shadow: 0 28px 70px rgba(7, 27, 63, 0.26);
+      }
+
+      .survey-card h2 {
+        margin-bottom: 10px;
+        font-size: clamp(1.65rem, 5vw, 2.15rem);
+      }
+
+      .survey-card p {
+        margin-bottom: 20px;
+        color: var(--muted);
+        font-size: 1rem;
+        line-height: 1.55;
+      }
+
+      .survey-options {
+        display: grid;
+        gap: 10px;
+        margin: 0 0 22px;
+      }
+
+      .survey-option {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        padding: 13px 14px;
+        border: 1px solid rgba(30, 79, 135, 0.16);
+        border-radius: 8px;
+        background: #f7fbff;
+        color: var(--navy);
+        font-weight: 800;
+        cursor: pointer;
+      }
+
+      .survey-option input {
+        width: 18px;
+        height: 18px;
+        accent-color: var(--blue);
+      }
+
+      .survey-button {
+        width: 100%;
+        border: 0;
+        cursor: pointer;
+      }
+
+      .survey-button[disabled] {
+        opacity: 0.7;
+        cursor: wait;
+      }
+
+      .survey-error {
+        min-height: 1.4em;
+        margin: 12px 0 0;
+        color: #9f2d2d;
+        font-size: 0.94rem;
+        font-weight: 800;
+        text-align: center;
+      }
+
+      @media (max-width: 640px) {
+        main {
+          padding: 0;
+        }
+
+        article {
+          border: 0;
+          box-shadow: none;
+          padding: 38px 22px 48px;
+        }
+
+        .confirmation-inner {
+          align-items: flex-start;
+          padding: 20px 18px 22px;
+        }
+
+        .confirmation-icon {
+          width: 42px;
+          height: 42px;
+          font-size: 1.45rem;
+        }
+
+        .benefits-list {
+          grid-template-columns: 1fr;
+        }
+
+        .survey-card {
+          padding: 24px 20px;
+        }
+      }
     </style>
   </head>
   <body>
-    <header class="mast"><div class="brand">AI CONFIDENCE KIT<span>AI FOR EVERYDAY LIFE.</span></div><div class="mast-step">YOUR GUIDE<br /><b>THE NEXT STEP</b></div></header>
-    <div class="confirmation"><strong>Your AI Confidence Kit is yours.</strong> Now you’re invited to the private customer launch of the next step.</div>
+    <div class="confirmation">
+      <div class="confirmation-inner">
+        <div class="confirmation-icon" aria-hidden="true">✓</div>
+        <div class="confirmation-copy">
+          <div class="confirmation-title">Purchase confirmed.</div>
+          <div class="confirmation-subtitle">Your AI Confidence Kit order is complete.</div>
+        </div>
+      </div>
+    </div>
+    <!-- Questionnaire disabled temporarily.
+    <div class="survey-modal" data-survey-modal role="dialog" aria-modal="true" aria-labelledby="survey-title">
+      <form class="survey-card" data-survey-form action="https://formspree.io/f/mwvyywqz" method="POST">
+        <h2 id="survey-title">Quick question before you continue</h2>
+        <p>What do you most want AI to help you with?</p>
+        <div class="survey-options">
+          <label class="survey-option">
+            <input type="radio" name="ai_help_area" value="everyday tasks" required />
+            <span>everyday tasks</span>
+          </label>
+          <label class="survey-option">
+            <input type="radio" name="ai_help_area" value="work/business" />
+            <span>work/business</span>
+          </label>
+          <label class="survey-option">
+            <input type="radio" name="ai_help_area" value="writing/messages" />
+            <span>writing/messages</span>
+          </label>
+          <label class="survey-option">
+            <input type="radio" name="ai_help_area" value="documents/admin" />
+            <span>documents/admin</span>
+          </label>
+          <label class="survey-option">
+            <input type="radio" name="ai_help_area" value="staying safe" />
+            <span>staying safe</span>
+          </label>
+          <label class="survey-option">
+            <input type="radio" name="ai_help_area" value="personal setup help" />
+            <span>personal setup help</span>
+          </label>
+        </div>
+        <button class="button survey-button" type="submit">Continue</button>
+        <div class="survey-error" data-survey-error aria-live="polite"></div>
+      </form>
+    </div>
+    -->
     <main>
-      <article class="oto">
-        <div class="opening">
-          <p class="eyebrow">PRIVATE LAUNCH — EXCLUSIVELY FOR AI CONFIDENCE KIT CUSTOMERS</p>
-          <h1>Now Turn What You’ve Learned Into 20 Everyday Jobs You Can Get Done Faster</h1>
-        </div>
-        <p>Your AI Confidence Kit gives you what you bought it for:</p>
-        <p><strong>You finally understand AI. You know how ChatGPT works. And you know how to use it confidently.</strong></p>
-        <p>Now comes the part that makes that knowledge genuinely valuable:</p>
-        <p><strong>using it on the things that already eat up your time.</strong></p>
-        <p>After <strong>735+ sales</strong>, the same everyday jobs kept appearing again and again.</p>
-        <p>Awkward emails.</p>
-        <p>Confusing letters.</p>
-        <p>Quotes and products to compare.</p>
-        <p>Trips to plan.</p>
-        <p>Appointments to prepare for.</p>
-        <p>Jobs that feel too messy to start.</p>
-        <p>So we took the <strong>20 AI uses customers kept finding most useful</strong> and built the full conversation for each one.</p>
-        <p>Not just the first prompt.</p>
-        <p><strong>The whole route from “I need to deal with this” to “done.”</strong></p>
-        <p>And because these shortcuts came directly from what AI Confidence Kit customers were actually using AI for, <strong>you’re getting first access for £17 before we release them more widely at £47.</strong></p>
-        <h2>This Is Where AI Starts Paying You Back In Time</h2>
-        <p>You didn’t buy AI Confidence Kit just so you could understand what ChatGPT is.</p>
-        <p>You bought it because you want AI to make life <strong>easier</strong>.</p>
-        <p>This is where that happens.</p>
-        <p>An awkward email you would normally put off becomes <strong>written and ready to send</strong>.</p>
-        <p>A confusing letter becomes <strong>clear enough to understand and act on</strong>.</p>
-        <p>Four different quotes become <strong>a simple comparison you can actually make a decision from</strong>.</p>
-        <p>A holiday that normally means an evening of tabs and notes becomes <strong>a shortlist and a plan</strong>.</p>
-        <p>An appointment becomes <strong>a clear list of the questions you actually need to ask</strong>.</p>
-        <p>A job you’ve been avoiding becomes <strong>a set of steps you can finally get moving on</strong>.</p>
-        <p>That is what the 20 shortcuts are built for.</p>
-        <p><strong>Less time figuring things out. More things finished.</strong></p>
-        <h2>20 Of The Most Useful Jobs — Already Worked Out For You</h2>
-        <p>Your Kit has taught you how to use ChatGPT yourself.</p>
-        <p>You could build every one of these conversations from scratch.</p>
-        <p>But these are the same kinds of jobs customers keep coming back to, which means there’s no reason to reinvent them every time they appear.</p>
-        <p>So we’ve already mapped them.</p>
-        <p>Each shortcut shows you what to say, what information to give ChatGPT, and what to ask next until you reach the result.</p>
-        <p class="mechanism"><strong>Choose the job → Add your details → Follow the conversation → Get it done</strong></p>
-        <p>Your collection covers things like:</p>
-        <ul class="uses">
-          <li>writing difficult or awkward emails</li>
-          <li>understanding confusing letters</li>
-          <li>comparing quotes, purchases and options</li>
-          <li>planning trips</li>
-          <li>preparing for appointments</li>
-          <li>researching something properly</li>
-          <li>organising information</li>
-          <li>turning an overwhelming problem into a practical plan</li>
-        </ul>
-        <p>These are not novelty prompts.</p>
-        <p><strong>They are the jobs that repeatedly steal time from your week — with the AI process already built.</strong></p>
-        <h2>Your Kit Gives You The Confidence. These Give You The Head Start.</h2>
-        <p>The hard part of AI was understanding it.</p>
-        <p>You’ve already solved that.</p>
-        <p>Now you can start collecting the practical payoff.</p>
-        <p>Instead of thinking:</p>
-        <p class="aside">“I know ChatGPT can probably help with this…”</p>
-        <p>you can open the right shortcut and start.</p>
-        <p>Instead of spending 20 minutes deciding how to explain the problem…</p>
-        <p><strong>you’re already working on the result.</strong></p>
-        <p>Instead of repeatedly building the same kind of conversation from scratch…</p>
-        <p><strong>you use the process that’s already there.</strong></p>
-        <p>That’s why we built Everyday AI Shortcuts.</p>
-        <p>And that’s why we’re offering them to <strong>AI Confidence Kit customers first.</strong></p>
-        <div class="offer">
-          <h2>Get All 20 For £17 Before The Wider Release</h2>
-          <p>When this private customer launch ends, <strong>Everyday AI Shortcuts will be £47.</strong></p>
-          <p>Right now, as an AI Confidence Kit customer, you can get the entire collection for:</p>
-          <div class="price"><strong>£17</strong></div>
-          <p>One payment. Instant digital access.</p>
-          <p>All 20 complete shortcut conversations included.</p>
-          <p><strong>Private customer price: £17</strong><br /><strong>Wider release price: £47</strong></p>
-          <a class="button" href="https://buy.stripe.com/4gM5kC5YL3Wc5ao1XAbZe13">YES — GIVE ME ALL 20 AI SHORTCUTS FOR £17</a>
-          <p class="guarantee">Use them on the jobs already taking up your time. If they don’t make it noticeably faster and easier to put ChatGPT to work, ask for a refund within 60 days.</p>
-        </div>
-        <a class="decline" href="https://www.aiconfidencekit.com/OTO2.html"><strong>No thanks — I’ll continue without the shortcuts.</strong></a>
+      <article>
+        <section class="fast-offer">
+          <h2>Understanding AI is one thing. Knowing where to use it is where the payoff starts.</h2>
+          <div class="fast-price">Normally &pound;74. Today: &pound;37.</div>
+          <p>
+            You&rsquo;ve got the AI Confidence Kit now.
+          </p>
+          <p>
+            That gives you the calm starting point most AI explanations skip, so you can get caught up without feeling lost or left behind.
+          </p>
+          <p>
+            This upgrade helps you turn that understanding into useful results straight away.
+          </p>
+          <p>
+            Instead of guessing what to type, trying random prompts, and getting average answers, you get the 14 areas where AI has been most useful after thousands of hours of real use.
+          </p>
+          <p>
+            Use it to save time, handle admin faster, compare options, save money, make work or business tasks easier, sort house and family decisions, build better health plans, and get clear answers to problems you have put off for months.
+          </p>
+          <p>
+            For each area, I show you what to ask, when to ask it, and how to tell whether the answer is worth using.
+          </p>
+
+          <h2>What You Get</h2>
+
+          <div class="short-lines">
+            <p>14 useful AI areas for real life, work, home, money, health, and decisions</p>
+            <p>Several practical uses inside each area</p>
+            <p>Exact wording to copy and paste</p>
+            <p>Simple examples showing when to use it</p>
+            <p>Warnings so you know what to check or avoid</p>
+          </div>
+
+          <div class="cta-wrap">
+            <a class="button" href="https://buy.stripe.com/00wfZgbj550g0U831EbZe0L" data-upgrade-checkout>Add This To My Order &mdash; &pound;37</a>
+            <div class="guarantee">Instant access &middot; Beginner-friendly &middot; One-time offer</div>
+            <a class="decline" href="membership.html">No thanks, I&rsquo;ll stick with the AI Confidence Kit for now.</a>
+          </div>
+        </section>
       </article>
     </main>
+    <!-- Questionnaire disabled temporarily.
+    <script>
+      (function () {
+        var modal = document.querySelector("[data-survey-modal]");
+        var form = document.querySelector("[data-survey-form]");
+        var error = document.querySelector("[data-survey-error]");
+        var storageKey = "aiConfidenceOtoSurveyAnswered";
+
+        if (!modal || !form) return;
+
+        if (window.sessionStorage && sessionStorage.getItem(storageKey) === "true") {
+          modal.hidden = true;
+          return;
+        }
+
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+          var button = form.querySelector("button[type='submit']");
+          var data = new FormData(form);
+
+          if (button) {
+            button.disabled = true;
+            button.textContent = "Continuing...";
+          }
+          if (error) error.textContent = "";
+
+          fetch(form.action, {
+            method: "POST",
+            body: data,
+            headers: { Accept: "application/json" }
+          })
+            .then(function () {
+              if (window.sessionStorage) sessionStorage.setItem(storageKey, "true");
+              modal.hidden = true;
+            })
+            .catch(function () {
+              if (error) error.textContent = "Please try again.";
+              if (button) {
+                button.disabled = false;
+                button.textContent = "Continue";
+              }
+            });
+        });
+      })();
+    </script>
+    -->
   </body>
 </html>
