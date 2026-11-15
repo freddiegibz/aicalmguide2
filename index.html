@@ -1511,17 +1511,17 @@
         var proceed = modal.querySelector('[data-bump-continue]');
         function closeModal() { modal.close(); }
         function updatePrice() {
-          proceed.textContent = checkbox.checked ? 'Get the guide + messages' : 'Get the guide';
+          proceed.textContent = checkbox.checked ? 'Get the guide + messages - £26.50' : 'Get the guide - £19';
         }
         document.addEventListener('click', function (event) {
           var checkout = event.target.closest('[data-stripe-checkout]');
           if (checkout) {
             event.preventDefault();
+            if (typeof fbq === 'function') fbq('track', 'InitiateCheckout');
             checkbox.checked = false;
             updatePrice();
             modal.showModal();
             document.body.classList.add('bump-locked');
-            if (typeof fbq === 'function') fbq('track', 'InitiateCheckout');
           }
         });
         checkbox.addEventListener('change', updatePrice);
@@ -1657,14 +1657,14 @@
         <label class="bump-option">
           <input type="checkbox" data-bump-checkbox />
           <span>
-            <strong>Add the 100-message pack</strong>
+            <strong>Add the 100-message pack for &pound;7.50</strong>
             <span>Writing &middot; planning &middot; decisions &middot; shopping &middot; appointments &middot; confusing information</span>
-
+            <span class="bump-price"><b>&pound;26.50 total</b></span>
           </span>
         </label>
         <div class="bump-actions">
-          <button class="bump-continue" type="button" data-bump-continue>Get the guide</button>
-          <button class="bump-close" type="button" data-bump-close>No thanks, get the guide</button>
+          <button class="bump-continue" type="button" data-bump-continue>Get the guide - &pound;19</button>
+          <button class="bump-close" type="button" data-bump-close>No thanks, get the guide for &pound;19</button>
         </div>
       </div>
     </dialog></body>
